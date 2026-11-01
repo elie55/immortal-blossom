@@ -39,7 +39,7 @@ With no money involved, the Fate Pond can afford a generous curve: 27 summons pe
 ## Games that dropped gacha
 
 - Another Eden Begins (September 17, 2026) remakes the free-to-play Another Eden as a single-player, buy-to-play game with gacha and microtransactions removed. Its 18 companions join through the story, encounter quests and kinship bonds. The base game costs $40, with five DLC character packs at $10 each or $45 together. It is the closest precedent for Immortal Blossoms' business model and for the quest-recruit option in the open questions.
-- Octopath Traveler 0 has over 30 characters, each recruited through a side quest, parties of eight (four front, four back) and a town to rebuild, Wishvale, with a dojo where benched characters earn EXP, the same idea as the Sect's Closed-door Caves. A reviewer noted that recruits rarely join the main story afterward, a trap the Heart Tales should avoid.
+- Octopath Traveler 0 has over 30 characters, each recruited through a side quest, parties of eight (four front, four back) and a town to rebuild, Wishvale, with a dojo where benched characters earn EXP, the same idea as the Sect's Closed-door Caves. A reviewer noted that recruits rarely join the main story afterward, a trap the Journey should avoid.
 
 ## Other ideas borrowed
 

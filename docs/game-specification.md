@@ -34,7 +34,7 @@ The game keeps Epic Seven's hero-building depth, fights its battles with cards i
 | Covenant and Mystic summons, limited banners | One Fate Pond paid with earned currency, a rotating featured heroine, pity and a free pick | A fair gacha with no money involved |
 | Arena, real-time arena, guilds, guild war | Sect Grand Competition against AI sects, raids, and records against your own best | The game is fully offline |
 | Epic Pass with a paid track | Path of Ascension, every tier free | Same goals, no paywall |
-| Limited side-story events | Festival events on the lunar calendar, replayable later from an archive | No fear of missing out |
+| Limited side-story events | Dropped: no limited-time events; new stories come with free updates | No fear of missing out |
 | Hunts, Labyrinth, Abyss, Automaton Tower, Raid, Spirit Altar | Kept, reskinned and partly reworked | Proven farming and challenge content (see Game modes) |
 
 ![Core loop: battles, rewards, growth and the Sect](images/core-loop.png)
@@ -159,7 +159,7 @@ They are 4★ Bloom heroines given by the story. Together they form the chain Wa
 - An ultimate cut-in, three portrait expressions for story scenes and a face icon (ChatGPT).
 - Three technique icons. Effects come from her phase's shared set, so a new heroine needs no new effect art.
 - Optional: an AutoSprite idle loop for the lobby and a living card at Full Bloom (about 6 credits).
-- Profile, about 30 voice lines as text, a three-chapter Heart Tale, two passives, six Dao Blossom petals and her unique gear.
+- Profile, about 30 voice lines as text, two passives, six Dao Blossom petals and her unique gear.
 
 ## Combat
 
@@ -215,6 +215,35 @@ Casting order is the core puzzle. A technique whose phase is fed by the previous
 
 Cast around the circle in feeding order for a Harmony chain, and aim at targets your phase overcomes for +30% damage.
 
+### Keeping Harmony a choice
+
+Harmony is the strongest habit, never a requirement: every stage, hunt and trial is tuned to be cleared without chains. Four tools keep the casting order a real decision.
+
+| Tool | How it works | Example |
+| --- | --- | --- |
+| Kindred Qi 同气 | A cast of the same phase as the one before breaks the chain but builds Kindred Qi: +10% per repeat in a row, up to +30%. It gives no Spirit Qi, and Phase Qi still goes to the phase fed | Four Water heroines reach +30% on the fourth cast, two thirds of a full Harmony chain |
+| Chain-breaking bosses | Some bosses read your chains and turn them against you, announced a turn ahead on their card | Reversed Cycle: for one turn feeding runs backward, Earth → Fire → Wood → Water. Taotie, from hunt 9, devours chains: each chain of three or more gives it Surging Qi |
+| Phase-shifting enemies | Enemies change phase during the fight | Five-Colour Wraiths move to the next phase at the start of each enemy turn, so the best target and order change every round |
+| Harmony-bending heroines and gear | Passives that ignore or bend the rule, and the Five Elements set (see Sets) | The table below |
+
+Heroines who bend Harmony, from the launch roster grid (names come in production):
+
+| Heroine | Phase and path | Passive | Effect on a team |
+| --- | --- | --- | --- |
+| Osmanthus | Metal, Arcane | Moon Palace Solitude: she ignores Harmony. Her casts neither break nor extend a chain, and she deals 20% more damage | Fits any team without costing it a link |
+| Hydrangea | Water, Healer | Shifting Colours: her techniques take the phase that extends the current chain, as hydrangeas change colour with their soil. The borrowed phase also sets her advantage | Turns any order into a chain |
+| Oleander | Earth, Shadow | Poison Without Order: each cast that breaks a chain gives her +10% damage for the turn, up to +40% | Rewards teams that ignore order |
+| Narcissus | Water, Talisman | Reflection: Kindred Qi counts double for her team, +20% per repeat, up to +45% | Lets a one-phase team hit as hard as a chain |
+
+Chain rules once Harmony bends:
+
+- A chain caps at ×4: later links keep +45%, and a Five Phases Harmony pays its 2 Spirit Qi once per turn.
+- A chain follows the last cast that counted for it. Osmanthus's casts and Five Elements holds don't move it, so the next cast must follow the phase before them. A held cast takes the chain's current bonus; Osmanthus takes her flat +20% instead.
+- Kindred Qi counts only casts by different cards, so one card casting twice in a row builds nothing.
+- A cast takes its chain bonus or its Kindred Qi bonus, whichever is higher, never both.
+- Hydrangea's borrowed phase counts for everything in that cast: the chain, advantage and Phase Qi.
+- Auto battle and the Formation preview apply these rules when they order casts.
+
 ### Spirit Qi and Empower
 
 - Spirit Qi is the team's shared resource: 4 at the start, then 2 plus 1 per living heroine at the start of each of your turns, 3 per enemy defeated and 2 for a Five Phases Harmony, up to 30.
@@ -245,6 +274,32 @@ In the full game, encounters appear in boss stages, the Pagoda, Secret Realms, r
 - A boss carries a gold Qi shield of 12 segments. Each hit breaks one, two with advantage, and the shield refills after the boss's turn.
 - Breaking it in one turn Shatters the boss: it takes 30% more damage until its next turn ends, and its ultimate is delayed by 1 turn. Multi-hit techniques shine here.
 - The boss card shows its ultimate's countdown, such as Netherflame Cataclysm in 2 turns, so the player races to Shatter it in time. The idea comes from Honkai: Star Rail's weakness break.
+
+### Enemy targeting and auto battle
+
+Enemies pick targets by a weighted score, so they play like a sensible opponent without being predictable. Auto battle scores your side's choices the same way. The weights are the prototype's starting values.
+
+| Enemy target score | Weight |
+| --- | --- |
+| Their technique overcomes the heroine's phase | +2 |
+| Share of health the heroine has lost | Up to +1.6 |
+| The heroine has a Spirit Shield | −0.6 |
+| Chance | 0 to +0.8; 0 to +0.3 on Heaven-Defying |
+
+- Enemies cast in Harmony order, ultimate first, then their longest cooldowns. A single-target technique hits the highest score, an area technique hits everyone, and heals and cleanses go to the ally that needs them most.
+- Overrides come before the score: Provoke forces the target, Shadow Veil hides a heroine from single-target picks, and the Black Tortoise set takes hits aimed at allies below 30% health. Position 1 of the Black Tortoise array adds +1.5 to her score.
+- Bosses add a script on top of the score: the ultimate on its countdown, openers and form changes, written per boss in enemies.json.
+- On Heaven-Defying stages and the Pagoda's last floors, enemies focus fire: once one enemy picks a heroine, the others follow while she stands.
+
+Auto battle follows the prototype's rules:
+
+1. Heroines act in Harmony order, one technique each per pass, as the Formation screen previews it.
+2. Each picks her ultimate first, then her longest cooldown. A heal or cleanse waits until an ally is below 72% health or carries a debuff.
+3. Targets score +3 for advantage and −2 for disadvantage, up to +2.5 for health lost, +2 if the hit would defeat, and +2.5 against a boss's unbroken Qi shield with a multi-hit technique (+0.5 otherwise).
+4. It Empowers an ultimate only if 2 Spirit Qi would remain, and an S2 only if 10 would.
+5. It buys the rarest affordable encounter that leaves 2 Spirit Qi, then ends the turn.
+
+The full game adds auto settings: save Spirit Qi for ultimates, never buy encounters, and focus the boss. Auto clears what the team already outclasses; Heaven-Defying bosses and tribulation trials reward playing by hand.
 
 ### Heavenly Tribulation
 
@@ -321,7 +376,7 @@ A heroine grows along six tracks, up to level 80. Named realms replace Epic Seve
 | Meridians | Stats; the sixth upgrades a technique | Elemental essences, spirit stones | Awakening |
 | Technique mastery | +1 to +5 per technique | Enlightenment scrolls, Bodhi leaves | Skill Enhancement |
 | Dao Blossom | Six petals that improve her kit, like Genshin Impact's constellations | Duplicates or Blossom Dew | Memory Imprint |
-| Bond | Profile, voices, Heart Tales, outfits, small stat bonus | Gifts, battles together, tea at the Pavilion | Friendship |
+| Bond | Profile, voices, outfits, small stat bonus | Gifts, battles together, tea at the Pavilion | Friendship |
 
 ### Levels and realms
 
@@ -342,7 +397,7 @@ Level 80 is the maximum. Two peaks along the way unlock passives: level 30, the 
 
 **Tribulation trials.** A heroine at a major threshold fights her tribulation with three allies: waves of heavenly lightning, then her Heart Demon, a darkened copy of her own card with her techniques and stats. Winning grants the breakthrough and a one-time reward. Losing costs nothing and can be retried. Since the Heart Demon reuses the heroine's card and data, 30 heroines give 180 distinct boss fights, six each, for little extra work.
 
-**EXP items.** Spirit pills replace Epic Seven's penguins: Qi Gathering Pill (+5,500 EXP), Spirit Condensing Pill (+16,500) and Heaven and Earth Pill (+49,500), dropped by stages and brewed at the Alchemy Pavilion.
+**EXP items.** Spirit pills replace Epic Seven's penguins: Qi Gathering Pill (+5,500 EXP), Spirit Condensing Pill (+16,500), Heaven and Earth Pill (+49,500) and Nine-Revolution Golden Pill (+150,000). Most come from Medicine King Valley (see Game modes), a few from stages and the Alchemy Pavilion. EXP to the next level is 90 × level²: 25,650 EXP to finish Qi Refining and about 15.1 million to reach level 80. EXP past a realm's cap is banked and applied after the next breakthrough.
 
 ### Passives
 
@@ -375,7 +430,7 @@ Each breakthrough opens one meridian slot: the five organ meridians in the order
 ### Technique mastery
 
 - Each technique levels from +1 to +5; Dao Blossom petals 3 and 5 take her S2 and her ultimate to +6. A level adds damage, effect chance or one turn off the cooldown.
-- Enlightenment scrolls are common (shrines, pagoda). Bodhi leaves are rare (pagoda milestones, raids, festivals) and gate the last levels, like Molagora in Epic Seven.
+- Enlightenment scrolls are common (shrines, pagoda). Bodhi leaves are rare (pagoda milestones and raids) and gate the last levels, like Molagora in Epic Seven.
 - During closed-door cultivation a heroine can have an epiphany, a small chance of free mastery progress.
 
 ### Dao Blossom
@@ -384,6 +439,7 @@ Each breakthrough opens one meridian slot: the five organ meridians in the order
 - Petals 1, 2, 4 and 6 add effects written for her, often to her passives or techniques. Petal 3 gives her S2, and petal 5 her ultimate, a mastery level past the cap (+6). Petal 6 changes how she plays.
 - Blossom Dew opens petals too, so duplicates help but are never required. Target: a regular player fully blooms about one heroine a month without duplicates. Duplicates past the sixth petal become Blossom Dew.
 - At six petals, Full Bloom, her flower's petals drift across her card in battle and around her in the lobby.
+- **Strong on purpose.** Petals are meant to make a heroine much stronger, so players who summon a lot find the game easier. Every fight is tuned for heroines with no petals, so a player who never gets a duplicate can still clear everything.
 
 Example, Ling Shuang's six petals:
 
@@ -398,8 +454,8 @@ Example, Ling Shuang's six petals:
 
 ### Bonds
 
-- Bond levels 1 to 10 with each heroine (Epic Seven's Friendship). They rise by fighting together, gifts (liked gifts count double), a daily tea at the Pavilion, Heart Tale chapters and lobby taps (capped per day).
-- Unlocks, as in your captures: profile entries (motto, specialty, hobby, likes, dislikes), voice lines, Heart Tale chapters at levels 2, 5 and 8, outfits at levels 6 and 10, a lobby illustration at level 10 and a +2% to +6% stat bonus.
+- Bond levels 1 to 10 with each heroine (Epic Seven's Friendship). They rise by fighting together, gifts (liked gifts count double), a daily tea at the Pavilion and lobby taps (capped per day).
+- Unlocks, as in your captures: profile entries (motto, specialty, hobby, likes, dislikes), voice lines, outfits at levels 6 and 10, a lobby illustration at level 10 and a +2% to +6% stat bonus.
 - **Karmic Threads** replace Epic Seven's relationship map. Each heroine is tied to two to four others: sworn sisters, rivals, master and disciple, a life debt. Fielding tied heroines together grants Resonance (+5% Attack) and unlocks their conversations at camp in the Secret Realms.
 - Tone: affectionate and teasing, never explicit.
 
@@ -435,9 +491,9 @@ Rarity sets how many substats a piece drops with and where its rolls land, as a 
 | Rare 珍 (blue) | 1 | 40–55% | Hunts 1–4 |
 | Epic 玄 (purple) | 2 | 50–65% | Hunts 3–6, Heaven-Defying stages |
 | Legendary 地 (orange) | 2 | 60–75% | Hunts 5–8, Secret Realms |
-| Mythic 天 (red) | 3 | 70–85% | Hunts 8–11, Pagoda, Trial Tower |
-| Immortal 仙 (gold) | 3 | 80–95% | Hunts 11–13, raids |
-| Divine 神 (prismatic) | 4 | 90–100% | Hunt 13, raids and the Pagoda's last floors, rarely |
+| Mythic 天 (red) | 3 | 70–85% | Hunts 8–11, Pagoda floors 51–100, Trial Tower |
+| Immortal 仙 (gold) | 3 | 80–95% | Hunts 11–13, raid difficulty 4 and 5 |
+| Divine 神 (prismatic) | 4 | 90–100% | Hunt 13, raid difficulty 5 and Pagoda floors 101–120, rarely |
 
 - Higher hunt levels shift the odds upward, and a Divine piece stays rare even at hunt 13.
 - Rarity is fixed at the drop. Reforging raises a piece's tier, never its rarity, so the chase is finding a better piece.
@@ -445,28 +501,30 @@ Rarity sets how many substats a piece drops with and where its rolls land, as a 
 
 ### Refining, reforging and engraving
 
-- Refining +0 to +15 costs spirit stones and spare gear and never fails. At +3, +6, +9, +12 and +15 a piece gains a substat (up to four) or raises a random one, rolled in its rarity's range. Refining a Spirit Artefact raises its Attack, Health and passive instead.
+- Refining +0 to +15 costs spirit stones and Forging Dust from salvaged gear and never fails. At +3, +6, +9, +12 and +15 a piece gains a substat (up to four) or raises a random one, rolled in its rarity's range. Refining a Spirit Artefact raises its Attack, Health and passive instead.
 - A piece that drops with fewer substats spends its refining on new ones. A Divine piece drops with four, so it raises its substats five times and ends far ahead.
-- Every piece has a tier, I to VIII, set by the realm of the content that dropped it, from Qi Refining to Mahayana. The tier scales its base values; the rarity sets the quality of its rolls.
+- Every piece has a tier, I to VIII, set by the realm of the content that dropped it, from Qi Refining to Mahayana (see Progression map). The tier scales its base values; the rarity sets the quality of its rolls.
 - Reforging at the Forge raises a +15 piece one tier and keeps its rolls, for ores and spirit stones, so a great piece follows its heroine through the realms (Epic Seven's reforge).
 - Engraving replaces one substat with a new roll of a chosen type, once per piece, for Dao Marks (Epic Seven's modification gems).
 
 ### Sets
 
-| Set | Pieces | Effect | Drops from |
-| --- | --- | --- | --- |
-| Qilin 麒麟 | 2 | +15% Health | Taowu hunt |
-| Black Tortoise 玄武 | 2 | +15% Defense | Taowu hunt |
-| Sword Heart 剑心 | 2 | +12% critical chance | Qiongqi hunt |
-| Heavenly Eye 天眼 | 2 | +20% accuracy | Hundun hunt |
-| Still Water 止水 | 2 | +20% effect resistance | Hundun hunt |
-| Azure Dragon 青龙 | 4 | +20 Haste | Qiongqi hunt |
-| White Tiger 白虎 | 4 | +45% Attack | Taotie hunt |
-| Vermilion Bird 朱雀 | 4 | +40% critical damage | Taotie hunt |
-| Blood Lotus 血莲 | 4 | Heals 20% of the damage she deals | Xiangliu hunt |
-| Five Elements 五行 | 4 | Casts that extend a Harmony chain gain +10% per link, on top of the chain bonus | Xiangliu hunt |
+Every set pairs a 2-piece stat bonus with a 4-piece effect that changes how its wearer plays, so a set decides a role, not just a number.
 
-Eight slots count for sets: the helmet, body, gloves, boots, pants, both rings and the pendant. They hold two 4-piece sets, a 4-piece set and two 2-piece sets, or four 2-piece sets; the weapon and the Spirit Artefact stand outside sets. Each hunt drops two sets, and the Forge crafts any set from Forging Manuals, so a run of bad luck always has a way out.
+| Set | 2 pieces | 4 pieces | Drops from |
+| --- | --- | --- | --- |
+| Sword Heart 剑心 | +12% critical chance | **Unbroken Edge:** when her technique defeats an enemy, her S1 is ready again, once per turn | Qiongqi hunt |
+| Azure Dragon 青龙 | +12 Haste | **Rising Dragon:** when she casts her ultimate, every ally's charging S2 comes 1 turn closer | Qiongqi hunt |
+| White Tiger 白虎 | +15% Attack | **Tiger's Pounce:** her single-target techniques also strike the cards beside the target for 30% of the damage | Taotie hunt |
+| Vermilion Bird 朱雀 | +20% critical damage | **Burning Feathers:** her critical hits apply Fire Poison for 2 turns | Taotie hunt |
+| Qilin 麒麟 | +15% Health | **Auspicious Guard:** at the start of each of your turns, the ally with the lowest health gains a Spirit Shield worth 8% of the wearer's max Health until your next turn (Qilin shields don't stack) | Taowu hunt |
+| Black Tortoise 玄武 | +15% Defense | **Shell of the North:** single-target hits aimed at an ally below 30% health strike her instead, for 25% less damage (with two wearers, the healthier one) | Taowu hunt |
+| Heavenly Eye 天眼 | +20% accuracy | **Piercing Gaze:** her debuffs last 1 turn longer, except those that skip turns, and each debuff she lands on a boss breaks 1 more Qi shield segment | Hundun hunt |
+| Still Water 止水 | +20% effect resistance | **Mirror Lake:** the first debuff that would land on her each enemy turn is reflected to its caster | Hundun hunt |
+| Blood Lotus 血莲 | +15% healing received | **Crimson Bloom:** she heals for 20% of the damage she deals, and healing past her full health goes to the ally with the lowest health | Xiangliu hunt |
+| Five Elements 五行 | +1 Phase Qi of her phase at battle start | **Unbroken Cycle:** when she casts out of order, the chain holds at its length instead of breaking | Xiangliu hunt |
+
+Four pieces give both the bonus and the effect, and eight pieces of one set still count once. Eight slots count for sets: the helmet, body, gloves, boots, pants, both rings and the pendant, so a heroine can wear two 4-piece sets, one 4-piece and two 2-piece sets, or four 2-piece sets; the weapon and the Spirit Artefact stand outside sets. Each hunt drops two sets, and the Forge crafts any set from Forging Manuals, so a run of bad luck always has a way out. “Lowest health” in set effects means the lowest share of maximum health.
 
 ### Unique gear
 
@@ -485,7 +543,7 @@ Eight slots count for sets: the helmet, body, gloves, boots, pants, both rings a
 
 - The Spirit Artefact slot holds a named artefact with a passive: the magic treasures (法宝) of cultivation novels, and Epic Seven's artifact. Its type limits who can wield it, by path; a few fit everyone.
 - Artefacts drop in the eight rarities, and refining to +15 raises their Attack, Health and passive. The table lists Divine values.
-- Sources: Pagoda milestones, raids, chapter bosses' first clears, festivals and the Forge. Artefacts never come from summons.
+- Sources: Pagoda milestones, raids, chapter bosses' first clears, the Martial Tournament and the Forge. Artefacts never come from summons.
 
 | Spirit Artefact | Paths | Passive at Divine rarity | Source |
 | --- | --- | --- | --- |
@@ -498,6 +556,18 @@ Eight slots count for sets: the helmet, body, gloves, boots, pants, both rings a
 | Lotus Lantern 宝莲灯 | Healer | Healing +15% | Chapter 1 boss |
 | Qiankun Pouch 乾坤袋 | All | +6 Spirit Qi at battle start | Path of Ascension |
 
+### Storage Ring 储物戒
+
+Gear goes into the Storage Ring, which never fills: pieces sit on pages of 40, and sorting, filters, locks and auto-salvage keep it tidy.
+
+- **Pages.** 40 pieces a page in an 8 × 5 grid, with page tabs, swipe and a jump-to-page control. Pages are added as needed, so a drop is never lost and farming never stops for a full bag.
+- **Sort.** By rarity, tier, refining level, roll score (the average of a piece's roll gauges), set, slot, main stat or newest, either way round. The choice is remembered.
+- **Filters.** Set, slot, rarity, tier, main stat, substats, equipped or free, and locked or not. Up to five saved filters, such as “Immortal and Divine critical pieces”.
+- **Lock.** A locked piece can't be salvaged. Equipped pieces count as locked.
+- **Salvage.** One piece, a selection, or everything the current filter shows, after one confirmation. It returns spirit stones and Forging Dust, more for higher rarity and tier, plus 80% of what the piece's refining cost.
+- **Auto-salvage.** Rules set once apply to every new drop, repeat battles and sweeps included: by rarity (for example, below Epic), by tier (below your highest), by roll score and by set. It never takes Immortal or Divine pieces unless you allow it. A keep rule overrides them, for example any piece with a substat roll above 90%. The battle report lists what was salvaged.
+- **Recently salvaged.** The last 30 salvaged pieces can be restored by paying back what they returned, a safety net for any careless rule.
+
 ### Spirit beasts
 
 - Hatched from eggs found in Secret Realms and expeditions, raised with spirit herbs, rarity 3★ to 5★.
@@ -506,27 +576,43 @@ Eight slots count for sets: the helmet, body, gloves, boots, pants, both rings a
 
 ## Game modes
 
-Every Epic Seven mode survives except PvP. Each gets a xianxia theme and offline rules, and two new modes, tribulation trials and Secret Realm runs, carry most of the replay value.
+Every Epic Seven mode survives except PvP and limited-time events. Each gets a xianxia theme and offline rules, and two new modes, tribulation trials and Secret Realm runs, carry most of the replay value.
 
 | Mode | What it is | Main rewards | Epic Seven equivalent | Unlocks |
 | --- | --- | --- | --- | --- |
 | Journey | Volumes, chapters and stage maps; 3 stage missions per battle | Story heroines, Immortal Jade, early gear | Adventure | Start |
-| Heart Tales | A three-chapter story per heroine, opened by bond levels | Outfits, Blossom Dew, Bodhi leaves | Side and hero stories | Bond 2 |
 | Demon Hunts | Five beasts from the *Classic of Mountains and Seas*, 13 levels each | Gear sets, Forging Manuals | Hunts | Chapter 2 |
 | Five Phases Shrines | One shrine per phase, all open every day, one doubled each weekday | Essences, enlightenment scrolls | Spirit Altar | Chapter 2 |
+| Medicine King Valley 药王谷 | The EXP dungeon: eight levels, one per realm; enemies take the day's phase | EXP pills, spirit stones | New | Chapter 2 |
 | Secret Realms | Roguelite runs through branching rooms with camps and picked buffs | Gear, beast eggs, Dao Marks | Labyrinth, plus Honkai: Star Rail's Simulated Universe | Chapter 3 |
 | Demon-Sealing Pagoda | 120 hand-built floors, rewards on first clear | Immortal Jade, Fate Incense, Blossom Dew, Spirit Artefacts, unique gear fragments | Abyss | Chapter 3 |
 | Sect Grand Competition | Ladder of 50 rival AI sects in 14-day seasons | Sect Merit, titles, outfits | Arena | Chapter 4 |
 | Martial Tournament | Eight-sect knockout bracket, once a season | Rare Spirit Artefacts, outfits | Championship | Chapter 5 |
 | Heavenly Trial Tower | A 7-day cycle of floors with Heavenly Dao modifiers; health carries over | Forging materials, Dao Marks | Automaton Tower | Volume 1 clear |
-| Tribulation Raids | Three teams of four against a multi-phase ancient beast, scored weekly | Unique gear fragments, Spirit Artefacts, Bodhi leaves | Raid | Volume 1 clear |
-| Festivals | Lunar-calendar events with a story, event stages and an exchange | A free festival heroine, outfits, materials | Side-story events | Chapter 2 |
+| Tribulation Raids | Three teams of four against a multi-stage ancient beast, scored weekly | Unique gear fragments, Spirit Artefacts, Bodhi leaves | Raid | Nascent Soul |
 | Tribulation trials | Each heroine's breakthrough battles (see Cultivation) | Breakthrough, Immortal Jade | New | By realm |
+
+### Progression map
+
+Each piece of content is tuned to a realm and drops gear of that realm's tier, so tiers I to VIII follow the heroines up the realms.
+
+| Tier | Realm | Heroine levels | Valley and Shrines level | Demon Hunt levels | Journey | Pagoda floors | Raid difficulty |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| I | Qi Refining | 1–10 | I | — | Volume 1, chapters 1–2 | — | — |
+| II | Foundation Establishment | 11–20 | II | 1–2 | Volume 1, chapters 3–5 | 1–20 | — |
+| III | Core Formation | 21–30 | III | 3–4 | Heaven-Defying, chapters 1–3 | 21–35 | — |
+| IV | Nascent Soul | 31–40 | IV | 5–6 | Heaven-Defying, chapters 4–5 | 36–50 | 1 |
+| V | Spirit Severing | 41–50 | V | 7–8 | Volume 2 | 51–65 | 2 |
+| VI | Void Refinement | 51–60 | VI | 9–10 | Later volumes | 66–80 | 3 |
+| VII | Body Integration | 61–70 | VII | 11–12 | Later volumes | 81–100 | 4 |
+| VIII | Mahayana | 71–80 | VIII | 13 | Later volumes | 101–120 | 5, the hardest |
+
+Secret Realms and the Heavenly Trial Tower scale to your highest-realm heroine and drop her realm's tier, with the rarity odds of the matching hunt levels. Rarity rolls separately: higher levels shift the odds toward Divine (see Rarities).
 
 ### Journey
 
 - A chapter map holds story scenes, battles, a boss, commissions (side quests from villagers, Epic Seven's requests) and chance encounters: a wandering merchant, a trapped spirit beast, a fortune teller.
-- Every battle has three stage missions, the stars: clear the stage, no heroine falls, plus one varied goal such as “clear within 12 turns”, “shatter the boss's Qi shield twice” or “win with a Five Phases Harmony”.
+- Every battle has three stage missions, the stars: clear the stage, no heroine falls, plus one varied goal such as “clear within 12 turns”, “shatter the boss's Qi shield twice” or “win with a Five Phases Harmony or full Kindred Qi”.
 - Chapter star milestones at one third, two thirds and all stars give rewards, as in your Episode capture (3/9).
 - After a chapter is cleared, **Heaven-Defying** difficulty opens with boss mechanics and better drops. Three-star stages can be swept.
 
@@ -542,6 +628,28 @@ The Four Fiends of Chinese myth plus the nine-headed serpent replace Epic Seven'
 | Hundun 混沌 | Faceless chaos | Scrambles your heroines' cooldowns each turn; effect resistance resists it |
 | Xiangliu 相柳 | Nine-headed serpent | Poisons the field; each head is a separate card |
 
+### Medicine King Valley 药王谷
+
+The Valley is where heroines' EXP comes from: the Medicine King's runaway furnaces fill it with pill golems and herb spirits that drop spirit pills.
+
+- Eight levels, one per realm. Level I opens with the mode at chapter 2; each later level opens when one of your heroines reaches its realm.
+- A run is three waves, the last led by the Furnace Guardian, about two minutes by hand. Three stars unlock auto repeat and sweep, with no limit on runs.
+- The enemies take the day's phase: Metal on Monday, then Wood, Water, Fire and Earth through Friday, and your pick at weekends. A different part of the roster shines each day.
+- Realms, not EXP, are the gate: a heroine stops at her realm's cap until she breaks through, so the Valley quickly raises new and benched heroines to the team's realm.
+
+| Level | Enemy level | Pills per run | EXP per run | Runs to take one heroine through the realm |
+| --- | --- | --- | --- | --- |
+| I | 5 | 4 Qi Gathering | 22,000 | 2 |
+| II | 15 | 2 Qi Gathering, 3 Spirit Condensing | 60,500 | 4 |
+| III | 25 | 2 Spirit Condensing, 2 Heaven and Earth | 132,000 | 5 |
+| IV | 35 | 4 Heaven and Earth | 198,000 | 6 |
+| V | 45 | 6 Heaven and Earth | 297,000 | 7 |
+| VI | 55 | 3 Heaven and Earth, 2 Nine-Revolution Golden | 448,500 | 6 |
+| VII | 65 | 4 Nine-Revolution Golden | 600,000 | 7 |
+| VIII | 75 | 2 Heaven and Earth, 5 Nine-Revolution Golden | 849,000 | 6 |
+
+Each run also drops spirit stones for the levels. With Heavenly Fortune, each pill has a 30% chance to drop as two.
+
 ### Secret Realms
 
 - A run is three floors on a branching map, about 20 minutes. Rooms: battle, elite, event (a choice with outcomes), camp, merchant and shrine.
@@ -554,11 +662,6 @@ The Four Fiends of Chinese myth plus the nine-headed serpent replace Epic Seven'
 - The PvP arena becomes a ladder of 50 rival sects with hand-built teams that scale with your progress. You challenge sects above you; there are no defense teams and no daily limit.
 - Seasons last 14 days and end with rank rewards in Sect Merit, from Outer Disciple up to Sect Patriarch.
 - Rival sect leaders have names, faces and taunts, so the ladder also tells small stories.
-
-### Festivals
-
-- The calendar follows the lunar year: Spring Festival, Lantern Festival, Qingming, Dragon Boat, Qixi, Mid-Autumn, Double Ninth and Winter Solstice.
-- Each festival brings a short story, event stages, event currency, an exchange and a free festival heroine. Festivals open by the device date; anything missed can be replayed from the **Festival Archive**.
 
 ## The Sect
 
@@ -574,7 +677,7 @@ The Hundred Blossoms Pavilion is the home base: ten buildings that turn time awa
 | Mission Hall 任务堂 | Expeditions: 2 to 4 heroines leave for 1, 4, 8 or 12 hours and bring back materials, gifts and eggs | Dispatch missions |
 | Spirit Beast Garden 灵兽园 | Hatches eggs, feeds beasts, picks the companion | Pets |
 | Array Platform 阵台 | Levels up the five Battle Arrays | New |
-| Scripture Pavilion 藏经阁 | Codex of heroines, enemies and lore; story and music replay; Festival Archive | Codex |
+| Scripture Pavilion 藏经阁 | Codex of heroines, enemies and lore; story and music replay | Codex |
 | Tea House 茶楼 | Daily tea with one heroine, gifts, choice of the lobby heroine | Friendship |
 
 ### How it feels
@@ -593,14 +696,13 @@ Summons use only currency earned in play. A 5★ is guaranteed within 60 summons
 | Currency | Spent on | Earned from |
 | --- | --- | --- |
 | Spirit Stones 灵石 | Levels, refining, crafting, building upgrades | Almost everything; the herb garden |
-| Immortal Jade 仙玉 | Fate Incense (160 Jade each), market specials | First clears, stage stars, pagoda, achievements, duties, festivals, check-in |
-| Fate Incense 缘香 | One summon | Jade, check-in, Path of Ascension, pagoda, festivals |
-| Blossom Dew 花露 | Dao Blossom petals | Pagoda, festivals, Fate Point overflow, duplicates past Full Bloom |
+| Immortal Jade 仙玉 | Fate Incense (160 Jade each), market specials | First clears, stage stars, pagoda, achievements, duties, check-in |
+| Fate Incense 缘香 | One summon | Jade, check-in, Path of Ascension, pagoda |
+| Blossom Dew 花露 | Dao Blossom petals | Pagoda, check-in, Path of Ascension, weekly duties, Fate Point overflow, duplicates past Full Bloom |
 | Sect Merit 功勋 | Merit exchange: manuals, scrolls, Sect Recruitment | Sect Grand Competition, duties |
-| Festival tokens | The festival's exchange | Festival stages |
 | Heavenly Fortune 福缘 | Nothing: it is a bonus of +30% EXP and spirit stones while it lasts | Refills over real time, up to 8 hours of bonus |
 
-Materials (essences, pills, herbs, ores, manuals, Dao Marks, Bodhi leaves, Artefact Essence) are listed with their sources in the data files.
+Materials (essences, pills, herbs, ores, Forging Dust, manuals, Dao Marks, Bodhi leaves, Artefact Essence) are listed with their sources in the data files.
 
 ### Why there is no stamina
 
@@ -610,7 +712,7 @@ Materials (essences, pills, herbs, ores, manuals, Dao Marks, Bodhi leaves, Artef
 
 ### The Fate Pond
 
-- One permanent pool holds every heroine except festival heroines, who are earned free in their festival or later from the archive.
+- One permanent pool holds every heroine.
 - Rates: **5★ 3%, 4★ 15%, 3★ 82%**. A ten-summon guarantees at least one 4★.
 - **Pity:** from the 50th summon without a 5★, the chance rises by 5% per summon, and the 60th is always a 5★. The counter never resets between featured heroines.
 - **Featured heroine:** one 5★ receives half of all 5★ results. The slot rotates every 7 days through every 5★ in a published order, so no heroine is ever exclusive.
@@ -632,7 +734,7 @@ Income is front-loaded: about 90 summons across the first 10 hours (story gifts,
 
 ### Market
 
-The Myriad Treasures Guild sells materials for spirit stones and Jade with a weekly stock. Merit and festival exchanges sit beside it, and the wandering merchant appears in map encounters. Nothing in the game is sold for real money.
+The Myriad Treasures Guild sells materials for spirit stones and Jade with a weekly stock. The Merit exchange sits beside it, and the wandering merchant appears in map encounters. Nothing in the game is sold for real money.
 
 ## Daily rhythm and quality of life
 
@@ -648,23 +750,23 @@ The daily essentials take 10 to 15 minutes, and nothing punishes skipping a day.
 
 ### Check-in
 
-- A 28-day calendar, as in your Merurin capture, presented by **Tao Yao**, the Pavilion's cheerful steward with a peach-blossom motif. She becomes a free heroine in a later festival.
+- A 28-day calendar, as in your Merurin capture, presented by **Tao Yao**, the Pavilion's cheerful steward with a peach-blossom motif. She may join the roster in a later update.
 - A day counts whenever the player logs in; missed days never reset the calendar. Days 7, 14 and 21 give Fate Incense or Blossom Dew, and day 28 gives a 4★ heroine of the player's choice.
 
 ### Sect Duties, Renown and Sect Rank
 
-- Five daily duties (for example “clear 3 stages”, “refine gear twice”, “collect the herb garden”) fill a chest track at 40, 80 and 100 points. Weekly duties fill a bigger one.
+- Five daily duties (for example “clear 3 stages”, “refine gear twice”, “collect the herb garden”) fill a chest track at 40, 80 and 100 points. Weekly duties fill a bigger one that includes Blossom Dew.
 - **Renown** is the achievement list: permanent goals with Jade rewards and titles.
 - **Sect Rank** is the player level. It rises with EXP from battles and unlocks features in the order of the Game modes table.
 
 ### Path of Ascension
 
-Seasons of 28 days with 30 tiers, every tier free, earned through duties and play. Rewards include Fate Incense, materials and a season outfit; updates bring new seasons.
+Seasons of 28 days with 30 tiers, every tier free, earned through duties and play. Rewards include Fate Incense, Blossom Dew, materials and a season outfit; updates bring new seasons, and past season outfits come back in later ones.
 
 ### Quality of life
 
 - [ ] Auto battle, speed up to ×3, cut-ins on or off
-- [ ] Repeat battle up to 50 runs with the spirit beast, stopping when the bag is full
+- [ ] Repeat battle up to 50 runs with the spirit beast; auto-salvage sorts the drops as they come
 - [ ] Instant sweep of any 3-star stage
 - [ ] Story skip and log; every scene replayable at the Scripture Pavilion
 - [ ] Recommended gear, gear lock, filters by set, rarity and roll, and saved gear loadouts per heroine
@@ -687,7 +789,7 @@ Every screen in your Epic Seven captures has a xianxia counterpart, plus the scr
 
 | Your capture | Immortal Blossoms screen | What changes |
 | --- | --- | --- |
-| Lobby | Pavilion Hall | Animated heroine in the hall. Right menu: Journey, Heart Tales, Trials, Competition, Fate Pond, Market. Top: Spirit Stones, Immortal Jade, Fortune. Left: Path of Ascension, Festival. Banner: this week's featured heroine |
+| Lobby | Pavilion Hall | Animated heroine in the hall. Right menu: Journey, Trials, Competition, Fate Pond, Market. Top: Spirit Stones, Immortal Jade, Fortune. Left: Path of Ascension, Sect Duties. Banner: this week's featured heroine |
 | Menu grid | Pavilion menu | Every feature in one grid |
 | Mailbox and notice | Jade Slips | Rewards plus letters written by heroines |
 | Episode map | Journey chapter map | Stage list, chapter art, synopsis, rewards, star milestones, Formation and Begin |
@@ -702,7 +804,7 @@ Every screen in your Epic Seven captures has a xianxia counterpart, plus the scr
 | Story clear | Chapter complete | Reward scroll |
 | Check-in | Daily Incense | Tao Yao instead of Merurin |
 | Relationships | Karmic Threads | Red threads of fate instead of a star map |
-| Profile | Heroine bond page | Bond level, profile entries, voices, Heart Tales |
+| Profile | Heroine bond page | Bond level, profile entries, voices, outfits |
 | Hero details | Heroine overview | Realm, stats, ten gear slots, passives, Harmony phase, roster list |
 | Memory Imprint | Dao Blossom | A nine-petal flower that opens |
 | Level up | Cultivate | Spirit pills instead of penguins |
@@ -733,7 +835,7 @@ The game stays a web app: the card prototype's HTML, CSS, Canvas and JavaScript 
 | skills.json | Numbers, cooldowns, Empower costs and effect lists; each technique's choreography stays in code, as in the prototype's skills.js |
 | enemies.json, stages.json, chapters.json | Enemy kits, waves, stage missions, drops, map nodes |
 | items.json, gear\_sets.json, unique\_gear.json, artefacts.json, encounters.json, drop\_tables.json | Everything that can be owned and where it comes from |
-| festivals.json, story/\*.json | Festival calendar and every story script |
+| story/\*.json | Every story script |
 
 - **Save:** one JSON document in IndexedDB with a schema version and migrations; autosave after every battle and transaction; battle state every turn; export and import as a file; a checksum to detect corruption (not to stop cheating, since the game is single-player).
 - **Time:** idle gains come from timestamps. Clock changes are tolerated; time running backwards is ignored.
@@ -756,10 +858,11 @@ One heroine costs about 5 or 6 ChatGPT images (card, cut-in, three expressions, 
 - Combat demo, done: four heroines against two wraiths with 39 AutoSprite animations. Its effects engine carries over.
 - Card battle prototype, done: the four Blossoms against two waves and the Netherflame Matriarch, with Harmony chains, Phase Qi, Spirit Qi, Fortuitous Encounters, the Qi shield, the Heavenly Tribulation and a 23-step tutorial.
 - Vertical slice: Pavilion Hall, Journey chapter 1 (8 stages), Formation, card battles with Haste, victory flow, heroine overview, Cultivate and Breakthrough, Fate Pond, saving; 6 heroines. Gate: 30 minutes of play from start to finish on a phone.
-- Core loop alpha: Volume 1 complete, gear, hunts and the Forge, the Sect's caves, garden, alchemy and missions, meridians, techniques, Dao Blossom and bonds; 14 heroines. Gate: 15 hours of content with a simulated economy.
-- Content beta: pagoda, Secret Realms, shrines, Sect Grand Competition, Trial Tower, raid and the first festival; 30 heroines; a balance pass. Gate: a closed test on Google Play.
+- Core loop alpha: Volume 1 complete, gear, hunts, Medicine King Valley and the Forge, the Sect's caves, garden, alchemy and missions, meridians, techniques, Dao Blossom and bonds; 14 heroines. Gate: 15 hours of content with a simulated economy.
+- Content beta: pagoda, Secret Realms, shrines, Sect Grand Competition, Trial Tower and raid; 30 heroines; a balance pass. Gate: a closed test on Google Play.
 - Launch: polish, audio, localization, store page and price.
 - After launch: Volume 2 and the first Yin and Yang heroines.
+- Steam version, once the full game is complete: the same web build in a desktop wrapper such as Electron or Tauri, with mouse and keyboard controls and Steam achievements.
 
 ## Open questions for you
 
