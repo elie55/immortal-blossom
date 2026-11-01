@@ -1,0 +1,188 @@
+{
+ "about": "Battle Arrays: one per battle, positions are the four card slots left to right. Values are level 1, doubling at level 10.",
+ "records": [
+  {
+   "id": "array:yellow_dragon",
+   "name": "Yellow Dragon",
+   "theme": "Balance (centre, Earth)",
+   "phase": "phase:earth",
+   "positions": [
+    {
+     "stat": "stat:hp",
+     "value": 0.05
+    },
+    {
+     "stat": "stat:hp",
+     "value": 0.05
+    },
+    {
+     "stat": "stat:hp",
+     "value": 0.05
+    },
+    {
+     "stat": "stat:hp",
+     "value": 0.05
+    }
+   ],
+   "unlockedBy": "start",
+   "maxLevel": 10,
+   "upgradeCost": [
+    {
+     "item": "item:array_flag",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 5000
+    }
+   ],
+   "upgradeScaling": "cost times the current level (level L to L+1)"
+  },
+  {
+   "id": "array:azure_dragon",
+   "name": "Azure Dragon",
+   "theme": "Haste (east, Wood)",
+   "phase": "phase:wood",
+   "positions": [
+    {
+     "stat": "stat:haste",
+     "value": 8
+    },
+    {
+     "stat": "stat:haste",
+     "value": 4
+    },
+    {
+     "stat": "stat:haste",
+     "value": 4
+    },
+    {
+     "stat": "stat:haste",
+     "value": 4
+    }
+   ],
+   "unlockedBy": "stage:v1c2_09",
+   "maxLevel": 10,
+   "upgradeCost": [
+    {
+     "item": "item:array_flag",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 5000
+    }
+   ],
+   "upgradeScaling": "cost times the current level (level L to L+1)"
+  },
+  {
+   "id": "array:white_tiger",
+   "name": "White Tiger",
+   "theme": "Attack (west, Metal)",
+   "phase": "phase:metal",
+   "positions": [
+    {
+     "stat": "stat:atk",
+     "value": 0.12
+    },
+    {
+     "stat": "stat:atk",
+     "value": 0.06
+    },
+    {
+     "stat": "stat:atk",
+     "value": 0.06
+    },
+    null
+   ],
+   "unlockedBy": "stage:v1c3_09",
+   "maxLevel": 10,
+   "upgradeCost": [
+    {
+     "item": "item:array_flag",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 5000
+    }
+   ],
+   "upgradeScaling": "cost times the current level (level L to L+1)"
+  },
+  {
+   "id": "array:vermilion_bird",
+   "name": "Vermilion Bird",
+   "theme": "Critical damage (south, Fire)",
+   "phase": "phase:fire",
+   "positions": [
+    {
+     "stat": "stat:crit_dmg",
+     "value": 0.06
+    },
+    {
+     "stat": "stat:crit_dmg",
+     "value": 0.06
+    },
+    {
+     "stat": "stat:crit_dmg",
+     "value": 0.06
+    },
+    {
+     "stat": "stat:crit_dmg",
+     "value": 0.15
+    }
+   ],
+   "unlockedBy": "stage:v1c4_09",
+   "maxLevel": 10,
+   "upgradeCost": [
+    {
+     "item": "item:array_flag",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 5000
+    }
+   ],
+   "upgradeScaling": "cost times the current level (level L to L+1)"
+  },
+  {
+   "id": "array:black_tortoise",
+   "name": "Black Tortoise",
+   "theme": "Defense (north, Water)",
+   "phase": "phase:water",
+   "positions": [
+    {
+     "stat": "stat:def",
+     "value": 0.2,
+     "targeted": 1.5
+    },
+    {
+     "stat": "stat:def",
+     "value": 0.08
+    },
+    {
+     "stat": "stat:def",
+     "value": 0.08
+    },
+    {
+     "stat": "stat:def",
+     "value": 0.08
+    }
+   ],
+   "unlockedBy": "stage:v1c5_06",
+   "maxLevel": 10,
+   "upgradeCost": [
+    {
+     "item": "item:array_flag",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 5000
+    }
+   ],
+   "upgradeScaling": "cost times the current level (level L to L+1)"
+  }
+ ]
+}

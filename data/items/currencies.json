@@ -1,0 +1,41 @@
+{
+ "about": "Currencies shown in the top bar. Nothing is sold for real money.",
+ "records": [
+  {
+   "id": "cur:spirit_stones",
+   "name": "Spirit Stones",
+   "cn": "灵石",
+   "about": "Levels, refining, crafting, building upgrades"
+  },
+  {
+   "id": "cur:immortal_jade",
+   "name": "Immortal Jade",
+   "cn": "仙玉",
+   "about": "Buys Fate Incense (160 each) and market specials"
+  },
+  {
+   "id": "cur:fate_incense",
+   "name": "Fate Incense",
+   "cn": "缘香",
+   "about": "One summon at the Fate Pond"
+  },
+  {
+   "id": "cur:blossom_dew",
+   "name": "Blossom Dew",
+   "cn": "花露",
+   "about": "Opens Dao Blossom petals"
+  },
+  {
+   "id": "cur:sect_merit",
+   "name": "Sect Merit",
+   "cn": "功勋",
+   "about": "Merit exchange and Sect Recruitment"
+  },
+  {
+   "id": "cur:heavenly_fortune",
+   "name": "Heavenly Fortune",
+   "cn": "福缘",
+   "about": "+30% EXP and spirit stones while it lasts; refills over real time, up to 8 hours"
+  }
+ ]
+}

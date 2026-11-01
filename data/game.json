@@ -1,0 +1,148 @@
+{
+ "about": "The game root. Everything in data/ must be reachable from here through links, or the checker reports an orphan.",
+ "records": [
+  {
+   "id": "game:immortal_blossoms",
+   "name": "Immortal Blossoms",
+   "rules": [
+    "rules:combat",
+    "rules:growth",
+    "rules:gear"
+   ],
+   "modes": [
+    "mode:journey",
+    "mode:hunts",
+    "mode:shrines",
+    "mode:valley",
+    "mode:secret_realms",
+    "mode:pagoda",
+    "mode:competition",
+    "mode:tournament",
+    "mode:tower",
+    "mode:raids",
+    "mode:trials"
+   ],
+   "systems": [
+    "sys:cultivate",
+    "sys:breakthrough",
+    "sys:meridians",
+    "sys:mastery",
+    "sys:dao_blossom",
+    "sys:bond",
+    "sys:summon",
+    "sys:recruit",
+    "sys:refine",
+    "sys:reforge",
+    "sys:engrave",
+    "sys:salvage",
+    "sys:artefact_refine",
+    "sys:hatch",
+    "sys:feed_beast",
+    "sys:array_upgrade",
+    "sys:fortune",
+    "sys:gear"
+   ],
+   "buildings": [
+    "bld:main_hall",
+    "bld:closed_door_caves",
+    "bld:spirit_herb_garden",
+    "bld:alchemy_pavilion",
+    "bld:artifact_forge",
+    "bld:mission_hall",
+    "bld:spirit_beast_garden",
+    "bld:array_platform",
+    "bld:scripture_pavilion",
+    "bld:tea_house"
+   ],
+   "shops": [
+    "shop:myriad_treasures",
+    "shop:merit_exchange",
+    "shop:wandering_merchant",
+    "shop:realm_merchant"
+   ],
+   "currencies": [
+    "cur:spirit_stones",
+    "cur:immortal_jade",
+    "cur:fate_incense",
+    "cur:blossom_dew",
+    "cur:sect_merit",
+    "cur:heavenly_fortune"
+   ],
+   "summons": [
+    "pond:fate_pond",
+    "recruit:sect_recruitment"
+   ],
+   "arrays": [
+    "array:yellow_dragon",
+    "array:azure_dragon",
+    "array:white_tiger",
+    "array:vermilion_bird",
+    "array:black_tortoise"
+   ],
+   "encounters": [
+    "enc:thunder_talisman",
+    "enc:frost_talisman",
+    "enc:qi_recovery_pill",
+    "enc:spirit_gathering_array",
+    "enc:karmic_mark_talisman",
+    "enc:cloud_jade_robe",
+    "enc:five_phases_bead",
+    "enc:sword_intent_insight",
+    "enc:heaven_defying_pill",
+    "enc:phoenix_feather"
+   ],
+   "progression": [
+    "rank:sect",
+    "checkin:daily_incense",
+    "pass:season_01",
+    "chest:daily",
+    "chest:weekly"
+   ],
+   "renown": [
+    "ach:clear_v1c1",
+    "ach:clear_v1c2",
+    "ach:clear_v1c3",
+    "ach:clear_v1c4",
+    "ach:clear_v1c5",
+    "ach:heaven_defying",
+    "ach:hunt_qiongqi",
+    "ach:hunt_taotie",
+    "ach:hunt_taowu",
+    "ach:hunt_hundun",
+    "ach:hunt_xiangliu",
+    "ach:all_hunts",
+    "ach:pagoda_30",
+    "ach:pagoda_60",
+    "ach:pagoda_90",
+    "ach:pagoda_120",
+    "ach:realm_core_formation",
+    "ach:realm_nascent_soul",
+    "ach:realm_spirit_severing",
+    "ach:realm_void_refinement",
+    "ach:realm_body_integration",
+    "ach:realm_mahayana",
+    "ach:own_10",
+    "ach:own_20",
+    "ach:own_30",
+    "ach:first_bloom",
+    "ach:bond_10",
+    "ach:raid_breaker",
+    "ach:tower_top",
+    "ach:perfect_pill",
+    "ach:kindred_win",
+    "ach:harmony_100",
+    "ach:grand_elder",
+    "ach:tournament_win",
+    "ach:first_unique",
+    "ach:first_beast"
+   ],
+   "start": {
+    "stage": "stage:v1c1_01",
+    "home": "loc:hundred_blossoms_pavilion",
+    "guide": "npc:tao_yao",
+    "faction": "faction:hundred_blossoms_pavilion",
+    "player": "npc:pavilion_master"
+   }
+  }
+ ]
+}

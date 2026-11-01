@@ -1,0 +1,47 @@
+{
+ "about": "Heavenly Dao modifiers: one rules the Trial Tower each day; Secret Realm themes borrow them.",
+ "records": [
+  {
+   "id": "dao:thunderous_heaven",
+   "name": "Thunderous Heaven",
+   "day": "mon",
+   "effect": "Ultimates deal 50% more damage, on both sides"
+  },
+  {
+   "id": "dao:withered_earth",
+   "name": "Withered Earth",
+   "day": "tue",
+   "effect": "All healing and shields are halved"
+  },
+  {
+   "id": "dao:reversed_cycle",
+   "name": "Reversed Cycle",
+   "day": "wed",
+   "effect": "Advantage and disadvantage swap: the overcome phase wins"
+  },
+  {
+   "id": "dao:swift_heaven",
+   "name": "Swift Heaven",
+   "day": "thu",
+   "effect": "Every technique starts 1 turn closer to ready"
+  },
+  {
+   "id": "dao:iron_heaven",
+   "name": "Iron Heaven",
+   "day": "fri",
+   "effect": "Enemies have 30% more Defense; Qi shields have 4 more segments"
+  },
+  {
+   "id": "dao:qi_drought",
+   "name": "Qi Drought",
+   "day": "sat",
+   "effect": "Spirit Qi income is 2 lower each turn"
+  },
+  {
+   "id": "dao:burning_heaven",
+   "name": "Burning Heaven",
+   "day": "sun",
+   "effect": "Fire Poison deals double damage, on both sides"
+  }
+ ]
+}

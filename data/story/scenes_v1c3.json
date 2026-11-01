@@ -1,0 +1,793 @@
+{
+ "about": "Story scenes of Volume 1, chapter 3, Moonshadow Bamboo Sea: the voided contract, Envoy Ku Ye, and Mo Yingyue joining (draft).",
+ "records": [
+  {
+   "id": "scene:v1c3_01_before",
+   "name": "Into the Bamboo Sea",
+   "location": "loc:moonshadow_bamboo_sea",
+   "cast": [
+    "npc:tao_yao",
+    "hero:ling_shuang",
+    "hero:su_lianhua",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "South of the river lies the Moonshadow Bamboo Sea, a forest so tall and so endless that the moon seems to rise from somewhere inside it."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "neutral",
+     "text": "The token at the ford, the pill box at Frostpeak, Old Qian's gossip. Everyone tells the same story: a Netherflame buyer who smiles and pays in black jade. And every rumour leads here."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "neutral",
+     "text": "Then we find him and ask him questions. With a sword."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "smile",
+     "text": "Perhaps with words first?"
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "neutral",
+     "text": "Words first. Then the sword."
+    },
+    {
+     "text": "An hour later, they pass the same broken bamboo stalk for the third time."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "angry",
+     "text": "The bamboo moves."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "shy",
+     "text": "The bamboo doesn't move. We're lost. I may have been holding the map upside down."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "laugh",
+     "text": "Tao Yao..."
+    },
+    {
+     "text": "Something rustles high in the stalks. Many-legged shadows slide down toward the path, and somewhere in the dark, a fox laughs."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "determined",
+     "text": "Good. Something I can cut."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c3_02_before",
+   "name": "A Blade in the Night",
+   "location": "loc:moonshadow_bamboo_sea",
+   "cast": [
+    "hero:ling_shuang",
+    "hero:su_lianhua",
+    "hero:mo_yingyue",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "Night in the bamboo. Su Lianhua banks the fire. Ling Shuang sits with her sword across her knees, eyes closed but not asleep."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "neutral",
+     "text": "We are being watched. Since dusk."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "worried",
+     "text": "How many?"
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "neutral",
+     "text": "Six. Seven. One of them I cannot hear at all. That one worries me."
+    },
+    {
+     "text": "The fire goes out. Shadows pour from the bamboo: black-robed shades and laughing fox warriors, blades already drawn."
+    },
+    {
+     "text": "In the confusion, a flicker of violet lightning. Cold steel rests against your throat, and someone breathes softly at your ear."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "neutral",
+     "text": "Hm."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "surprised",
+     "text": "...That's not right."
+    },
+    {
+     "text": "The blade vanishes, and so does she. The other assassins do not hesitate."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "angry",
+     "text": "Pavilion Master! Back to back, now!"
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c3_03_before",
+   "name": "The Contract",
+   "location": "loc:moonshadow_bamboo_sea",
+   "cast": [
+    "hero:mo_yingyue",
+    "hero:ling_shuang",
+    "hero:su_lianhua",
+    "npc:pavilion_master",
+    "npc:tao_yao"
+   ],
+   "lines": [
+    {
+     "text": "When the last assassin falls, a girl in violet is sitting on a bamboo stalk high above the camp, swinging her feet and eating a candied hawthorn."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "smug",
+     "text": "You fight better than he said. He said a lot of things."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "angry",
+     "text": "Come down here."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "neutral",
+     "text": "No, thank you. You have a very unfriendly sword."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "neutral",
+     "text": "Mo Yingyue, of the Moonshadow Pavilion. I was paid to kill your Pavilion Master tonight. As you may have noticed, I didn't."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "worried",
+     "text": "Why not?"
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "neutral",
+     "text": "Because the client lied. He said my target was a Netherflame harvester who burned Peach Blossom Ford and steals girls with strange talents."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "smug",
+     "text": "Then I watched your camp for three hours. The healer is from a temple. The swordswoman would cut off her own hand before she let anyone steal her. And the target gave half of supper to the steward."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "smile",
+     "text": "Also, this was in your sleeve. I always take a sweet from my targets. Professional habit."
+    },
+    {
+     "speaker": "npc:pavilion_master",
+     "expression": "neutral",
+     "text": "That was my candied hawthorn."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "smug",
+     "text": "And now it's my fee for not killing you. Fair."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "angry",
+     "text": "That is not fair at all!"
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "neutral",
+     "text": "Moonshadow kills for coin, never for a lie. A contract with a lie in it is void. So: void. Congratulations, you're alive."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "neutral",
+     "text": "And the client?"
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "determined",
+     "text": "Owes me the rest of my fee and an explanation. He's meeting me past the spider hollows to pay, once you're dead. I'd like to be there when he finds out you aren't."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "smile",
+     "text": "You may come along. For a reasonable price."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "smile",
+     "text": "We could pay you in lotus seed cakes."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "neutral",
+     "text": "...Are they sweet?"
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "smile",
+     "text": "Very."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "smile",
+     "text": "Then we'll talk."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c3_04_before",
+   "name": "Fox Clan Toll",
+   "location": "loc:moonshadow_bamboo_sea",
+   "cast": [
+    "npc:lady_hu_qiao",
+    "hero:mo_yingyue",
+    "hero:ling_shuang",
+    "npc:tao_yao",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "Where the bamboo thins into a misty glade, a woman in silver-trimmed silk reclines on a rock as if it were a throne. Behind her, a dozen foxes watch with very human eyes."
+    },
+    {
+     "speaker": "npc:lady_hu_qiao",
+     "expression": "smile",
+     "text": "Travellers! How lovely. And how unfortunate. This is Fox Clan ground, and nothing crosses it for free."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "neutral",
+     "text": "Lady Hu Qiao. She smiles a great deal. Don't trust any of it."
+    },
+    {
+     "speaker": "npc:lady_hu_qiao",
+     "expression": "laugh",
+     "text": "Little Moonshadow, you wound me. I trust everyone exactly as much as they deserve. Which is not at all."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "angry",
+     "text": "Your foxes attacked our camp last night."
+    },
+    {
+     "speaker": "npc:lady_hu_qiao",
+     "expression": "neutral",
+     "text": "Some of my children take Netherflame coin. Children are like that. It doesn't make them any less mine."
+    },
+    {
+     "speaker": "npc:lady_hu_qiao",
+     "expression": "smug",
+     "text": "The toll is simple. First, show me you are strong enough to be worth bargaining with. My children would like to play."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "neutral",
+     "text": "And second?"
+    },
+    {
+     "speaker": "npc:lady_hu_qiao",
+     "expression": "smile",
+     "text": "Second, a favour owed. I will name it once you have earned the right to hear it."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "worried",
+     "text": "I really don't like owing foxes favours."
+    },
+    {
+     "speaker": "npc:lady_hu_qiao",
+     "expression": "smile",
+     "text": "No one does, darling. That's what makes them so valuable."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c3_04_after",
+   "name": "A Favour Owed",
+   "location": "loc:moonshadow_bamboo_sea",
+   "cast": [
+    "npc:lady_hu_qiao",
+    "hero:su_lianhua",
+    "hero:mo_yingyue",
+    "hero:ling_shuang",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "The last fox warrior tumbles into the ferns, and the rest scatter, laughing. Lady Hu Qiao applauds lazily."
+    },
+    {
+     "speaker": "npc:lady_hu_qiao",
+     "expression": "smile",
+     "text": "Strong enough. Barely. You may cross."
+    },
+    {
+     "speaker": "npc:lady_hu_qiao",
+     "expression": "neutral",
+     "text": "Now, the favour. One of my kits ran away a year ago. Silver fur, sharp tongue, sticky fingers. She has fallen in with bad company, and bad company is about to get her killed."
+    },
+    {
+     "speaker": "npc:lady_hu_qiao",
+     "expression": "worried",
+     "text": "If you meet her, and with that lotus of yours, you will, send her home alive. Whatever she has done."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "smile",
+     "text": "Of course we will."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "neutral",
+     "text": "\"Of course we will\" is a very poor negotiating position, healer."
+    },
+    {
+     "speaker": "npc:lady_hu_qiao",
+     "expression": "laugh",
+     "text": "Oh, I like your healer. Here, a little pouch for the road. I embroidered it myself."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "shy",
+     "text": "...I'll hold on to it. For safekeeping."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "neutral",
+     "text": "She means she's keeping it."
+    },
+    {
+     "speaker": "npc:lady_hu_qiao",
+     "expression": "smile",
+     "text": "Of course she is. Off you go. And do remember your debt to the Fox Clan."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c3_05_before",
+   "name": "Spider Hollows",
+   "location": "loc:moonshadow_bamboo_sea",
+   "cast": [
+    "hero:mo_yingyue",
+    "npc:tao_yao",
+    "hero:su_lianhua",
+    "hero:ling_shuang",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "The spider hollows are a sunken valley where the bamboo grows so thick it blots out the sky. Webs as wide as fishing nets hang between the stalks."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "neutral",
+     "text": "The meeting place is on the far side. Step where I step. Don't touch the webs. Don't scream."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "worried",
+     "text": "Why would anyone scream?"
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "smug",
+     "text": "Look up."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "surprised",
+     "text": "AAAH!"
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "neutral",
+     "text": "Like that. Don't do that."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "smile",
+     "text": "You know these hollows well, Mo Yingyue."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "neutral",
+     "text": "Moonshadow trains here. Nobody follows you into a valley full of spiders. Mostly."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "neutral",
+     "text": "Something is following us now."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "determined",
+     "text": "Then it can meet the spiders. Or us. Your call, employer."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c3_06_before",
+   "name": "A Spirit Beast in a Snare",
+   "location": "loc:moonshadow_bamboo_sea",
+   "cast": [
+    "hero:su_lianhua",
+    "hero:mo_yingyue",
+    "hero:ling_shuang",
+    "npc:tao_yao",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "Beyond the hollows lies a still pool ringed with moonlit bamboo. In its shallows, something flashes red and gold: a koi as long as a child is tall, thrashing in a net of grey fire."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "worried",
+     "text": "A spirit koi! Pavilion Master, look at that net. It's woven from netherflame."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "neutral",
+     "text": "Netherflame snares. They drain a spirit beast dry and sell what's left as pill ingredients. Good money."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "angry",
+     "text": "Mo Yingyue."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "neutral",
+     "text": "I said it was good money. I didn't say I liked it."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "neutral",
+     "text": "Hold still, fish."
+    },
+    {
+     "text": "Ling Shuang's blade parts the burning threads, and Su Lianhua's hands glow jade green over the koi's scorched scales. Slowly, the fish stops thrashing."
+    },
+    {
+     "text": "It circles the pool once, then twice, brushing each of you with a cool flick of its tail. Then it is gone. Where it lay in the shallows rests a single pearly egg."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "laugh",
+     "text": "A koi's thanks! That's luck, you know. Real luck. Keep it warm, Pavilion Master."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "neutral",
+     "text": "We don't get paid for fish."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "smile",
+     "text": "Some things are their own payment."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "neutral",
+     "text": "...You're going to be exhausting, aren't you?"
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c3_07_before",
+   "name": "Moonshadow Pavilion",
+   "location": "loc:moonshadow_bamboo_sea",
+   "cast": [
+    "hero:mo_yingyue",
+    "npc:madam_yue",
+    "hero:ling_shuang",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "The meeting place was empty. Only a slip of paper waited, pinned to a bamboo stalk with a black jade needle. In neat calligraphy it said: \"The Envoy regrets.\""
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "worried",
+     "text": "He knew I'd broken the contract. Then he knows where I'd go next."
+    },
+    {
+     "text": "When they reach Moonshadow Pavilion, a tower of black lacquer hidden among the tallest bamboo, it is already ringed with Netherflame agents."
+    },
+    {
+     "text": "On the highest roof, untroubled by the arrows flying past her, a woman in grey silk is pouring tea."
+    },
+    {
+     "speaker": "npc:madam_yue",
+     "expression": "neutral",
+     "text": "Yingyue. You bring guests, and your guests bring trouble. These gentlemen on my walls are here to silence you, I assume."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "neutral",
+     "text": "I've seen the client's face, Madam. He'd like me to forget it. Permanently."
+    },
+    {
+     "speaker": "npc:madam_yue",
+     "expression": "neutral",
+     "text": "Then come up. You have a contract to answer for. Did you break your contract, or did the contract break itself?"
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "determined",
+     "text": "The client lied about the target. A Netherflame harvester, he said. The target is a sect master who gives away supper and frees fish."
+    },
+    {
+     "speaker": "npc:madam_yue",
+     "expression": "neutral",
+     "text": "A contract with a lie in it was never a contract. It is void. And a client who lies to Moonshadow is no longer a client. He is a mark."
+    },
+    {
+     "speaker": "npc:madam_yue",
+     "expression": "smile",
+     "text": "The Pavilion will remember him. He signed his name with a withered branch."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "smug",
+     "text": "I'm keeping the deposit."
+    },
+    {
+     "speaker": "npc:madam_yue",
+     "expression": "smile",
+     "text": "Of course you are. Now, since your guests are here, perhaps they could do something about the vermin on my walls."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "determined",
+     "text": "Gladly."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c3_08_before",
+   "name": "Puppets of Ku Ye",
+   "location": "loc:moonshadow_bamboo_sea",
+   "cast": [
+    "npc:envoy_ku_ye",
+    "hero:mo_yingyue",
+    "hero:ling_shuang",
+    "npc:tao_yao",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "The fleeing agents lead you to a clearing where the bamboo has been cut down in a perfect circle. In it stand a dozen figures of grey stone, all carved with the same smile."
+    },
+    {
+     "text": "One of them turns its head. The voice that comes out of it is warm, courteous, and delighted."
+    },
+    {
+     "speaker": "npc:envoy_ku_ye",
+     "expression": "smile",
+     "text": "Mo Yingyue. Such a disappointment. I paid good black jade for a dead Pavilion Master, and instead you bring them to my door alive."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "angry",
+     "text": "You lied in my contract, Envoy."
+    },
+    {
+     "speaker": "npc:envoy_ku_ye",
+     "expression": "laugh",
+     "text": "Everyone lies in contracts, my dear. The trick is to sign them anyway."
+    },
+    {
+     "speaker": "npc:envoy_ku_ye",
+     "expression": "smile",
+     "text": "But where are my manners? Ku Ye, Envoy of the Netherflame Sect, humble servant of the Matriarch. I buy what is for sale, and I find that almost everything is."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "angry",
+     "text": "You bought Han Lie."
+    },
+    {
+     "speaker": "npc:envoy_ku_ye",
+     "expression": "smug",
+     "text": "Cheaply, too. Sixty years of envy goes for very little."
+    },
+    {
+     "speaker": "npc:envoy_ku_ye",
+     "expression": "neutral",
+     "text": "And you, Pavilion Master. Following threads, collecting seeds, and you have no idea what you are, do you? How restful that must be."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "angry",
+     "text": "Don't you talk to them!"
+    },
+    {
+     "speaker": "npc:envoy_ku_ye",
+     "expression": "smile",
+     "text": "Oh, the little steward has claws. Well. My puppets will see you out."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c3_09_before",
+   "name": "Envoy Ku Ye",
+   "location": "loc:moonshadow_bamboo_sea",
+   "cast": [
+    "npc:envoy_ku_ye",
+    "hero:mo_yingyue",
+    "hero:su_lianhua",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "Past the broken puppets, in the shadow of a shattered stone shrine, Ku Ye waits in person: a slender man in black silk embroidered with withered branches, smiling as if greeting old friends."
+    },
+    {
+     "speaker": "npc:envoy_ku_ye",
+     "expression": "smile",
+     "text": "You broke my puppets. Those were expensive. I'll add them to your account."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "determined",
+     "text": "Add this too."
+    },
+    {
+     "text": "A violet blade flashes across the clearing. Ku Ye steps aside from it as lazily as a man avoiding a puddle."
+    },
+    {
+     "speaker": "npc:envoy_ku_ye",
+     "expression": "laugh",
+     "text": "Temper, temper. Moonshadow should know better than to work for free."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "determined",
+     "text": "No one here is working for coin. We're here to stop you."
+    },
+    {
+     "speaker": "npc:envoy_ku_ye",
+     "expression": "smug",
+     "text": "Everyone works for coin, little lotus. Some just haven't been offered the right one yet. Come, then. Let me show you what I charge."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c3_09_after",
+   "name": "A New Contract",
+   "location": "loc:moonshadow_bamboo_sea",
+   "cast": [
+    "npc:envoy_ku_ye",
+    "hero:ling_shuang",
+    "hero:mo_yingyue",
+    "npc:tao_yao",
+    "hero:su_lianhua",
+    "npc:pavilion_master",
+    "npc:madam_yue"
+   ],
+   "lines": [
+    {
+     "text": "Ku Ye staggers, his black silk torn, his smile crooked for the first time. Then he laughs."
+    },
+    {
+     "speaker": "npc:envoy_ku_ye",
+     "expression": "smile",
+     "text": "Well struck. Truly. Let's call our contract renegotiated."
+    },
+    {
+     "speaker": "npc:envoy_ku_ye",
+     "expression": "smug",
+     "text": "Do visit the Matriarch's garden someday, Pavilion Master. You will, you know. Everyone does, in the end."
+    },
+    {
+     "text": "The ground beneath him softens into dry dust, and he sinks into it like a stone into water. By the time Ling Shuang's sword strikes the spot, there is only bare earth."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "angry",
+     "text": "Fled. Into the ground, like a worm."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "neutral",
+     "text": "He'll surface. Liars always do."
+    },
+    {
+     "text": "Mo Yingyue sheathes her daggers and looks at you for a long moment. At your belt, the Fate Lotus has grown warm. A violet thread runs from its heart to hers, crackling like distant thunder."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "surprised",
+     "text": "...So that's what that was. I felt it in the camp, with my blade at your throat. Something in me said: not this one."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "smile",
+     "text": "Your Dao Seed knew before you did. They do that."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "neutral",
+     "text": "Hm. Well. I am currently unemployed, the Envoy is still breathing, and somebody has to make sure he stays a mark."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "smug",
+     "text": "So. A new contract, on Moonshadow terms. I guard you, I cut down whatever you point at, and I don't set foot in temples."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "smile",
+     "text": "And the payment?"
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "determined",
+     "text": "Candied hawthorns. One string a day. Two on days I save your life."
+    },
+    {
+     "speaker": "npc:pavilion_master",
+     "expression": "neutral",
+     "text": "Deal."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "smile",
+     "text": "You were my target, you know. Now you're my employer. Pay well."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "neutral",
+     "text": "She'll eat us out of the Pavilion."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "smug",
+     "text": "Only the sweet parts."
+    },
+    {
+     "text": "High in the bamboo, a teacup clinks. Madam Yue has been watching all along."
+    },
+    {
+     "speaker": "npc:madam_yue",
+     "expression": "smile",
+     "text": "Moonshadow witnesses the contract. Keep this one, Yingyue."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "smile",
+     "text": "A contract is a contract, Madam. Until it isn't. But this one, I'll keep."
+    }
+   ],
+   "draft": true
+  }
+ ]
+}

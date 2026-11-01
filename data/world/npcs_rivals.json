@@ -1,0 +1,405 @@
+{
+ "about": "Leaders of the 50 rival sects (draft names).",
+ "records": [
+  {
+   "id": "npc:rival_primordial_origin_sect",
+   "name": "Zhang Tianyi",
+   "role": "Sect Master of the Primordial Origin Sect",
+   "home": "loc:sect_arena",
+   "about": "Leads the Primordial Origin Sect in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_heaven_s_edge_sword_sect",
+   "name": "Wang Shuang",
+   "role": "Sect Master of the Heaven's Edge Sword Sect",
+   "home": "loc:sect_arena",
+   "about": "Leads the Heaven's Edge Sword Sect in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_golden_crow_palace",
+   "name": "Li Junjie",
+   "role": "Sect Master of the Golden Crow Palace",
+   "home": "loc:sect_arena",
+   "about": "Leads the Golden Crow Palace in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_nine_peaks_palace",
+   "name": "Zhao Xinyi",
+   "role": "Sect Master of the Nine Peaks Palace",
+   "home": "loc:sect_arena",
+   "about": "Leads the Nine Peaks Palace in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_seven_stars_hall",
+   "name": "Chen Qingyi",
+   "role": "Sect Master of the Seven Stars Hall",
+   "home": "loc:sect_arena",
+   "about": "Leads the Seven Stars Hall in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_eight_trigrams_sect",
+   "name": "Liu Feiyang",
+   "role": "Sect Master of the Eight Trigrams Sect",
+   "home": "loc:sect_arena",
+   "about": "Leads the Eight Trigrams Sect in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_hidden_dragon_valley",
+   "name": "Yang Meiling",
+   "role": "Sect Master of the Hidden Dragon Valley",
+   "home": "loc:sect_arena",
+   "about": "Leads the Hidden Dragon Valley in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_endless_sea_pavilion",
+   "name": "Huang Hao",
+   "role": "Sect Master of the Endless Sea Pavilion",
+   "home": "loc:sect_arena",
+   "about": "Leads the Endless Sea Pavilion in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_purple_mist_sect",
+   "name": "Zhou Haoran",
+   "role": "Sect Master of the Purple Mist Sect",
+   "home": "loc:sect_arena",
+   "about": "Leads the Purple Mist Sect in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_five_poisons_sect",
+   "name": "Wu Xiaoyu",
+   "role": "Sect Master of the Five Poisons Sect",
+   "home": "loc:sect_arena",
+   "about": "Leads the Five Poisons Sect in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_thousand_swords_hall",
+   "name": "Xu Tao",
+   "role": "Sect Master of the Thousand Swords Hall",
+   "home": "loc:sect_arena",
+   "about": "Leads the Thousand Swords Hall in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_silver_moon_pavilion",
+   "name": "Sun Wenhao",
+   "role": "Sect Master of the Silver Moon Pavilion",
+   "home": "loc:sect_arena",
+   "about": "Leads the Silver Moon Pavilion in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_iron_bell_monastery",
+   "name": "Ma Lanxin",
+   "role": "Sect Master of the Iron Bell Monastery",
+   "home": "loc:sect_arena",
+   "about": "Leads the Iron Bell Monastery in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_pearl_sea_palace",
+   "name": "Zhu Lei",
+   "role": "Sect Master of the Pearl Sea Palace",
+   "home": "loc:sect_arena",
+   "about": "Leads the Pearl Sea Palace in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_falling_star_sect",
+   "name": "Hu Yuyan",
+   "role": "Sect Master of the Falling Star Sect",
+   "home": "loc:sect_arena",
+   "about": "Leads the Falling Star Sect in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_thunder_gorge_sect",
+   "name": "Guo Mingyue",
+   "role": "Sect Master of the Thunder Gorge Sect",
+   "home": "loc:sect_arena",
+   "about": "Leads the Thunder Gorge Sect in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_mirror_lake_sect",
+   "name": "Lin Kai",
+   "role": "Sect Master of the Mirror Lake Sect",
+   "home": "loc:sect_arena",
+   "about": "Leads the Mirror Lake Sect in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_ten_thousand_beasts_ridge",
+   "name": "Luo Yiran",
+   "role": "Sect Master of the Ten Thousand Beasts Ridge",
+   "home": "loc:sect_arena",
+   "about": "Leads the Ten Thousand Beasts Ridge in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_rising_sun_pavilion",
+   "name": "Gao Ruoxue",
+   "role": "Sect Master of the Rising Sun Pavilion",
+   "home": "loc:sect_arena",
+   "about": "Leads the Rising Sun Pavilion in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_peaceful_harmony_sect",
+   "name": "Xie Zhiyuan",
+   "role": "Sect Master of the Peaceful Harmony Sect",
+   "home": "loc:sect_arena",
+   "about": "Leads the Peaceful Harmony Sect in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_crimson_lotus_valley",
+   "name": "Tang Ziyan",
+   "role": "Sect Master of the Crimson Lotus Valley",
+   "home": "loc:sect_arena",
+   "about": "Leads the Crimson Lotus Valley in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_black_water_fortress",
+   "name": "Song Bo",
+   "role": "Sect Master of the Black Water Fortress",
+   "home": "loc:sect_arena",
+   "about": "Leads the Black Water Fortress in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_cloud_crane_pavilion",
+   "name": "Han Jinghong",
+   "role": "Sect Master of the Cloud Crane Pavilion",
+   "home": "loc:sect_arena",
+   "about": "Leads the Cloud Crane Pavilion in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_spirit_fox_manor",
+   "name": "Feng Yunshu",
+   "role": "Sect Master of the Spirit Fox Manor",
+   "home": "loc:sect_arena",
+   "about": "Leads the Spirit Fox Manor in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_ancient_pine_sect",
+   "name": "Cao Chen",
+   "role": "Sect Master of the Ancient Pine Sect",
+   "home": "loc:sect_arena",
+   "about": "Leads the Ancient Pine Sect in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_white_crane_temple",
+   "name": "Zhang Tianyi",
+   "role": "Sect Master of the White Crane Temple",
+   "home": "loc:sect_arena",
+   "about": "Leads the White Crane Temple in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_tiger_roar_mountain",
+   "name": "Wang Shuang",
+   "role": "Sect Master of the Tiger Roar Mountain",
+   "home": "loc:sect_arena",
+   "about": "Leads the Tiger Roar Mountain in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_cold_spring_villa",
+   "name": "Li Junjie",
+   "role": "Sect Master of the Cold Spring Villa",
+   "home": "loc:sect_arena",
+   "about": "Leads the Cold Spring Villa in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_heavenly_bamboo_hall",
+   "name": "Zhao Xinyi",
+   "role": "Sect Master of the Heavenly Bamboo Hall",
+   "home": "loc:sect_arena",
+   "about": "Leads the Heavenly Bamboo Hall in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_scarlet_sparrow_hall",
+   "name": "Chen Qingyi",
+   "role": "Sect Master of the Scarlet Sparrow Hall",
+   "home": "loc:sect_arena",
+   "about": "Leads the Scarlet Sparrow Hall in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_northern_wind_sect",
+   "name": "Liu Feiyang",
+   "role": "Sect Master of the Northern Wind Sect",
+   "home": "loc:sect_arena",
+   "about": "Leads the Northern Wind Sect in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_emerald_vine_sect",
+   "name": "Yang Meiling",
+   "role": "Sect Master of the Emerald Vine Sect",
+   "home": "loc:sect_arena",
+   "about": "Leads the Emerald Vine Sect in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_stone_buddha_temple",
+   "name": "Huang Hao",
+   "role": "Sect Master of the Stone Buddha Temple",
+   "home": "loc:sect_arena",
+   "about": "Leads the Stone Buddha Temple in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_willow_shadow_manor",
+   "name": "Zhou Haoran",
+   "role": "Sect Master of the Willow Shadow Manor",
+   "home": "loc:sect_arena",
+   "about": "Leads the Willow Shadow Manor in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_crimson_moon_hall",
+   "name": "Wu Xiaoyu",
+   "role": "Sect Master of the Crimson Moon Hall",
+   "home": "loc:sect_arena",
+   "about": "Leads the Crimson Moon Hall in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_dawn_light_sect",
+   "name": "Xu Tao",
+   "role": "Sect Master of the Dawn Light Sect",
+   "home": "loc:sect_arena",
+   "about": "Leads the Dawn Light Sect in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_misty_peak_sect",
+   "name": "Sun Wenhao",
+   "role": "Sect Master of the Misty Peak Sect",
+   "home": "loc:sect_arena",
+   "about": "Leads the Misty Peak Sect in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_twin_rivers_clan",
+   "name": "Ma Lanxin",
+   "role": "Sect Master of the Twin Rivers Clan",
+   "home": "loc:sect_arena",
+   "about": "Leads the Twin Rivers Clan in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_yellow_sand_fortress",
+   "name": "Zhu Lei",
+   "role": "Sect Master of the Yellow Sand Fortress",
+   "home": "loc:sect_arena",
+   "about": "Leads the Yellow Sand Fortress in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_ink_brush_academy",
+   "name": "Hu Yuyan",
+   "role": "Sect Master of the Ink Brush Academy",
+   "home": "loc:sect_arena",
+   "about": "Leads the Ink Brush Academy in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_fierce_wolf_hall",
+   "name": "Guo Mingyue",
+   "role": "Sect Master of the Fierce Wolf Hall",
+   "home": "loc:sect_arena",
+   "about": "Leads the Fierce Wolf Hall in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_lonely_cloud_hermitage",
+   "name": "Lin Kai",
+   "role": "Sect Master of the Lonely Cloud Hermitage",
+   "home": "loc:sect_arena",
+   "about": "Leads the Lonely Cloud Hermitage in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_moon_rabbit_palace",
+   "name": "Luo Yiran",
+   "role": "Sect Master of the Moon Rabbit Palace",
+   "home": "loc:sect_arena",
+   "about": "Leads the Moon Rabbit Palace in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_jade_rain_sect",
+   "name": "Gao Ruoxue",
+   "role": "Sect Master of the Jade Rain Sect",
+   "home": "loc:sect_arena",
+   "about": "Leads the Jade Rain Sect in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_whispering_pine_sect",
+   "name": "Xie Zhiyuan",
+   "role": "Sect Master of the Whispering Pine Sect",
+   "home": "loc:sect_arena",
+   "about": "Leads the Whispering Pine Sect in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_red_cliff_clan",
+   "name": "Tang Ziyan",
+   "role": "Sect Master of the Red Cliff Clan",
+   "home": "loc:sect_arena",
+   "about": "Leads the Red Cliff Clan in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_bronze_gate_clan",
+   "name": "Song Bo",
+   "role": "Sect Master of the Bronze Gate Clan",
+   "home": "loc:sect_arena",
+   "about": "Leads the Bronze Gate Clan in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_flowing_river_sect",
+   "name": "Han Jinghong",
+   "role": "Sect Master of the Flowing River Sect",
+   "home": "loc:sect_arena",
+   "about": "Leads the Flowing River Sect in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_sunset_blade_school",
+   "name": "Feng Yunshu",
+   "role": "Sect Master of the Sunset Blade School",
+   "home": "loc:sect_arena",
+   "about": "Leads the Sunset Blade School in the Sect Grand Competition",
+   "draft": true
+  },
+  {
+   "id": "npc:rival_azure_cloud_sect",
+   "name": "Cao Chen",
+   "role": "Sect Master of the Azure Cloud Sect",
+   "home": "loc:sect_arena",
+   "about": "Leads the Azure Cloud Sect in the Sect Grand Competition",
+   "draft": true
+  }
+ ]
+}

@@ -1,0 +1,2157 @@
+{
+ "about": "Enemy templates. Stats scale with level by rules:growth; \"base\" is level 1.",
+ "records": [
+  {
+   "id": "enemy:ember_wraith",
+   "name": "Ember Wraith",
+   "title": "Netherflame Spirit",
+   "family": "wraith",
+   "faction": "faction:netherflame_sect",
+   "phase": "phase:fire",
+   "profile": "minion",
+   "base": {
+    "hp": 2215,
+    "atk": 422,
+    "def": 127,
+    "crit": 0.1,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:grave_claw",
+    "skill:cinder_wail"
+   ],
+   "art": "wraith_ember"
+  },
+  {
+   "id": "enemy:mire_wraith",
+   "name": "Mire Wraith",
+   "title": "Netherflame Spirit",
+   "family": "wraith",
+   "faction": "faction:netherflame_sect",
+   "phase": "phase:earth",
+   "profile": "minion",
+   "base": {
+    "hp": 2215,
+    "atk": 422,
+    "def": 127,
+    "crit": 0.1,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:grave_claw",
+    "skill:grave_bind"
+   ],
+   "art": "wraith_mire"
+  },
+  {
+   "id": "enemy:bone_wraith",
+   "name": "Bone Wraith",
+   "title": "Netherflame Spirit",
+   "family": "wraith",
+   "faction": "faction:netherflame_sect",
+   "phase": "phase:metal",
+   "profile": "minion",
+   "base": {
+    "hp": 2215,
+    "atk": 422,
+    "def": 127,
+    "crit": 0.1,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:grave_claw",
+    "skill:bone_spear"
+   ],
+   "art": "wraith_bone"
+  },
+  {
+   "id": "enemy:drowned_wraith",
+   "name": "Drowned Wraith",
+   "title": "Netherflame Spirit",
+   "family": "wraith",
+   "faction": "faction:netherflame_sect",
+   "phase": "phase:water",
+   "profile": "minion",
+   "base": {
+    "hp": 2215,
+    "atk": 422,
+    "def": 127,
+    "crit": 0.1,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:grave_claw",
+    "skill:black_tide"
+   ],
+   "art": "wraith_drowned"
+  },
+  {
+   "id": "enemy:thorn_wraith",
+   "name": "Thorn Wraith",
+   "title": "Netherflame Spirit",
+   "family": "wraith",
+   "faction": "faction:netherflame_sect",
+   "phase": "phase:wood",
+   "profile": "minion",
+   "base": {
+    "hp": 2215,
+    "atk": 422,
+    "def": 127,
+    "crit": 0.1,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:grave_claw",
+    "skill:soul_thorns"
+   ],
+   "art": "wraith_thorn"
+  },
+  {
+   "id": "enemy:netherflame_blade",
+   "name": "Netherflame Blade",
+   "title": "Netherflame Cultist",
+   "family": "cultist",
+   "faction": "faction:netherflame_sect",
+   "phase": "phase:fire",
+   "profile": "assassin",
+   "base": {
+    "hp": 1899,
+    "atk": 488,
+    "def": 105,
+    "crit": 0.25,
+    "critDmg": 1.6
+   },
+   "skills": [
+    "skill:ashen_slash",
+    "skill:cinder_cleave"
+   ]
+  },
+  {
+   "id": "enemy:netherflame_hexer",
+   "name": "Netherflame Hexer",
+   "title": "Netherflame Cultist",
+   "family": "cultist",
+   "faction": "faction:netherflame_sect",
+   "phase": "phase:wood",
+   "profile": "caster",
+   "base": {
+    "hp": 1846,
+    "atk": 501,
+    "def": 100,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:hex_bolt",
+    "skill:binding_hex"
+   ]
+  },
+  {
+   "id": "enemy:netherflame_flamecaller",
+   "name": "Netherflame Flamecaller",
+   "title": "Netherflame Cultist",
+   "family": "cultist",
+   "faction": "faction:netherflame_sect",
+   "phase": "phase:fire",
+   "profile": "caster",
+   "base": {
+    "hp": 1846,
+    "atk": 501,
+    "def": 100,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:flame_bolt",
+    "skill:netherfire_rain"
+   ]
+  },
+  {
+   "id": "enemy:netherflame_bonewarden",
+   "name": "Netherflame Bonewarden",
+   "title": "Netherflame Cultist",
+   "family": "cultist",
+   "faction": "faction:netherflame_sect",
+   "phase": "phase:earth",
+   "profile": "brute",
+   "base": {
+    "hp": 2901,
+    "atk": 343,
+    "def": 185,
+    "crit": 0.08,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:bone_bash",
+    "skill:bone_ward"
+   ]
+  },
+  {
+   "id": "enemy:netherflame_shade",
+   "name": "Netherflame Shade",
+   "title": "Netherflame Cultist",
+   "family": "cultist",
+   "faction": "faction:netherflame_sect",
+   "phase": "phase:water",
+   "profile": "assassin",
+   "base": {
+    "hp": 1899,
+    "atk": 488,
+    "def": 105,
+    "crit": 0.25,
+    "critDmg": 1.6
+   },
+   "skills": [
+    "skill:shade_stab",
+    "skill:veil_of_ash"
+   ]
+  },
+  {
+   "id": "enemy:netherflame_priestess",
+   "name": "Netherflame Priestess",
+   "title": "Netherflame Cultist",
+   "family": "cultist",
+   "faction": "faction:netherflame_sect",
+   "phase": "phase:yin",
+   "profile": "support",
+   "base": {
+    "hp": 2110,
+    "atk": 316,
+    "def": 137,
+    "crit": 0.1,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:wither_bolt",
+    "skill:netherflame_litany"
+   ]
+  },
+  {
+   "id": "enemy:wraith_captain",
+   "name": "Wraith Captain of the Ford",
+   "cn": "渡口鬼将",
+   "title": "Chapter 1 boss",
+   "family": "boss",
+   "faction": "faction:netherflame_sect",
+   "phase": "phase:fire",
+   "profile": "boss",
+   "base": {
+    "hp": 15823,
+    "atk": 633,
+    "def": 164,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:captain_lash",
+    "skill:ember_command",
+    "skill:pyre_of_the_ford"
+   ],
+   "boss": true,
+   "wide": true,
+   "qiShield": 12
+  },
+  {
+   "id": "enemy:elder_han",
+   "name": "Elder Han Lie, Netherflame-Touched",
+   "cn": "寒烈",
+   "title": "Chapter 2 boss",
+   "family": "boss",
+   "faction": "faction:netherflame_sect",
+   "phase": "phase:fire",
+   "profile": "boss",
+   "base": {
+    "hp": 15823,
+    "atk": 633,
+    "def": 164,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:ashen_frost_sword",
+    "skill:sect_betrayal",
+    "skill:netherflame_sword_array"
+   ],
+   "boss": true,
+   "wide": true,
+   "qiShield": 12,
+   "character": "npc:elder_han_lie"
+  },
+  {
+   "id": "enemy:envoy_ku_ye",
+   "name": "Envoy Ku Ye",
+   "cn": "枯夜",
+   "title": "Chapter 3 boss",
+   "family": "boss",
+   "faction": "faction:netherflame_sect",
+   "phase": "phase:earth",
+   "profile": "boss",
+   "base": {
+    "hp": 15823,
+    "atk": 633,
+    "def": 164,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:puppet_strings",
+    "skill:soul_contract",
+    "skill:earthen_coffin"
+   ],
+   "boss": true,
+   "wide": true,
+   "qiShield": 12,
+   "character": "npc:envoy_ku_ye"
+  },
+  {
+   "id": "enemy:silver_fox_thief",
+   "name": "Hu Yinling, the Silver Fox",
+   "cn": "胡银铃",
+   "title": "Chapter 4 boss",
+   "family": "boss",
+   "faction": "faction:fox_clan",
+   "phase": "phase:metal",
+   "profile": "boss",
+   "base": {
+    "hp": 15823,
+    "atk": 633,
+    "def": 164,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:silver_fox_claw",
+    "skill:stolen_phoenix_flame",
+    "skill:nine_tails_illusion"
+   ],
+   "boss": true,
+   "wide": true,
+   "qiShield": 12,
+   "character": "npc:hu_yinling"
+  },
+  {
+   "id": "enemy:netherflame_matriarch",
+   "name": "Netherflame Matriarch",
+   "cn": "冥焰圣母",
+   "title": "Mistress of the Withered Garden",
+   "family": "boss",
+   "faction": "faction:netherflame_sect",
+   "phase": "phase:yin",
+   "profile": "boss",
+   "base": {
+    "hp": 15509,
+    "atk": 517,
+    "def": 132,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:netherflame_lash",
+    "skill:withering_curse",
+    "skill:netherflame_cataclysm"
+   ],
+   "boss": true,
+   "wide": true,
+   "qiShield": 12,
+   "character": "npc:netherflame_matriarch",
+   "art": "boss_matriarch"
+  },
+  {
+   "id": "enemy:fox_trickster",
+   "name": "Fox Trickster",
+   "title": "Fox Clan warrior",
+   "family": "fox",
+   "faction": "faction:fox_clan",
+   "phase": "phase:water",
+   "profile": "assassin",
+   "base": {
+    "hp": 1899,
+    "atk": 488,
+    "def": 105,
+    "crit": 0.25,
+    "critDmg": 1.6
+   },
+   "skills": [
+    "skill:fox_claw",
+    "skill:bewitching_mist"
+   ]
+  },
+  {
+   "id": "enemy:serpent_guard",
+   "name": "Serpent Guard",
+   "title": "Serpent Clan warrior",
+   "family": "serpent",
+   "faction": "faction:serpent_clan",
+   "phase": "phase:wood",
+   "profile": "brute",
+   "base": {
+    "hp": 2901,
+    "atk": 343,
+    "def": 185,
+    "crit": 0.08,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:venom_fang",
+    "skill:crushing_coil"
+   ]
+  },
+  {
+   "id": "enemy:crane_dancer",
+   "name": "Crane Dancer",
+   "title": "Crane Clan warrior",
+   "family": "crane",
+   "faction": "faction:crane_clan",
+   "phase": "phase:metal",
+   "profile": "assassin",
+   "base": {
+    "hp": 1899,
+    "atk": 488,
+    "def": 105,
+    "crit": 0.25,
+    "critDmg": 1.6
+   },
+   "skills": [
+    "skill:crane_beak",
+    "skill:feather_storm"
+   ]
+  },
+  {
+   "id": "enemy:frostpeak_traitor",
+   "name": "Frostpeak Traitor",
+   "title": "Turncoat disciple",
+   "family": "cultivator",
+   "faction": "faction:frostpeak_sword_sect",
+   "phase": "phase:water",
+   "profile": "minion",
+   "base": {
+    "hp": 2215,
+    "atk": 422,
+    "def": 127,
+    "crit": 0.1,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:traitor_frost_slash",
+    "skill:icy_lunge"
+   ]
+  },
+  {
+   "id": "enemy:river_ghoul",
+   "name": "River Ghoul",
+   "title": "Drowned thing",
+   "family": "beast",
+   "phase": "phase:water",
+   "profile": "beast",
+   "base": {
+    "hp": 2004,
+    "atk": 396,
+    "def": 119,
+    "crit": 0.1,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:drowning_grip"
+   ]
+  },
+  {
+   "id": "enemy:snow_wolf",
+   "name": "Snow Wolf",
+   "title": "Frostpeak beast",
+   "family": "beast",
+   "phase": "phase:water",
+   "profile": "beast",
+   "base": {
+    "hp": 2004,
+    "atk": 396,
+    "def": 119,
+    "crit": 0.1,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:frost_fang"
+   ]
+  },
+  {
+   "id": "enemy:bamboo_spider",
+   "name": "Bamboo Spider",
+   "title": "Bamboo Sea beast",
+   "family": "beast",
+   "phase": "phase:wood",
+   "profile": "beast",
+   "base": {
+    "hp": 2004,
+    "atk": 396,
+    "def": 119,
+    "crit": 0.1,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:silk_spit",
+    "skill:spider_venom_bite"
+   ]
+  },
+  {
+   "id": "enemy:ash_hound",
+   "name": "Ash Hound",
+   "title": "Volcanic beast",
+   "family": "beast",
+   "phase": "phase:fire",
+   "profile": "beast",
+   "base": {
+    "hp": 2004,
+    "atk": 396,
+    "def": 119,
+    "crit": 0.1,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:ember_bite"
+   ]
+  },
+  {
+   "id": "enemy:stone_puppet",
+   "name": "Stone Puppet",
+   "title": "Animated stone",
+   "family": "construct",
+   "phase": "phase:earth",
+   "profile": "brute",
+   "base": {
+    "hp": 2901,
+    "atk": 343,
+    "def": 185,
+    "crit": 0.08,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:stone_fist",
+    "skill:stone_skin"
+   ]
+  },
+  {
+   "id": "enemy:pill_golem",
+   "name": "Pill Golem",
+   "cn": "丹傀",
+   "title": "Runaway furnace servant",
+   "family": "construct",
+   "phase": "day",
+   "profile": "brute",
+   "base": {
+    "hp": 2901,
+    "atk": 343,
+    "def": 185,
+    "crit": 0.08,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:furnace_punch"
+   ]
+  },
+  {
+   "id": "enemy:herb_spirit",
+   "name": "Herb Spirit",
+   "cn": "草精",
+   "title": "Overgrown medicine",
+   "family": "spirit",
+   "phase": "day",
+   "profile": "support",
+   "base": {
+    "hp": 2110,
+    "atk": 316,
+    "def": 137,
+    "crit": 0.1,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:spore_burst",
+    "skill:healing_sap"
+   ]
+  },
+  {
+   "id": "enemy:furnace_guardian",
+   "name": "Furnace Guardian",
+   "cn": "炉守",
+   "title": "Leader of the third wave",
+   "family": "construct",
+   "phase": "day",
+   "profile": "boss",
+   "base": {
+    "hp": 15823,
+    "atk": 633,
+    "def": 164,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:furnace_slam",
+    "skill:pill_fumes",
+    "skill:alchemy_overload"
+   ],
+   "boss": true,
+   "wide": true,
+   "qiShield": 12
+  },
+  {
+   "id": "enemy:guardian_white_tiger",
+   "name": "White Tiger of the West",
+   "cn": "白虎",
+   "title": "Shrine guardian",
+   "family": "symbol",
+   "phase": "phase:metal",
+   "profile": "boss",
+   "base": {
+    "hp": 15823,
+    "atk": 633,
+    "def": 164,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:celestial_strike",
+    "skill:celestial_ward",
+    "skill:celestial_judgement"
+   ],
+   "boss": true,
+   "wide": true,
+   "qiShield": 12
+  },
+  {
+   "id": "enemy:guardian_azure_dragon",
+   "name": "Azure Dragon of the East",
+   "cn": "青龙",
+   "title": "Shrine guardian",
+   "family": "symbol",
+   "phase": "phase:wood",
+   "profile": "boss",
+   "base": {
+    "hp": 15823,
+    "atk": 633,
+    "def": 164,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:celestial_strike",
+    "skill:celestial_ward",
+    "skill:celestial_judgement"
+   ],
+   "boss": true,
+   "wide": true,
+   "qiShield": 12
+  },
+  {
+   "id": "enemy:guardian_black_tortoise",
+   "name": "Black Tortoise of the North",
+   "cn": "玄武",
+   "title": "Shrine guardian",
+   "family": "symbol",
+   "phase": "phase:water",
+   "profile": "boss",
+   "base": {
+    "hp": 15823,
+    "atk": 633,
+    "def": 164,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:celestial_strike",
+    "skill:celestial_ward",
+    "skill:celestial_judgement"
+   ],
+   "boss": true,
+   "wide": true,
+   "qiShield": 12
+  },
+  {
+   "id": "enemy:guardian_vermilion_bird",
+   "name": "Vermilion Bird of the South",
+   "cn": "朱雀",
+   "title": "Shrine guardian",
+   "family": "symbol",
+   "phase": "phase:fire",
+   "profile": "boss",
+   "base": {
+    "hp": 15823,
+    "atk": 633,
+    "def": 164,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:celestial_strike",
+    "skill:celestial_ward",
+    "skill:celestial_judgement"
+   ],
+   "boss": true,
+   "wide": true,
+   "qiShield": 12
+  },
+  {
+   "id": "enemy:guardian_yellow_dragon",
+   "name": "Yellow Dragon of the Centre",
+   "cn": "黄龙",
+   "title": "Shrine guardian",
+   "family": "symbol",
+   "phase": "phase:earth",
+   "profile": "boss",
+   "base": {
+    "hp": 15823,
+    "atk": 633,
+    "def": 164,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:celestial_strike",
+    "skill:celestial_ward",
+    "skill:celestial_judgement"
+   ],
+   "boss": true,
+   "wide": true,
+   "qiShield": 12
+  },
+  {
+   "id": "enemy:shrine_spirit",
+   "name": "Shrine Spirit",
+   "cn": "祠灵",
+   "title": "Attendant of a shrine",
+   "family": "spirit",
+   "phase": "shrine",
+   "profile": "minion",
+   "base": {
+    "hp": 2215,
+    "atk": 422,
+    "def": 127,
+    "crit": 0.1,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:spirit_spark"
+   ]
+  },
+  {
+   "id": "enemy:qiongqi",
+   "name": "Qiongqi",
+   "cn": "穷奇",
+   "title": "The winged tiger",
+   "family": "fiend",
+   "phase": "phase:wood",
+   "profile": "hunt",
+   "base": {
+    "hp": 23734,
+    "atk": 686,
+    "def": 185,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:rending_talons",
+    "skill:gale_wings",
+    "skill:winged_onslaught"
+   ],
+   "boss": true,
+   "wide": true,
+   "qiShield": 12,
+   "script": {
+    "cooldownTick": 2
+   }
+  },
+  {
+   "id": "enemy:taotie",
+   "name": "Taotie",
+   "cn": "饕餮",
+   "title": "The glutton",
+   "family": "fiend",
+   "phase": "phase:metal",
+   "profile": "hunt",
+   "base": {
+    "hp": 23734,
+    "atk": 686,
+    "def": 185,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:devour",
+    "skill:gluttonous_maw",
+    "skill:endless_hunger"
+   ],
+   "boss": true,
+   "wide": true,
+   "qiShield": 12,
+   "script": {
+    "devoursBuffs": true
+   }
+  },
+  {
+   "id": "enemy:taowu",
+   "name": "Taowu",
+   "cn": "梼杌",
+   "title": "The unyielding beast",
+   "family": "fiend",
+   "phase": "phase:earth",
+   "profile": "hunt",
+   "base": {
+    "hp": 23734,
+    "atk": 686,
+    "def": 185,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:unyielding_charge",
+    "skill:stone_hide",
+    "skill:mountain_crush"
+   ],
+   "boss": true,
+   "wide": true,
+   "qiShield": 24,
+   "script": {
+    "hugeShield": true
+   }
+  },
+  {
+   "id": "enemy:hundun",
+   "name": "Hundun",
+   "cn": "混沌",
+   "title": "Faceless chaos",
+   "family": "fiend",
+   "phase": "phase:water",
+   "profile": "hunt",
+   "base": {
+    "hp": 23734,
+    "atk": 686,
+    "def": 185,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:chaos_touch",
+    "skill:scramble",
+    "skill:formless_void"
+   ],
+   "boss": true,
+   "wide": true,
+   "qiShield": 12,
+   "script": {
+    "scramblesCooldowns": true,
+    "resistedBy": "stat:res"
+   }
+  },
+  {
+   "id": "enemy:wind_imp",
+   "name": "Wind Imp",
+   "title": "Hunt minion",
+   "family": "minion",
+   "phase": "phase:wood",
+   "profile": "minion",
+   "base": {
+    "hp": 2215,
+    "atk": 422,
+    "def": 127,
+    "crit": 0.1,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:gust_claw"
+   ]
+  },
+  {
+   "id": "enemy:bronze_maw",
+   "name": "Bronze Maw",
+   "title": "Hunt minion",
+   "family": "minion",
+   "phase": "phase:metal",
+   "profile": "minion",
+   "base": {
+    "hp": 2215,
+    "atk": 422,
+    "def": 127,
+    "crit": 0.1,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:bronze_bite"
+   ]
+  },
+  {
+   "id": "enemy:chaos_wisp",
+   "name": "Chaos Wisp",
+   "title": "Hunt minion",
+   "family": "minion",
+   "phase": "phase:water",
+   "profile": "minion",
+   "base": {
+    "hp": 2215,
+    "atk": 422,
+    "def": 127,
+    "crit": 0.1,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:wisp_flicker"
+   ]
+  },
+  {
+   "id": "enemy:xiangliu_head_fire",
+   "name": "Xiangliu's Fire Head",
+   "cn": "相柳",
+   "title": "One of nine heads",
+   "family": "fiend",
+   "phase": "phase:fire",
+   "profile": "elite",
+   "base": {
+    "hp": 3560,
+    "atk": 488,
+    "def": 148,
+    "crit": 0.15,
+    "critDmg": 1.6
+   },
+   "skills": [
+    "skill:xiangliu_bite",
+    "skill:poison_mire",
+    "skill:serpent_deluge"
+   ],
+   "qiShield": 6,
+   "elite": true
+  },
+  {
+   "id": "enemy:xiangliu_head_water",
+   "name": "Xiangliu's Water Head",
+   "cn": "相柳",
+   "title": "One of nine heads",
+   "family": "fiend",
+   "phase": "phase:water",
+   "profile": "elite",
+   "base": {
+    "hp": 3560,
+    "atk": 488,
+    "def": 148,
+    "crit": 0.15,
+    "critDmg": 1.6
+   },
+   "skills": [
+    "skill:xiangliu_bite",
+    "skill:poison_mire",
+    "skill:serpent_deluge"
+   ],
+   "qiShield": 6,
+   "elite": true
+  },
+  {
+   "id": "enemy:xiangliu_head_wood",
+   "name": "Xiangliu's Wood Head",
+   "cn": "相柳",
+   "title": "One of nine heads",
+   "family": "fiend",
+   "phase": "phase:wood",
+   "profile": "elite",
+   "base": {
+    "hp": 3560,
+    "atk": 488,
+    "def": 148,
+    "crit": 0.15,
+    "critDmg": 1.6
+   },
+   "skills": [
+    "skill:xiangliu_bite",
+    "skill:poison_mire",
+    "skill:serpent_deluge"
+   ],
+   "qiShield": 6,
+   "elite": true
+  },
+  {
+   "id": "enemy:bone_lantern",
+   "name": "Bone Lantern Wraith",
+   "cn": "骨灯鬼",
+   "title": "Guardian of floor 10",
+   "family": "sealed_demon",
+   "phase": "phase:fire",
+   "profile": "boss",
+   "base": {
+    "hp": 15823,
+    "atk": 633,
+    "def": 164,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:sealed_demon_strike",
+    "skill:pagoda_curse",
+    "skill:lantern_of_souls"
+   ],
+   "boss": true,
+   "wide": true,
+   "qiShield": 12
+  },
+  {
+   "id": "enemy:jiangshi_general",
+   "name": "Jiangshi General",
+   "cn": "僵尸将军",
+   "title": "Guardian of floor 20",
+   "family": "sealed_demon",
+   "phase": "phase:earth",
+   "profile": "boss",
+   "base": {
+    "hp": 15823,
+    "atk": 633,
+    "def": 164,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:sealed_demon_strike",
+    "skill:pagoda_curse",
+    "skill:corpse_march"
+   ],
+   "boss": true,
+   "wide": true,
+   "qiShield": 12
+  },
+  {
+   "id": "enemy:mirror_demon",
+   "name": "Mirror Demon",
+   "cn": "镜妖",
+   "title": "Guardian of floor 30",
+   "family": "sealed_demon",
+   "phase": "phase:water",
+   "profile": "boss",
+   "base": {
+    "hp": 15823,
+    "atk": 633,
+    "def": 164,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:sealed_demon_strike",
+    "skill:pagoda_curse",
+    "skill:shattered_reflection"
+   ],
+   "boss": true,
+   "wide": true,
+   "qiShield": 12
+  },
+  {
+   "id": "enemy:flying_blade_ghost",
+   "name": "Flying-Blade Ghost",
+   "cn": "飞刀鬼",
+   "title": "Guardian of floor 40",
+   "family": "sealed_demon",
+   "phase": "phase:metal",
+   "profile": "boss",
+   "base": {
+    "hp": 15823,
+    "atk": 633,
+    "def": 164,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:sealed_demon_strike",
+    "skill:pagoda_curse",
+    "skill:thousand_flying_blades"
+   ],
+   "boss": true,
+   "wide": true,
+   "qiShield": 12
+  },
+  {
+   "id": "enemy:nine_tail_shade",
+   "name": "Nine-Tailed Shade",
+   "cn": "九尾影",
+   "title": "Guardian of floor 50",
+   "family": "sealed_demon",
+   "phase": "phase:yin",
+   "profile": "boss",
+   "base": {
+    "hp": 15823,
+    "atk": 633,
+    "def": 164,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:sealed_demon_strike",
+    "skill:pagoda_curse",
+    "skill:ninefold_charm"
+   ],
+   "boss": true,
+   "wide": true,
+   "qiShield": 12
+  },
+  {
+   "id": "enemy:kui",
+   "name": "Kui, the Thunder Beast",
+   "cn": "夔",
+   "title": "Guardian of floor 60",
+   "family": "sealed_demon",
+   "phase": "phase:wood",
+   "profile": "boss",
+   "base": {
+    "hp": 15823,
+    "atk": 633,
+    "def": 164,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:sealed_demon_strike",
+    "skill:pagoda_curse",
+    "skill:thunder_drum"
+   ],
+   "boss": true,
+   "wide": true,
+   "qiShield": 12
+  },
+  {
+   "id": "enemy:bifang",
+   "name": "Bifang",
+   "cn": "毕方",
+   "title": "Guardian of floor 70",
+   "family": "sealed_demon",
+   "phase": "phase:fire",
+   "profile": "boss",
+   "base": {
+    "hp": 15823,
+    "atk": 633,
+    "def": 164,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:sealed_demon_strike",
+    "skill:pagoda_curse",
+    "skill:wildfire_omen"
+   ],
+   "boss": true,
+   "wide": true,
+   "qiShield": 12
+  },
+  {
+   "id": "enemy:gudiao",
+   "name": "Gudiao",
+   "cn": "蛊雕",
+   "title": "Guardian of floor 80",
+   "family": "sealed_demon",
+   "phase": "phase:water",
+   "profile": "boss",
+   "base": {
+    "hp": 15823,
+    "atk": 633,
+    "def": 164,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:sealed_demon_strike",
+    "skill:pagoda_curse",
+    "skill:infant_cry_lure"
+   ],
+   "boss": true,
+   "wide": true,
+   "qiShield": 12
+  },
+  {
+   "id": "enemy:zhuyan",
+   "name": "Zhuyan, Omen of War",
+   "cn": "朱厌",
+   "title": "Guardian of floor 90",
+   "family": "sealed_demon",
+   "phase": "phase:metal",
+   "profile": "boss",
+   "base": {
+    "hp": 15823,
+    "atk": 633,
+    "def": 164,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:sealed_demon_strike",
+    "skill:pagoda_curse",
+    "skill:omen_of_war"
+   ],
+   "boss": true,
+   "wide": true,
+   "qiShield": 12
+  },
+  {
+   "id": "enemy:fallen_ying_long",
+   "name": "Fallen Ying Long",
+   "cn": "堕应龙",
+   "title": "Guardian of floor 100",
+   "family": "sealed_demon",
+   "phase": "phase:wood",
+   "profile": "boss",
+   "base": {
+    "hp": 15823,
+    "atk": 633,
+    "def": 164,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:sealed_demon_strike",
+    "skill:pagoda_curse",
+    "skill:winged_dragon_storm"
+   ],
+   "boss": true,
+   "wide": true,
+   "qiShield": 12
+  },
+  {
+   "id": "enemy:tiangou",
+   "name": "Tiangou, the Sun-Eater",
+   "cn": "天狗",
+   "title": "Guardian of floor 110",
+   "family": "sealed_demon",
+   "phase": "phase:yin",
+   "profile": "boss",
+   "base": {
+    "hp": 15823,
+    "atk": 633,
+    "def": 164,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:sealed_demon_strike",
+    "skill:pagoda_curse",
+    "skill:devour_the_sun"
+   ],
+   "boss": true,
+   "wide": true,
+   "qiShield": 12
+  },
+  {
+   "id": "enemy:sovereign_shade",
+   "name": "Shade of the Netherflame Sovereign",
+   "cn": "冥焰帝影",
+   "title": "Guardian of floor 120",
+   "family": "sealed_demon",
+   "phase": "phase:yin",
+   "profile": "boss",
+   "base": {
+    "hp": 15823,
+    "atk": 633,
+    "def": 164,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:sealed_demon_strike",
+    "skill:pagoda_curse",
+    "skill:netherflame_dominion"
+   ],
+   "boss": true,
+   "wide": true,
+   "qiShield": 12,
+   "character": "npc:netherflame_sovereign"
+  },
+  {
+   "id": "enemy:zhulong_eyes_open",
+   "name": "Zhulong, Eyes Open",
+   "cn": "烛龙",
+   "title": "Zhulong, form 1 of 3",
+   "family": "ancient_beast",
+   "phase": "phase:yang",
+   "profile": "raid",
+   "base": {
+    "hp": 79114,
+    "atk": 738,
+    "def": 198,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:zhulong_glare",
+    "skill:dawn_glare",
+    "skill:solar_torch"
+   ],
+   "boss": true,
+   "wide": true,
+   "qiShield": 12,
+   "raid": "raid:zhulong",
+   "form": 1
+  },
+  {
+   "id": "enemy:zhulong_eyes_closed",
+   "name": "Zhulong, Eyes Closed",
+   "cn": "烛龙",
+   "title": "Zhulong, form 2 of 3",
+   "family": "ancient_beast",
+   "phase": "phase:yin",
+   "profile": "raid",
+   "base": {
+    "hp": 79114,
+    "atk": 738,
+    "def": 198,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:zhulong_glare",
+    "skill:long_night",
+    "skill:breath_of_winter"
+   ],
+   "boss": true,
+   "wide": true,
+   "qiShield": 12,
+   "raid": "raid:zhulong",
+   "form": 2
+  },
+  {
+   "id": "enemy:zhulong_nine_darks",
+   "name": "Zhulong, Torch of the Nine Darks",
+   "cn": "烛龙",
+   "title": "Zhulong, form 3 of 3",
+   "family": "ancient_beast",
+   "phase": "phase:fire",
+   "profile": "raid",
+   "base": {
+    "hp": 79114,
+    "atk": 738,
+    "def": 198,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:zhulong_glare",
+    "skill:torch_of_nine_darks",
+    "skill:candle_dragon_wrath"
+   ],
+   "boss": true,
+   "wide": true,
+   "qiShield": 12,
+   "raid": "raid:zhulong",
+   "form": 3
+  },
+  {
+   "id": "enemy:kun_of_the_abyss",
+   "name": "Kun of the Abyss",
+   "cn": "鲲鹏",
+   "title": "Kunpeng, form 1 of 3",
+   "family": "ancient_beast",
+   "phase": "phase:water",
+   "profile": "raid",
+   "base": {
+    "hp": 79114,
+    "atk": 738,
+    "def": 198,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:kunpeng_buffet",
+    "skill:abyssal_maw",
+    "skill:tidal_dive"
+   ],
+   "boss": true,
+   "wide": true,
+   "qiShield": 12,
+   "raid": "raid:kunpeng",
+   "form": 1
+  },
+  {
+   "id": "enemy:peng_of_the_tempest",
+   "name": "Peng of the Tempest",
+   "cn": "鲲鹏",
+   "title": "Kunpeng, form 2 of 3",
+   "family": "ancient_beast",
+   "phase": "phase:wood",
+   "profile": "raid",
+   "base": {
+    "hp": 79114,
+    "atk": 738,
+    "def": 198,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:kunpeng_buffet",
+    "skill:ninety_thousand_li",
+    "skill:tempest_wings"
+   ],
+   "boss": true,
+   "wide": true,
+   "qiShield": 12,
+   "raid": "raid:kunpeng",
+   "form": 2
+  },
+  {
+   "id": "enemy:kunpeng_ascendant",
+   "name": "Kunpeng Ascendant",
+   "cn": "鲲鹏",
+   "title": "Kunpeng, form 3 of 3",
+   "family": "ancient_beast",
+   "phase": "phase:metal",
+   "profile": "raid",
+   "base": {
+    "hp": 79114,
+    "atk": 738,
+    "def": 198,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:kunpeng_buffet",
+    "skill:heavenly_transformation",
+    "skill:sky_splitting_dive"
+   ],
+   "boss": true,
+   "wide": true,
+   "qiShield": 12,
+   "raid": "raid:kunpeng",
+   "form": 3
+  },
+  {
+   "id": "enemy:jiuying_water_heads",
+   "name": "Jiuying, Water Heads",
+   "cn": "九婴",
+   "title": "Jiuying, form 1 of 3",
+   "family": "ancient_beast",
+   "phase": "phase:water",
+   "profile": "raid",
+   "base": {
+    "hp": 79114,
+    "atk": 738,
+    "def": 198,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:jiuying_bite",
+    "skill:nine_torrents",
+    "skill:drowning_wail"
+   ],
+   "boss": true,
+   "wide": true,
+   "qiShield": 12,
+   "raid": "raid:jiuying",
+   "form": 1
+  },
+  {
+   "id": "enemy:jiuying_fire_heads",
+   "name": "Jiuying, Fire Heads",
+   "cn": "九婴",
+   "title": "Jiuying, form 2 of 3",
+   "family": "ancient_beast",
+   "phase": "phase:fire",
+   "profile": "raid",
+   "base": {
+    "hp": 79114,
+    "atk": 738,
+    "def": 198,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:jiuying_bite",
+    "skill:nine_fires",
+    "skill:infant_scream"
+   ],
+   "boss": true,
+   "wide": true,
+   "qiShield": 12,
+   "raid": "raid:jiuying",
+   "form": 2
+  },
+  {
+   "id": "enemy:jiuying_unbound",
+   "name": "Jiuying Unbound",
+   "cn": "九婴",
+   "title": "Jiuying, form 3 of 3",
+   "family": "ancient_beast",
+   "phase": "phase:earth",
+   "profile": "raid",
+   "base": {
+    "hp": 79114,
+    "atk": 738,
+    "def": 198,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:jiuying_bite",
+    "skill:broken_chains",
+    "skill:last_fury"
+   ],
+   "boss": true,
+   "wide": true,
+   "qiShield": 12,
+   "raid": "raid:jiuying",
+   "form": 3
+  },
+  {
+   "id": "enemy:rival_sword_metal",
+   "name": "Metal Sword Disciple",
+   "title": "Rival sect disciple",
+   "family": "rival",
+   "phase": "phase:metal",
+   "profile": "assassin",
+   "base": {
+    "hp": 1899,
+    "atk": 488,
+    "def": 105,
+    "crit": 0.25,
+    "critDmg": 1.6
+   },
+   "skills": [
+    "skill:rival_sword_strike",
+    "skill:rival_sword_flurry",
+    "skill:rival_sword_art"
+   ],
+   "path": "path:sword"
+  },
+  {
+   "id": "enemy:rival_sword_wood",
+   "name": "Wood Sword Disciple",
+   "title": "Rival sect disciple",
+   "family": "rival",
+   "phase": "phase:wood",
+   "profile": "assassin",
+   "base": {
+    "hp": 1899,
+    "atk": 488,
+    "def": 105,
+    "crit": 0.25,
+    "critDmg": 1.6
+   },
+   "skills": [
+    "skill:rival_sword_strike",
+    "skill:rival_sword_flurry",
+    "skill:rival_sword_art"
+   ],
+   "path": "path:sword"
+  },
+  {
+   "id": "enemy:rival_sword_water",
+   "name": "Water Sword Disciple",
+   "title": "Rival sect disciple",
+   "family": "rival",
+   "phase": "phase:water",
+   "profile": "assassin",
+   "base": {
+    "hp": 1899,
+    "atk": 488,
+    "def": 105,
+    "crit": 0.25,
+    "critDmg": 1.6
+   },
+   "skills": [
+    "skill:rival_sword_strike",
+    "skill:rival_sword_flurry",
+    "skill:rival_sword_art"
+   ],
+   "path": "path:sword"
+  },
+  {
+   "id": "enemy:rival_sword_fire",
+   "name": "Fire Sword Disciple",
+   "title": "Rival sect disciple",
+   "family": "rival",
+   "phase": "phase:fire",
+   "profile": "assassin",
+   "base": {
+    "hp": 1899,
+    "atk": 488,
+    "def": 105,
+    "crit": 0.25,
+    "critDmg": 1.6
+   },
+   "skills": [
+    "skill:rival_sword_strike",
+    "skill:rival_sword_flurry",
+    "skill:rival_sword_art"
+   ],
+   "path": "path:sword"
+  },
+  {
+   "id": "enemy:rival_sword_earth",
+   "name": "Earth Sword Disciple",
+   "title": "Rival sect disciple",
+   "family": "rival",
+   "phase": "phase:earth",
+   "profile": "assassin",
+   "base": {
+    "hp": 1899,
+    "atk": 488,
+    "def": 105,
+    "crit": 0.25,
+    "critDmg": 1.6
+   },
+   "skills": [
+    "skill:rival_sword_strike",
+    "skill:rival_sword_flurry",
+    "skill:rival_sword_art"
+   ],
+   "path": "path:sword"
+  },
+  {
+   "id": "enemy:rival_guardian_metal",
+   "name": "Metal Iron Disciple",
+   "title": "Rival sect disciple",
+   "family": "rival",
+   "phase": "phase:metal",
+   "profile": "brute",
+   "base": {
+    "hp": 2901,
+    "atk": 343,
+    "def": 185,
+    "crit": 0.08,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:rival_guard_bash",
+    "skill:rival_guard_taunt",
+    "skill:rival_guard_bulwark"
+   ],
+   "path": "path:guardian"
+  },
+  {
+   "id": "enemy:rival_guardian_wood",
+   "name": "Wood Iron Disciple",
+   "title": "Rival sect disciple",
+   "family": "rival",
+   "phase": "phase:wood",
+   "profile": "brute",
+   "base": {
+    "hp": 2901,
+    "atk": 343,
+    "def": 185,
+    "crit": 0.08,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:rival_guard_bash",
+    "skill:rival_guard_taunt",
+    "skill:rival_guard_bulwark"
+   ],
+   "path": "path:guardian"
+  },
+  {
+   "id": "enemy:rival_guardian_water",
+   "name": "Water Iron Disciple",
+   "title": "Rival sect disciple",
+   "family": "rival",
+   "phase": "phase:water",
+   "profile": "brute",
+   "base": {
+    "hp": 2901,
+    "atk": 343,
+    "def": 185,
+    "crit": 0.08,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:rival_guard_bash",
+    "skill:rival_guard_taunt",
+    "skill:rival_guard_bulwark"
+   ],
+   "path": "path:guardian"
+  },
+  {
+   "id": "enemy:rival_guardian_fire",
+   "name": "Fire Iron Disciple",
+   "title": "Rival sect disciple",
+   "family": "rival",
+   "phase": "phase:fire",
+   "profile": "brute",
+   "base": {
+    "hp": 2901,
+    "atk": 343,
+    "def": 185,
+    "crit": 0.08,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:rival_guard_bash",
+    "skill:rival_guard_taunt",
+    "skill:rival_guard_bulwark"
+   ],
+   "path": "path:guardian"
+  },
+  {
+   "id": "enemy:rival_guardian_earth",
+   "name": "Earth Iron Disciple",
+   "title": "Rival sect disciple",
+   "family": "rival",
+   "phase": "phase:earth",
+   "profile": "brute",
+   "base": {
+    "hp": 2901,
+    "atk": 343,
+    "def": 185,
+    "crit": 0.08,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:rival_guard_bash",
+    "skill:rival_guard_taunt",
+    "skill:rival_guard_bulwark"
+   ],
+   "path": "path:guardian"
+  },
+  {
+   "id": "enemy:rival_shadow_metal",
+   "name": "Metal Shadow Disciple",
+   "title": "Rival sect disciple",
+   "family": "rival",
+   "phase": "phase:metal",
+   "profile": "assassin",
+   "base": {
+    "hp": 1899,
+    "atk": 488,
+    "def": 105,
+    "crit": 0.25,
+    "critDmg": 1.6
+   },
+   "skills": [
+    "skill:rival_shadow_stab",
+    "skill:rival_shadow_step",
+    "skill:rival_shadow_execution"
+   ],
+   "path": "path:shadow"
+  },
+  {
+   "id": "enemy:rival_shadow_wood",
+   "name": "Wood Shadow Disciple",
+   "title": "Rival sect disciple",
+   "family": "rival",
+   "phase": "phase:wood",
+   "profile": "assassin",
+   "base": {
+    "hp": 1899,
+    "atk": 488,
+    "def": 105,
+    "crit": 0.25,
+    "critDmg": 1.6
+   },
+   "skills": [
+    "skill:rival_shadow_stab",
+    "skill:rival_shadow_step",
+    "skill:rival_shadow_execution"
+   ],
+   "path": "path:shadow"
+  },
+  {
+   "id": "enemy:rival_shadow_water",
+   "name": "Water Shadow Disciple",
+   "title": "Rival sect disciple",
+   "family": "rival",
+   "phase": "phase:water",
+   "profile": "assassin",
+   "base": {
+    "hp": 1899,
+    "atk": 488,
+    "def": 105,
+    "crit": 0.25,
+    "critDmg": 1.6
+   },
+   "skills": [
+    "skill:rival_shadow_stab",
+    "skill:rival_shadow_step",
+    "skill:rival_shadow_execution"
+   ],
+   "path": "path:shadow"
+  },
+  {
+   "id": "enemy:rival_shadow_fire",
+   "name": "Fire Shadow Disciple",
+   "title": "Rival sect disciple",
+   "family": "rival",
+   "phase": "phase:fire",
+   "profile": "assassin",
+   "base": {
+    "hp": 1899,
+    "atk": 488,
+    "def": 105,
+    "crit": 0.25,
+    "critDmg": 1.6
+   },
+   "skills": [
+    "skill:rival_shadow_stab",
+    "skill:rival_shadow_step",
+    "skill:rival_shadow_execution"
+   ],
+   "path": "path:shadow"
+  },
+  {
+   "id": "enemy:rival_shadow_earth",
+   "name": "Earth Shadow Disciple",
+   "title": "Rival sect disciple",
+   "family": "rival",
+   "phase": "phase:earth",
+   "profile": "assassin",
+   "base": {
+    "hp": 1899,
+    "atk": 488,
+    "def": 105,
+    "crit": 0.25,
+    "critDmg": 1.6
+   },
+   "skills": [
+    "skill:rival_shadow_stab",
+    "skill:rival_shadow_step",
+    "skill:rival_shadow_execution"
+   ],
+   "path": "path:shadow"
+  },
+  {
+   "id": "enemy:rival_talisman_metal",
+   "name": "Metal Talisman Disciple",
+   "title": "Rival sect disciple",
+   "family": "rival",
+   "phase": "phase:metal",
+   "profile": "caster",
+   "base": {
+    "hp": 1846,
+    "atk": 501,
+    "def": 100,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:rival_talisman_seal",
+    "skill:rival_talisman_bind",
+    "skill:rival_talisman_array"
+   ],
+   "path": "path:talisman"
+  },
+  {
+   "id": "enemy:rival_talisman_wood",
+   "name": "Wood Talisman Disciple",
+   "title": "Rival sect disciple",
+   "family": "rival",
+   "phase": "phase:wood",
+   "profile": "caster",
+   "base": {
+    "hp": 1846,
+    "atk": 501,
+    "def": 100,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:rival_talisman_seal",
+    "skill:rival_talisman_bind",
+    "skill:rival_talisman_array"
+   ],
+   "path": "path:talisman"
+  },
+  {
+   "id": "enemy:rival_talisman_water",
+   "name": "Water Talisman Disciple",
+   "title": "Rival sect disciple",
+   "family": "rival",
+   "phase": "phase:water",
+   "profile": "caster",
+   "base": {
+    "hp": 1846,
+    "atk": 501,
+    "def": 100,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:rival_talisman_seal",
+    "skill:rival_talisman_bind",
+    "skill:rival_talisman_array"
+   ],
+   "path": "path:talisman"
+  },
+  {
+   "id": "enemy:rival_talisman_fire",
+   "name": "Fire Talisman Disciple",
+   "title": "Rival sect disciple",
+   "family": "rival",
+   "phase": "phase:fire",
+   "profile": "caster",
+   "base": {
+    "hp": 1846,
+    "atk": 501,
+    "def": 100,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:rival_talisman_seal",
+    "skill:rival_talisman_bind",
+    "skill:rival_talisman_array"
+   ],
+   "path": "path:talisman"
+  },
+  {
+   "id": "enemy:rival_talisman_earth",
+   "name": "Earth Talisman Disciple",
+   "title": "Rival sect disciple",
+   "family": "rival",
+   "phase": "phase:earth",
+   "profile": "caster",
+   "base": {
+    "hp": 1846,
+    "atk": 501,
+    "def": 100,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:rival_talisman_seal",
+    "skill:rival_talisman_bind",
+    "skill:rival_talisman_array"
+   ],
+   "path": "path:talisman"
+  },
+  {
+   "id": "enemy:rival_arcane_metal",
+   "name": "Metal Arcane Disciple",
+   "title": "Rival sect disciple",
+   "family": "rival",
+   "phase": "phase:metal",
+   "profile": "caster",
+   "base": {
+    "hp": 1846,
+    "atk": 501,
+    "def": 100,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:rival_arcane_bolt",
+    "skill:rival_arcane_storm",
+    "skill:rival_arcane_cataclysm"
+   ],
+   "path": "path:arcane"
+  },
+  {
+   "id": "enemy:rival_arcane_wood",
+   "name": "Wood Arcane Disciple",
+   "title": "Rival sect disciple",
+   "family": "rival",
+   "phase": "phase:wood",
+   "profile": "caster",
+   "base": {
+    "hp": 1846,
+    "atk": 501,
+    "def": 100,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:rival_arcane_bolt",
+    "skill:rival_arcane_storm",
+    "skill:rival_arcane_cataclysm"
+   ],
+   "path": "path:arcane"
+  },
+  {
+   "id": "enemy:rival_arcane_water",
+   "name": "Water Arcane Disciple",
+   "title": "Rival sect disciple",
+   "family": "rival",
+   "phase": "phase:water",
+   "profile": "caster",
+   "base": {
+    "hp": 1846,
+    "atk": 501,
+    "def": 100,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:rival_arcane_bolt",
+    "skill:rival_arcane_storm",
+    "skill:rival_arcane_cataclysm"
+   ],
+   "path": "path:arcane"
+  },
+  {
+   "id": "enemy:rival_arcane_fire",
+   "name": "Fire Arcane Disciple",
+   "title": "Rival sect disciple",
+   "family": "rival",
+   "phase": "phase:fire",
+   "profile": "caster",
+   "base": {
+    "hp": 1846,
+    "atk": 501,
+    "def": 100,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:rival_arcane_bolt",
+    "skill:rival_arcane_storm",
+    "skill:rival_arcane_cataclysm"
+   ],
+   "path": "path:arcane"
+  },
+  {
+   "id": "enemy:rival_arcane_earth",
+   "name": "Earth Arcane Disciple",
+   "title": "Rival sect disciple",
+   "family": "rival",
+   "phase": "phase:earth",
+   "profile": "caster",
+   "base": {
+    "hp": 1846,
+    "atk": 501,
+    "def": 100,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:rival_arcane_bolt",
+    "skill:rival_arcane_storm",
+    "skill:rival_arcane_cataclysm"
+   ],
+   "path": "path:arcane"
+  },
+  {
+   "id": "enemy:rival_healer_metal",
+   "name": "Metal Medicine Disciple",
+   "title": "Rival sect disciple",
+   "family": "rival",
+   "phase": "phase:metal",
+   "profile": "support",
+   "base": {
+    "hp": 2110,
+    "atk": 316,
+    "def": 137,
+    "crit": 0.1,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:rival_healer_palm",
+    "skill:rival_healer_restore",
+    "skill:rival_healer_rebirth"
+   ],
+   "path": "path:healer"
+  },
+  {
+   "id": "enemy:rival_healer_wood",
+   "name": "Wood Medicine Disciple",
+   "title": "Rival sect disciple",
+   "family": "rival",
+   "phase": "phase:wood",
+   "profile": "support",
+   "base": {
+    "hp": 2110,
+    "atk": 316,
+    "def": 137,
+    "crit": 0.1,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:rival_healer_palm",
+    "skill:rival_healer_restore",
+    "skill:rival_healer_rebirth"
+   ],
+   "path": "path:healer"
+  },
+  {
+   "id": "enemy:rival_healer_water",
+   "name": "Water Medicine Disciple",
+   "title": "Rival sect disciple",
+   "family": "rival",
+   "phase": "phase:water",
+   "profile": "support",
+   "base": {
+    "hp": 2110,
+    "atk": 316,
+    "def": 137,
+    "crit": 0.1,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:rival_healer_palm",
+    "skill:rival_healer_restore",
+    "skill:rival_healer_rebirth"
+   ],
+   "path": "path:healer"
+  },
+  {
+   "id": "enemy:rival_healer_fire",
+   "name": "Fire Medicine Disciple",
+   "title": "Rival sect disciple",
+   "family": "rival",
+   "phase": "phase:fire",
+   "profile": "support",
+   "base": {
+    "hp": 2110,
+    "atk": 316,
+    "def": 137,
+    "crit": 0.1,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:rival_healer_palm",
+    "skill:rival_healer_restore",
+    "skill:rival_healer_rebirth"
+   ],
+   "path": "path:healer"
+  },
+  {
+   "id": "enemy:rival_healer_earth",
+   "name": "Earth Medicine Disciple",
+   "title": "Rival sect disciple",
+   "family": "rival",
+   "phase": "phase:earth",
+   "profile": "support",
+   "base": {
+    "hp": 2110,
+    "atk": 316,
+    "def": 137,
+    "crit": 0.1,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:rival_healer_palm",
+    "skill:rival_healer_restore",
+    "skill:rival_healer_rebirth"
+   ],
+   "path": "path:healer"
+  },
+  {
+   "id": "enemy:thunder_spirit",
+   "name": "Tribulation Thunder Spirit",
+   "cn": "雷劫灵",
+   "title": "Heavenly lightning given form",
+   "family": "tribulation",
+   "phase": "phase:wood",
+   "profile": "caster",
+   "base": {
+    "hp": 1846,
+    "atk": 501,
+    "def": 100,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:heavenly_bolt",
+    "skill:tribulation_storm"
+   ]
+  },
+  {
+   "id": "enemy:heart_demon",
+   "name": "Heart Demon",
+   "cn": "心魔",
+   "title": "A darkened copy of the heroine on trial",
+   "family": "tribulation",
+   "phase": "mirror",
+   "profile": "elite",
+   "base": {
+    "hp": 3560,
+    "atk": 488,
+    "def": 148,
+    "crit": 0.15,
+    "critDmg": 1.6
+   },
+   "skills": [],
+   "mirror": "The heroine on trial: her card, phase, techniques and stats, darkened"
+  }
+ ]
+}

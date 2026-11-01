@@ -1,0 +1,967 @@
+{
+ "about": "Story scenes of Volume 1, chapter 5, Gate of the Jade Pool: the Council, the end of Ku Ye, the Gardener revealed, and the Netherflame Matriarch (draft).",
+ "records": [
+  {
+   "id": "scene:v1c5_01_before",
+   "name": "The Last Road",
+   "location": "loc:gate_of_the_jade_pool",
+   "cast": [
+    "npc:tao_yao",
+    "hero:yan_feihong",
+    "hero:ling_shuang",
+    "hero:su_lianhua",
+    "hero:mo_yingyue",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "For the first time, every thread of the Fate Lotus pulls the same way: west, toward Mount Kunlun, where the oldest maps show nothing but a gate."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "neutral",
+     "text": "The Gate of the Jade Pool. Behind it lies what's left of the Garden of a Hundred Blossoms, where one flower grew for every immortal maiden. It burned three thousand years ago, in the Withering."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "smug",
+     "text": "A garden? I came all this way to look at flowers?"
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "neutral",
+     "text": "You are a flower."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "surprised",
+     "text": "...I'm a what?"
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "smile",
+     "text": "We all are, I think. That's what the dreams were. A pool of jade, a garden, and the fire."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "neutral",
+     "text": "I've had that dream since I was a child. I thought it meant I should eat fewer sweets before bed."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "neutral",
+     "text": "In mine, someone called me Plum."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "smile",
+     "text": "Night-Bloom. That was mine."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "laugh",
+     "text": "Phoenix! Obviously! The best name!"
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "smile",
+     "text": "Water, Wood, Fire, Earth. Plum, Night-Bloom, Phoenix, Lotus. You fought in that order once, and your Dao still remembers it, even if you don't."
+    },
+    {
+     "text": "On the road ahead, wraiths seep out of the rocks like smoke from a cracked kiln."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "determined",
+     "text": "Then let's remind it. Together."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c5_02_before",
+   "name": "Council of the Sects",
+   "location": "loc:tianji_pavilion",
+   "cast": [
+    "npc:scribe_lu",
+    "npc:frostpeak_master",
+    "hero:ling_shuang",
+    "npc:madam_yue",
+    "hero:mo_yingyue",
+    "npc:elder_zhu_yan",
+    "hero:yan_feihong",
+    "npc:abbess_huiming",
+    "hero:su_lianhua",
+    "npc:tao_yao",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "A paper crane finds you on the road, folded from a Tianji Pavilion summons. Two days later you stand in a round hall of a thousand drawers, each one labelled with a secret."
+    },
+    {
+     "text": "Around the table sit Sect Master Bai Xue of Frostpeak, Madam Yue of Moonshadow, Elder Zhu Yan of the Phoenix Palace and Abbess Huiming of the Jade Lotus Temple. At its head, a thin young scholar is pouring tea."
+    },
+    {
+     "speaker": "npc:scribe_lu",
+     "expression": "smile",
+     "text": "Welcome, welcome. Lu Wen, of the Tianji Pavilion. I sell secrets for a living, so you'll appreciate how rarely I give one away."
+    },
+    {
+     "speaker": "npc:scribe_lu",
+     "expression": "neutral",
+     "text": "Today's is free. Consider it an investment in all of us still being alive next spring."
+    },
+    {
+     "speaker": "npc:scribe_lu",
+     "expression": "worried",
+     "text": "The Netherflame Matriarch is harvesting Dao Seeds. The raid on the ford, Frostpeak's stolen disciples, the Phoenix fire, the assassin hired to kill you: one plan, all of it."
+    },
+    {
+     "speaker": "npc:scribe_lu",
+     "expression": "neutral",
+     "text": "Three thousand years ago, the Netherflame Sovereign burned the Garden of a Hundred Blossoms. He was sealed beneath the Jade Pool, and the Blossoms scattered into rebirth."
+    },
+    {
+     "speaker": "npc:scribe_lu",
+     "expression": "worried",
+     "text": "Every reborn Blossom carries a Dao Seed from that Garden. Burn enough of them, in netherflame or in a sacred fire taught to forget itself, and the seal wears through. The Sovereign walks out."
+    },
+    {
+     "speaker": "npc:frostpeak_master",
+     "expression": "sad",
+     "text": "So Han Lie's thirty disciples..."
+    },
+    {
+     "speaker": "npc:scribe_lu",
+     "expression": "sad",
+     "text": "Were a net cast wide. The Sect never knows exactly where a seed is hiding, so it takes every gifted child it can find."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "angry",
+     "text": "Then we end the Matriarch."
+    },
+    {
+     "speaker": "npc:madam_yue",
+     "expression": "neutral",
+     "text": "Moonshadow does not take sides in wars. But the Envoy lied to us. Moonshadow will stand at the gate. Free of charge, this once."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "surprised",
+     "text": "Free of charge? Madam, are you feeling well?"
+    },
+    {
+     "speaker": "npc:madam_yue",
+     "expression": "smile",
+     "text": "Don't get used to it."
+    },
+    {
+     "speaker": "npc:elder_zhu_yan",
+     "expression": "neutral",
+     "text": "The Phoenix Palace owes the Pavilion its fire. Our arcanists will hold the southern road."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "smug",
+     "text": "And the best arcanist is already here!"
+    },
+    {
+     "speaker": "npc:abbess_huiming",
+     "expression": "smile",
+     "text": "The temple will send every healer who can walk. Lianhua, you look well. The road agrees with you."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "shy",
+     "text": "It does, Abbess. So does the company."
+    },
+    {
+     "speaker": "npc:scribe_lu",
+     "expression": "neutral",
+     "text": "Then it's agreed. The four sects stand with the Hundred Blossoms Pavilion. It's been a very long time since anyone said that sentence aloud."
+    },
+    {
+     "text": "As the others rise, Scribe Lu studies you for a long moment, then glances at Tao Yao."
+    },
+    {
+     "speaker": "npc:scribe_lu",
+     "expression": "neutral",
+     "text": "Some secrets aren't mine to sell, Pavilion Master. Ask your steward about the rest. Preferably before the gate."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "worried",
+     "text": "Ha ha... More tea, anyone?"
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c5_03_before",
+   "name": "Wraith Tide",
+   "location": "loc:gate_of_the_jade_pool",
+   "cast": [
+    "npc:tao_yao",
+    "hero:yan_feihong",
+    "hero:ling_shuang",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "The Gate of the Jade Pool stands at the end of a valley of white stone: two jade doors as tall as a pagoda, carved with a hundred flowers, closed for three thousand years."
+    },
+    {
+     "text": "Around the frame, the stone is cracked like old porcelain. Grey fire leaks from every crack, and with the fire come wraiths, more and more of them."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "worried",
+     "text": "The seals are failing. Something on the other side is pushing."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "determined",
+     "text": "Then we push back harder!"
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "neutral",
+     "text": "For once, I agree with her."
+    },
+    {
+     "text": "The tide breaks across the white stones toward you."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c5_04_before",
+   "name": "The Clans' Pact",
+   "location": "loc:gate_of_the_jade_pool",
+   "cast": [
+    "npc:chief_bai_lin",
+    "npc:elder_he_ling",
+    "npc:lady_hu_qiao",
+    "hero:su_lianhua",
+    "hero:yan_feihong",
+    "hero:mo_yingyue",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "On a ridge above the gate, three figures wait for you: an old man with silver scales, a smiling woman in silver silk, and an old woman in white and red feathers."
+    },
+    {
+     "speaker": "npc:chief_bai_lin",
+     "expression": "smile",
+     "text": "Pavilion Master. I told you I collect favours. Today I called in a great many of them, and look who came."
+    },
+    {
+     "speaker": "npc:elder_he_ling",
+     "expression": "neutral",
+     "text": "The Crane Clan watched the Garden burn from the cliffs of Kunlun. We have watched ever since. Watching is easy. This will be harder."
+    },
+    {
+     "speaker": "npc:lady_hu_qiao",
+     "expression": "smile",
+     "text": "And the Fox Clan pays its debts. You sent my silver kit home alive, as you promised. She's sulking in my den, unharmed and terribly embarrassed. Thank you."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "smile",
+     "text": "We're so glad she's safe."
+    },
+    {
+     "speaker": "npc:chief_bai_lin",
+     "expression": "neutral",
+     "text": "But the clans do not follow just anyone into a war. Our champions wish to see the Pavilion's strength for themselves."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "smug",
+     "text": "A test? We love tests! Well, I do."
+    },
+    {
+     "speaker": "npc:elder_he_ling",
+     "expression": "smile",
+     "text": "A crane, a serpent and a fox, side by side. Defeat them together, and our clans will hold the eastern ridge for you."
+    },
+    {
+     "speaker": "npc:lady_hu_qiao",
+     "expression": "smug",
+     "text": "Do try not to break my champion. I've only just finished training him."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "neutral",
+     "text": "No promises."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c5_04_after",
+   "name": "Three Clans, One Banner",
+   "location": "loc:gate_of_the_jade_pool",
+   "cast": [
+    "npc:chief_bai_lin",
+    "npc:elder_he_ling",
+    "npc:lady_hu_qiao",
+    "hero:yan_feihong",
+    "hero:ling_shuang",
+    "hero:su_lianhua",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "The three champions bow to you together, each in their own clan's fashion: a crane's dip, a serpent's nod, a fox's flourish."
+    },
+    {
+     "speaker": "npc:chief_bai_lin",
+     "expression": "smile",
+     "text": "Patient, strong, and not too proud to fight fair. That is enough for the Serpent Clan."
+    },
+    {
+     "speaker": "npc:elder_he_ling",
+     "expression": "neutral",
+     "text": "The cranes will fly at dawn. Nothing will cross the eastern ridge without our knowing."
+    },
+    {
+     "speaker": "npc:lady_hu_qiao",
+     "expression": "smile",
+     "text": "And foxes will be wherever the enemy least expects them. That is, after all, what we're for."
+    },
+    {
+     "speaker": "npc:lady_hu_qiao",
+     "expression": "smug",
+     "text": "A gift for the Pavilion Master. A jade hairpin, for whichever of your flowers you think deserves it most."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "smug",
+     "text": "Me, obviously."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "neutral",
+     "text": "Obviously not."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "laugh",
+     "text": "Pavilion Master, I think you'd better keep that one safe for now."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c5_05_before",
+   "name": "Netherflame Vanguard",
+   "location": "loc:gate_of_the_jade_pool",
+   "cast": [
+    "hero:ling_shuang",
+    "hero:su_lianhua",
+    "hero:mo_yingyue",
+    "hero:yan_feihong",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "Between the clans' ridge and the gate, black banners rise from the white stone. The Matriarch's vanguard has come out through the cracks to hold the approach."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "neutral",
+     "text": "Cultists, not wraiths. These ones chose this."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "determined",
+     "text": "Then they can choose to leave. And if they won't..."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "neutral",
+     "text": "They won't."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "determined",
+     "text": "Good! I've been saving something special for the Netherflame Sect!"
+    },
+    {
+     "text": "Grey fire roars, and the vanguard charges."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c5_06_before",
+   "name": "The Black Tortoise Seal",
+   "location": "loc:gate_of_the_jade_pool",
+   "cast": [
+    "npc:envoy_ku_ye",
+    "hero:mo_yingyue",
+    "hero:ling_shuang",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "On the north side of the gate crouches a great stone tortoise with a carved serpent coiled around its shell. On its back it bears the seal of the north. Cracks run through it now, and a man in black silk stands on top of it, tapping the stone like a merchant testing a melon."
+    },
+    {
+     "speaker": "npc:envoy_ku_ye",
+     "expression": "smile",
+     "text": "Ah, the Pavilion Master! Right on time. I was just negotiating with this tortoise."
+    },
+    {
+     "speaker": "npc:envoy_ku_ye",
+     "expression": "smug",
+     "text": "Very stubborn. Three thousand years old and still holding a grudge. But everything breaks, once you find the right price."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "determined",
+     "text": "You're a mark, Envoy. Moonshadow wrote your name on the wall."
+    },
+    {
+     "speaker": "npc:envoy_ku_ye",
+     "expression": "laugh",
+     "text": "And yet here I stand, alive and handsome. Your Pavilion is very bad at killing people."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "neutral",
+     "text": "You ran last time. Into the ground."
+    },
+    {
+     "speaker": "npc:envoy_ku_ye",
+     "expression": "smile",
+     "text": "A strategic withdrawal. I'm sure I'll make another. Now, if you'll excuse me, the Matriarch wants this door open, and I always deliver."
+    },
+    {
+     "text": "Stone puppets heave up out of the ground around the tortoise. Grey water seeps from the cracks in the seal."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "determined",
+     "text": "Not this time."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c5_06_after",
+   "name": "Withered Night",
+   "location": "loc:gate_of_the_jade_pool",
+   "cast": [
+    "npc:envoy_ku_ye",
+    "hero:ling_shuang",
+    "hero:mo_yingyue",
+    "hero:yan_feihong",
+    "npc:tao_yao",
+    "hero:su_lianhua",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "Ku Ye stumbles back from the seal, his puppets broken around him. He smiles, and the ground beneath his feet begins to soften into dust."
+    },
+    {
+     "speaker": "npc:envoy_ku_ye",
+     "expression": "smile",
+     "text": "Until next time, Pavilion Mas..."
+    },
+    {
+     "text": "The dust turns to frost. Ling Shuang's sword is planted in the earth, and white ice spreads from it across the whole valley floor, hard as iron."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "determined",
+     "text": "The Black Tortoise is the north, and the north is winter. Today the ground answers frost, Envoy. Not you."
+    },
+    {
+     "speaker": "npc:envoy_ku_ye",
+     "expression": "surprised",
+     "text": "Ah."
+    },
+    {
+     "text": "Violet lightning crosses the frozen ground in a single stroke."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "neutral",
+     "text": "Moonshadow always collects."
+    },
+    {
+     "text": "Ku Ye looks down at himself, then up at you. Where the lightning struck, he is crumbling: not blood, but dry earth and withered leaves."
+    },
+    {
+     "speaker": "npc:envoy_ku_ye",
+     "expression": "smile",
+     "text": "Well. That was... expensive."
+    },
+    {
+     "speaker": "npc:envoy_ku_ye",
+     "expression": "smug",
+     "text": "Do give my regards to the Gardener. Oh... oh, she never told you? Your little peach never told you?"
+    },
+    {
+     "speaker": "npc:envoy_ku_ye",
+     "expression": "laugh",
+     "text": "How delicious. I'd pay good jade to see your face when..."
+    },
+    {
+     "text": "The wind takes him: a handful of dead leaves scattering across the ice. Slowly, the cracks in the Black Tortoise seal close."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "neutral",
+     "text": "Somewhere in the bamboo, a silver fox just got her soul back."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "surprised",
+     "text": "The Gardener? What was he talking about?"
+    },
+    {
+     "text": "Everyone looks at Tao Yao. Tao Yao looks at the ground."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "worried",
+     "text": "He was a liar. Liars say things. We should check the other seals, shouldn't we? Yes. Let's check the seals."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "worried",
+     "text": "Tao Yao..."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c5_07_before",
+   "name": "A Seer's Warning",
+   "location": "loc:gate_of_the_jade_pool",
+   "cast": [
+    "npc:seer_bai",
+    "hero:ling_shuang",
+    "npc:pavilion_master",
+    "hero:su_lianhua",
+    "hero:mo_yingyue",
+    "hero:yan_feihong",
+    "npc:tao_yao"
+   ],
+   "lines": [
+    {
+     "text": "That night, the camp below the gate is quiet. Tao Yao went to \"check the seals\" hours ago and has not come back. On a rock by the fire, where no one was sitting a moment ago, sits a blind old man."
+    },
+    {
+     "speaker": "npc:seer_bai",
+     "expression": "smile",
+     "text": "Evening, Pavilion Master. A cold night for questions. Sit."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "surprised",
+     "text": "You again. A ford, a cliff, and now the end of the world."
+    },
+    {
+     "speaker": "npc:seer_bai",
+     "expression": "laugh",
+     "text": "Old men wander. I told you so."
+    },
+    {
+     "speaker": "npc:seer_bai",
+     "expression": "neutral",
+     "text": "The Envoy was a liar, but liars are most dangerous when they tell the truth. The little peach won't say it, because she's afraid. So the blind man will."
+    },
+    {
+     "speaker": "npc:seer_bai",
+     "expression": "neutral",
+     "text": "Three thousand years ago, the Garden of a Hundred Blossoms had a Gardener. Every Dao Seed was planted by the Gardener's hand. Every flower was tended, and named, and loved."
+    },
+    {
+     "speaker": "npc:seer_bai",
+     "expression": "sad",
+     "text": "When the Sovereign came, the Gardener poured everything into the Fate Lotus, scattered the seeds into rebirth where he could never reach them, and sealed him beneath the Jade Pool. After that, nothing was left of the Gardener but a soul, falling into the cycle like all the rest."
+    },
+    {
+     "speaker": "npc:pavilion_master",
+     "expression": "neutral",
+     "text": "...The dream."
+    },
+    {
+     "speaker": "npc:seer_bai",
+     "expression": "smile",
+     "text": "Why do you think the Lotus opened for you? Why do the threads tie to your hand and no one else's? You were the Gardener, Pavilion Master. You still are."
+    },
+    {
+     "text": "No one speaks. The fire crackles."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "surprised",
+     "text": "In the dream, someone stood behind us at the pool. I never saw their face. I only knew I had to keep them safe."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "neutral",
+     "text": "\"You'll find us again. You always find us.\" I said that. I remember saying it."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "determined",
+     "text": "Then you did find us. That is all that matters to me."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "surprised",
+     "text": "Wait, wait. So the Pavilion Master planted me? Like... with a little shovel?"
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "smug",
+     "text": "That explains why you're so badly behaved. Poor soil."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "angry",
+     "text": "HEY!"
+    },
+    {
+     "speaker": "npc:seer_bai",
+     "expression": "worried",
+     "text": "Here is the warning, since that is what you came for. The Matriarch knows what you are. Beyond that gate, every withered flower will know you, and so will she. She will want you more than all the seeds in the Garden put together."
+    },
+    {
+     "text": "Footsteps in the dark. Tao Yao stands at the edge of the firelight, her face pale."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "sad",
+     "text": "I was going to tell you. I was. After."
+    },
+    {
+     "speaker": "npc:seer_bai",
+     "expression": "smile",
+     "text": "\"After\" is a dangerous word, little peach. Tell them at the gate."
+    },
+    {
+     "text": "When you look back at the rock, the old man is gone."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c5_08_before",
+   "name": "Through the Withered Garden",
+   "location": "loc:jade_pool",
+   "cast": [
+    "hero:yan_feihong",
+    "npc:tao_yao",
+    "hero:su_lianhua",
+    "npc:pavilion_master",
+    "hero:ling_shuang",
+    "hero:mo_yingyue"
+   ],
+   "lines": [
+    {
+     "text": "At dawn, you lay your hand on the jade doors. They have not moved in three thousand years. At your touch, they swing open without a sound."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "surprised",
+     "text": "It just... opened. For you."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "sad",
+     "text": "It always did."
+    },
+    {
+     "text": "Beyond the gate lies the Garden of a Hundred Blossoms as it is now: grey ash to the horizon, the black stumps of trees, a dry pool cracked like an old bowl. Nothing moves."
+    },
+    {
+     "text": "Then, as you walk, the withered flowers begin to turn. Grey petals lift on dead stems, one after another, following you as you pass, the way flowers follow the sun."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "sad",
+     "text": "They remember you. Even like this, they remember."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "sad",
+     "text": "You asked why I never told you. Here is the truth."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "sad",
+     "text": "When the Garden burned, you held the seal together with nothing but yourself. Before you faded, you asked me for one thing: if you ever came back, let you live a little while without the weight of all this."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "worried",
+     "text": "And I was afraid. If you remembered, you'd do the same thing again. Give everything. Leave again. I waited three thousand years for you. I couldn't..."
+    },
+    {
+     "speaker": "npc:pavilion_master",
+     "expression": "neutral",
+     "text": "You waited for me?"
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "shy",
+     "text": "Someone had to keep the roof on. Badly, as you've seen."
+    },
+    {
+     "text": "She stops beside a black stump at the edge of the dry pool and lays her palm against it, very gently."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "smile",
+     "text": "This one was always the first to bloom. Every single spring. Silly tree."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "neutral",
+     "text": "No more secrets, steward. We walk into this together, knowing everything."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "determined",
+     "text": "No more secrets. I promise. Mostly. I still won't tell you what the roof repairs cost."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "smile",
+     "text": "Ha. Fine. I can work with \"mostly\"."
+    },
+    {
+     "text": "Ahead, grey fire stirs among the ash. The things that live in the Garden now have noticed you too."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "determined",
+     "text": "Let them come! This is our garden, and I'm taking it back!"
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c5_09_before",
+   "name": "Before the Throne of Ash",
+   "location": "loc:jade_pool",
+   "cast": [
+    "hero:su_lianhua",
+    "npc:tao_yao",
+    "hero:ling_shuang",
+    "hero:mo_yingyue",
+    "hero:yan_feihong",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "At the burned heart of the Garden, where the Jade Pool once shone, stands a throne of ash and bone-white branches. Before it kneels the Matriarch's honour guard, robed in black and dull gold."
+    },
+    {
+     "text": "As you approach, they rise as one. Above the throne, the air tears open like silk, and red light bleeds through: a rift into the Netherworld."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "worried",
+     "text": "Do you feel it? Something is breathing on the other side."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "worried",
+     "text": "The Sovereign's seal is right beneath our feet. She's been burning seeds here, wearing it thin."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "determined",
+     "text": "Then this is where it stops."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "neutral",
+     "text": "Honour guard first. Then the woman who owns the chair."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "smug",
+     "text": "I call the chair. I'm setting it on fire."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c5_10_before",
+   "name": "The Netherflame Matriarch",
+   "location": "loc:jade_pool",
+   "cast": [
+    "npc:netherflame_matriarch",
+    "npc:tao_yao",
+    "hero:su_lianhua",
+    "hero:ling_shuang",
+    "hero:mo_yingyue",
+    "hero:yan_feihong",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "The honour guard falls. For a moment, the burned heart of the Garden is still."
+    },
+    {
+     "text": "Then she descends from the rift: a tall woman robed in black flame, her face pale and beautiful and utterly cold, a whip of netherflame coiled at her hand like a sleeping serpent."
+    },
+    {
+     "speaker": "npc:netherflame_matriarch",
+     "expression": "smile",
+     "text": "Four little seeds, walking into my garden on their own feet. And they've brought their Gardener. How considerate."
+    },
+    {
+     "speaker": "npc:netherflame_matriarch",
+     "expression": "smug",
+     "text": "I remember your face, Gardener. It looked just like that the last time this garden burned."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "angry",
+     "text": "It isn't your garden!"
+    },
+    {
+     "speaker": "npc:netherflame_matriarch",
+     "expression": "laugh",
+     "text": "And the little peach tree still has leaves. I thought I burned you to the root."
+    },
+    {
+     "speaker": "npc:netherflame_matriarch",
+     "expression": "neutral",
+     "text": "For three thousand years I have tended this ash. Every seed I burn wears my master's prison a little thinner. Yours will finish it."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "determined",
+     "text": "You will not touch them. Not one more seed. Not while I'm standing."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "determined",
+     "text": "A plum does not bow to the snow. Nor to you."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "neutral",
+     "text": "I don't usually do this for free. Consider yourself special."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "determined",
+     "text": "I've been saving this one for you since the volcano! Rise, Vermilion Phoenix!"
+    },
+    {
+     "speaker": "npc:netherflame_matriarch",
+     "expression": "angry",
+     "text": "Then wither, little flowers. Wither, as you did before."
+    },
+    {
+     "text": "Netherflame floods the dead Garden, and the Matriarch's whip cracks like thunder."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c5_10_after",
+   "name": "The Pavilion Rises",
+   "location": "loc:jade_pool",
+   "cast": [
+    "npc:netherflame_matriarch",
+    "hero:ling_shuang",
+    "hero:yan_feihong",
+    "hero:su_lianhua",
+    "npc:tao_yao",
+    "hero:mo_yingyue",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "The Matriarch's shield of netherflame shatters like black glass. She falls to one knee in the ash, and for the first time, her cold face shows something like fear."
+    },
+    {
+     "speaker": "npc:netherflame_matriarch",
+     "expression": "angry",
+     "text": "Impossible... A handful of half-woken seeds, and a Gardener who doesn't even remember how to dig..."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "neutral",
+     "text": "We remember enough."
+    },
+    {
+     "text": "She rises, staggering, and backs toward the rift. The red light swallows her to the waist."
+    },
+    {
+     "speaker": "npc:netherflame_matriarch",
+     "expression": "angry",
+     "text": "Enjoy your little victory. Every seed you gather is one more for his table. The seal is already thin. The Sovereign will return, and when he does, this Garden will burn for good."
+    },
+    {
+     "speaker": "npc:netherflame_matriarch",
+     "expression": "smug",
+     "text": "Until then, Gardener. Tend your flowers well."
+    },
+    {
+     "text": "The rift closes over her like water over a stone. The red light dies, and the burned heart of the Garden falls silent."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "laugh",
+     "text": "She ran! She actually ran! Did you see her face?"
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "smile",
+     "text": "Everyone is still standing. Good."
+    },
+    {
+     "text": "At the edge of the dry pool, something green pushes up through the ash: a single shoot no longer than a finger, with one small bud."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "surprised",
+     "text": "Pavilion Master, look! Something's growing. The first thing to grow here in three thousand years!"
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "smile",
+     "text": "One flower. That's a start."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "smile",
+     "text": "Ninety-nine to go."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "laugh",
+     "text": "Let's go home. We have a Pavilion to rebuild, and it seems we have friends now."
+    },
+    {
+     "text": "Word spreads faster than any paper crane. Within a month, the road up the Pavilion's mountain is crowded: Frostpeak swordsmen hauling timber, Phoenix arcanists firing roof tiles, Jade Lotus nuns planting the courtyard, envoys of the fox, serpent and crane clans bearing gifts. Somewhere among them, Old Qian is selling buckets."
+    },
+    {
+     "text": "Over the gate, a new board is hung, gold on black: the Hundred Blossoms Pavilion. For the first time in longer than anyone can remember, a lantern burns in every window."
+    },
+    {
+     "text": "In the main hall, the Fate Pond has filled with clear water. On it, the Fate Lotus stirs. Among its threads, a new one runs east toward the sea, cold and salt-sweet. At the end of it, someone is singing underwater."
+    }
+   ],
+   "draft": true
+  }
+ ]
+}

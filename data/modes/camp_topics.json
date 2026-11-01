@@ -1,0 +1,53 @@
+{
+ "about": "Camp topics: two heroines talk at camp and restore Resolve; Karmic Threads unlock special conversations.",
+ "records": [
+  {
+   "id": "camp:home",
+   "name": "Home",
+   "about": "Where each heroine grew up",
+   "resolve": 15
+  },
+  {
+   "id": "camp:first_battle",
+   "name": "First battle",
+   "about": "The first time each one fought for her life",
+   "resolve": 17
+  },
+  {
+   "id": "camp:favourite_food",
+   "name": "Favourite food",
+   "about": "An argument about dumplings",
+   "resolve": 19
+  },
+  {
+   "id": "camp:the_garden",
+   "name": "The Garden",
+   "about": "Half-remembered dreams of the Jade Pool",
+   "resolve": 21
+  },
+  {
+   "id": "camp:ambitions",
+   "name": "Ambitions",
+   "about": "What realm each one means to reach, and why",
+   "resolve": 23
+  },
+  {
+   "id": "camp:the_pavilion_master",
+   "name": "The Pavilion Master",
+   "about": "Teasing about their new master",
+   "resolve": 25
+  },
+  {
+   "id": "camp:fears",
+   "name": "Fears",
+   "about": "What keeps each one awake",
+   "resolve": 27
+  },
+  {
+   "id": "camp:old_rivals",
+   "name": "Old rivals",
+   "about": "Stories of people they never beat",
+   "resolve": 29
+  }
+ ]
+}

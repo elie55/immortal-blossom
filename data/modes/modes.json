@@ -1,0 +1,402 @@
+{
+ "about": "Game modes and when they open. Chapter 2 opens when chapter 1 is cleared, and so on.",
+ "records": [
+  {
+   "id": "mode:journey",
+   "name": "Journey",
+   "chapters": [
+    "chapter:v1c1",
+    "chapter:v1c2",
+    "chapter:v1c3",
+    "chapter:v1c4",
+    "chapter:v1c5"
+   ],
+   "unlock": "start",
+   "epicSeven": "Adventure"
+  },
+  {
+   "id": "mode:hunts",
+   "name": "Demon Hunts",
+   "hunts": [
+    "hunt:qiongqi",
+    "hunt:taotie",
+    "hunt:taowu",
+    "hunt:hundun",
+    "hunt:xiangliu"
+   ],
+   "unlock": {
+    "clear": "stage:v1c1_08"
+   },
+   "epicSeven": "Hunts"
+  },
+  {
+   "id": "mode:shrines",
+   "name": "Five Phases Shrines",
+   "stages": [
+    "stage:shrine_metal_1",
+    "stage:shrine_metal_2",
+    "stage:shrine_metal_3",
+    "stage:shrine_metal_4",
+    "stage:shrine_metal_5",
+    "stage:shrine_metal_6",
+    "stage:shrine_metal_7",
+    "stage:shrine_metal_8",
+    "stage:shrine_wood_1",
+    "stage:shrine_wood_2",
+    "stage:shrine_wood_3",
+    "stage:shrine_wood_4",
+    "stage:shrine_wood_5",
+    "stage:shrine_wood_6",
+    "stage:shrine_wood_7",
+    "stage:shrine_wood_8",
+    "stage:shrine_water_1",
+    "stage:shrine_water_2",
+    "stage:shrine_water_3",
+    "stage:shrine_water_4",
+    "stage:shrine_water_5",
+    "stage:shrine_water_6",
+    "stage:shrine_water_7",
+    "stage:shrine_water_8",
+    "stage:shrine_fire_1",
+    "stage:shrine_fire_2",
+    "stage:shrine_fire_3",
+    "stage:shrine_fire_4",
+    "stage:shrine_fire_5",
+    "stage:shrine_fire_6",
+    "stage:shrine_fire_7",
+    "stage:shrine_fire_8",
+    "stage:shrine_earth_1",
+    "stage:shrine_earth_2",
+    "stage:shrine_earth_3",
+    "stage:shrine_earth_4",
+    "stage:shrine_earth_5",
+    "stage:shrine_earth_6",
+    "stage:shrine_earth_7",
+    "stage:shrine_earth_8"
+   ],
+   "location": "loc:five_phases_shrines",
+   "unlock": {
+    "clear": "stage:v1c1_08"
+   },
+   "doubledByDay": {
+    "mon": "phase:metal",
+    "tue": "phase:wood",
+    "wed": "phase:water",
+    "thu": "phase:fire",
+    "fri": "phase:earth"
+   },
+   "epicSeven": "Spirit Altar"
+  },
+  {
+   "id": "mode:valley",
+   "name": "Medicine King Valley",
+   "stages": [
+    "stage:valley_1",
+    "stage:valley_2",
+    "stage:valley_3",
+    "stage:valley_4",
+    "stage:valley_5",
+    "stage:valley_6",
+    "stage:valley_7",
+    "stage:valley_8"
+   ],
+   "location": "loc:medicine_king_valley",
+   "host": "npc:medicine_king",
+   "unlock": {
+    "clear": "stage:v1c1_08"
+   },
+   "phaseByDay": {
+    "mon": "phase:metal",
+    "tue": "phase:wood",
+    "wed": "phase:water",
+    "thu": "phase:fire",
+    "fri": "phase:earth",
+    "sat": "your pick",
+    "sun": "your pick"
+   },
+   "sweep": "unlimited after a 3-star clear",
+   "gate": "Realms, not EXP, are the gate: a heroine stops at her realm cap until she breaks through",
+   "epicSeven": "New"
+  },
+  {
+   "id": "mode:secret_realms",
+   "name": "Secret Realms",
+   "location": "loc:secret_realms",
+   "unlock": {
+    "clear": "stage:v1c2_09"
+   },
+   "floors": 3,
+   "minutes": 20,
+   "rooms": [
+    "battle",
+    "elite",
+    "event",
+    "camp",
+    "merchant",
+    "shrine"
+   ],
+   "themes": [
+    "theme:netherflame_incursion",
+    "theme:demon_clan_grounds",
+    "theme:frozen_sword_tombs",
+    "theme:bamboo_labyrinth",
+    "theme:phoenix_embers",
+    "theme:furnace_garden"
+   ],
+   "insights": [
+    "insight:water_frost",
+    "insight:wood_thunder",
+    "insight:fire_embers",
+    "insight:earth_jade",
+    "insight:metal_edge",
+    "insight:sword_resolve",
+    "insight:guardian_wall",
+    "insight:shadow_haste",
+    "insight:talisman_bind",
+    "insight:arcane_flux",
+    "insight:healer_dew",
+    "insight:harmony_flow",
+    "insight:kindred_echo",
+    "insight:qi_spring",
+    "insight:shield_breaker",
+    "insight:fortunate_path",
+    "insight:phoenix_blessing",
+    "insight:mark_of_fate"
+   ],
+   "events": [
+    "event:wounded_crane",
+    "event:abandoned_furnace",
+    "event:fox_wager",
+    "event:sealed_coffin",
+    "event:wandering_alchemist",
+    "event:shrine_of_phases",
+    "event:lost_disciple",
+    "event:bone_lantern_path",
+    "event:koi_pond",
+    "event:echo_of_the_garden"
+   ],
+   "camps": [
+    "camp:home",
+    "camp:first_battle",
+    "camp:favourite_food",
+    "camp:the_garden",
+    "camp:ambitions",
+    "camp:the_pavilion_master",
+    "camp:fears",
+    "camp:old_rivals"
+   ],
+   "merchant": "shop:realm_merchant",
+   "resolve": {
+    "start": 100,
+    "longFightDrain": 10,
+    "atZero": "status:qi_disruption"
+   },
+   "consumes": [
+    "item:resolve_elixir",
+    "item:spirit_elixir",
+    "item:revival_elixir"
+   ],
+   "runRewards": [
+    {
+     "drops": "drops:secret_realm_run"
+    }
+   ],
+   "weeklyFirstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 300
+    },
+    {
+     "item": "item:egg_rare",
+     "qty": 1
+    }
+   ],
+   "epicSeven": "Labyrinth, plus Honkai: Star Rail's Simulated Universe"
+  },
+  {
+   "id": "mode:pagoda",
+   "name": "Demon-Sealing Pagoda",
+   "stages": [
+    "stage:pagoda_001",
+    "stage:pagoda_002",
+    "stage:pagoda_003",
+    "stage:pagoda_004",
+    "stage:pagoda_005",
+    "stage:pagoda_006",
+    "stage:pagoda_007",
+    "stage:pagoda_008",
+    "stage:pagoda_009",
+    "stage:pagoda_010",
+    "stage:pagoda_011",
+    "stage:pagoda_012",
+    "stage:pagoda_013",
+    "stage:pagoda_014",
+    "stage:pagoda_015",
+    "stage:pagoda_016",
+    "stage:pagoda_017",
+    "stage:pagoda_018",
+    "stage:pagoda_019",
+    "stage:pagoda_020",
+    "stage:pagoda_021",
+    "stage:pagoda_022",
+    "stage:pagoda_023",
+    "stage:pagoda_024",
+    "stage:pagoda_025",
+    "stage:pagoda_026",
+    "stage:pagoda_027",
+    "stage:pagoda_028",
+    "stage:pagoda_029",
+    "stage:pagoda_030",
+    "stage:pagoda_031",
+    "stage:pagoda_032",
+    "stage:pagoda_033",
+    "stage:pagoda_034",
+    "stage:pagoda_035",
+    "stage:pagoda_036",
+    "stage:pagoda_037",
+    "stage:pagoda_038",
+    "stage:pagoda_039",
+    "stage:pagoda_040",
+    "stage:pagoda_041",
+    "stage:pagoda_042",
+    "stage:pagoda_043",
+    "stage:pagoda_044",
+    "stage:pagoda_045",
+    "stage:pagoda_046",
+    "stage:pagoda_047",
+    "stage:pagoda_048",
+    "stage:pagoda_049",
+    "stage:pagoda_050",
+    "stage:pagoda_051",
+    "stage:pagoda_052",
+    "stage:pagoda_053",
+    "stage:pagoda_054",
+    "stage:pagoda_055",
+    "stage:pagoda_056",
+    "stage:pagoda_057",
+    "stage:pagoda_058",
+    "stage:pagoda_059",
+    "stage:pagoda_060",
+    "stage:pagoda_061",
+    "stage:pagoda_062",
+    "stage:pagoda_063",
+    "stage:pagoda_064",
+    "stage:pagoda_065",
+    "stage:pagoda_066",
+    "stage:pagoda_067",
+    "stage:pagoda_068",
+    "stage:pagoda_069",
+    "stage:pagoda_070",
+    "stage:pagoda_071",
+    "stage:pagoda_072",
+    "stage:pagoda_073",
+    "stage:pagoda_074",
+    "stage:pagoda_075",
+    "stage:pagoda_076",
+    "stage:pagoda_077",
+    "stage:pagoda_078",
+    "stage:pagoda_079",
+    "stage:pagoda_080",
+    "stage:pagoda_081",
+    "stage:pagoda_082",
+    "stage:pagoda_083",
+    "stage:pagoda_084",
+    "stage:pagoda_085",
+    "stage:pagoda_086",
+    "stage:pagoda_087",
+    "stage:pagoda_088",
+    "stage:pagoda_089",
+    "stage:pagoda_090",
+    "stage:pagoda_091",
+    "stage:pagoda_092",
+    "stage:pagoda_093",
+    "stage:pagoda_094",
+    "stage:pagoda_095",
+    "stage:pagoda_096",
+    "stage:pagoda_097",
+    "stage:pagoda_098",
+    "stage:pagoda_099",
+    "stage:pagoda_100",
+    "stage:pagoda_101",
+    "stage:pagoda_102",
+    "stage:pagoda_103",
+    "stage:pagoda_104",
+    "stage:pagoda_105",
+    "stage:pagoda_106",
+    "stage:pagoda_107",
+    "stage:pagoda_108",
+    "stage:pagoda_109",
+    "stage:pagoda_110",
+    "stage:pagoda_111",
+    "stage:pagoda_112",
+    "stage:pagoda_113",
+    "stage:pagoda_114",
+    "stage:pagoda_115",
+    "stage:pagoda_116",
+    "stage:pagoda_117",
+    "stage:pagoda_118",
+    "stage:pagoda_119",
+    "stage:pagoda_120"
+   ],
+   "location": "loc:demon_sealing_pagoda",
+   "unlock": {
+    "clear": "stage:v1c2_09"
+   },
+   "epicSeven": "Abyss"
+  },
+  {
+   "id": "mode:competition",
+   "name": "Sect Grand Competition",
+   "league": "league:sect_grand_competition",
+   "unlock": {
+    "clear": "stage:v1c3_09"
+   },
+   "epicSeven": "Arena"
+  },
+  {
+   "id": "mode:tournament",
+   "name": "Martial Tournament",
+   "tournament": "tourn:martial_tournament",
+   "unlock": {
+    "clear": "stage:v1c4_09"
+   },
+   "epicSeven": "Championship"
+  },
+  {
+   "id": "mode:tower",
+   "name": "Heavenly Trial Tower",
+   "tower": "tower:heavenly_trial",
+   "unlock": {
+    "clear": "stage:v1c5_10"
+   },
+   "epicSeven": "Automaton Tower"
+  },
+  {
+   "id": "mode:raids",
+   "name": "Tribulation Raids",
+   "raids": [
+    "raid:zhulong",
+    "raid:kunpeng",
+    "raid:jiuying"
+   ],
+   "unlock": {
+    "realm": "realm:nascent_soul"
+   },
+   "epicSeven": "Raid"
+  },
+  {
+   "id": "mode:trials",
+   "name": "Tribulation trials",
+   "trials": [
+    "trial:core_formation",
+    "trial:nascent_soul",
+    "trial:spirit_severing",
+    "trial:void_refinement",
+    "trial:body_integration",
+    "trial:mahayana"
+   ],
+   "unlock": "by realm",
+   "epicSeven": "New"
+  }
+ ]
+}

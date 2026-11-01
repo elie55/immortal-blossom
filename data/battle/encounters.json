@@ -1,0 +1,175 @@
+{
+ "about": "Fortuitous Encounters (奇遇): offered on even rounds in boss stages, the Pagoda, Secret Realms, raids and trials.",
+ "records": [
+  {
+   "id": "enc:thunder_talisman",
+   "name": "Thunder Talisman",
+   "kind": "Talisman",
+   "rarity": "common",
+   "cost": 5,
+   "glyph": "雷",
+   "effects": [
+    {
+     "do": "damage",
+     "target": "all_enemies",
+     "powerOfHighestAtk": 0.9,
+     "phase": "phase:wood"
+    }
+   ],
+   "text": "Lightning hits every enemy for 90% of your highest Attack"
+  },
+  {
+   "id": "enc:frost_talisman",
+   "name": "Frost Talisman",
+   "kind": "Talisman",
+   "rarity": "common",
+   "cost": 5,
+   "glyph": "冰",
+   "effects": [
+    {
+     "do": "apply",
+     "status": "status:frost_seal",
+     "target": "enemy",
+     "turns": 1
+    }
+   ],
+   "text": "Frost Seals one enemy"
+  },
+  {
+   "id": "enc:qi_recovery_pill",
+   "name": "Qi Recovery Pill",
+   "kind": "Pill",
+   "rarity": "common",
+   "cost": 5,
+   "glyph": "丹",
+   "effects": [
+    {
+     "do": "heal",
+     "target": "all_allies",
+     "pctMaxHp": 0.2
+    }
+   ],
+   "text": "Every heroine recovers 20% of her health"
+  },
+  {
+   "id": "enc:spirit_gathering_array",
+   "name": "Spirit Gathering Array",
+   "kind": "Array",
+   "rarity": "common",
+   "cost": 6,
+   "glyph": "阵",
+   "effects": [
+    {
+     "do": "qi",
+     "amount": 2,
+     "every": "turn_start"
+    }
+   ],
+   "text": "+2 Spirit Qi at the start of each of your turns"
+  },
+  {
+   "id": "enc:karmic_mark_talisman",
+   "name": "Karmic Mark Talisman",
+   "kind": "Talisman",
+   "rarity": "rare",
+   "cost": 7,
+   "glyph": "印",
+   "effects": [
+    {
+     "do": "apply",
+     "status": "status:karmic_mark",
+     "target": "all_enemies",
+     "turns": 2
+    }
+   ],
+   "text": "Every enemy takes 25% more damage for 2 turns"
+  },
+  {
+   "id": "enc:cloud_jade_robe",
+   "name": "Cloud Jade Robe",
+   "kind": "Treasure",
+   "rarity": "rare",
+   "cost": 7,
+   "glyph": "衣",
+   "effects": [
+    {
+     "do": "stat",
+     "stat": "stat:def",
+     "damageTaken": -0.2,
+     "attach": true
+    }
+   ],
+   "text": "A heroine takes 20% less damage"
+  },
+  {
+   "id": "enc:five_phases_bead",
+   "name": "Five Phases Bead",
+   "kind": "Treasure",
+   "rarity": "rare",
+   "cost": 8,
+   "glyph": "珠",
+   "effects": [
+    {
+     "do": "phase_qi",
+     "amount": 1,
+     "phase": "own",
+     "every": "turn_start",
+     "attach": true
+    }
+   ],
+   "text": "+1 Phase Qi of the heroine's phase each turn"
+  },
+  {
+   "id": "enc:sword_intent_insight",
+   "name": "Sword Intent Insight",
+   "kind": "Insight",
+   "rarity": "rare",
+   "cost": 8,
+   "glyph": "剑",
+   "effects": [
+    {
+     "do": "stat",
+     "stat": "stat:crit",
+     "value": 0.25,
+     "attach": true
+    }
+   ],
+   "text": "A heroine gains +25% critical chance"
+  },
+  {
+   "id": "enc:heaven_defying_pill",
+   "name": "Heaven-Defying Pill",
+   "kind": "Pill",
+   "rarity": "legendary",
+   "cost": 10,
+   "glyph": "天",
+   "effects": [
+    {
+     "do": "refresh",
+     "slot": "all",
+     "ready": true,
+     "target": "ally"
+    }
+   ],
+   "text": "Every technique of one heroine is ready at once"
+  },
+  {
+   "id": "enc:phoenix_feather",
+   "name": "Phoenix Feather",
+   "kind": "Treasure",
+   "rarity": "legendary",
+   "cost": 11,
+   "glyph": "羽",
+   "effects": [
+    {
+     "do": "apply",
+     "status": "status:phoenix_rebirth",
+     "target": "ally",
+     "pct": 0.4,
+     "attach": true
+    }
+   ],
+   "text": "A heroine revives once at 40% health"
+  }
+ ]
+}

@@ -1,0 +1,199 @@
+{
+ "about": "Ten gear slots. Eight count for sets; the weapon and the Spirit Artefact stand outside sets.",
+ "records": [
+  {
+   "id": "slot:weapon",
+   "name": "Weapon",
+   "cn": "兵器",
+   "count": 1,
+   "countsForSets": false,
+   "mainStats": [
+    {
+     "stat": "stat:atk",
+     "form": "flat"
+    }
+   ]
+  },
+  {
+   "id": "slot:helmet",
+   "name": "Helmet",
+   "cn": "冠",
+   "count": 1,
+   "countsForSets": true,
+   "mainStats": [
+    {
+     "stat": "stat:hp",
+     "form": "flat"
+    }
+   ]
+  },
+  {
+   "id": "slot:body",
+   "name": "Body",
+   "cn": "道袍",
+   "count": 1,
+   "countsForSets": true,
+   "mainStats": [
+    {
+     "stat": "stat:def",
+     "form": "flat"
+    }
+   ]
+  },
+  {
+   "id": "slot:gloves",
+   "name": "Gloves",
+   "cn": "护手",
+   "count": 1,
+   "countsForSets": true,
+   "mainStats": [
+    {
+     "stat": "stat:atk",
+     "form": "pct"
+    },
+    {
+     "stat": "stat:crit",
+     "form": "pct"
+    },
+    {
+     "stat": "stat:crit_dmg",
+     "form": "pct"
+    }
+   ]
+  },
+  {
+   "id": "slot:pants",
+   "name": "Pants",
+   "cn": "裤",
+   "count": 1,
+   "countsForSets": true,
+   "mainStats": [
+    {
+     "stat": "stat:hp",
+     "form": "pct"
+    },
+    {
+     "stat": "stat:def",
+     "form": "pct"
+    },
+    {
+     "stat": "stat:res",
+     "form": "pct"
+    }
+   ]
+  },
+  {
+   "id": "slot:boots",
+   "name": "Boots",
+   "cn": "靴",
+   "count": 1,
+   "countsForSets": true,
+   "mainStats": [
+    {
+     "stat": "stat:haste",
+     "form": "flat"
+    },
+    {
+     "stat": "stat:atk",
+     "form": "pct"
+    },
+    {
+     "stat": "stat:hp",
+     "form": "pct"
+    },
+    {
+     "stat": "stat:def",
+     "form": "pct"
+    }
+   ]
+  },
+  {
+   "id": "slot:ring",
+   "name": "Ring",
+   "cn": "戒",
+   "count": 2,
+   "countsForSets": true,
+   "mainStats": [
+    {
+     "stat": "stat:atk",
+     "form": "pct"
+    },
+    {
+     "stat": "stat:hp",
+     "form": "pct"
+    },
+    {
+     "stat": "stat:def",
+     "form": "pct"
+    },
+    {
+     "stat": "stat:acc",
+     "form": "pct"
+    },
+    {
+     "stat": "stat:res",
+     "form": "pct"
+    },
+    {
+     "stat": "stat:atk",
+     "form": "flat"
+    },
+    {
+     "stat": "stat:hp",
+     "form": "flat"
+    },
+    {
+     "stat": "stat:def",
+     "form": "flat"
+    }
+   ]
+  },
+  {
+   "id": "slot:pendant",
+   "name": "Pendant",
+   "cn": "玉佩",
+   "count": 1,
+   "countsForSets": true,
+   "mainStats": [
+    {
+     "stat": "stat:atk",
+     "form": "pct"
+    },
+    {
+     "stat": "stat:hp",
+     "form": "pct"
+    },
+    {
+     "stat": "stat:def",
+     "form": "pct"
+    },
+    {
+     "stat": "stat:crit",
+     "form": "pct"
+    },
+    {
+     "stat": "stat:crit_dmg",
+     "form": "pct"
+    }
+   ]
+  },
+  {
+   "id": "slot:artefact",
+   "name": "Spirit Artefact",
+   "cn": "灵器",
+   "count": 1,
+   "countsForSets": false,
+   "mainStats": [
+    {
+     "stat": "stat:atk",
+     "form": "flat"
+    },
+    {
+     "stat": "stat:hp",
+     "form": "flat"
+    }
+   ],
+   "passive": true
+  }
+ ]
+}

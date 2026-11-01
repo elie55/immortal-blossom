@@ -1,0 +1,435 @@
+{
+ "about": "Outfits: two bond outfits per heroine (levels 6 and 10) plus season and contest outfits.",
+ "records": [
+  {
+   "id": "outfit:ling_shuang_bond6",
+   "name": "Plum Leisure Robes",
+   "hero": "hero:ling_shuang",
+   "source": "Bond level 6"
+  },
+  {
+   "id": "outfit:ling_shuang_bond10",
+   "name": "Plum Celestial Raiment",
+   "hero": "hero:ling_shuang",
+   "source": "Bond level 10"
+  },
+  {
+   "id": "outfit:mo_yingyue_bond6",
+   "name": "Epiphyllum Leisure Robes",
+   "hero": "hero:mo_yingyue",
+   "source": "Bond level 6"
+  },
+  {
+   "id": "outfit:mo_yingyue_bond10",
+   "name": "Epiphyllum Celestial Raiment",
+   "hero": "hero:mo_yingyue",
+   "source": "Bond level 10"
+  },
+  {
+   "id": "outfit:yan_feihong_bond6",
+   "name": "Phoenix Flower Leisure Robes",
+   "hero": "hero:yan_feihong",
+   "source": "Bond level 6"
+  },
+  {
+   "id": "outfit:yan_feihong_bond10",
+   "name": "Phoenix Flower Celestial Raiment",
+   "hero": "hero:yan_feihong",
+   "source": "Bond level 10"
+  },
+  {
+   "id": "outfit:su_lianhua_bond6",
+   "name": "Lotus Leisure Robes",
+   "hero": "hero:su_lianhua",
+   "source": "Bond level 6"
+  },
+  {
+   "id": "outfit:su_lianhua_bond10",
+   "name": "Lotus Celestial Raiment",
+   "hero": "hero:su_lianhua",
+   "source": "Bond level 10"
+  },
+  {
+   "id": "outfit:gladiolus_bond6",
+   "name": "Gladiolus Leisure Robes",
+   "hero": "hero:gladiolus",
+   "source": "Bond level 6",
+   "draft": true
+  },
+  {
+   "id": "outfit:gladiolus_bond10",
+   "name": "Gladiolus Celestial Raiment",
+   "hero": "hero:gladiolus",
+   "source": "Bond level 10",
+   "draft": true
+  },
+  {
+   "id": "outfit:orchid_bond6",
+   "name": "Orchid Leisure Robes",
+   "hero": "hero:orchid",
+   "source": "Bond level 6",
+   "draft": true
+  },
+  {
+   "id": "outfit:orchid_bond10",
+   "name": "Orchid Celestial Raiment",
+   "hero": "hero:orchid",
+   "source": "Bond level 10",
+   "draft": true
+  },
+  {
+   "id": "outfit:pomegranate_bond6",
+   "name": "Pomegranate blossom Leisure Robes",
+   "hero": "hero:pomegranate",
+   "source": "Bond level 6",
+   "draft": true
+  },
+  {
+   "id": "outfit:pomegranate_bond10",
+   "name": "Pomegranate blossom Celestial Raiment",
+   "hero": "hero:pomegranate",
+   "source": "Bond level 10",
+   "draft": true
+  },
+  {
+   "id": "outfit:crabapple_bond6",
+   "name": "Crabapple Leisure Robes",
+   "hero": "hero:crabapple",
+   "source": "Bond level 6",
+   "draft": true
+  },
+  {
+   "id": "outfit:crabapple_bond10",
+   "name": "Crabapple Celestial Raiment",
+   "hero": "hero:crabapple",
+   "source": "Bond level 10",
+   "draft": true
+  },
+  {
+   "id": "outfit:magnolia_bond6",
+   "name": "Magnolia Leisure Robes",
+   "hero": "hero:magnolia",
+   "source": "Bond level 6",
+   "draft": true
+  },
+  {
+   "id": "outfit:magnolia_bond10",
+   "name": "Magnolia Celestial Raiment",
+   "hero": "hero:magnolia",
+   "source": "Bond level 10",
+   "draft": true
+  },
+  {
+   "id": "outfit:wisteria_bond6",
+   "name": "Wisteria Leisure Robes",
+   "hero": "hero:wisteria",
+   "source": "Bond level 6",
+   "draft": true
+  },
+  {
+   "id": "outfit:wisteria_bond10",
+   "name": "Wisteria Celestial Raiment",
+   "hero": "hero:wisteria",
+   "source": "Bond level 10",
+   "draft": true
+  },
+  {
+   "id": "outfit:camellia_bond6",
+   "name": "Camellia Leisure Robes",
+   "hero": "hero:camellia",
+   "source": "Bond level 6",
+   "draft": true
+  },
+  {
+   "id": "outfit:camellia_bond10",
+   "name": "Camellia Celestial Raiment",
+   "hero": "hero:camellia",
+   "source": "Bond level 10",
+   "draft": true
+  },
+  {
+   "id": "outfit:azalea_bond6",
+   "name": "Azalea Leisure Robes",
+   "hero": "hero:azalea",
+   "source": "Bond level 6",
+   "draft": true
+  },
+  {
+   "id": "outfit:azalea_bond10",
+   "name": "Azalea Celestial Raiment",
+   "hero": "hero:azalea",
+   "source": "Bond level 10",
+   "draft": true
+  },
+  {
+   "id": "outfit:peony_bond6",
+   "name": "Peony Leisure Robes",
+   "hero": "hero:peony",
+   "source": "Bond level 6",
+   "draft": true
+  },
+  {
+   "id": "outfit:peony_bond10",
+   "name": "Peony Celestial Raiment",
+   "hero": "hero:peony",
+   "source": "Bond level 10",
+   "draft": true
+  },
+  {
+   "id": "outfit:pear_blossom_bond6",
+   "name": "Pear blossom Leisure Robes",
+   "hero": "hero:pear_blossom",
+   "source": "Bond level 6",
+   "draft": true
+  },
+  {
+   "id": "outfit:pear_blossom_bond10",
+   "name": "Pear blossom Celestial Raiment",
+   "hero": "hero:pear_blossom",
+   "source": "Bond level 10",
+   "draft": true
+  },
+  {
+   "id": "outfit:iris_bond6",
+   "name": "Iris Leisure Robes",
+   "hero": "hero:iris",
+   "source": "Bond level 6",
+   "draft": true
+  },
+  {
+   "id": "outfit:iris_bond10",
+   "name": "Iris Celestial Raiment",
+   "hero": "hero:iris",
+   "source": "Bond level 10",
+   "draft": true
+  },
+  {
+   "id": "outfit:rose_bond6",
+   "name": "Rose Leisure Robes",
+   "hero": "hero:rose",
+   "source": "Bond level 6",
+   "draft": true
+  },
+  {
+   "id": "outfit:rose_bond10",
+   "name": "Rose Celestial Raiment",
+   "hero": "hero:rose",
+   "source": "Bond level 10",
+   "draft": true
+  },
+  {
+   "id": "outfit:oleander_bond6",
+   "name": "Oleander Leisure Robes",
+   "hero": "hero:oleander",
+   "source": "Bond level 6",
+   "draft": true
+  },
+  {
+   "id": "outfit:oleander_bond10",
+   "name": "Oleander Celestial Raiment",
+   "hero": "hero:oleander",
+   "source": "Bond level 10",
+   "draft": true
+  },
+  {
+   "id": "outfit:jasmine_bond6",
+   "name": "Jasmine Leisure Robes",
+   "hero": "hero:jasmine",
+   "source": "Bond level 6",
+   "draft": true
+  },
+  {
+   "id": "outfit:jasmine_bond10",
+   "name": "Jasmine Celestial Raiment",
+   "hero": "hero:jasmine",
+   "source": "Bond level 10",
+   "draft": true
+  },
+  {
+   "id": "outfit:peach_blossom_bond6",
+   "name": "Peach blossom Leisure Robes",
+   "hero": "hero:peach_blossom",
+   "source": "Bond level 6",
+   "draft": true
+  },
+  {
+   "id": "outfit:peach_blossom_bond10",
+   "name": "Peach blossom Celestial Raiment",
+   "hero": "hero:peach_blossom",
+   "source": "Bond level 10",
+   "draft": true
+  },
+  {
+   "id": "outfit:narcissus_bond6",
+   "name": "Narcissus Leisure Robes",
+   "hero": "hero:narcissus",
+   "source": "Bond level 6",
+   "draft": true
+  },
+  {
+   "id": "outfit:narcissus_bond10",
+   "name": "Narcissus Celestial Raiment",
+   "hero": "hero:narcissus",
+   "source": "Bond level 10",
+   "draft": true
+  },
+  {
+   "id": "outfit:hibiscus_bond6",
+   "name": "Hibiscus Leisure Robes",
+   "hero": "hero:hibiscus",
+   "source": "Bond level 6",
+   "draft": true
+  },
+  {
+   "id": "outfit:hibiscus_bond10",
+   "name": "Hibiscus Celestial Raiment",
+   "hero": "hero:hibiscus",
+   "source": "Bond level 10",
+   "draft": true
+  },
+  {
+   "id": "outfit:daylily_bond6",
+   "name": "Daylily Leisure Robes",
+   "hero": "hero:daylily",
+   "source": "Bond level 6",
+   "draft": true
+  },
+  {
+   "id": "outfit:daylily_bond10",
+   "name": "Daylily Celestial Raiment",
+   "hero": "hero:daylily",
+   "source": "Bond level 10",
+   "draft": true
+  },
+  {
+   "id": "outfit:osmanthus_bond6",
+   "name": "Osmanthus Leisure Robes",
+   "hero": "hero:osmanthus",
+   "source": "Bond level 6",
+   "draft": true
+  },
+  {
+   "id": "outfit:osmanthus_bond10",
+   "name": "Osmanthus Celestial Raiment",
+   "hero": "hero:osmanthus",
+   "source": "Bond level 10",
+   "draft": true
+  },
+  {
+   "id": "outfit:apricot_blossom_bond6",
+   "name": "Apricot blossom Leisure Robes",
+   "hero": "hero:apricot_blossom",
+   "source": "Bond level 6",
+   "draft": true
+  },
+  {
+   "id": "outfit:apricot_blossom_bond10",
+   "name": "Apricot blossom Celestial Raiment",
+   "hero": "hero:apricot_blossom",
+   "source": "Bond level 10",
+   "draft": true
+  },
+  {
+   "id": "outfit:snow_lotus_bond6",
+   "name": "Snow lotus Leisure Robes",
+   "hero": "hero:snow_lotus",
+   "source": "Bond level 6",
+   "draft": true
+  },
+  {
+   "id": "outfit:snow_lotus_bond10",
+   "name": "Snow lotus Celestial Raiment",
+   "hero": "hero:snow_lotus",
+   "source": "Bond level 10",
+   "draft": true
+  },
+  {
+   "id": "outfit:trumpet_creeper_bond6",
+   "name": "Trumpet creeper Leisure Robes",
+   "hero": "hero:trumpet_creeper",
+   "source": "Bond level 6",
+   "draft": true
+  },
+  {
+   "id": "outfit:trumpet_creeper_bond10",
+   "name": "Trumpet creeper Celestial Raiment",
+   "hero": "hero:trumpet_creeper",
+   "source": "Bond level 10",
+   "draft": true
+  },
+  {
+   "id": "outfit:chrysanthemum_bond6",
+   "name": "Chrysanthemum Leisure Robes",
+   "hero": "hero:chrysanthemum",
+   "source": "Bond level 6",
+   "draft": true
+  },
+  {
+   "id": "outfit:chrysanthemum_bond10",
+   "name": "Chrysanthemum Celestial Raiment",
+   "hero": "hero:chrysanthemum",
+   "source": "Bond level 10",
+   "draft": true
+  },
+  {
+   "id": "outfit:lily_bond6",
+   "name": "Lily Leisure Robes",
+   "hero": "hero:lily",
+   "source": "Bond level 6",
+   "draft": true
+  },
+  {
+   "id": "outfit:lily_bond10",
+   "name": "Lily Celestial Raiment",
+   "hero": "hero:lily",
+   "source": "Bond level 10",
+   "draft": true
+  },
+  {
+   "id": "outfit:hydrangea_bond6",
+   "name": "Hydrangea Leisure Robes",
+   "hero": "hero:hydrangea",
+   "source": "Bond level 6",
+   "draft": true
+  },
+  {
+   "id": "outfit:hydrangea_bond10",
+   "name": "Hydrangea Celestial Raiment",
+   "hero": "hero:hydrangea",
+   "source": "Bond level 10",
+   "draft": true
+  },
+  {
+   "id": "outfit:safflower_bond6",
+   "name": "Safflower Leisure Robes",
+   "hero": "hero:safflower",
+   "source": "Bond level 6",
+   "draft": true
+  },
+  {
+   "id": "outfit:safflower_bond10",
+   "name": "Safflower Celestial Raiment",
+   "hero": "hero:safflower",
+   "source": "Bond level 10",
+   "draft": true
+  },
+  {
+   "id": "outfit:ascension_s01_su_lianhua",
+   "name": "Lantern-Lit Pilgrim (Su Lianhua)",
+   "hero": "hero:su_lianhua",
+   "source": "Path of Ascension season 1, tier 30"
+  },
+  {
+   "id": "outfit:competition_ling_shuang",
+   "name": "Grand Competition Champion (Ling Shuang)",
+   "hero": "hero:ling_shuang",
+   "source": "Sect Grand Competition: Sect Patriarch rank"
+  },
+  {
+   "id": "outfit:tournament_yan_feihong",
+   "name": "Martial Victor (Yan Feihong)",
+   "hero": "hero:yan_feihong",
+   "source": "Martial Tournament champion"
+  }
+ ]
+}

@@ -1,0 +1,101 @@
+{
+ "about": "Gifts for bonds. Each heroine likes some (double points) and dislikes one.",
+ "records": [
+  {
+   "id": "item:gift_plum_wine",
+   "name": "Plum Blossom Wine",
+   "cn": "梅花酒",
+   "category": "gift",
+   "rarity": 2,
+   "about": "A gift for the Tea House"
+  },
+  {
+   "id": "item:gift_jade_hairpin",
+   "name": "Jade Hairpin",
+   "cn": "玉簪",
+   "category": "gift",
+   "rarity": 2,
+   "about": "A gift for the Tea House"
+  },
+  {
+   "id": "item:gift_silk_fan",
+   "name": "Silk Fan",
+   "cn": "绢扇",
+   "category": "gift",
+   "rarity": 2,
+   "about": "A gift for the Tea House"
+  },
+  {
+   "id": "item:gift_calligraphy_scroll",
+   "name": "Calligraphy Scroll",
+   "cn": "字画",
+   "category": "gift",
+   "rarity": 2,
+   "about": "A gift for the Tea House"
+  },
+  {
+   "id": "item:gift_sword_tassel",
+   "name": "Sword Tassel",
+   "cn": "剑穗",
+   "category": "gift",
+   "rarity": 2,
+   "about": "A gift for the Tea House"
+  },
+  {
+   "id": "item:gift_lotus_seed_cakes",
+   "name": "Lotus Seed Cakes",
+   "cn": "莲子糕",
+   "category": "gift",
+   "rarity": 2,
+   "about": "A gift for the Tea House"
+  },
+  {
+   "id": "item:gift_spirit_tea",
+   "name": "Spirit Tea",
+   "cn": "灵茶",
+   "category": "gift",
+   "rarity": 2,
+   "about": "A gift for the Tea House"
+  },
+  {
+   "id": "item:gift_guqin_strings",
+   "name": "Guqin Strings",
+   "cn": "琴弦",
+   "category": "gift",
+   "rarity": 2,
+   "about": "A gift for the Tea House"
+  },
+  {
+   "id": "item:gift_sandalwood_incense",
+   "name": "Sandalwood Incense",
+   "cn": "檀香",
+   "category": "gift",
+   "rarity": 2,
+   "about": "A gift for the Tea House"
+  },
+  {
+   "id": "item:gift_embroidered_pouch",
+   "name": "Embroidered Pouch",
+   "cn": "香囊",
+   "category": "gift",
+   "rarity": 2,
+   "about": "A gift for the Tea House"
+  },
+  {
+   "id": "item:gift_poetry_anthology",
+   "name": "Poetry Anthology",
+   "cn": "诗集",
+   "category": "gift",
+   "rarity": 2,
+   "about": "A gift for the Tea House"
+  },
+  {
+   "id": "item:gift_hawthorn_candy",
+   "name": "Candied Hawthorns",
+   "cn": "糖葫芦",
+   "category": "gift",
+   "rarity": 2,
+   "about": "A gift for the Tea House"
+  }
+ ]
+}

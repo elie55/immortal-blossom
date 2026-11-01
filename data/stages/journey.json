@@ -1,0 +1,3072 @@
+{
+ "about": "Journey stages of Volume 1. Every story beat has a scene slot (scenes/before, scenes/after) written in story/scenes_v1c*.json.",
+ "records": [
+  {
+   "id": "stage:v1c1_01",
+   "name": "Dream of the Withered Garden",
+   "chapter": "chapter:v1c1",
+   "mode": "mode:journey",
+   "kind": "battle",
+   "location": "loc:jade_pool",
+   "realm": "realm:qi_refining",
+   "tier": "tier:i",
+   "beat": "A dream of the Withering: four flower immortals fight wraiths at the Jade Pool. Tao Yao's voice guides the first battle (the tutorial), then the Garden burns.",
+   "scenes": {
+    "before": "scene:v1c1_01_before",
+    "after": "scene:v1c1_01_after"
+   },
+   "fixedTeam": [
+    "hero:ling_shuang",
+    "hero:mo_yingyue",
+    "hero:yan_feihong",
+    "hero:su_lianhua"
+   ],
+   "tutorial": true,
+   "waves": [
+    [
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 1
+     },
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 1
+     },
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 1
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 2
+     },
+     {
+      "enemy": "enemy:thorn_wraith",
+      "level": 2
+     }
+    ]
+   ],
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "harmony_or_kindred"
+    }
+   ],
+   "drops": "drops:v1c1",
+   "heavenDefying": {
+    "levelOffset": 19,
+    "tier": "tier:iii",
+    "drops": "drops:v1c1_hd",
+    "firstClearRewards": [
+     {
+      "cur": "cur:immortal_jade",
+      "qty": 50
+     }
+    ],
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+   },
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 100
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c1_02",
+   "name": "The Ruined Pavilion",
+   "chapter": "chapter:v1c1",
+   "mode": "mode:journey",
+   "kind": "story",
+   "location": "loc:hundred_blossoms_pavilion",
+   "realm": "realm:qi_refining",
+   "tier": "tier:i",
+   "beat": "You wake in the ruined Hundred Blossoms Pavilion. Tao Yao introduces herself and the Fate Lotus; the first guided summon. Smoke rises from Peach Blossom Ford.",
+   "scenes": {
+    "before": "scene:v1c1_02_before"
+   },
+   "unlock": {
+    "clear": "stage:v1c1_01"
+   },
+   "unlocks": [
+    "pond:fate_pond",
+    "bld:main_hall"
+   ],
+   "firstClearRewards": [
+    {
+     "cur": "cur:fate_incense",
+     "qty": 10
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 2000
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c1_03",
+   "name": "Smoke over the Ford",
+   "chapter": "chapter:v1c1",
+   "mode": "mode:journey",
+   "kind": "battle",
+   "location": "loc:peach_blossom_ford",
+   "realm": "realm:qi_refining",
+   "tier": "tier:i",
+   "beat": "Wraiths set the river village alight. Village Chief He leads the refugees toward the temple.",
+   "scenes": {
+    "before": "scene:v1c1_03_before"
+   },
+   "unlock": {
+    "clear": "stage:v1c1_02"
+   },
+   "waves": [
+    [
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 2
+     },
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 2
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 2
+     },
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 3
+     }
+    ]
+   ],
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "defeat_in_one_cast",
+     "count": 2
+    }
+   ],
+   "drops": "drops:v1c1",
+   "heavenDefying": {
+    "levelOffset": 19,
+    "tier": "tier:iii",
+    "drops": "drops:v1c1_hd",
+    "firstClearRewards": [
+     {
+      "cur": "cur:immortal_jade",
+      "qty": 50
+     }
+    ],
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+   },
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 100
+    },
+    {
+     "item": "item:qi_gathering_pill",
+     "qty": 2
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c1_04",
+   "name": "The Lotus Shield",
+   "chapter": "chapter:v1c1",
+   "mode": "mode:journey",
+   "kind": "battle",
+   "location": "loc:peach_blossom_ford",
+   "realm": "realm:qi_refining",
+   "tier": "tier:i",
+   "beat": "Su Lianhua holds a jade lotus shield over the refugees. She fights beside you, and names the cultists: the Netherflame Sect.",
+   "scenes": {
+    "before": "scene:v1c1_04_before"
+   },
+   "unlock": {
+    "clear": "stage:v1c1_03"
+   },
+   "guests": [
+    "hero:su_lianhua"
+   ],
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 3
+     },
+     {
+      "enemy": "enemy:thorn_wraith",
+      "level": 3
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 3
+     },
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 3
+     },
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 3
+     }
+    ]
+   ],
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "no_encounters"
+    }
+   ],
+   "drops": "drops:v1c1",
+   "heavenDefying": {
+    "levelOffset": 19,
+    "tier": "tier:iii",
+    "drops": "drops:v1c1_hd",
+    "firstClearRewards": [
+     {
+      "cur": "cur:immortal_jade",
+      "qty": 50
+     }
+    ],
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+   },
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 120
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c1_05",
+   "name": "The Ferryman's Plea",
+   "chapter": "chapter:v1c1",
+   "mode": "mode:journey",
+   "kind": "commission",
+   "location": "loc:peach_blossom_ford",
+   "realm": "realm:qi_refining",
+   "tier": "tier:i",
+   "beat": "Old Liu the Ferryman lost his ferry to river ghouls stirred up by the wraiths. Win it back so the refugees can cross.",
+   "scenes": {
+    "before": "scene:v1c1_05_before",
+    "after": "scene:v1c1_05_after"
+   },
+   "unlock": {
+    "clear": "stage:v1c1_04"
+   },
+   "giver": "npc:ferryman_liu",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 3
+     },
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 3
+     },
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 3
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 4
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 4
+     }
+    ]
+   ],
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "within_turns",
+     "turns": 12
+    }
+   ],
+   "drops": "drops:v1c1",
+   "heavenDefying": {
+    "levelOffset": 19,
+    "tier": "tier:iii",
+    "drops": "drops:v1c1_hd",
+    "firstClearRewards": [
+     {
+      "cur": "cur:immortal_jade",
+      "qty": 50
+     }
+    ],
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+   },
+   "firstClearRewards": [
+    {
+     "item": "item:gift_lotus_seed_cakes",
+     "qty": 2
+    },
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 80
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c1_06",
+   "name": "A Peddler on the Road",
+   "chapter": "chapter:v1c1",
+   "mode": "mode:journey",
+   "kind": "encounter",
+   "location": "loc:peach_blossom_ford",
+   "realm": "realm:qi_refining",
+   "tier": "tier:i",
+   "beat": "Old Qian of the Myriad Treasures Guild sells odds and ends from his cart and gossips about the Guild.",
+   "scenes": {
+    "before": "scene:v1c1_06_before"
+   },
+   "unlock": {
+    "clear": "stage:v1c1_05"
+   },
+   "npc": "npc:old_qian",
+   "shop": "shop:wandering_merchant",
+   "firstClearRewards": [
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 3000
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c1_07",
+   "name": "Ashes of the Peach Grove",
+   "chapter": "chapter:v1c1",
+   "mode": "mode:journey",
+   "kind": "battle",
+   "location": "loc:peach_blossom_ford",
+   "realm": "realm:qi_refining",
+   "tier": "tier:i",
+   "beat": "The cultists burn the orchards to draw out the temple's healer. Abbess Huiming asks you to protect Su Lianhua.",
+   "scenes": {
+    "before": "scene:v1c1_07_before"
+   },
+   "unlock": {
+    "clear": "stage:v1c1_06"
+   },
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 4
+     },
+     {
+      "enemy": "enemy:netherflame_hexer",
+      "level": 4
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 4
+     },
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 4
+     },
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 4
+     }
+    ]
+   ],
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "empower_times",
+     "times": 2
+    }
+   ],
+   "drops": "drops:v1c1",
+   "heavenDefying": {
+    "levelOffset": 20,
+    "tier": "tier:iii",
+    "drops": "drops:v1c1_hd",
+    "firstClearRewards": [
+     {
+      "cur": "cur:immortal_jade",
+      "qty": 50
+     }
+    ],
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+   },
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 120
+    },
+    {
+     "item": "item:qi_gathering_pill",
+     "qty": 3
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c1_08",
+   "name": "Wraith Captain of the Ford",
+   "chapter": "chapter:v1c1",
+   "mode": "mode:journey",
+   "kind": "boss",
+   "location": "loc:peach_blossom_ford",
+   "realm": "realm:qi_refining",
+   "tier": "tier:i",
+   "beat": "The Wraith Captain who led the raid. After his fall, Su Lianhua senses her Dao Seed answering the Fate Lotus, and joins the Pavilion.",
+   "scenes": {
+    "before": "scene:v1c1_08_before",
+    "after": "scene:v1c1_08_after"
+   },
+   "unlock": {
+    "clear": "stage:v1c1_07"
+   },
+   "waves": [
+    [
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 5
+     },
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 5
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 5
+     },
+     {
+      "enemy": "enemy:wraith_captain",
+      "level": 5
+     }
+    ]
+   ],
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "shatter_times",
+     "times": 2
+    }
+   ],
+   "drops": "drops:v1c1",
+   "heavenDefying": {
+    "levelOffset": 19,
+    "tier": "tier:iii",
+    "drops": "drops:v1c1_hd",
+    "firstClearRewards": [
+     {
+      "cur": "cur:immortal_jade",
+      "qty": 50
+     }
+    ],
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+   },
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "hero": "hero:su_lianhua"
+    },
+    {
+     "art": "art:lotus_lantern",
+     "rarity": "rarity:rare"
+    },
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 300
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c2_01",
+   "name": "The Frozen Pass",
+   "chapter": "chapter:v1c2",
+   "mode": "mode:journey",
+   "kind": "battle",
+   "location": "loc:frostpeak",
+   "realm": "realm:qi_refining",
+   "tier": "tier:i",
+   "beat": "Climbing to Frostpeak through wolf country; frozen bodies of Frostpeak disciples on the path.",
+   "scenes": {
+    "before": "scene:v1c2_01_before"
+   },
+   "unlock": {
+    "clear": "stage:v1c1_08"
+   },
+   "waves": [
+    [
+     {
+      "enemy": "enemy:snow_wolf",
+      "level": 6
+     },
+     {
+      "enemy": "enemy:snow_wolf",
+      "level": 6
+     },
+     {
+      "enemy": "enemy:snow_wolf",
+      "level": 6
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:snow_wolf",
+      "level": 6
+     },
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 6
+     }
+    ]
+   ],
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "empower_times",
+     "times": 2
+    }
+   ],
+   "drops": "drops:v1c2",
+   "heavenDefying": {
+    "levelOffset": 19,
+    "tier": "tier:iii",
+    "drops": "drops:v1c2_hd",
+    "firstClearRewards": [
+     {
+      "cur": "cur:immortal_jade",
+      "qty": 50
+     }
+    ],
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+   },
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 120
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c2_02",
+   "name": "Disciples in Chains",
+   "chapter": "chapter:v1c2",
+   "mode": "mode:journey",
+   "kind": "battle",
+   "location": "loc:frostpeak",
+   "realm": "realm:qi_refining",
+   "tier": "tier:i",
+   "beat": "Ling Shuang, alone, attacks a prisoner convoy. You join her.",
+   "scenes": {
+    "before": "scene:v1c2_02_before"
+   },
+   "unlock": {
+    "clear": "stage:v1c2_01"
+   },
+   "guests": [
+    "hero:ling_shuang"
+   ],
+   "waves": [
+    [
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 7
+     },
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 7
+     },
+     {
+      "enemy": "enemy:netherflame_hexer",
+      "level": 7
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 7
+     },
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 7
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 7
+     }
+    ]
+   ],
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "defeat_in_one_cast",
+     "count": 2
+    }
+   ],
+   "drops": "drops:v1c2",
+   "heavenDefying": {
+    "levelOffset": 18,
+    "tier": "tier:iii",
+    "drops": "drops:v1c2_hd",
+    "firstClearRewards": [
+     {
+      "cur": "cur:immortal_jade",
+      "qty": 50
+     }
+    ],
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+   },
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 120
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c2_03",
+   "name": "She Will Not Kneel",
+   "chapter": "chapter:v1c2",
+   "mode": "mode:journey",
+   "kind": "story",
+   "location": "loc:frostpeak",
+   "realm": "realm:qi_refining",
+   "tier": "tier:i",
+   "beat": "In the sect hall Elder Han Lie orders Ling Shuang to kneel and accept the Netherflame \"alliance\". She refuses and is cast out.",
+   "scenes": {
+    "before": "scene:v1c2_03_before"
+   },
+   "unlock": {
+    "clear": "stage:v1c2_02"
+   },
+   "firstClearRewards": [
+    {
+     "cur": "cur:fate_incense",
+     "qty": 3
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c2_04",
+   "name": "Crane Cliffs",
+   "chapter": "chapter:v1c2",
+   "mode": "mode:journey",
+   "kind": "commission",
+   "location": "loc:frostpeak",
+   "realm": "realm:qi_refining",
+   "tier": "tier:i",
+   "beat": "Elder He Ling of the Crane Clan will reveal the secret path into the sect only if you best her dancers.",
+   "scenes": {
+    "before": "scene:v1c2_04_before",
+    "after": "scene:v1c2_04_after"
+   },
+   "unlock": {
+    "clear": "stage:v1c2_03"
+   },
+   "giver": "npc:elder_he_ling",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:crane_dancer",
+      "level": 7
+     },
+     {
+      "enemy": "enemy:crane_dancer",
+      "level": 7
+     },
+     {
+      "enemy": "enemy:crane_dancer",
+      "level": 7
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:crane_dancer",
+      "level": 8
+     },
+     {
+      "enemy": "enemy:crane_dancer",
+      "level": 8
+     },
+     {
+      "enemy": "enemy:snow_wolf",
+      "level": 8
+     }
+    ]
+   ],
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "within_turns",
+     "turns": 12
+    }
+   ],
+   "drops": "drops:v1c2",
+   "heavenDefying": {
+    "levelOffset": 18,
+    "tier": "tier:iii",
+    "drops": "drops:v1c2_hd",
+    "firstClearRewards": [
+     {
+      "cur": "cur:immortal_jade",
+      "qty": 50
+     }
+    ],
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+   },
+   "firstClearRewards": [
+    {
+     "item": "item:gift_poetry_anthology",
+     "qty": 1
+    },
+    {
+     "item": "item:egg_common",
+     "qty": 1
+    },
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 80
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c2_05",
+   "name": "Blizzard Ambush",
+   "chapter": "chapter:v1c2",
+   "mode": "mode:journey",
+   "kind": "battle",
+   "location": "loc:frostpeak",
+   "realm": "realm:qi_refining",
+   "tier": "tier:i",
+   "beat": "The traitors ambush you in a blizzard on the secret path.",
+   "scenes": {
+    "before": "scene:v1c2_05_before"
+   },
+   "unlock": {
+    "clear": "stage:v1c2_04"
+   },
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 8
+     },
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 8
+     },
+     {
+      "enemy": "enemy:snow_wolf",
+      "level": 8
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 8
+     },
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 8
+     },
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 8
+     }
+    ]
+   ],
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "harmony_or_kindred"
+    }
+   ],
+   "drops": "drops:v1c2",
+   "heavenDefying": {
+    "levelOffset": 18,
+    "tier": "tier:iii",
+    "drops": "drops:v1c2_hd",
+    "firstClearRewards": [
+     {
+      "cur": "cur:immortal_jade",
+      "qty": 50
+     }
+    ],
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+   },
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 120
+    },
+    {
+     "item": "item:qi_gathering_pill",
+     "qty": 3
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c2_06",
+   "name": "The Fortune Teller in the Snow",
+   "chapter": "chapter:v1c2",
+   "mode": "mode:journey",
+   "kind": "encounter",
+   "location": "loc:frostpeak",
+   "realm": "realm:qi_refining",
+   "tier": "tier:i",
+   "beat": "Old Seer Bai, somehow on a snowbound cliff, reads Ling Shuang's fate: a plum that blooms for the Garden.",
+   "scenes": {
+    "before": "scene:v1c2_06_before"
+   },
+   "unlock": {
+    "clear": "stage:v1c2_05"
+   },
+   "npc": "npc:seer_bai",
+   "firstClearRewards": [
+    {
+     "cur": "cur:fate_incense",
+     "qty": 5
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c2_07",
+   "name": "Hall of the Sword Tombs",
+   "chapter": "chapter:v1c2",
+   "mode": "mode:journey",
+   "kind": "battle",
+   "location": "loc:frostpeak",
+   "realm": "realm:qi_refining",
+   "tier": "tier:i",
+   "beat": "Wraiths raised from Frostpeak's sword tombs guard the prison stair.",
+   "scenes": {
+    "before": "scene:v1c2_07_before"
+   },
+   "unlock": {
+    "clear": "stage:v1c2_06"
+   },
+   "waves": [
+    [
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 9
+     },
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 9
+     },
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 9
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 9
+     },
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 9
+     },
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 9
+     }
+    ]
+   ],
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "defeat_in_one_cast",
+     "count": 2
+    }
+   ],
+   "drops": "drops:v1c2",
+   "heavenDefying": {
+    "levelOffset": 18,
+    "tier": "tier:iii",
+    "drops": "drops:v1c2_hd",
+    "firstClearRewards": [
+     {
+      "cur": "cur:immortal_jade",
+      "qty": 50
+     }
+    ],
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+   },
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 140
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c2_08",
+   "name": "Freeing the Sect Master",
+   "chapter": "chapter:v1c2",
+   "mode": "mode:journey",
+   "kind": "battle",
+   "location": "loc:frostpeak",
+   "realm": "realm:qi_refining",
+   "tier": "tier:i",
+   "beat": "Ling Shuang frees Sect Master Bai Xue, who tells her the elder sold the disciples for a Netherflame pill.",
+   "scenes": {
+    "before": "scene:v1c2_08_before"
+   },
+   "unlock": {
+    "clear": "stage:v1c2_07"
+   },
+   "guests": [
+    "hero:ling_shuang"
+   ],
+   "waves": [
+    [
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 9
+     },
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 9
+     },
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 9
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 10
+     },
+     {
+      "enemy": "enemy:netherflame_hexer",
+      "level": 10
+     },
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 10
+     }
+    ]
+   ],
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "no_encounters"
+    }
+   ],
+   "drops": "drops:v1c2",
+   "heavenDefying": {
+    "levelOffset": 18,
+    "tier": "tier:iii",
+    "drops": "drops:v1c2_hd",
+    "firstClearRewards": [
+     {
+      "cur": "cur:immortal_jade",
+      "qty": 50
+     }
+    ],
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+   },
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 140
+    },
+    {
+     "item": "item:qi_gathering_pill",
+     "qty": 3
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c2_09",
+   "name": "Elder Han's Betrayal",
+   "chapter": "chapter:v1c2",
+   "mode": "mode:journey",
+   "kind": "boss",
+   "location": "loc:frostpeak",
+   "realm": "realm:qi_refining",
+   "tier": "tier:i",
+   "beat": "Elder Han Lie, burning with netherflame. Ling Shuang cuts down her elder and follows the thread of fate to the Pavilion.",
+   "scenes": {
+    "before": "scene:v1c2_09_before",
+    "after": "scene:v1c2_09_after"
+   },
+   "unlock": {
+    "clear": "stage:v1c2_08"
+   },
+   "waves": [
+    [
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 10
+     },
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 10
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:elder_han",
+      "level": 10
+     },
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 10
+     }
+    ]
+   ],
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "shatter_times",
+     "times": 2
+    }
+   ],
+   "drops": "drops:v1c2",
+   "heavenDefying": {
+    "levelOffset": 18,
+    "tier": "tier:iii",
+    "drops": "drops:v1c2_hd",
+    "firstClearRewards": [
+     {
+      "cur": "cur:immortal_jade",
+      "qty": 50
+     }
+    ],
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+   },
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "hero": "hero:ling_shuang"
+    },
+    {
+     "array": "array:azure_dragon"
+    },
+    {
+     "item": "item:foundation_pill",
+     "qty": 1
+    },
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 400
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c3_01",
+   "name": "Into the Bamboo Sea",
+   "chapter": "chapter:v1c3",
+   "mode": "mode:journey",
+   "kind": "battle",
+   "location": "loc:moonshadow_bamboo_sea",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "beat": "Following rumours of a Netherflame buyer into the endless bamboo.",
+   "scenes": {
+    "before": "scene:v1c3_01_before"
+   },
+   "unlock": {
+    "clear": "stage:v1c2_09"
+   },
+   "waves": [
+    [
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 11
+     },
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 11
+     },
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 11
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 11
+     },
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 11
+     }
+    ]
+   ],
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "defeat_in_one_cast",
+     "count": 2
+    }
+   ],
+   "drops": "drops:v1c3",
+   "heavenDefying": {
+    "levelOffset": 17,
+    "tier": "tier:iii",
+    "drops": "drops:v1c3_hd",
+    "firstClearRewards": [
+     {
+      "cur": "cur:immortal_jade",
+      "qty": 50
+     }
+    ],
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+   },
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 150
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c3_02",
+   "name": "A Blade in the Night",
+   "chapter": "chapter:v1c3",
+   "mode": "mode:journey",
+   "kind": "battle",
+   "location": "loc:moonshadow_bamboo_sea",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "beat": "Assassins strike your camp. In the confusion a violet blade reaches your throat, and stops.",
+   "scenes": {
+    "before": "scene:v1c3_02_before"
+   },
+   "unlock": {
+    "clear": "stage:v1c3_01"
+   },
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 11
+     },
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 11
+     },
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 11
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 12
+     },
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 12
+     },
+     {
+      "enemy": "enemy:netherflame_hexer",
+      "level": 12
+     }
+    ]
+   ],
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "no_encounters"
+    }
+   ],
+   "drops": "drops:v1c3",
+   "heavenDefying": {
+    "levelOffset": 16,
+    "tier": "tier:iii",
+    "drops": "drops:v1c3_hd",
+    "firstClearRewards": [
+     {
+      "cur": "cur:immortal_jade",
+      "qty": 50
+     }
+    ],
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+   },
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 150
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c3_03",
+   "name": "The Contract",
+   "chapter": "chapter:v1c3",
+   "mode": "mode:journey",
+   "kind": "story",
+   "location": "loc:moonshadow_bamboo_sea",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "beat": "Mo Yingyue explains: she was paid to kill you, but the client lied about who you are. A Moonshadow contract with a lie in it is void.",
+   "scenes": {
+    "before": "scene:v1c3_03_before"
+   },
+   "unlock": {
+    "clear": "stage:v1c3_02"
+   },
+   "firstClearRewards": [
+    {
+     "cur": "cur:fate_incense",
+     "qty": 3
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c3_04",
+   "name": "Fox Clan Toll",
+   "chapter": "chapter:v1c3",
+   "mode": "mode:journey",
+   "kind": "commission",
+   "location": "loc:moonshadow_bamboo_sea",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "beat": "Lady Hu Qiao demands a toll to cross Fox Clan ground: a test of strength, then a favour owed.",
+   "scenes": {
+    "before": "scene:v1c3_04_before",
+    "after": "scene:v1c3_04_after"
+   },
+   "unlock": {
+    "clear": "stage:v1c3_03"
+   },
+   "giver": "npc:lady_hu_qiao",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 12
+     },
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 12
+     },
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 12
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 13
+     },
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 13
+     },
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 13
+     }
+    ]
+   ],
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "harmony_or_kindred"
+    }
+   ],
+   "drops": "drops:v1c3",
+   "heavenDefying": {
+    "levelOffset": 16,
+    "tier": "tier:iii",
+    "drops": "drops:v1c3_hd",
+    "firstClearRewards": [
+     {
+      "cur": "cur:immortal_jade",
+      "qty": 50
+     }
+    ],
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+   },
+   "firstClearRewards": [
+    {
+     "item": "item:gift_embroidered_pouch",
+     "qty": 1
+    },
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 100
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c3_05",
+   "name": "Spider Hollows",
+   "chapter": "chapter:v1c3",
+   "mode": "mode:journey",
+   "kind": "battle",
+   "location": "loc:moonshadow_bamboo_sea",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "beat": "Mo Yingyue guides you through the spider hollows to the client's meeting place.",
+   "scenes": {
+    "before": "scene:v1c3_05_before"
+   },
+   "unlock": {
+    "clear": "stage:v1c3_04"
+   },
+   "guests": [
+    "hero:mo_yingyue"
+   ],
+   "waves": [
+    [
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 13
+     },
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 13
+     },
+     {
+      "enemy": "enemy:thorn_wraith",
+      "level": 13
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 13
+     },
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 13
+     },
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 13
+     }
+    ]
+   ],
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "empower_times",
+     "times": 2
+    }
+   ],
+   "drops": "drops:v1c3",
+   "heavenDefying": {
+    "levelOffset": 16,
+    "tier": "tier:iii",
+    "drops": "drops:v1c3_hd",
+    "firstClearRewards": [
+     {
+      "cur": "cur:immortal_jade",
+      "qty": 50
+     }
+    ],
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+   },
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 150
+    },
+    {
+     "item": "item:spirit_condensing_pill",
+     "qty": 1
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c3_06",
+   "name": "A Spirit Beast in a Snare",
+   "chapter": "chapter:v1c3",
+   "mode": "mode:journey",
+   "kind": "encounter",
+   "location": "loc:moonshadow_bamboo_sea",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "beat": "A koi spirit tangled in a cultist snare by a bamboo pool. Freeing it leaves an egg behind.",
+   "scenes": {
+    "before": "scene:v1c3_06_before"
+   },
+   "unlock": {
+    "clear": "stage:v1c3_05"
+   },
+   "firstClearRewards": [
+    {
+     "item": "item:egg_common",
+     "qty": 1
+    },
+    {
+     "item": "item:spirit_grass",
+     "qty": 5
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c3_07",
+   "name": "Moonshadow Pavilion",
+   "chapter": "chapter:v1c3",
+   "mode": "mode:journey",
+   "kind": "battle",
+   "location": "loc:moonshadow_bamboo_sea",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "beat": "Netherflame agents besiege Moonshadow Pavilion to silence Mo Yingyue. Madam Yue judges the broken contract.",
+   "scenes": {
+    "before": "scene:v1c3_07_before"
+   },
+   "unlock": {
+    "clear": "stage:v1c3_06"
+   },
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 13
+     },
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 13
+     },
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 13
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 14
+     },
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 14
+     },
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 14
+     }
+    ]
+   ],
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "no_encounters"
+    }
+   ],
+   "drops": "drops:v1c3",
+   "heavenDefying": {
+    "levelOffset": 16,
+    "tier": "tier:iii",
+    "drops": "drops:v1c3_hd",
+    "firstClearRewards": [
+     {
+      "cur": "cur:immortal_jade",
+      "qty": 50
+     }
+    ],
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+   },
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 160
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c3_08",
+   "name": "Puppets of Ku Ye",
+   "chapter": "chapter:v1c3",
+   "mode": "mode:journey",
+   "kind": "battle",
+   "location": "loc:moonshadow_bamboo_sea",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "beat": "The client's stone puppets: the smiling Envoy Ku Ye of the Netherflame Sect.",
+   "scenes": {
+    "before": "scene:v1c3_08_before"
+   },
+   "unlock": {
+    "clear": "stage:v1c3_07"
+   },
+   "waves": [
+    [
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 14
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 14
+     },
+     {
+      "enemy": "enemy:netherflame_hexer",
+      "level": 14
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 14
+     },
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 14
+     },
+     {
+      "enemy": "enemy:netherflame_hexer",
+      "level": 14
+     }
+    ]
+   ],
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "within_turns",
+     "turns": 12
+    }
+   ],
+   "drops": "drops:v1c3",
+   "heavenDefying": {
+    "levelOffset": 16,
+    "tier": "tier:iii",
+    "drops": "drops:v1c3_hd",
+    "firstClearRewards": [
+     {
+      "cur": "cur:immortal_jade",
+      "qty": 50
+     }
+    ],
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+   },
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 160
+    },
+    {
+     "item": "item:spirit_condensing_pill",
+     "qty": 1
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c3_09",
+   "name": "Envoy Ku Ye",
+   "chapter": "chapter:v1c3",
+   "mode": "mode:journey",
+   "kind": "boss",
+   "location": "loc:moonshadow_bamboo_sea",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "beat": "Ku Ye fights, then flees through the earth. Mo Yingyue signs a new contract, with you, payable in candied hawthorns.",
+   "scenes": {
+    "before": "scene:v1c3_09_before",
+    "after": "scene:v1c3_09_after"
+   },
+   "unlock": {
+    "clear": "stage:v1c3_08"
+   },
+   "waves": [
+    [
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 14
+     },
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 14
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:envoy_ku_ye",
+      "level": 14
+     },
+     {
+      "enemy": "enemy:netherflame_hexer",
+      "level": 14
+     }
+    ]
+   ],
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "shatter_times",
+     "times": 2
+    }
+   ],
+   "drops": "drops:v1c3",
+   "heavenDefying": {
+    "levelOffset": 16,
+    "tier": "tier:iii",
+    "drops": "drops:v1c3_hd",
+    "firstClearRewards": [
+     {
+      "cur": "cur:immortal_jade",
+      "qty": 50
+     }
+    ],
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+   },
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "hero": "hero:mo_yingyue"
+    },
+    {
+     "art": "art:immortal_binding_rope",
+     "rarity": "rarity:rare"
+    },
+    {
+     "array": "array:white_tiger"
+    },
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 500
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c4_01",
+   "name": "Ash Roads",
+   "chapter": "chapter:v1c4",
+   "mode": "mode:journey",
+   "kind": "battle",
+   "location": "loc:vermilion_ruins",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "beat": "The volcanic roads to the Phoenix Palace are full of hounds made of ash.",
+   "scenes": {
+    "before": "scene:v1c4_01_before"
+   },
+   "unlock": {
+    "clear": "stage:v1c3_09"
+   },
+   "waves": [
+    [
+     {
+      "enemy": "enemy:ash_hound",
+      "level": 15
+     },
+     {
+      "enemy": "enemy:ash_hound",
+      "level": 15
+     },
+     {
+      "enemy": "enemy:ash_hound",
+      "level": 15
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:ash_hound",
+      "level": 15
+     },
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 15
+     },
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 15
+     }
+    ]
+   ],
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "no_encounters"
+    }
+   ],
+   "drops": "drops:v1c4",
+   "heavenDefying": {
+    "levelOffset": 16,
+    "tier": "tier:iv",
+    "drops": "drops:v1c4_hd",
+    "firstClearRewards": [
+     {
+      "cur": "cur:immortal_jade",
+      "qty": 50
+     }
+    ],
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+   },
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 170
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c4_02",
+   "name": "The Empty Altar",
+   "chapter": "chapter:v1c4",
+   "mode": "mode:journey",
+   "kind": "story",
+   "location": "loc:vermilion_ruins",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "beat": "The sealed fire is gone. Yan Feihong accuses you of the theft, and Elder Zhu Yan sends her with you to find the thief.",
+   "scenes": {
+    "before": "scene:v1c4_02_before"
+   },
+   "unlock": {
+    "clear": "stage:v1c4_01"
+   },
+   "firstClearRewards": [
+    {
+     "cur": "cur:fate_incense",
+     "qty": 3
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c4_03",
+   "name": "Trial by Fire",
+   "chapter": "chapter:v1c4",
+   "mode": "mode:journey",
+   "kind": "battle",
+   "location": "loc:vermilion_ruins",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "beat": "Yan Feihong tests you in battle against netherflame casters who came for the fire too.",
+   "scenes": {
+    "before": "scene:v1c4_03_before"
+   },
+   "unlock": {
+    "clear": "stage:v1c4_02"
+   },
+   "guests": [
+    "hero:yan_feihong"
+   ],
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 15
+     },
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 15
+     },
+     {
+      "enemy": "enemy:ash_hound",
+      "level": 15
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 16
+     },
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 16
+     },
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 16
+     }
+    ]
+   ],
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "harmony_or_kindred"
+    }
+   ],
+   "drops": "drops:v1c4",
+   "heavenDefying": {
+    "levelOffset": 16,
+    "tier": "tier:iv",
+    "drops": "drops:v1c4_hd",
+    "firstClearRewards": [
+     {
+      "cur": "cur:immortal_jade",
+      "qty": 50
+     }
+    ],
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+   },
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 170
+    },
+    {
+     "item": "item:spirit_condensing_pill",
+     "qty": 1
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c4_04",
+   "name": "Serpent Marsh Detour",
+   "chapter": "chapter:v1c4",
+   "mode": "mode:journey",
+   "kind": "commission",
+   "location": "loc:vermilion_ruins",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "beat": "Chief Bai Lin of the Serpent Clan knows where the thief went, in exchange for clearing a nest of rogue guards.",
+   "scenes": {
+    "before": "scene:v1c4_04_before",
+    "after": "scene:v1c4_04_after"
+   },
+   "unlock": {
+    "clear": "stage:v1c4_03"
+   },
+   "giver": "npc:chief_bai_lin",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 16
+     },
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 16
+     },
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 16
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 16
+     },
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 16
+     },
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 16
+     }
+    ]
+   ],
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "empower_times",
+     "times": 2
+    }
+   ],
+   "drops": "drops:v1c4",
+   "heavenDefying": {
+    "levelOffset": 16,
+    "tier": "tier:iv",
+    "drops": "drops:v1c4_hd",
+    "firstClearRewards": [
+     {
+      "cur": "cur:immortal_jade",
+      "qty": 50
+     }
+    ],
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+   },
+   "firstClearRewards": [
+    {
+     "item": "item:gift_spirit_tea",
+     "qty": 2
+    },
+    {
+     "item": "item:blood_ginseng",
+     "qty": 3
+    },
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 100
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c4_05",
+   "name": "Fox Tracks in the Ash",
+   "chapter": "chapter:v1c4",
+   "mode": "mode:journey",
+   "kind": "battle",
+   "location": "loc:vermilion_ruins",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "beat": "Silver fox hairs and illusions in the ash: the thief is a renegade of the Fox Clan.",
+   "scenes": {
+    "before": "scene:v1c4_05_before"
+   },
+   "unlock": {
+    "clear": "stage:v1c4_04"
+   },
+   "waves": [
+    [
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 16
+     },
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 16
+     },
+     {
+      "enemy": "enemy:ash_hound",
+      "level": 16
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 16
+     },
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 16
+     },
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 16
+     }
+    ]
+   ],
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "defeat_in_one_cast",
+     "count": 2
+    }
+   ],
+   "drops": "drops:v1c4",
+   "heavenDefying": {
+    "levelOffset": 17,
+    "tier": "tier:iv",
+    "drops": "drops:v1c4_hd",
+    "firstClearRewards": [
+     {
+      "cur": "cur:immortal_jade",
+      "qty": 50
+     }
+    ],
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+   },
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 170
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c4_06",
+   "name": "Old Qian's Rare Wares",
+   "chapter": "chapter:v1c4",
+   "mode": "mode:journey",
+   "kind": "encounter",
+   "location": "loc:vermilion_ruins",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "beat": "Old Qian, sweating in the heat, sells fire-proof goods and admits the Guild once bought a feather from a silver fox.",
+   "scenes": {
+    "before": "scene:v1c4_06_before"
+   },
+   "unlock": {
+    "clear": "stage:v1c4_05"
+   },
+   "npc": "npc:old_qian",
+   "shop": "shop:wandering_merchant",
+   "firstClearRewards": [
+    {
+     "item": "item:gift_silk_fan",
+     "qty": 1
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c4_07",
+   "name": "Magma Halls",
+   "chapter": "chapter:v1c4",
+   "mode": "mode:journey",
+   "kind": "battle",
+   "location": "loc:vermilion_ruins",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "beat": "Through the old palace's magma halls toward the thief's den.",
+   "scenes": {
+    "before": "scene:v1c4_07_before"
+   },
+   "unlock": {
+    "clear": "stage:v1c4_06"
+   },
+   "waves": [
+    [
+     {
+      "enemy": "enemy:ash_hound",
+      "level": 17
+     },
+     {
+      "enemy": "enemy:ash_hound",
+      "level": 17
+     },
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 17
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 17
+     },
+     {
+      "enemy": "enemy:ash_hound",
+      "level": 17
+     },
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 17
+     }
+    ]
+   ],
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "within_turns",
+     "turns": 12
+    }
+   ],
+   "drops": "drops:v1c4",
+   "heavenDefying": {
+    "levelOffset": 17,
+    "tier": "tier:iv",
+    "drops": "drops:v1c4_hd",
+    "firstClearRewards": [
+     {
+      "cur": "cur:immortal_jade",
+      "qty": 50
+     }
+    ],
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+   },
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 180
+    },
+    {
+     "item": "item:spirit_condensing_pill",
+     "qty": 1
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c4_08",
+   "name": "Phoenix Palace Gate",
+   "chapter": "chapter:v1c4",
+   "mode": "mode:journey",
+   "kind": "battle",
+   "location": "loc:vermilion_ruins",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "beat": "The Netherflame Sect arrives to buy the stolen fire from the thief. You get there first.",
+   "scenes": {
+    "before": "scene:v1c4_08_before"
+   },
+   "unlock": {
+    "clear": "stage:v1c4_07"
+   },
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 17
+     },
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 17
+     },
+     {
+      "enemy": "enemy:netherflame_hexer",
+      "level": 17
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 17
+     },
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 17
+     },
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 17
+     }
+    ]
+   ],
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "harmony_or_kindred"
+    }
+   ],
+   "drops": "drops:v1c4",
+   "heavenDefying": {
+    "levelOffset": 17,
+    "tier": "tier:iv",
+    "drops": "drops:v1c4_hd",
+    "firstClearRewards": [
+     {
+      "cur": "cur:immortal_jade",
+      "qty": 50
+     }
+    ],
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+   },
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 180
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c4_09",
+   "name": "The Silver Fox",
+   "chapter": "chapter:v1c4",
+   "mode": "mode:journey",
+   "kind": "boss",
+   "location": "loc:vermilion_ruins",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "beat": "Hu Yinling stole the fire to pay a debt to Ku Ye. Defeated, she returns it; Yan Feihong, grudgingly impressed, joins the Pavilion.",
+   "scenes": {
+    "before": "scene:v1c4_09_before",
+    "after": "scene:v1c4_09_after"
+   },
+   "unlock": {
+    "clear": "stage:v1c4_08"
+   },
+   "waves": [
+    [
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 17
+     },
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 17
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:silver_fox_thief",
+      "level": 17
+     },
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 17
+     }
+    ]
+   ],
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "shatter_times",
+     "times": 2
+    }
+   ],
+   "drops": "drops:v1c4",
+   "heavenDefying": {
+    "levelOffset": 18,
+    "tier": "tier:iv",
+    "drops": "drops:v1c4_hd",
+    "firstClearRewards": [
+     {
+      "cur": "cur:immortal_jade",
+      "qty": 50
+     }
+    ],
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+   },
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "hero": "hero:yan_feihong"
+    },
+    {
+     "art": "art:plantain_fan",
+     "rarity": "rarity:rare"
+    },
+    {
+     "array": "array:vermilion_bird"
+    },
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 600
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c5_01",
+   "name": "The Last Road",
+   "chapter": "chapter:v1c5",
+   "mode": "mode:journey",
+   "kind": "battle",
+   "location": "loc:gate_of_the_jade_pool",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "beat": "The four Blossoms march with you toward the sealed gate of the Garden.",
+   "scenes": {
+    "before": "scene:v1c5_01_before"
+   },
+   "unlock": {
+    "clear": "stage:v1c4_09"
+   },
+   "waves": [
+    [
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 18
+     },
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 18
+     },
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 18
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 18
+     },
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 18
+     },
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 18
+     }
+    ]
+   ],
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "within_turns",
+     "turns": 12
+    }
+   ],
+   "drops": "drops:v1c5",
+   "heavenDefying": {
+    "levelOffset": 18,
+    "tier": "tier:iv",
+    "drops": "drops:v1c5_hd",
+    "firstClearRewards": [
+     {
+      "cur": "cur:immortal_jade",
+      "qty": 50
+     }
+    ],
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+   },
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 200
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c5_02",
+   "name": "Council of the Sects",
+   "chapter": "chapter:v1c5",
+   "mode": "mode:journey",
+   "kind": "story",
+   "location": "loc:tianji_pavilion",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "beat": "Frostpeak, Moonshadow, the Phoenix Palace and the Jade Lotus Temple meet at the Tianji Pavilion. Scribe Lu reveals the Matriarch harvests Dao Seeds to free the Sovereign.",
+   "scenes": {
+    "before": "scene:v1c5_02_before"
+   },
+   "unlock": {
+    "clear": "stage:v1c5_01"
+   },
+   "firstClearRewards": [
+    {
+     "cur": "cur:fate_incense",
+     "qty": 5
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c5_03",
+   "name": "Wraith Tide",
+   "chapter": "chapter:v1c5",
+   "mode": "mode:journey",
+   "kind": "battle",
+   "location": "loc:gate_of_the_jade_pool",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "beat": "A tide of wraiths pours from the cracks around the gate.",
+   "scenes": {
+    "before": "scene:v1c5_03_before"
+   },
+   "unlock": {
+    "clear": "stage:v1c5_02"
+   },
+   "waves": [
+    [
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 18
+     },
+     {
+      "enemy": "enemy:thorn_wraith",
+      "level": 18
+     },
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 18
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 19
+     },
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 19
+     },
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 19
+     }
+    ]
+   ],
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "empower_times",
+     "times": 2
+    }
+   ],
+   "drops": "drops:v1c5",
+   "heavenDefying": {
+    "levelOffset": 18,
+    "tier": "tier:iv",
+    "drops": "drops:v1c5_hd",
+    "firstClearRewards": [
+     {
+      "cur": "cur:immortal_jade",
+      "qty": 50
+     }
+    ],
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+   },
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 200
+    },
+    {
+     "item": "item:spirit_condensing_pill",
+     "qty": 2
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c5_04",
+   "name": "The Clans' Pact",
+   "chapter": "chapter:v1c5",
+   "mode": "mode:journey",
+   "kind": "commission",
+   "location": "loc:gate_of_the_jade_pool",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "beat": "The fox, serpent and crane clans will join the defence if the Pavilion proves itself against their champions.",
+   "scenes": {
+    "before": "scene:v1c5_04_before",
+    "after": "scene:v1c5_04_after"
+   },
+   "unlock": {
+    "clear": "stage:v1c5_03"
+   },
+   "giver": "npc:chief_bai_lin",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 19
+     },
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 19
+     },
+     {
+      "enemy": "enemy:crane_dancer",
+      "level": 19
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 19
+     },
+     {
+      "enemy": "enemy:crane_dancer",
+      "level": 19
+     },
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 19
+     }
+    ]
+   ],
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "defeat_in_one_cast",
+     "count": 2
+    }
+   ],
+   "drops": "drops:v1c5",
+   "heavenDefying": {
+    "levelOffset": 18,
+    "tier": "tier:iv",
+    "drops": "drops:v1c5_hd",
+    "firstClearRewards": [
+     {
+      "cur": "cur:immortal_jade",
+      "qty": 50
+     }
+    ],
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+   },
+   "firstClearRewards": [
+    {
+     "item": "item:gift_jade_hairpin",
+     "qty": 1
+    },
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 150
+    },
+    {
+     "cur": "cur:blossom_dew",
+     "qty": 20
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c5_05",
+   "name": "Netherflame Vanguard",
+   "chapter": "chapter:v1c5",
+   "mode": "mode:journey",
+   "kind": "battle",
+   "location": "loc:gate_of_the_jade_pool",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "beat": "The Matriarch's vanguard holds the approach.",
+   "scenes": {
+    "before": "scene:v1c5_05_before"
+   },
+   "unlock": {
+    "clear": "stage:v1c5_04"
+   },
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 19
+     },
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 19
+     },
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 19
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 19
+     },
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 19
+     },
+     {
+      "enemy": "enemy:netherflame_hexer",
+      "level": 19
+     }
+    ]
+   ],
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "no_encounters"
+    }
+   ],
+   "drops": "drops:v1c5",
+   "heavenDefying": {
+    "levelOffset": 19,
+    "tier": "tier:iv",
+    "drops": "drops:v1c5_hd",
+    "firstClearRewards": [
+     {
+      "cur": "cur:immortal_jade",
+      "qty": 50
+     }
+    ],
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+   },
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 200
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c5_06",
+   "name": "The Black Tortoise Seal",
+   "chapter": "chapter:v1c5",
+   "mode": "mode:journey",
+   "kind": "battle",
+   "location": "loc:gate_of_the_jade_pool",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "beat": "Ku Ye tries to break the Black Tortoise seal of the northern gate. This time he does not escape.",
+   "scenes": {
+    "before": "scene:v1c5_06_before",
+    "after": "scene:v1c5_06_after"
+   },
+   "unlock": {
+    "clear": "stage:v1c5_05"
+   },
+   "waves": [
+    [
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 19
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 19
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 19
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:envoy_ku_ye",
+      "level": 20
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 20
+     }
+    ]
+   ],
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "within_turns",
+     "turns": 12
+    }
+   ],
+   "drops": "drops:v1c5",
+   "heavenDefying": {
+    "levelOffset": 18,
+    "tier": "tier:iv",
+    "drops": "drops:v1c5_hd",
+    "firstClearRewards": [
+     {
+      "cur": "cur:immortal_jade",
+      "qty": 50
+     }
+    ],
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+   },
+   "firstClearRewards": [
+    {
+     "array": "array:black_tortoise"
+    },
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 250
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c5_07",
+   "name": "A Seer's Warning",
+   "chapter": "chapter:v1c5",
+   "mode": "mode:journey",
+   "kind": "encounter",
+   "location": "loc:gate_of_the_jade_pool",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "beat": "Old Seer Bai tells the Pavilion Master the truth Tao Yao has hidden: you were the Garden's Gardener.",
+   "scenes": {
+    "before": "scene:v1c5_07_before"
+   },
+   "unlock": {
+    "clear": "stage:v1c5_06"
+   },
+   "npc": "npc:seer_bai",
+   "firstClearRewards": [
+    {
+     "cur": "cur:fate_incense",
+     "qty": 5
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c5_08",
+   "name": "Through the Withered Garden",
+   "chapter": "chapter:v1c5",
+   "mode": "mode:journey",
+   "kind": "battle",
+   "location": "loc:jade_pool",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "beat": "Beyond the gate lies the Garden as it is now: ash, and flowers that remember you.",
+   "scenes": {
+    "before": "scene:v1c5_08_before"
+   },
+   "unlock": {
+    "clear": "stage:v1c5_07"
+   },
+   "waves": [
+    [
+     {
+      "enemy": "enemy:thorn_wraith",
+      "level": 20
+     },
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 20
+     },
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 20
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 20
+     },
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 20
+     },
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 20
+     }
+    ]
+   ],
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "empower_times",
+     "times": 2
+    }
+   ],
+   "drops": "drops:v1c5",
+   "heavenDefying": {
+    "levelOffset": 19,
+    "tier": "tier:iv",
+    "drops": "drops:v1c5_hd",
+    "firstClearRewards": [
+     {
+      "cur": "cur:immortal_jade",
+      "qty": 50
+     }
+    ],
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+   },
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 220
+    },
+    {
+     "item": "item:spirit_condensing_pill",
+     "qty": 2
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c5_09",
+   "name": "Before the Throne of Ash",
+   "chapter": "chapter:v1c5",
+   "mode": "mode:journey",
+   "kind": "battle",
+   "location": "loc:jade_pool",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "beat": "The Matriarch's honour guard at the burned heart of the Garden.",
+   "scenes": {
+    "before": "scene:v1c5_09_before"
+   },
+   "unlock": {
+    "clear": "stage:v1c5_08"
+   },
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 20
+     },
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 20
+     },
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 20
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 20
+     },
+     {
+      "enemy": "enemy:netherflame_hexer",
+      "level": 20
+     },
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 20
+     }
+    ]
+   ],
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "defeat_in_one_cast",
+     "count": 2
+    }
+   ],
+   "drops": "drops:v1c5",
+   "heavenDefying": {
+    "levelOffset": 20,
+    "tier": "tier:iv",
+    "drops": "drops:v1c5_hd",
+    "firstClearRewards": [
+     {
+      "cur": "cur:immortal_jade",
+      "qty": 50
+     }
+    ],
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+   },
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 220
+    }
+   ]
+  },
+  {
+   "id": "stage:v1c5_10",
+   "name": "The Netherflame Matriarch",
+   "chapter": "chapter:v1c5",
+   "mode": "mode:journey",
+   "kind": "boss",
+   "location": "loc:jade_pool",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "beat": "The Matriarch descends. Shattered, she flees into the Netherworld rift, vowing the Sovereign's return. The Pavilion rises again, and Volume 1 ends.",
+   "scenes": {
+    "before": "scene:v1c5_10_before",
+    "after": "scene:v1c5_10_after"
+   },
+   "unlock": {
+    "clear": "stage:v1c5_09"
+   },
+   "waves": [
+    [
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 20
+     },
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 20
+     },
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 20
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 20
+     },
+     {
+      "enemy": "enemy:netherflame_matriarch",
+      "level": 20
+     },
+     {
+      "enemy": "enemy:thorn_wraith",
+      "level": 20
+     }
+    ]
+   ],
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "shatter_times",
+     "times": 2
+    }
+   ],
+   "drops": "drops:v1c5",
+   "heavenDefying": {
+    "levelOffset": 20,
+    "tier": "tier:iv",
+    "drops": "drops:v1c5_hd",
+    "firstClearRewards": [
+     {
+      "cur": "cur:immortal_jade",
+      "qty": 50
+     }
+    ],
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+   },
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "item": "item:golden_core_pill",
+     "qty": 1
+    },
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 1000
+    },
+    {
+     "cur": "cur:fate_incense",
+     "qty": 10
+    },
+    {
+     "cur": "cur:blossom_dew",
+     "qty": 50
+    },
+    {
+     "title": "title:pavilion_restorer"
+    }
+   ]
+  }
+ ]
+}

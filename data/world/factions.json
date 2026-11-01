@@ -1,0 +1,93 @@
+{
+ "about": "Factions of the Nine Provinces.",
+ "records": [
+  {
+   "id": "faction:hundred_blossoms_pavilion",
+   "name": "Hundred Blossoms Pavilion",
+   "cn": "百花阁",
+   "role": "Your sect and home base",
+   "home": "loc:hundred_blossoms_pavilion",
+   "leader": "npc:pavilion_master"
+  },
+  {
+   "id": "faction:frostpeak_sword_sect",
+   "name": "Frostpeak Sword Sect",
+   "cn": "霜峰剑宗",
+   "role": "Orthodox sword sect of the northern snows",
+   "home": "loc:frostpeak",
+   "leader": "npc:frostpeak_master"
+  },
+  {
+   "id": "faction:moonshadow_pavilion",
+   "name": "Moonshadow Pavilion",
+   "cn": "月影阁",
+   "role": "Assassins for hire who live by a code",
+   "home": "loc:moonshadow_bamboo_sea",
+   "leader": "npc:madam_yue"
+  },
+  {
+   "id": "faction:jade_lotus_temple",
+   "name": "Jade Lotus Temple",
+   "cn": "玉莲寺",
+   "role": "Healer nuns of the central plains",
+   "home": "loc:peach_blossom_ford",
+   "leader": "npc:abbess_huiming"
+  },
+  {
+   "id": "faction:vermilion_phoenix_palace",
+   "name": "Vermilion Phoenix Palace",
+   "cn": "朱凰宫",
+   "role": "Fire arcanists of the southern volcanoes",
+   "home": "loc:vermilion_ruins",
+   "leader": "npc:elder_zhu_yan"
+  },
+  {
+   "id": "faction:myriad_treasures_guild",
+   "name": "Myriad Treasures Guild",
+   "cn": "万宝商会",
+   "role": "Merchants: market, auction house, wandering merchant",
+   "home": "loc:myriad_treasures_hall",
+   "leader": "npc:madam_jin"
+  },
+  {
+   "id": "faction:tianji_pavilion",
+   "name": "Tianji Pavilion",
+   "cn": "天机阁",
+   "role": "Fate readers who sell secrets",
+   "home": "loc:tianji_pavilion",
+   "leader": "npc:scribe_lu"
+  },
+  {
+   "id": "faction:netherflame_sect",
+   "name": "Netherflame Sect",
+   "cn": "冥焰宗",
+   "role": "Yin cultivators who raise wraiths; main antagonists",
+   "home": "loc:gate_of_the_jade_pool",
+   "leader": "npc:netherflame_sovereign"
+  },
+  {
+   "id": "faction:fox_clan",
+   "name": "Fox Clan",
+   "cn": "狐族",
+   "role": "Demon clan of illusions; ally or enemy depending on the chapter",
+   "home": "loc:moonshadow_bamboo_sea",
+   "leader": "npc:lady_hu_qiao"
+  },
+  {
+   "id": "faction:serpent_clan",
+   "name": "Serpent Clan",
+   "cn": "蛇族",
+   "role": "Demon clan of the river marshes; ally or enemy depending on the chapter",
+   "home": "loc:peach_blossom_ford",
+   "leader": "npc:chief_bai_lin"
+  },
+  {
+   "id": "faction:crane_clan",
+   "name": "Crane Clan",
+   "cn": "鹤族",
+   "role": "Demon clan of the high cliffs; ally or enemy depending on the chapter",
+   "home": "loc:frostpeak",
+   "leader": "npc:elder_he_ling"
+  }
+ ]
+}

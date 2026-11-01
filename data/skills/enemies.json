@@ -1,0 +1,2652 @@
+{
+ "about": "Enemy techniques. Shared ones are used by several enemies of a family.",
+ "records": [
+  {
+   "id": "skill:grave_claw",
+   "name": "Grave Claw",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.0
+    }
+   ],
+   "text": "Rakes one heroine for 100% ATK.",
+   "shared": true
+  },
+  {
+   "id": "skill:cinder_wail",
+   "name": "Cinder Wail",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 3,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.55
+    },
+    {
+     "do": "apply",
+     "status": "status:fire_poison",
+     "turns": 2,
+     "chance": 0.5
+    }
+   ],
+   "text": "Burning shriek: every heroine takes 55% ATK, 50% chance of Fire Poison.",
+   "owner": "enemy:ember_wraith"
+  },
+  {
+   "id": "skill:grave_bind",
+   "name": "Grave Bind",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 2,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.3
+    },
+    {
+     "do": "delay",
+     "turns": 1
+    }
+   ],
+   "text": "Grave mud binds one heroine: 130% ATK and her charging techniques are delayed by 1 turn.",
+   "owner": "enemy:mire_wraith"
+  },
+  {
+   "id": "skill:bone_spear",
+   "name": "Bone Spear",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 3,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.7,
+     "critBonus": 0.5
+    }
+   ],
+   "text": "A spear of bone: 170% ATK on one heroine with +50% critical chance.",
+   "owner": "enemy:bone_wraith"
+  },
+  {
+   "id": "skill:black_tide",
+   "name": "Black Tide",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.5
+    },
+    {
+     "do": "apply",
+     "status": "status:qi_disruption",
+     "turns": 1
+    }
+   ],
+   "text": "A black wave: every heroine takes 50% ATK and Qi Disruption for 1 turn.",
+   "owner": "enemy:drowned_wraith"
+  },
+  {
+   "id": "skill:soul_thorns",
+   "name": "Soul Thorns",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 3,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.6,
+     "hits": 2
+    },
+    {
+     "do": "apply",
+     "status": "status:gu_venom",
+     "turns": 2
+    }
+   ],
+   "text": "Two thorn lashes on one heroine for 60% ATK each and Gu Venom for 2 turns.",
+   "owner": "enemy:thorn_wraith"
+  },
+  {
+   "id": "skill:ashen_slash",
+   "name": "Ashen Slash",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.0
+    },
+    {
+     "do": "apply",
+     "status": "status:sword_wound",
+     "turns": 2,
+     "chance": 0.3
+    }
+   ],
+   "text": "Cuts one heroine for 100% ATK; 30% chance of Sword Wound.",
+   "owner": "enemy:netherflame_blade"
+  },
+  {
+   "id": "skill:cinder_cleave",
+   "name": "Cinder Cleave",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 2,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.4
+    },
+    {
+     "do": "apply",
+     "status": "status:body_shatter",
+     "turns": 2,
+     "chance": 0.5
+    }
+   ],
+   "text": "A burning cleave: 140% ATK and a 50% chance of Body Shatter for 2 turns.",
+   "owner": "enemy:netherflame_blade"
+  },
+  {
+   "id": "skill:hex_bolt",
+   "name": "Hex Bolt",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.9
+    }
+   ],
+   "text": "A cursed bolt for 90% ATK.",
+   "owner": "enemy:netherflame_hexer"
+  },
+  {
+   "id": "skill:binding_hex",
+   "name": "Binding Hex",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 2,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.6
+    },
+    {
+     "do": "apply",
+     "status": "status:entangle",
+     "turns": 1,
+     "chance": 0.7
+    }
+   ],
+   "text": "60% ATK and a 70% chance to Entangle.",
+   "owner": "enemy:netherflame_hexer"
+  },
+  {
+   "id": "skill:flame_bolt",
+   "name": "Netherfire Bolt",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.0
+    },
+    {
+     "do": "apply",
+     "status": "status:fire_poison",
+     "turns": 2,
+     "chance": 0.3
+    }
+   ],
+   "text": "100% ATK; 30% chance of Fire Poison.",
+   "owner": "enemy:netherflame_flamecaller"
+  },
+  {
+   "id": "skill:netherfire_rain",
+   "name": "Netherfire Rain",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 3,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.6
+    },
+    {
+     "do": "apply",
+     "status": "status:fire_poison",
+     "turns": 2,
+     "chance": 0.5
+    }
+   ],
+   "text": "Every heroine takes 60% ATK; 50% chance of Fire Poison.",
+   "owner": "enemy:netherflame_flamecaller"
+  },
+  {
+   "id": "skill:bone_bash",
+   "name": "Bone Bash",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.9
+    }
+   ],
+   "text": "A heavy blow for 90% ATK.",
+   "owner": "enemy:netherflame_bonewarden"
+  },
+  {
+   "id": "skill:bone_ward",
+   "name": "Bone Ward",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 2,
+   "target": "self",
+   "effects": [
+    {
+     "do": "apply",
+     "status": "status:iron_body",
+     "turns": 2
+    },
+    {
+     "do": "apply",
+     "status": "status:provoke",
+     "turns": 1,
+     "target": "all_enemies"
+    }
+   ],
+   "text": "Iron Body for 2 turns and Provokes every heroine for 1 turn.",
+   "owner": "enemy:netherflame_bonewarden"
+  },
+  {
+   "id": "skill:shade_stab",
+   "name": "Shade Stab",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.1
+    }
+   ],
+   "text": "Stabs one heroine for 110% ATK.",
+   "owner": "enemy:netherflame_shade"
+  },
+  {
+   "id": "skill:veil_of_ash",
+   "name": "Veil of Ash",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 1,
+   "target": "self",
+   "effects": [
+    {
+     "do": "apply",
+     "status": "status:shadow_veil",
+     "turns": 2
+    }
+   ],
+   "text": "Vanishes into ash: Shadow Veil for 2 turns.",
+   "owner": "enemy:netherflame_shade"
+  },
+  {
+   "id": "skill:wither_bolt",
+   "name": "Wither Bolt",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.8
+    },
+    {
+     "do": "apply",
+     "status": "status:withering",
+     "turns": 1,
+     "chance": 0.3
+    }
+   ],
+   "text": "80% ATK; 30% chance of Withering.",
+   "owner": "enemy:netherflame_priestess"
+  },
+  {
+   "id": "skill:netherflame_litany",
+   "name": "Netherflame Litany",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_allies",
+   "effects": [
+    {
+     "do": "heal",
+     "power": 1.0
+    },
+    {
+     "do": "cleanse",
+     "count": 1
+    }
+   ],
+   "text": "Every enemy recovers 100% ATK and loses one debuff.",
+   "owner": "enemy:netherflame_priestess"
+  },
+  {
+   "id": "skill:captain_lash",
+   "name": "Captain's Lash",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.1
+    },
+    {
+     "do": "apply",
+     "status": "status:fire_poison",
+     "turns": 2,
+     "chance": 0.4
+    }
+   ],
+   "text": "110% ATK; 40% chance of Fire Poison.",
+   "owner": "enemy:wraith_captain"
+  },
+  {
+   "id": "skill:ember_command",
+   "name": "Ember Command",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_allies",
+   "effects": [
+    {
+     "do": "apply",
+     "status": "status:surging_qi",
+     "turns": 2
+    }
+   ],
+   "text": "Every enemy gains Surging Qi for 2 turns.",
+   "owner": "enemy:wraith_captain"
+  },
+  {
+   "id": "skill:pyre_of_the_ford",
+   "name": "Pyre of the Ford",
+   "slot": "s3",
+   "cooldown": 4,
+   "start": 3,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.3
+    },
+    {
+     "do": "apply",
+     "status": "status:fire_poison",
+     "turns": 2
+    }
+   ],
+   "text": "Every heroine takes 130% ATK and Fire Poison for 2 turns. Shatter his Qi shield to delay it.",
+   "owner": "enemy:wraith_captain",
+   "ultimate": true
+  },
+  {
+   "id": "skill:ashen_frost_sword",
+   "name": "Ashen Frost Sword",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.1
+    },
+    {
+     "do": "apply",
+     "status": "status:sword_wound",
+     "turns": 2,
+     "chance": 0.5
+    }
+   ],
+   "text": "110% ATK; 50% chance of Sword Wound.",
+   "owner": "enemy:elder_han"
+  },
+  {
+   "id": "skill:sect_betrayal",
+   "name": "Sect Betrayal",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.5
+    },
+    {
+     "do": "apply",
+     "status": "status:sealed_meridians",
+     "turns": 1,
+     "chance": 0.5
+    }
+   ],
+   "text": "Every heroine takes 50% ATK; 50% chance of Sealed Meridians.",
+   "owner": "enemy:elder_han"
+  },
+  {
+   "id": "skill:netherflame_sword_array",
+   "name": "Netherflame Sword Array",
+   "slot": "s3",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.4
+    },
+    {
+     "do": "apply",
+     "status": "status:sword_wound",
+     "turns": 2,
+     "stacks": 2
+    }
+   ],
+   "text": "Every heroine takes 140% ATK and two stacks of Sword Wound.",
+   "owner": "enemy:elder_han",
+   "ultimate": true
+  },
+  {
+   "id": "skill:puppet_strings",
+   "name": "Puppet Strings",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.0
+    },
+    {
+     "do": "apply",
+     "status": "status:entangle",
+     "turns": 1,
+     "chance": 0.3
+    }
+   ],
+   "text": "100% ATK; 30% chance to Entangle.",
+   "owner": "enemy:envoy_ku_ye"
+  },
+  {
+   "id": "skill:soul_contract",
+   "name": "Soul Contract",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 2,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.6
+    },
+    {
+     "do": "apply",
+     "status": "status:heart_demon",
+     "turns": 2,
+     "stacks": 2
+    }
+   ],
+   "text": "60% ATK and two stacks of Heart Demon.",
+   "owner": "enemy:envoy_ku_ye"
+  },
+  {
+   "id": "skill:earthen_coffin",
+   "name": "Earthen Coffin",
+   "slot": "s3",
+   "cooldown": 5,
+   "start": 4,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 2.2
+    },
+    {
+     "do": "apply",
+     "status": "status:soul_shock",
+     "turns": 1
+    }
+   ],
+   "text": "Buries one heroine: 220% ATK and Soul Shock for 1 turn.",
+   "owner": "enemy:envoy_ku_ye",
+   "ultimate": true
+  },
+  {
+   "id": "skill:silver_fox_claw",
+   "name": "Silver Fox Claw",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.1,
+     "critBonus": 0.2
+    }
+   ],
+   "text": "110% ATK with +20% critical chance.",
+   "owner": "enemy:silver_fox_thief"
+  },
+  {
+   "id": "skill:stolen_phoenix_flame",
+   "name": "Stolen Phoenix Flame",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.7
+    },
+    {
+     "do": "apply",
+     "status": "status:fire_poison",
+     "turns": 2
+    }
+   ],
+   "text": "Every heroine takes 70% ATK and Fire Poison for 2 turns.",
+   "owner": "enemy:silver_fox_thief"
+  },
+  {
+   "id": "skill:nine_tails_illusion",
+   "name": "Nine-Tails Illusion",
+   "slot": "s3",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "apply",
+     "status": "status:lotus_dream",
+     "turns": 1,
+     "chance": 0.6
+    },
+    {
+     "do": "apply",
+     "status": "status:mist_veil",
+     "turns": 2
+    }
+   ],
+   "text": "60% chance of Lotus Dream on every heroine, and Mist Veil for 2 turns.",
+   "owner": "enemy:silver_fox_thief",
+   "ultimate": true
+  },
+  {
+   "id": "skill:netherflame_lash",
+   "name": "Netherflame Lash",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.1
+    },
+    {
+     "do": "apply",
+     "status": "status:fire_poison",
+     "turns": 2,
+     "chance": 0.5
+    }
+   ],
+   "text": "Whips one heroine for 110% ATK, 50% chance of Fire Poison.",
+   "owner": "enemy:netherflame_matriarch"
+  },
+  {
+   "id": "skill:withering_curse",
+   "name": "Withering Curse",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.6
+    },
+    {
+     "do": "apply",
+     "status": "status:withering",
+     "turns": 1
+    }
+   ],
+   "text": "Every heroine takes 60% ATK and Withering for 1 turn.",
+   "owner": "enemy:netherflame_matriarch"
+  },
+  {
+   "id": "skill:netherflame_cataclysm",
+   "name": "Netherflame Cataclysm",
+   "slot": "s3",
+   "cooldown": 4,
+   "start": 3,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.5
+    },
+    {
+     "do": "apply",
+     "status": "status:fire_poison",
+     "turns": 2
+    }
+   ],
+   "text": "Netherflame engulfs every heroine for 150% ATK and Fire Poison for 2 turns. Shatter her Qi shield to delay it.",
+   "owner": "enemy:netherflame_matriarch",
+   "ultimate": true
+  },
+  {
+   "id": "skill:fox_claw",
+   "name": "Fox Claw",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.0
+    }
+   ],
+   "text": "100% ATK.",
+   "owner": "enemy:fox_trickster"
+  },
+  {
+   "id": "skill:bewitching_mist",
+   "name": "Bewitching Mist",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "apply",
+     "status": "status:mist_veil",
+     "turns": 2
+    }
+   ],
+   "text": "Mist Veil on every heroine for 2 turns.",
+   "owner": "enemy:fox_trickster"
+  },
+  {
+   "id": "skill:venom_fang",
+   "name": "Venom Fang",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.9
+    },
+    {
+     "do": "apply",
+     "status": "status:gu_venom",
+     "turns": 2,
+     "chance": 0.4
+    }
+   ],
+   "text": "90% ATK; 40% chance of Gu Venom.",
+   "owner": "enemy:serpent_guard"
+  },
+  {
+   "id": "skill:crushing_coil",
+   "name": "Crushing Coil",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 2,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.2
+    },
+    {
+     "do": "apply",
+     "status": "status:soul_shock",
+     "turns": 1,
+     "chance": 0.35
+    }
+   ],
+   "text": "120% ATK; 35% chance of Soul Shock.",
+   "owner": "enemy:serpent_guard"
+  },
+  {
+   "id": "skill:crane_beak",
+   "name": "Crane Beak",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.0
+    },
+    {
+     "do": "apply",
+     "status": "status:sword_wound",
+     "turns": 2,
+     "chance": 0.4
+    }
+   ],
+   "text": "100% ATK; 40% chance of Sword Wound.",
+   "owner": "enemy:crane_dancer"
+  },
+  {
+   "id": "skill:feather_storm",
+   "name": "Feather Storm",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 3,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.6
+    }
+   ],
+   "text": "Every heroine takes 60% ATK.",
+   "owner": "enemy:crane_dancer"
+  },
+  {
+   "id": "skill:traitor_frost_slash",
+   "name": "Frost Slash",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.0
+    }
+   ],
+   "text": "100% ATK.",
+   "owner": "enemy:frostpeak_traitor"
+  },
+  {
+   "id": "skill:icy_lunge",
+   "name": "Icy Lunge",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 2,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.3
+    },
+    {
+     "do": "apply",
+     "status": "status:frost_seal",
+     "turns": 1,
+     "chance": 0.3
+    }
+   ],
+   "text": "130% ATK; 30% chance of Frost Seal.",
+   "owner": "enemy:frostpeak_traitor"
+  },
+  {
+   "id": "skill:drowning_grip",
+   "name": "Drowning Grip",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.0
+    },
+    {
+     "do": "apply",
+     "status": "status:soul_shock",
+     "turns": 1,
+     "chance": 0.15
+    }
+   ],
+   "text": "100% ATK; 15% chance of Soul Shock.",
+   "owner": "enemy:river_ghoul"
+  },
+  {
+   "id": "skill:frost_fang",
+   "name": "Frost Fang",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.0
+    },
+    {
+     "do": "apply",
+     "status": "status:frost_seal",
+     "turns": 1,
+     "chance": 0.1
+    }
+   ],
+   "text": "100% ATK; 10% chance of Frost Seal.",
+   "owner": "enemy:snow_wolf"
+  },
+  {
+   "id": "skill:silk_spit",
+   "name": "Silk Spit",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.8
+    },
+    {
+     "do": "apply",
+     "status": "status:entangle",
+     "turns": 1,
+     "chance": 0.3
+    }
+   ],
+   "text": "80% ATK; 30% chance to Entangle.",
+   "owner": "enemy:bamboo_spider"
+  },
+  {
+   "id": "skill:spider_venom_bite",
+   "name": "Venom Bite",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 2,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.0
+    },
+    {
+     "do": "apply",
+     "status": "status:gu_venom",
+     "turns": 2
+    }
+   ],
+   "text": "100% ATK and Gu Venom for 2 turns.",
+   "owner": "enemy:bamboo_spider"
+  },
+  {
+   "id": "skill:ember_bite",
+   "name": "Ember Bite",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.0
+    },
+    {
+     "do": "apply",
+     "status": "status:fire_poison",
+     "turns": 2,
+     "chance": 0.3
+    }
+   ],
+   "text": "100% ATK; 30% chance of Fire Poison.",
+   "owner": "enemy:ash_hound"
+  },
+  {
+   "id": "skill:stone_fist",
+   "name": "Stone Fist",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.0
+    }
+   ],
+   "text": "100% ATK.",
+   "owner": "enemy:stone_puppet"
+  },
+  {
+   "id": "skill:stone_skin",
+   "name": "Stone Skin",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 2,
+   "target": "self",
+   "effects": [
+    {
+     "do": "apply",
+     "status": "status:iron_body",
+     "turns": 2
+    }
+   ],
+   "text": "Iron Body for 2 turns.",
+   "owner": "enemy:stone_puppet"
+  },
+  {
+   "id": "skill:furnace_punch",
+   "name": "Furnace Punch",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.0
+    }
+   ],
+   "text": "100% ATK.",
+   "owner": "enemy:pill_golem"
+  },
+  {
+   "id": "skill:spore_burst",
+   "name": "Spore Burst",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.7
+    },
+    {
+     "do": "apply",
+     "status": "status:gu_venom",
+     "turns": 2,
+     "chance": 0.3
+    }
+   ],
+   "text": "70% ATK; 30% chance of Gu Venom.",
+   "owner": "enemy:herb_spirit"
+  },
+  {
+   "id": "skill:healing_sap",
+   "name": "Healing Sap",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_allies",
+   "effects": [
+    {
+     "do": "heal",
+     "power": 0.8
+    }
+   ],
+   "text": "Every enemy recovers 80% ATK.",
+   "owner": "enemy:herb_spirit"
+  },
+  {
+   "id": "skill:furnace_slam",
+   "name": "Furnace Slam",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.1
+    }
+   ],
+   "text": "110% ATK.",
+   "owner": "enemy:furnace_guardian"
+  },
+  {
+   "id": "skill:pill_fumes",
+   "name": "Pill Fumes",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.5
+    },
+    {
+     "do": "apply",
+     "status": "status:qi_disruption",
+     "turns": 1
+    }
+   ],
+   "text": "Every heroine takes 50% ATK and Qi Disruption.",
+   "owner": "enemy:furnace_guardian"
+  },
+  {
+   "id": "skill:alchemy_overload",
+   "name": "Alchemy Overload",
+   "slot": "s3",
+   "cooldown": 4,
+   "start": 3,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.4
+    }
+   ],
+   "text": "The furnace bursts: every heroine takes 140% ATK.",
+   "owner": "enemy:furnace_guardian",
+   "ultimate": true
+  },
+  {
+   "id": "skill:celestial_strike",
+   "name": "Celestial Strike",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.1
+    }
+   ],
+   "text": "110% ATK.",
+   "shared": true
+  },
+  {
+   "id": "skill:celestial_ward",
+   "name": "Celestial Ward",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 2,
+   "target": "self",
+   "effects": [
+    {
+     "do": "shield",
+     "status": "status:spirit_shield",
+     "power": 1.5
+    },
+    {
+     "do": "apply",
+     "status": "status:clear_heart",
+     "turns": 1
+    }
+   ],
+   "text": "A Spirit Shield of 150% ATK and Clear Heart for 1 turn.",
+   "shared": true
+  },
+  {
+   "id": "skill:celestial_judgement",
+   "name": "Celestial Judgement",
+   "slot": "s3",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.4
+    },
+    {
+     "do": "apply",
+     "status": "status:karmic_mark",
+     "turns": 1
+    }
+   ],
+   "text": "Every heroine takes 140% ATK and Karmic Mark for 1 turn.",
+   "shared": true,
+   "ultimate": true
+  },
+  {
+   "id": "skill:spirit_spark",
+   "name": "Spirit Spark",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.9
+    }
+   ],
+   "text": "90% ATK.",
+   "owner": "enemy:shrine_spirit"
+  },
+  {
+   "id": "skill:rending_talons",
+   "name": "Rending Talons",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.2
+    }
+   ],
+   "text": "120% ATK.",
+   "owner": "enemy:qiongqi"
+  },
+  {
+   "id": "skill:gale_wings",
+   "name": "Gale Wings",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.7
+    },
+    {
+     "do": "apply",
+     "status": "status:wind_step",
+     "turns": 2,
+     "target": "self"
+    }
+   ],
+   "text": "Every heroine takes 70% ATK; Qiongqi gains Wind Step.",
+   "owner": "enemy:qiongqi"
+  },
+  {
+   "id": "skill:winged_onslaught",
+   "name": "Winged Onslaught",
+   "slot": "s3",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.75,
+     "hits": 2
+    }
+   ],
+   "text": "Two dives on every heroine for 75% ATK each.",
+   "owner": "enemy:qiongqi",
+   "ultimate": true
+  },
+  {
+   "id": "skill:devour",
+   "name": "Devour",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.0
+    },
+    {
+     "do": "dispel",
+     "count": 1
+    },
+    {
+     "do": "apply",
+     "status": "status:surging_qi",
+     "turns": 1,
+     "target": "self",
+     "when": "dispelled"
+    }
+   ],
+   "text": "100% ATK; eats one buff and gains Surging Qi if it did.",
+   "owner": "enemy:taotie"
+  },
+  {
+   "id": "skill:gluttonous_maw",
+   "name": "Gluttonous Maw",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.8
+    },
+    {
+     "do": "dispel",
+     "count": 1
+    }
+   ],
+   "text": "Every heroine takes 80% ATK and loses one buff.",
+   "owner": "enemy:taotie"
+  },
+  {
+   "id": "skill:endless_hunger",
+   "name": "Endless Hunger",
+   "slot": "s3",
+   "cooldown": 5,
+   "start": 4,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 2.5
+    },
+    {
+     "do": "lifesteal",
+     "pct": 0.3
+    }
+   ],
+   "text": "250% ATK on one heroine; heals for 30% of the damage.",
+   "owner": "enemy:taotie",
+   "ultimate": true
+  },
+  {
+   "id": "skill:unyielding_charge",
+   "name": "Unyielding Charge",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.2
+    },
+    {
+     "do": "apply",
+     "status": "status:soul_shock",
+     "turns": 1,
+     "chance": 0.1
+    }
+   ],
+   "text": "120% ATK; 10% chance of Soul Shock.",
+   "owner": "enemy:taowu"
+  },
+  {
+   "id": "skill:stone_hide",
+   "name": "Stone Hide",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 2,
+   "target": "self",
+   "effects": [
+    {
+     "do": "apply",
+     "status": "status:iron_body",
+     "turns": 2
+    },
+    {
+     "do": "apply",
+     "status": "status:thorn_lotus",
+     "turns": 2
+    }
+   ],
+   "text": "Iron Body and Thorn Lotus for 2 turns.",
+   "owner": "enemy:taowu"
+  },
+  {
+   "id": "skill:mountain_crush",
+   "name": "Mountain Crush",
+   "slot": "s3",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.6
+    }
+   ],
+   "text": "Every heroine takes 160% ATK.",
+   "owner": "enemy:taowu",
+   "ultimate": true
+  },
+  {
+   "id": "skill:chaos_touch",
+   "name": "Chaos Touch",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.0
+    },
+    {
+     "do": "apply",
+     "status": "status:mist_veil",
+     "turns": 2,
+     "chance": 0.3
+    }
+   ],
+   "text": "100% ATK; 30% chance of Mist Veil.",
+   "owner": "enemy:hundun"
+  },
+  {
+   "id": "skill:scramble",
+   "name": "Scramble",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "transform",
+     "what": "cooldowns",
+     "range": [
+      -1,
+      2
+     ],
+     "resist": "stat:res"
+    }
+   ],
+   "text": "Every heroine's charging cooldowns shift by -1 to +2; effect resistance resists it.",
+   "owner": "enemy:hundun"
+  },
+  {
+   "id": "skill:formless_void",
+   "name": "Formless Void",
+   "slot": "s3",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.3
+    },
+    {
+     "do": "apply",
+     "status": "status:soul_shock",
+     "turns": 1,
+     "chance": 0.3
+    }
+   ],
+   "text": "Every heroine takes 130% ATK; 30% chance of Soul Shock.",
+   "owner": "enemy:hundun",
+   "ultimate": true
+  },
+  {
+   "id": "skill:gust_claw",
+   "name": "Gust Claw",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.9
+    }
+   ],
+   "text": "90% ATK.",
+   "owner": "enemy:wind_imp"
+  },
+  {
+   "id": "skill:bronze_bite",
+   "name": "Bronze Bite",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.0
+    },
+    {
+     "do": "apply",
+     "status": "status:body_shatter",
+     "turns": 2,
+     "chance": 0.2
+    }
+   ],
+   "text": "100% ATK; 20% chance of Body Shatter.",
+   "owner": "enemy:bronze_maw"
+  },
+  {
+   "id": "skill:wisp_flicker",
+   "name": "Wisp Flicker",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.9
+    },
+    {
+     "do": "apply",
+     "status": "status:mist_veil",
+     "turns": 1,
+     "chance": 0.2
+    }
+   ],
+   "text": "90% ATK; 20% chance of Mist Veil.",
+   "owner": "enemy:chaos_wisp"
+  },
+  {
+   "id": "skill:xiangliu_bite",
+   "name": "Serpent Bite",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.0
+    },
+    {
+     "do": "apply",
+     "status": "status:gu_venom",
+     "turns": 2,
+     "chance": 0.3
+    }
+   ],
+   "text": "100% ATK; 30% chance of Gu Venom.",
+   "shared": true
+  },
+  {
+   "id": "skill:poison_mire",
+   "name": "Poison Mire",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.4
+    },
+    {
+     "do": "apply",
+     "status": "status:gu_venom",
+     "turns": 2
+    }
+   ],
+   "text": "Every heroine takes 40% ATK and Gu Venom for 2 turns.",
+   "shared": true
+  },
+  {
+   "id": "skill:serpent_deluge",
+   "name": "Nine-Headed Deluge",
+   "slot": "s3",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.3
+    },
+    {
+     "do": "apply",
+     "status": "status:withering",
+     "turns": 1
+    }
+   ],
+   "text": "Every heroine takes 130% ATK and Withering.",
+   "shared": true,
+   "ultimate": true
+  },
+  {
+   "id": "skill:sealed_demon_strike",
+   "name": "Sealed Demon's Strike",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.1
+    }
+   ],
+   "text": "110% ATK.",
+   "shared": true
+  },
+  {
+   "id": "skill:pagoda_curse",
+   "name": "Pagoda Curse",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.5
+    },
+    {
+     "do": "apply",
+     "status": "status:karmic_mark",
+     "turns": 1
+    }
+   ],
+   "text": "Every heroine takes 50% ATK and Karmic Mark.",
+   "shared": true
+  },
+  {
+   "id": "skill:lantern_of_souls",
+   "name": "Lantern of Souls",
+   "slot": "s3",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.3
+    },
+    {
+     "do": "apply",
+     "status": "status:fire_poison",
+     "turns": 2
+    }
+   ],
+   "text": "Every heroine takes 130% ATK and Fire Poison.",
+   "owner": "enemy:bone_lantern",
+   "ultimate": true
+  },
+  {
+   "id": "skill:corpse_march",
+   "name": "Corpse March",
+   "slot": "s3",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.2
+    },
+    {
+     "do": "apply",
+     "status": "status:soul_shock",
+     "turns": 1,
+     "chance": 0.3
+    }
+   ],
+   "text": "Every heroine takes 120% ATK; 30% chance of Soul Shock.",
+   "owner": "enemy:jiangshi_general",
+   "ultimate": true
+  },
+  {
+   "id": "skill:shattered_reflection",
+   "name": "Shattered Reflection",
+   "slot": "s3",
+   "cooldown": 5,
+   "start": 4,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.8
+    },
+    {
+     "do": "apply",
+     "status": "status:sealed_meridians",
+     "turns": 1
+    }
+   ],
+   "text": "180% ATK and Sealed Meridians on one heroine.",
+   "owner": "enemy:mirror_demon",
+   "ultimate": true
+  },
+  {
+   "id": "skill:thousand_flying_blades",
+   "name": "Thousand Flying Blades",
+   "slot": "s3",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.5,
+     "hits": 3
+    },
+    {
+     "do": "apply",
+     "status": "status:sword_wound",
+     "turns": 2
+    }
+   ],
+   "text": "Three blades on every heroine for 50% ATK each and Sword Wound.",
+   "owner": "enemy:flying_blade_ghost",
+   "ultimate": true
+  },
+  {
+   "id": "skill:ninefold_charm",
+   "name": "Ninefold Charm",
+   "slot": "s3",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "apply",
+     "status": "status:lotus_dream",
+     "turns": 1,
+     "chance": 0.5
+    },
+    {
+     "do": "apply",
+     "status": "status:heart_demon",
+     "turns": 2
+    }
+   ],
+   "text": "50% chance of Lotus Dream on every heroine and a stack of Heart Demon.",
+   "owner": "enemy:nine_tail_shade",
+   "ultimate": true
+  },
+  {
+   "id": "skill:thunder_drum",
+   "name": "Thunder Drum of Kui",
+   "slot": "s3",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.5
+    },
+    {
+     "do": "apply",
+     "status": "status:soul_shock",
+     "turns": 1,
+     "chance": 0.25
+    }
+   ],
+   "text": "Every heroine takes 150% ATK; 25% chance of Soul Shock.",
+   "owner": "enemy:kui",
+   "ultimate": true
+  },
+  {
+   "id": "skill:wildfire_omen",
+   "name": "Wildfire Omen",
+   "slot": "s3",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.4
+    },
+    {
+     "do": "apply",
+     "status": "status:fire_poison",
+     "turns": 3
+    }
+   ],
+   "text": "Every heroine takes 140% ATK and Fire Poison for 3 turns.",
+   "owner": "enemy:bifang",
+   "ultimate": true
+  },
+  {
+   "id": "skill:infant_cry_lure",
+   "name": "Infant-Cry Lure",
+   "slot": "s3",
+   "cooldown": 5,
+   "start": 4,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 2.4
+    },
+    {
+     "do": "apply",
+     "status": "status:gu_venom",
+     "turns": 3
+    }
+   ],
+   "text": "240% ATK and Gu Venom for 3 turns on one heroine.",
+   "owner": "enemy:gudiao",
+   "ultimate": true
+  },
+  {
+   "id": "skill:omen_of_war",
+   "name": "Omen of War",
+   "slot": "s3",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.2
+    },
+    {
+     "do": "apply",
+     "status": "status:sword_intent",
+     "turns": 3,
+     "target": "self"
+    }
+   ],
+   "text": "Every heroine takes 120% ATK; Zhuyan gains Sword Intent.",
+   "owner": "enemy:zhuyan",
+   "ultimate": true
+  },
+  {
+   "id": "skill:winged_dragon_storm",
+   "name": "Winged Dragon Storm",
+   "slot": "s3",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.6
+    },
+    {
+     "do": "apply",
+     "status": "status:entangle",
+     "turns": 1
+    }
+   ],
+   "text": "Every heroine takes 160% ATK and Entangle.",
+   "owner": "enemy:fallen_ying_long",
+   "ultimate": true
+  },
+  {
+   "id": "skill:devour_the_sun",
+   "name": "Devour the Sun",
+   "slot": "s3",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.5
+    },
+    {
+     "do": "dispel",
+     "count": 2
+    }
+   ],
+   "text": "Every heroine takes 150% ATK and loses two buffs.",
+   "owner": "enemy:tiangou",
+   "ultimate": true
+  },
+  {
+   "id": "skill:netherflame_dominion",
+   "name": "Netherflame Dominion",
+   "slot": "s3",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.8
+    },
+    {
+     "do": "apply",
+     "status": "status:withering",
+     "turns": 2
+    },
+    {
+     "do": "apply",
+     "status": "status:heart_demon",
+     "turns": 1
+    }
+   ],
+   "text": "Every heroine takes 180% ATK, Withering for 2 turns and a stack of Heart Demon.",
+   "owner": "enemy:sovereign_shade",
+   "ultimate": true
+  },
+  {
+   "id": "skill:zhulong_glare",
+   "name": "Torch Glare",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.2
+    }
+   ],
+   "text": "120% ATK.",
+   "shared": true
+  },
+  {
+   "id": "skill:dawn_glare",
+   "name": "Dawn Glare",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.8
+    },
+    {
+     "do": "apply",
+     "status": "status:mist_veil",
+     "turns": 2
+    }
+   ],
+   "text": "Dawn Glare",
+   "owner": "enemy:zhulong_eyes_open"
+  },
+  {
+   "id": "skill:solar_torch",
+   "name": "Solar Torch",
+   "slot": "s3",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.6
+    },
+    {
+     "do": "apply",
+     "status": "status:fire_poison",
+     "turns": 2
+    }
+   ],
+   "text": "Solar Torch",
+   "owner": "enemy:zhulong_eyes_open",
+   "ultimate": true
+  },
+  {
+   "id": "skill:long_night",
+   "name": "Long Night",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "apply",
+     "status": "status:lotus_dream",
+     "turns": 1,
+     "chance": 0.4
+    }
+   ],
+   "text": "Long Night",
+   "owner": "enemy:zhulong_eyes_closed"
+  },
+  {
+   "id": "skill:breath_of_winter",
+   "name": "Breath of Winter",
+   "slot": "s3",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.5
+    },
+    {
+     "do": "apply",
+     "status": "status:frost_seal",
+     "turns": 1,
+     "chance": 0.3
+    }
+   ],
+   "text": "Breath of Winter",
+   "owner": "enemy:zhulong_eyes_closed",
+   "ultimate": true
+  },
+  {
+   "id": "skill:torch_of_nine_darks",
+   "name": "Torch of the Nine Darks",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.9
+    },
+    {
+     "do": "apply",
+     "status": "status:fire_poison",
+     "turns": 2
+    }
+   ],
+   "text": "Torch of the Nine Darks",
+   "owner": "enemy:zhulong_nine_darks"
+  },
+  {
+   "id": "skill:candle_dragon_wrath",
+   "name": "Candle Dragon's Wrath",
+   "slot": "s3",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 2.0
+    }
+   ],
+   "text": "Candle Dragon's Wrath",
+   "owner": "enemy:zhulong_nine_darks",
+   "ultimate": true
+  },
+  {
+   "id": "skill:kunpeng_buffet",
+   "name": "Abyssal Buffet",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.2
+    }
+   ],
+   "text": "120% ATK.",
+   "shared": true
+  },
+  {
+   "id": "skill:abyssal_maw",
+   "name": "Abyssal Maw",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 2,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 2.0
+    },
+    {
+     "do": "apply",
+     "status": "status:soul_shock",
+     "turns": 1
+    }
+   ],
+   "text": "Abyssal Maw",
+   "owner": "enemy:kun_of_the_abyss"
+  },
+  {
+   "id": "skill:tidal_dive",
+   "name": "Tidal Dive",
+   "slot": "s3",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.5
+    },
+    {
+     "do": "apply",
+     "status": "status:qi_disruption",
+     "turns": 1
+    }
+   ],
+   "text": "Tidal Dive",
+   "owner": "enemy:kun_of_the_abyss",
+   "ultimate": true
+  },
+  {
+   "id": "skill:ninety_thousand_li",
+   "name": "Ninety Thousand Li",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.8
+    },
+    {
+     "do": "apply",
+     "status": "status:wind_step",
+     "turns": 2,
+     "target": "self"
+    }
+   ],
+   "text": "Ninety Thousand Li",
+   "owner": "enemy:peng_of_the_tempest"
+  },
+  {
+   "id": "skill:tempest_wings",
+   "name": "Tempest Wings",
+   "slot": "s3",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.7
+    },
+    {
+     "do": "apply",
+     "status": "status:entangle",
+     "turns": 1
+    }
+   ],
+   "text": "Tempest Wings",
+   "owner": "enemy:peng_of_the_tempest",
+   "ultimate": true
+  },
+  {
+   "id": "skill:heavenly_transformation",
+   "name": "Heavenly Transformation",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 2,
+   "target": "self",
+   "effects": [
+    {
+     "do": "apply",
+     "status": "status:clear_heart",
+     "turns": 2
+    },
+    {
+     "do": "apply",
+     "status": "status:iron_body",
+     "turns": 2
+    }
+   ],
+   "text": "Heavenly Transformation",
+   "owner": "enemy:kunpeng_ascendant"
+  },
+  {
+   "id": "skill:sky_splitting_dive",
+   "name": "Sky-Splitting Dive",
+   "slot": "s3",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 2.0
+    },
+    {
+     "do": "apply",
+     "status": "status:body_shatter",
+     "turns": 2
+    }
+   ],
+   "text": "Sky-Splitting Dive",
+   "owner": "enemy:kunpeng_ascendant",
+   "ultimate": true
+  },
+  {
+   "id": "skill:jiuying_bite",
+   "name": "Nine Mouths",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.2
+    }
+   ],
+   "text": "120% ATK.",
+   "shared": true
+  },
+  {
+   "id": "skill:nine_torrents",
+   "name": "Nine Torrents",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.9
+    },
+    {
+     "do": "apply",
+     "status": "status:qi_disruption",
+     "turns": 1
+    }
+   ],
+   "text": "Nine Torrents",
+   "owner": "enemy:jiuying_water_heads"
+  },
+  {
+   "id": "skill:drowning_wail",
+   "name": "Drowning Wail",
+   "slot": "s3",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.6
+    },
+    {
+     "do": "apply",
+     "status": "status:frost_seal",
+     "turns": 1,
+     "chance": 0.25
+    }
+   ],
+   "text": "Drowning Wail",
+   "owner": "enemy:jiuying_water_heads",
+   "ultimate": true
+  },
+  {
+   "id": "skill:nine_fires",
+   "name": "Nine Fires",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.9
+    },
+    {
+     "do": "apply",
+     "status": "status:fire_poison",
+     "turns": 2
+    }
+   ],
+   "text": "Nine Fires",
+   "owner": "enemy:jiuying_fire_heads"
+  },
+  {
+   "id": "skill:infant_scream",
+   "name": "Infant Scream",
+   "slot": "s3",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.4
+    },
+    {
+     "do": "apply",
+     "status": "status:soul_shock",
+     "turns": 1,
+     "chance": 0.4
+    }
+   ],
+   "text": "Infant Scream",
+   "owner": "enemy:jiuying_fire_heads",
+   "ultimate": true
+  },
+  {
+   "id": "skill:broken_chains",
+   "name": "Broken Chains",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 2,
+   "target": "self",
+   "effects": [
+    {
+     "do": "apply",
+     "status": "status:thorn_lotus",
+     "turns": 2
+    },
+    {
+     "do": "apply",
+     "status": "status:golden_bell",
+     "turns": 1
+    }
+   ],
+   "text": "Broken Chains",
+   "owner": "enemy:jiuying_unbound"
+  },
+  {
+   "id": "skill:last_fury",
+   "name": "Last Fury",
+   "slot": "s3",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 2.2
+    }
+   ],
+   "text": "Last Fury",
+   "owner": "enemy:jiuying_unbound",
+   "ultimate": true
+  },
+  {
+   "id": "skill:rival_sword_strike",
+   "name": "Rival Sword Strike",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.1
+    }
+   ],
+   "text": "110% ATK.",
+   "shared": true
+  },
+  {
+   "id": "skill:rival_sword_flurry",
+   "name": "Sword Flurry",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 2,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.5,
+     "hits": 3
+    }
+   ],
+   "text": "Three cuts for 50% ATK each.",
+   "shared": true
+  },
+  {
+   "id": "skill:rival_sword_art",
+   "name": "Ultimate Sword Art",
+   "slot": "s3",
+   "cooldown": 5,
+   "start": 4,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 2.4
+    }
+   ],
+   "text": "240% ATK on one heroine.",
+   "shared": true,
+   "ultimate": true
+  },
+  {
+   "id": "skill:rival_guard_bash",
+   "name": "Shield Bash",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.9
+    }
+   ],
+   "text": "90% ATK.",
+   "shared": true
+  },
+  {
+   "id": "skill:rival_guard_taunt",
+   "name": "Iron Challenge",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "apply",
+     "status": "status:provoke",
+     "turns": 1
+    },
+    {
+     "do": "apply",
+     "status": "status:iron_body",
+     "turns": 2,
+     "target": "self"
+    }
+   ],
+   "text": "Provokes every heroine and gains Iron Body.",
+   "shared": true
+  },
+  {
+   "id": "skill:rival_guard_bulwark",
+   "name": "Bulwark",
+   "slot": "s3",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_allies",
+   "effects": [
+    {
+     "do": "shield",
+     "status": "status:spirit_shield",
+     "power": 1.2
+    }
+   ],
+   "text": "Every ally gains a Spirit Shield of 120% ATK.",
+   "shared": true,
+   "ultimate": true
+  },
+  {
+   "id": "skill:rival_shadow_stab",
+   "name": "Twin Stab",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.55,
+     "hits": 2
+    }
+   ],
+   "text": "Two stabs for 55% ATK each.",
+   "shared": true
+  },
+  {
+   "id": "skill:rival_shadow_step",
+   "name": "Shadow Step",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 1,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.4
+    },
+    {
+     "do": "refresh",
+     "skill": "s1",
+     "ready": true
+    }
+   ],
+   "text": "140% ATK; Twin Stab is ready again.",
+   "shared": true
+  },
+  {
+   "id": "skill:rival_shadow_execution",
+   "name": "Execution",
+   "slot": "s3",
+   "cooldown": 5,
+   "start": 4,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 2.2,
+     "missingHealthBonus": 1.0
+    }
+   ],
+   "text": "220% ATK, more against wounded heroines.",
+   "shared": true,
+   "ultimate": true
+  },
+  {
+   "id": "skill:rival_talisman_seal",
+   "name": "Seal Talisman",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.9
+    },
+    {
+     "do": "apply",
+     "status": "status:karmic_mark",
+     "turns": 1,
+     "chance": 0.3
+    }
+   ],
+   "text": "90% ATK; 30% chance of Karmic Mark.",
+   "shared": true
+  },
+  {
+   "id": "skill:rival_talisman_bind",
+   "name": "Binding Array",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "delay",
+     "turns": 1
+    }
+   ],
+   "text": "Delays every heroine's charging techniques by 1 turn.",
+   "shared": true
+  },
+  {
+   "id": "skill:rival_talisman_array",
+   "name": "Sealing Array",
+   "slot": "s3",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.8
+    },
+    {
+     "do": "apply",
+     "status": "status:sealed_meridians",
+     "turns": 1,
+     "chance": 0.5
+    }
+   ],
+   "text": "Every heroine takes 80% ATK; 50% chance of Sealed Meridians.",
+   "shared": true,
+   "ultimate": true
+  },
+  {
+   "id": "skill:rival_arcane_bolt",
+   "name": "Arcane Bolt",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.0
+    }
+   ],
+   "text": "100% ATK.",
+   "shared": true
+  },
+  {
+   "id": "skill:rival_arcane_storm",
+   "name": "Arcane Storm",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.7
+    }
+   ],
+   "text": "Every heroine takes 70% ATK.",
+   "shared": true
+  },
+  {
+   "id": "skill:rival_arcane_cataclysm",
+   "name": "Cataclysm",
+   "slot": "s3",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.6
+    }
+   ],
+   "text": "Every heroine takes 160% ATK.",
+   "shared": true,
+   "ultimate": true
+  },
+  {
+   "id": "skill:rival_healer_palm",
+   "name": "Healing Palm",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.8
+    },
+    {
+     "do": "heal",
+     "power": 0.6,
+     "target": "lowest_ally"
+    }
+   ],
+   "text": "80% ATK; the most injured ally recovers 60% ATK.",
+   "shared": true
+  },
+  {
+   "id": "skill:rival_healer_restore",
+   "name": "Restoration",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_allies",
+   "effects": [
+    {
+     "do": "heal",
+     "power": 1.0
+    },
+    {
+     "do": "cleanse",
+     "count": 1
+    }
+   ],
+   "text": "Every ally recovers 100% ATK and loses a debuff.",
+   "shared": true
+  },
+  {
+   "id": "skill:rival_healer_rebirth",
+   "name": "Rebirth",
+   "slot": "s3",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_allies",
+   "effects": [
+    {
+     "do": "apply",
+     "status": "status:lotus_dew",
+     "turns": 2
+    },
+    {
+     "do": "revive",
+     "pct": 0.3
+    }
+   ],
+   "text": "Lotus Dew on every ally and a fallen ally returns at 30%.",
+   "shared": true,
+   "ultimate": true
+  },
+  {
+   "id": "skill:heavenly_bolt",
+   "name": "Heavenly Bolt",
+   "slot": "s1",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.0
+    }
+   ],
+   "text": "100% ATK.",
+   "owner": "enemy:thunder_spirit"
+  },
+  {
+   "id": "skill:tribulation_storm",
+   "name": "Tribulation Storm",
+   "slot": "s2",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.7
+    },
+    {
+     "do": "apply",
+     "status": "status:soul_shock",
+     "turns": 1,
+     "chance": 0.15
+    }
+   ],
+   "text": "Every heroine takes 70% ATK; 15% chance of Soul Shock.",
+   "owner": "enemy:thunder_spirit"
+  }
+ ]
+}

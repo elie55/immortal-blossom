@@ -1,0 +1,237 @@
+{
+ "about": "Eight rarities. Rarity sets substats at drop and where rolls land; salvage and engraving scale with it.",
+ "records": [
+  {
+   "id": "rarity:common",
+   "order": 1,
+   "name": "Common",
+   "glyph": "凡",
+   "color": "grey",
+   "substatsAtDrop": 0,
+   "rolls": [
+    0.2,
+    0.35
+   ],
+   "artefactPower": 0.3,
+   "salvage": [
+    {
+     "item": "item:forging_dust",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 100
+    }
+   ],
+   "engraveCost": [
+    {
+     "item": "item:dao_mark",
+     "qty": 1
+    }
+   ]
+  },
+  {
+   "id": "rarity:uncommon",
+   "order": 2,
+   "name": "Uncommon",
+   "glyph": "良",
+   "color": "green",
+   "substatsAtDrop": 1,
+   "rolls": [
+    0.3,
+    0.45
+   ],
+   "artefactPower": 0.4,
+   "salvage": [
+    {
+     "item": "item:forging_dust",
+     "qty": 4
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 400
+    }
+   ],
+   "engraveCost": [
+    {
+     "item": "item:dao_mark",
+     "qty": 1
+    }
+   ]
+  },
+  {
+   "id": "rarity:rare",
+   "order": 3,
+   "name": "Rare",
+   "glyph": "珍",
+   "color": "blue",
+   "substatsAtDrop": 1,
+   "rolls": [
+    0.4,
+    0.55
+   ],
+   "artefactPower": 0.5,
+   "salvage": [
+    {
+     "item": "item:forging_dust",
+     "qty": 8
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 900
+    }
+   ],
+   "engraveCost": [
+    {
+     "item": "item:dao_mark",
+     "qty": 1
+    }
+   ]
+  },
+  {
+   "id": "rarity:epic",
+   "order": 4,
+   "name": "Epic",
+   "glyph": "玄",
+   "color": "purple",
+   "substatsAtDrop": 2,
+   "rolls": [
+    0.5,
+    0.65
+   ],
+   "artefactPower": 0.6,
+   "salvage": [
+    {
+     "item": "item:forging_dust",
+     "qty": 15
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 1600
+    }
+   ],
+   "engraveCost": [
+    {
+     "item": "item:dao_mark",
+     "qty": 2
+    }
+   ]
+  },
+  {
+   "id": "rarity:legendary",
+   "order": 5,
+   "name": "Legendary",
+   "glyph": "地",
+   "color": "orange",
+   "substatsAtDrop": 2,
+   "rolls": [
+    0.6,
+    0.75
+   ],
+   "artefactPower": 0.7,
+   "salvage": [
+    {
+     "item": "item:forging_dust",
+     "qty": 25
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 2500
+    }
+   ],
+   "engraveCost": [
+    {
+     "item": "item:dao_mark",
+     "qty": 3
+    }
+   ]
+  },
+  {
+   "id": "rarity:mythic",
+   "order": 6,
+   "name": "Mythic",
+   "glyph": "天",
+   "color": "red",
+   "substatsAtDrop": 3,
+   "rolls": [
+    0.7,
+    0.85
+   ],
+   "artefactPower": 0.8,
+   "salvage": [
+    {
+     "item": "item:forging_dust",
+     "qty": 40
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 3600
+    }
+   ],
+   "engraveCost": [
+    {
+     "item": "item:dao_mark",
+     "qty": 4
+    }
+   ]
+  },
+  {
+   "id": "rarity:immortal",
+   "order": 7,
+   "name": "Immortal",
+   "glyph": "仙",
+   "color": "gold",
+   "substatsAtDrop": 3,
+   "rolls": [
+    0.8,
+    0.95
+   ],
+   "artefactPower": 0.9,
+   "salvage": [
+    {
+     "item": "item:forging_dust",
+     "qty": 60
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 4900
+    }
+   ],
+   "engraveCost": [
+    {
+     "item": "item:dao_mark",
+     "qty": 5
+    }
+   ]
+  },
+  {
+   "id": "rarity:divine",
+   "order": 8,
+   "name": "Divine",
+   "glyph": "神",
+   "color": "prismatic",
+   "substatsAtDrop": 4,
+   "rolls": [
+    0.9,
+    1.0
+   ],
+   "artefactPower": 1.0,
+   "salvage": [
+    {
+     "item": "item:forging_dust",
+     "qty": 100
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 6400
+    }
+   ],
+   "engraveCost": [
+    {
+     "item": "item:dao_mark",
+     "qty": 6
+    }
+   ]
+  }
+ ]
+}

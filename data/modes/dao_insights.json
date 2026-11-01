@@ -1,0 +1,230 @@
+{
+ "about": "Dao Insights: run-only buffs picked at Secret Realm shrines; they stack by phase and path.",
+ "records": [
+  {
+   "id": "insight:water_frost",
+   "name": "Water Frost",
+   "for": "phase:water",
+   "text": "Water heroines' S1 has a 30% chance to Frost Seal",
+   "effects": [
+    {
+     "do": "apply",
+     "status": "status:frost_seal",
+     "chance": 0.3,
+     "turns": 1
+    }
+   ]
+  },
+  {
+   "id": "insight:wood_thunder",
+   "name": "Wood Thunder",
+   "for": "phase:wood",
+   "text": "Wood heroines' multi-hit techniques strike once more for 30% ATK",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.3,
+     "hits": 1
+    }
+   ]
+  },
+  {
+   "id": "insight:fire_embers",
+   "name": "Fire Embers",
+   "for": "phase:fire",
+   "text": "Fire Poison from Fire heroines deals 50% more damage",
+   "effects": [
+    {
+     "do": "stat",
+     "status": "status:fire_poison",
+     "value": 0.5
+    }
+   ]
+  },
+  {
+   "id": "insight:earth_jade",
+   "name": "Earth Jade",
+   "for": "phase:earth",
+   "text": "Earth heroines' healing and shields are 25% stronger",
+   "effects": [
+    {
+     "do": "stat",
+     "stat": "stat:healing",
+     "value": 0.25
+    }
+   ]
+  },
+  {
+   "id": "insight:metal_edge",
+   "name": "Metal Edge",
+   "for": "phase:metal",
+   "text": "Metal heroines gain +20% critical damage",
+   "effects": [
+    {
+     "do": "stat",
+     "stat": "stat:crit_dmg",
+     "value": 0.2
+    }
+   ]
+  },
+  {
+   "id": "insight:sword_resolve",
+   "name": "Sword Resolve",
+   "for": "path:sword",
+   "text": "Sword heroines' S1 deals 30% more to enemies below half health",
+   "effects": [
+    {
+     "do": "stat",
+     "damageBonus": 0.3
+    }
+   ]
+  },
+  {
+   "id": "insight:guardian_wall",
+   "name": "Guardian Wall",
+   "for": "path:guardian",
+   "text": "Guardians start each battle with a Spirit Shield of 100% ATK",
+   "effects": [
+    {
+     "do": "shield",
+     "status": "status:spirit_shield",
+     "power": 1.0
+    }
+   ]
+  },
+  {
+   "id": "insight:shadow_haste",
+   "name": "Shadow Haste",
+   "for": "path:shadow",
+   "text": "Shadow heroines have Wind Step for the first 2 turns",
+   "effects": [
+    {
+     "do": "apply",
+     "status": "status:wind_step",
+     "turns": 2
+    }
+   ]
+  },
+  {
+   "id": "insight:talisman_bind",
+   "name": "Talisman Bind",
+   "for": "path:talisman",
+   "text": "Delays from Talisman heroines last 1 turn longer",
+   "effects": [
+    {
+     "do": "extend",
+     "what": "delay",
+     "turns": 1
+    }
+   ]
+  },
+  {
+   "id": "insight:arcane_flux",
+   "name": "Arcane Flux",
+   "for": "path:arcane",
+   "text": "Arcane area techniques deal 15% more damage",
+   "effects": [
+    {
+     "do": "stat",
+     "damageBonus": 0.15
+    }
+   ]
+  },
+  {
+   "id": "insight:healer_dew",
+   "name": "Healer Dew",
+   "for": "path:healer",
+   "text": "Healers' heals also grant Lotus Dew for 1 turn",
+   "effects": [
+    {
+     "do": "apply",
+     "status": "status:lotus_dew",
+     "turns": 1
+    }
+   ]
+  },
+  {
+   "id": "insight:harmony_flow",
+   "name": "Harmony Flow",
+   "text": "Harmony chains give 5% more per link",
+   "effects": [
+    {
+     "do": "harmony",
+     "mode": "bonus",
+     "value": 0.05
+    }
+   ]
+  },
+  {
+   "id": "insight:kindred_echo",
+   "name": "Kindred Echo",
+   "text": "Kindred Qi gives 5% more per repeat",
+   "effects": [
+    {
+     "do": "harmony",
+     "mode": "kindred_bonus",
+     "value": 0.05
+    }
+   ]
+  },
+  {
+   "id": "insight:qi_spring",
+   "name": "Qi Spring",
+   "text": "+2 Spirit Qi at the start of each battle",
+   "effects": [
+    {
+     "do": "qi",
+     "amount": 2
+    }
+   ]
+  },
+  {
+   "id": "insight:shield_breaker",
+   "name": "Shield Breaker",
+   "text": "Hits on a Qi shield break 1 more segment",
+   "effects": [
+    {
+     "do": "break",
+     "segments": 1
+    }
+   ]
+  },
+  {
+   "id": "insight:fortunate_path",
+   "name": "Fortunate Path",
+   "text": "Fortuitous Encounters offer four finds",
+   "effects": [
+    {
+     "do": "transform",
+     "what": "encounter_offers",
+     "value": 4
+    }
+   ]
+  },
+  {
+   "id": "insight:phoenix_blessing",
+   "name": "Phoenix Blessing",
+   "text": "The first heroine to fall each battle revives at 20% health",
+   "effects": [
+    {
+     "do": "revive",
+     "pct": 0.2,
+     "once": "battle"
+    }
+   ]
+  },
+  {
+   "id": "insight:mark_of_fate",
+   "name": "Mark Of Fate",
+   "text": "Enemies start each battle with Karmic Mark for 1 turn",
+   "effects": [
+    {
+     "do": "apply",
+     "status": "status:karmic_mark",
+     "turns": 1,
+     "target": "all_enemies"
+    }
+   ]
+  }
+ ]
+}

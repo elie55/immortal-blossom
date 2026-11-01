@@ -1,0 +1,869 @@
+{
+ "about": "The Hundred Blossoms Pavilion: ten buildings, levels 1 to 10. The Main Hall's level caps the others. Upgrades are paid in spirit stones.",
+ "records": [
+  {
+   "id": "bld:main_hall",
+   "name": "Main Hall",
+   "cn": "宗门大殿",
+   "does": "Sect level, which caps every other building; sect rank and titles",
+   "epicSeven": "Heart of Orbis",
+   "unlock": {
+    "clear": "stage:v1c1_02"
+   },
+   "maxLevel": 10,
+   "upgradeCost": [
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 5000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 20000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 45000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 80000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 125000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 180000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 245000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 320000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 405000
+     }
+    ]
+   ],
+   "upgradeNote": "upgradeCost[L-1] takes the building from level L to L+1"
+  },
+  {
+   "id": "bld:closed_door_caves",
+   "name": "Closed-door Caves",
+   "cn": "闭关洞府",
+   "does": "Up to 4 heroines (8 at level 6) gain EXP while you are away, for up to 12 hours; small chance of an epiphany",
+   "epicSeven": "New (idle progress)",
+   "unlock": {
+    "clear": "stage:v1c1_08"
+   },
+   "maxLevel": 10,
+   "upgradeCost": [
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 3000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 12000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 27000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 48000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 75000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 108000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 147000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 192000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 243000
+     }
+    ]
+   ],
+   "upgradeNote": "upgradeCost[L-1] takes the building from level L to L+1",
+   "slots": [
+    4,
+    4,
+    4,
+    4,
+    4,
+    8,
+    8,
+    8,
+    8,
+    8
+   ],
+   "expPerHour": [
+    600,
+    1200,
+    2400,
+    4000,
+    6000,
+    9000,
+    13000,
+    18000,
+    24000,
+    32000
+   ],
+   "maxHours": 12,
+   "epiphany": "small chance of free mastery progress",
+   "services": [
+    "sys:cultivate"
+   ]
+  },
+  {
+   "id": "bld:spirit_herb_garden",
+   "name": "Spirit Herb Garden",
+   "cn": "灵药园",
+   "does": "Grows herbs and spirit stones over time",
+   "epicSeven": "Forest of Souls",
+   "unlock": {
+    "clear": "stage:v1c1_08"
+   },
+   "maxLevel": 10,
+   "upgradeCost": [
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 3000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 12000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 27000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 48000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 75000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 108000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 147000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 192000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 243000
+     }
+    ]
+   ],
+   "upgradeNote": "upgradeCost[L-1] takes the building from level L to L+1",
+   "produces": [
+    {
+     "cur": "cur:spirit_stones",
+     "perHour": 500,
+     "fromLevel": 1
+    },
+    {
+     "item": "item:spirit_grass",
+     "perHour": 2,
+     "fromLevel": 1
+    },
+    {
+     "item": "item:blood_ginseng",
+     "perHour": 1,
+     "fromLevel": 3
+    },
+    {
+     "item": "item:snow_lotus",
+     "perHour": 0.5,
+     "fromLevel": 6
+    },
+    {
+     "item": "item:fire_lingzhi",
+     "perHour": 0.25,
+     "fromLevel": 8
+    },
+    {
+     "item": "item:nine_leaf_lingzhi",
+     "perHour": 0.1,
+     "fromLevel": 10
+    }
+   ]
+  },
+  {
+   "id": "bld:alchemy_pavilion",
+   "name": "Alchemy Pavilion",
+   "cn": "丹房",
+   "does": "Brews EXP pills, breakthrough pills and Secret Realm elixirs; converts essences. Healers assigned as alchemist raise the quality roll",
+   "epicSeven": "Alchemist's Tower",
+   "unlock": {
+    "clear": "stage:v1c1_08"
+   },
+   "maxLevel": 10,
+   "upgradeCost": [
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 4000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 16000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 36000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 64000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 100000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 144000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 196000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 256000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 324000
+     }
+    ]
+   ],
+   "upgradeNote": "upgradeCost[L-1] takes the building from level L to L+1",
+   "recipes": [
+    "recipe:brew_qi_gathering_pill",
+    "recipe:brew_spirit_condensing_pill",
+    "recipe:brew_heaven_earth_pill",
+    "recipe:brew_nine_revolution_golden_pill",
+    "recipe:brew_foundation_pill",
+    "recipe:brew_golden_core_pill",
+    "recipe:brew_nascent_soul_pill",
+    "recipe:brew_severing_pill",
+    "recipe:brew_void_pill",
+    "recipe:brew_integration_pill",
+    "recipe:brew_mahayana_pill",
+    "recipe:brew_resolve_elixir",
+    "recipe:brew_spirit_elixir",
+    "recipe:brew_revival_elixir",
+    "recipe:refine_wood_essence",
+    "recipe:refine_fire_essence",
+    "recipe:refine_earth_essence",
+    "recipe:refine_metal_essence",
+    "recipe:refine_water_essence"
+   ],
+   "qualityRoll": [
+    "Low",
+    "Middle",
+    "High",
+    "Perfect"
+   ],
+   "perfectPill": "a tiny pill-tribulation animation"
+  },
+  {
+   "id": "bld:artifact_forge",
+   "name": "Artifact Forge",
+   "cn": "炼器阁",
+   "does": "Crafts gear by set and slot, reforges, engraves, and forges Spirit Artefacts and unique gear",
+   "epicSeven": "Crafting",
+   "unlock": {
+    "clear": "stage:v1c1_08"
+   },
+   "maxLevel": 10,
+   "upgradeCost": [
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 4000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 16000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 36000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 64000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 100000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 144000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 196000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 256000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 324000
+     }
+    ]
+   ],
+   "upgradeNote": "upgradeCost[L-1] takes the building from level L to L+1",
+   "recipes": [
+    "recipe:forge_set_sword_heart",
+    "recipe:forge_set_azure_dragon",
+    "recipe:forge_set_white_tiger",
+    "recipe:forge_set_vermilion_bird",
+    "recipe:forge_set_qilin",
+    "recipe:forge_set_black_tortoise",
+    "recipe:forge_set_heavenly_eye",
+    "recipe:forge_set_still_water",
+    "recipe:forge_set_blood_lotus",
+    "recipe:forge_set_five_elements",
+    "recipe:forge_unique_ling_shuang",
+    "recipe:forge_unique_mo_yingyue",
+    "recipe:forge_unique_yan_feihong",
+    "recipe:forge_unique_su_lianhua",
+    "recipe:forge_unique_gladiolus",
+    "recipe:forge_unique_orchid",
+    "recipe:forge_unique_pomegranate",
+    "recipe:forge_unique_crabapple",
+    "recipe:forge_unique_magnolia",
+    "recipe:forge_unique_wisteria",
+    "recipe:forge_unique_camellia",
+    "recipe:forge_unique_azalea",
+    "recipe:forge_unique_peony",
+    "recipe:forge_unique_pear_blossom",
+    "recipe:forge_unique_iris",
+    "recipe:forge_unique_rose",
+    "recipe:forge_unique_oleander",
+    "recipe:forge_unique_jasmine",
+    "recipe:forge_unique_peach_blossom",
+    "recipe:forge_unique_narcissus",
+    "recipe:forge_unique_hibiscus",
+    "recipe:forge_unique_daylily",
+    "recipe:forge_unique_osmanthus",
+    "recipe:forge_unique_apricot_blossom",
+    "recipe:forge_unique_snow_lotus",
+    "recipe:forge_unique_trumpet_creeper",
+    "recipe:forge_unique_chrysanthemum",
+    "recipe:forge_unique_lily",
+    "recipe:forge_unique_hydrangea",
+    "recipe:forge_unique_safflower",
+    "recipe:forge_art_lotus_lantern",
+    "recipe:forge_art_immortal_binding_rope",
+    "recipe:forge_art_demon_revealing_mirror",
+    "recipe:forge_art_plantain_fan"
+   ],
+   "services": [
+    "sys:reforge",
+    "sys:engrave",
+    "sys:salvage",
+    "sys:artefact_refine"
+   ]
+  },
+  {
+   "id": "bld:mission_hall",
+   "name": "Mission Hall",
+   "cn": "任务堂",
+   "does": "Expeditions: 2 to 4 heroines leave for 1, 4, 8 or 12 hours and bring back materials, gifts and eggs",
+   "epicSeven": "Dispatch missions",
+   "unlock": {
+    "clear": "stage:v1c1_08"
+   },
+   "maxLevel": 10,
+   "upgradeCost": [
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 3000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 12000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 27000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 48000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 75000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 108000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 147000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 192000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 243000
+     }
+    ]
+   ],
+   "upgradeNote": "upgradeCost[L-1] takes the building from level L to L+1",
+   "expeditions": [
+    "exped:herb_gathering",
+    "exped:wine_cellar",
+    "exped:river_patrol",
+    "exped:bamboo_scouting",
+    "exped:forge_escort",
+    "exped:volcano_survey",
+    "exped:mountain_meditation",
+    "exped:temple_service",
+    "exped:guild_caravan",
+    "exped:sect_diplomacy",
+    "exped:snow_lotus_peak",
+    "exped:beast_tracking",
+    "exped:sword_tomb_meditation",
+    "exped:ancient_ruins",
+    "exped:heavenly_market",
+    "exped:star_watch",
+    "exped:elder_escort"
+   ],
+   "slots": [
+    1,
+    1,
+    2,
+    2,
+    3,
+    3,
+    4,
+    4,
+    5,
+    5
+   ]
+  },
+  {
+   "id": "bld:spirit_beast_garden",
+   "name": "Spirit Beast Garden",
+   "cn": "灵兽园",
+   "does": "Hatches eggs, feeds beasts, picks the companion",
+   "epicSeven": "Pets",
+   "unlock": {
+    "clear": "stage:v1c2_04"
+   },
+   "maxLevel": 10,
+   "upgradeCost": [
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 3000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 12000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 27000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 48000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 75000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 108000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 147000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 192000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 243000
+     }
+    ]
+   ],
+   "upgradeNote": "upgradeCost[L-1] takes the building from level L to L+1",
+   "services": [
+    "sys:hatch",
+    "sys:feed_beast"
+   ]
+  },
+  {
+   "id": "bld:array_platform",
+   "name": "Array Platform",
+   "cn": "阵台",
+   "does": "Levels up the five Battle Arrays",
+   "epicSeven": "New",
+   "unlock": {
+    "clear": "stage:v1c2_09"
+   },
+   "maxLevel": 10,
+   "upgradeCost": [
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 4000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 16000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 36000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 64000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 100000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 144000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 196000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 256000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 324000
+     }
+    ]
+   ],
+   "upgradeNote": "upgradeCost[L-1] takes the building from level L to L+1",
+   "services": [
+    "sys:array_upgrade"
+   ]
+  },
+  {
+   "id": "bld:scripture_pavilion",
+   "name": "Scripture Pavilion",
+   "cn": "藏经阁",
+   "does": "Codex of heroines, enemies and lore; story and music replay",
+   "epicSeven": "Codex",
+   "unlock": {
+    "clear": "stage:v1c3_09"
+   },
+   "maxLevel": 10,
+   "upgradeCost": [
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 3000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 12000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 27000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 48000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 75000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 108000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 147000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 192000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 243000
+     }
+    ]
+   ],
+   "upgradeNote": "upgradeCost[L-1] takes the building from level L to L+1",
+   "replays": "mode:journey"
+  },
+  {
+   "id": "bld:tea_house",
+   "name": "Tea House",
+   "cn": "茶楼",
+   "does": "Daily tea with one heroine, gifts, choice of the lobby heroine",
+   "epicSeven": "Friendship",
+   "unlock": {
+    "clear": "stage:v1c1_08"
+   },
+   "maxLevel": 10,
+   "upgradeCost": [
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 3000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 12000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 27000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 48000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 75000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 108000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 147000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 192000
+     }
+    ],
+    [
+     {
+      "cur": "cur:spirit_stones",
+      "qty": 243000
+     }
+    ]
+   ],
+   "upgradeNote": "upgradeCost[L-1] takes the building from level L to L+1",
+   "services": [
+    "sys:bond"
+   ],
+   "host": "npc:tao_yao"
+  }
+ ]
+}

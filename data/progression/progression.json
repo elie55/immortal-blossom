@@ -1,0 +1,1394 @@
+{
+ "about": "Sect Rank, the check-in calendar, the Path of Ascension season, Sect Duties and their chests, and Renown goals.",
+ "records": [
+  {
+   "id": "rank:sect",
+   "name": "Sect Rank",
+   "maxLevel": 60,
+   "exp": "rises with EXP from battles",
+   "levelRewards": [
+    {
+     "level": 5,
+     "rewards": [
+      {
+       "cur": "cur:immortal_jade",
+       "qty": 150
+      }
+     ]
+    },
+    {
+     "level": 10,
+     "rewards": [
+      {
+       "cur": "cur:immortal_jade",
+       "qty": 200
+      },
+      {
+       "cur": "cur:fate_incense",
+       "qty": 2
+      }
+     ]
+    },
+    {
+     "level": 15,
+     "rewards": [
+      {
+       "cur": "cur:immortal_jade",
+       "qty": 250
+      }
+     ]
+    },
+    {
+     "level": 20,
+     "rewards": [
+      {
+       "cur": "cur:immortal_jade",
+       "qty": 300
+      },
+      {
+       "cur": "cur:fate_incense",
+       "qty": 2
+      }
+     ]
+    },
+    {
+     "level": 25,
+     "rewards": [
+      {
+       "cur": "cur:immortal_jade",
+       "qty": 350
+      }
+     ]
+    },
+    {
+     "level": 30,
+     "rewards": [
+      {
+       "cur": "cur:immortal_jade",
+       "qty": 400
+      },
+      {
+       "cur": "cur:fate_incense",
+       "qty": 2
+      }
+     ]
+    },
+    {
+     "level": 35,
+     "rewards": [
+      {
+       "cur": "cur:immortal_jade",
+       "qty": 450
+      }
+     ]
+    },
+    {
+     "level": 40,
+     "rewards": [
+      {
+       "cur": "cur:immortal_jade",
+       "qty": 500
+      },
+      {
+       "cur": "cur:fate_incense",
+       "qty": 2
+      }
+     ]
+    },
+    {
+     "level": 45,
+     "rewards": [
+      {
+       "cur": "cur:immortal_jade",
+       "qty": 550
+      }
+     ]
+    },
+    {
+     "level": 50,
+     "rewards": [
+      {
+       "cur": "cur:immortal_jade",
+       "qty": 600
+      },
+      {
+       "cur": "cur:fate_incense",
+       "qty": 2
+      }
+     ]
+    },
+    {
+     "level": 55,
+     "rewards": [
+      {
+       "cur": "cur:immortal_jade",
+       "qty": 650
+      }
+     ]
+    },
+    {
+     "level": 60,
+     "rewards": [
+      {
+       "cur": "cur:immortal_jade",
+       "qty": 700
+      },
+      {
+       "cur": "cur:fate_incense",
+       "qty": 2
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "checkin:daily_incense",
+   "name": "Daily Incense",
+   "host": "npc:tao_yao",
+   "days": 28,
+   "missedDaysReset": false,
+   "dayRewards": [
+    {
+     "day": 1,
+     "rewards": [
+      {
+       "cur": "cur:spirit_stones",
+       "qty": 5500
+      }
+     ]
+    },
+    {
+     "day": 2,
+     "rewards": [
+      {
+       "item": "item:qi_gathering_pill",
+       "qty": 2
+      }
+     ]
+    },
+    {
+     "day": 3,
+     "rewards": [
+      {
+       "cur": "cur:spirit_stones",
+       "qty": 6500
+      }
+     ]
+    },
+    {
+     "day": 4,
+     "rewards": [
+      {
+       "cur": "cur:immortal_jade",
+       "qty": 100
+      }
+     ]
+    },
+    {
+     "day": 5,
+     "rewards": [
+      {
+       "cur": "cur:spirit_stones",
+       "qty": 7500
+      }
+     ]
+    },
+    {
+     "day": 6,
+     "rewards": [
+      {
+       "item": "item:qi_gathering_pill",
+       "qty": 2
+      }
+     ]
+    },
+    {
+     "day": 7,
+     "rewards": [
+      {
+       "cur": "cur:blossom_dew",
+       "qty": 40
+      }
+     ]
+    },
+    {
+     "day": 8,
+     "rewards": [
+      {
+       "cur": "cur:immortal_jade",
+       "qty": 100
+      }
+     ]
+    },
+    {
+     "day": 9,
+     "rewards": [
+      {
+       "cur": "cur:spirit_stones",
+       "qty": 9500
+      }
+     ]
+    },
+    {
+     "day": 10,
+     "rewards": [
+      {
+       "item": "item:qi_gathering_pill",
+       "qty": 3
+      }
+     ]
+    },
+    {
+     "day": 11,
+     "rewards": [
+      {
+       "cur": "cur:spirit_stones",
+       "qty": 10500
+      }
+     ]
+    },
+    {
+     "day": 12,
+     "rewards": [
+      {
+       "cur": "cur:immortal_jade",
+       "qty": 100
+      }
+     ]
+    },
+    {
+     "day": 13,
+     "rewards": [
+      {
+       "cur": "cur:spirit_stones",
+       "qty": 11500
+      }
+     ]
+    },
+    {
+     "day": 14,
+     "rewards": [
+      {
+       "cur": "cur:fate_incense",
+       "qty": 5
+      }
+     ]
+    },
+    {
+     "day": 15,
+     "rewards": [
+      {
+       "cur": "cur:spirit_stones",
+       "qty": 12500
+      }
+     ]
+    },
+    {
+     "day": 16,
+     "rewards": [
+      {
+       "cur": "cur:immortal_jade",
+       "qty": 100
+      }
+     ]
+    },
+    {
+     "day": 17,
+     "rewards": [
+      {
+       "cur": "cur:spirit_stones",
+       "qty": 13500
+      }
+     ]
+    },
+    {
+     "day": 18,
+     "rewards": [
+      {
+       "item": "item:qi_gathering_pill",
+       "qty": 4
+      }
+     ]
+    },
+    {
+     "day": 19,
+     "rewards": [
+      {
+       "cur": "cur:spirit_stones",
+       "qty": 14500
+      }
+     ]
+    },
+    {
+     "day": 20,
+     "rewards": [
+      {
+       "cur": "cur:immortal_jade",
+       "qty": 100
+      }
+     ]
+    },
+    {
+     "day": 21,
+     "rewards": [
+      {
+       "cur": "cur:blossom_dew",
+       "qty": 40
+      }
+     ]
+    },
+    {
+     "day": 22,
+     "rewards": [
+      {
+       "item": "item:qi_gathering_pill",
+       "qty": 5
+      }
+     ]
+    },
+    {
+     "day": 23,
+     "rewards": [
+      {
+       "cur": "cur:spirit_stones",
+       "qty": 16500
+      }
+     ]
+    },
+    {
+     "day": 24,
+     "rewards": [
+      {
+       "cur": "cur:immortal_jade",
+       "qty": 100
+      }
+     ]
+    },
+    {
+     "day": 25,
+     "rewards": [
+      {
+       "cur": "cur:spirit_stones",
+       "qty": 17500
+      }
+     ]
+    },
+    {
+     "day": 26,
+     "rewards": [
+      {
+       "item": "item:qi_gathering_pill",
+       "qty": 5
+      }
+     ]
+    },
+    {
+     "day": 27,
+     "rewards": [
+      {
+       "cur": "cur:spirit_stones",
+       "qty": 18500
+      }
+     ]
+    },
+    {
+     "day": 28,
+     "rewards": [
+      {
+       "chooseHero": {
+        "rarity": 4
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "pass:season_01",
+   "name": "Season 1: Petals on the Wind",
+   "days": 28,
+   "tiers": 30,
+   "xpPerTier": 1000,
+   "xpFrom": [
+    "chest:daily",
+    "chest:weekly"
+   ],
+   "allFree": true,
+   "tierRewards": [
+    {
+     "tier": 1,
+     "rewards": [
+      {
+       "item": "item:enlightenment_scroll",
+       "qty": 2
+      }
+     ]
+    },
+    {
+     "tier": 2,
+     "rewards": [
+      {
+       "cur": "cur:spirit_stones",
+       "qty": 10000
+      }
+     ]
+    },
+    {
+     "tier": 3,
+     "rewards": [
+      {
+       "cur": "cur:blossom_dew",
+       "qty": 30
+      }
+     ]
+    },
+    {
+     "tier": 4,
+     "rewards": [
+      {
+       "cur": "cur:spirit_stones",
+       "qty": 10000
+      }
+     ]
+    },
+    {
+     "tier": 5,
+     "rewards": [
+      {
+       "cur": "cur:fate_incense",
+       "qty": 3
+      }
+     ]
+    },
+    {
+     "tier": 6,
+     "rewards": [
+      {
+       "cur": "cur:blossom_dew",
+       "qty": 30
+      }
+     ]
+    },
+    {
+     "tier": 7,
+     "rewards": [
+      {
+       "item": "item:enlightenment_scroll",
+       "qty": 2
+      }
+     ]
+    },
+    {
+     "tier": 8,
+     "rewards": [
+      {
+       "cur": "cur:spirit_stones",
+       "qty": 10000
+      }
+     ]
+    },
+    {
+     "tier": 9,
+     "rewards": [
+      {
+       "cur": "cur:blossom_dew",
+       "qty": 30
+      }
+     ]
+    },
+    {
+     "tier": 10,
+     "rewards": [
+      {
+       "cur": "cur:fate_incense",
+       "qty": 3
+      }
+     ]
+    },
+    {
+     "tier": 11,
+     "rewards": [
+      {
+       "item": "item:enlightenment_scroll",
+       "qty": 2
+      }
+     ]
+    },
+    {
+     "tier": 12,
+     "rewards": [
+      {
+       "cur": "cur:blossom_dew",
+       "qty": 30
+      }
+     ]
+    },
+    {
+     "tier": 13,
+     "rewards": [
+      {
+       "item": "item:enlightenment_scroll",
+       "qty": 2
+      }
+     ]
+    },
+    {
+     "tier": 14,
+     "rewards": [
+      {
+       "cur": "cur:spirit_stones",
+       "qty": 10000
+      }
+     ]
+    },
+    {
+     "tier": 15,
+     "rewards": [
+      {
+       "art": "art:qiankun_pouch",
+       "rarity": "rarity:legendary"
+      }
+     ]
+    },
+    {
+     "tier": 16,
+     "rewards": [
+      {
+       "cur": "cur:spirit_stones",
+       "qty": 10000
+      }
+     ]
+    },
+    {
+     "tier": 17,
+     "rewards": [
+      {
+       "item": "item:enlightenment_scroll",
+       "qty": 2
+      }
+     ]
+    },
+    {
+     "tier": 18,
+     "rewards": [
+      {
+       "cur": "cur:blossom_dew",
+       "qty": 30
+      }
+     ]
+    },
+    {
+     "tier": 19,
+     "rewards": [
+      {
+       "item": "item:enlightenment_scroll",
+       "qty": 2
+      }
+     ]
+    },
+    {
+     "tier": 20,
+     "rewards": [
+      {
+       "cur": "cur:fate_incense",
+       "qty": 3
+      }
+     ]
+    },
+    {
+     "tier": 21,
+     "rewards": [
+      {
+       "cur": "cur:blossom_dew",
+       "qty": 30
+      }
+     ]
+    },
+    {
+     "tier": 22,
+     "rewards": [
+      {
+       "cur": "cur:spirit_stones",
+       "qty": 10000
+      }
+     ]
+    },
+    {
+     "tier": 23,
+     "rewards": [
+      {
+       "item": "item:enlightenment_scroll",
+       "qty": 2
+      }
+     ]
+    },
+    {
+     "tier": 24,
+     "rewards": [
+      {
+       "cur": "cur:blossom_dew",
+       "qty": 30
+      }
+     ]
+    },
+    {
+     "tier": 25,
+     "rewards": [
+      {
+       "cur": "cur:fate_incense",
+       "qty": 3
+      }
+     ]
+    },
+    {
+     "tier": 26,
+     "rewards": [
+      {
+       "cur": "cur:spirit_stones",
+       "qty": 10000
+      }
+     ]
+    },
+    {
+     "tier": 27,
+     "rewards": [
+      {
+       "cur": "cur:blossom_dew",
+       "qty": 30
+      }
+     ]
+    },
+    {
+     "tier": 28,
+     "rewards": [
+      {
+       "cur": "cur:spirit_stones",
+       "qty": 10000
+      }
+     ]
+    },
+    {
+     "tier": 29,
+     "rewards": [
+      {
+       "item": "item:enlightenment_scroll",
+       "qty": 2
+      }
+     ]
+    },
+    {
+     "tier": 30,
+     "rewards": [
+      {
+       "outfit": "outfit:ascension_s01_su_lianhua"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "duty:clear_3_stages",
+   "name": "Clear 3 stages",
+   "period": "daily",
+   "points": 20,
+   "chest": "chest:daily"
+  },
+  {
+   "id": "duty:refine_twice",
+   "name": "Refine gear twice",
+   "period": "daily",
+   "points": 20,
+   "chest": "chest:daily"
+  },
+  {
+   "id": "duty:collect_garden",
+   "name": "Collect the herb garden",
+   "period": "daily",
+   "points": 20,
+   "chest": "chest:daily"
+  },
+  {
+   "id": "duty:take_tea",
+   "name": "Take tea with a heroine",
+   "period": "daily",
+   "points": 20,
+   "chest": "chest:daily"
+  },
+  {
+   "id": "duty:sweep_hunt",
+   "name": "Sweep a Demon Hunt",
+   "period": "daily",
+   "points": 20,
+   "chest": "chest:daily"
+  },
+  {
+   "id": "duty:run_valley",
+   "name": "Run Medicine King Valley",
+   "period": "daily",
+   "points": 20,
+   "chest": "chest:daily"
+  },
+  {
+   "id": "duty:summon_once",
+   "name": "Summon once",
+   "period": "daily",
+   "points": 20,
+   "chest": "chest:daily"
+  },
+  {
+   "id": "duty:salvage_gear",
+   "name": "Salvage gear",
+   "period": "daily",
+   "points": 20,
+   "chest": "chest:daily"
+  },
+  {
+   "id": "duty:pagoda_floor",
+   "name": "Clear a Pagoda floor",
+   "period": "weekly",
+   "points": 50,
+   "chest": "chest:weekly"
+  },
+  {
+   "id": "duty:secret_realm_run",
+   "name": "Finish a Secret Realm run",
+   "period": "weekly",
+   "points": 50,
+   "chest": "chest:weekly"
+  },
+  {
+   "id": "duty:competition_wins",
+   "name": "Win 5 competition battles",
+   "period": "weekly",
+   "points": 50,
+   "chest": "chest:weekly"
+  },
+  {
+   "id": "duty:hunt_runs",
+   "name": "Finish 10 hunt runs",
+   "period": "weekly",
+   "points": 50,
+   "chest": "chest:weekly"
+  },
+  {
+   "id": "duty:brew_pills",
+   "name": "Brew 5 pills",
+   "period": "weekly",
+   "points": 50,
+   "chest": "chest:weekly"
+  },
+  {
+   "id": "duty:expeditions",
+   "name": "Complete 10 expeditions",
+   "period": "weekly",
+   "points": 50,
+   "chest": "chest:weekly"
+  },
+  {
+   "id": "chest:daily",
+   "name": "Daily Sect Duties chest",
+   "duties": [
+    "duty:clear_3_stages",
+    "duty:refine_twice",
+    "duty:collect_garden",
+    "duty:take_tea",
+    "duty:sweep_hunt",
+    "duty:run_valley",
+    "duty:summon_once",
+    "duty:salvage_gear"
+   ],
+   "activePerDay": 5,
+   "tiers": [
+    {
+     "at": 40,
+     "rewards": [
+      {
+       "cur": "cur:spirit_stones",
+       "qty": 10000
+      }
+     ]
+    },
+    {
+     "at": 80,
+     "rewards": [
+      {
+       "cur": "cur:immortal_jade",
+       "qty": 50
+      },
+      {
+       "cur": "cur:sect_merit",
+       "qty": 30
+      }
+     ]
+    },
+    {
+     "at": 100,
+     "rewards": [
+      {
+       "cur": "cur:immortal_jade",
+       "qty": 100
+      },
+      {
+       "cur": "cur:sect_merit",
+       "qty": 50
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "chest:weekly",
+   "name": "Weekly Sect Duties chest",
+   "duties": [
+    "duty:pagoda_floor",
+    "duty:secret_realm_run",
+    "duty:competition_wins",
+    "duty:hunt_runs",
+    "duty:brew_pills",
+    "duty:expeditions"
+   ],
+   "tiers": [
+    {
+     "at": 100,
+     "rewards": [
+      {
+       "cur": "cur:immortal_jade",
+       "qty": 200
+      },
+      {
+       "cur": "cur:sect_merit",
+       "qty": 100
+      }
+     ]
+    },
+    {
+     "at": 200,
+     "rewards": [
+      {
+       "cur": "cur:fate_incense",
+       "qty": 2
+      },
+      {
+       "cur": "cur:sect_merit",
+       "qty": 150
+      }
+     ]
+    },
+    {
+     "at": 300,
+     "rewards": [
+      {
+       "cur": "cur:blossom_dew",
+       "qty": 60
+      },
+      {
+       "cur": "cur:sect_merit",
+       "qty": 200
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ach:clear_v1c1",
+   "name": "Clear chapter 1",
+   "goal": {
+    "clear": "stage:v1c1_08"
+   },
+   "rewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 300
+    }
+   ]
+  },
+  {
+   "id": "ach:clear_v1c2",
+   "name": "Clear chapter 2",
+   "goal": {
+    "clear": "stage:v1c2_09"
+   },
+   "rewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 400
+    }
+   ]
+  },
+  {
+   "id": "ach:clear_v1c3",
+   "name": "Clear chapter 3",
+   "goal": {
+    "clear": "stage:v1c3_09"
+   },
+   "rewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 500
+    }
+   ]
+  },
+  {
+   "id": "ach:clear_v1c4",
+   "name": "Clear chapter 4",
+   "goal": {
+    "clear": "stage:v1c4_09"
+   },
+   "rewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 600
+    }
+   ]
+  },
+  {
+   "id": "ach:clear_v1c5",
+   "name": "Clear chapter 5",
+   "goal": {
+    "clear": "stage:v1c5_10"
+   },
+   "rewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 700
+    }
+   ]
+  },
+  {
+   "id": "ach:heaven_defying",
+   "name": "Clear every Volume 1 stage on Heaven-Defying",
+   "goal": {
+    "mode": "mode:journey"
+   },
+   "rewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 1000
+    },
+    {
+     "title": "title:heaven_defier"
+    }
+   ]
+  },
+  {
+   "id": "ach:hunt_qiongqi",
+   "name": "Clear Qiongqi level 13",
+   "goal": {
+    "clear": "stage:hunt_qiongqi_13"
+   },
+   "rewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 500
+    }
+   ]
+  },
+  {
+   "id": "ach:hunt_taotie",
+   "name": "Clear Taotie level 13",
+   "goal": {
+    "clear": "stage:hunt_taotie_13"
+   },
+   "rewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 500
+    }
+   ]
+  },
+  {
+   "id": "ach:hunt_taowu",
+   "name": "Clear Taowu level 13",
+   "goal": {
+    "clear": "stage:hunt_taowu_13"
+   },
+   "rewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 500
+    }
+   ]
+  },
+  {
+   "id": "ach:hunt_hundun",
+   "name": "Clear Hundun level 13",
+   "goal": {
+    "clear": "stage:hunt_hundun_13"
+   },
+   "rewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 500
+    }
+   ]
+  },
+  {
+   "id": "ach:hunt_xiangliu",
+   "name": "Clear Xiangliu level 13",
+   "goal": {
+    "clear": "stage:hunt_xiangliu_13"
+   },
+   "rewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 500
+    }
+   ]
+  },
+  {
+   "id": "ach:all_hunts",
+   "name": "Clear every hunt at level 13",
+   "goal": {
+    "mode": "mode:hunts"
+   },
+   "rewards": [
+    {
+     "cur": "cur:fate_incense",
+     "qty": 5
+    },
+    {
+     "title": "title:demon_slayer"
+    }
+   ]
+  },
+  {
+   "id": "ach:pagoda_30",
+   "name": "Clear Pagoda floor 30",
+   "goal": {
+    "clear": "stage:pagoda_030"
+   },
+   "rewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 450
+    }
+   ]
+  },
+  {
+   "id": "ach:pagoda_60",
+   "name": "Clear Pagoda floor 60",
+   "goal": {
+    "clear": "stage:pagoda_060"
+   },
+   "rewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 600
+    }
+   ]
+  },
+  {
+   "id": "ach:pagoda_90",
+   "name": "Clear Pagoda floor 90",
+   "goal": {
+    "clear": "stage:pagoda_090"
+   },
+   "rewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 750
+    }
+   ]
+  },
+  {
+   "id": "ach:pagoda_120",
+   "name": "Clear Pagoda floor 120",
+   "goal": {
+    "clear": "stage:pagoda_120"
+   },
+   "rewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 900
+    },
+    {
+     "title": "title:pagoda_conqueror"
+    }
+   ]
+  },
+  {
+   "id": "ach:realm_core_formation",
+   "name": "A heroine reaches Core Formation",
+   "goal": {
+    "realm": "realm:core_formation"
+   },
+   "rewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 300
+    }
+   ]
+  },
+  {
+   "id": "ach:realm_nascent_soul",
+   "name": "A heroine reaches Nascent Soul",
+   "goal": {
+    "realm": "realm:nascent_soul"
+   },
+   "rewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 300
+    }
+   ]
+  },
+  {
+   "id": "ach:realm_spirit_severing",
+   "name": "A heroine reaches Spirit Severing",
+   "goal": {
+    "realm": "realm:spirit_severing"
+   },
+   "rewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 300
+    }
+   ]
+  },
+  {
+   "id": "ach:realm_void_refinement",
+   "name": "A heroine reaches Void Refinement",
+   "goal": {
+    "realm": "realm:void_refinement"
+   },
+   "rewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 300
+    },
+    {
+     "title": "title:realm_walker"
+    }
+   ]
+  },
+  {
+   "id": "ach:realm_body_integration",
+   "name": "A heroine reaches Body Integration",
+   "goal": {
+    "realm": "realm:body_integration"
+   },
+   "rewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 300
+    }
+   ]
+  },
+  {
+   "id": "ach:realm_mahayana",
+   "name": "A heroine reaches Mahayana",
+   "goal": {
+    "realm": "realm:mahayana"
+   },
+   "rewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 300
+    },
+    {
+     "title": "title:tribulation_master"
+    }
+   ]
+  },
+  {
+   "id": "ach:own_10",
+   "name": "Gather 10 heroines",
+   "goal": {
+    "pond": "pond:fate_pond"
+   },
+   "rewards": [
+    {
+     "cur": "cur:fate_incense",
+     "qty": 3
+    }
+   ]
+  },
+  {
+   "id": "ach:own_20",
+   "name": "Gather 20 heroines",
+   "goal": {
+    "pond": "pond:fate_pond"
+   },
+   "rewards": [
+    {
+     "cur": "cur:fate_incense",
+     "qty": 5
+    }
+   ]
+  },
+  {
+   "id": "ach:own_30",
+   "name": "Gather all 30 launch heroines",
+   "goal": {
+    "pond": "pond:fate_pond"
+   },
+   "rewards": [
+    {
+     "cur": "cur:fate_incense",
+     "qty": 10
+    },
+    {
+     "title": "title:hundred_blossoms"
+    }
+   ]
+  },
+  {
+   "id": "ach:first_bloom",
+   "name": "Fully bloom a heroine",
+   "goal": {
+    "system": "sys:dao_blossom"
+   },
+   "rewards": [
+    {
+     "cur": "cur:blossom_dew",
+     "qty": 100
+    },
+    {
+     "title": "title:first_bloom"
+    }
+   ]
+  },
+  {
+   "id": "ach:bond_10",
+   "name": "Reach bond level 10 with a heroine",
+   "goal": {
+    "system": "sys:bond"
+   },
+   "rewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 500
+    }
+   ]
+  },
+  {
+   "id": "ach:raid_breaker",
+   "name": "Clear difficulty 5 of every raid",
+   "goal": {
+    "mode": "mode:raids"
+   },
+   "rewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 1000
+    },
+    {
+     "title": "title:raid_breaker"
+    }
+   ]
+  },
+  {
+   "id": "ach:tower_top",
+   "name": "Clear Trial Tower floor 30",
+   "goal": {
+    "clear": "stage:tower_30"
+   },
+   "rewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 500
+    },
+    {
+     "title": "title:tower_climber"
+    }
+   ]
+  },
+  {
+   "id": "ach:perfect_pill",
+   "name": "Brew a Perfect pill",
+   "goal": {
+    "building": "bld:alchemy_pavilion"
+   },
+   "rewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 200
+    },
+    {
+     "title": "title:alchemist"
+    }
+   ]
+  },
+  {
+   "id": "ach:kindred_win",
+   "name": "Win a battle at full Kindred Qi",
+   "goal": {
+    "rules": "rules:combat"
+   },
+   "rewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 200
+    },
+    {
+     "title": "title:kindred_spirit"
+    }
+   ]
+  },
+  {
+   "id": "ach:harmony_100",
+   "name": "Make 100 Five Phases Harmonies",
+   "goal": {
+    "rules": "rules:combat"
+   },
+   "rewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 300
+    }
+   ]
+  },
+  {
+   "id": "ach:grand_elder",
+   "name": "Reach Grand Elder in the Sect Grand Competition",
+   "goal": {
+    "league": "league:sect_grand_competition"
+   },
+   "rewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 500
+    }
+   ]
+  },
+  {
+   "id": "ach:tournament_win",
+   "name": "Win the Martial Tournament",
+   "goal": {
+    "tournament": "tourn:martial_tournament"
+   },
+   "rewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 500
+    }
+   ]
+  },
+  {
+   "id": "ach:first_unique",
+   "name": "Forge a natal gear piece",
+   "goal": {
+    "building": "bld:artifact_forge"
+   },
+   "rewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 500
+    }
+   ]
+  },
+  {
+   "id": "ach:first_beast",
+   "name": "Hatch a spirit beast",
+   "goal": {
+    "system": "sys:hatch"
+   },
+   "rewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 100
+    }
+   ]
+  }
+ ]
+}

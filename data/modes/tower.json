@@ -1,0 +1,54 @@
+{
+ "about": "The Heavenly Trial Tower: 30 floors a week, health carries over, scaled to your highest-realm heroine.",
+ "records": [
+  {
+   "id": "tower:heavenly_trial",
+   "name": "Heavenly Trial Tower",
+   "location": "loc:heavenly_trial_tower",
+   "floors": [
+    "stage:tower_01",
+    "stage:tower_02",
+    "stage:tower_03",
+    "stage:tower_04",
+    "stage:tower_05",
+    "stage:tower_06",
+    "stage:tower_07",
+    "stage:tower_08",
+    "stage:tower_09",
+    "stage:tower_10",
+    "stage:tower_11",
+    "stage:tower_12",
+    "stage:tower_13",
+    "stage:tower_14",
+    "stage:tower_15",
+    "stage:tower_16",
+    "stage:tower_17",
+    "stage:tower_18",
+    "stage:tower_19",
+    "stage:tower_20",
+    "stage:tower_21",
+    "stage:tower_22",
+    "stage:tower_23",
+    "stage:tower_24",
+    "stage:tower_25",
+    "stage:tower_26",
+    "stage:tower_27",
+    "stage:tower_28",
+    "stage:tower_29",
+    "stage:tower_30"
+   ],
+   "daoByDay": {
+    "mon": "dao:thunderous_heaven",
+    "tue": "dao:withered_earth",
+    "wed": "dao:reversed_cycle",
+    "thu": "dao:swift_heaven",
+    "fri": "dao:iron_heaven",
+    "sat": "dao:qi_drought",
+    "sun": "dao:burning_heaven"
+   },
+   "healthCarriesOver": true,
+   "reset": "weekly, Monday",
+   "scalesTo": "highest_realm"
+  }
+ ]
+}

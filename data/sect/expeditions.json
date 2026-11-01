@@ -1,0 +1,403 @@
+{
+ "about": "Mission Hall expeditions: two to four heroines leave for 1, 4, 8 or 12 hours; requirements mix phase, path and power.",
+ "records": [
+  {
+   "id": "exped:herb_gathering",
+   "name": "Herb Gathering",
+   "hours": 1,
+   "requires": {
+    "heroines": 2
+   },
+   "rewards": [
+    {
+     "item": "item:spirit_grass",
+     "qty": 5
+    },
+    {
+     "item": "item:blood_ginseng",
+     "qty": 1
+    }
+   ]
+  },
+  {
+   "id": "exped:wine_cellar",
+   "name": "The Old Wine Cellar",
+   "hours": 1,
+   "requires": {
+    "heroines": 1
+   },
+   "rewards": [
+    {
+     "item": "item:gift_plum_wine",
+     "qty": 1,
+     "chance": 0.5
+    },
+    {
+     "item": "item:gift_hawthorn_candy",
+     "qty": 1,
+     "chance": 0.5
+    }
+   ]
+  },
+  {
+   "id": "exped:river_patrol",
+   "name": "River Patrol",
+   "hours": 1,
+   "requires": {
+    "heroines": 2,
+    "phases": [
+     "phase:water"
+    ]
+   },
+   "rewards": [
+    {
+     "item": "item:water_essence",
+     "qty": 3
+    },
+    {
+     "item": "item:gift_lotus_seed_cakes",
+     "qty": 1,
+     "chance": 0.4
+    }
+   ]
+  },
+  {
+   "id": "exped:bamboo_scouting",
+   "name": "Bamboo Scouting",
+   "hours": 4,
+   "requires": {
+    "heroines": 3,
+    "phases": [
+     "phase:wood",
+     "phase:wood"
+    ],
+    "paths": [
+     "path:shadow"
+    ]
+   },
+   "rewards": [
+    {
+     "item": "item:wood_essence",
+     "qty": 6
+    },
+    {
+     "item": "item:gift_embroidered_pouch",
+     "qty": 1,
+     "chance": 0.3
+    }
+   ]
+  },
+  {
+   "id": "exped:forge_escort",
+   "name": "Forge Escort",
+   "hours": 4,
+   "requires": {
+    "heroines": 2,
+    "phases": [
+     "phase:metal"
+    ],
+    "paths": [
+     "path:guardian"
+    ]
+   },
+   "rewards": [
+    {
+     "item": "item:metal_essence",
+     "qty": 6
+    },
+    {
+     "item": "item:black_iron",
+     "qty": 3
+    }
+   ]
+  },
+  {
+   "id": "exped:volcano_survey",
+   "name": "Volcano Survey",
+   "hours": 4,
+   "requires": {
+    "heroines": 2,
+    "phases": [
+     "phase:fire"
+    ],
+    "paths": [
+     "path:arcane"
+    ]
+   },
+   "rewards": [
+    {
+     "item": "item:fire_essence",
+     "qty": 6
+    },
+    {
+     "item": "item:fire_lingzhi",
+     "qty": 1,
+     "chance": 0.3
+    }
+   ]
+  },
+  {
+   "id": "exped:mountain_meditation",
+   "name": "Mountain Meditation",
+   "hours": 4,
+   "requires": {
+    "heroines": 2,
+    "phases": [
+     "phase:earth"
+    ],
+    "paths": [
+     "path:healer"
+    ]
+   },
+   "rewards": [
+    {
+     "item": "item:earth_essence",
+     "qty": 6
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ]
+  },
+  {
+   "id": "exped:temple_service",
+   "name": "Temple Service",
+   "hours": 4,
+   "requires": {
+    "heroines": 2,
+    "paths": [
+     "path:healer"
+    ]
+   },
+   "rewards": [
+    {
+     "item": "item:gift_sandalwood_incense",
+     "qty": 1
+    },
+    {
+     "item": "item:spirit_grass",
+     "qty": 5
+    }
+   ]
+  },
+  {
+   "id": "exped:guild_caravan",
+   "name": "Guild Caravan",
+   "hours": 8,
+   "requires": {
+    "heroines": 3,
+    "power": 15000
+   },
+   "rewards": [
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 30000
+    },
+    {
+     "item": "item:gift_silk_fan",
+     "qty": 1,
+     "chance": 0.5
+    },
+    {
+     "item": "item:gift_jade_hairpin",
+     "qty": 1,
+     "chance": 0.5
+    }
+   ]
+  },
+  {
+   "id": "exped:sect_diplomacy",
+   "name": "Sect Diplomacy",
+   "hours": 8,
+   "requires": {
+    "heroines": 2,
+    "paths": [
+     "path:talisman",
+     "path:healer"
+    ]
+   },
+   "rewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 100
+    },
+    {
+     "item": "item:gift_spirit_tea",
+     "qty": 1
+    }
+   ]
+  },
+  {
+   "id": "exped:snow_lotus_peak",
+   "name": "Snow Lotus Peak",
+   "hours": 8,
+   "requires": {
+    "heroines": 2,
+    "phases": [
+     "phase:water",
+     "phase:water"
+    ],
+    "power": 20000
+   },
+   "rewards": [
+    {
+     "item": "item:snow_lotus",
+     "qty": 2
+    },
+    {
+     "item": "item:water_essence",
+     "qty": 8
+    }
+   ]
+  },
+  {
+   "id": "exped:beast_tracking",
+   "name": "Beast Tracking",
+   "hours": 8,
+   "requires": {
+    "heroines": 2,
+    "paths": [
+     "path:shadow",
+     "path:sword"
+    ]
+   },
+   "rewards": [
+    {
+     "item": "item:egg_common",
+     "qty": 1,
+     "chance": 0.5
+    },
+    {
+     "item": "item:egg_rare",
+     "qty": 1,
+     "chance": 0.1
+    }
+   ]
+  },
+  {
+   "id": "exped:sword_tomb_meditation",
+   "name": "Sword Tomb Meditation",
+   "hours": 8,
+   "requires": {
+    "heroines": 2,
+    "paths": [
+     "path:sword",
+     "path:sword"
+    ]
+   },
+   "rewards": [
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    },
+    {
+     "item": "item:gift_sword_tassel",
+     "qty": 1,
+     "chance": 0.4
+    }
+   ]
+  },
+  {
+   "id": "exped:ancient_ruins",
+   "name": "Ancient Ruins",
+   "hours": 12,
+   "requires": {
+    "heroines": 4,
+    "power": 40000
+   },
+   "rewards": [
+    {
+     "item": "item:spirit_silver",
+     "qty": 4
+    },
+    {
+     "item": "item:artefact_essence",
+     "qty": 5
+    },
+    {
+     "item": "item:dao_mark",
+     "qty": 1
+    }
+   ]
+  },
+  {
+   "id": "exped:heavenly_market",
+   "name": "The Heavenly Market",
+   "hours": 12,
+   "requires": {
+    "heroines": 2
+   },
+   "rewards": [
+    {
+     "item": "item:gift_guqin_strings",
+     "qty": 1,
+     "chance": 0.5
+    },
+    {
+     "item": "item:gift_calligraphy_scroll",
+     "qty": 1,
+     "chance": 0.5
+    },
+    {
+     "item": "item:gift_poetry_anthology",
+     "qty": 1,
+     "chance": 0.5
+    }
+   ]
+  },
+  {
+   "id": "exped:star_watch",
+   "name": "Star Watch",
+   "hours": 12,
+   "requires": {
+    "heroines": 2,
+    "paths": [
+     "path:arcane",
+     "path:talisman"
+    ],
+    "power": 50000
+   },
+   "rewards": [
+    {
+     "item": "item:starfall_iron",
+     "qty": 2
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": 1,
+     "chance": 0.1
+    }
+   ]
+  },
+  {
+   "id": "exped:elder_escort",
+   "name": "Escort an Immortal Elder",
+   "hours": 12,
+   "requires": {
+    "heroines": 2,
+    "paths": [
+     "path:guardian",
+     "path:guardian"
+    ],
+    "power": 60000
+   },
+   "rewards": [
+    {
+     "item": "item:void_gold",
+     "qty": 1,
+     "chance": 0.3
+    },
+    {
+     "item": "item:egg_celestial",
+     "qty": 1,
+     "chance": 0.02
+    },
+    {
+     "item": "item:nine_leaf_lingzhi",
+     "qty": 1
+    }
+   ]
+  }
+ ]
+}

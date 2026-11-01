@@ -1,0 +1,119 @@
+{
+ "about": "The Fate Pond and Sect Recruitment. Every heroine is in the permanent pool; summons use only earned currency.",
+ "records": [
+  {
+   "id": "pond:fate_pond",
+   "name": "Fate Pond",
+   "consumes": [
+    "cur:fate_incense"
+   ],
+   "rates": {
+    "5": 0.03,
+    "4": 0.15,
+    "3": 0.82
+   },
+   "tenSummonGuarantee": 4,
+   "pity": {
+    "softFrom": 50,
+    "step": 0.05,
+    "guaranteedAt": 60,
+    "carriesOver": true
+   },
+   "featured": {
+    "share": 0.5,
+    "rotationDays": 7,
+    "order": [
+     "hero:gladiolus",
+     "hero:orchid",
+     "hero:peony",
+     "hero:rose",
+     "hero:oleander",
+     "hero:narcissus",
+     "hero:hibiscus",
+     "hero:osmanthus",
+     "hero:apricot_blossom",
+     "hero:hydrangea"
+    ]
+   },
+   "fatePoints": {
+    "perSummon": 1,
+    "pickAt": 120,
+    "carriesOver": true
+   },
+   "fatePointOverflowRewards": [
+    {
+     "cur": "cur:blossom_dew",
+     "qty": 5,
+     "per": "Fate Point past 240"
+    }
+   ],
+   "duplicates": "open Dao Blossom petals; past Full Bloom they become Blossom Dew (see sys:dao_blossom)",
+   "pool": [
+    "hero:ling_shuang",
+    "hero:mo_yingyue",
+    "hero:yan_feihong",
+    "hero:su_lianhua",
+    "hero:gladiolus",
+    "hero:orchid",
+    "hero:pomegranate",
+    "hero:crabapple",
+    "hero:magnolia",
+    "hero:wisteria",
+    "hero:camellia",
+    "hero:azalea",
+    "hero:peony",
+    "hero:pear_blossom",
+    "hero:iris",
+    "hero:rose",
+    "hero:oleander",
+    "hero:jasmine",
+    "hero:peach_blossom",
+    "hero:narcissus",
+    "hero:hibiscus",
+    "hero:daylily",
+    "hero:osmanthus",
+    "hero:apricot_blossom",
+    "hero:snow_lotus",
+    "hero:trumpet_creeper",
+    "hero:chrysanthemum",
+    "hero:lily",
+    "hero:hydrangea",
+    "hero:safflower"
+   ],
+   "reveal": "a lotus blooms: white petals for 3★, violet for 4★, gold for 5★, with her phase colour in the heart"
+  },
+  {
+   "id": "recruit:sect_recruitment",
+   "name": "Sect Recruitment",
+   "cost": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 300
+    }
+   ],
+   "pool": [
+    "hero:ling_shuang",
+    "hero:mo_yingyue",
+    "hero:yan_feihong",
+    "hero:su_lianhua",
+    "hero:pomegranate",
+    "hero:crabapple",
+    "hero:magnolia",
+    "hero:wisteria",
+    "hero:camellia",
+    "hero:azalea",
+    "hero:pear_blossom",
+    "hero:iris",
+    "hero:jasmine",
+    "hero:peach_blossom",
+    "hero:daylily",
+    "hero:snow_lotus",
+    "hero:trumpet_creeper",
+    "hero:chrysanthemum",
+    "hero:lily",
+    "hero:safflower"
+   ],
+   "note": "3★ and 4★ heroines, like Epic Seven's friendship summon"
+  }
+ ]
+}

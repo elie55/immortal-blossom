@@ -1,0 +1,385 @@
+{
+ "about": "Volume 1, The Withered Garden: five chapters. Stages chain in order; each chapter opens when the previous one is cleared.",
+ "records": [
+  {
+   "id": "chapter:v1c1",
+   "volume": 1,
+   "number": 1,
+   "name": "Peach Blossom Ford",
+   "cn": "桃花渡",
+   "location": "loc:peach_blossom_ford",
+   "synopsis": "Wraiths burn a river village; Su Lianhua shields the refugees and the Pavilion Master takes up the Fate Lotus.",
+   "levels": [
+    1,
+    5
+   ],
+   "tier": "tier:i",
+   "stages": [
+    "stage:v1c1_01",
+    "stage:v1c1_02",
+    "stage:v1c1_03",
+    "stage:v1c1_04",
+    "stage:v1c1_05",
+    "stage:v1c1_06",
+    "stage:v1c1_07",
+    "stage:v1c1_08"
+   ],
+   "boss": "enemy:wraith_captain",
+   "joins": [
+    "hero:su_lianhua"
+   ],
+   "heavenDefying": {
+    "levels": [
+     21,
+     24
+    ],
+    "tier": "tier:iii",
+    "opensOn": "chapter clear"
+   },
+   "starRewards": [
+    {
+     "at": "one third",
+     "rewards": [
+      {
+       "cur": "cur:immortal_jade",
+       "qty": 150
+      }
+     ]
+    },
+    {
+     "at": "two thirds",
+     "rewards": [
+      {
+       "cur": "cur:fate_incense",
+       "qty": 2
+      },
+      {
+       "item": "item:enlightenment_scroll",
+       "qty": 2
+      }
+     ]
+    },
+    {
+     "at": "all",
+     "rewards": [
+      {
+       "cur": "cur:fate_incense",
+       "qty": 3
+      },
+      {
+       "cur": "cur:blossom_dew",
+       "qty": 20
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "chapter:v1c2",
+   "volume": 1,
+   "number": 2,
+   "name": "Frostpeak",
+   "cn": "霜峰",
+   "location": "loc:frostpeak",
+   "synopsis": "A Frostpeak elder sells the sect's disciples to the Netherflame Sect; Ling Shuang refuses to kneel.",
+   "levels": [
+    6,
+    10
+   ],
+   "tier": "tier:i",
+   "stages": [
+    "stage:v1c2_01",
+    "stage:v1c2_02",
+    "stage:v1c2_03",
+    "stage:v1c2_04",
+    "stage:v1c2_05",
+    "stage:v1c2_06",
+    "stage:v1c2_07",
+    "stage:v1c2_08",
+    "stage:v1c2_09"
+   ],
+   "boss": "enemy:elder_han",
+   "joins": [
+    "hero:ling_shuang"
+   ],
+   "heavenDefying": {
+    "levels": [
+     25,
+     28
+    ],
+    "tier": "tier:iii",
+    "opensOn": "chapter clear"
+   },
+   "starRewards": [
+    {
+     "at": "one third",
+     "rewards": [
+      {
+       "cur": "cur:immortal_jade",
+       "qty": 150
+      }
+     ]
+    },
+    {
+     "at": "two thirds",
+     "rewards": [
+      {
+       "cur": "cur:fate_incense",
+       "qty": 2
+      },
+      {
+       "item": "item:enlightenment_scroll",
+       "qty": 2
+      }
+     ]
+    },
+    {
+     "at": "all",
+     "rewards": [
+      {
+       "cur": "cur:fate_incense",
+       "qty": 3
+      },
+      {
+       "cur": "cur:blossom_dew",
+       "qty": 20
+      }
+     ]
+    }
+   ],
+   "unlock": {
+    "clear": "stage:v1c1_08"
+   }
+  },
+  {
+   "id": "chapter:v1c3",
+   "volume": 1,
+   "number": 3,
+   "name": "Moonshadow Bamboo Sea",
+   "cn": "月影竹海",
+   "location": "loc:moonshadow_bamboo_sea",
+   "synopsis": "Mo Yingyue is hired to kill you, then breaks her contract.",
+   "levels": [
+    11,
+    14
+   ],
+   "tier": "tier:ii",
+   "stages": [
+    "stage:v1c3_01",
+    "stage:v1c3_02",
+    "stage:v1c3_03",
+    "stage:v1c3_04",
+    "stage:v1c3_05",
+    "stage:v1c3_06",
+    "stage:v1c3_07",
+    "stage:v1c3_08",
+    "stage:v1c3_09"
+   ],
+   "boss": "enemy:envoy_ku_ye",
+   "joins": [
+    "hero:mo_yingyue"
+   ],
+   "heavenDefying": {
+    "levels": [
+     28,
+     30
+    ],
+    "tier": "tier:iii",
+    "opensOn": "chapter clear"
+   },
+   "starRewards": [
+    {
+     "at": "one third",
+     "rewards": [
+      {
+       "cur": "cur:immortal_jade",
+       "qty": 150
+      }
+     ]
+    },
+    {
+     "at": "two thirds",
+     "rewards": [
+      {
+       "cur": "cur:fate_incense",
+       "qty": 2
+      },
+      {
+       "item": "item:enlightenment_scroll",
+       "qty": 2
+      }
+     ]
+    },
+    {
+     "at": "all",
+     "rewards": [
+      {
+       "cur": "cur:fate_incense",
+       "qty": 3
+      },
+      {
+       "cur": "cur:blossom_dew",
+       "qty": 20
+      }
+     ]
+    }
+   ],
+   "unlock": {
+    "clear": "stage:v1c2_09"
+   }
+  },
+  {
+   "id": "chapter:v1c4",
+   "volume": 1,
+   "number": 4,
+   "name": "Vermilion Ruins",
+   "cn": "朱凰遗迹",
+   "location": "loc:vermilion_ruins",
+   "synopsis": "The Phoenix Palace's sealed fire is stolen; Yan Feihong hunts the thief.",
+   "levels": [
+    15,
+    17
+   ],
+   "tier": "tier:ii",
+   "stages": [
+    "stage:v1c4_01",
+    "stage:v1c4_02",
+    "stage:v1c4_03",
+    "stage:v1c4_04",
+    "stage:v1c4_05",
+    "stage:v1c4_06",
+    "stage:v1c4_07",
+    "stage:v1c4_08",
+    "stage:v1c4_09"
+   ],
+   "boss": "enemy:silver_fox_thief",
+   "joins": [
+    "hero:yan_feihong"
+   ],
+   "heavenDefying": {
+    "levels": [
+     31,
+     35
+    ],
+    "tier": "tier:iv",
+    "opensOn": "chapter clear"
+   },
+   "starRewards": [
+    {
+     "at": "one third",
+     "rewards": [
+      {
+       "cur": "cur:immortal_jade",
+       "qty": 150
+      }
+     ]
+    },
+    {
+     "at": "two thirds",
+     "rewards": [
+      {
+       "cur": "cur:fate_incense",
+       "qty": 2
+      },
+      {
+       "item": "item:enlightenment_scroll",
+       "qty": 2
+      }
+     ]
+    },
+    {
+     "at": "all",
+     "rewards": [
+      {
+       "cur": "cur:fate_incense",
+       "qty": 3
+      },
+      {
+       "cur": "cur:blossom_dew",
+       "qty": 20
+      }
+     ]
+    }
+   ],
+   "unlock": {
+    "clear": "stage:v1c3_09"
+   }
+  },
+  {
+   "id": "chapter:v1c5",
+   "volume": 1,
+   "number": 5,
+   "name": "Gate of the Jade Pool",
+   "cn": "瑶池之门",
+   "location": "loc:gate_of_the_jade_pool",
+   "synopsis": "First clash with the Netherflame Matriarch; the Pavilion rises again.",
+   "levels": [
+    18,
+    20
+   ],
+   "tier": "tier:ii",
+   "stages": [
+    "stage:v1c5_01",
+    "stage:v1c5_02",
+    "stage:v1c5_03",
+    "stage:v1c5_04",
+    "stage:v1c5_05",
+    "stage:v1c5_06",
+    "stage:v1c5_07",
+    "stage:v1c5_08",
+    "stage:v1c5_09",
+    "stage:v1c5_10"
+   ],
+   "boss": "enemy:netherflame_matriarch",
+   "joins": [],
+   "heavenDefying": {
+    "levels": [
+     36,
+     40
+    ],
+    "tier": "tier:iv",
+    "opensOn": "chapter clear"
+   },
+   "starRewards": [
+    {
+     "at": "one third",
+     "rewards": [
+      {
+       "cur": "cur:immortal_jade",
+       "qty": 150
+      }
+     ]
+    },
+    {
+     "at": "two thirds",
+     "rewards": [
+      {
+       "cur": "cur:fate_incense",
+       "qty": 2
+      },
+      {
+       "item": "item:enlightenment_scroll",
+       "qty": 2
+      }
+     ]
+    },
+    {
+     "at": "all",
+     "rewards": [
+      {
+       "cur": "cur:fate_incense",
+       "qty": 3
+      },
+      {
+       "cur": "cur:blossom_dew",
+       "qty": 20
+      }
+     ]
+    }
+   ],
+   "unlock": {
+    "clear": "stage:v1c4_09"
+   }
+  }
+ ]
+}

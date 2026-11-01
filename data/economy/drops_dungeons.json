@@ -1,0 +1,1605 @@
+{
+ "about": "Drop tables for Medicine King Valley and the Five Phases Shrines.",
+ "records": [
+  {
+   "id": "drops:valley_1",
+   "name": "Medicine King Valley level 1",
+   "fortune": "each pill has a 30% chance to drop as two",
+   "entries": [
+    {
+     "item": "item:qi_gathering_pill",
+     "qty": [
+      4,
+      4
+     ],
+     "chance": 1
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      1500,
+      2500
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:spirit_grass",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.25
+    }
+   ]
+  },
+  {
+   "id": "drops:valley_2",
+   "name": "Medicine King Valley level 2",
+   "fortune": "each pill has a 30% chance to drop as two",
+   "entries": [
+    {
+     "item": "item:qi_gathering_pill",
+     "qty": [
+      2,
+      2
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:spirit_condensing_pill",
+     "qty": [
+      3,
+      3
+     ],
+     "chance": 1
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      3000,
+      5000
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:spirit_grass",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.25
+    }
+   ]
+  },
+  {
+   "id": "drops:valley_3",
+   "name": "Medicine King Valley level 3",
+   "fortune": "each pill has a 30% chance to drop as two",
+   "entries": [
+    {
+     "item": "item:spirit_condensing_pill",
+     "qty": [
+      2,
+      2
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:heaven_earth_pill",
+     "qty": [
+      2,
+      2
+     ],
+     "chance": 1
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      4500,
+      7500
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:blood_ginseng",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.25
+    }
+   ]
+  },
+  {
+   "id": "drops:valley_4",
+   "name": "Medicine King Valley level 4",
+   "fortune": "each pill has a 30% chance to drop as two",
+   "entries": [
+    {
+     "item": "item:heaven_earth_pill",
+     "qty": [
+      4,
+      4
+     ],
+     "chance": 1
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      6000,
+      10000
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:blood_ginseng",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.25
+    }
+   ]
+  },
+  {
+   "id": "drops:valley_5",
+   "name": "Medicine King Valley level 5",
+   "fortune": "each pill has a 30% chance to drop as two",
+   "entries": [
+    {
+     "item": "item:heaven_earth_pill",
+     "qty": [
+      6,
+      6
+     ],
+     "chance": 1
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      7500,
+      12500
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:snow_lotus",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.25
+    }
+   ]
+  },
+  {
+   "id": "drops:valley_6",
+   "name": "Medicine King Valley level 6",
+   "fortune": "each pill has a 30% chance to drop as two",
+   "entries": [
+    {
+     "item": "item:heaven_earth_pill",
+     "qty": [
+      3,
+      3
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:nine_revolution_golden_pill",
+     "qty": [
+      2,
+      2
+     ],
+     "chance": 1
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      9000,
+      15000
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:snow_lotus",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.25
+    }
+   ]
+  },
+  {
+   "id": "drops:valley_7",
+   "name": "Medicine King Valley level 7",
+   "fortune": "each pill has a 30% chance to drop as two",
+   "entries": [
+    {
+     "item": "item:nine_revolution_golden_pill",
+     "qty": [
+      4,
+      4
+     ],
+     "chance": 1
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      10500,
+      17500
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:fire_lingzhi",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.25
+    }
+   ]
+  },
+  {
+   "id": "drops:valley_8",
+   "name": "Medicine King Valley level 8",
+   "fortune": "each pill has a 30% chance to drop as two",
+   "entries": [
+    {
+     "item": "item:heaven_earth_pill",
+     "qty": [
+      2,
+      2
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:nine_revolution_golden_pill",
+     "qty": [
+      5,
+      5
+     ],
+     "chance": 1
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      12000,
+      20000
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:nine_leaf_lingzhi",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.25
+    }
+   ]
+  },
+  {
+   "id": "drops:shrine_metal_1",
+   "name": "Metal Shrine level 1",
+   "entries": [
+    {
+     "item": "item:metal_essence",
+     "qty": [
+      2,
+      4
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.6
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      1000,
+      2000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:shrine_metal_2",
+   "name": "Metal Shrine level 2",
+   "entries": [
+    {
+     "item": "item:metal_essence",
+     "qty": [
+      3,
+      5
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.6
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      2000,
+      4000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:shrine_metal_3",
+   "name": "Metal Shrine level 3",
+   "entries": [
+    {
+     "item": "item:metal_essence",
+     "qty": [
+      5,
+      7
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.6
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      3000,
+      6000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:shrine_metal_4",
+   "name": "Metal Shrine level 4",
+   "entries": [
+    {
+     "item": "item:metal_essence",
+     "qty": [
+      7,
+      9
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.6
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      4000,
+      8000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:shrine_metal_5",
+   "name": "Metal Shrine level 5",
+   "entries": [
+    {
+     "item": "item:metal_essence",
+     "qty": [
+      9,
+      11
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.6
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      5000,
+      10000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:shrine_metal_6",
+   "name": "Metal Shrine level 6",
+   "entries": [
+    {
+     "item": "item:metal_essence",
+     "qty": [
+      12,
+      14
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.6
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.1
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      6000,
+      12000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:shrine_metal_7",
+   "name": "Metal Shrine level 7",
+   "entries": [
+    {
+     "item": "item:metal_essence",
+     "qty": [
+      15,
+      17
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": [
+      1,
+      4
+     ],
+     "chance": 0.6
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      7000,
+      14000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:shrine_metal_8",
+   "name": "Metal Shrine level 8",
+   "entries": [
+    {
+     "item": "item:metal_essence",
+     "qty": [
+      18,
+      20
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": [
+      1,
+      4
+     ],
+     "chance": 0.6
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.3
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      8000,
+      16000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:shrine_wood_1",
+   "name": "Wood Shrine level 1",
+   "entries": [
+    {
+     "item": "item:wood_essence",
+     "qty": [
+      2,
+      4
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.6
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      1000,
+      2000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:shrine_wood_2",
+   "name": "Wood Shrine level 2",
+   "entries": [
+    {
+     "item": "item:wood_essence",
+     "qty": [
+      3,
+      5
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.6
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      2000,
+      4000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:shrine_wood_3",
+   "name": "Wood Shrine level 3",
+   "entries": [
+    {
+     "item": "item:wood_essence",
+     "qty": [
+      5,
+      7
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.6
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      3000,
+      6000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:shrine_wood_4",
+   "name": "Wood Shrine level 4",
+   "entries": [
+    {
+     "item": "item:wood_essence",
+     "qty": [
+      7,
+      9
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.6
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      4000,
+      8000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:shrine_wood_5",
+   "name": "Wood Shrine level 5",
+   "entries": [
+    {
+     "item": "item:wood_essence",
+     "qty": [
+      9,
+      11
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.6
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      5000,
+      10000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:shrine_wood_6",
+   "name": "Wood Shrine level 6",
+   "entries": [
+    {
+     "item": "item:wood_essence",
+     "qty": [
+      12,
+      14
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.6
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.1
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      6000,
+      12000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:shrine_wood_7",
+   "name": "Wood Shrine level 7",
+   "entries": [
+    {
+     "item": "item:wood_essence",
+     "qty": [
+      15,
+      17
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": [
+      1,
+      4
+     ],
+     "chance": 0.6
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      7000,
+      14000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:shrine_wood_8",
+   "name": "Wood Shrine level 8",
+   "entries": [
+    {
+     "item": "item:wood_essence",
+     "qty": [
+      18,
+      20
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": [
+      1,
+      4
+     ],
+     "chance": 0.6
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.3
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      8000,
+      16000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:shrine_water_1",
+   "name": "Water Shrine level 1",
+   "entries": [
+    {
+     "item": "item:water_essence",
+     "qty": [
+      2,
+      4
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.6
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      1000,
+      2000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:shrine_water_2",
+   "name": "Water Shrine level 2",
+   "entries": [
+    {
+     "item": "item:water_essence",
+     "qty": [
+      3,
+      5
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.6
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      2000,
+      4000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:shrine_water_3",
+   "name": "Water Shrine level 3",
+   "entries": [
+    {
+     "item": "item:water_essence",
+     "qty": [
+      5,
+      7
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.6
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      3000,
+      6000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:shrine_water_4",
+   "name": "Water Shrine level 4",
+   "entries": [
+    {
+     "item": "item:water_essence",
+     "qty": [
+      7,
+      9
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.6
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      4000,
+      8000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:shrine_water_5",
+   "name": "Water Shrine level 5",
+   "entries": [
+    {
+     "item": "item:water_essence",
+     "qty": [
+      9,
+      11
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.6
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      5000,
+      10000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:shrine_water_6",
+   "name": "Water Shrine level 6",
+   "entries": [
+    {
+     "item": "item:water_essence",
+     "qty": [
+      12,
+      14
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.6
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.1
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      6000,
+      12000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:shrine_water_7",
+   "name": "Water Shrine level 7",
+   "entries": [
+    {
+     "item": "item:water_essence",
+     "qty": [
+      15,
+      17
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": [
+      1,
+      4
+     ],
+     "chance": 0.6
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      7000,
+      14000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:shrine_water_8",
+   "name": "Water Shrine level 8",
+   "entries": [
+    {
+     "item": "item:water_essence",
+     "qty": [
+      18,
+      20
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": [
+      1,
+      4
+     ],
+     "chance": 0.6
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.3
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      8000,
+      16000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:shrine_fire_1",
+   "name": "Fire Shrine level 1",
+   "entries": [
+    {
+     "item": "item:fire_essence",
+     "qty": [
+      2,
+      4
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.6
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      1000,
+      2000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:shrine_fire_2",
+   "name": "Fire Shrine level 2",
+   "entries": [
+    {
+     "item": "item:fire_essence",
+     "qty": [
+      3,
+      5
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.6
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      2000,
+      4000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:shrine_fire_3",
+   "name": "Fire Shrine level 3",
+   "entries": [
+    {
+     "item": "item:fire_essence",
+     "qty": [
+      5,
+      7
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.6
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      3000,
+      6000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:shrine_fire_4",
+   "name": "Fire Shrine level 4",
+   "entries": [
+    {
+     "item": "item:fire_essence",
+     "qty": [
+      7,
+      9
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.6
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      4000,
+      8000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:shrine_fire_5",
+   "name": "Fire Shrine level 5",
+   "entries": [
+    {
+     "item": "item:fire_essence",
+     "qty": [
+      9,
+      11
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.6
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      5000,
+      10000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:shrine_fire_6",
+   "name": "Fire Shrine level 6",
+   "entries": [
+    {
+     "item": "item:fire_essence",
+     "qty": [
+      12,
+      14
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.6
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.1
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      6000,
+      12000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:shrine_fire_7",
+   "name": "Fire Shrine level 7",
+   "entries": [
+    {
+     "item": "item:fire_essence",
+     "qty": [
+      15,
+      17
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": [
+      1,
+      4
+     ],
+     "chance": 0.6
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      7000,
+      14000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:shrine_fire_8",
+   "name": "Fire Shrine level 8",
+   "entries": [
+    {
+     "item": "item:fire_essence",
+     "qty": [
+      18,
+      20
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": [
+      1,
+      4
+     ],
+     "chance": 0.6
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.3
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      8000,
+      16000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:shrine_earth_1",
+   "name": "Earth Shrine level 1",
+   "entries": [
+    {
+     "item": "item:earth_essence",
+     "qty": [
+      2,
+      4
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.6
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      1000,
+      2000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:shrine_earth_2",
+   "name": "Earth Shrine level 2",
+   "entries": [
+    {
+     "item": "item:earth_essence",
+     "qty": [
+      3,
+      5
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.6
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      2000,
+      4000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:shrine_earth_3",
+   "name": "Earth Shrine level 3",
+   "entries": [
+    {
+     "item": "item:earth_essence",
+     "qty": [
+      5,
+      7
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.6
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      3000,
+      6000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:shrine_earth_4",
+   "name": "Earth Shrine level 4",
+   "entries": [
+    {
+     "item": "item:earth_essence",
+     "qty": [
+      7,
+      9
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.6
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      4000,
+      8000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:shrine_earth_5",
+   "name": "Earth Shrine level 5",
+   "entries": [
+    {
+     "item": "item:earth_essence",
+     "qty": [
+      9,
+      11
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.6
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      5000,
+      10000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:shrine_earth_6",
+   "name": "Earth Shrine level 6",
+   "entries": [
+    {
+     "item": "item:earth_essence",
+     "qty": [
+      12,
+      14
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.6
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.1
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      6000,
+      12000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:shrine_earth_7",
+   "name": "Earth Shrine level 7",
+   "entries": [
+    {
+     "item": "item:earth_essence",
+     "qty": [
+      15,
+      17
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": [
+      1,
+      4
+     ],
+     "chance": 0.6
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      7000,
+      14000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:shrine_earth_8",
+   "name": "Earth Shrine level 8",
+   "entries": [
+    {
+     "item": "item:earth_essence",
+     "qty": [
+      18,
+      20
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": [
+      1,
+      4
+     ],
+     "chance": 0.6
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.3
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      8000,
+      16000
+     ],
+     "chance": 1
+    }
+   ]
+  }
+ ]
+}

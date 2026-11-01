@@ -1,0 +1,41 @@
+{
+ "about": "Natal gear fragments of the four founding Blossoms. Ten forge her unique gear.",
+ "records": [
+  {
+   "id": "item:frag_ling_shuang",
+   "name": "Snowplum Sword Fragment",
+   "cn": "雪梅剑残片",
+   "category": "fragment",
+   "rarity": 5,
+   "hero": "hero:ling_shuang",
+   "about": "Ten forge Snowplum Sword at the Forge"
+  },
+  {
+   "id": "item:frag_mo_yingyue",
+   "name": "Twin Violet Lightning Fragment",
+   "cn": "紫电双刃残片",
+   "category": "fragment",
+   "rarity": 5,
+   "hero": "hero:mo_yingyue",
+   "about": "Ten forge Twin Violet Lightning at the Forge"
+  },
+  {
+   "id": "item:frag_su_lianhua",
+   "name": "Jade Purity Vase Fragment",
+   "cn": "玉净瓶残片",
+   "category": "fragment",
+   "rarity": 5,
+   "hero": "hero:su_lianhua",
+   "about": "Ten forge Jade Purity Vase at the Forge"
+  },
+  {
+   "id": "item:frag_yan_feihong",
+   "name": "Vermilion Feather Fan Fragment",
+   "cn": "朱雀羽扇残片",
+   "category": "fragment",
+   "rarity": 5,
+   "hero": "hero:yan_feihong",
+   "about": "Ten forge Vermilion Feather Fan at the Forge"
+  }
+ ]
+}

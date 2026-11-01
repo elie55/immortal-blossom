@@ -1,0 +1,1944 @@
+{
+ "about": "Sect Grand Competition: a ladder of 50 rival AI sects with hand-built teams that scale with your progress. No defense teams, no daily limit.",
+ "records": [
+  {
+   "id": "league:sect_grand_competition",
+   "name": "Sect Grand Competition",
+   "location": "loc:sect_arena",
+   "seasonDays": 14,
+   "dailyLimit": null,
+   "rivals": [
+    "rival:primordial_origin_sect",
+    "rival:heaven_s_edge_sword_sect",
+    "rival:golden_crow_palace",
+    "rival:nine_peaks_palace",
+    "rival:seven_stars_hall",
+    "rival:eight_trigrams_sect",
+    "rival:hidden_dragon_valley",
+    "rival:endless_sea_pavilion",
+    "rival:purple_mist_sect",
+    "rival:five_poisons_sect",
+    "rival:thousand_swords_hall",
+    "rival:silver_moon_pavilion",
+    "rival:iron_bell_monastery",
+    "rival:pearl_sea_palace",
+    "rival:falling_star_sect",
+    "rival:thunder_gorge_sect",
+    "rival:mirror_lake_sect",
+    "rival:ten_thousand_beasts_ridge",
+    "rival:rising_sun_pavilion",
+    "rival:peaceful_harmony_sect",
+    "rival:crimson_lotus_valley",
+    "rival:black_water_fortress",
+    "rival:cloud_crane_pavilion",
+    "rival:spirit_fox_manor",
+    "rival:ancient_pine_sect",
+    "rival:white_crane_temple",
+    "rival:tiger_roar_mountain",
+    "rival:cold_spring_villa",
+    "rival:heavenly_bamboo_hall",
+    "rival:scarlet_sparrow_hall",
+    "rival:northern_wind_sect",
+    "rival:emerald_vine_sect",
+    "rival:stone_buddha_temple",
+    "rival:willow_shadow_manor",
+    "rival:crimson_moon_hall",
+    "rival:dawn_light_sect",
+    "rival:misty_peak_sect",
+    "rival:twin_rivers_clan",
+    "rival:yellow_sand_fortress",
+    "rival:ink_brush_academy",
+    "rival:fierce_wolf_hall",
+    "rival:lonely_cloud_hermitage",
+    "rival:moon_rabbit_palace",
+    "rival:jade_rain_sect",
+    "rival:whispering_pine_sect",
+    "rival:red_cliff_clan",
+    "rival:bronze_gate_clan",
+    "rival:flowing_river_sect",
+    "rival:sunset_blade_school",
+    "rival:azure_cloud_sect"
+   ],
+   "scaling": "rival level = your team's average level + levelOffset",
+   "ranks": [
+    {
+     "name": "Outer Disciple",
+     "ranks": [
+      41,
+      50
+     ],
+     "seasonRewards": [
+      {
+       "title": "title:outer_disciple"
+      },
+      {
+       "cur": "cur:sect_merit",
+       "qty": 200
+      }
+     ]
+    },
+    {
+     "name": "Inner Disciple",
+     "ranks": [
+      31,
+      40
+     ],
+     "seasonRewards": [
+      {
+       "title": "title:inner_disciple"
+      },
+      {
+       "cur": "cur:sect_merit",
+       "qty": 400
+      },
+      {
+       "item": "item:array_flag",
+       "qty": 2
+      }
+     ]
+    },
+    {
+     "name": "Core Disciple",
+     "ranks": [
+      21,
+      30
+     ],
+     "seasonRewards": [
+      {
+       "title": "title:core_disciple"
+      },
+      {
+       "cur": "cur:sect_merit",
+       "qty": 700
+      },
+      {
+       "item": "item:array_flag",
+       "qty": 4
+      }
+     ]
+    },
+    {
+     "name": "Elder",
+     "ranks": [
+      11,
+      20
+     ],
+     "seasonRewards": [
+      {
+       "title": "title:elder"
+      },
+      {
+       "cur": "cur:sect_merit",
+       "qty": 1000
+      },
+      {
+       "item": "item:array_flag",
+       "qty": 6
+      },
+      {
+       "cur": "cur:immortal_jade",
+       "qty": 300
+      }
+     ]
+    },
+    {
+     "name": "Grand Elder",
+     "ranks": [
+      2,
+      10
+     ],
+     "seasonRewards": [
+      {
+       "title": "title:grand_elder"
+      },
+      {
+       "cur": "cur:sect_merit",
+       "qty": 1500
+      },
+      {
+       "item": "item:array_flag",
+       "qty": 8
+      },
+      {
+       "cur": "cur:immortal_jade",
+       "qty": 600
+      }
+     ]
+    },
+    {
+     "name": "Sect Patriarch",
+     "ranks": [
+      1,
+      1
+     ],
+     "seasonRewards": [
+      {
+       "title": "title:sect_patriarch"
+      },
+      {
+       "cur": "cur:sect_merit",
+       "qty": 2500
+      },
+      {
+       "cur": "cur:immortal_jade",
+       "qty": 1000
+      },
+      {
+       "outfit": "outfit:competition_ling_shuang"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rival:primordial_origin_sect",
+   "name": "Primordial Origin Sect",
+   "cn": "元始宗",
+   "startRank": 1,
+   "leader": "npc:rival_primordial_origin_sect",
+   "taunt": "Your Pavilion was a ruin last spring. It should have stayed one.",
+   "style": "balanced",
+   "phasePlan": "harmony chain",
+   "team": [
+    {
+     "enemy": "enemy:rival_sword_water",
+     "levelOffset": 6
+    },
+    {
+     "enemy": "enemy:rival_guardian_wood",
+     "levelOffset": 6
+    },
+    {
+     "enemy": "enemy:rival_arcane_fire",
+     "levelOffset": 6
+    },
+    {
+     "enemy": "enemy:rival_healer_earth",
+     "levelOffset": 5
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 120
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:heaven_s_edge_sword_sect",
+   "name": "Heaven's Edge Sword Sect",
+   "cn": "天涯剑宗",
+   "startRank": 2,
+   "leader": "npc:rival_heaven_s_edge_sword_sect",
+   "taunt": "Come, then. My disciples need the practice.",
+   "style": "sword_storm",
+   "phasePlan": "one phase (Kindred Qi)",
+   "team": [
+    {
+     "enemy": "enemy:rival_sword_wood",
+     "levelOffset": 6
+    },
+    {
+     "enemy": "enemy:rival_sword_wood",
+     "levelOffset": 6
+    },
+    {
+     "enemy": "enemy:rival_shadow_wood",
+     "levelOffset": 6
+    },
+    {
+     "enemy": "enemy:rival_healer_wood",
+     "levelOffset": 5
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 118
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:golden_crow_palace",
+   "name": "Golden Crow Palace",
+   "cn": "金乌宫",
+   "startRank": 3,
+   "leader": "npc:rival_golden_crow_palace",
+   "taunt": "Harmony? We cast in whatever order we like and still win.",
+   "style": "iron_wall",
+   "phasePlan": "mixed",
+   "team": [
+    {
+     "enemy": "enemy:rival_guardian_water",
+     "levelOffset": 6
+    },
+    {
+     "enemy": "enemy:rival_guardian_earth",
+     "levelOffset": 6
+    },
+    {
+     "enemy": "enemy:rival_talisman_wood",
+     "levelOffset": 6
+    },
+    {
+     "enemy": "enemy:rival_healer_fire",
+     "levelOffset": 5
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 116
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:nine_peaks_palace",
+   "name": "Nine Peaks Palace",
+   "cn": "九峰宫",
+   "startRank": 4,
+   "leader": "npc:rival_nine_peaks_palace",
+   "taunt": "A sect of flowers. How charming. How brief.",
+   "style": "shadow_strike",
+   "phasePlan": "harmony chain",
+   "team": [
+    {
+     "enemy": "enemy:rival_shadow_earth",
+     "levelOffset": 6
+    },
+    {
+     "enemy": "enemy:rival_shadow_metal",
+     "levelOffset": 6
+    },
+    {
+     "enemy": "enemy:rival_sword_water",
+     "levelOffset": 6
+    },
+    {
+     "enemy": "enemy:rival_talisman_wood",
+     "levelOffset": 5
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 114
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:seven_stars_hall",
+   "name": "Seven Stars Hall",
+   "cn": "七星殿",
+   "startRank": 5,
+   "leader": "npc:rival_seven_stars_hall",
+   "taunt": "I have heard of your Fate Lotus. I am not impressed.",
+   "style": "control",
+   "phasePlan": "one phase (Kindred Qi)",
+   "team": [
+    {
+     "enemy": "enemy:rival_talisman_earth",
+     "levelOffset": 6
+    },
+    {
+     "enemy": "enemy:rival_talisman_earth",
+     "levelOffset": 6
+    },
+    {
+     "enemy": "enemy:rival_arcane_earth",
+     "levelOffset": 6
+    },
+    {
+     "enemy": "enemy:rival_healer_earth",
+     "levelOffset": 5
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 112
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:eight_trigrams_sect",
+   "name": "Eight Trigrams Sect",
+   "cn": "八卦门",
+   "startRank": 6,
+   "leader": "npc:rival_eight_trigrams_sect",
+   "taunt": "Climb if you can. The air is thin up here.",
+   "style": "arcane_burst",
+   "phasePlan": "mixed",
+   "team": [
+    {
+     "enemy": "enemy:rival_arcane_metal",
+     "levelOffset": 6
+    },
+    {
+     "enemy": "enemy:rival_arcane_water",
+     "levelOffset": 6
+    },
+    {
+     "enemy": "enemy:rival_guardian_earth",
+     "levelOffset": 6
+    },
+    {
+     "enemy": "enemy:rival_healer_wood",
+     "levelOffset": 5
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 110
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:hidden_dragon_valley",
+   "name": "Hidden Dragon Valley",
+   "cn": "潜龙谷",
+   "startRank": 7,
+   "leader": "npc:rival_hidden_dragon_valley",
+   "taunt": "One phase, four blades. Simple, and it works.",
+   "style": "balanced",
+   "phasePlan": "harmony chain",
+   "team": [
+    {
+     "enemy": "enemy:rival_sword_wood",
+     "levelOffset": 6
+    },
+    {
+     "enemy": "enemy:rival_guardian_fire",
+     "levelOffset": 6
+    },
+    {
+     "enemy": "enemy:rival_arcane_earth",
+     "levelOffset": 6
+    },
+    {
+     "enemy": "enemy:rival_healer_metal",
+     "levelOffset": 5
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 108
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:endless_sea_pavilion",
+   "name": "Endless Sea Pavilion",
+   "cn": "无涯阁",
+   "startRank": 8,
+   "leader": "npc:rival_endless_sea_pavilion",
+   "taunt": "Lose gracefully and I will tell no one.",
+   "style": "sword_storm",
+   "phasePlan": "one phase (Kindred Qi)",
+   "team": [
+    {
+     "enemy": "enemy:rival_sword_water",
+     "levelOffset": 6
+    },
+    {
+     "enemy": "enemy:rival_sword_water",
+     "levelOffset": 6
+    },
+    {
+     "enemy": "enemy:rival_shadow_water",
+     "levelOffset": 6
+    },
+    {
+     "enemy": "enemy:rival_healer_water",
+     "levelOffset": 5
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 106
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:purple_mist_sect",
+   "name": "Purple Mist Sect",
+   "cn": "紫雾宗",
+   "startRank": 9,
+   "leader": "npc:rival_purple_mist_sect",
+   "taunt": "The ladder remembers every fall. Shall I add yours?",
+   "style": "iron_wall",
+   "phasePlan": "mixed",
+   "team": [
+    {
+     "enemy": "enemy:rival_guardian_fire",
+     "levelOffset": 5
+    },
+    {
+     "enemy": "enemy:rival_guardian_metal",
+     "levelOffset": 5
+    },
+    {
+     "enemy": "enemy:rival_talisman_water",
+     "levelOffset": 5
+    },
+    {
+     "enemy": "enemy:rival_healer_earth",
+     "levelOffset": 4
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 104
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:five_poisons_sect",
+   "name": "Five Poisons Sect",
+   "cn": "五毒教",
+   "startRank": 10,
+   "leader": "npc:rival_five_poisons_sect",
+   "taunt": "You may bow before or after. Your choice.",
+   "style": "shadow_strike",
+   "phasePlan": "harmony chain",
+   "team": [
+    {
+     "enemy": "enemy:rival_shadow_metal",
+     "levelOffset": 5
+    },
+    {
+     "enemy": "enemy:rival_shadow_water",
+     "levelOffset": 5
+    },
+    {
+     "enemy": "enemy:rival_sword_wood",
+     "levelOffset": 5
+    },
+    {
+     "enemy": "enemy:rival_talisman_fire",
+     "levelOffset": 4
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 102
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:thousand_swords_hall",
+   "name": "Thousand Swords Hall",
+   "cn": "千剑堂",
+   "startRank": 11,
+   "leader": "npc:rival_thousand_swords_hall",
+   "taunt": "Your Pavilion was a ruin last spring. It should have stayed one.",
+   "style": "control",
+   "phasePlan": "one phase (Kindred Qi)",
+   "team": [
+    {
+     "enemy": "enemy:rival_talisman_metal",
+     "levelOffset": 5
+    },
+    {
+     "enemy": "enemy:rival_talisman_metal",
+     "levelOffset": 5
+    },
+    {
+     "enemy": "enemy:rival_arcane_metal",
+     "levelOffset": 5
+    },
+    {
+     "enemy": "enemy:rival_healer_metal",
+     "levelOffset": 4
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 100
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:silver_moon_pavilion",
+   "name": "Silver Moon Pavilion",
+   "cn": "银月阁",
+   "startRank": 12,
+   "leader": "npc:rival_silver_moon_pavilion",
+   "taunt": "Come, then. My disciples need the practice.",
+   "style": "arcane_burst",
+   "phasePlan": "mixed",
+   "team": [
+    {
+     "enemy": "enemy:rival_arcane_wood",
+     "levelOffset": 5
+    },
+    {
+     "enemy": "enemy:rival_arcane_fire",
+     "levelOffset": 5
+    },
+    {
+     "enemy": "enemy:rival_guardian_metal",
+     "levelOffset": 5
+    },
+    {
+     "enemy": "enemy:rival_healer_water",
+     "levelOffset": 4
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 98
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:iron_bell_monastery",
+   "name": "Iron Bell Monastery",
+   "cn": "铁钟寺",
+   "startRank": 13,
+   "leader": "npc:rival_iron_bell_monastery",
+   "taunt": "Harmony? We cast in whatever order we like and still win.",
+   "style": "balanced",
+   "phasePlan": "harmony chain",
+   "team": [
+    {
+     "enemy": "enemy:rival_sword_fire",
+     "levelOffset": 5
+    },
+    {
+     "enemy": "enemy:rival_guardian_earth",
+     "levelOffset": 5
+    },
+    {
+     "enemy": "enemy:rival_arcane_metal",
+     "levelOffset": 5
+    },
+    {
+     "enemy": "enemy:rival_healer_water",
+     "levelOffset": 4
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 96
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:pearl_sea_palace",
+   "name": "Pearl Sea Palace",
+   "cn": "明珠宫",
+   "startRank": 14,
+   "leader": "npc:rival_pearl_sea_palace",
+   "taunt": "A sect of flowers. How charming. How brief.",
+   "style": "sword_storm",
+   "phasePlan": "one phase (Kindred Qi)",
+   "team": [
+    {
+     "enemy": "enemy:rival_sword_fire",
+     "levelOffset": 5
+    },
+    {
+     "enemy": "enemy:rival_sword_fire",
+     "levelOffset": 5
+    },
+    {
+     "enemy": "enemy:rival_shadow_fire",
+     "levelOffset": 5
+    },
+    {
+     "enemy": "enemy:rival_healer_fire",
+     "levelOffset": 4
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 94
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:falling_star_sect",
+   "name": "Falling Star Sect",
+   "cn": "落星宗",
+   "startRank": 15,
+   "leader": "npc:rival_falling_star_sect",
+   "taunt": "I have heard of your Fate Lotus. I am not impressed.",
+   "style": "iron_wall",
+   "phasePlan": "mixed",
+   "team": [
+    {
+     "enemy": "enemy:rival_guardian_earth",
+     "levelOffset": 5
+    },
+    {
+     "enemy": "enemy:rival_guardian_wood",
+     "levelOffset": 5
+    },
+    {
+     "enemy": "enemy:rival_talisman_fire",
+     "levelOffset": 5
+    },
+    {
+     "enemy": "enemy:rival_healer_metal",
+     "levelOffset": 4
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 92
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:thunder_gorge_sect",
+   "name": "Thunder Gorge Sect",
+   "cn": "雷峡宗",
+   "startRank": 16,
+   "leader": "npc:rival_thunder_gorge_sect",
+   "taunt": "Climb if you can. The air is thin up here.",
+   "style": "shadow_strike",
+   "phasePlan": "harmony chain",
+   "team": [
+    {
+     "enemy": "enemy:rival_shadow_water",
+     "levelOffset": 5
+    },
+    {
+     "enemy": "enemy:rival_shadow_wood",
+     "levelOffset": 5
+    },
+    {
+     "enemy": "enemy:rival_sword_fire",
+     "levelOffset": 5
+    },
+    {
+     "enemy": "enemy:rival_talisman_earth",
+     "levelOffset": 4
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 90
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:mirror_lake_sect",
+   "name": "Mirror Lake Sect",
+   "cn": "镜湖宗",
+   "startRank": 17,
+   "leader": "npc:rival_mirror_lake_sect",
+   "taunt": "One phase, four blades. Simple, and it works.",
+   "style": "control",
+   "phasePlan": "one phase (Kindred Qi)",
+   "team": [
+    {
+     "enemy": "enemy:rival_talisman_wood",
+     "levelOffset": 4
+    },
+    {
+     "enemy": "enemy:rival_talisman_wood",
+     "levelOffset": 4
+    },
+    {
+     "enemy": "enemy:rival_arcane_wood",
+     "levelOffset": 4
+    },
+    {
+     "enemy": "enemy:rival_healer_wood",
+     "levelOffset": 3
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 88
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:ten_thousand_beasts_ridge",
+   "name": "Ten Thousand Beasts Ridge",
+   "cn": "万兽岭",
+   "startRank": 18,
+   "leader": "npc:rival_ten_thousand_beasts_ridge",
+   "taunt": "Lose gracefully and I will tell no one.",
+   "style": "arcane_burst",
+   "phasePlan": "mixed",
+   "team": [
+    {
+     "enemy": "enemy:rival_arcane_water",
+     "levelOffset": 4
+    },
+    {
+     "enemy": "enemy:rival_arcane_earth",
+     "levelOffset": 4
+    },
+    {
+     "enemy": "enemy:rival_guardian_wood",
+     "levelOffset": 4
+    },
+    {
+     "enemy": "enemy:rival_healer_fire",
+     "levelOffset": 3
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 86
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:rising_sun_pavilion",
+   "name": "Rising Sun Pavilion",
+   "cn": "旭日阁",
+   "startRank": 19,
+   "leader": "npc:rival_rising_sun_pavilion",
+   "taunt": "The ladder remembers every fall. Shall I add yours?",
+   "style": "balanced",
+   "phasePlan": "harmony chain",
+   "team": [
+    {
+     "enemy": "enemy:rival_sword_earth",
+     "levelOffset": 4
+    },
+    {
+     "enemy": "enemy:rival_guardian_metal",
+     "levelOffset": 4
+    },
+    {
+     "enemy": "enemy:rival_arcane_water",
+     "levelOffset": 4
+    },
+    {
+     "enemy": "enemy:rival_healer_wood",
+     "levelOffset": 3
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 84
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:peaceful_harmony_sect",
+   "name": "Peaceful Harmony Sect",
+   "cn": "太和宗",
+   "startRank": 20,
+   "leader": "npc:rival_peaceful_harmony_sect",
+   "taunt": "You may bow before or after. Your choice.",
+   "style": "sword_storm",
+   "phasePlan": "one phase (Kindred Qi)",
+   "team": [
+    {
+     "enemy": "enemy:rival_sword_earth",
+     "levelOffset": 4
+    },
+    {
+     "enemy": "enemy:rival_sword_earth",
+     "levelOffset": 4
+    },
+    {
+     "enemy": "enemy:rival_shadow_earth",
+     "levelOffset": 4
+    },
+    {
+     "enemy": "enemy:rival_healer_earth",
+     "levelOffset": 3
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 82
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:crimson_lotus_valley",
+   "name": "Crimson Lotus Valley",
+   "cn": "赤莲谷",
+   "startRank": 21,
+   "leader": "npc:rival_crimson_lotus_valley",
+   "taunt": "Your Pavilion was a ruin last spring. It should have stayed one.",
+   "style": "iron_wall",
+   "phasePlan": "mixed",
+   "team": [
+    {
+     "enemy": "enemy:rival_guardian_metal",
+     "levelOffset": 4
+    },
+    {
+     "enemy": "enemy:rival_guardian_water",
+     "levelOffset": 4
+    },
+    {
+     "enemy": "enemy:rival_talisman_earth",
+     "levelOffset": 4
+    },
+    {
+     "enemy": "enemy:rival_healer_wood",
+     "levelOffset": 3
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 80
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:black_water_fortress",
+   "name": "Black Water Fortress",
+   "cn": "黑水堡",
+   "startRank": 22,
+   "leader": "npc:rival_black_water_fortress",
+   "taunt": "Come, then. My disciples need the practice.",
+   "style": "shadow_strike",
+   "phasePlan": "harmony chain",
+   "team": [
+    {
+     "enemy": "enemy:rival_shadow_wood",
+     "levelOffset": 4
+    },
+    {
+     "enemy": "enemy:rival_shadow_fire",
+     "levelOffset": 4
+    },
+    {
+     "enemy": "enemy:rival_sword_earth",
+     "levelOffset": 4
+    },
+    {
+     "enemy": "enemy:rival_talisman_metal",
+     "levelOffset": 3
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 78
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:cloud_crane_pavilion",
+   "name": "Cloud Crane Pavilion",
+   "cn": "云鹤阁",
+   "startRank": 23,
+   "leader": "npc:rival_cloud_crane_pavilion",
+   "taunt": "Harmony? We cast in whatever order we like and still win.",
+   "style": "control",
+   "phasePlan": "one phase (Kindred Qi)",
+   "team": [
+    {
+     "enemy": "enemy:rival_talisman_water",
+     "levelOffset": 4
+    },
+    {
+     "enemy": "enemy:rival_talisman_water",
+     "levelOffset": 4
+    },
+    {
+     "enemy": "enemy:rival_arcane_water",
+     "levelOffset": 4
+    },
+    {
+     "enemy": "enemy:rival_healer_water",
+     "levelOffset": 3
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 76
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:spirit_fox_manor",
+   "name": "Spirit Fox Manor",
+   "cn": "灵狐庄",
+   "startRank": 24,
+   "leader": "npc:rival_spirit_fox_manor",
+   "taunt": "A sect of flowers. How charming. How brief.",
+   "style": "arcane_burst",
+   "phasePlan": "mixed",
+   "team": [
+    {
+     "enemy": "enemy:rival_arcane_fire",
+     "levelOffset": 4
+    },
+    {
+     "enemy": "enemy:rival_arcane_metal",
+     "levelOffset": 4
+    },
+    {
+     "enemy": "enemy:rival_guardian_water",
+     "levelOffset": 4
+    },
+    {
+     "enemy": "enemy:rival_healer_earth",
+     "levelOffset": 3
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 74
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:ancient_pine_sect",
+   "name": "Ancient Pine Sect",
+   "cn": "古松宗",
+   "startRank": 25,
+   "leader": "npc:rival_ancient_pine_sect",
+   "taunt": "I have heard of your Fate Lotus. I am not impressed.",
+   "style": "balanced",
+   "phasePlan": "harmony chain",
+   "team": [
+    {
+     "enemy": "enemy:rival_sword_metal",
+     "levelOffset": 3
+    },
+    {
+     "enemy": "enemy:rival_guardian_water",
+     "levelOffset": 3
+    },
+    {
+     "enemy": "enemy:rival_arcane_wood",
+     "levelOffset": 3
+    },
+    {
+     "enemy": "enemy:rival_healer_fire",
+     "levelOffset": 2
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 72
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:white_crane_temple",
+   "name": "White Crane Temple",
+   "cn": "白鹤观",
+   "startRank": 26,
+   "leader": "npc:rival_white_crane_temple",
+   "taunt": "Climb if you can. The air is thin up here.",
+   "style": "sword_storm",
+   "phasePlan": "one phase (Kindred Qi)",
+   "team": [
+    {
+     "enemy": "enemy:rival_sword_metal",
+     "levelOffset": 3
+    },
+    {
+     "enemy": "enemy:rival_sword_metal",
+     "levelOffset": 3
+    },
+    {
+     "enemy": "enemy:rival_shadow_metal",
+     "levelOffset": 3
+    },
+    {
+     "enemy": "enemy:rival_healer_metal",
+     "levelOffset": 2
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 70
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:tiger_roar_mountain",
+   "name": "Tiger Roar Mountain",
+   "cn": "虎啸山",
+   "startRank": 27,
+   "leader": "npc:rival_tiger_roar_mountain",
+   "taunt": "One phase, four blades. Simple, and it works.",
+   "style": "iron_wall",
+   "phasePlan": "mixed",
+   "team": [
+    {
+     "enemy": "enemy:rival_guardian_wood",
+     "levelOffset": 3
+    },
+    {
+     "enemy": "enemy:rival_guardian_fire",
+     "levelOffset": 3
+    },
+    {
+     "enemy": "enemy:rival_talisman_metal",
+     "levelOffset": 3
+    },
+    {
+     "enemy": "enemy:rival_healer_water",
+     "levelOffset": 2
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 68
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:cold_spring_villa",
+   "name": "Cold Spring Villa",
+   "cn": "寒泉山庄",
+   "startRank": 28,
+   "leader": "npc:rival_cold_spring_villa",
+   "taunt": "Lose gracefully and I will tell no one.",
+   "style": "shadow_strike",
+   "phasePlan": "harmony chain",
+   "team": [
+    {
+     "enemy": "enemy:rival_shadow_fire",
+     "levelOffset": 3
+    },
+    {
+     "enemy": "enemy:rival_shadow_earth",
+     "levelOffset": 3
+    },
+    {
+     "enemy": "enemy:rival_sword_metal",
+     "levelOffset": 3
+    },
+    {
+     "enemy": "enemy:rival_talisman_water",
+     "levelOffset": 2
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 66
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:heavenly_bamboo_hall",
+   "name": "Heavenly Bamboo Hall",
+   "cn": "天竹堂",
+   "startRank": 29,
+   "leader": "npc:rival_heavenly_bamboo_hall",
+   "taunt": "The ladder remembers every fall. Shall I add yours?",
+   "style": "control",
+   "phasePlan": "one phase (Kindred Qi)",
+   "team": [
+    {
+     "enemy": "enemy:rival_talisman_fire",
+     "levelOffset": 3
+    },
+    {
+     "enemy": "enemy:rival_talisman_fire",
+     "levelOffset": 3
+    },
+    {
+     "enemy": "enemy:rival_arcane_fire",
+     "levelOffset": 3
+    },
+    {
+     "enemy": "enemy:rival_healer_fire",
+     "levelOffset": 2
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 64
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:scarlet_sparrow_hall",
+   "name": "Scarlet Sparrow Hall",
+   "cn": "赤雀堂",
+   "startRank": 30,
+   "leader": "npc:rival_scarlet_sparrow_hall",
+   "taunt": "You may bow before or after. Your choice.",
+   "style": "arcane_burst",
+   "phasePlan": "mixed",
+   "team": [
+    {
+     "enemy": "enemy:rival_arcane_earth",
+     "levelOffset": 3
+    },
+    {
+     "enemy": "enemy:rival_arcane_wood",
+     "levelOffset": 3
+    },
+    {
+     "enemy": "enemy:rival_guardian_fire",
+     "levelOffset": 3
+    },
+    {
+     "enemy": "enemy:rival_healer_metal",
+     "levelOffset": 2
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 62
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:northern_wind_sect",
+   "name": "Northern Wind Sect",
+   "cn": "朔风宗",
+   "startRank": 31,
+   "leader": "npc:rival_northern_wind_sect",
+   "taunt": "Your Pavilion was a ruin last spring. It should have stayed one.",
+   "style": "balanced",
+   "phasePlan": "harmony chain",
+   "team": [
+    {
+     "enemy": "enemy:rival_sword_water",
+     "levelOffset": 3
+    },
+    {
+     "enemy": "enemy:rival_guardian_wood",
+     "levelOffset": 3
+    },
+    {
+     "enemy": "enemy:rival_arcane_fire",
+     "levelOffset": 3
+    },
+    {
+     "enemy": "enemy:rival_healer_earth",
+     "levelOffset": 2
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 60
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:emerald_vine_sect",
+   "name": "Emerald Vine Sect",
+   "cn": "翠藤宗",
+   "startRank": 32,
+   "leader": "npc:rival_emerald_vine_sect",
+   "taunt": "Come, then. My disciples need the practice.",
+   "style": "sword_storm",
+   "phasePlan": "one phase (Kindred Qi)",
+   "team": [
+    {
+     "enemy": "enemy:rival_sword_wood",
+     "levelOffset": 3
+    },
+    {
+     "enemy": "enemy:rival_sword_wood",
+     "levelOffset": 3
+    },
+    {
+     "enemy": "enemy:rival_shadow_wood",
+     "levelOffset": 3
+    },
+    {
+     "enemy": "enemy:rival_healer_wood",
+     "levelOffset": 2
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 58
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:stone_buddha_temple",
+   "name": "Stone Buddha Temple",
+   "cn": "石佛寺",
+   "startRank": 33,
+   "leader": "npc:rival_stone_buddha_temple",
+   "taunt": "Harmony? We cast in whatever order we like and still win.",
+   "style": "iron_wall",
+   "phasePlan": "mixed",
+   "team": [
+    {
+     "enemy": "enemy:rival_guardian_water",
+     "levelOffset": 2
+    },
+    {
+     "enemy": "enemy:rival_guardian_earth",
+     "levelOffset": 2
+    },
+    {
+     "enemy": "enemy:rival_talisman_wood",
+     "levelOffset": 2
+    },
+    {
+     "enemy": "enemy:rival_healer_fire",
+     "levelOffset": 1
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 56
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:willow_shadow_manor",
+   "name": "Willow Shadow Manor",
+   "cn": "柳影庄",
+   "startRank": 34,
+   "leader": "npc:rival_willow_shadow_manor",
+   "taunt": "A sect of flowers. How charming. How brief.",
+   "style": "shadow_strike",
+   "phasePlan": "harmony chain",
+   "team": [
+    {
+     "enemy": "enemy:rival_shadow_earth",
+     "levelOffset": 2
+    },
+    {
+     "enemy": "enemy:rival_shadow_metal",
+     "levelOffset": 2
+    },
+    {
+     "enemy": "enemy:rival_sword_water",
+     "levelOffset": 2
+    },
+    {
+     "enemy": "enemy:rival_talisman_wood",
+     "levelOffset": 1
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 54
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:crimson_moon_hall",
+   "name": "Crimson Moon Hall",
+   "cn": "血月堂",
+   "startRank": 35,
+   "leader": "npc:rival_crimson_moon_hall",
+   "taunt": "I have heard of your Fate Lotus. I am not impressed.",
+   "style": "control",
+   "phasePlan": "one phase (Kindred Qi)",
+   "team": [
+    {
+     "enemy": "enemy:rival_talisman_earth",
+     "levelOffset": 2
+    },
+    {
+     "enemy": "enemy:rival_talisman_earth",
+     "levelOffset": 2
+    },
+    {
+     "enemy": "enemy:rival_arcane_earth",
+     "levelOffset": 2
+    },
+    {
+     "enemy": "enemy:rival_healer_earth",
+     "levelOffset": 1
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 52
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:dawn_light_sect",
+   "name": "Dawn Light Sect",
+   "cn": "曙光宗",
+   "startRank": 36,
+   "leader": "npc:rival_dawn_light_sect",
+   "taunt": "Climb if you can. The air is thin up here.",
+   "style": "arcane_burst",
+   "phasePlan": "mixed",
+   "team": [
+    {
+     "enemy": "enemy:rival_arcane_metal",
+     "levelOffset": 2
+    },
+    {
+     "enemy": "enemy:rival_arcane_water",
+     "levelOffset": 2
+    },
+    {
+     "enemy": "enemy:rival_guardian_earth",
+     "levelOffset": 2
+    },
+    {
+     "enemy": "enemy:rival_healer_wood",
+     "levelOffset": 1
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 50
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:misty_peak_sect",
+   "name": "Misty Peak Sect",
+   "cn": "雾峰宗",
+   "startRank": 37,
+   "leader": "npc:rival_misty_peak_sect",
+   "taunt": "One phase, four blades. Simple, and it works.",
+   "style": "balanced",
+   "phasePlan": "harmony chain",
+   "team": [
+    {
+     "enemy": "enemy:rival_sword_wood",
+     "levelOffset": 2
+    },
+    {
+     "enemy": "enemy:rival_guardian_fire",
+     "levelOffset": 2
+    },
+    {
+     "enemy": "enemy:rival_arcane_earth",
+     "levelOffset": 2
+    },
+    {
+     "enemy": "enemy:rival_healer_metal",
+     "levelOffset": 1
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 48
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:twin_rivers_clan",
+   "name": "Twin Rivers Clan",
+   "cn": "双江门",
+   "startRank": 38,
+   "leader": "npc:rival_twin_rivers_clan",
+   "taunt": "Lose gracefully and I will tell no one.",
+   "style": "sword_storm",
+   "phasePlan": "one phase (Kindred Qi)",
+   "team": [
+    {
+     "enemy": "enemy:rival_sword_water",
+     "levelOffset": 2
+    },
+    {
+     "enemy": "enemy:rival_sword_water",
+     "levelOffset": 2
+    },
+    {
+     "enemy": "enemy:rival_shadow_water",
+     "levelOffset": 2
+    },
+    {
+     "enemy": "enemy:rival_healer_water",
+     "levelOffset": 1
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 46
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:yellow_sand_fortress",
+   "name": "Yellow Sand Fortress",
+   "cn": "黄沙堡",
+   "startRank": 39,
+   "leader": "npc:rival_yellow_sand_fortress",
+   "taunt": "The ladder remembers every fall. Shall I add yours?",
+   "style": "iron_wall",
+   "phasePlan": "mixed",
+   "team": [
+    {
+     "enemy": "enemy:rival_guardian_fire",
+     "levelOffset": 2
+    },
+    {
+     "enemy": "enemy:rival_guardian_metal",
+     "levelOffset": 2
+    },
+    {
+     "enemy": "enemy:rival_talisman_water",
+     "levelOffset": 2
+    },
+    {
+     "enemy": "enemy:rival_healer_earth",
+     "levelOffset": 1
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 44
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:ink_brush_academy",
+   "name": "Ink Brush Academy",
+   "cn": "墨笔书院",
+   "startRank": 40,
+   "leader": "npc:rival_ink_brush_academy",
+   "taunt": "You may bow before or after. Your choice.",
+   "style": "shadow_strike",
+   "phasePlan": "harmony chain",
+   "team": [
+    {
+     "enemy": "enemy:rival_shadow_metal",
+     "levelOffset": 2
+    },
+    {
+     "enemy": "enemy:rival_shadow_water",
+     "levelOffset": 2
+    },
+    {
+     "enemy": "enemy:rival_sword_wood",
+     "levelOffset": 2
+    },
+    {
+     "enemy": "enemy:rival_talisman_fire",
+     "levelOffset": 1
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 42
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:fierce_wolf_hall",
+   "name": "Fierce Wolf Hall",
+   "cn": "狼烈堂",
+   "startRank": 41,
+   "leader": "npc:rival_fierce_wolf_hall",
+   "taunt": "Your Pavilion was a ruin last spring. It should have stayed one.",
+   "style": "control",
+   "phasePlan": "one phase (Kindred Qi)",
+   "team": [
+    {
+     "enemy": "enemy:rival_talisman_metal",
+     "levelOffset": 1
+    },
+    {
+     "enemy": "enemy:rival_talisman_metal",
+     "levelOffset": 1
+    },
+    {
+     "enemy": "enemy:rival_arcane_metal",
+     "levelOffset": 1
+    },
+    {
+     "enemy": "enemy:rival_healer_metal",
+     "levelOffset": 0
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 40
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:lonely_cloud_hermitage",
+   "name": "Lonely Cloud Hermitage",
+   "cn": "孤云居",
+   "startRank": 42,
+   "leader": "npc:rival_lonely_cloud_hermitage",
+   "taunt": "Come, then. My disciples need the practice.",
+   "style": "arcane_burst",
+   "phasePlan": "mixed",
+   "team": [
+    {
+     "enemy": "enemy:rival_arcane_wood",
+     "levelOffset": 1
+    },
+    {
+     "enemy": "enemy:rival_arcane_fire",
+     "levelOffset": 1
+    },
+    {
+     "enemy": "enemy:rival_guardian_metal",
+     "levelOffset": 1
+    },
+    {
+     "enemy": "enemy:rival_healer_water",
+     "levelOffset": 0
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 38
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:moon_rabbit_palace",
+   "name": "Moon Rabbit Palace",
+   "cn": "月兔宫",
+   "startRank": 43,
+   "leader": "npc:rival_moon_rabbit_palace",
+   "taunt": "Harmony? We cast in whatever order we like and still win.",
+   "style": "balanced",
+   "phasePlan": "harmony chain",
+   "team": [
+    {
+     "enemy": "enemy:rival_sword_fire",
+     "levelOffset": 1
+    },
+    {
+     "enemy": "enemy:rival_guardian_earth",
+     "levelOffset": 1
+    },
+    {
+     "enemy": "enemy:rival_arcane_metal",
+     "levelOffset": 1
+    },
+    {
+     "enemy": "enemy:rival_healer_water",
+     "levelOffset": 0
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 36
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:jade_rain_sect",
+   "name": "Jade Rain Sect",
+   "cn": "玉雨宗",
+   "startRank": 44,
+   "leader": "npc:rival_jade_rain_sect",
+   "taunt": "A sect of flowers. How charming. How brief.",
+   "style": "sword_storm",
+   "phasePlan": "one phase (Kindred Qi)",
+   "team": [
+    {
+     "enemy": "enemy:rival_sword_fire",
+     "levelOffset": 1
+    },
+    {
+     "enemy": "enemy:rival_sword_fire",
+     "levelOffset": 1
+    },
+    {
+     "enemy": "enemy:rival_shadow_fire",
+     "levelOffset": 1
+    },
+    {
+     "enemy": "enemy:rival_healer_fire",
+     "levelOffset": 0
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 34
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:whispering_pine_sect",
+   "name": "Whispering Pine Sect",
+   "cn": "松语宗",
+   "startRank": 45,
+   "leader": "npc:rival_whispering_pine_sect",
+   "taunt": "I have heard of your Fate Lotus. I am not impressed.",
+   "style": "iron_wall",
+   "phasePlan": "mixed",
+   "team": [
+    {
+     "enemy": "enemy:rival_guardian_earth",
+     "levelOffset": 1
+    },
+    {
+     "enemy": "enemy:rival_guardian_wood",
+     "levelOffset": 1
+    },
+    {
+     "enemy": "enemy:rival_talisman_fire",
+     "levelOffset": 1
+    },
+    {
+     "enemy": "enemy:rival_healer_metal",
+     "levelOffset": 0
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 32
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:red_cliff_clan",
+   "name": "Red Cliff Clan",
+   "cn": "赤壁门",
+   "startRank": 46,
+   "leader": "npc:rival_red_cliff_clan",
+   "taunt": "Climb if you can. The air is thin up here.",
+   "style": "shadow_strike",
+   "phasePlan": "harmony chain",
+   "team": [
+    {
+     "enemy": "enemy:rival_shadow_water",
+     "levelOffset": 1
+    },
+    {
+     "enemy": "enemy:rival_shadow_wood",
+     "levelOffset": 1
+    },
+    {
+     "enemy": "enemy:rival_sword_fire",
+     "levelOffset": 1
+    },
+    {
+     "enemy": "enemy:rival_talisman_earth",
+     "levelOffset": 0
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 30
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:bronze_gate_clan",
+   "name": "Bronze Gate Clan",
+   "cn": "铜门",
+   "startRank": 47,
+   "leader": "npc:rival_bronze_gate_clan",
+   "taunt": "One phase, four blades. Simple, and it works.",
+   "style": "control",
+   "phasePlan": "one phase (Kindred Qi)",
+   "team": [
+    {
+     "enemy": "enemy:rival_talisman_wood",
+     "levelOffset": 1
+    },
+    {
+     "enemy": "enemy:rival_talisman_wood",
+     "levelOffset": 1
+    },
+    {
+     "enemy": "enemy:rival_arcane_wood",
+     "levelOffset": 1
+    },
+    {
+     "enemy": "enemy:rival_healer_wood",
+     "levelOffset": 0
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 28
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:flowing_river_sect",
+   "name": "Flowing River Sect",
+   "cn": "流川宗",
+   "startRank": 48,
+   "leader": "npc:rival_flowing_river_sect",
+   "taunt": "Lose gracefully and I will tell no one.",
+   "style": "arcane_burst",
+   "phasePlan": "mixed",
+   "team": [
+    {
+     "enemy": "enemy:rival_arcane_water",
+     "levelOffset": 1
+    },
+    {
+     "enemy": "enemy:rival_arcane_earth",
+     "levelOffset": 1
+    },
+    {
+     "enemy": "enemy:rival_guardian_wood",
+     "levelOffset": 1
+    },
+    {
+     "enemy": "enemy:rival_healer_fire",
+     "levelOffset": 0
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 26
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:sunset_blade_school",
+   "name": "Sunset Blade School",
+   "cn": "落日刀门",
+   "startRank": 49,
+   "leader": "npc:rival_sunset_blade_school",
+   "taunt": "The ladder remembers every fall. Shall I add yours?",
+   "style": "balanced",
+   "phasePlan": "harmony chain",
+   "team": [
+    {
+     "enemy": "enemy:rival_sword_earth",
+     "levelOffset": 0
+    },
+    {
+     "enemy": "enemy:rival_guardian_metal",
+     "levelOffset": 0
+    },
+    {
+     "enemy": "enemy:rival_arcane_water",
+     "levelOffset": 0
+    },
+    {
+     "enemy": "enemy:rival_healer_wood",
+     "levelOffset": -1
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 24
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "rival:azure_cloud_sect",
+   "name": "Azure Cloud Sect",
+   "cn": "青云宗",
+   "startRank": 50,
+   "leader": "npc:rival_azure_cloud_sect",
+   "taunt": "You may bow before or after. Your choice.",
+   "style": "sword_storm",
+   "phasePlan": "one phase (Kindred Qi)",
+   "team": [
+    {
+     "enemy": "enemy:rival_sword_earth",
+     "levelOffset": 0
+    },
+    {
+     "enemy": "enemy:rival_sword_earth",
+     "levelOffset": 0
+    },
+    {
+     "enemy": "enemy:rival_shadow_earth",
+     "levelOffset": 0
+    },
+    {
+     "enemy": "enemy:rival_healer_earth",
+     "levelOffset": -1
+    }
+   ],
+   "firstWinRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 22
+    }
+   ],
+   "draft": true
+  }
+ ]
+}

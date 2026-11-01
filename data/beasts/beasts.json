@@ -1,0 +1,68 @@
+{
+ "about": "Spirit beasts: hatched from eggs, fed spirit herbs, one companion at a time.",
+ "records": [
+  {
+   "id": "beast:koi",
+   "name": "Koi",
+   "cn": "锦鲤",
+   "rarity": 3,
+   "homeSkill": "Herb garden: +5% spirit stones",
+   "battleSkill": "Repeat battles: +5% spirit stones",
+   "egg": "item:egg_common"
+  },
+  {
+   "id": "beast:jade_rabbit",
+   "name": "Jade Rabbit",
+   "cn": "玉兔",
+   "rarity": 3,
+   "homeSkill": "Alchemy: +5% chance of a higher pill quality",
+   "battleSkill": "Repeat battles: +5% EXP",
+   "egg": "item:egg_common"
+  },
+  {
+   "id": "beast:red_crowned_crane",
+   "name": "Red-crowned Crane",
+   "cn": "丹顶鹤",
+   "rarity": 4,
+   "homeSkill": "Expeditions finish 10% faster",
+   "battleSkill": "Repeat battles: +8% EXP",
+   "egg": "item:egg_rare"
+  },
+  {
+   "id": "beast:white_fox",
+   "name": "White Fox",
+   "cn": "白狐",
+   "rarity": 4,
+   "homeSkill": "Expeditions: 10% chance of an extra gift",
+   "battleSkill": "Repeat battles: +4% drop chance",
+   "egg": "item:egg_rare"
+  },
+  {
+   "id": "beast:pixiu",
+   "name": "Pixiu",
+   "cn": "貔貅",
+   "rarity": 5,
+   "homeSkill": "Herb garden: +10% spirit stones",
+   "battleSkill": "Repeat battles: +10% spirit stones",
+   "egg": "item:egg_celestial"
+  },
+  {
+   "id": "beast:qilin_cub",
+   "name": "Qilin Cub",
+   "cn": "麒麟幼崽",
+   "rarity": 5,
+   "homeSkill": "Closed-door Caves: +10% EXP",
+   "battleSkill": "Repeat battles: +10% EXP",
+   "egg": "item:egg_celestial"
+  },
+  {
+   "id": "beast:baize",
+   "name": "Baize",
+   "cn": "白泽",
+   "rarity": 5,
+   "homeSkill": "Expeditions finish 15% faster",
+   "battleSkill": "Repeat battles: +5% drop chance",
+   "egg": "item:egg_celestial"
+  }
+ ]
+}

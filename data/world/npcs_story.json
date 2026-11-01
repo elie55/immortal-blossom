@@ -1,0 +1,14 @@
+{
+ "about": "Story-only minor characters who speak in the Volume 1 scenes.",
+ "records": [
+  {
+   "id": "npc:fang_qing",
+   "name": "Fang Qing",
+   "cn": "方晴",
+   "role": "Frostpeak junior disciple",
+   "faction": "faction:frostpeak_sword_sect",
+   "home": "loc:frostpeak",
+   "about": "Ling Shuang's junior sister, freed from the Netherflame prisoner convoy; talks far too much for a Frostpeak disciple"
+  }
+ ]
+}

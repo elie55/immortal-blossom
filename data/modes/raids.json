@@ -1,0 +1,140 @@
+{
+ "about": "Tribulation Raids: three ancient beasts in weekly rotation, three forms each, five difficulties (tiers IV to VIII).",
+ "records": [
+  {
+   "id": "raid:zhulong",
+   "name": "Zhulong, the Torch Dragon",
+   "cn": "烛龙",
+   "location": "loc:mount_zhong",
+   "forms": [
+    "enemy:zhulong_eyes_open",
+    "enemy:zhulong_eyes_closed",
+    "enemy:zhulong_nine_darks"
+   ],
+   "difficulties": [
+    "stage:raid_zhulong_d1",
+    "stage:raid_zhulong_d2",
+    "stage:raid_zhulong_d3",
+    "stage:raid_zhulong_d4",
+    "stage:raid_zhulong_d5"
+   ],
+   "rotationWeek": 1,
+   "teams": 3,
+   "scoring": "damage dealt across three teams of four; health of each team does not carry to the next",
+   "weeklyRewards": [
+    {
+     "score": "any clear",
+     "rewards": [
+      {
+       "item": "item:artefact_essence",
+       "qty": 10
+      }
+     ]
+    },
+    {
+     "score": "top difficulty cleared",
+     "rewards": [
+      {
+       "item": "item:bodhi_leaf",
+       "qty": 2
+      },
+      {
+       "cur": "cur:sect_merit",
+       "qty": 300
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "raid:kunpeng",
+   "name": "Kunpeng",
+   "cn": "鲲鹏",
+   "location": "loc:north_sea",
+   "forms": [
+    "enemy:kun_of_the_abyss",
+    "enemy:peng_of_the_tempest",
+    "enemy:kunpeng_ascendant"
+   ],
+   "difficulties": [
+    "stage:raid_kunpeng_d1",
+    "stage:raid_kunpeng_d2",
+    "stage:raid_kunpeng_d3",
+    "stage:raid_kunpeng_d4",
+    "stage:raid_kunpeng_d5"
+   ],
+   "rotationWeek": 2,
+   "teams": 3,
+   "scoring": "damage dealt across three teams of four; health of each team does not carry to the next",
+   "weeklyRewards": [
+    {
+     "score": "any clear",
+     "rewards": [
+      {
+       "item": "item:artefact_essence",
+       "qty": 10
+      }
+     ]
+    },
+    {
+     "score": "top difficulty cleared",
+     "rewards": [
+      {
+       "item": "item:bodhi_leaf",
+       "qty": 2
+      },
+      {
+       "cur": "cur:sect_merit",
+       "qty": 300
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "raid:jiuying",
+   "name": "Jiuying",
+   "cn": "九婴",
+   "location": "loc:fierce_water",
+   "forms": [
+    "enemy:jiuying_water_heads",
+    "enemy:jiuying_fire_heads",
+    "enemy:jiuying_unbound"
+   ],
+   "difficulties": [
+    "stage:raid_jiuying_d1",
+    "stage:raid_jiuying_d2",
+    "stage:raid_jiuying_d3",
+    "stage:raid_jiuying_d4",
+    "stage:raid_jiuying_d5"
+   ],
+   "rotationWeek": 3,
+   "teams": 3,
+   "scoring": "damage dealt across three teams of four; health of each team does not carry to the next",
+   "weeklyRewards": [
+    {
+     "score": "any clear",
+     "rewards": [
+      {
+       "item": "item:artefact_essence",
+       "qty": 10
+      }
+     ]
+    },
+    {
+     "score": "top difficulty cleared",
+     "rewards": [
+      {
+       "item": "item:bodhi_leaf",
+       "qty": 2
+      },
+      {
+       "cur": "cur:sect_merit",
+       "qty": 300
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

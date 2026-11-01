@@ -1,0 +1,226 @@
+{
+ "about": "Buffs and debuffs. Every one is used by at least one technique, set, artefact, encounter or rule.",
+ "records": [
+  {
+   "id": "status:surging_qi",
+   "name": "Surging Qi",
+   "glyph": "盛",
+   "kind": "buff",
+   "effect": "+50% Attack",
+   "epicSeven": "Increase Attack"
+  },
+  {
+   "id": "status:iron_body",
+   "name": "Iron Body",
+   "glyph": "铁",
+   "kind": "buff",
+   "effect": "+60% Defense",
+   "epicSeven": "Increase Defense"
+  },
+  {
+   "id": "status:wind_step",
+   "name": "Wind Step",
+   "glyph": "风",
+   "kind": "buff",
+   "effect": "+30 Haste",
+   "epicSeven": "Increase Speed"
+  },
+  {
+   "id": "status:sword_intent",
+   "name": "Sword Intent",
+   "glyph": "剑",
+   "kind": "buff",
+   "effect": "+30% critical chance",
+   "epicSeven": "Increase Critical Hit Chance"
+  },
+  {
+   "id": "status:spirit_shield",
+   "name": "Spirit Shield",
+   "glyph": "盾",
+   "kind": "buff",
+   "effect": "Absorbs damage",
+   "epicSeven": "Barrier"
+  },
+  {
+   "id": "status:clear_heart",
+   "name": "Clear Heart",
+   "glyph": "净",
+   "kind": "buff",
+   "effect": "Immune to debuffs",
+   "epicSeven": "Immunity"
+  },
+  {
+   "id": "status:golden_bell",
+   "name": "Golden Bell",
+   "glyph": "钟",
+   "kind": "buff",
+   "effect": "Takes no damage (rare)",
+   "epicSeven": "Invincibility"
+  },
+  {
+   "id": "status:shadow_veil",
+   "name": "Shadow Veil",
+   "glyph": "隐",
+   "kind": "buff",
+   "effect": "Cannot be targeted by single-target techniques",
+   "epicSeven": "Stealth"
+  },
+  {
+   "id": "status:thorn_lotus",
+   "name": "Thorn Lotus",
+   "glyph": "刺",
+   "kind": "buff",
+   "effect": "Counterattacks when hit",
+   "epicSeven": "Counterattack"
+  },
+  {
+   "id": "status:lotus_dew",
+   "name": "Lotus Dew",
+   "glyph": "露",
+   "kind": "buff",
+   "effect": "Recovers 6% of max health each turn",
+   "epicSeven": "Continuous Heal"
+  },
+  {
+   "id": "status:phoenix_rebirth",
+   "name": "Phoenix Rebirth",
+   "glyph": "凰",
+   "kind": "buff",
+   "effect": "Revives once at 30% health",
+   "epicSeven": "Revive-type effects"
+  },
+  {
+   "id": "status:fire_poison",
+   "name": "Fire Poison",
+   "glyph": "火",
+   "kind": "debuff",
+   "effect": "Damage each turn based on the caster's Attack (35% ATK)",
+   "epicSeven": "Burn"
+  },
+  {
+   "id": "status:gu_venom",
+   "name": "Gu Venom",
+   "glyph": "毒",
+   "kind": "debuff",
+   "effect": "Loses 6% of max health each turn",
+   "epicSeven": "Poison"
+  },
+  {
+   "id": "status:sword_wound",
+   "name": "Sword Wound",
+   "glyph": "伤",
+   "kind": "debuff",
+   "effect": "Damage each turn, stacks per hit",
+   "epicSeven": "Bleed",
+   "stacks": true
+  },
+  {
+   "id": "status:frost_seal",
+   "name": "Frost Seal",
+   "glyph": "冰",
+   "kind": "debuff",
+   "effect": "Skips its next turn; the next hit breaks it for +30% damage",
+   "epicSeven": "New",
+   "skipsTurn": true
+  },
+  {
+   "id": "status:soul_shock",
+   "name": "Soul Shock",
+   "glyph": "晕",
+   "kind": "debuff",
+   "effect": "Skips its next turn",
+   "epicSeven": "Stun",
+   "skipsTurn": true
+  },
+  {
+   "id": "status:sealed_meridians",
+   "name": "Sealed Meridians",
+   "glyph": "封",
+   "kind": "debuff",
+   "effect": "Cannot use S2 or S3",
+   "epicSeven": "Silence"
+  },
+  {
+   "id": "status:lotus_dream",
+   "name": "Lotus Dream",
+   "glyph": "梦",
+   "kind": "debuff",
+   "effect": "Skips turns until hit",
+   "epicSeven": "Sleep",
+   "skipsTurn": true
+  },
+  {
+   "id": "status:provoke",
+   "name": "Provoke",
+   "glyph": "挑",
+   "kind": "debuff",
+   "effect": "Must attack the caster",
+   "epicSeven": "Provoke"
+  },
+  {
+   "id": "status:qi_disruption",
+   "name": "Qi Disruption",
+   "glyph": "乱",
+   "kind": "debuff",
+   "effect": "Deals 30% less damage",
+   "epicSeven": "Decrease Attack"
+  },
+  {
+   "id": "status:body_shatter",
+   "name": "Body Shatter",
+   "glyph": "破",
+   "kind": "debuff",
+   "effect": "-70% Defense",
+   "epicSeven": "Decrease Defense"
+  },
+  {
+   "id": "status:entangle",
+   "name": "Entangle",
+   "glyph": "缠",
+   "kind": "debuff",
+   "effect": "Cooldowns do not drop next turn",
+   "epicSeven": "Decrease Speed"
+  },
+  {
+   "id": "status:mist_veil",
+   "name": "Mist Veil",
+   "glyph": "雾",
+   "kind": "debuff",
+   "effect": "-50% accuracy",
+   "epicSeven": "Decrease Hit Chance"
+  },
+  {
+   "id": "status:withering",
+   "name": "Withering",
+   "glyph": "枯",
+   "kind": "debuff",
+   "effect": "Cannot be healed",
+   "epicSeven": "Unhealable"
+  },
+  {
+   "id": "status:karmic_mark",
+   "name": "Karmic Mark",
+   "glyph": "印",
+   "kind": "debuff",
+   "effect": "Takes 25% more damage",
+   "epicSeven": "Target"
+  },
+  {
+   "id": "status:shattered",
+   "name": "Shattered",
+   "glyph": "碎",
+   "kind": "debuff",
+   "effect": "Qi shield broken: 30% more damage taken, ultimate delayed",
+   "epicSeven": "Weakness break (Honkai: Star Rail)"
+  },
+  {
+   "id": "status:heart_demon",
+   "name": "Heart Demon",
+   "glyph": "魔",
+   "kind": "debuff",
+   "effect": "Stacks; at 3 stacks the unit attacks an ally once, then the stacks clear",
+   "epicSeven": "New",
+   "stacks": true
+  }
+ ]
+}

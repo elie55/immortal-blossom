@@ -1,0 +1,7130 @@
+{
+ "about": "Demon-Sealing Pagoda floors 1 to 120; rewards on first clear.",
+ "records": [
+  {
+   "id": "stage:pagoda_001",
+   "name": "Pagoda Floor 1",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 1,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 11
+     },
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 11
+     },
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 11
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:ash_hound",
+      "level": 11
+     },
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 11
+     },
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 11
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 52
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "stage:pagoda_002",
+   "name": "Pagoda Floor 2",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 2,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:snow_wolf",
+      "level": 11
+     },
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 11
+     },
+     {
+      "enemy": "enemy:thorn_wraith",
+      "level": 11
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 11
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 11
+     },
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 11
+     },
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 11
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 54
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_001"
+   }
+  },
+  {
+   "id": "stage:pagoda_003",
+   "name": "Pagoda Floor 3",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 3,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 12
+     },
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 12
+     },
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 12
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 12
+     },
+     {
+      "enemy": "enemy:netherflame_hexer",
+      "level": 12
+     },
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 12
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 56
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_002"
+   }
+  },
+  {
+   "id": "stage:pagoda_004",
+   "name": "Pagoda Floor 4",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 4,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:snow_wolf",
+      "level": 12
+     },
+     {
+      "enemy": "enemy:thorn_wraith",
+      "level": 12
+     },
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 12
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 12
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 12
+     },
+     {
+      "enemy": "enemy:netherflame_hexer",
+      "level": 12
+     },
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 12
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 58
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_003"
+   }
+  },
+  {
+   "id": "stage:pagoda_005",
+   "name": "Pagoda Floor 5",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 5,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 13
+     },
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 13
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 13
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 13
+     },
+     {
+      "enemy": "enemy:snow_wolf",
+      "level": 13
+     },
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 13
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 60
+    },
+    {
+     "cur": "cur:fate_incense",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_004"
+   }
+  },
+  {
+   "id": "stage:pagoda_006",
+   "name": "Pagoda Floor 6",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 6,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_hexer",
+      "level": 13
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 13
+     },
+     {
+      "enemy": "enemy:snow_wolf",
+      "level": 13
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 13
+     },
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 13
+     },
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 13
+     },
+     {
+      "enemy": "enemy:snow_wolf",
+      "level": 13
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 62
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_005"
+   }
+  },
+  {
+   "id": "stage:pagoda_007",
+   "name": "Pagoda Floor 7",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 7,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 14
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 14
+     },
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 14
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 14
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 14
+     },
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 14
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 64
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_006"
+   }
+  },
+  {
+   "id": "stage:pagoda_008",
+   "name": "Pagoda Floor 8",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 8,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:thorn_wraith",
+      "level": 14
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 14
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 14
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 14
+     },
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 14
+     },
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 14
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 14
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 66
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_007"
+   }
+  },
+  {
+   "id": "stage:pagoda_009",
+   "name": "Pagoda Floor 9",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 9,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:thorn_wraith",
+      "level": 15
+     },
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 15
+     },
+     {
+      "enemy": "enemy:netherflame_hexer",
+      "level": 15
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:thorn_wraith",
+      "level": 15
+     },
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 15
+     },
+     {
+      "enemy": "enemy:snow_wolf",
+      "level": 15
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 68
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_008"
+   }
+  },
+  {
+   "id": "stage:pagoda_010",
+   "name": "Pagoda Floor 10",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 10,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 15
+     },
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 15
+     },
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 15
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:bone_lantern",
+      "level": 17
+     },
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 15
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 70
+    },
+    {
+     "cur": "cur:fate_incense",
+     "qty": 1
+    },
+    {
+     "cur": "cur:blossom_dew",
+     "qty": 10
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_009"
+   }
+  },
+  {
+   "id": "stage:pagoda_011",
+   "name": "Pagoda Floor 11",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 11,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 16
+     },
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 16
+     },
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 16
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:netherflame_hexer",
+      "level": 16
+     },
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 16
+     },
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 16
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 72
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_010"
+   }
+  },
+  {
+   "id": "stage:pagoda_012",
+   "name": "Pagoda Floor 12",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 12,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:ash_hound",
+      "level": 16
+     },
+     {
+      "enemy": "enemy:snow_wolf",
+      "level": 16
+     },
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 16
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:thorn_wraith",
+      "level": 16
+     },
+     {
+      "enemy": "enemy:thorn_wraith",
+      "level": 16
+     },
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 16
+     },
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 16
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 74
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_011"
+   }
+  },
+  {
+   "id": "stage:pagoda_013",
+   "name": "Pagoda Floor 13",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 13,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 17
+     },
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 17
+     },
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 17
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 17
+     },
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 17
+     },
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 17
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 76
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_012"
+   }
+  },
+  {
+   "id": "stage:pagoda_014",
+   "name": "Pagoda Floor 14",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 14,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_hexer",
+      "level": 17
+     },
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 17
+     },
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 17
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:netherflame_hexer",
+      "level": 17
+     },
+     {
+      "enemy": "enemy:snow_wolf",
+      "level": 17
+     },
+     {
+      "enemy": "enemy:netherflame_hexer",
+      "level": 17
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 17
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 78
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_013"
+   }
+  },
+  {
+   "id": "stage:pagoda_015",
+   "name": "Pagoda Floor 15",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 15,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 18
+     },
+     {
+      "enemy": "enemy:thorn_wraith",
+      "level": 18
+     },
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 18
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 18
+     },
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 18
+     },
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 18
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 80
+    },
+    {
+     "cur": "cur:fate_incense",
+     "qty": 1
+    },
+    {
+     "item": "item:array_flag",
+     "qty": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_014"
+   }
+  },
+  {
+   "id": "stage:pagoda_016",
+   "name": "Pagoda Floor 16",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 16,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 18
+     },
+     {
+      "enemy": "enemy:ash_hound",
+      "level": 18
+     },
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 18
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 18
+     },
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 18
+     },
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 18
+     },
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 18
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 82
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_015"
+   }
+  },
+  {
+   "id": "stage:pagoda_017",
+   "name": "Pagoda Floor 17",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 17,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 19
+     },
+     {
+      "enemy": "enemy:thorn_wraith",
+      "level": 19
+     },
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 19
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:netherflame_hexer",
+      "level": 19
+     },
+     {
+      "enemy": "enemy:snow_wolf",
+      "level": 19
+     },
+     {
+      "enemy": "enemy:ash_hound",
+      "level": 19
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 84
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_016"
+   }
+  },
+  {
+   "id": "stage:pagoda_018",
+   "name": "Pagoda Floor 18",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 18,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:ash_hound",
+      "level": 19
+     },
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 19
+     },
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 19
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 19
+     },
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 19
+     },
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 19
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 19
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 86
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_017"
+   }
+  },
+  {
+   "id": "stage:pagoda_019",
+   "name": "Pagoda Floor 19",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 19,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:thorn_wraith",
+      "level": 20
+     },
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 20
+     },
+     {
+      "enemy": "enemy:ash_hound",
+      "level": 20
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 20
+     },
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 20
+     },
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 20
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 88
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_018"
+   }
+  },
+  {
+   "id": "stage:pagoda_020",
+   "name": "Pagoda Floor 20",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 20,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 20
+     },
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 20
+     },
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 20
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:jiangshi_general",
+      "level": 22
+     },
+     {
+      "enemy": "enemy:netherflame_hexer",
+      "level": 20
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 90
+    },
+    {
+     "cur": "cur:fate_incense",
+     "qty": 1
+    },
+    {
+     "cur": "cur:blossom_dew",
+     "qty": 10
+    },
+    {
+     "item": "item:artefact_essence",
+     "qty": 7
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_019"
+   }
+  },
+  {
+   "id": "stage:pagoda_021",
+   "name": "Pagoda Floor 21",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 21,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:core_formation",
+   "tier": "tier:iii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 21
+     },
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 21
+     },
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 21
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 21
+     },
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 21
+     },
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 21
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 92
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_020"
+   }
+  },
+  {
+   "id": "stage:pagoda_022",
+   "name": "Pagoda Floor 22",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 22,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:core_formation",
+   "tier": "tier:iii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 22
+     },
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 22
+     },
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 22
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 22
+     },
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 22
+     },
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 22
+     },
+     {
+      "enemy": "enemy:ash_hound",
+      "level": 22
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 94
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_021"
+   }
+  },
+  {
+   "id": "stage:pagoda_023",
+   "name": "Pagoda Floor 23",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 23,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:core_formation",
+   "tier": "tier:iii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 22
+     },
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 22
+     },
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 22
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 22
+     },
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 22
+     },
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 22
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 96
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_022"
+   }
+  },
+  {
+   "id": "stage:pagoda_024",
+   "name": "Pagoda Floor 24",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 24,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:core_formation",
+   "tier": "tier:iii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 23
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 23
+     },
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 23
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 23
+     },
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 23
+     },
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 23
+     },
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 23
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 98
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_023"
+   }
+  },
+  {
+   "id": "stage:pagoda_025",
+   "name": "Pagoda Floor 25",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 25,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:core_formation",
+   "tier": "tier:iii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 24
+     },
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 24
+     },
+     {
+      "enemy": "enemy:thorn_wraith",
+      "level": 24
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 24
+     },
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 24
+     },
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 24
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 100
+    },
+    {
+     "cur": "cur:fate_incense",
+     "qty": 1
+    },
+    {
+     "item": "item:array_flag",
+     "qty": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_024"
+   }
+  },
+  {
+   "id": "stage:pagoda_026",
+   "name": "Pagoda Floor 26",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 26,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:core_formation",
+   "tier": "tier:iii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 24
+     },
+     {
+      "enemy": "enemy:crane_dancer",
+      "level": 24
+     },
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 24
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 24
+     },
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 24
+     },
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 24
+     },
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 24
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 102
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_025"
+   }
+  },
+  {
+   "id": "stage:pagoda_027",
+   "name": "Pagoda Floor 27",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 27,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:core_formation",
+   "tier": "tier:iii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 25
+     },
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 25
+     },
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 25
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 25
+     },
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 25
+     },
+     {
+      "enemy": "enemy:ash_hound",
+      "level": 25
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 104
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_026"
+   }
+  },
+  {
+   "id": "stage:pagoda_028",
+   "name": "Pagoda Floor 28",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 28,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:core_formation",
+   "tier": "tier:iii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 26
+     },
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 26
+     },
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 26
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 26
+     },
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 26
+     },
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 26
+     },
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 26
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 106
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_027"
+   }
+  },
+  {
+   "id": "stage:pagoda_029",
+   "name": "Pagoda Floor 29",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 29,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:core_formation",
+   "tier": "tier:iii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 26
+     },
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 26
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 26
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 26
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 26
+     },
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 26
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 108
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_028"
+   }
+  },
+  {
+   "id": "stage:pagoda_030",
+   "name": "Pagoda Floor 30",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 30,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:core_formation",
+   "tier": "tier:iii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 27
+     },
+     {
+      "enemy": "enemy:snow_wolf",
+      "level": 27
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 27
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:mirror_demon",
+      "level": 29
+     },
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 27
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 110
+    },
+    {
+     "cur": "cur:fate_incense",
+     "qty": 1
+    },
+    {
+     "cur": "cur:blossom_dew",
+     "qty": 10
+    },
+    {
+     "item": "item:bodhi_leaf",
+     "qty": 1
+    },
+    {
+     "item": "item:artefact_essence",
+     "qty": 8
+    },
+    {
+     "art": "art:demon_revealing_mirror",
+     "rarity": "rarity:epic"
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_029"
+   }
+  },
+  {
+   "id": "stage:pagoda_031",
+   "name": "Pagoda Floor 31",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 31,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:core_formation",
+   "tier": "tier:iii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 27
+     },
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 27
+     },
+     {
+      "enemy": "enemy:thorn_wraith",
+      "level": 27
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 27
+     },
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 27
+     },
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 27
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 112
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_030"
+   }
+  },
+  {
+   "id": "stage:pagoda_032",
+   "name": "Pagoda Floor 32",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 32,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:core_formation",
+   "tier": "tier:iii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:thorn_wraith",
+      "level": 28
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 28
+     },
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 28
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 28
+     },
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 28
+     },
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 28
+     },
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 28
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 114
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_031"
+   }
+  },
+  {
+   "id": "stage:pagoda_033",
+   "name": "Pagoda Floor 33",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 33,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:core_formation",
+   "tier": "tier:iii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 29
+     },
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 29
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 29
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 29
+     },
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 29
+     },
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 29
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 116
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_032"
+   }
+  },
+  {
+   "id": "stage:pagoda_034",
+   "name": "Pagoda Floor 34",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 34,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:core_formation",
+   "tier": "tier:iii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 29
+     },
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 29
+     },
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 29
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:crane_dancer",
+      "level": 29
+     },
+     {
+      "enemy": "enemy:crane_dancer",
+      "level": 29
+     },
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 29
+     },
+     {
+      "enemy": "enemy:thorn_wraith",
+      "level": 29
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 118
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_033"
+   }
+  },
+  {
+   "id": "stage:pagoda_035",
+   "name": "Pagoda Floor 35",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 35,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:core_formation",
+   "tier": "tier:iii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 30
+     },
+     {
+      "enemy": "enemy:crane_dancer",
+      "level": 30
+     },
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 30
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 30
+     },
+     {
+      "enemy": "enemy:crane_dancer",
+      "level": 30
+     },
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 30
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 120
+    },
+    {
+     "cur": "cur:fate_incense",
+     "qty": 1
+    },
+    {
+     "item": "item:array_flag",
+     "qty": 3
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_034"
+   }
+  },
+  {
+   "id": "stage:pagoda_036",
+   "name": "Pagoda Floor 36",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 36,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:nascent_soul",
+   "tier": "tier:iv",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 31
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 31
+     },
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 31
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 31
+     },
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 31
+     },
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 31
+     },
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 31
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 122
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_035"
+   }
+  },
+  {
+   "id": "stage:pagoda_037",
+   "name": "Pagoda Floor 37",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 37,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:nascent_soul",
+   "tier": "tier:iv",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 32
+     },
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 32
+     },
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 32
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 32
+     },
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 32
+     },
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 32
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 124
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_036"
+   }
+  },
+  {
+   "id": "stage:pagoda_038",
+   "name": "Pagoda Floor 38",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 38,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:nascent_soul",
+   "tier": "tier:iv",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 32
+     },
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 32
+     },
+     {
+      "enemy": "enemy:netherflame_hexer",
+      "level": 32
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 32
+     },
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 32
+     },
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 32
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 32
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 126
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_037"
+   }
+  },
+  {
+   "id": "stage:pagoda_039",
+   "name": "Pagoda Floor 39",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 39,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:nascent_soul",
+   "tier": "tier:iv",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 33
+     },
+     {
+      "enemy": "enemy:thorn_wraith",
+      "level": 33
+     },
+     {
+      "enemy": "enemy:snow_wolf",
+      "level": 33
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 33
+     },
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 33
+     },
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 33
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 128
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_038"
+   }
+  },
+  {
+   "id": "stage:pagoda_040",
+   "name": "Pagoda Floor 40",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 40,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:nascent_soul",
+   "tier": "tier:iv",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 34
+     },
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 34
+     },
+     {
+      "enemy": "enemy:crane_dancer",
+      "level": 34
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:flying_blade_ghost",
+      "level": 36
+     },
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 34
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 130
+    },
+    {
+     "cur": "cur:fate_incense",
+     "qty": 1
+    },
+    {
+     "cur": "cur:blossom_dew",
+     "qty": 10
+    },
+    {
+     "item": "item:bodhi_leaf",
+     "qty": 1
+    },
+    {
+     "item": "item:artefact_essence",
+     "qty": 9
+    },
+    {
+     "art": "art:immortal_slaying_knife",
+     "rarity": "rarity:epic"
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_039"
+   }
+  },
+  {
+   "id": "stage:pagoda_041",
+   "name": "Pagoda Floor 41",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 41,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:nascent_soul",
+   "tier": "tier:iv",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 34
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 34
+     },
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 34
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 34
+     },
+     {
+      "enemy": "enemy:snow_wolf",
+      "level": 34
+     },
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 34
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 132
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_040"
+   }
+  },
+  {
+   "id": "stage:pagoda_042",
+   "name": "Pagoda Floor 42",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 42,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:nascent_soul",
+   "tier": "tier:iv",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 35
+     },
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 35
+     },
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 35
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:crane_dancer",
+      "level": 35
+     },
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 35
+     },
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 35
+     },
+     {
+      "enemy": "enemy:thorn_wraith",
+      "level": 35
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 134
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_041"
+   }
+  },
+  {
+   "id": "stage:pagoda_043",
+   "name": "Pagoda Floor 43",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 43,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:nascent_soul",
+   "tier": "tier:iv",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 36
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 36
+     },
+     {
+      "enemy": "enemy:ash_hound",
+      "level": 36
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 36
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 36
+     },
+     {
+      "enemy": "enemy:crane_dancer",
+      "level": 36
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 136
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_042"
+   }
+  },
+  {
+   "id": "stage:pagoda_044",
+   "name": "Pagoda Floor 44",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 44,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:nascent_soul",
+   "tier": "tier:iv",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:crane_dancer",
+      "level": 36
+     },
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 36
+     },
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 36
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 36
+     },
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 36
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 36
+     },
+     {
+      "enemy": "enemy:netherflame_hexer",
+      "level": 36
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 138
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_043"
+   }
+  },
+  {
+   "id": "stage:pagoda_045",
+   "name": "Pagoda Floor 45",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 45,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:nascent_soul",
+   "tier": "tier:iv",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 37
+     },
+     {
+      "enemy": "enemy:netherflame_hexer",
+      "level": 37
+     },
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 37
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 37
+     },
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 37
+     },
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 37
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 140
+    },
+    {
+     "cur": "cur:fate_incense",
+     "qty": 1
+    },
+    {
+     "item": "item:array_flag",
+     "qty": 3
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_044"
+   }
+  },
+  {
+   "id": "stage:pagoda_046",
+   "name": "Pagoda Floor 46",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 46,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:nascent_soul",
+   "tier": "tier:iv",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 37
+     },
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 37
+     },
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 37
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:crane_dancer",
+      "level": 37
+     },
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 37
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 37
+     },
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 37
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 142
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_045"
+   }
+  },
+  {
+   "id": "stage:pagoda_047",
+   "name": "Pagoda Floor 47",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 47,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:nascent_soul",
+   "tier": "tier:iv",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 38
+     },
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 38
+     },
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 38
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 38
+     },
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 38
+     },
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 38
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 144
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_046"
+   }
+  },
+  {
+   "id": "stage:pagoda_048",
+   "name": "Pagoda Floor 48",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 48,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:nascent_soul",
+   "tier": "tier:iv",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 39
+     },
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 39
+     },
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 39
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:crane_dancer",
+      "level": 39
+     },
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 39
+     },
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 39
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 39
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 146
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_047"
+   }
+  },
+  {
+   "id": "stage:pagoda_049",
+   "name": "Pagoda Floor 49",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 49,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:nascent_soul",
+   "tier": "tier:iv",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 39
+     },
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 39
+     },
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 39
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:ash_hound",
+      "level": 39
+     },
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 39
+     },
+     {
+      "enemy": "enemy:snow_wolf",
+      "level": 39
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 148
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_048"
+   }
+  },
+  {
+   "id": "stage:pagoda_050",
+   "name": "Pagoda Floor 50",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 50,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:nascent_soul",
+   "tier": "tier:iv",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 40
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 40
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 40
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:nine_tail_shade",
+      "level": 42
+     },
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 40
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 150
+    },
+    {
+     "cur": "cur:fate_incense",
+     "qty": 2
+    },
+    {
+     "cur": "cur:blossom_dew",
+     "qty": 20
+    },
+    {
+     "item": "item:bodhi_leaf",
+     "qty": 1
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": 1
+    },
+    {
+     "item": "item:artefact_essence",
+     "qty": 10
+    },
+    {
+     "gear": {
+      "tier": "tier:iv",
+      "set": "any",
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:mythic": 1.0
+      }
+     }
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_049"
+   }
+  },
+  {
+   "id": "stage:pagoda_051",
+   "name": "Pagoda Floor 51",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 51,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:spirit_severing",
+   "tier": "tier:v",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:thorn_wraith",
+      "level": 41
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 41
+     },
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 41
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 41
+     },
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 41
+     },
+     {
+      "enemy": "enemy:ash_hound",
+      "level": 41
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 152
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_050"
+   }
+  },
+  {
+   "id": "stage:pagoda_052",
+   "name": "Pagoda Floor 52",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 52,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:spirit_severing",
+   "tier": "tier:v",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 42
+     },
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 42
+     },
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 42
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 42
+     },
+     {
+      "enemy": "enemy:netherflame_hexer",
+      "level": 42
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 42
+     },
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 42
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 154
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_051"
+   }
+  },
+  {
+   "id": "stage:pagoda_053",
+   "name": "Pagoda Floor 53",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 53,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:spirit_severing",
+   "tier": "tier:v",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 42
+     },
+     {
+      "enemy": "enemy:thorn_wraith",
+      "level": 42
+     },
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 42
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:netherflame_hexer",
+      "level": 42
+     },
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 42
+     },
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 42
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 156
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_052"
+   }
+  },
+  {
+   "id": "stage:pagoda_054",
+   "name": "Pagoda Floor 54",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 54,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:spirit_severing",
+   "tier": "tier:v",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 43
+     },
+     {
+      "enemy": "enemy:netherflame_hexer",
+      "level": 43
+     },
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 43
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 43
+     },
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 43
+     },
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 43
+     },
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 43
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 158
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_053"
+   }
+  },
+  {
+   "id": "stage:pagoda_055",
+   "name": "Pagoda Floor 55",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 55,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:spirit_severing",
+   "tier": "tier:v",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 44
+     },
+     {
+      "enemy": "enemy:snow_wolf",
+      "level": 44
+     },
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 44
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 44
+     },
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 44
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 44
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 160
+    },
+    {
+     "cur": "cur:fate_incense",
+     "qty": 2
+    },
+    {
+     "item": "item:array_flag",
+     "qty": 3
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_054"
+   }
+  },
+  {
+   "id": "stage:pagoda_056",
+   "name": "Pagoda Floor 56",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 56,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:spirit_severing",
+   "tier": "tier:v",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 44
+     },
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 44
+     },
+     {
+      "enemy": "enemy:thorn_wraith",
+      "level": 44
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 44
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 44
+     },
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 44
+     },
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 44
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 162
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_055"
+   }
+  },
+  {
+   "id": "stage:pagoda_057",
+   "name": "Pagoda Floor 57",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 57,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:spirit_severing",
+   "tier": "tier:v",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 45
+     },
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 45
+     },
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 45
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:snow_wolf",
+      "level": 45
+     },
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 45
+     },
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 45
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 164
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_056"
+   }
+  },
+  {
+   "id": "stage:pagoda_058",
+   "name": "Pagoda Floor 58",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 58,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:spirit_severing",
+   "tier": "tier:v",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 46
+     },
+     {
+      "enemy": "enemy:ash_hound",
+      "level": 46
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 46
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 46
+     },
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 46
+     },
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 46
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 46
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 166
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_057"
+   }
+  },
+  {
+   "id": "stage:pagoda_059",
+   "name": "Pagoda Floor 59",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 59,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:spirit_severing",
+   "tier": "tier:v",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 46
+     },
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 46
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 46
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 46
+     },
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 46
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 46
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 168
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_058"
+   }
+  },
+  {
+   "id": "stage:pagoda_060",
+   "name": "Pagoda Floor 60",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 60,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:spirit_severing",
+   "tier": "tier:v",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 47
+     },
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 47
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 47
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:kui",
+      "level": 49
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 47
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 170
+    },
+    {
+     "cur": "cur:fate_incense",
+     "qty": 2
+    },
+    {
+     "cur": "cur:blossom_dew",
+     "qty": 20
+    },
+    {
+     "item": "item:bodhi_leaf",
+     "qty": 1
+    },
+    {
+     "item": "item:artefact_essence",
+     "qty": 11
+    },
+    {
+     "gear": {
+      "tier": "tier:v",
+      "set": "any",
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:mythic": 1.0
+      }
+     }
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_059"
+   }
+  },
+  {
+   "id": "stage:pagoda_061",
+   "name": "Pagoda Floor 61",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 61,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:spirit_severing",
+   "tier": "tier:v",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 47
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 47
+     },
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 47
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 47
+     },
+     {
+      "enemy": "enemy:crane_dancer",
+      "level": 47
+     },
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 47
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 172
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_060"
+   }
+  },
+  {
+   "id": "stage:pagoda_062",
+   "name": "Pagoda Floor 62",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 62,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:spirit_severing",
+   "tier": "tier:v",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 48
+     },
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 48
+     },
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 48
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 48
+     },
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 48
+     },
+     {
+      "enemy": "enemy:ash_hound",
+      "level": 48
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 48
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 174
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_061"
+   }
+  },
+  {
+   "id": "stage:pagoda_063",
+   "name": "Pagoda Floor 63",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 63,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:spirit_severing",
+   "tier": "tier:v",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 49
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 49
+     },
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 49
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 49
+     },
+     {
+      "enemy": "enemy:netherflame_hexer",
+      "level": 49
+     },
+     {
+      "enemy": "enemy:snow_wolf",
+      "level": 49
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 176
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_062"
+   }
+  },
+  {
+   "id": "stage:pagoda_064",
+   "name": "Pagoda Floor 64",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 64,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:spirit_severing",
+   "tier": "tier:v",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:ash_hound",
+      "level": 49
+     },
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 49
+     },
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 49
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 49
+     },
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 49
+     },
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 49
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 49
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 178
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_063"
+   }
+  },
+  {
+   "id": "stage:pagoda_065",
+   "name": "Pagoda Floor 65",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 65,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:spirit_severing",
+   "tier": "tier:v",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 50
+     },
+     {
+      "enemy": "enemy:thorn_wraith",
+      "level": 50
+     },
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 50
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 50
+     },
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 50
+     },
+     {
+      "enemy": "enemy:thorn_wraith",
+      "level": 50
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 180
+    },
+    {
+     "cur": "cur:fate_incense",
+     "qty": 2
+    },
+    {
+     "item": "item:array_flag",
+     "qty": 4
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_064"
+   }
+  },
+  {
+   "id": "stage:pagoda_066",
+   "name": "Pagoda Floor 66",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 66,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:void_refinement",
+   "tier": "tier:vi",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 51
+     },
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 51
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 51
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:crane_dancer",
+      "level": 51
+     },
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 51
+     },
+     {
+      "enemy": "enemy:netherflame_hexer",
+      "level": 51
+     },
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 51
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 182
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_065"
+   }
+  },
+  {
+   "id": "stage:pagoda_067",
+   "name": "Pagoda Floor 67",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 67,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:void_refinement",
+   "tier": "tier:vi",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 52
+     },
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 52
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 52
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 52
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 52
+     },
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 52
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 184
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_066"
+   }
+  },
+  {
+   "id": "stage:pagoda_068",
+   "name": "Pagoda Floor 68",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 68,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:void_refinement",
+   "tier": "tier:vi",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 52
+     },
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 52
+     },
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 52
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 52
+     },
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 52
+     },
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 52
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 52
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 186
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_067"
+   }
+  },
+  {
+   "id": "stage:pagoda_069",
+   "name": "Pagoda Floor 69",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 69,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:void_refinement",
+   "tier": "tier:vi",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_hexer",
+      "level": 53
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 53
+     },
+     {
+      "enemy": "enemy:snow_wolf",
+      "level": 53
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 53
+     },
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 53
+     },
+     {
+      "enemy": "enemy:crane_dancer",
+      "level": 53
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 188
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_068"
+   }
+  },
+  {
+   "id": "stage:pagoda_070",
+   "name": "Pagoda Floor 70",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 70,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:void_refinement",
+   "tier": "tier:vi",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 54
+     },
+     {
+      "enemy": "enemy:crane_dancer",
+      "level": 54
+     },
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 54
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:bifang",
+      "level": 56
+     },
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 54
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 190
+    },
+    {
+     "cur": "cur:fate_incense",
+     "qty": 2
+    },
+    {
+     "cur": "cur:blossom_dew",
+     "qty": 20
+    },
+    {
+     "item": "item:bodhi_leaf",
+     "qty": 2
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": 1
+    },
+    {
+     "item": "item:artefact_essence",
+     "qty": 12
+    },
+    {
+     "gear": {
+      "tier": "tier:vi",
+      "set": "any",
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:mythic": 1.0
+      }
+     }
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_069"
+   }
+  },
+  {
+   "id": "stage:pagoda_071",
+   "name": "Pagoda Floor 71",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 71,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:void_refinement",
+   "tier": "tier:vi",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 54
+     },
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 54
+     },
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 54
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:snow_wolf",
+      "level": 54
+     },
+     {
+      "enemy": "enemy:netherflame_hexer",
+      "level": 54
+     },
+     {
+      "enemy": "enemy:crane_dancer",
+      "level": 54
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 192
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_070"
+   }
+  },
+  {
+   "id": "stage:pagoda_072",
+   "name": "Pagoda Floor 72",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 72,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:void_refinement",
+   "tier": "tier:vi",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:ash_hound",
+      "level": 55
+     },
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 55
+     },
+     {
+      "enemy": "enemy:thorn_wraith",
+      "level": 55
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:crane_dancer",
+      "level": 55
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 55
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 55
+     },
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 55
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 194
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_071"
+   }
+  },
+  {
+   "id": "stage:pagoda_073",
+   "name": "Pagoda Floor 73",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 73,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:void_refinement",
+   "tier": "tier:vi",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 56
+     },
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 56
+     },
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 56
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 56
+     },
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 56
+     },
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 56
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 196
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_072"
+   }
+  },
+  {
+   "id": "stage:pagoda_074",
+   "name": "Pagoda Floor 74",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 74,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:void_refinement",
+   "tier": "tier:vi",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 56
+     },
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 56
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 56
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 56
+     },
+     {
+      "enemy": "enemy:snow_wolf",
+      "level": 56
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 56
+     },
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 56
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 198
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_073"
+   }
+  },
+  {
+   "id": "stage:pagoda_075",
+   "name": "Pagoda Floor 75",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 75,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:void_refinement",
+   "tier": "tier:vi",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 57
+     },
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 57
+     },
+     {
+      "enemy": "enemy:crane_dancer",
+      "level": 57
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:snow_wolf",
+      "level": 57
+     },
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 57
+     },
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 57
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 200
+    },
+    {
+     "cur": "cur:fate_incense",
+     "qty": 2
+    },
+    {
+     "item": "item:array_flag",
+     "qty": 4
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_074"
+   }
+  },
+  {
+   "id": "stage:pagoda_076",
+   "name": "Pagoda Floor 76",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 76,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:void_refinement",
+   "tier": "tier:vi",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 57
+     },
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 57
+     },
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 57
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 57
+     },
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 57
+     },
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 57
+     },
+     {
+      "enemy": "enemy:snow_wolf",
+      "level": 57
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 202
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_075"
+   }
+  },
+  {
+   "id": "stage:pagoda_077",
+   "name": "Pagoda Floor 77",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 77,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:void_refinement",
+   "tier": "tier:vi",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 58
+     },
+     {
+      "enemy": "enemy:ash_hound",
+      "level": 58
+     },
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 58
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 58
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 58
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 58
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 204
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_076"
+   }
+  },
+  {
+   "id": "stage:pagoda_078",
+   "name": "Pagoda Floor 78",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 78,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:void_refinement",
+   "tier": "tier:vi",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 59
+     },
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 59
+     },
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 59
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:ash_hound",
+      "level": 59
+     },
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 59
+     },
+     {
+      "enemy": "enemy:thorn_wraith",
+      "level": 59
+     },
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 59
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 206
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_077"
+   }
+  },
+  {
+   "id": "stage:pagoda_079",
+   "name": "Pagoda Floor 79",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 79,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:void_refinement",
+   "tier": "tier:vi",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 59
+     },
+     {
+      "enemy": "enemy:ash_hound",
+      "level": 59
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 59
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 59
+     },
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 59
+     },
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 59
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 208
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_078"
+   }
+  },
+  {
+   "id": "stage:pagoda_080",
+   "name": "Pagoda Floor 80",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 80,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:void_refinement",
+   "tier": "tier:vi",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 60
+     },
+     {
+      "enemy": "enemy:crane_dancer",
+      "level": 60
+     },
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 60
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:gudiao",
+      "level": 62
+     },
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 60
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 210
+    },
+    {
+     "cur": "cur:fate_incense",
+     "qty": 2
+    },
+    {
+     "cur": "cur:blossom_dew",
+     "qty": 20
+    },
+    {
+     "item": "item:bodhi_leaf",
+     "qty": 2
+    },
+    {
+     "item": "item:artefact_essence",
+     "qty": 13
+    },
+    {
+     "gear": {
+      "tier": "tier:vi",
+      "set": "any",
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:mythic": 1.0
+      }
+     }
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_079"
+   }
+  },
+  {
+   "id": "stage:pagoda_081",
+   "name": "Pagoda Floor 81",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 81,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:body_integration",
+   "tier": "tier:vii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 61
+     },
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 61
+     },
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 61
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 61
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 61
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 61
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 212
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_080"
+   }
+  },
+  {
+   "id": "stage:pagoda_082",
+   "name": "Pagoda Floor 82",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 82,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:body_integration",
+   "tier": "tier:vii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 61
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 61
+     },
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 61
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 61
+     },
+     {
+      "enemy": "enemy:snow_wolf",
+      "level": 61
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 61
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 61
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 214
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_081"
+   }
+  },
+  {
+   "id": "stage:pagoda_083",
+   "name": "Pagoda Floor 83",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 83,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:body_integration",
+   "tier": "tier:vii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 62
+     },
+     {
+      "enemy": "enemy:thorn_wraith",
+      "level": 62
+     },
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 62
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 62
+     },
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 62
+     },
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 62
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 216
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_082"
+   }
+  },
+  {
+   "id": "stage:pagoda_084",
+   "name": "Pagoda Floor 84",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 84,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:body_integration",
+   "tier": "tier:vii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 62
+     },
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 62
+     },
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 62
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 62
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 62
+     },
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 62
+     },
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 62
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 218
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_083"
+   }
+  },
+  {
+   "id": "stage:pagoda_085",
+   "name": "Pagoda Floor 85",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 85,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:body_integration",
+   "tier": "tier:vii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 63
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 63
+     },
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 63
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 63
+     },
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 63
+     },
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 63
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 220
+    },
+    {
+     "cur": "cur:fate_incense",
+     "qty": 2
+    },
+    {
+     "item": "item:array_flag",
+     "qty": 4
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_084"
+   }
+  },
+  {
+   "id": "stage:pagoda_086",
+   "name": "Pagoda Floor 86",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 86,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:body_integration",
+   "tier": "tier:vii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 63
+     },
+     {
+      "enemy": "enemy:ash_hound",
+      "level": 63
+     },
+     {
+      "enemy": "enemy:thorn_wraith",
+      "level": 63
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 63
+     },
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 63
+     },
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 63
+     },
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 63
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 222
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_085"
+   }
+  },
+  {
+   "id": "stage:pagoda_087",
+   "name": "Pagoda Floor 87",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 87,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:body_integration",
+   "tier": "tier:vii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 64
+     },
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 64
+     },
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 64
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 64
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 64
+     },
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 64
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 224
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_086"
+   }
+  },
+  {
+   "id": "stage:pagoda_088",
+   "name": "Pagoda Floor 88",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 88,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:body_integration",
+   "tier": "tier:vii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 64
+     },
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 64
+     },
+     {
+      "enemy": "enemy:ash_hound",
+      "level": 64
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 64
+     },
+     {
+      "enemy": "enemy:netherflame_hexer",
+      "level": 64
+     },
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 64
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 64
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 226
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_087"
+   }
+  },
+  {
+   "id": "stage:pagoda_089",
+   "name": "Pagoda Floor 89",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 89,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:body_integration",
+   "tier": "tier:vii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 65
+     },
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 65
+     },
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 65
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:crane_dancer",
+      "level": 65
+     },
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 65
+     },
+     {
+      "enemy": "enemy:crane_dancer",
+      "level": 65
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 228
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_088"
+   }
+  },
+  {
+   "id": "stage:pagoda_090",
+   "name": "Pagoda Floor 90",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 90,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:body_integration",
+   "tier": "tier:vii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 65
+     },
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 65
+     },
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 65
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:zhuyan",
+      "level": 67
+     },
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 65
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 230
+    },
+    {
+     "cur": "cur:fate_incense",
+     "qty": 2
+    },
+    {
+     "cur": "cur:blossom_dew",
+     "qty": 20
+    },
+    {
+     "item": "item:bodhi_leaf",
+     "qty": 2
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": 1
+    },
+    {
+     "item": "item:artefact_essence",
+     "qty": 14
+    },
+    {
+     "gear": {
+      "tier": "tier:vii",
+      "set": "any",
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:mythic": 1.0
+      }
+     }
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_089"
+   }
+  },
+  {
+   "id": "stage:pagoda_091",
+   "name": "Pagoda Floor 91",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 91,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:body_integration",
+   "tier": "tier:vii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 66
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 66
+     },
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 66
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 66
+     },
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 66
+     },
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 66
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 232
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_090"
+   }
+  },
+  {
+   "id": "stage:pagoda_092",
+   "name": "Pagoda Floor 92",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 92,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:body_integration",
+   "tier": "tier:vii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 66
+     },
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 66
+     },
+     {
+      "enemy": "enemy:ash_hound",
+      "level": 66
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 66
+     },
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 66
+     },
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 66
+     },
+     {
+      "enemy": "enemy:crane_dancer",
+      "level": 66
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 234
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_091"
+   }
+  },
+  {
+   "id": "stage:pagoda_093",
+   "name": "Pagoda Floor 93",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 93,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:body_integration",
+   "tier": "tier:vii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 67
+     },
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 67
+     },
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 67
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 67
+     },
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 67
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 67
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 236
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_092"
+   }
+  },
+  {
+   "id": "stage:pagoda_094",
+   "name": "Pagoda Floor 94",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 94,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:body_integration",
+   "tier": "tier:vii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 67
+     },
+     {
+      "enemy": "enemy:ash_hound",
+      "level": 67
+     },
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 67
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 67
+     },
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 67
+     },
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 67
+     },
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 67
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 238
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_093"
+   }
+  },
+  {
+   "id": "stage:pagoda_095",
+   "name": "Pagoda Floor 95",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 95,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:body_integration",
+   "tier": "tier:vii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 68
+     },
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 68
+     },
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 68
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 68
+     },
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 68
+     },
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 68
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 240
+    },
+    {
+     "cur": "cur:fate_incense",
+     "qty": 2
+    },
+    {
+     "item": "item:array_flag",
+     "qty": 5
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_094"
+   }
+  },
+  {
+   "id": "stage:pagoda_096",
+   "name": "Pagoda Floor 96",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 96,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:body_integration",
+   "tier": "tier:vii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 68
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 68
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 68
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 68
+     },
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 68
+     },
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 68
+     },
+     {
+      "enemy": "enemy:thorn_wraith",
+      "level": 68
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 242
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_095"
+   }
+  },
+  {
+   "id": "stage:pagoda_097",
+   "name": "Pagoda Floor 97",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 97,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:body_integration",
+   "tier": "tier:vii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_hexer",
+      "level": 69
+     },
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 69
+     },
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 69
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:crane_dancer",
+      "level": 69
+     },
+     {
+      "enemy": "enemy:snow_wolf",
+      "level": 69
+     },
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 69
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 244
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_096"
+   }
+  },
+  {
+   "id": "stage:pagoda_098",
+   "name": "Pagoda Floor 98",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 98,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:body_integration",
+   "tier": "tier:vii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:snow_wolf",
+      "level": 69
+     },
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 69
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 69
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 69
+     },
+     {
+      "enemy": "enemy:snow_wolf",
+      "level": 69
+     },
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 69
+     },
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 69
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 246
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_097"
+   }
+  },
+  {
+   "id": "stage:pagoda_099",
+   "name": "Pagoda Floor 99",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 99,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:body_integration",
+   "tier": "tier:vii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:crane_dancer",
+      "level": 70
+     },
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 70
+     },
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 70
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 70
+     },
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 70
+     },
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 70
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 248
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_098"
+   }
+  },
+  {
+   "id": "stage:pagoda_100",
+   "name": "Pagoda Floor 100",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 100,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:body_integration",
+   "tier": "tier:vii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 70
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 70
+     },
+     {
+      "enemy": "enemy:ash_hound",
+      "level": 70
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:fallen_ying_long",
+      "level": 72
+     },
+     {
+      "enemy": "enemy:crane_dancer",
+      "level": 70
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 250
+    },
+    {
+     "cur": "cur:fate_incense",
+     "qty": 3
+    },
+    {
+     "cur": "cur:blossom_dew",
+     "qty": 30
+    },
+    {
+     "item": "item:bodhi_leaf",
+     "qty": 3
+    },
+    {
+     "item": "item:artefact_essence",
+     "qty": 15
+    },
+    {
+     "gear": {
+      "tier": "tier:vii",
+      "set": "any",
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:mythic": 1.0
+      }
+     }
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_099"
+   }
+  },
+  {
+   "id": "stage:pagoda_101",
+   "name": "Pagoda Floor 101",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 101,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:mahayana",
+   "tier": "tier:viii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 71
+     },
+     {
+      "enemy": "enemy:ash_hound",
+      "level": 71
+     },
+     {
+      "enemy": "enemy:snow_wolf",
+      "level": 71
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 71
+     },
+     {
+      "enemy": "enemy:netherflame_hexer",
+      "level": 71
+     },
+     {
+      "enemy": "enemy:thorn_wraith",
+      "level": 71
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 252
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    },
+    {
+     "drops": "drops:unique_fragments",
+     "rolls": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_100"
+   }
+  },
+  {
+   "id": "stage:pagoda_102",
+   "name": "Pagoda Floor 102",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 102,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:mahayana",
+   "tier": "tier:viii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 72
+     },
+     {
+      "enemy": "enemy:thorn_wraith",
+      "level": 72
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 72
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:thorn_wraith",
+      "level": 72
+     },
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 72
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 72
+     },
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 72
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 254
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    },
+    {
+     "drops": "drops:unique_fragments",
+     "rolls": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_101"
+   }
+  },
+  {
+   "id": "stage:pagoda_103",
+   "name": "Pagoda Floor 103",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 103,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:mahayana",
+   "tier": "tier:viii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 72
+     },
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 72
+     },
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 72
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 72
+     },
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 72
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 72
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 256
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    },
+    {
+     "drops": "drops:unique_fragments",
+     "rolls": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_102"
+   }
+  },
+  {
+   "id": "stage:pagoda_104",
+   "name": "Pagoda Floor 104",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 104,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:mahayana",
+   "tier": "tier:viii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:crane_dancer",
+      "level": 73
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 73
+     },
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 73
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:crane_dancer",
+      "level": 73
+     },
+     {
+      "enemy": "enemy:netherflame_priestess",
+      "level": 73
+     },
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 73
+     },
+     {
+      "enemy": "enemy:thorn_wraith",
+      "level": 73
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 258
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    },
+    {
+     "drops": "drops:unique_fragments",
+     "rolls": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_103"
+   }
+  },
+  {
+   "id": "stage:pagoda_105",
+   "name": "Pagoda Floor 105",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 105,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:mahayana",
+   "tier": "tier:viii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 74
+     },
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 74
+     },
+     {
+      "enemy": "enemy:thorn_wraith",
+      "level": 74
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 74
+     },
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 74
+     },
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 74
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 260
+    },
+    {
+     "cur": "cur:fate_incense",
+     "qty": 3
+    },
+    {
+     "item": "item:array_flag",
+     "qty": 5
+    },
+    {
+     "gear": {
+      "tier": "tier:viii",
+      "set": "any",
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:immortal": 0.9,
+       "rarity:divine": 0.1
+      }
+     }
+    },
+    {
+     "drops": "drops:unique_fragments",
+     "rolls": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_104"
+   }
+  },
+  {
+   "id": "stage:pagoda_106",
+   "name": "Pagoda Floor 106",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 106,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:mahayana",
+   "tier": "tier:viii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 74
+     },
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 74
+     },
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 74
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 74
+     },
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 74
+     },
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 74
+     },
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 74
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 262
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    },
+    {
+     "drops": "drops:unique_fragments",
+     "rolls": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_105"
+   }
+  },
+  {
+   "id": "stage:pagoda_107",
+   "name": "Pagoda Floor 107",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 107,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:mahayana",
+   "tier": "tier:viii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 75
+     },
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 75
+     },
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 75
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:thorn_wraith",
+      "level": 75
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 75
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 75
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 264
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    },
+    {
+     "drops": "drops:unique_fragments",
+     "rolls": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_106"
+   }
+  },
+  {
+   "id": "stage:pagoda_108",
+   "name": "Pagoda Floor 108",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 108,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:mahayana",
+   "tier": "tier:viii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 75
+     },
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 75
+     },
+     {
+      "enemy": "enemy:netherflame_blade",
+      "level": 75
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 75
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 75
+     },
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 75
+     },
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 75
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 266
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    },
+    {
+     "drops": "drops:unique_fragments",
+     "rolls": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_107"
+   }
+  },
+  {
+   "id": "stage:pagoda_109",
+   "name": "Pagoda Floor 109",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 109,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:mahayana",
+   "tier": "tier:viii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 76
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 76
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 76
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 76
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 76
+     },
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 76
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 268
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    },
+    {
+     "drops": "drops:unique_fragments",
+     "rolls": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_108"
+   }
+  },
+  {
+   "id": "stage:pagoda_110",
+   "name": "Pagoda Floor 110",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 110,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:mahayana",
+   "tier": "tier:viii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 77
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 77
+     },
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 77
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:tiangou",
+      "level": 79
+     },
+     {
+      "enemy": "enemy:ash_hound",
+      "level": 77
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 270
+    },
+    {
+     "cur": "cur:fate_incense",
+     "qty": 3
+    },
+    {
+     "cur": "cur:blossom_dew",
+     "qty": 30
+    },
+    {
+     "item": "item:bodhi_leaf",
+     "qty": 3
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": 1
+    },
+    {
+     "item": "item:artefact_essence",
+     "qty": 16
+    },
+    {
+     "gear": {
+      "tier": "tier:viii",
+      "set": "any",
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:immortal": 0.9,
+       "rarity:divine": 0.1
+      }
+     }
+    },
+    {
+     "drops": "drops:unique_fragments",
+     "rolls": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_109"
+   }
+  },
+  {
+   "id": "stage:pagoda_111",
+   "name": "Pagoda Floor 111",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 111,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:mahayana",
+   "tier": "tier:viii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 77
+     },
+     {
+      "enemy": "enemy:snow_wolf",
+      "level": 77
+     },
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 77
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 77
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 77
+     },
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 77
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 272
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    },
+    {
+     "drops": "drops:unique_fragments",
+     "rolls": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_110"
+   }
+  },
+  {
+   "id": "stage:pagoda_112",
+   "name": "Pagoda Floor 112",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 112,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:mahayana",
+   "tier": "tier:viii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 78
+     },
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 78
+     },
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 78
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 78
+     },
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 78
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 78
+     },
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 78
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 274
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    },
+    {
+     "drops": "drops:unique_fragments",
+     "rolls": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_111"
+   }
+  },
+  {
+   "id": "stage:pagoda_113",
+   "name": "Pagoda Floor 113",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 113,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:mahayana",
+   "tier": "tier:viii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 79
+     },
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 79
+     },
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 79
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 79
+     },
+     {
+      "enemy": "enemy:bamboo_spider",
+      "level": 79
+     },
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 79
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 276
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    },
+    {
+     "drops": "drops:unique_fragments",
+     "rolls": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_112"
+   }
+  },
+  {
+   "id": "stage:pagoda_114",
+   "name": "Pagoda Floor 114",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 114,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:mahayana",
+   "tier": "tier:viii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:thorn_wraith",
+      "level": 79
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 79
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 79
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:thorn_wraith",
+      "level": 79
+     },
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 79
+     },
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 79
+     },
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 79
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 278
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    },
+    {
+     "drops": "drops:unique_fragments",
+     "rolls": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_113"
+   }
+  },
+  {
+   "id": "stage:pagoda_115",
+   "name": "Pagoda Floor 115",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 115,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:mahayana",
+   "tier": "tier:viii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 80
+     },
+     {
+      "enemy": "enemy:mire_wraith",
+      "level": 80
+     },
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 80
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:snow_wolf",
+      "level": 80
+     },
+     {
+      "enemy": "enemy:netherflame_hexer",
+      "level": 80
+     },
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 80
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 280
+    },
+    {
+     "cur": "cur:fate_incense",
+     "qty": 3
+    },
+    {
+     "item": "item:array_flag",
+     "qty": 5
+    },
+    {
+     "gear": {
+      "tier": "tier:viii",
+      "set": "any",
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:immortal": 0.9,
+       "rarity:divine": 0.1
+      }
+     }
+    },
+    {
+     "drops": "drops:unique_fragments",
+     "rolls": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_114"
+   }
+  },
+  {
+   "id": "stage:pagoda_116",
+   "name": "Pagoda Floor 116",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 116,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:mahayana",
+   "tier": "tier:viii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 80
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 80
+     },
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 80
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 80
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 80
+     },
+     {
+      "enemy": "enemy:fox_trickster",
+      "level": 80
+     },
+     {
+      "enemy": "enemy:ash_hound",
+      "level": 80
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 282
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    },
+    {
+     "drops": "drops:unique_fragments",
+     "rolls": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_115"
+   }
+  },
+  {
+   "id": "stage:pagoda_117",
+   "name": "Pagoda Floor 117",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 117,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:mahayana",
+   "tier": "tier:viii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:crane_dancer",
+      "level": 81
+     },
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 81
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 81
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 81
+     },
+     {
+      "enemy": "enemy:snow_wolf",
+      "level": 81
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 81
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 284
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    },
+    {
+     "drops": "drops:unique_fragments",
+     "rolls": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_116"
+   }
+  },
+  {
+   "id": "stage:pagoda_118",
+   "name": "Pagoda Floor 118",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 118,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:mahayana",
+   "tier": "tier:viii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 82
+     },
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 82
+     },
+     {
+      "enemy": "enemy:netherflame_shade",
+      "level": 82
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 82
+     },
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 82
+     },
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 82
+     },
+     {
+      "enemy": "enemy:netherflame_flamecaller",
+      "level": 82
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 286
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    },
+    {
+     "drops": "drops:unique_fragments",
+     "rolls": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_117"
+   }
+  },
+  {
+   "id": "stage:pagoda_119",
+   "name": "Pagoda Floor 119",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 119,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:mahayana",
+   "tier": "tier:viii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 82
+     },
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 82
+     },
+     {
+      "enemy": "enemy:bone_wraith",
+      "level": 82
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:netherflame_bonewarden",
+      "level": 82
+     },
+     {
+      "enemy": "enemy:ember_wraith",
+      "level": 82
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 82
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 288
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    },
+    {
+     "drops": "drops:unique_fragments",
+     "rolls": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_118"
+   }
+  },
+  {
+   "id": "stage:pagoda_120",
+   "name": "Pagoda Floor 120",
+   "mode": "mode:pagoda",
+   "kind": "floor",
+   "level": 120,
+   "location": "loc:demon_sealing_pagoda",
+   "realm": "realm:mahayana",
+   "tier": "tier:viii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:frostpeak_traitor",
+      "level": 83
+     },
+     {
+      "enemy": "enemy:thorn_wraith",
+      "level": 83
+     },
+     {
+      "enemy": "enemy:snow_wolf",
+      "level": 83
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:sovereign_shade",
+      "level": 85
+     },
+     {
+      "enemy": "enemy:drowned_wraith",
+      "level": 83
+     }
+    ]
+   ],
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 290
+    },
+    {
+     "cur": "cur:fate_incense",
+     "qty": 3
+    },
+    {
+     "cur": "cur:blossom_dew",
+     "qty": 30
+    },
+    {
+     "item": "item:bodhi_leaf",
+     "qty": 3
+    },
+    {
+     "item": "item:artefact_essence",
+     "qty": 17
+    },
+    {
+     "gear": {
+      "tier": "tier:viii",
+      "set": "any",
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:immortal": 0.9,
+       "rarity:divine": 0.1
+      }
+     }
+    },
+    {
+     "drops": "drops:unique_fragments",
+     "rolls": 2
+    }
+   ],
+   "draft": true,
+   "unlock": {
+    "clear": "stage:pagoda_119"
+   }
+  }
+ ]
+}

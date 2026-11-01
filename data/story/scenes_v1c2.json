@@ -1,0 +1,691 @@
+{
+ "about": "Story scenes of Volume 1, chapter 2, Frostpeak: Elder Han Lie sells his disciples, and Ling Shuang refuses to kneel and joins (draft).",
+ "records": [
+  {
+   "id": "scene:v1c2_01_before",
+   "name": "The Frozen Pass",
+   "location": "loc:frostpeak",
+   "cast": [
+    "npc:tao_yao",
+    "hero:su_lianhua",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "The thread pulls north for nine days, up into mountains where the snow never melts. Somewhere above the pass, wolves are howling."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "worried",
+     "text": "Remind me why the thread couldn't point somewhere warm? With tea houses?"
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "smile",
+     "text": "You can borrow my cloak, Tao Yao. I don't feel the cold much."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "smile",
+     "text": "That's because you're a saint. I'm a steward. Stewards freeze."
+    },
+    {
+     "text": "Around the next bend, the path is not empty. Three young cultivators in Frostpeak white sit against the rocks, rimed with frost, their swords still in their hands."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "sad",
+     "text": "They're gone. They have been for days."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "worried",
+     "text": "But this frost isn't the mountain's. Only Frostpeak's sword arts leave wounds like these, Pavilion Master. They were cut down by their own sect."
+    },
+    {
+     "speaker": "npc:pavilion_master",
+     "expression": "neutral",
+     "text": "Traitors."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "determined",
+     "text": "We'll give them proper rites on the way down. For now, the wolves have our scent."
+    },
+    {
+     "text": "Snow wolves pour down the slope. Behind them walks a figure in Frostpeak white who does not look like a rescuer."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c2_02_before",
+   "name": "Disciples in Chains",
+   "location": "loc:frostpeak",
+   "cast": [
+    "npc:fang_qing",
+    "hero:ling_shuang",
+    "hero:su_lianhua",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "Below the ridge, a line of young disciples trudges through the snow, chained neck to neck. Frostpeak traitors and black-robed cultists drive them on with whips of grey fire."
+    },
+    {
+     "speaker": "npc:fang_qing",
+     "expression": "sad",
+     "text": "Senior Brother Zhou, please! We trained together! Why are you doing this?"
+    },
+    {
+     "text": "Then the snow on the ridge explodes. A swordswoman in white drops into the middle of the convoy, and the first whip falls in two pieces."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "angry",
+     "text": "Release them."
+    },
+    {
+     "speaker": "npc:fang_qing",
+     "expression": "surprised",
+     "text": "Senior Sister Ling! You came!"
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "neutral",
+     "text": "Get up, Fang Qing. Frostpeak does not kneel in the snow."
+    },
+    {
+     "text": "A dozen blades turn on her at once. She does not step back."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "worried",
+     "text": "She's alone against all of them. Pavilion Master!"
+    },
+    {
+     "speaker": "npc:pavilion_master",
+     "expression": "neutral",
+     "text": "We're with you."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "neutral",
+     "text": "I didn't ask for help."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "determined",
+     "text": "...Fine. Keep up."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c2_03_before",
+   "name": "She Will Not Kneel",
+   "location": "loc:frostpeak",
+   "cast": [
+    "npc:elder_han_lie",
+    "hero:ling_shuang",
+    "npc:fang_qing",
+    "hero:su_lianhua",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "The Hall of Frost Swords is cold enough to see your breath. Disciples line its walls in silence. On the Sect Master's dais sits not the Sect Master, but a broad old man in a grey fur mantle."
+    },
+    {
+     "speaker": "npc:elder_han_lie",
+     "expression": "smug",
+     "text": "Ling Shuang. You attacked our convoy, freed our prisoners, and brought outsiders into this hall."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "angry",
+     "text": "Prisoners? They are our juniors, Elder Han. Where is the Sect Master?"
+    },
+    {
+     "speaker": "npc:elder_han_lie",
+     "expression": "neutral",
+     "text": "In closed-door cultivation. Until she emerges, I speak for Frostpeak. And Frostpeak has made an alliance."
+    },
+    {
+     "text": "From behind the dais steps a man in black robes, a small grey flame floating above his palm."
+    },
+    {
+     "speaker": "npc:elder_han_lie",
+     "expression": "smile",
+     "text": "The Netherflame Sect offers us protection, pills, and techniques we could only dream of. In return, they train a few of our disciples. A small price."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "angry",
+     "text": "You sold them."
+    },
+    {
+     "speaker": "npc:elder_han_lie",
+     "expression": "angry",
+     "text": "I made Frostpeak strong! Now kneel. Apologise to our allies, accept the alliance, and I may forget today ever happened."
+    },
+    {
+     "text": "The hall waits. Ling Shuang does not move."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "determined",
+     "text": "A plum does not bow to the snow. I will not kneel to you, and I will never kneel to them."
+    },
+    {
+     "speaker": "npc:elder_han_lie",
+     "expression": "angry",
+     "text": "Then you are no disciple of Frostpeak! Your name is struck from the registry. Get out of my hall!"
+    },
+    {
+     "speaker": "npc:fang_qing",
+     "expression": "worried",
+     "text": "Elder, please! Senior Sister Ling only wanted..."
+    },
+    {
+     "speaker": "npc:elder_han_lie",
+     "expression": "angry",
+     "text": "Silence! Unless you would like to rejoin the convoy."
+    },
+    {
+     "text": "Ling Shuang turns and walks out through the great doors. Her back is very straight. Her hands are shaking."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "worried",
+     "text": "Ling Shuang..."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "neutral",
+     "text": "Don't. I don't need comfort."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "determined",
+     "text": "I need a way back in. The Sect Master would never stay silent through this. He has done something to her."
+    },
+    {
+     "speaker": "npc:pavilion_master",
+     "expression": "neutral",
+     "text": "Then we find her."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "neutral",
+     "text": "...You keep saying \"we\". Strange habit."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c2_04_before",
+   "name": "Crane Cliffs",
+   "location": "loc:frostpeak",
+   "cast": [
+    "npc:elder_he_ling",
+    "hero:ling_shuang",
+    "npc:tao_yao",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "High above Frostpeak, on cliffs where only cranes nest, an old woman in white and red feathers stands at the very edge, watching the sect below."
+    },
+    {
+     "speaker": "npc:elder_he_ling",
+     "expression": "neutral",
+     "text": "The Frostpeak child who would not kneel. I watched it all from here. Cranes see a great deal."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "neutral",
+     "text": "Then you know what I want. The old path into the sect. The one your clan uses."
+    },
+    {
+     "speaker": "npc:elder_he_ling",
+     "expression": "smile",
+     "text": "The path the cranes walked before there was any sect. Yes, I know it. And I do not show it to anyone who merely asks."
+    },
+    {
+     "speaker": "npc:elder_he_ling",
+     "expression": "smug",
+     "text": "Words are cheap on a mountain; the wind takes them. Dance with my daughters. If your feet are as firm as your pride, I will show you the way."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "worried",
+     "text": "Dance? Like... actual dancing? I'm terrible at dancing."
+    },
+    {
+     "speaker": "npc:elder_he_ling",
+     "expression": "laugh",
+     "text": "A crane's dance has talons in it, little peach. You will not be dancing. They will."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "surprised",
+     "text": "Little peach?! I'm a steward!"
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "determined",
+     "text": "Fine. I'll dance."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c2_04_after",
+   "name": "The Cranes' Path",
+   "location": "loc:frostpeak",
+   "cast": [
+    "npc:elder_he_ling",
+    "hero:ling_shuang",
+    "hero:su_lianhua",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "The last crane dancer lands lightly, folds her wings, and bows. Elder He Ling claps twice."
+    },
+    {
+     "speaker": "npc:elder_he_ling",
+     "expression": "smile",
+     "text": "Firm feet. Firmer than your elder's, I'd wager. He has been kneeling to someone for months now. It shows in his stance."
+    },
+    {
+     "speaker": "npc:elder_he_ling",
+     "expression": "neutral",
+     "text": "The path begins behind the frozen waterfall and comes out beneath the sword tombs. Go quietly. The traitors patrol it too."
+    },
+    {
+     "speaker": "npc:elder_he_ling",
+     "expression": "smug",
+     "text": "And take this. A book of poems. Your swordswoman could use something softer than steel to read."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "angry",
+     "text": "I don't need poetry."
+    },
+    {
+     "speaker": "npc:elder_he_ling",
+     "expression": "laugh",
+     "text": "That is what every sword says, child, until the day it does."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "smile",
+     "text": "I'll keep it safe for her. Thank you, Elder."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "neutral",
+     "text": "...You may read me the plum poems. Later."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c2_05_before",
+   "name": "Blizzard Ambush",
+   "location": "loc:frostpeak",
+   "cast": [
+    "hero:ling_shuang",
+    "hero:su_lianhua",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "Behind the frozen waterfall, the cranes' path winds up through a cleft in the mountain. Then the wind rises, and the world turns white."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "neutral",
+     "text": "The crane was right. They patrol even this path."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "determined",
+     "text": "Stay close, everyone. I can't heal what I can't see."
+    },
+    {
+     "text": "Shapes move in the blizzard: Frostpeak blades, and grey netherflame burning cold in the snow."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "angry",
+     "text": "Traitors. Come, then. Let us see whose frost is sharper."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c2_06_before",
+   "name": "The Fortune Teller in the Snow",
+   "location": "loc:frostpeak",
+   "cast": [
+    "npc:seer_bai",
+    "npc:tao_yao",
+    "hero:ling_shuang",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "On a ledge no one could possibly have climbed, a blind old man sits on a straw mat beside a little brazier, as if waiting for customers in a market square."
+    },
+    {
+     "speaker": "npc:seer_bai",
+     "expression": "smile",
+     "text": "Ah, there you are. Sit, sit. The brazier is warm and the fortunes are cheap."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "surprised",
+     "text": "You! You were at Peach Blossom Ford! How did you get all the way up here?"
+    },
+    {
+     "speaker": "npc:seer_bai",
+     "expression": "laugh",
+     "text": "Was I? I'm often at fords. And on cliffs. Old men wander."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "neutral",
+     "text": "I don't believe in fortunes."
+    },
+    {
+     "speaker": "npc:seer_bai",
+     "expression": "smile",
+     "text": "Good. Fortunes don't need you to believe in them. Give me your hand, Frostpeak girl."
+    },
+    {
+     "text": "Despite herself, Ling Shuang holds out her hand. The old man doesn't take it. He only tilts his head, as if listening to the snow fall."
+    },
+    {
+     "speaker": "npc:seer_bai",
+     "expression": "neutral",
+     "text": "A plum, blooming in the hardest frost. Not for this mountain, though. For a garden that burned long ago, and for the hand that first planted it."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "surprised",
+     "text": "...What garden?"
+    },
+    {
+     "speaker": "npc:seer_bai",
+     "expression": "smile",
+     "text": "Ask the one who sees threads. Or ask the little peach. Her memory is far better than mine."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "laugh",
+     "text": "Ha ha! He's very confused, poor thing. It's the altitude. Shall we go? We should go. The Sect Master needs rescuing!"
+    },
+    {
+     "speaker": "npc:seer_bai",
+     "expression": "smug",
+     "text": "Run along, then. The tombs are restless tonight."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c2_07_before",
+   "name": "Hall of the Sword Tombs",
+   "location": "loc:frostpeak",
+   "cast": [
+    "hero:ling_shuang",
+    "hero:su_lianhua",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "The cranes' path ends beneath Frostpeak's sword tombs, where every master of the sect lies with a blade planted above the grave. Tonight the blades are humming."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "angry",
+     "text": "They opened the tombs. They raised our ancestors as wraiths to guard their stair."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "sad",
+     "text": "Those poor souls. They should be resting."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "determined",
+     "text": "Then I will lay them to rest. Forgive me, honoured masters. The prison stair is behind you."
+    },
+    {
+     "text": "Bones in rotted sect robes rise between the blades, grey fire in their eyes."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c2_08_before",
+   "name": "Freeing the Sect Master",
+   "location": "loc:frostpeak",
+   "cast": [
+    "hero:ling_shuang",
+    "npc:frostpeak_master",
+    "hero:su_lianhua",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "At the bottom of the prison stair, a woman with hair as white as her name hangs in chains of grey fire, her eyes closed, her breathing slow."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "surprised",
+     "text": "Master!"
+    },
+    {
+     "text": "One stroke, then another. The netherflame chains part like silk beneath Ling Shuang's frost."
+    },
+    {
+     "speaker": "npc:frostpeak_master",
+     "expression": "smile",
+     "text": "Ling'er. I knew that if anyone came, it would be the one who never listens to orders."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "sad",
+     "text": "Forgive me. I should have come sooner."
+    },
+    {
+     "speaker": "npc:frostpeak_master",
+     "expression": "worried",
+     "text": "Listen to me. Han Lie has been stuck at the same realm for sixty years. The Netherflame Envoy offered him a pill to break through. A single pill."
+    },
+    {
+     "speaker": "npc:frostpeak_master",
+     "expression": "sad",
+     "text": "The price was our disciples. Thirty young cultivators with strong roots, delivered in chains. I refused him. So he chained me too."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "angry",
+     "text": "He traded our juniors for a pill."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "worried",
+     "text": "A Netherflame pill would burn a man from the inside to give him strength, Pavilion Master. He may already have taken it."
+    },
+    {
+     "text": "Above them, the stair rings with running feet. The traitors have found the broken chains."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "determined",
+     "text": "Stay behind me, Master. This time, no one takes you."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c2_09_before",
+   "name": "Elder Han's Betrayal",
+   "location": "loc:frostpeak",
+   "cast": [
+    "npc:elder_han_lie",
+    "hero:ling_shuang",
+    "hero:su_lianhua",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "In the Hall of Frost Swords, Elder Han Lie waits on the dais. Grey fire pours from his eyes and mouth, and the frost on the floor around him has turned black."
+    },
+    {
+     "speaker": "npc:elder_han_lie",
+     "expression": "laugh",
+     "text": "Too late, Ling Shuang! I swallowed the Envoy's pill an hour ago. Can you feel it? Sixty years of walls, and now they're ash!"
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "angry",
+     "text": "You look like a candle burning at both ends, Elder."
+    },
+    {
+     "speaker": "npc:elder_han_lie",
+     "expression": "angry",
+     "text": "I look like a master! I was the strongest of my generation, and I watched children walk past me. You most of all!"
+    },
+    {
+     "speaker": "npc:elder_han_lie",
+     "expression": "smug",
+     "text": "Kneel now, and I'll let your new friends leave with their legs."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "determined",
+     "text": "I told you once. A plum does not bow to the snow. And you are not even snow anymore. You are ash."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "worried",
+     "text": "Pavilion Master, the netherflame is eating him alive. Whatever we do, we must do it quickly."
+    },
+    {
+     "text": "Elder Han raises his sword, and a hundred blades of grey frost rise with it."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c2_09_after",
+   "name": "A Plum in the Snow",
+   "location": "loc:frostpeak",
+   "cast": [
+    "npc:elder_han_lie",
+    "hero:ling_shuang",
+    "hero:su_lianhua",
+    "npc:tao_yao",
+    "npc:frostpeak_master",
+    "npc:fang_qing",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "Ling Shuang's last stroke falls like the first snow of winter: silent, and final. Elder Han Lie staggers back, and the grey fire pours out of him into the cold air."
+    },
+    {
+     "speaker": "npc:elder_han_lie",
+     "expression": "sad",
+     "text": "Sixty years... and still I couldn't..."
+    },
+    {
+     "text": "He falls and does not rise. Ling Shuang stands over him for a long moment, her sword lowered."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "sad",
+     "text": "He taught me my first sword form. I was six."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "sad",
+     "text": "Then remember that too. Not only this."
+    },
+    {
+     "text": "Where he fell lies an empty pill box of black lacquer, its lid carved with a withered branch."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "worried",
+     "text": "The same branch as the token at the ford. Someone has been very busy, Pavilion Master."
+    },
+    {
+     "speaker": "npc:frostpeak_master",
+     "expression": "neutral",
+     "text": "The Envoy. He never gave his name. Only his smile."
+    },
+    {
+     "text": "The Fate Lotus stirs at your belt. A thread cold and bright as starlight on snow runs from its heart to Ling Shuang's hand."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "surprised",
+     "text": "What is this? It feels like a blade I've always carried and never drawn."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "smile",
+     "text": "Your Dao Seed, waking up. A plum for the Garden, just as the old man said."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "neutral",
+     "text": "I said I don't believe in fortunes."
+    },
+    {
+     "speaker": "npc:frostpeak_master",
+     "expression": "smile",
+     "text": "And yet your feet already point toward the door. Han Lie struck your name from his registry, Ling'er. It was never struck from mine. Go. A sword is meant to be drawn, not hung in a hall."
+    },
+    {
+     "speaker": "npc:fang_qing",
+     "expression": "sad",
+     "text": "Senior Sister, you'll come back to visit? You promised to teach me the Frost Crescent!"
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "smile",
+     "text": "When you can hold a stance for an hour without complaining. Not before."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "determined",
+     "text": "Pavilion Master. Ling Shuang of Frostpeak, and of the Hundred Blossoms Pavilion, if you'll have me. Point me at whoever needs cutting down."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "smile",
+     "text": "Welcome, Ling Shuang. Would you like some tea before the road?"
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "neutral",
+     "text": "Wine, if there is any. Plum, if there is any."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "worried",
+     "text": "Oh dear."
+    }
+   ],
+   "draft": true
+  }
+ ]
+}

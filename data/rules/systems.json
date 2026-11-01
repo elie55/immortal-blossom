@@ -1,0 +1,381 @@
+{
+ "about": "Game systems: what each one spends and produces. Every item's use is here or in a recipe, shop or cost.",
+ "records": [
+  {
+   "id": "sys:cultivate",
+   "name": "Cultivate (levels)",
+   "consumes": [
+    "item:qi_gathering_pill",
+    "item:spirit_condensing_pill",
+    "item:heaven_earth_pill",
+    "item:nine_revolution_golden_pill",
+    "cur:spirit_stones"
+   ],
+   "rules": "rules:growth"
+  },
+  {
+   "id": "sys:breakthrough",
+   "name": "Breakthrough",
+   "consumes": [
+    "item:foundation_pill",
+    "item:golden_core_pill",
+    "item:nascent_soul_pill",
+    "item:severing_pill",
+    "item:void_pill",
+    "item:integration_pill",
+    "item:mahayana_pill",
+    "cur:spirit_stones"
+   ],
+   "trialsFrom": "realm:core_formation",
+   "mode": "mode:trials"
+  },
+  {
+   "id": "sys:meridians",
+   "name": "Meridians",
+   "meridians": [
+    {
+     "name": "Lung",
+     "phase": "phase:metal",
+     "stat": "stat:atk",
+     "cost": "item:metal_essence"
+    },
+    {
+     "name": "Liver",
+     "phase": "phase:wood",
+     "stat": "stat:haste",
+     "cost": "item:wood_essence"
+    },
+    {
+     "name": "Kidney",
+     "phase": "phase:water",
+     "stat": "stat:hp",
+     "cost": "item:water_essence"
+    },
+    {
+     "name": "Heart",
+     "phase": "phase:fire",
+     "stat": "stat:crit_dmg",
+     "cost": "item:fire_essence"
+    },
+    {
+     "name": "Spleen",
+     "phase": "phase:earth",
+     "stat": "stat:def",
+     "cost": "item:earth_essence"
+    },
+    {
+     "name": "Ren and Du vessels",
+     "upgrades": "one technique gains a new effect",
+     "cost": [
+      "item:metal_essence",
+      "item:wood_essence",
+      "item:water_essence",
+      "item:fire_essence",
+      "item:earth_essence",
+      "item:dao_crystal"
+     ]
+    }
+   ],
+   "nodeCost": "node N of 5: essence 10 * N (twice for her own phase), spirit stones 5000 * N",
+   "consumes": [
+    "item:metal_essence",
+    "item:wood_essence",
+    "item:water_essence",
+    "item:fire_essence",
+    "item:earth_essence",
+    "item:dao_crystal",
+    "cur:spirit_stones"
+   ]
+  },
+  {
+   "id": "sys:mastery",
+   "name": "Technique mastery",
+   "consumes": [
+    "item:enlightenment_scroll",
+    "item:bodhi_leaf"
+   ],
+   "levels": [
+    {
+     "level": 1,
+     "cost": [
+      {
+       "item": "item:enlightenment_scroll",
+       "qty": 2
+      }
+     ]
+    },
+    {
+     "level": 2,
+     "cost": [
+      {
+       "item": "item:enlightenment_scroll",
+       "qty": 4
+      }
+     ]
+    },
+    {
+     "level": 3,
+     "cost": [
+      {
+       "item": "item:enlightenment_scroll",
+       "qty": 8
+      }
+     ]
+    },
+    {
+     "level": 4,
+     "cost": [
+      {
+       "item": "item:enlightenment_scroll",
+       "qty": 12
+      },
+      {
+       "item": "item:bodhi_leaf",
+       "qty": 1
+      }
+     ]
+    },
+    {
+     "level": 5,
+     "cost": [
+      {
+       "item": "item:enlightenment_scroll",
+       "qty": 16
+      },
+      {
+       "item": "item:bodhi_leaf",
+       "qty": 2
+      }
+     ]
+    },
+    {
+     "level": 6,
+     "cost": [
+      {
+       "item": "item:bodhi_leaf",
+       "qty": 4
+      }
+     ],
+     "needs": "petal 3 (S2) or petal 5 (ultimate)"
+    }
+   ]
+  },
+  {
+   "id": "sys:dao_blossom",
+   "name": "Dao Blossom",
+   "consumes": [
+    "cur:blossom_dew"
+   ],
+   "petalDewCost": [
+    40,
+    60,
+    80,
+    100,
+    120,
+    160
+   ],
+   "duplicates": "each duplicate opens one petal",
+   "produces": [
+    {
+     "cur": "cur:blossom_dew",
+     "qty": 100,
+     "when": "a duplicate past Full Bloom"
+    }
+   ],
+   "target": "about one heroine fully bloomed a month without duplicates"
+  },
+  {
+   "id": "sys:bond",
+   "name": "Bonds",
+   "consumes": [
+    "item:gift_plum_wine",
+    "item:gift_jade_hairpin",
+    "item:gift_silk_fan",
+    "item:gift_calligraphy_scroll",
+    "item:gift_sword_tassel",
+    "item:gift_lotus_seed_cakes",
+    "item:gift_spirit_tea",
+    "item:gift_guqin_strings",
+    "item:gift_sandalwood_incense",
+    "item:gift_embroidered_pouch",
+    "item:gift_poetry_anthology",
+    "item:gift_hawthorn_candy"
+   ],
+   "rules": "rules:growth",
+   "unlocks": "profile entries, voice lines, outfits at levels 6 and 10, a lobby illustration at 10, a small stat bonus"
+  },
+  {
+   "id": "sys:summon",
+   "name": "Summon at the Fate Pond",
+   "pool": "pond:fate_pond",
+   "consumes": [
+    "cur:fate_incense"
+   ]
+  },
+  {
+   "id": "sys:recruit",
+   "name": "Sect Recruitment",
+   "pool": "recruit:sect_recruitment",
+   "consumes": [
+    "cur:sect_merit"
+   ]
+  },
+  {
+   "id": "sys:refine",
+   "name": "Refining +0 to +15",
+   "consumes": [
+    "cur:spirit_stones",
+    "item:forging_dust"
+   ],
+   "rules": "rules:gear",
+   "neverFails": true
+  },
+  {
+   "id": "sys:reforge",
+   "name": "Reforging",
+   "consumes": [
+    "item:black_iron",
+    "item:spirit_silver",
+    "item:starfall_iron",
+    "item:void_gold",
+    "cur:spirit_stones"
+   ],
+   "needs": "+15",
+   "tiers": [
+    "tier:i",
+    "tier:ii",
+    "tier:iii",
+    "tier:iv",
+    "tier:v",
+    "tier:vi",
+    "tier:vii",
+    "tier:viii"
+   ]
+  },
+  {
+   "id": "sys:engrave",
+   "name": "Engraving",
+   "consumes": [
+    "item:dao_mark"
+   ],
+   "oncePerPiece": true
+  },
+  {
+   "id": "sys:salvage",
+   "name": "Salvage (Storage Ring)",
+   "produces": [
+    "item:forging_dust",
+    "cur:spirit_stones",
+    "item:artefact_essence"
+   ],
+   "rarities": [
+    "rarity:common",
+    "rarity:uncommon",
+    "rarity:rare",
+    "rarity:epic",
+    "rarity:legendary",
+    "rarity:mythic",
+    "rarity:immortal",
+    "rarity:divine"
+   ],
+   "storageRing": {
+    "pageSize": 40,
+    "grid": "8 x 5",
+    "cap": null,
+    "autoSalvage": "never takes Immortal or Divine pieces unless allowed",
+    "restoreLast": 30,
+    "refundRefining": 0.8
+   }
+  },
+  {
+   "id": "sys:artefact_refine",
+   "name": "Artefact refining",
+   "consumes": [
+    "item:artefact_essence",
+    "cur:spirit_stones"
+   ],
+   "slot": "slot:artefact"
+  },
+  {
+   "id": "sys:hatch",
+   "name": "Hatching",
+   "consumes": [
+    "item:egg_common",
+    "item:egg_rare",
+    "item:egg_celestial"
+   ],
+   "beasts": [
+    "beast:koi",
+    "beast:jade_rabbit",
+    "beast:red_crowned_crane",
+    "beast:white_fox",
+    "beast:pixiu",
+    "beast:qilin_cub",
+    "beast:baize"
+   ]
+  },
+  {
+   "id": "sys:feed_beast",
+   "name": "Feeding spirit beasts",
+   "consumes": [
+    "item:spirit_grass",
+    "item:blood_ginseng"
+   ]
+  },
+  {
+   "id": "sys:array_upgrade",
+   "name": "Array upgrades",
+   "consumes": [
+    "item:array_flag",
+    "cur:spirit_stones"
+   ],
+   "arrays": [
+    "array:yellow_dragon",
+    "array:azure_dragon",
+    "array:white_tiger",
+    "array:vermilion_bird",
+    "array:black_tortoise"
+   ]
+  },
+  {
+   "id": "sys:fortune",
+   "name": "Heavenly Fortune",
+   "produces": [
+    "cur:heavenly_fortune"
+   ],
+   "consumes": [
+    "cur:heavenly_fortune"
+   ],
+   "refill": "over real time, up to 8 hours of bonus",
+   "bonus": "+30% EXP and spirit stones"
+  },
+  {
+   "id": "sys:gear",
+   "name": "Gear",
+   "slots": [
+    "slot:weapon",
+    "slot:helmet",
+    "slot:body",
+    "slot:gloves",
+    "slot:pants",
+    "slot:boots",
+    "slot:ring",
+    "slot:pendant",
+    "slot:artefact"
+   ],
+   "rules": "rules:gear",
+   "sets": [
+    "set:sword_heart",
+    "set:azure_dragon",
+    "set:white_tiger",
+    "set:vermilion_bird",
+    "set:qilin",
+    "set:black_tortoise",
+    "set:heavenly_eye",
+    "set:still_water",
+    "set:blood_lotus",
+    "set:five_elements"
+   ]
+  }
+ ]
+}

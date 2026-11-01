@@ -1,0 +1,243 @@
+{
+ "about": "Spirit Artefacts (法宝): named passives that scale with rarity (30% of Divine at Common, +10% per rarity). Never summoned.",
+ "records": [
+  {
+   "id": "art:immortal_slaying_knife",
+   "name": "Immortal-Slaying Flying Knife",
+   "cn": "斩仙飞刀",
+   "paths": [
+    "path:sword"
+   ],
+   "divine": {
+    "atk": 150,
+    "hp": 750
+   },
+   "passive": {
+    "trigger": "always",
+    "effects": [
+     {
+      "do": "stat",
+      "stat": "stat:crit_dmg",
+      "value": 0.2
+     }
+    ],
+    "text": "Critical hits deal 20% more damage"
+   }
+  },
+  {
+   "id": "art:demon_revealing_mirror",
+   "name": "Demon-Revealing Mirror",
+   "cn": "照妖镜",
+   "paths": [
+    "path:talisman",
+    "path:arcane"
+   ],
+   "divine": {
+    "atk": 150,
+    "hp": 750
+   },
+   "passive": {
+    "trigger": "on_hit",
+    "effects": [
+     {
+      "do": "dispel",
+      "count": 2,
+      "once": "battle"
+     }
+    ],
+    "text": "First hit of the battle removes 2 buffs"
+   }
+  },
+  {
+   "id": "art:plantain_fan",
+   "name": "Plantain Fan",
+   "cn": "芭蕉扇",
+   "paths": [
+    "path:arcane"
+   ],
+   "divine": {
+    "atk": 150,
+    "hp": 750
+   },
+   "passive": {
+    "trigger": "on_cast",
+    "effects": [
+     {
+      "do": "delay",
+      "turns": 1,
+      "target": "one_enemy",
+      "when": "area_technique"
+     }
+    ],
+    "text": "Area techniques delay one enemy technique by 1 turn"
+   }
+  },
+  {
+   "id": "art:immortal_binding_rope",
+   "name": "Immortal-Binding Rope",
+   "cn": "捆仙绳",
+   "paths": [
+    "path:talisman"
+   ],
+   "divine": {
+    "atk": 150,
+    "hp": 750
+   },
+   "passive": {
+    "trigger": "on_hit",
+    "effects": [
+     {
+      "do": "apply",
+      "status": "status:entangle",
+      "chance": 0.2,
+      "turns": 1
+     }
+    ],
+    "text": "20% chance to Entangle on hit"
+   }
+  },
+  {
+   "id": "art:wind_fire_wheels",
+   "name": "Wind-Fire Wheels",
+   "cn": "风火轮",
+   "paths": [
+    "path:shadow"
+   ],
+   "divine": {
+    "atk": 150,
+    "hp": 750
+   },
+   "passive": {
+    "trigger": "battle_start",
+    "effects": [
+     {
+      "do": "refresh",
+      "slot": "all",
+      "turns": 1
+     }
+    ],
+    "text": "Her techniques start 1 turn closer to ready"
+   }
+  },
+  {
+   "id": "art:heaven_shaking_seal",
+   "name": "Heaven-Shaking Seal",
+   "cn": "番天印",
+   "paths": [
+    "path:guardian"
+   ],
+   "divine": {
+    "atk": 150,
+    "hp": 750
+   },
+   "passive": {
+    "trigger": "on_cast",
+    "effects": [
+     {
+      "do": "apply",
+      "status": "status:qi_disruption",
+      "turns": 1,
+      "when": "provoke"
+     }
+    ],
+    "text": "Taunting enemies also lowers their Attack"
+   }
+  },
+  {
+   "id": "art:lotus_lantern",
+   "name": "Lotus Lantern",
+   "cn": "宝莲灯",
+   "paths": [
+    "path:healer"
+   ],
+   "divine": {
+    "atk": 150,
+    "hp": 750
+   },
+   "passive": {
+    "trigger": "always",
+    "effects": [
+     {
+      "do": "stat",
+      "stat": "stat:healing",
+      "value": 0.15
+     }
+    ],
+    "text": "Healing +15%"
+   }
+  },
+  {
+   "id": "art:qiankun_pouch",
+   "name": "Qiankun Pouch",
+   "cn": "乾坤袋",
+   "paths": [
+    "all"
+   ],
+   "divine": {
+    "atk": 150,
+    "hp": 750
+   },
+   "passive": {
+    "trigger": "battle_start",
+    "effects": [
+     {
+      "do": "qi",
+      "amount": 6
+     }
+    ],
+    "text": "+6 Spirit Qi at battle start"
+   }
+  },
+  {
+   "id": "art:purple_gold_gourd",
+   "name": "Purple-Gold Gourd",
+   "cn": "紫金葫芦",
+   "paths": [
+    "path:talisman",
+    "path:arcane"
+   ],
+   "divine": {
+    "atk": 150,
+    "hp": 750
+   },
+   "passive": {
+    "trigger": "on_ultimate",
+    "effects": [
+     {
+      "do": "apply",
+      "status": "status:sealed_meridians",
+      "turns": 1,
+      "target": "caster",
+      "when": "enemy_ultimate",
+      "once": "battle"
+     }
+    ],
+    "text": "The first enemy to cast an ultimate has its meridians sealed for 1 turn"
+   }
+  },
+  {
+   "id": "art:dinghai_pearl",
+   "name": "Sea-Calming Pearl",
+   "cn": "定海珠",
+   "paths": [
+    "path:healer",
+    "path:guardian"
+   ],
+   "divine": {
+    "atk": 150,
+    "hp": 750
+   },
+   "passive": {
+    "trigger": "battle_start",
+    "effects": [
+     {
+      "do": "phase_qi",
+      "amount": 2,
+      "phase": "fed"
+     }
+    ],
+    "text": "+2 Phase Qi to the phase she feeds at battle start"
+   }
+  }
+ ]
+}

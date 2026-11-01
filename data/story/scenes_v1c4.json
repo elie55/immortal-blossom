@@ -1,0 +1,720 @@
+{
+ "about": "Story scenes of Volume 1, chapter 4, Vermilion Ruins: the stolen Phoenix fire, the Silver Fox, and Yan Feihong joining (draft).",
+ "records": [
+  {
+   "id": "scene:v1c4_01_before",
+   "name": "Ash Roads",
+   "location": "loc:vermilion_ruins",
+   "cast": [
+    "hero:mo_yingyue",
+    "hero:ling_shuang",
+    "hero:su_lianhua",
+    "npc:tao_yao",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "The thread that pulls south burns. Past the river country, the green fades and the roads turn black with old lava. The mountains ahead glow red at night."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "neutral",
+     "text": "Hot. Sticky. No hawthorn sellers for fifty li. I want a raise."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "neutral",
+     "text": "You've been employed for nine days."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "smug",
+     "text": "Nine very hot days."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "smile",
+     "text": "Drink water, everyone. Slowly. Tao Yao, you too."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "worried",
+     "text": "I'm fine! Peach blossoms love sunshine. Just not... this much sunshine."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "neutral",
+     "text": "The Vermilion Phoenix Palace is up ahead. They've guarded a sealed fire there since before the Withering. If the Netherflame Sect wants anything in the south, it's that."
+    },
+    {
+     "text": "On the black road ahead, something moves: dogs made of drifting ash, eyes like coals, breath shimmering with heat."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "determined",
+     "text": "Ash hounds. Water quenches fire. This will be quick."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c4_02_before",
+   "name": "The Empty Altar",
+   "location": "loc:vermilion_ruins",
+   "cast": [
+    "hero:yan_feihong",
+    "hero:ling_shuang",
+    "hero:mo_yingyue",
+    "hero:su_lianhua",
+    "npc:elder_zhu_yan",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "The Vermilion Phoenix Palace rises from the crater of a sleeping volcano, all red pillars and golden roofs. In its highest hall stands a great bronze altar, open and empty, its seals cut."
+    },
+    {
+     "text": "The Palace is in uproar. In the middle of the uproar, fire blazing at her sleeves, stands a girl in vermilion."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "angry",
+     "text": "YOU! Our sacred fire vanishes, and three days later, strangers just stroll in through the front gate?"
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "neutral",
+     "text": "Thieves rarely use the front gate."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "angry",
+     "text": "Clever thieves do! Hand it over, or I'll burn you down to the soles of your boots!"
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "smug",
+     "text": "Is she always like this?"
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "smile",
+     "text": "Please, we haven't taken anything. We came because we feared someone would try."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "determined",
+     "text": "A likely story! I am Yan Feihong, first disciple of the Phoenix Palace, and I have never lost a fight. Not one!"
+    },
+    {
+     "speaker": "npc:elder_zhu_yan",
+     "expression": "neutral",
+     "text": "Feihong. Sit down before you set the curtains alight again."
+    },
+    {
+     "text": "An old woman with copper-red hair and a long pipe walks in slowly. The disciples part around her like water around a stone."
+    },
+    {
+     "speaker": "npc:elder_zhu_yan",
+     "expression": "neutral",
+     "text": "The seals were cut three nights ago, with illusions and a very sharp claw. These strangers were three days' walk away. I watched their dust on the road myself."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "angry",
+     "text": "...Then they're accomplices!"
+    },
+    {
+     "speaker": "npc:elder_zhu_yan",
+     "expression": "neutral",
+     "text": "That fire has burned on our altar since before the Withering. Netherflame is fire that has forgotten what it was. Ours remembers. In the wrong hands, it could be taught to forget."
+    },
+    {
+     "speaker": "npc:elder_zhu_yan",
+     "expression": "smile",
+     "text": "So go with them, Feihong, and watch them. If they are thieves, you will catch them. If they are not, you will catch the thief."
+    },
+    {
+     "speaker": "npc:elder_zhu_yan",
+     "expression": "neutral",
+     "text": "Pavilion Master, that lotus at your belt is very old. Older than this Palace. I won't ask where you found it. Bring back our fire, and the Palace will owe you."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "angry",
+     "text": "Elder! I don't need a babysitting job, I need a thief to burn!"
+    },
+    {
+     "speaker": "npc:elder_zhu_yan",
+     "expression": "neutral",
+     "text": "And they need a guide who knows fire. Go. And try to stay calm."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "angry",
+     "text": "Don't say \"calm\"!"
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "determined",
+     "text": "...Fine! But I'm walking in front. And if you turn out to be thieves, I burn you first."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c4_03_before",
+   "name": "Trial by Fire",
+   "location": "loc:vermilion_ruins",
+   "cast": [
+    "hero:yan_feihong",
+    "hero:mo_yingyue",
+    "hero:ling_shuang",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "On the terraces below the Palace, grey flames flicker among the red rocks: Netherflame casters, searching the ash for something."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "smug",
+     "text": "Look at that. More thieves, late to the party. They came for the fire too."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "neutral",
+     "text": "So, not us."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "angry",
+     "text": "I haven't decided about you yet!"
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "determined",
+     "text": "Here's my trial. We fight them together. If you can keep up with me, I'll believe you're not useless. If you can't, I'll leave you in the ash."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "neutral",
+     "text": "Keep up with you?"
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "laugh",
+     "text": "Try it and see! Phoenix fire, rise!"
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c4_04_before",
+   "name": "Serpent Marsh Detour",
+   "location": "loc:vermilion_ruins",
+   "cast": [
+    "npc:chief_bai_lin",
+    "hero:yan_feihong",
+    "hero:su_lianhua",
+    "hero:mo_yingyue",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "Between two lava fields lies a steaming marsh of black water and hot springs. An old man with silver scales on his cheeks sits on a stone at its edge, fishing without bait."
+    },
+    {
+     "speaker": "npc:chief_bai_lin",
+     "expression": "neutral",
+     "text": "You walk loudly, children. Every fish in my marsh has heard you coming. Sit."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "angry",
+     "text": "We don't have time to sit! A thief came this way. Did you see her or not?"
+    },
+    {
+     "speaker": "npc:chief_bai_lin",
+     "expression": "smile",
+     "text": "I see everything that crosses my water, little phoenix. I am old, and the old are patient. You are young, so you will be patient too, or you will learn nothing."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "smile",
+     "text": "Forgive her, Chief. How can we earn your answer?"
+    },
+    {
+     "speaker": "npc:chief_bai_lin",
+     "expression": "neutral",
+     "text": "Some of my guards have gone bad. Netherflame coin in their bellies, venom in their tempers. They've made a nest in the eastern springs and bite anyone who passes."
+    },
+    {
+     "speaker": "npc:chief_bai_lin",
+     "expression": "smile",
+     "text": "Clear the nest, and I'll tell you where your thief went. Most who come to my marsh leave owing me a favour. You may be the first to leave even."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "smug",
+     "text": "A snake who keeps his word. Rare."
+    },
+    {
+     "speaker": "npc:chief_bai_lin",
+     "expression": "laugh",
+     "text": "Rarer than a Moonshadow girl who works for sweets. Off you go."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c4_04_after",
+   "name": "The Thief's Road",
+   "location": "loc:vermilion_ruins",
+   "cast": [
+    "npc:chief_bai_lin",
+    "hero:yan_feihong",
+    "hero:su_lianhua",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "The rogue guards slither off into the steam, hissing. Chief Bai Lin hasn't moved from his stone. His line still has no bait."
+    },
+    {
+     "speaker": "npc:chief_bai_lin",
+     "expression": "smile",
+     "text": "Neatly done. Now. On the night your fire was stolen, someone crossed my marsh heading east, toward the old palace. Light on her feet. Smelled of perfume and smoke."
+    },
+    {
+     "speaker": "npc:chief_bai_lin",
+     "expression": "neutral",
+     "text": "She carried a lantern that made my springs boil as she passed. And she was crying."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "surprised",
+     "text": "Crying?"
+    },
+    {
+     "speaker": "npc:chief_bai_lin",
+     "expression": "neutral",
+     "text": "Thieves are people too, little phoenix. Even the ones you'd like to burn."
+    },
+    {
+     "speaker": "npc:chief_bai_lin",
+     "expression": "smile",
+     "text": "Take some tea leaves from my springs for the road. They're very calming."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "angry",
+     "text": "I hate tea. And don't say \"calming\"!"
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "smile",
+     "text": "I'll take them. Thank you, Chief."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c4_05_before",
+   "name": "Fox Tracks in the Ash",
+   "location": "loc:vermilion_ruins",
+   "cast": [
+    "hero:ling_shuang",
+    "hero:mo_yingyue",
+    "hero:su_lianhua",
+    "hero:yan_feihong",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "East of the marsh, the ash fields shimmer. Paths appear and vanish. A ruined gate stands where there was none a moment ago, then melts like smoke."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "neutral",
+     "text": "Illusions. Clumsy ones."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "neutral",
+     "text": "Not clumsy. Hurried."
+    },
+    {
+     "text": "Caught on a jagged rock is a tuft of fur, fine as silk, shining silver in the red light."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "surprised",
+     "text": "Silver fur... Pavilion Master, it's Lady Hu Qiao's runaway kit."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "smug",
+     "text": "Silver fur, sharp tongue, sticky fingers. Sticky enough to lift a sacred fire, apparently."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "angry",
+     "text": "A fox? A FOX stole the Phoenix Palace's fire? I'll singe every tail she has!"
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "worried",
+     "text": "We promised Lady Hu Qiao we'd send her home alive."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "angry",
+     "text": "YOU promised! I never promised any fox anything!"
+    },
+    {
+     "text": "The ash stirs. Figures in fox masks rise out of the illusion, blades in hand."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c4_06_before",
+   "name": "Old Qian's Rare Wares",
+   "location": "loc:vermilion_ruins",
+   "cast": [
+    "npc:old_qian",
+    "npc:tao_yao",
+    "hero:yan_feihong",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "In the shade of a fallen pillar, drenched in sweat, Old Qian sits on his cart fanning himself with a ledger."
+    },
+    {
+     "speaker": "npc:old_qian",
+     "expression": "laugh",
+     "text": "Customers! In a volcano! Heaven still loves Old Qian, though it has a funny way of showing it."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "surprised",
+     "text": "You were at Peach Blossom Ford!"
+    },
+    {
+     "speaker": "npc:old_qian",
+     "expression": "smug",
+     "text": "And now I'm here. Fire-proof boots, flame-proof gloves, cooling talismans, freshly expired. The Guild sends me wherever things are on fire, remember?"
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "neutral",
+     "text": "Have you seen a fox? Silver fur. Thief."
+    },
+    {
+     "speaker": "npc:old_qian",
+     "expression": "worried",
+     "text": "A silver fox? Ah. Hm. Well. Funny you should mention silver foxes."
+    },
+    {
+     "speaker": "npc:old_qian",
+     "expression": "shy",
+     "text": "Last year, purely in the course of honest business, the Guild may have bought a feather from a silver fox. Red and gold. Warm to the touch. It never stopped glowing."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "angry",
+     "text": "That's a PHOENIX feather! From OUR Palace! You bought stolen goods from our thief?"
+    },
+    {
+     "speaker": "npc:old_qian",
+     "expression": "worried",
+     "text": "Allegedly bought! The auction house never asks questions. Questions are terrible for business! Madam Jin will have my cap for telling you this."
+    },
+    {
+     "speaker": "npc:old_qian",
+     "expression": "smile",
+     "text": "Here, here. A peace offering for the young lady. A silk fan, with a painted phoenix. Very fine. Almost as fierce as you."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "shy",
+     "text": "...It is a nice fan."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "angry",
+     "text": "That doesn't mean I forgive you!"
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c4_07_before",
+   "name": "Magma Halls",
+   "location": "loc:vermilion_ruins",
+   "cast": [
+    "hero:yan_feihong",
+    "hero:mo_yingyue",
+    "hero:su_lianhua",
+    "hero:ling_shuang",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "Beneath the ruins of the first Phoenix Palace, abandoned a thousand years ago, rivers of magma run through halls of black glass."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "smug",
+     "text": "The old palace. Only Phoenix disciples know the way through. Lucky for you, I'm the best of them."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "neutral",
+     "text": "Do you ever say anything humbly?"
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "laugh",
+     "text": "I'm humble every single day! Just never out loud."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "worried",
+     "text": "Mind your sleeves near the magma, Ling Shuang."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "neutral",
+     "text": "My sleeves are fine. The hounds will not be."
+    },
+    {
+     "text": "Ash hounds and grey fire wait in the glowing halls ahead."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c4_08_before",
+   "name": "Phoenix Palace Gate",
+   "location": "loc:vermilion_ruins",
+   "cast": [
+    "hero:mo_yingyue",
+    "hero:ling_shuang",
+    "hero:yan_feihong",
+    "npc:tao_yao",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "The magma halls open onto the old palace's great gate, a broken arch of red stone. Beyond it, a lantern glows gold and red in the dark: the sealed fire."
+    },
+    {
+     "text": "From the far side of the arch, black-robed figures march in. At their head, a cultist carries a lacquered box sealed with a withered branch."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "neutral",
+     "text": "The Envoy's payment. He's buying the fire."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "neutral",
+     "text": "Then we arrived first."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "determined",
+     "text": "Nobody buys Phoenix fire! Not with jade, not with anything!"
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "worried",
+     "text": "Pavilion Master, if that lantern leaves this place..."
+    },
+    {
+     "speaker": "npc:pavilion_master",
+     "expression": "neutral",
+     "text": "It won't."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "laugh",
+     "text": "Ha! Finally, somebody around here talks sense!"
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c4_09_before",
+   "name": "The Silver Fox",
+   "location": "loc:vermilion_ruins",
+   "cast": [
+    "npc:hu_yinling",
+    "hero:yan_feihong",
+    "hero:su_lianhua",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "In the shadows behind the gate, a young woman with silver hair and silver tails clutches the burning lantern to her chest. Her eyes are red."
+    },
+    {
+     "speaker": "npc:hu_yinling",
+     "expression": "smile",
+     "text": "Well, well. The Pavilion Master and their flowers. Lady Hu Qiao sent you, didn't she? She always did love a rescue she doesn't have to do herself."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "angry",
+     "text": "Give back our fire, thief!"
+    },
+    {
+     "speaker": "npc:hu_yinling",
+     "expression": "sad",
+     "text": "I can't. You don't understand. If the Envoy doesn't have this lantern by the next full moon, his contract eats my soul. Every last tail of it."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "worried",
+     "text": "Ku Ye..."
+    },
+    {
+     "speaker": "npc:hu_yinling",
+     "expression": "angry",
+     "text": "He pulled me out of a hunter's net the week after I ran away from home. One favour, he said. One small theft. And now it's the fire, or me."
+    },
+    {
+     "speaker": "npc:pavilion_master",
+     "expression": "neutral",
+     "text": "There's another way."
+    },
+    {
+     "speaker": "npc:hu_yinling",
+     "expression": "sad",
+     "text": "There's never another way with him. I'm sorry, little phoenix. I'm faster than you, and I'm much, much better at lying."
+    },
+    {
+     "text": "The ash around her blooms into a hundred silver foxes, every one of them smiling."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c4_09_after",
+   "name": "Phoenix Rising",
+   "location": "loc:vermilion_ruins",
+   "cast": [
+    "npc:hu_yinling",
+    "hero:yan_feihong",
+    "npc:pavilion_master",
+    "hero:su_lianhua",
+    "hero:mo_yingyue",
+    "npc:tao_yao",
+    "hero:ling_shuang"
+   ],
+   "lines": [
+    {
+     "text": "The silver foxes burst like soap bubbles. Hu Yinling sinks to her knees in the ash, and the lantern rolls from her hands."
+    },
+    {
+     "text": "Yan Feihong catches it before it touches the ground. Inside, the sealed fire flares gold at her touch, like a bird that knows its keeper."
+    },
+    {
+     "speaker": "npc:hu_yinling",
+     "expression": "sad",
+     "text": "Take it. Take it back. I'm so tired of running."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "angry",
+     "text": "You stole from the Phoenix Palace! You sold one of our feathers! You..."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "surprised",
+     "text": "...You're actually crying."
+    },
+    {
+     "speaker": "npc:hu_yinling",
+     "expression": "sad",
+     "text": "When his contract comes due, I'll do worse than cry."
+    },
+    {
+     "speaker": "npc:pavilion_master",
+     "expression": "neutral",
+     "text": "Then he'll have to come through us to collect."
+    },
+    {
+     "speaker": "npc:hu_yinling",
+     "expression": "surprised",
+     "text": "You'd do that? For a thief?"
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "smile",
+     "text": "We promised your clan we'd send you home alive. We keep our promises."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "neutral",
+     "text": "And the Envoy is already my mark. I'll collect for both of us."
+    },
+    {
+     "speaker": "npc:hu_yinling",
+     "expression": "smile",
+     "text": "...The old vixen always said I'd meet someone too soft to rob. I never believed her."
+    },
+    {
+     "text": "Hu Yinling slips away through the ash toward the bamboo country, and home. This time, she looks back."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "neutral",
+     "text": "Hmph. You didn't burn her."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "shy",
+     "text": "And you fought well. Better than well. Not as well as me, obviously. But you kept up."
+    },
+    {
+     "text": "The lantern pulses in her hands, and the Fate Lotus at your belt answers it. A red-gold thread leaps between you and Yan Feihong, hot as a festival bonfire."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "surprised",
+     "text": "What... what is this? My chest feels like a firework about to go off!"
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "smile",
+     "text": "That's your Dao Seed saying hello. It seems to like the Pavilion Master."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "determined",
+     "text": "Fine! FINE. Once the fire is back on its altar, I'm coming with you. Somebody has to burn the Netherflame Sect properly, and clearly none of you can manage without me."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "smug",
+     "text": "Yan Feihong of the Phoenix Palace! Whoever stole our fire, I beat them. And whoever paid for it, I'll burn!"
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "neutral",
+     "text": "She's going to be loud, isn't she?"
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "neutral",
+     "text": "Very."
+    }
+   ],
+   "draft": true
+  }
+ ]
+}

@@ -1,0 +1,406 @@
+{
+ "about": "Materials. Every item has at least one source and one use; docs/data-report.md lists them.",
+ "records": [
+  {
+   "id": "item:qi_gathering_pill",
+   "name": "Qi Gathering Pill",
+   "cn": "聚气丹",
+   "category": "exp_pill",
+   "rarity": 1,
+   "about": "+5,500 EXP",
+   "exp": 5500
+  },
+  {
+   "id": "item:spirit_condensing_pill",
+   "name": "Spirit Condensing Pill",
+   "cn": "凝灵丹",
+   "category": "exp_pill",
+   "rarity": 2,
+   "about": "+16,500 EXP",
+   "exp": 16500
+  },
+  {
+   "id": "item:heaven_earth_pill",
+   "name": "Heaven and Earth Pill",
+   "cn": "天地丹",
+   "category": "exp_pill",
+   "rarity": 3,
+   "about": "+49,500 EXP",
+   "exp": 49500
+  },
+  {
+   "id": "item:nine_revolution_golden_pill",
+   "name": "Nine-Revolution Golden Pill",
+   "cn": "九转金丹",
+   "category": "exp_pill",
+   "rarity": 4,
+   "about": "+150,000 EXP",
+   "exp": 150000
+  },
+  {
+   "id": "item:foundation_pill",
+   "name": "Foundation Pill",
+   "cn": "筑基丹",
+   "category": "breakthrough_pill",
+   "rarity": 2,
+   "about": "Breakthrough into Foundation Establishment"
+  },
+  {
+   "id": "item:golden_core_pill",
+   "name": "Golden Core Pill",
+   "cn": "结金丹",
+   "category": "breakthrough_pill",
+   "rarity": 2,
+   "about": "Breakthrough into Core Formation"
+  },
+  {
+   "id": "item:nascent_soul_pill",
+   "name": "Nascent Soul Pill",
+   "cn": "元婴丹",
+   "category": "breakthrough_pill",
+   "rarity": 3,
+   "about": "Breakthrough into Nascent Soul"
+  },
+  {
+   "id": "item:severing_pill",
+   "name": "Severing Pill",
+   "cn": "化神丹",
+   "category": "breakthrough_pill",
+   "rarity": 3,
+   "about": "Breakthrough into Spirit Severing"
+  },
+  {
+   "id": "item:void_pill",
+   "name": "Void Pill",
+   "cn": "炼虚丹",
+   "category": "breakthrough_pill",
+   "rarity": 4,
+   "about": "Breakthrough into Void Refinement"
+  },
+  {
+   "id": "item:integration_pill",
+   "name": "Integration Pill",
+   "cn": "合体丹",
+   "category": "breakthrough_pill",
+   "rarity": 4,
+   "about": "Breakthrough into Body Integration"
+  },
+  {
+   "id": "item:mahayana_pill",
+   "name": "Mahayana Pill",
+   "cn": "大乘丹",
+   "category": "breakthrough_pill",
+   "rarity": 5,
+   "about": "Breakthrough into Mahayana"
+  },
+  {
+   "id": "item:metal_essence",
+   "name": "Metal Essence",
+   "cn": "金精",
+   "category": "essence",
+   "rarity": 2,
+   "about": "Opens Metal meridians; your own phase needs twice as much"
+  },
+  {
+   "id": "item:wood_essence",
+   "name": "Wood Essence",
+   "cn": "木精",
+   "category": "essence",
+   "rarity": 2,
+   "about": "Opens Wood meridians; your own phase needs twice as much"
+  },
+  {
+   "id": "item:water_essence",
+   "name": "Water Essence",
+   "cn": "水精",
+   "category": "essence",
+   "rarity": 2,
+   "about": "Opens Water meridians; your own phase needs twice as much"
+  },
+  {
+   "id": "item:fire_essence",
+   "name": "Fire Essence",
+   "cn": "火精",
+   "category": "essence",
+   "rarity": 2,
+   "about": "Opens Fire meridians; your own phase needs twice as much"
+  },
+  {
+   "id": "item:earth_essence",
+   "name": "Earth Essence",
+   "cn": "土精",
+   "category": "essence",
+   "rarity": 2,
+   "about": "Opens Earth meridians; your own phase needs twice as much"
+  },
+  {
+   "id": "item:dao_crystal",
+   "name": "Dao Crystal",
+   "cn": "道晶",
+   "category": "crystal",
+   "rarity": 4,
+   "about": "Opens the Ren and Du vessels; forges unique gear"
+  },
+  {
+   "id": "item:enlightenment_scroll",
+   "name": "Enlightenment Scroll",
+   "cn": "悟道卷",
+   "category": "scroll",
+   "rarity": 2,
+   "about": "Technique mastery +1 to +3"
+  },
+  {
+   "id": "item:bodhi_leaf",
+   "name": "Bodhi Leaf",
+   "cn": "菩提叶",
+   "category": "bodhi",
+   "rarity": 4,
+   "about": "Technique mastery +4 and above, like Molagora in Epic Seven"
+  },
+  {
+   "id": "item:spirit_grass",
+   "name": "Spirit Grass",
+   "cn": "灵草",
+   "category": "herb",
+   "rarity": 1,
+   "about": "Alchemy ingredient; spirit beasts eat it"
+  },
+  {
+   "id": "item:blood_ginseng",
+   "name": "Blood Ginseng",
+   "cn": "血参",
+   "category": "herb",
+   "rarity": 2,
+   "about": "Alchemy ingredient; spirit beasts eat it"
+  },
+  {
+   "id": "item:snow_lotus",
+   "name": "Snow Lotus",
+   "cn": "雪莲",
+   "category": "herb",
+   "rarity": 3,
+   "about": "Alchemy ingredient"
+  },
+  {
+   "id": "item:fire_lingzhi",
+   "name": "Fire Lingzhi",
+   "cn": "火灵芝",
+   "category": "herb",
+   "rarity": 4,
+   "about": "Alchemy ingredient"
+  },
+  {
+   "id": "item:nine_leaf_lingzhi",
+   "name": "Nine-Leaf Lingzhi",
+   "cn": "九叶灵芝",
+   "category": "herb",
+   "rarity": 5,
+   "about": "Alchemy ingredient"
+  },
+  {
+   "id": "item:black_iron",
+   "name": "Black Iron",
+   "cn": "玄铁",
+   "category": "ore",
+   "rarity": 1,
+   "about": "Reforging into tiers II to III; forging"
+  },
+  {
+   "id": "item:spirit_silver",
+   "name": "Spirit Silver",
+   "cn": "灵银",
+   "category": "ore",
+   "rarity": 2,
+   "about": "Reforging into tiers IV to V; forging"
+  },
+  {
+   "id": "item:starfall_iron",
+   "name": "Starfall Iron",
+   "cn": "星陨铁",
+   "category": "ore",
+   "rarity": 3,
+   "about": "Reforging into tiers VI to VII; forging"
+  },
+  {
+   "id": "item:void_gold",
+   "name": "Void Gold",
+   "cn": "虚金",
+   "category": "ore",
+   "rarity": 4,
+   "about": "Reforging into tiers VIII; forging"
+  },
+  {
+   "id": "item:forging_dust",
+   "name": "Forging Dust",
+   "cn": "炼器尘",
+   "category": "dust",
+   "rarity": 1,
+   "about": "Refining and forging; comes from salvaged gear"
+  },
+  {
+   "id": "item:dao_mark",
+   "name": "Dao Mark",
+   "cn": "道印",
+   "category": "dao_mark",
+   "rarity": 3,
+   "about": "Engraving: replace one substat with a chosen type"
+  },
+  {
+   "id": "item:artefact_essence",
+   "name": "Artefact Essence",
+   "cn": "器灵精华",
+   "category": "artefact_essence",
+   "rarity": 3,
+   "about": "Refines and forges Spirit Artefacts"
+  },
+  {
+   "id": "item:array_flag",
+   "name": "Array Flag",
+   "cn": "阵旗",
+   "category": "flag",
+   "rarity": 2,
+   "about": "Levels up Battle Arrays at the Array Platform"
+  },
+  {
+   "id": "item:egg_common",
+   "name": "Common Beast Egg",
+   "cn": "灵兽蛋",
+   "category": "egg",
+   "rarity": 3,
+   "about": "Hatches a 3★ spirit beast",
+   "hatches": [
+    "beast:koi",
+    "beast:jade_rabbit"
+   ]
+  },
+  {
+   "id": "item:egg_rare",
+   "name": "Rare Beast Egg",
+   "cn": "珍兽蛋",
+   "category": "egg",
+   "rarity": 4,
+   "about": "Hatches a 4★ spirit beast",
+   "hatches": [
+    "beast:red_crowned_crane",
+    "beast:white_fox"
+   ]
+  },
+  {
+   "id": "item:egg_celestial",
+   "name": "Celestial Beast Egg",
+   "cn": "仙兽蛋",
+   "category": "egg",
+   "rarity": 5,
+   "about": "Hatches a 5★ spirit beast",
+   "hatches": [
+    "beast:pixiu",
+    "beast:qilin_cub",
+    "beast:baize"
+   ]
+  },
+  {
+   "id": "item:resolve_elixir",
+   "name": "Resolve Elixir",
+   "cn": "定心丹",
+   "category": "elixir",
+   "rarity": 2,
+   "about": "Secret Realms: restores 30 Resolve"
+  },
+  {
+   "id": "item:spirit_elixir",
+   "name": "Spirit Gathering Elixir",
+   "cn": "聚灵丹",
+   "category": "elixir",
+   "rarity": 2,
+   "about": "Secret Realms: +4 Spirit Qi at the start of the next three battles"
+  },
+  {
+   "id": "item:revival_elixir",
+   "name": "Soul-Returning Elixir",
+   "cn": "回魂丹",
+   "category": "elixir",
+   "rarity": 3,
+   "about": "Secret Realms: revives a fallen heroine at 50% health"
+  },
+  {
+   "id": "item:manual_sword_heart",
+   "name": "Sword Heart Forging Manual",
+   "cn": "炼器图谱",
+   "category": "manual",
+   "rarity": 3,
+   "about": "The Forge crafts a Sword Heart piece of a chosen slot"
+  },
+  {
+   "id": "item:manual_azure_dragon",
+   "name": "Azure Dragon Forging Manual",
+   "cn": "炼器图谱",
+   "category": "manual",
+   "rarity": 3,
+   "about": "The Forge crafts a Azure Dragon piece of a chosen slot"
+  },
+  {
+   "id": "item:manual_white_tiger",
+   "name": "White Tiger Forging Manual",
+   "cn": "炼器图谱",
+   "category": "manual",
+   "rarity": 3,
+   "about": "The Forge crafts a White Tiger piece of a chosen slot"
+  },
+  {
+   "id": "item:manual_vermilion_bird",
+   "name": "Vermilion Bird Forging Manual",
+   "cn": "炼器图谱",
+   "category": "manual",
+   "rarity": 3,
+   "about": "The Forge crafts a Vermilion Bird piece of a chosen slot"
+  },
+  {
+   "id": "item:manual_qilin",
+   "name": "Qilin Forging Manual",
+   "cn": "炼器图谱",
+   "category": "manual",
+   "rarity": 3,
+   "about": "The Forge crafts a Qilin piece of a chosen slot"
+  },
+  {
+   "id": "item:manual_black_tortoise",
+   "name": "Black Tortoise Forging Manual",
+   "cn": "炼器图谱",
+   "category": "manual",
+   "rarity": 3,
+   "about": "The Forge crafts a Black Tortoise piece of a chosen slot"
+  },
+  {
+   "id": "item:manual_heavenly_eye",
+   "name": "Heavenly Eye Forging Manual",
+   "cn": "炼器图谱",
+   "category": "manual",
+   "rarity": 3,
+   "about": "The Forge crafts a Heavenly Eye piece of a chosen slot"
+  },
+  {
+   "id": "item:manual_still_water",
+   "name": "Still Water Forging Manual",
+   "cn": "炼器图谱",
+   "category": "manual",
+   "rarity": 3,
+   "about": "The Forge crafts a Still Water piece of a chosen slot"
+  },
+  {
+   "id": "item:manual_blood_lotus",
+   "name": "Blood Lotus Forging Manual",
+   "cn": "炼器图谱",
+   "category": "manual",
+   "rarity": 3,
+   "about": "The Forge crafts a Blood Lotus piece of a chosen slot"
+  },
+  {
+   "id": "item:manual_five_elements",
+   "name": "Five Elements Forging Manual",
+   "cn": "炼器图谱",
+   "category": "manual",
+   "rarity": 3,
+   "about": "The Forge crafts a Five Elements piece of a chosen slot"
+  }
+ ]
+}

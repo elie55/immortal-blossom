@@ -1,0 +1,409 @@
+{
+ "about": "The four founding Blossoms: 4★ story heroines who join in chapters 1 to 4. Stats: \"base\" is level 1 (level 30 matches the prototype).",
+ "records": [
+  {
+   "id": "hero:ling_shuang",
+   "name": "Ling Shuang",
+   "cn": "凌霜",
+   "title": "Frostblade Saint",
+   "rarity": 4,
+   "phase": "phase:water",
+   "path": "path:sword",
+   "flower": "Plum blossom",
+   "faction": "faction:frostpeak_sword_sect",
+   "zodiac": "Ox",
+   "birthday": "01-12",
+   "base": {
+    "hp": 2610,
+    "atk": 331,
+    "def": 131,
+    "crit": 0.2,
+    "critDmg": 1.6
+   },
+   "skills": [
+    "skill:ling_shuang_s1",
+    "skill:ling_shuang_s2",
+    "skill:ling_shuang_s3"
+   ],
+   "passives": [
+    "skill:ling_shuang_p30",
+    "skill:ling_shuang_p50"
+   ],
+   "petals": [
+    {
+     "n": 1,
+     "modifies": "skill:ling_shuang_s1",
+     "text": "Frost Crescent's chance to Frost Seal rises from 30% to 50%"
+    },
+    {
+     "n": 2,
+     "modifies": "skill:ling_shuang_s2",
+     "text": "Rain of Frozen Swords also Frost Seals the enemy with the lowest health"
+    },
+    {
+     "n": 3,
+     "modifies": "skill:ling_shuang_s2",
+     "text": "Rain of Frozen Swords can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 4,
+     "modifies": "skill:ling_shuang_p30",
+     "text": "The first time each turn she hits a Frost Sealed enemy, the team gains 1 Spirit Qi"
+    },
+    {
+     "n": 5,
+     "modifies": "skill:ling_shuang_s3",
+     "text": "Ten-Thousand Frost Array can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 6,
+     "modifies": "skill:ling_shuang_s3",
+     "text": "Ten-Thousand Frost Array strikes six times instead of four, and its cooldown drops to 4"
+    }
+   ],
+   "unique": "unique:ling_shuang",
+   "gifts": {
+    "likes": [
+     "item:gift_plum_wine",
+     "item:gift_sword_tassel"
+    ],
+    "dislikes": [
+     "item:gift_hawthorn_candy"
+    ]
+   },
+   "bondRewards": [
+    {
+     "level": 6,
+     "outfit": "outfit:ling_shuang_bond6"
+    },
+    {
+     "level": 10,
+     "outfit": "outfit:ling_shuang_bond10"
+    }
+   ],
+   "profile": {
+    "motto": "A plum does not bow to the snow.",
+    "specialty": "Frost sword arts",
+    "hobby": "Practising alone at dawn",
+    "likes": "Plum wine, clean snow, honest opponents",
+    "dislikes": "Kneeling, sweets, flattery"
+   },
+   "quotes": {
+    "intro": "Ling Shuang of Frostpeak. Point me at whoever needs cutting down.",
+    "victory": "Snow settles. So does this.",
+    "ultimate": "Ten thousand swords, one winter."
+   },
+   "art": {
+    "card": "card_ling",
+    "cutin": "ling_cutin",
+    "face": "ling_face"
+   },
+   "recruit": "story"
+  },
+  {
+   "id": "hero:mo_yingyue",
+   "name": "Mo Yingyue",
+   "cn": "墨影月",
+   "title": "Violet Thunder Assassin",
+   "rarity": 4,
+   "phase": "phase:wood",
+   "path": "path:shadow",
+   "flower": "Night-blooming epiphyllum",
+   "faction": "faction:moonshadow_pavilion",
+   "zodiac": "Rat",
+   "birthday": "12-07",
+   "base": {
+    "hp": 2309,
+    "atk": 351,
+    "def": 113,
+    "crit": 0.3,
+    "critDmg": 1.7
+   },
+   "skills": [
+    "skill:mo_yingyue_s1",
+    "skill:mo_yingyue_s2",
+    "skill:mo_yingyue_s3"
+   ],
+   "passives": [
+    "skill:mo_yingyue_p30",
+    "skill:mo_yingyue_p50"
+   ],
+   "petals": [
+    {
+     "n": 1,
+     "modifies": "skill:mo_yingyue_s1",
+     "text": "Thunderfang Cross strikes a third time for 40% ATK"
+    },
+    {
+     "n": 2,
+     "modifies": "skill:mo_yingyue_s2",
+     "text": "Shadow Lightning Step also applies Karmic Mark for 1 turn"
+    },
+    {
+     "n": 3,
+     "modifies": "skill:mo_yingyue_s2",
+     "text": "Shadow Lightning Step can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 4,
+     "modifies": "skill:mo_yingyue_s3",
+     "text": "Defeating an enemy with Heaven's Execution refunds 5 Spirit Qi"
+    },
+    {
+     "n": 5,
+     "modifies": "skill:mo_yingyue_s3",
+     "text": "Heaven's Execution can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 6,
+     "modifies": "skill:mo_yingyue_s3",
+     "text": "When Heaven's Execution defeats its target, its remaining strikes leap to the next enemy"
+    }
+   ],
+   "unique": "unique:mo_yingyue",
+   "gifts": {
+    "likes": [
+     "item:gift_embroidered_pouch",
+     "item:gift_hawthorn_candy"
+    ],
+    "dislikes": [
+     "item:gift_sandalwood_incense"
+    ]
+   },
+   "bondRewards": [
+    {
+     "level": 6,
+     "outfit": "outfit:mo_yingyue_bond6"
+    },
+    {
+     "level": 10,
+     "outfit": "outfit:mo_yingyue_bond10"
+    }
+   ],
+   "profile": {
+    "motto": "A contract is a contract, until it is not.",
+    "specialty": "Lightning daggers, vanishing",
+    "hobby": "Collecting the sweets her targets carried",
+    "likes": "Candied hawthorns, rooftops, rain",
+    "dislikes": "Temples, incense, being thanked"
+   },
+   "quotes": {
+    "intro": "You were my target, you know. Now you are my employer. Pay well.",
+    "victory": "Done before the thunder.",
+    "ultimate": "Heaven passes judgement. I carry it out."
+   },
+   "art": {
+    "card": "card_mo",
+    "cutin": "mo_cutin",
+    "face": "mo_face"
+   },
+   "recruit": "story"
+  },
+  {
+   "id": "hero:yan_feihong",
+   "name": "Yan Feihong",
+   "cn": "炎飞虹",
+   "title": "Vermilion Phoenix Arcanist",
+   "rarity": 4,
+   "phase": "phase:fire",
+   "path": "path:arcane",
+   "flower": "Phoenix flower",
+   "faction": "faction:vermilion_phoenix_palace",
+   "zodiac": "Horse",
+   "birthday": "06-21",
+   "base": {
+    "hp": 2460,
+    "atk": 364,
+    "def": 118,
+    "crit": 0.2,
+    "critDmg": 1.6
+   },
+   "skills": [
+    "skill:yan_feihong_s1",
+    "skill:yan_feihong_s2",
+    "skill:yan_feihong_s3"
+   ],
+   "passives": [
+    "skill:yan_feihong_p30",
+    "skill:yan_feihong_p50"
+   ],
+   "petals": [
+    {
+     "n": 1,
+     "modifies": "skill:yan_feihong_s1",
+     "text": "Vermilion Talisman's chance of Fire Poison rises from 40% to 70%"
+    },
+    {
+     "n": 2,
+     "modifies": "skill:yan_feihong_s2",
+     "text": "Scarlet Inferno's Fire Poison lasts 3 turns"
+    },
+    {
+     "n": 3,
+     "modifies": "skill:yan_feihong_s2",
+     "text": "Scarlet Inferno can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 4,
+     "modifies": "skill:yan_feihong_p30",
+     "text": "Each burning enemy that falls gives the team 1 Spirit Qi"
+    },
+    {
+     "n": 5,
+     "modifies": "skill:yan_feihong_s3",
+     "text": "Vermilion Phoenix Covenant can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 6,
+     "modifies": "skill:yan_feihong_s3",
+     "text": "Vermilion Phoenix Covenant leaves the phoenix circling: it hits every enemy for 40% ATK at the start of your next two turns"
+    }
+   ],
+   "unique": "unique:yan_feihong",
+   "gifts": {
+    "likes": [
+     "item:gift_silk_fan",
+     "item:gift_calligraphy_scroll"
+    ],
+    "dislikes": [
+     "item:gift_spirit_tea"
+    ]
+   },
+   "bondRewards": [
+    {
+     "level": 6,
+     "outfit": "outfit:yan_feihong_bond6"
+    },
+    {
+     "level": 10,
+     "outfit": "outfit:yan_feihong_bond10"
+    }
+   ],
+   "profile": {
+    "motto": "If it burns, it was never strong enough.",
+    "specialty": "Phoenix talismans and fire sigils",
+    "hobby": "Painting phoenixes, badly",
+    "likes": "Silk fans, loud festivals of fire, winning",
+    "dislikes": "Tea ceremonies, waiting, the word \"calm\""
+   },
+   "quotes": {
+    "intro": "Yan Feihong of the Phoenix Palace. Whoever stole our fire, I will burn them first.",
+    "victory": "Ash. All of it.",
+    "ultimate": "Rise, Vermilion Phoenix!"
+   },
+   "art": {
+    "card": "card_yan",
+    "cutin": "yan_cutin",
+    "face": "yan_face"
+   },
+   "recruit": "story"
+  },
+  {
+   "id": "hero:su_lianhua",
+   "name": "Su Lianhua",
+   "cn": "苏莲华",
+   "title": "Jade Lotus Sage",
+   "rarity": 4,
+   "phase": "phase:earth",
+   "path": "path:healer",
+   "flower": "Lotus",
+   "faction": "faction:jade_lotus_temple",
+   "zodiac": "Rabbit",
+   "birthday": "04-08",
+   "base": {
+    "hp": 2811,
+    "atk": 264,
+    "def": 161,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:su_lianhua_s1",
+    "skill:su_lianhua_s2",
+    "skill:su_lianhua_s3"
+   ],
+   "passives": [
+    "skill:su_lianhua_p30",
+    "skill:su_lianhua_p50"
+   ],
+   "petals": [
+    {
+     "n": 1,
+     "modifies": "skill:su_lianhua_s1",
+     "text": "Petal Blades heals the two most injured allies"
+    },
+    {
+     "n": 2,
+     "modifies": "skill:su_lianhua_s2",
+     "text": "Jade Lotus Revival removes two debuffs"
+    },
+    {
+     "n": 3,
+     "modifies": "skill:su_lianhua_s2",
+     "text": "Jade Lotus Revival can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 4,
+     "modifies": "skill:su_lianhua_s3",
+     "text": "Lotus Dew from Thousand-Petal Sanctuary lasts 3 turns"
+    },
+    {
+     "n": 5,
+     "modifies": "skill:su_lianhua_s3",
+     "text": "Thousand-Petal Sanctuary can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 6,
+     "modifies": "skill:su_lianhua_s3",
+     "text": "Once per battle, Thousand-Petal Sanctuary revives a fallen ally at 30% health even without Empower"
+    }
+   ],
+   "unique": "unique:su_lianhua",
+   "gifts": {
+    "likes": [
+     "item:gift_spirit_tea",
+     "item:gift_lotus_seed_cakes"
+    ],
+    "dislikes": [
+     "item:gift_plum_wine"
+    ]
+   },
+   "bondRewards": [
+    {
+     "level": 6,
+     "outfit": "outfit:su_lianhua_bond6"
+    },
+    {
+     "level": 10,
+     "outfit": "outfit:su_lianhua_bond10"
+    }
+   ],
+   "profile": {
+    "motto": "Mud does not stain the lotus.",
+    "specialty": "Healing arts and jade lotus shields",
+    "hobby": "Tending the temple pond",
+    "likes": "Spirit tea, lotus seed cakes, quiet mornings",
+    "dislikes": "Wine, cruelty, wasted medicine"
+   },
+   "quotes": {
+    "intro": "I am Su Lianhua of the Jade Lotus Temple. Let me tend your wounds first.",
+    "victory": "Everyone is still standing. Good.",
+    "ultimate": "A thousand petals, one sanctuary."
+   },
+   "art": {
+    "card": "card_su",
+    "cutin": "su_cutin",
+    "face": "su_face"
+   },
+   "recruit": "story"
+  }
+ ]
+}

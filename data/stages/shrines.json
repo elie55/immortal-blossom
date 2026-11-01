@@ -1,0 +1,2030 @@
+{
+ "about": "Five Phases Shrine levels: five shrines, eight levels each.",
+ "records": [
+  {
+   "id": "stage:shrine_metal_1",
+   "name": "Metal Shrine I",
+   "mode": "mode:shrines",
+   "kind": "dungeon",
+   "level": 1,
+   "phase": "phase:metal",
+   "location": "loc:five_phases_shrines",
+   "realm": "realm:qi_refining",
+   "tier": "tier:i",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 5,
+      "phase": "phase:metal"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 5,
+      "phase": "phase:metal"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 5,
+      "phase": "phase:metal"
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:guardian_white_tiger",
+      "level": 7
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 5,
+      "phase": "phase:metal"
+     }
+    ]
+   ],
+   "drops": "drops:shrine_metal_1",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 60
+    }
+   ]
+  },
+  {
+   "id": "stage:shrine_metal_2",
+   "name": "Metal Shrine II",
+   "mode": "mode:shrines",
+   "kind": "dungeon",
+   "level": 2,
+   "phase": "phase:metal",
+   "location": "loc:five_phases_shrines",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 15,
+      "phase": "phase:metal"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 15,
+      "phase": "phase:metal"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 15,
+      "phase": "phase:metal"
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:guardian_white_tiger",
+      "level": 17
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 15,
+      "phase": "phase:metal"
+     }
+    ]
+   ],
+   "drops": "drops:shrine_metal_2",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 80
+    }
+   ],
+   "unlock": {
+    "realm": "realm:foundation_establishment"
+   }
+  },
+  {
+   "id": "stage:shrine_metal_3",
+   "name": "Metal Shrine III",
+   "mode": "mode:shrines",
+   "kind": "dungeon",
+   "level": 3,
+   "phase": "phase:metal",
+   "location": "loc:five_phases_shrines",
+   "realm": "realm:core_formation",
+   "tier": "tier:iii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 25,
+      "phase": "phase:metal"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 25,
+      "phase": "phase:metal"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 25,
+      "phase": "phase:metal"
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:guardian_white_tiger",
+      "level": 27
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 25,
+      "phase": "phase:metal"
+     }
+    ]
+   ],
+   "drops": "drops:shrine_metal_3",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 100
+    }
+   ],
+   "unlock": {
+    "realm": "realm:core_formation"
+   }
+  },
+  {
+   "id": "stage:shrine_metal_4",
+   "name": "Metal Shrine IV",
+   "mode": "mode:shrines",
+   "kind": "dungeon",
+   "level": 4,
+   "phase": "phase:metal",
+   "location": "loc:five_phases_shrines",
+   "realm": "realm:nascent_soul",
+   "tier": "tier:iv",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 35,
+      "phase": "phase:metal"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 35,
+      "phase": "phase:metal"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 35,
+      "phase": "phase:metal"
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:guardian_white_tiger",
+      "level": 37
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 35,
+      "phase": "phase:metal"
+     }
+    ]
+   ],
+   "drops": "drops:shrine_metal_4",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 120
+    }
+   ],
+   "unlock": {
+    "realm": "realm:nascent_soul"
+   }
+  },
+  {
+   "id": "stage:shrine_metal_5",
+   "name": "Metal Shrine V",
+   "mode": "mode:shrines",
+   "kind": "dungeon",
+   "level": 5,
+   "phase": "phase:metal",
+   "location": "loc:five_phases_shrines",
+   "realm": "realm:spirit_severing",
+   "tier": "tier:v",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 45,
+      "phase": "phase:metal"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 45,
+      "phase": "phase:metal"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 45,
+      "phase": "phase:metal"
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:guardian_white_tiger",
+      "level": 47
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 45,
+      "phase": "phase:metal"
+     }
+    ]
+   ],
+   "drops": "drops:shrine_metal_5",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 140
+    }
+   ],
+   "unlock": {
+    "realm": "realm:spirit_severing"
+   }
+  },
+  {
+   "id": "stage:shrine_metal_6",
+   "name": "Metal Shrine VI",
+   "mode": "mode:shrines",
+   "kind": "dungeon",
+   "level": 6,
+   "phase": "phase:metal",
+   "location": "loc:five_phases_shrines",
+   "realm": "realm:void_refinement",
+   "tier": "tier:vi",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 55,
+      "phase": "phase:metal"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 55,
+      "phase": "phase:metal"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 55,
+      "phase": "phase:metal"
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:guardian_white_tiger",
+      "level": 57
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 55,
+      "phase": "phase:metal"
+     }
+    ]
+   ],
+   "drops": "drops:shrine_metal_6",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 160
+    }
+   ],
+   "unlock": {
+    "realm": "realm:void_refinement"
+   }
+  },
+  {
+   "id": "stage:shrine_metal_7",
+   "name": "Metal Shrine VII",
+   "mode": "mode:shrines",
+   "kind": "dungeon",
+   "level": 7,
+   "phase": "phase:metal",
+   "location": "loc:five_phases_shrines",
+   "realm": "realm:body_integration",
+   "tier": "tier:vii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 65,
+      "phase": "phase:metal"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 65,
+      "phase": "phase:metal"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 65,
+      "phase": "phase:metal"
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:guardian_white_tiger",
+      "level": 67
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 65,
+      "phase": "phase:metal"
+     }
+    ]
+   ],
+   "drops": "drops:shrine_metal_7",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 180
+    }
+   ],
+   "unlock": {
+    "realm": "realm:body_integration"
+   }
+  },
+  {
+   "id": "stage:shrine_metal_8",
+   "name": "Metal Shrine VIII",
+   "mode": "mode:shrines",
+   "kind": "dungeon",
+   "level": 8,
+   "phase": "phase:metal",
+   "location": "loc:five_phases_shrines",
+   "realm": "realm:mahayana",
+   "tier": "tier:viii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 75,
+      "phase": "phase:metal"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 75,
+      "phase": "phase:metal"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 75,
+      "phase": "phase:metal"
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:guardian_white_tiger",
+      "level": 77
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 75,
+      "phase": "phase:metal"
+     }
+    ]
+   ],
+   "drops": "drops:shrine_metal_8",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 200
+    }
+   ],
+   "unlock": {
+    "realm": "realm:mahayana"
+   }
+  },
+  {
+   "id": "stage:shrine_wood_1",
+   "name": "Wood Shrine I",
+   "mode": "mode:shrines",
+   "kind": "dungeon",
+   "level": 1,
+   "phase": "phase:wood",
+   "location": "loc:five_phases_shrines",
+   "realm": "realm:qi_refining",
+   "tier": "tier:i",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 5,
+      "phase": "phase:wood"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 5,
+      "phase": "phase:wood"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 5,
+      "phase": "phase:wood"
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:guardian_azure_dragon",
+      "level": 7
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 5,
+      "phase": "phase:wood"
+     }
+    ]
+   ],
+   "drops": "drops:shrine_wood_1",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 60
+    }
+   ]
+  },
+  {
+   "id": "stage:shrine_wood_2",
+   "name": "Wood Shrine II",
+   "mode": "mode:shrines",
+   "kind": "dungeon",
+   "level": 2,
+   "phase": "phase:wood",
+   "location": "loc:five_phases_shrines",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 15,
+      "phase": "phase:wood"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 15,
+      "phase": "phase:wood"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 15,
+      "phase": "phase:wood"
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:guardian_azure_dragon",
+      "level": 17
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 15,
+      "phase": "phase:wood"
+     }
+    ]
+   ],
+   "drops": "drops:shrine_wood_2",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 80
+    }
+   ],
+   "unlock": {
+    "realm": "realm:foundation_establishment"
+   }
+  },
+  {
+   "id": "stage:shrine_wood_3",
+   "name": "Wood Shrine III",
+   "mode": "mode:shrines",
+   "kind": "dungeon",
+   "level": 3,
+   "phase": "phase:wood",
+   "location": "loc:five_phases_shrines",
+   "realm": "realm:core_formation",
+   "tier": "tier:iii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 25,
+      "phase": "phase:wood"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 25,
+      "phase": "phase:wood"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 25,
+      "phase": "phase:wood"
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:guardian_azure_dragon",
+      "level": 27
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 25,
+      "phase": "phase:wood"
+     }
+    ]
+   ],
+   "drops": "drops:shrine_wood_3",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 100
+    }
+   ],
+   "unlock": {
+    "realm": "realm:core_formation"
+   }
+  },
+  {
+   "id": "stage:shrine_wood_4",
+   "name": "Wood Shrine IV",
+   "mode": "mode:shrines",
+   "kind": "dungeon",
+   "level": 4,
+   "phase": "phase:wood",
+   "location": "loc:five_phases_shrines",
+   "realm": "realm:nascent_soul",
+   "tier": "tier:iv",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 35,
+      "phase": "phase:wood"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 35,
+      "phase": "phase:wood"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 35,
+      "phase": "phase:wood"
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:guardian_azure_dragon",
+      "level": 37
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 35,
+      "phase": "phase:wood"
+     }
+    ]
+   ],
+   "drops": "drops:shrine_wood_4",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 120
+    }
+   ],
+   "unlock": {
+    "realm": "realm:nascent_soul"
+   }
+  },
+  {
+   "id": "stage:shrine_wood_5",
+   "name": "Wood Shrine V",
+   "mode": "mode:shrines",
+   "kind": "dungeon",
+   "level": 5,
+   "phase": "phase:wood",
+   "location": "loc:five_phases_shrines",
+   "realm": "realm:spirit_severing",
+   "tier": "tier:v",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 45,
+      "phase": "phase:wood"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 45,
+      "phase": "phase:wood"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 45,
+      "phase": "phase:wood"
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:guardian_azure_dragon",
+      "level": 47
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 45,
+      "phase": "phase:wood"
+     }
+    ]
+   ],
+   "drops": "drops:shrine_wood_5",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 140
+    }
+   ],
+   "unlock": {
+    "realm": "realm:spirit_severing"
+   }
+  },
+  {
+   "id": "stage:shrine_wood_6",
+   "name": "Wood Shrine VI",
+   "mode": "mode:shrines",
+   "kind": "dungeon",
+   "level": 6,
+   "phase": "phase:wood",
+   "location": "loc:five_phases_shrines",
+   "realm": "realm:void_refinement",
+   "tier": "tier:vi",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 55,
+      "phase": "phase:wood"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 55,
+      "phase": "phase:wood"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 55,
+      "phase": "phase:wood"
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:guardian_azure_dragon",
+      "level": 57
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 55,
+      "phase": "phase:wood"
+     }
+    ]
+   ],
+   "drops": "drops:shrine_wood_6",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 160
+    }
+   ],
+   "unlock": {
+    "realm": "realm:void_refinement"
+   }
+  },
+  {
+   "id": "stage:shrine_wood_7",
+   "name": "Wood Shrine VII",
+   "mode": "mode:shrines",
+   "kind": "dungeon",
+   "level": 7,
+   "phase": "phase:wood",
+   "location": "loc:five_phases_shrines",
+   "realm": "realm:body_integration",
+   "tier": "tier:vii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 65,
+      "phase": "phase:wood"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 65,
+      "phase": "phase:wood"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 65,
+      "phase": "phase:wood"
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:guardian_azure_dragon",
+      "level": 67
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 65,
+      "phase": "phase:wood"
+     }
+    ]
+   ],
+   "drops": "drops:shrine_wood_7",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 180
+    }
+   ],
+   "unlock": {
+    "realm": "realm:body_integration"
+   }
+  },
+  {
+   "id": "stage:shrine_wood_8",
+   "name": "Wood Shrine VIII",
+   "mode": "mode:shrines",
+   "kind": "dungeon",
+   "level": 8,
+   "phase": "phase:wood",
+   "location": "loc:five_phases_shrines",
+   "realm": "realm:mahayana",
+   "tier": "tier:viii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 75,
+      "phase": "phase:wood"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 75,
+      "phase": "phase:wood"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 75,
+      "phase": "phase:wood"
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:guardian_azure_dragon",
+      "level": 77
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 75,
+      "phase": "phase:wood"
+     }
+    ]
+   ],
+   "drops": "drops:shrine_wood_8",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 200
+    }
+   ],
+   "unlock": {
+    "realm": "realm:mahayana"
+   }
+  },
+  {
+   "id": "stage:shrine_water_1",
+   "name": "Water Shrine I",
+   "mode": "mode:shrines",
+   "kind": "dungeon",
+   "level": 1,
+   "phase": "phase:water",
+   "location": "loc:five_phases_shrines",
+   "realm": "realm:qi_refining",
+   "tier": "tier:i",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 5,
+      "phase": "phase:water"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 5,
+      "phase": "phase:water"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 5,
+      "phase": "phase:water"
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:guardian_black_tortoise",
+      "level": 7
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 5,
+      "phase": "phase:water"
+     }
+    ]
+   ],
+   "drops": "drops:shrine_water_1",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 60
+    }
+   ]
+  },
+  {
+   "id": "stage:shrine_water_2",
+   "name": "Water Shrine II",
+   "mode": "mode:shrines",
+   "kind": "dungeon",
+   "level": 2,
+   "phase": "phase:water",
+   "location": "loc:five_phases_shrines",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 15,
+      "phase": "phase:water"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 15,
+      "phase": "phase:water"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 15,
+      "phase": "phase:water"
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:guardian_black_tortoise",
+      "level": 17
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 15,
+      "phase": "phase:water"
+     }
+    ]
+   ],
+   "drops": "drops:shrine_water_2",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 80
+    }
+   ],
+   "unlock": {
+    "realm": "realm:foundation_establishment"
+   }
+  },
+  {
+   "id": "stage:shrine_water_3",
+   "name": "Water Shrine III",
+   "mode": "mode:shrines",
+   "kind": "dungeon",
+   "level": 3,
+   "phase": "phase:water",
+   "location": "loc:five_phases_shrines",
+   "realm": "realm:core_formation",
+   "tier": "tier:iii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 25,
+      "phase": "phase:water"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 25,
+      "phase": "phase:water"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 25,
+      "phase": "phase:water"
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:guardian_black_tortoise",
+      "level": 27
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 25,
+      "phase": "phase:water"
+     }
+    ]
+   ],
+   "drops": "drops:shrine_water_3",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 100
+    }
+   ],
+   "unlock": {
+    "realm": "realm:core_formation"
+   }
+  },
+  {
+   "id": "stage:shrine_water_4",
+   "name": "Water Shrine IV",
+   "mode": "mode:shrines",
+   "kind": "dungeon",
+   "level": 4,
+   "phase": "phase:water",
+   "location": "loc:five_phases_shrines",
+   "realm": "realm:nascent_soul",
+   "tier": "tier:iv",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 35,
+      "phase": "phase:water"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 35,
+      "phase": "phase:water"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 35,
+      "phase": "phase:water"
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:guardian_black_tortoise",
+      "level": 37
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 35,
+      "phase": "phase:water"
+     }
+    ]
+   ],
+   "drops": "drops:shrine_water_4",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 120
+    }
+   ],
+   "unlock": {
+    "realm": "realm:nascent_soul"
+   }
+  },
+  {
+   "id": "stage:shrine_water_5",
+   "name": "Water Shrine V",
+   "mode": "mode:shrines",
+   "kind": "dungeon",
+   "level": 5,
+   "phase": "phase:water",
+   "location": "loc:five_phases_shrines",
+   "realm": "realm:spirit_severing",
+   "tier": "tier:v",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 45,
+      "phase": "phase:water"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 45,
+      "phase": "phase:water"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 45,
+      "phase": "phase:water"
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:guardian_black_tortoise",
+      "level": 47
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 45,
+      "phase": "phase:water"
+     }
+    ]
+   ],
+   "drops": "drops:shrine_water_5",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 140
+    }
+   ],
+   "unlock": {
+    "realm": "realm:spirit_severing"
+   }
+  },
+  {
+   "id": "stage:shrine_water_6",
+   "name": "Water Shrine VI",
+   "mode": "mode:shrines",
+   "kind": "dungeon",
+   "level": 6,
+   "phase": "phase:water",
+   "location": "loc:five_phases_shrines",
+   "realm": "realm:void_refinement",
+   "tier": "tier:vi",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 55,
+      "phase": "phase:water"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 55,
+      "phase": "phase:water"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 55,
+      "phase": "phase:water"
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:guardian_black_tortoise",
+      "level": 57
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 55,
+      "phase": "phase:water"
+     }
+    ]
+   ],
+   "drops": "drops:shrine_water_6",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 160
+    }
+   ],
+   "unlock": {
+    "realm": "realm:void_refinement"
+   }
+  },
+  {
+   "id": "stage:shrine_water_7",
+   "name": "Water Shrine VII",
+   "mode": "mode:shrines",
+   "kind": "dungeon",
+   "level": 7,
+   "phase": "phase:water",
+   "location": "loc:five_phases_shrines",
+   "realm": "realm:body_integration",
+   "tier": "tier:vii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 65,
+      "phase": "phase:water"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 65,
+      "phase": "phase:water"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 65,
+      "phase": "phase:water"
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:guardian_black_tortoise",
+      "level": 67
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 65,
+      "phase": "phase:water"
+     }
+    ]
+   ],
+   "drops": "drops:shrine_water_7",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 180
+    }
+   ],
+   "unlock": {
+    "realm": "realm:body_integration"
+   }
+  },
+  {
+   "id": "stage:shrine_water_8",
+   "name": "Water Shrine VIII",
+   "mode": "mode:shrines",
+   "kind": "dungeon",
+   "level": 8,
+   "phase": "phase:water",
+   "location": "loc:five_phases_shrines",
+   "realm": "realm:mahayana",
+   "tier": "tier:viii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 75,
+      "phase": "phase:water"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 75,
+      "phase": "phase:water"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 75,
+      "phase": "phase:water"
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:guardian_black_tortoise",
+      "level": 77
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 75,
+      "phase": "phase:water"
+     }
+    ]
+   ],
+   "drops": "drops:shrine_water_8",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 200
+    }
+   ],
+   "unlock": {
+    "realm": "realm:mahayana"
+   }
+  },
+  {
+   "id": "stage:shrine_fire_1",
+   "name": "Fire Shrine I",
+   "mode": "mode:shrines",
+   "kind": "dungeon",
+   "level": 1,
+   "phase": "phase:fire",
+   "location": "loc:five_phases_shrines",
+   "realm": "realm:qi_refining",
+   "tier": "tier:i",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 5,
+      "phase": "phase:fire"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 5,
+      "phase": "phase:fire"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 5,
+      "phase": "phase:fire"
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:guardian_vermilion_bird",
+      "level": 7
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 5,
+      "phase": "phase:fire"
+     }
+    ]
+   ],
+   "drops": "drops:shrine_fire_1",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 60
+    }
+   ]
+  },
+  {
+   "id": "stage:shrine_fire_2",
+   "name": "Fire Shrine II",
+   "mode": "mode:shrines",
+   "kind": "dungeon",
+   "level": 2,
+   "phase": "phase:fire",
+   "location": "loc:five_phases_shrines",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 15,
+      "phase": "phase:fire"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 15,
+      "phase": "phase:fire"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 15,
+      "phase": "phase:fire"
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:guardian_vermilion_bird",
+      "level": 17
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 15,
+      "phase": "phase:fire"
+     }
+    ]
+   ],
+   "drops": "drops:shrine_fire_2",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 80
+    }
+   ],
+   "unlock": {
+    "realm": "realm:foundation_establishment"
+   }
+  },
+  {
+   "id": "stage:shrine_fire_3",
+   "name": "Fire Shrine III",
+   "mode": "mode:shrines",
+   "kind": "dungeon",
+   "level": 3,
+   "phase": "phase:fire",
+   "location": "loc:five_phases_shrines",
+   "realm": "realm:core_formation",
+   "tier": "tier:iii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 25,
+      "phase": "phase:fire"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 25,
+      "phase": "phase:fire"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 25,
+      "phase": "phase:fire"
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:guardian_vermilion_bird",
+      "level": 27
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 25,
+      "phase": "phase:fire"
+     }
+    ]
+   ],
+   "drops": "drops:shrine_fire_3",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 100
+    }
+   ],
+   "unlock": {
+    "realm": "realm:core_formation"
+   }
+  },
+  {
+   "id": "stage:shrine_fire_4",
+   "name": "Fire Shrine IV",
+   "mode": "mode:shrines",
+   "kind": "dungeon",
+   "level": 4,
+   "phase": "phase:fire",
+   "location": "loc:five_phases_shrines",
+   "realm": "realm:nascent_soul",
+   "tier": "tier:iv",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 35,
+      "phase": "phase:fire"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 35,
+      "phase": "phase:fire"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 35,
+      "phase": "phase:fire"
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:guardian_vermilion_bird",
+      "level": 37
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 35,
+      "phase": "phase:fire"
+     }
+    ]
+   ],
+   "drops": "drops:shrine_fire_4",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 120
+    }
+   ],
+   "unlock": {
+    "realm": "realm:nascent_soul"
+   }
+  },
+  {
+   "id": "stage:shrine_fire_5",
+   "name": "Fire Shrine V",
+   "mode": "mode:shrines",
+   "kind": "dungeon",
+   "level": 5,
+   "phase": "phase:fire",
+   "location": "loc:five_phases_shrines",
+   "realm": "realm:spirit_severing",
+   "tier": "tier:v",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 45,
+      "phase": "phase:fire"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 45,
+      "phase": "phase:fire"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 45,
+      "phase": "phase:fire"
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:guardian_vermilion_bird",
+      "level": 47
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 45,
+      "phase": "phase:fire"
+     }
+    ]
+   ],
+   "drops": "drops:shrine_fire_5",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 140
+    }
+   ],
+   "unlock": {
+    "realm": "realm:spirit_severing"
+   }
+  },
+  {
+   "id": "stage:shrine_fire_6",
+   "name": "Fire Shrine VI",
+   "mode": "mode:shrines",
+   "kind": "dungeon",
+   "level": 6,
+   "phase": "phase:fire",
+   "location": "loc:five_phases_shrines",
+   "realm": "realm:void_refinement",
+   "tier": "tier:vi",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 55,
+      "phase": "phase:fire"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 55,
+      "phase": "phase:fire"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 55,
+      "phase": "phase:fire"
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:guardian_vermilion_bird",
+      "level": 57
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 55,
+      "phase": "phase:fire"
+     }
+    ]
+   ],
+   "drops": "drops:shrine_fire_6",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 160
+    }
+   ],
+   "unlock": {
+    "realm": "realm:void_refinement"
+   }
+  },
+  {
+   "id": "stage:shrine_fire_7",
+   "name": "Fire Shrine VII",
+   "mode": "mode:shrines",
+   "kind": "dungeon",
+   "level": 7,
+   "phase": "phase:fire",
+   "location": "loc:five_phases_shrines",
+   "realm": "realm:body_integration",
+   "tier": "tier:vii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 65,
+      "phase": "phase:fire"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 65,
+      "phase": "phase:fire"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 65,
+      "phase": "phase:fire"
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:guardian_vermilion_bird",
+      "level": 67
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 65,
+      "phase": "phase:fire"
+     }
+    ]
+   ],
+   "drops": "drops:shrine_fire_7",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 180
+    }
+   ],
+   "unlock": {
+    "realm": "realm:body_integration"
+   }
+  },
+  {
+   "id": "stage:shrine_fire_8",
+   "name": "Fire Shrine VIII",
+   "mode": "mode:shrines",
+   "kind": "dungeon",
+   "level": 8,
+   "phase": "phase:fire",
+   "location": "loc:five_phases_shrines",
+   "realm": "realm:mahayana",
+   "tier": "tier:viii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 75,
+      "phase": "phase:fire"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 75,
+      "phase": "phase:fire"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 75,
+      "phase": "phase:fire"
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:guardian_vermilion_bird",
+      "level": 77
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 75,
+      "phase": "phase:fire"
+     }
+    ]
+   ],
+   "drops": "drops:shrine_fire_8",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 200
+    }
+   ],
+   "unlock": {
+    "realm": "realm:mahayana"
+   }
+  },
+  {
+   "id": "stage:shrine_earth_1",
+   "name": "Earth Shrine I",
+   "mode": "mode:shrines",
+   "kind": "dungeon",
+   "level": 1,
+   "phase": "phase:earth",
+   "location": "loc:five_phases_shrines",
+   "realm": "realm:qi_refining",
+   "tier": "tier:i",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 5,
+      "phase": "phase:earth"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 5,
+      "phase": "phase:earth"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 5,
+      "phase": "phase:earth"
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:guardian_yellow_dragon",
+      "level": 7
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 5,
+      "phase": "phase:earth"
+     }
+    ]
+   ],
+   "drops": "drops:shrine_earth_1",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 60
+    }
+   ]
+  },
+  {
+   "id": "stage:shrine_earth_2",
+   "name": "Earth Shrine II",
+   "mode": "mode:shrines",
+   "kind": "dungeon",
+   "level": 2,
+   "phase": "phase:earth",
+   "location": "loc:five_phases_shrines",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 15,
+      "phase": "phase:earth"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 15,
+      "phase": "phase:earth"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 15,
+      "phase": "phase:earth"
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:guardian_yellow_dragon",
+      "level": 17
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 15,
+      "phase": "phase:earth"
+     }
+    ]
+   ],
+   "drops": "drops:shrine_earth_2",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 80
+    }
+   ],
+   "unlock": {
+    "realm": "realm:foundation_establishment"
+   }
+  },
+  {
+   "id": "stage:shrine_earth_3",
+   "name": "Earth Shrine III",
+   "mode": "mode:shrines",
+   "kind": "dungeon",
+   "level": 3,
+   "phase": "phase:earth",
+   "location": "loc:five_phases_shrines",
+   "realm": "realm:core_formation",
+   "tier": "tier:iii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 25,
+      "phase": "phase:earth"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 25,
+      "phase": "phase:earth"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 25,
+      "phase": "phase:earth"
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:guardian_yellow_dragon",
+      "level": 27
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 25,
+      "phase": "phase:earth"
+     }
+    ]
+   ],
+   "drops": "drops:shrine_earth_3",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 100
+    }
+   ],
+   "unlock": {
+    "realm": "realm:core_formation"
+   }
+  },
+  {
+   "id": "stage:shrine_earth_4",
+   "name": "Earth Shrine IV",
+   "mode": "mode:shrines",
+   "kind": "dungeon",
+   "level": 4,
+   "phase": "phase:earth",
+   "location": "loc:five_phases_shrines",
+   "realm": "realm:nascent_soul",
+   "tier": "tier:iv",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 35,
+      "phase": "phase:earth"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 35,
+      "phase": "phase:earth"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 35,
+      "phase": "phase:earth"
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:guardian_yellow_dragon",
+      "level": 37
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 35,
+      "phase": "phase:earth"
+     }
+    ]
+   ],
+   "drops": "drops:shrine_earth_4",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 120
+    }
+   ],
+   "unlock": {
+    "realm": "realm:nascent_soul"
+   }
+  },
+  {
+   "id": "stage:shrine_earth_5",
+   "name": "Earth Shrine V",
+   "mode": "mode:shrines",
+   "kind": "dungeon",
+   "level": 5,
+   "phase": "phase:earth",
+   "location": "loc:five_phases_shrines",
+   "realm": "realm:spirit_severing",
+   "tier": "tier:v",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 45,
+      "phase": "phase:earth"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 45,
+      "phase": "phase:earth"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 45,
+      "phase": "phase:earth"
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:guardian_yellow_dragon",
+      "level": 47
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 45,
+      "phase": "phase:earth"
+     }
+    ]
+   ],
+   "drops": "drops:shrine_earth_5",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 140
+    }
+   ],
+   "unlock": {
+    "realm": "realm:spirit_severing"
+   }
+  },
+  {
+   "id": "stage:shrine_earth_6",
+   "name": "Earth Shrine VI",
+   "mode": "mode:shrines",
+   "kind": "dungeon",
+   "level": 6,
+   "phase": "phase:earth",
+   "location": "loc:five_phases_shrines",
+   "realm": "realm:void_refinement",
+   "tier": "tier:vi",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 55,
+      "phase": "phase:earth"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 55,
+      "phase": "phase:earth"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 55,
+      "phase": "phase:earth"
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:guardian_yellow_dragon",
+      "level": 57
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 55,
+      "phase": "phase:earth"
+     }
+    ]
+   ],
+   "drops": "drops:shrine_earth_6",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 160
+    }
+   ],
+   "unlock": {
+    "realm": "realm:void_refinement"
+   }
+  },
+  {
+   "id": "stage:shrine_earth_7",
+   "name": "Earth Shrine VII",
+   "mode": "mode:shrines",
+   "kind": "dungeon",
+   "level": 7,
+   "phase": "phase:earth",
+   "location": "loc:five_phases_shrines",
+   "realm": "realm:body_integration",
+   "tier": "tier:vii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 65,
+      "phase": "phase:earth"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 65,
+      "phase": "phase:earth"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 65,
+      "phase": "phase:earth"
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:guardian_yellow_dragon",
+      "level": 67
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 65,
+      "phase": "phase:earth"
+     }
+    ]
+   ],
+   "drops": "drops:shrine_earth_7",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 180
+    }
+   ],
+   "unlock": {
+    "realm": "realm:body_integration"
+   }
+  },
+  {
+   "id": "stage:shrine_earth_8",
+   "name": "Earth Shrine VIII",
+   "mode": "mode:shrines",
+   "kind": "dungeon",
+   "level": 8,
+   "phase": "phase:earth",
+   "location": "loc:five_phases_shrines",
+   "realm": "realm:mahayana",
+   "tier": "tier:viii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 75,
+      "phase": "phase:earth"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 75,
+      "phase": "phase:earth"
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 75,
+      "phase": "phase:earth"
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:guardian_yellow_dragon",
+      "level": 77
+     },
+     {
+      "enemy": "enemy:shrine_spirit",
+      "level": 75,
+      "phase": "phase:earth"
+     }
+    ]
+   ],
+   "drops": "drops:shrine_earth_8",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 200
+    }
+   ],
+   "unlock": {
+    "realm": "realm:mahayana"
+   }
+  }
+ ]
+}

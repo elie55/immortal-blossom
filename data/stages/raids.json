@@ -1,0 +1,662 @@
+{
+ "about": "Tribulation Raid difficulties: each wave is one form of the beast.",
+ "records": [
+  {
+   "id": "stage:raid_zhulong_d1",
+   "name": "Zhulong, the Torch Dragon, difficulty 1",
+   "mode": "mode:raids",
+   "raid": "raid:zhulong",
+   "kind": "raid",
+   "level": 1,
+   "location": "loc:mount_zhong",
+   "realm": "realm:nascent_soul",
+   "tier": "tier:iv",
+   "teams": 3,
+   "waves": [
+    [
+     {
+      "enemy": "enemy:zhulong_eyes_open",
+      "level": 40
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:zhulong_eyes_closed",
+      "level": 40
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:zhulong_nine_darks",
+      "level": 40
+     }
+    ]
+   ],
+   "drops": "drops:raid_d1",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 300
+    }
+   ],
+   "unlock": {
+    "realm": "realm:nascent_soul"
+   }
+  },
+  {
+   "id": "stage:raid_zhulong_d2",
+   "name": "Zhulong, the Torch Dragon, difficulty 2",
+   "mode": "mode:raids",
+   "raid": "raid:zhulong",
+   "kind": "raid",
+   "level": 2,
+   "location": "loc:mount_zhong",
+   "realm": "realm:spirit_severing",
+   "tier": "tier:v",
+   "teams": 3,
+   "waves": [
+    [
+     {
+      "enemy": "enemy:zhulong_eyes_open",
+      "level": 50
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:zhulong_eyes_closed",
+      "level": 50
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:zhulong_nine_darks",
+      "level": 50
+     }
+    ]
+   ],
+   "drops": "drops:raid_d2",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 600
+    }
+   ],
+   "unlock": {
+    "clear": "stage:raid_zhulong_d1"
+   }
+  },
+  {
+   "id": "stage:raid_zhulong_d3",
+   "name": "Zhulong, the Torch Dragon, difficulty 3",
+   "mode": "mode:raids",
+   "raid": "raid:zhulong",
+   "kind": "raid",
+   "level": 3,
+   "location": "loc:mount_zhong",
+   "realm": "realm:void_refinement",
+   "tier": "tier:vi",
+   "teams": 3,
+   "waves": [
+    [
+     {
+      "enemy": "enemy:zhulong_eyes_open",
+      "level": 60
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:zhulong_eyes_closed",
+      "level": 60
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:zhulong_nine_darks",
+      "level": 60
+     }
+    ]
+   ],
+   "drops": "drops:raid_d3",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 900
+    },
+    {
+     "art": "art:heaven_shaking_seal",
+     "rarity": "rarity:mythic"
+    }
+   ],
+   "unlock": {
+    "clear": "stage:raid_zhulong_d2"
+   }
+  },
+  {
+   "id": "stage:raid_zhulong_d4",
+   "name": "Zhulong, the Torch Dragon, difficulty 4",
+   "mode": "mode:raids",
+   "raid": "raid:zhulong",
+   "kind": "raid",
+   "level": 4,
+   "location": "loc:mount_zhong",
+   "realm": "realm:body_integration",
+   "tier": "tier:vii",
+   "teams": 3,
+   "waves": [
+    [
+     {
+      "enemy": "enemy:zhulong_eyes_open",
+      "level": 70
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:zhulong_eyes_closed",
+      "level": 70
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:zhulong_nine_darks",
+      "level": 70
+     }
+    ]
+   ],
+   "drops": "drops:raid_d4",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 1200
+    }
+   ],
+   "unlock": {
+    "clear": "stage:raid_zhulong_d3"
+   }
+  },
+  {
+   "id": "stage:raid_zhulong_d5",
+   "name": "Zhulong, the Torch Dragon, difficulty 5",
+   "mode": "mode:raids",
+   "raid": "raid:zhulong",
+   "kind": "raid",
+   "level": 5,
+   "location": "loc:mount_zhong",
+   "realm": "realm:mahayana",
+   "tier": "tier:viii",
+   "teams": 3,
+   "waves": [
+    [
+     {
+      "enemy": "enemy:zhulong_eyes_open",
+      "level": 80
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:zhulong_eyes_closed",
+      "level": 80
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:zhulong_nine_darks",
+      "level": 80
+     }
+    ]
+   ],
+   "drops": "drops:raid_d5",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 1500
+    }
+   ],
+   "unlock": {
+    "clear": "stage:raid_zhulong_d4"
+   }
+  },
+  {
+   "id": "stage:raid_kunpeng_d1",
+   "name": "Kunpeng, difficulty 1",
+   "mode": "mode:raids",
+   "raid": "raid:kunpeng",
+   "kind": "raid",
+   "level": 1,
+   "location": "loc:north_sea",
+   "realm": "realm:nascent_soul",
+   "tier": "tier:iv",
+   "teams": 3,
+   "waves": [
+    [
+     {
+      "enemy": "enemy:kun_of_the_abyss",
+      "level": 40
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:peng_of_the_tempest",
+      "level": 40
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:kunpeng_ascendant",
+      "level": 40
+     }
+    ]
+   ],
+   "drops": "drops:raid_d1",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 300
+    }
+   ],
+   "unlock": {
+    "realm": "realm:nascent_soul"
+   }
+  },
+  {
+   "id": "stage:raid_kunpeng_d2",
+   "name": "Kunpeng, difficulty 2",
+   "mode": "mode:raids",
+   "raid": "raid:kunpeng",
+   "kind": "raid",
+   "level": 2,
+   "location": "loc:north_sea",
+   "realm": "realm:spirit_severing",
+   "tier": "tier:v",
+   "teams": 3,
+   "waves": [
+    [
+     {
+      "enemy": "enemy:kun_of_the_abyss",
+      "level": 50
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:peng_of_the_tempest",
+      "level": 50
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:kunpeng_ascendant",
+      "level": 50
+     }
+    ]
+   ],
+   "drops": "drops:raid_d2",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 600
+    }
+   ],
+   "unlock": {
+    "clear": "stage:raid_kunpeng_d1"
+   }
+  },
+  {
+   "id": "stage:raid_kunpeng_d3",
+   "name": "Kunpeng, difficulty 3",
+   "mode": "mode:raids",
+   "raid": "raid:kunpeng",
+   "kind": "raid",
+   "level": 3,
+   "location": "loc:north_sea",
+   "realm": "realm:void_refinement",
+   "tier": "tier:vi",
+   "teams": 3,
+   "waves": [
+    [
+     {
+      "enemy": "enemy:kun_of_the_abyss",
+      "level": 60
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:peng_of_the_tempest",
+      "level": 60
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:kunpeng_ascendant",
+      "level": 60
+     }
+    ]
+   ],
+   "drops": "drops:raid_d3",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 900
+    },
+    {
+     "art": "art:heaven_shaking_seal",
+     "rarity": "rarity:mythic"
+    }
+   ],
+   "unlock": {
+    "clear": "stage:raid_kunpeng_d2"
+   }
+  },
+  {
+   "id": "stage:raid_kunpeng_d4",
+   "name": "Kunpeng, difficulty 4",
+   "mode": "mode:raids",
+   "raid": "raid:kunpeng",
+   "kind": "raid",
+   "level": 4,
+   "location": "loc:north_sea",
+   "realm": "realm:body_integration",
+   "tier": "tier:vii",
+   "teams": 3,
+   "waves": [
+    [
+     {
+      "enemy": "enemy:kun_of_the_abyss",
+      "level": 70
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:peng_of_the_tempest",
+      "level": 70
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:kunpeng_ascendant",
+      "level": 70
+     }
+    ]
+   ],
+   "drops": "drops:raid_d4",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 1200
+    }
+   ],
+   "unlock": {
+    "clear": "stage:raid_kunpeng_d3"
+   }
+  },
+  {
+   "id": "stage:raid_kunpeng_d5",
+   "name": "Kunpeng, difficulty 5",
+   "mode": "mode:raids",
+   "raid": "raid:kunpeng",
+   "kind": "raid",
+   "level": 5,
+   "location": "loc:north_sea",
+   "realm": "realm:mahayana",
+   "tier": "tier:viii",
+   "teams": 3,
+   "waves": [
+    [
+     {
+      "enemy": "enemy:kun_of_the_abyss",
+      "level": 80
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:peng_of_the_tempest",
+      "level": 80
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:kunpeng_ascendant",
+      "level": 80
+     }
+    ]
+   ],
+   "drops": "drops:raid_d5",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 1500
+    }
+   ],
+   "unlock": {
+    "clear": "stage:raid_kunpeng_d4"
+   }
+  },
+  {
+   "id": "stage:raid_jiuying_d1",
+   "name": "Jiuying, difficulty 1",
+   "mode": "mode:raids",
+   "raid": "raid:jiuying",
+   "kind": "raid",
+   "level": 1,
+   "location": "loc:fierce_water",
+   "realm": "realm:nascent_soul",
+   "tier": "tier:iv",
+   "teams": 3,
+   "waves": [
+    [
+     {
+      "enemy": "enemy:jiuying_water_heads",
+      "level": 40
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:jiuying_fire_heads",
+      "level": 40
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:jiuying_unbound",
+      "level": 40
+     }
+    ]
+   ],
+   "drops": "drops:raid_d1",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 300
+    }
+   ],
+   "unlock": {
+    "realm": "realm:nascent_soul"
+   }
+  },
+  {
+   "id": "stage:raid_jiuying_d2",
+   "name": "Jiuying, difficulty 2",
+   "mode": "mode:raids",
+   "raid": "raid:jiuying",
+   "kind": "raid",
+   "level": 2,
+   "location": "loc:fierce_water",
+   "realm": "realm:spirit_severing",
+   "tier": "tier:v",
+   "teams": 3,
+   "waves": [
+    [
+     {
+      "enemy": "enemy:jiuying_water_heads",
+      "level": 50
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:jiuying_fire_heads",
+      "level": 50
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:jiuying_unbound",
+      "level": 50
+     }
+    ]
+   ],
+   "drops": "drops:raid_d2",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 600
+    }
+   ],
+   "unlock": {
+    "clear": "stage:raid_jiuying_d1"
+   }
+  },
+  {
+   "id": "stage:raid_jiuying_d3",
+   "name": "Jiuying, difficulty 3",
+   "mode": "mode:raids",
+   "raid": "raid:jiuying",
+   "kind": "raid",
+   "level": 3,
+   "location": "loc:fierce_water",
+   "realm": "realm:void_refinement",
+   "tier": "tier:vi",
+   "teams": 3,
+   "waves": [
+    [
+     {
+      "enemy": "enemy:jiuying_water_heads",
+      "level": 60
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:jiuying_fire_heads",
+      "level": 60
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:jiuying_unbound",
+      "level": 60
+     }
+    ]
+   ],
+   "drops": "drops:raid_d3",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 900
+    },
+    {
+     "art": "art:heaven_shaking_seal",
+     "rarity": "rarity:mythic"
+    }
+   ],
+   "unlock": {
+    "clear": "stage:raid_jiuying_d2"
+   }
+  },
+  {
+   "id": "stage:raid_jiuying_d4",
+   "name": "Jiuying, difficulty 4",
+   "mode": "mode:raids",
+   "raid": "raid:jiuying",
+   "kind": "raid",
+   "level": 4,
+   "location": "loc:fierce_water",
+   "realm": "realm:body_integration",
+   "tier": "tier:vii",
+   "teams": 3,
+   "waves": [
+    [
+     {
+      "enemy": "enemy:jiuying_water_heads",
+      "level": 70
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:jiuying_fire_heads",
+      "level": 70
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:jiuying_unbound",
+      "level": 70
+     }
+    ]
+   ],
+   "drops": "drops:raid_d4",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 1200
+    }
+   ],
+   "unlock": {
+    "clear": "stage:raid_jiuying_d3"
+   }
+  },
+  {
+   "id": "stage:raid_jiuying_d5",
+   "name": "Jiuying, difficulty 5",
+   "mode": "mode:raids",
+   "raid": "raid:jiuying",
+   "kind": "raid",
+   "level": 5,
+   "location": "loc:fierce_water",
+   "realm": "realm:mahayana",
+   "tier": "tier:viii",
+   "teams": 3,
+   "waves": [
+    [
+     {
+      "enemy": "enemy:jiuying_water_heads",
+      "level": 80
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:jiuying_fire_heads",
+      "level": 80
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:jiuying_unbound",
+      "level": 80
+     }
+    ]
+   ],
+   "drops": "drops:raid_d5",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 1500
+    }
+   ],
+   "unlock": {
+    "clear": "stage:raid_jiuying_d4"
+   }
+  }
+ ]
+}

@@ -1,0 +1,466 @@
+{
+ "about": "Shops. Nothing is sold for real money.",
+ "records": [
+  {
+   "id": "shop:myriad_treasures",
+   "name": "Myriad Treasures Hall",
+   "keeper": "npc:madam_jin",
+   "location": "loc:myriad_treasures_hall",
+   "refresh": "weekly",
+   "stock": [
+    {
+     "cur": "cur:fate_incense",
+     "qty": 1,
+     "price": [
+      {
+       "cur": "cur:immortal_jade",
+       "qty": 160
+      }
+     ]
+    },
+    {
+     "item": "item:spirit_grass",
+     "qty": 5,
+     "price": [
+      {
+       "cur": "cur:spirit_stones",
+       "qty": 1000
+      }
+     ]
+    },
+    {
+     "item": "item:blood_ginseng",
+     "qty": 1,
+     "price": [
+      {
+       "cur": "cur:spirit_stones",
+       "qty": 2000
+      }
+     ],
+     "limit": 20
+    },
+    {
+     "item": "item:snow_lotus",
+     "qty": 1,
+     "price": [
+      {
+       "cur": "cur:spirit_stones",
+       "qty": 8000
+      }
+     ],
+     "limit": 5
+    },
+    {
+     "item": "item:black_iron",
+     "qty": 1,
+     "price": [
+      {
+       "cur": "cur:spirit_stones",
+       "qty": 3000
+      }
+     ],
+     "limit": 20
+    },
+    {
+     "item": "item:spirit_silver",
+     "qty": 1,
+     "price": [
+      {
+       "cur": "cur:immortal_jade",
+       "qty": 30
+      }
+     ],
+     "limit": 5
+    },
+    {
+     "item": "item:qi_gathering_pill",
+     "qty": 1,
+     "price": [
+      {
+       "cur": "cur:spirit_stones",
+       "qty": 1500
+      }
+     ],
+     "limit": 20
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1,
+     "price": [
+      {
+       "cur": "cur:immortal_jade",
+       "qty": 50
+      }
+     ],
+     "limit": 5
+    },
+    {
+     "item": "item:array_flag",
+     "qty": 1,
+     "price": [
+      {
+       "cur": "cur:immortal_jade",
+       "qty": 40
+      }
+     ],
+     "limit": 3
+    },
+    {
+     "item": "item:artefact_essence",
+     "qty": 1,
+     "price": [
+      {
+       "cur": "cur:immortal_jade",
+       "qty": 20
+      }
+     ],
+     "limit": 10
+    },
+    {
+     "item": "item:egg_rare",
+     "qty": 1,
+     "price": [
+      {
+       "cur": "cur:immortal_jade",
+       "qty": 300
+      }
+     ],
+     "limit": 1
+    },
+    {
+     "item": "item:gift_jade_hairpin",
+     "qty": 1,
+     "price": [
+      {
+       "cur": "cur:spirit_stones",
+       "qty": 5000
+      }
+     ],
+     "limit": 3
+    },
+    {
+     "item": "item:gift_silk_fan",
+     "qty": 1,
+     "price": [
+      {
+       "cur": "cur:spirit_stones",
+       "qty": 5000
+      }
+     ],
+     "limit": 3
+    },
+    {
+     "item": "item:gift_spirit_tea",
+     "qty": 1,
+     "price": [
+      {
+       "cur": "cur:spirit_stones",
+       "qty": 4000
+      }
+     ],
+     "limit": 3
+    }
+   ]
+  },
+  {
+   "id": "shop:merit_exchange",
+   "name": "Merit Exchange",
+   "keeper": "npc:tao_yao",
+   "location": "loc:hundred_blossoms_pavilion",
+   "refresh": "weekly",
+   "stock": [
+    {
+     "item": "item:manual_sword_heart",
+     "qty": 1,
+     "price": [
+      {
+       "cur": "cur:sect_merit",
+       "qty": 300
+      }
+     ],
+     "limit": 2
+    },
+    {
+     "item": "item:manual_azure_dragon",
+     "qty": 1,
+     "price": [
+      {
+       "cur": "cur:sect_merit",
+       "qty": 300
+      }
+     ],
+     "limit": 2
+    },
+    {
+     "item": "item:manual_white_tiger",
+     "qty": 1,
+     "price": [
+      {
+       "cur": "cur:sect_merit",
+       "qty": 300
+      }
+     ],
+     "limit": 2
+    },
+    {
+     "item": "item:manual_vermilion_bird",
+     "qty": 1,
+     "price": [
+      {
+       "cur": "cur:sect_merit",
+       "qty": 300
+      }
+     ],
+     "limit": 2
+    },
+    {
+     "item": "item:manual_qilin",
+     "qty": 1,
+     "price": [
+      {
+       "cur": "cur:sect_merit",
+       "qty": 300
+      }
+     ],
+     "limit": 2
+    },
+    {
+     "item": "item:manual_black_tortoise",
+     "qty": 1,
+     "price": [
+      {
+       "cur": "cur:sect_merit",
+       "qty": 300
+      }
+     ],
+     "limit": 2
+    },
+    {
+     "item": "item:manual_heavenly_eye",
+     "qty": 1,
+     "price": [
+      {
+       "cur": "cur:sect_merit",
+       "qty": 300
+      }
+     ],
+     "limit": 2
+    },
+    {
+     "item": "item:manual_still_water",
+     "qty": 1,
+     "price": [
+      {
+       "cur": "cur:sect_merit",
+       "qty": 300
+      }
+     ],
+     "limit": 2
+    },
+    {
+     "item": "item:manual_blood_lotus",
+     "qty": 1,
+     "price": [
+      {
+       "cur": "cur:sect_merit",
+       "qty": 300
+      }
+     ],
+     "limit": 2
+    },
+    {
+     "item": "item:manual_five_elements",
+     "qty": 1,
+     "price": [
+      {
+       "cur": "cur:sect_merit",
+       "qty": 300
+      }
+     ],
+     "limit": 2
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 1,
+     "price": [
+      {
+       "cur": "cur:sect_merit",
+       "qty": 50
+      }
+     ],
+     "limit": 10
+    },
+    {
+     "item": "item:dao_mark",
+     "qty": 1,
+     "price": [
+      {
+       "cur": "cur:sect_merit",
+       "qty": 150
+      }
+     ],
+     "limit": 3
+    },
+    {
+     "item": "item:array_flag",
+     "qty": 1,
+     "price": [
+      {
+       "cur": "cur:sect_merit",
+       "qty": 80
+      }
+     ],
+     "limit": 5
+    },
+    {
+     "item": "item:bodhi_leaf",
+     "qty": 1,
+     "price": [
+      {
+       "cur": "cur:sect_merit",
+       "qty": 400
+      }
+     ],
+     "limit": 1
+    }
+   ]
+  },
+  {
+   "id": "shop:wandering_merchant",
+   "name": "Old Qian's Cart",
+   "keeper": "npc:old_qian",
+   "location": "loc:peach_blossom_ford",
+   "refresh": "each visit",
+   "stock": [
+    {
+     "item": "item:gift_hawthorn_candy",
+     "qty": 1,
+     "price": [
+      {
+       "cur": "cur:spirit_stones",
+       "qty": 2000
+      }
+     ],
+     "limit": 3
+    },
+    {
+     "item": "item:gift_plum_wine",
+     "qty": 1,
+     "price": [
+      {
+       "cur": "cur:spirit_stones",
+       "qty": 3000
+      }
+     ],
+     "limit": 3
+    },
+    {
+     "item": "item:gift_embroidered_pouch",
+     "qty": 1,
+     "price": [
+      {
+       "cur": "cur:spirit_stones",
+       "qty": 4000
+      }
+     ],
+     "limit": 2
+    },
+    {
+     "item": "item:spirit_grass",
+     "qty": 10,
+     "price": [
+      {
+       "cur": "cur:spirit_stones",
+       "qty": 1800
+      }
+     ],
+     "limit": 3
+    },
+    {
+     "item": "item:egg_common",
+     "qty": 1,
+     "price": [
+      {
+       "cur": "cur:spirit_stones",
+       "qty": 20000
+      }
+     ],
+     "limit": 1
+    },
+    {
+     "item": "item:fire_lingzhi",
+     "qty": 1,
+     "price": [
+      {
+       "cur": "cur:spirit_stones",
+       "qty": 30000
+      }
+     ],
+     "limit": 1
+    }
+   ]
+  },
+  {
+   "id": "shop:realm_merchant",
+   "name": "A Peddler in the Realm",
+   "keeper": "npc:old_qian",
+   "location": "loc:secret_realms",
+   "refresh": "each merchant room",
+   "stock": [
+    {
+     "item": "item:resolve_elixir",
+     "qty": 1,
+     "price": [
+      {
+       "cur": "cur:spirit_stones",
+       "qty": 3000
+      }
+     ],
+     "limit": 2
+    },
+    {
+     "item": "item:spirit_elixir",
+     "qty": 1,
+     "price": [
+      {
+       "cur": "cur:spirit_stones",
+       "qty": 5000
+      }
+     ],
+     "limit": 1
+    },
+    {
+     "item": "item:revival_elixir",
+     "qty": 1,
+     "price": [
+      {
+       "cur": "cur:spirit_stones",
+       "qty": 8000
+      }
+     ],
+     "limit": 1
+    },
+    {
+     "insight": "insight:qi_spring",
+     "price": [
+      {
+       "cur": "cur:spirit_stones",
+       "qty": 6000
+      }
+     ],
+     "limit": 1
+    },
+    {
+     "insight": "insight:fortunate_path",
+     "price": [
+      {
+       "cur": "cur:spirit_stones",
+       "qty": 6000
+      }
+     ],
+     "limit": 1
+    }
+   ]
+  }
+ ]
+}

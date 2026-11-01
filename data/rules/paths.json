@@ -1,0 +1,74 @@
+{
+ "about": "The six cultivation paths.",
+ "records": [
+  {
+   "id": "path:sword",
+   "name": "Sword",
+   "cn": "剑修",
+   "role": "Single-target burst damage",
+   "epicSeven": "Warrior",
+   "artefactTypes": [
+    "Swords",
+    "sword gourds"
+   ]
+  },
+  {
+   "id": "path:guardian",
+   "name": "Guardian",
+   "cn": "体修",
+   "role": "Tank: taunts, barriers, counters",
+   "epicSeven": "Knight",
+   "artefactTypes": [
+    "Shields",
+    "bells",
+    "armlets"
+   ]
+  },
+  {
+   "id": "path:shadow",
+   "name": "Shadow",
+   "cn": "影修",
+   "role": "Assassin: Haste, multi-hit, refreshes",
+   "epicSeven": "Thief",
+   "artefactTypes": [
+    "Daggers",
+    "needles"
+   ]
+  },
+  {
+   "id": "path:talisman",
+   "name": "Talisman",
+   "cn": "符修",
+   "role": "Control: debuffs, cooldown delays",
+   "epicSeven": "Ranger",
+   "artefactTypes": [
+    "Talismans",
+    "array flags"
+   ]
+  },
+  {
+   "id": "path:arcane",
+   "name": "Arcane",
+   "cn": "法修",
+   "role": "Area damage, burns, freezes",
+   "epicSeven": "Mage",
+   "artefactTypes": [
+    "Fans",
+    "mirrors",
+    "orbs"
+   ]
+  },
+  {
+   "id": "path:healer",
+   "name": "Healer",
+   "cn": "医修",
+   "role": "Healing, cleansing, buffs",
+   "epicSeven": "Soul Weaver",
+   "artefactTypes": [
+    "Lotus lamps",
+    "whisks",
+    "cauldrons"
+   ]
+  }
+ ]
+}

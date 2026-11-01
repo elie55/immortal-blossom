@@ -1,0 +1,3686 @@
+{
+ "about": "Demon Hunt levels.",
+ "records": [
+  {
+   "id": "stage:hunt_qiongqi_01",
+   "name": "Qiongqi I",
+   "mode": "mode:hunts",
+   "hunt": "hunt:qiongqi",
+   "kind": "hunt",
+   "level": 1,
+   "location": "loc:howling_gorge",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 12
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 12
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 12
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 12
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 12
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:qiongqi",
+      "level": 14
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 12
+     }
+    ]
+   ],
+   "drops": "drops:hunt_qiongqi_01",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 120
+    }
+   ]
+  },
+  {
+   "id": "stage:hunt_qiongqi_02",
+   "name": "Qiongqi II",
+   "mode": "mode:hunts",
+   "hunt": "hunt:qiongqi",
+   "kind": "hunt",
+   "level": 2,
+   "location": "loc:howling_gorge",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 18
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 18
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 18
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 18
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 18
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:qiongqi",
+      "level": 20
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 18
+     }
+    ]
+   ],
+   "drops": "drops:hunt_qiongqi_02",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 140
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_qiongqi_01"
+   }
+  },
+  {
+   "id": "stage:hunt_qiongqi_03",
+   "name": "Qiongqi III",
+   "mode": "mode:hunts",
+   "hunt": "hunt:qiongqi",
+   "kind": "hunt",
+   "level": 3,
+   "location": "loc:howling_gorge",
+   "realm": "realm:core_formation",
+   "tier": "tier:iii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 23
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 23
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 23
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 23
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 23
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:qiongqi",
+      "level": 25
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 23
+     }
+    ]
+   ],
+   "drops": "drops:hunt_qiongqi_03",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 160
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_qiongqi_02"
+   }
+  },
+  {
+   "id": "stage:hunt_qiongqi_04",
+   "name": "Qiongqi IV",
+   "mode": "mode:hunts",
+   "hunt": "hunt:qiongqi",
+   "kind": "hunt",
+   "level": 4,
+   "location": "loc:howling_gorge",
+   "realm": "realm:core_formation",
+   "tier": "tier:iii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 28
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 28
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 28
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 28
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 28
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:qiongqi",
+      "level": 30
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 28
+     }
+    ]
+   ],
+   "drops": "drops:hunt_qiongqi_04",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 180
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_qiongqi_03"
+   }
+  },
+  {
+   "id": "stage:hunt_qiongqi_05",
+   "name": "Qiongqi V",
+   "mode": "mode:hunts",
+   "hunt": "hunt:qiongqi",
+   "kind": "hunt",
+   "level": 5,
+   "location": "loc:howling_gorge",
+   "realm": "realm:nascent_soul",
+   "tier": "tier:iv",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 33
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 33
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 33
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 33
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 33
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:qiongqi",
+      "level": 35
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 33
+     }
+    ]
+   ],
+   "drops": "drops:hunt_qiongqi_05",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 200
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_qiongqi_04"
+   }
+  },
+  {
+   "id": "stage:hunt_qiongqi_06",
+   "name": "Qiongqi VI",
+   "mode": "mode:hunts",
+   "hunt": "hunt:qiongqi",
+   "kind": "hunt",
+   "level": 6,
+   "location": "loc:howling_gorge",
+   "realm": "realm:nascent_soul",
+   "tier": "tier:iv",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 38
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 38
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 38
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 38
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 38
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:qiongqi",
+      "level": 40
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 38
+     }
+    ]
+   ],
+   "drops": "drops:hunt_qiongqi_06",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 220
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_qiongqi_05"
+   }
+  },
+  {
+   "id": "stage:hunt_qiongqi_07",
+   "name": "Qiongqi VII",
+   "mode": "mode:hunts",
+   "hunt": "hunt:qiongqi",
+   "kind": "hunt",
+   "level": 7,
+   "location": "loc:howling_gorge",
+   "realm": "realm:spirit_severing",
+   "tier": "tier:v",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 43
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 43
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 43
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 43
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 43
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:qiongqi",
+      "level": 45
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 43
+     }
+    ]
+   ],
+   "drops": "drops:hunt_qiongqi_07",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 240
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_qiongqi_06"
+   }
+  },
+  {
+   "id": "stage:hunt_qiongqi_08",
+   "name": "Qiongqi VIII",
+   "mode": "mode:hunts",
+   "hunt": "hunt:qiongqi",
+   "kind": "hunt",
+   "level": 8,
+   "location": "loc:howling_gorge",
+   "realm": "realm:spirit_severing",
+   "tier": "tier:v",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 48
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 48
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 48
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 48
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 48
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:qiongqi",
+      "level": 50
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 48
+     }
+    ]
+   ],
+   "drops": "drops:hunt_qiongqi_08",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 260
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_qiongqi_07"
+   }
+  },
+  {
+   "id": "stage:hunt_qiongqi_09",
+   "name": "Qiongqi IX",
+   "mode": "mode:hunts",
+   "hunt": "hunt:qiongqi",
+   "kind": "hunt",
+   "level": 9,
+   "location": "loc:howling_gorge",
+   "realm": "realm:void_refinement",
+   "tier": "tier:vi",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 53
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 53
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 53
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 53
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 53
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:qiongqi",
+      "level": 55
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 53
+     }
+    ]
+   ],
+   "drops": "drops:hunt_qiongqi_09",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 280
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_qiongqi_08"
+   }
+  },
+  {
+   "id": "stage:hunt_qiongqi_10",
+   "name": "Qiongqi X",
+   "mode": "mode:hunts",
+   "hunt": "hunt:qiongqi",
+   "kind": "hunt",
+   "level": 10,
+   "location": "loc:howling_gorge",
+   "realm": "realm:void_refinement",
+   "tier": "tier:vi",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 58
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 58
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 58
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 58
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 58
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:qiongqi",
+      "level": 60
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 58
+     }
+    ]
+   ],
+   "drops": "drops:hunt_qiongqi_10",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 300
+    },
+    {
+     "art": "art:wind_fire_wheels",
+     "rarity": "rarity:legendary"
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_qiongqi_09"
+   }
+  },
+  {
+   "id": "stage:hunt_qiongqi_11",
+   "name": "Qiongqi XI",
+   "mode": "mode:hunts",
+   "hunt": "hunt:qiongqi",
+   "kind": "hunt",
+   "level": 11,
+   "location": "loc:howling_gorge",
+   "realm": "realm:body_integration",
+   "tier": "tier:vii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 63
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 63
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 63
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 63
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 63
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:qiongqi",
+      "level": 65
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 63
+     }
+    ]
+   ],
+   "drops": "drops:hunt_qiongqi_11",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 320
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_qiongqi_10"
+   }
+  },
+  {
+   "id": "stage:hunt_qiongqi_12",
+   "name": "Qiongqi XII",
+   "mode": "mode:hunts",
+   "hunt": "hunt:qiongqi",
+   "kind": "hunt",
+   "level": 12,
+   "location": "loc:howling_gorge",
+   "realm": "realm:body_integration",
+   "tier": "tier:vii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 68
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 68
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 68
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 68
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 68
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:qiongqi",
+      "level": 70
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 68
+     }
+    ]
+   ],
+   "drops": "drops:hunt_qiongqi_12",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 340
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_qiongqi_11"
+   }
+  },
+  {
+   "id": "stage:hunt_qiongqi_13",
+   "name": "Qiongqi XIII",
+   "mode": "mode:hunts",
+   "hunt": "hunt:qiongqi",
+   "kind": "hunt",
+   "level": 13,
+   "location": "loc:howling_gorge",
+   "realm": "realm:mahayana",
+   "tier": "tier:viii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 78
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 78
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 78
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 78
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 78
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:qiongqi",
+      "level": 80
+     },
+     {
+      "enemy": "enemy:wind_imp",
+      "level": 78
+     }
+    ]
+   ],
+   "drops": "drops:hunt_qiongqi_13",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 360
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_qiongqi_12"
+   }
+  },
+  {
+   "id": "stage:hunt_taotie_01",
+   "name": "Taotie I",
+   "mode": "mode:hunts",
+   "hunt": "hunt:taotie",
+   "kind": "hunt",
+   "level": 1,
+   "location": "loc:bronze_wastes",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 12
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 12
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 12
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 12
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 12
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:taotie",
+      "level": 14
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 12
+     }
+    ]
+   ],
+   "drops": "drops:hunt_taotie_01",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 120
+    }
+   ]
+  },
+  {
+   "id": "stage:hunt_taotie_02",
+   "name": "Taotie II",
+   "mode": "mode:hunts",
+   "hunt": "hunt:taotie",
+   "kind": "hunt",
+   "level": 2,
+   "location": "loc:bronze_wastes",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 18
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 18
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 18
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 18
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 18
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:taotie",
+      "level": 20
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 18
+     }
+    ]
+   ],
+   "drops": "drops:hunt_taotie_02",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 140
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_taotie_01"
+   }
+  },
+  {
+   "id": "stage:hunt_taotie_03",
+   "name": "Taotie III",
+   "mode": "mode:hunts",
+   "hunt": "hunt:taotie",
+   "kind": "hunt",
+   "level": 3,
+   "location": "loc:bronze_wastes",
+   "realm": "realm:core_formation",
+   "tier": "tier:iii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 23
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 23
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 23
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 23
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 23
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:taotie",
+      "level": 25
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 23
+     }
+    ]
+   ],
+   "drops": "drops:hunt_taotie_03",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 160
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_taotie_02"
+   }
+  },
+  {
+   "id": "stage:hunt_taotie_04",
+   "name": "Taotie IV",
+   "mode": "mode:hunts",
+   "hunt": "hunt:taotie",
+   "kind": "hunt",
+   "level": 4,
+   "location": "loc:bronze_wastes",
+   "realm": "realm:core_formation",
+   "tier": "tier:iii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 28
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 28
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 28
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 28
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 28
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:taotie",
+      "level": 30
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 28
+     }
+    ]
+   ],
+   "drops": "drops:hunt_taotie_04",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 180
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_taotie_03"
+   }
+  },
+  {
+   "id": "stage:hunt_taotie_05",
+   "name": "Taotie V",
+   "mode": "mode:hunts",
+   "hunt": "hunt:taotie",
+   "kind": "hunt",
+   "level": 5,
+   "location": "loc:bronze_wastes",
+   "realm": "realm:nascent_soul",
+   "tier": "tier:iv",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 33
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 33
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 33
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 33
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 33
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:taotie",
+      "level": 35
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 33
+     }
+    ]
+   ],
+   "drops": "drops:hunt_taotie_05",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 200
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_taotie_04"
+   }
+  },
+  {
+   "id": "stage:hunt_taotie_06",
+   "name": "Taotie VI",
+   "mode": "mode:hunts",
+   "hunt": "hunt:taotie",
+   "kind": "hunt",
+   "level": 6,
+   "location": "loc:bronze_wastes",
+   "realm": "realm:nascent_soul",
+   "tier": "tier:iv",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 38
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 38
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 38
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 38
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 38
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:taotie",
+      "level": 40
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 38
+     }
+    ]
+   ],
+   "drops": "drops:hunt_taotie_06",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 220
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_taotie_05"
+   }
+  },
+  {
+   "id": "stage:hunt_taotie_07",
+   "name": "Taotie VII",
+   "mode": "mode:hunts",
+   "hunt": "hunt:taotie",
+   "kind": "hunt",
+   "level": 7,
+   "location": "loc:bronze_wastes",
+   "realm": "realm:spirit_severing",
+   "tier": "tier:v",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 43
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 43
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 43
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 43
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 43
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:taotie",
+      "level": 45
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 43
+     }
+    ]
+   ],
+   "drops": "drops:hunt_taotie_07",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 240
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_taotie_06"
+   }
+  },
+  {
+   "id": "stage:hunt_taotie_08",
+   "name": "Taotie VIII",
+   "mode": "mode:hunts",
+   "hunt": "hunt:taotie",
+   "kind": "hunt",
+   "level": 8,
+   "location": "loc:bronze_wastes",
+   "realm": "realm:spirit_severing",
+   "tier": "tier:v",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 48
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 48
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 48
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 48
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 48
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:taotie",
+      "level": 50
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 48
+     }
+    ]
+   ],
+   "drops": "drops:hunt_taotie_08",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 260
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_taotie_07"
+   }
+  },
+  {
+   "id": "stage:hunt_taotie_09",
+   "name": "Taotie IX",
+   "mode": "mode:hunts",
+   "hunt": "hunt:taotie",
+   "kind": "hunt",
+   "level": 9,
+   "location": "loc:bronze_wastes",
+   "realm": "realm:void_refinement",
+   "tier": "tier:vi",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 53
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 53
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 53
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 53
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 53
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:taotie",
+      "level": 55
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 53
+     }
+    ]
+   ],
+   "drops": "drops:hunt_taotie_09",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 280
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_taotie_08"
+   }
+  },
+  {
+   "id": "stage:hunt_taotie_10",
+   "name": "Taotie X",
+   "mode": "mode:hunts",
+   "hunt": "hunt:taotie",
+   "kind": "hunt",
+   "level": 10,
+   "location": "loc:bronze_wastes",
+   "realm": "realm:void_refinement",
+   "tier": "tier:vi",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 58
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 58
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 58
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 58
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 58
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:taotie",
+      "level": 60
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 58
+     }
+    ]
+   ],
+   "drops": "drops:hunt_taotie_10",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 300
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_taotie_09"
+   }
+  },
+  {
+   "id": "stage:hunt_taotie_11",
+   "name": "Taotie XI",
+   "mode": "mode:hunts",
+   "hunt": "hunt:taotie",
+   "kind": "hunt",
+   "level": 11,
+   "location": "loc:bronze_wastes",
+   "realm": "realm:body_integration",
+   "tier": "tier:vii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 63
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 63
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 63
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 63
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 63
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:taotie",
+      "level": 65
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 63
+     }
+    ]
+   ],
+   "drops": "drops:hunt_taotie_11",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 320
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_taotie_10"
+   }
+  },
+  {
+   "id": "stage:hunt_taotie_12",
+   "name": "Taotie XII",
+   "mode": "mode:hunts",
+   "hunt": "hunt:taotie",
+   "kind": "hunt",
+   "level": 12,
+   "location": "loc:bronze_wastes",
+   "realm": "realm:body_integration",
+   "tier": "tier:vii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 68
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 68
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 68
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 68
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 68
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:taotie",
+      "level": 70
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 68
+     }
+    ]
+   ],
+   "drops": "drops:hunt_taotie_12",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 340
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_taotie_11"
+   }
+  },
+  {
+   "id": "stage:hunt_taotie_13",
+   "name": "Taotie XIII",
+   "mode": "mode:hunts",
+   "hunt": "hunt:taotie",
+   "kind": "hunt",
+   "level": 13,
+   "location": "loc:bronze_wastes",
+   "realm": "realm:mahayana",
+   "tier": "tier:viii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 78
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 78
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 78
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 78
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 78
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:taotie",
+      "level": 80
+     },
+     {
+      "enemy": "enemy:bronze_maw",
+      "level": 78
+     }
+    ]
+   ],
+   "drops": "drops:hunt_taotie_13",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 360
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_taotie_12"
+   }
+  },
+  {
+   "id": "stage:hunt_taowu_01",
+   "name": "Taowu I",
+   "mode": "mode:hunts",
+   "hunt": "hunt:taowu",
+   "kind": "hunt",
+   "level": 1,
+   "location": "loc:stone_forest",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 12
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 12
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 12
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 12
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 12
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:taowu",
+      "level": 14
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 12
+     }
+    ]
+   ],
+   "drops": "drops:hunt_taowu_01",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 120
+    }
+   ]
+  },
+  {
+   "id": "stage:hunt_taowu_02",
+   "name": "Taowu II",
+   "mode": "mode:hunts",
+   "hunt": "hunt:taowu",
+   "kind": "hunt",
+   "level": 2,
+   "location": "loc:stone_forest",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 18
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 18
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 18
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 18
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 18
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:taowu",
+      "level": 20
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 18
+     }
+    ]
+   ],
+   "drops": "drops:hunt_taowu_02",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 140
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_taowu_01"
+   }
+  },
+  {
+   "id": "stage:hunt_taowu_03",
+   "name": "Taowu III",
+   "mode": "mode:hunts",
+   "hunt": "hunt:taowu",
+   "kind": "hunt",
+   "level": 3,
+   "location": "loc:stone_forest",
+   "realm": "realm:core_formation",
+   "tier": "tier:iii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 23
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 23
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 23
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 23
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 23
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:taowu",
+      "level": 25
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 23
+     }
+    ]
+   ],
+   "drops": "drops:hunt_taowu_03",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 160
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_taowu_02"
+   }
+  },
+  {
+   "id": "stage:hunt_taowu_04",
+   "name": "Taowu IV",
+   "mode": "mode:hunts",
+   "hunt": "hunt:taowu",
+   "kind": "hunt",
+   "level": 4,
+   "location": "loc:stone_forest",
+   "realm": "realm:core_formation",
+   "tier": "tier:iii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 28
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 28
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 28
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 28
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 28
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:taowu",
+      "level": 30
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 28
+     }
+    ]
+   ],
+   "drops": "drops:hunt_taowu_04",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 180
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_taowu_03"
+   }
+  },
+  {
+   "id": "stage:hunt_taowu_05",
+   "name": "Taowu V",
+   "mode": "mode:hunts",
+   "hunt": "hunt:taowu",
+   "kind": "hunt",
+   "level": 5,
+   "location": "loc:stone_forest",
+   "realm": "realm:nascent_soul",
+   "tier": "tier:iv",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 33
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 33
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 33
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 33
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 33
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:taowu",
+      "level": 35
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 33
+     }
+    ]
+   ],
+   "drops": "drops:hunt_taowu_05",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 200
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_taowu_04"
+   }
+  },
+  {
+   "id": "stage:hunt_taowu_06",
+   "name": "Taowu VI",
+   "mode": "mode:hunts",
+   "hunt": "hunt:taowu",
+   "kind": "hunt",
+   "level": 6,
+   "location": "loc:stone_forest",
+   "realm": "realm:nascent_soul",
+   "tier": "tier:iv",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 38
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 38
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 38
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 38
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 38
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:taowu",
+      "level": 40
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 38
+     }
+    ]
+   ],
+   "drops": "drops:hunt_taowu_06",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 220
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_taowu_05"
+   }
+  },
+  {
+   "id": "stage:hunt_taowu_07",
+   "name": "Taowu VII",
+   "mode": "mode:hunts",
+   "hunt": "hunt:taowu",
+   "kind": "hunt",
+   "level": 7,
+   "location": "loc:stone_forest",
+   "realm": "realm:spirit_severing",
+   "tier": "tier:v",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 43
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 43
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 43
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 43
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 43
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:taowu",
+      "level": 45
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 43
+     }
+    ]
+   ],
+   "drops": "drops:hunt_taowu_07",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 240
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_taowu_06"
+   }
+  },
+  {
+   "id": "stage:hunt_taowu_08",
+   "name": "Taowu VIII",
+   "mode": "mode:hunts",
+   "hunt": "hunt:taowu",
+   "kind": "hunt",
+   "level": 8,
+   "location": "loc:stone_forest",
+   "realm": "realm:spirit_severing",
+   "tier": "tier:v",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 48
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 48
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 48
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 48
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 48
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:taowu",
+      "level": 50
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 48
+     }
+    ]
+   ],
+   "drops": "drops:hunt_taowu_08",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 260
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_taowu_07"
+   }
+  },
+  {
+   "id": "stage:hunt_taowu_09",
+   "name": "Taowu IX",
+   "mode": "mode:hunts",
+   "hunt": "hunt:taowu",
+   "kind": "hunt",
+   "level": 9,
+   "location": "loc:stone_forest",
+   "realm": "realm:void_refinement",
+   "tier": "tier:vi",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 53
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 53
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 53
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 53
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 53
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:taowu",
+      "level": 55
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 53
+     }
+    ]
+   ],
+   "drops": "drops:hunt_taowu_09",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 280
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_taowu_08"
+   }
+  },
+  {
+   "id": "stage:hunt_taowu_10",
+   "name": "Taowu X",
+   "mode": "mode:hunts",
+   "hunt": "hunt:taowu",
+   "kind": "hunt",
+   "level": 10,
+   "location": "loc:stone_forest",
+   "realm": "realm:void_refinement",
+   "tier": "tier:vi",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 58
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 58
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 58
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 58
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 58
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:taowu",
+      "level": 60
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 58
+     }
+    ]
+   ],
+   "drops": "drops:hunt_taowu_10",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 300
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_taowu_09"
+   }
+  },
+  {
+   "id": "stage:hunt_taowu_11",
+   "name": "Taowu XI",
+   "mode": "mode:hunts",
+   "hunt": "hunt:taowu",
+   "kind": "hunt",
+   "level": 11,
+   "location": "loc:stone_forest",
+   "realm": "realm:body_integration",
+   "tier": "tier:vii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 63
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 63
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 63
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 63
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 63
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:taowu",
+      "level": 65
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 63
+     }
+    ]
+   ],
+   "drops": "drops:hunt_taowu_11",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 320
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_taowu_10"
+   }
+  },
+  {
+   "id": "stage:hunt_taowu_12",
+   "name": "Taowu XII",
+   "mode": "mode:hunts",
+   "hunt": "hunt:taowu",
+   "kind": "hunt",
+   "level": 12,
+   "location": "loc:stone_forest",
+   "realm": "realm:body_integration",
+   "tier": "tier:vii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 68
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 68
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 68
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 68
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 68
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:taowu",
+      "level": 70
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 68
+     }
+    ]
+   ],
+   "drops": "drops:hunt_taowu_12",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 340
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_taowu_11"
+   }
+  },
+  {
+   "id": "stage:hunt_taowu_13",
+   "name": "Taowu XIII",
+   "mode": "mode:hunts",
+   "hunt": "hunt:taowu",
+   "kind": "hunt",
+   "level": 13,
+   "location": "loc:stone_forest",
+   "realm": "realm:mahayana",
+   "tier": "tier:viii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 78
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 78
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 78
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 78
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 78
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:taowu",
+      "level": 80
+     },
+     {
+      "enemy": "enemy:stone_puppet",
+      "level": 78
+     }
+    ]
+   ],
+   "drops": "drops:hunt_taowu_13",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 360
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_taowu_12"
+   }
+  },
+  {
+   "id": "stage:hunt_hundun_01",
+   "name": "Hundun I",
+   "mode": "mode:hunts",
+   "hunt": "hunt:hundun",
+   "kind": "hunt",
+   "level": 1,
+   "location": "loc:formless_marsh",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 12
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 12
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 12
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 12
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 12
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:hundun",
+      "level": 14
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 12
+     }
+    ]
+   ],
+   "drops": "drops:hunt_hundun_01",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 120
+    }
+   ]
+  },
+  {
+   "id": "stage:hunt_hundun_02",
+   "name": "Hundun II",
+   "mode": "mode:hunts",
+   "hunt": "hunt:hundun",
+   "kind": "hunt",
+   "level": 2,
+   "location": "loc:formless_marsh",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 18
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 18
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 18
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 18
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 18
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:hundun",
+      "level": 20
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 18
+     }
+    ]
+   ],
+   "drops": "drops:hunt_hundun_02",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 140
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_hundun_01"
+   }
+  },
+  {
+   "id": "stage:hunt_hundun_03",
+   "name": "Hundun III",
+   "mode": "mode:hunts",
+   "hunt": "hunt:hundun",
+   "kind": "hunt",
+   "level": 3,
+   "location": "loc:formless_marsh",
+   "realm": "realm:core_formation",
+   "tier": "tier:iii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 23
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 23
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 23
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 23
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 23
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:hundun",
+      "level": 25
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 23
+     }
+    ]
+   ],
+   "drops": "drops:hunt_hundun_03",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 160
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_hundun_02"
+   }
+  },
+  {
+   "id": "stage:hunt_hundun_04",
+   "name": "Hundun IV",
+   "mode": "mode:hunts",
+   "hunt": "hunt:hundun",
+   "kind": "hunt",
+   "level": 4,
+   "location": "loc:formless_marsh",
+   "realm": "realm:core_formation",
+   "tier": "tier:iii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 28
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 28
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 28
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 28
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 28
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:hundun",
+      "level": 30
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 28
+     }
+    ]
+   ],
+   "drops": "drops:hunt_hundun_04",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 180
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_hundun_03"
+   }
+  },
+  {
+   "id": "stage:hunt_hundun_05",
+   "name": "Hundun V",
+   "mode": "mode:hunts",
+   "hunt": "hunt:hundun",
+   "kind": "hunt",
+   "level": 5,
+   "location": "loc:formless_marsh",
+   "realm": "realm:nascent_soul",
+   "tier": "tier:iv",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 33
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 33
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 33
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 33
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 33
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:hundun",
+      "level": 35
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 33
+     }
+    ]
+   ],
+   "drops": "drops:hunt_hundun_05",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 200
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_hundun_04"
+   }
+  },
+  {
+   "id": "stage:hunt_hundun_06",
+   "name": "Hundun VI",
+   "mode": "mode:hunts",
+   "hunt": "hunt:hundun",
+   "kind": "hunt",
+   "level": 6,
+   "location": "loc:formless_marsh",
+   "realm": "realm:nascent_soul",
+   "tier": "tier:iv",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 38
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 38
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 38
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 38
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 38
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:hundun",
+      "level": 40
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 38
+     }
+    ]
+   ],
+   "drops": "drops:hunt_hundun_06",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 220
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_hundun_05"
+   }
+  },
+  {
+   "id": "stage:hunt_hundun_07",
+   "name": "Hundun VII",
+   "mode": "mode:hunts",
+   "hunt": "hunt:hundun",
+   "kind": "hunt",
+   "level": 7,
+   "location": "loc:formless_marsh",
+   "realm": "realm:spirit_severing",
+   "tier": "tier:v",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 43
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 43
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 43
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 43
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 43
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:hundun",
+      "level": 45
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 43
+     }
+    ]
+   ],
+   "drops": "drops:hunt_hundun_07",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 240
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_hundun_06"
+   }
+  },
+  {
+   "id": "stage:hunt_hundun_08",
+   "name": "Hundun VIII",
+   "mode": "mode:hunts",
+   "hunt": "hunt:hundun",
+   "kind": "hunt",
+   "level": 8,
+   "location": "loc:formless_marsh",
+   "realm": "realm:spirit_severing",
+   "tier": "tier:v",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 48
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 48
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 48
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 48
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 48
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:hundun",
+      "level": 50
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 48
+     }
+    ]
+   ],
+   "drops": "drops:hunt_hundun_08",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 260
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_hundun_07"
+   }
+  },
+  {
+   "id": "stage:hunt_hundun_09",
+   "name": "Hundun IX",
+   "mode": "mode:hunts",
+   "hunt": "hunt:hundun",
+   "kind": "hunt",
+   "level": 9,
+   "location": "loc:formless_marsh",
+   "realm": "realm:void_refinement",
+   "tier": "tier:vi",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 53
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 53
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 53
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 53
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 53
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:hundun",
+      "level": 55
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 53
+     }
+    ]
+   ],
+   "drops": "drops:hunt_hundun_09",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 280
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_hundun_08"
+   }
+  },
+  {
+   "id": "stage:hunt_hundun_10",
+   "name": "Hundun X",
+   "mode": "mode:hunts",
+   "hunt": "hunt:hundun",
+   "kind": "hunt",
+   "level": 10,
+   "location": "loc:formless_marsh",
+   "realm": "realm:void_refinement",
+   "tier": "tier:vi",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 58
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 58
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 58
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 58
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 58
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:hundun",
+      "level": 60
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 58
+     }
+    ]
+   ],
+   "drops": "drops:hunt_hundun_10",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 300
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_hundun_09"
+   }
+  },
+  {
+   "id": "stage:hunt_hundun_11",
+   "name": "Hundun XI",
+   "mode": "mode:hunts",
+   "hunt": "hunt:hundun",
+   "kind": "hunt",
+   "level": 11,
+   "location": "loc:formless_marsh",
+   "realm": "realm:body_integration",
+   "tier": "tier:vii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 63
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 63
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 63
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 63
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 63
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:hundun",
+      "level": 65
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 63
+     }
+    ]
+   ],
+   "drops": "drops:hunt_hundun_11",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 320
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_hundun_10"
+   }
+  },
+  {
+   "id": "stage:hunt_hundun_12",
+   "name": "Hundun XII",
+   "mode": "mode:hunts",
+   "hunt": "hunt:hundun",
+   "kind": "hunt",
+   "level": 12,
+   "location": "loc:formless_marsh",
+   "realm": "realm:body_integration",
+   "tier": "tier:vii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 68
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 68
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 68
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 68
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 68
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:hundun",
+      "level": 70
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 68
+     }
+    ]
+   ],
+   "drops": "drops:hunt_hundun_12",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 340
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_hundun_11"
+   }
+  },
+  {
+   "id": "stage:hunt_hundun_13",
+   "name": "Hundun XIII",
+   "mode": "mode:hunts",
+   "hunt": "hunt:hundun",
+   "kind": "hunt",
+   "level": 13,
+   "location": "loc:formless_marsh",
+   "realm": "realm:mahayana",
+   "tier": "tier:viii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 78
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 78
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 78
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 78
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 78
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:hundun",
+      "level": 80
+     },
+     {
+      "enemy": "enemy:chaos_wisp",
+      "level": 78
+     }
+    ]
+   ],
+   "drops": "drops:hunt_hundun_13",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 360
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_hundun_12"
+   }
+  },
+  {
+   "id": "stage:hunt_xiangliu_01",
+   "name": "Xiangliu I",
+   "mode": "mode:hunts",
+   "hunt": "hunt:xiangliu",
+   "kind": "hunt",
+   "level": 1,
+   "location": "loc:nine_head_swamp",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 12
+     },
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 12
+     },
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 12
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:xiangliu_head_fire",
+      "level": 14
+     },
+     {
+      "enemy": "enemy:xiangliu_head_water",
+      "level": 14
+     },
+     {
+      "enemy": "enemy:xiangliu_head_wood",
+      "level": 14
+     }
+    ]
+   ],
+   "drops": "drops:hunt_xiangliu_01",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 120
+    }
+   ]
+  },
+  {
+   "id": "stage:hunt_xiangliu_02",
+   "name": "Xiangliu II",
+   "mode": "mode:hunts",
+   "hunt": "hunt:xiangliu",
+   "kind": "hunt",
+   "level": 2,
+   "location": "loc:nine_head_swamp",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 18
+     },
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 18
+     },
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 18
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:xiangliu_head_fire",
+      "level": 20
+     },
+     {
+      "enemy": "enemy:xiangliu_head_water",
+      "level": 20
+     },
+     {
+      "enemy": "enemy:xiangliu_head_wood",
+      "level": 20
+     }
+    ]
+   ],
+   "drops": "drops:hunt_xiangliu_02",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 140
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_xiangliu_01"
+   }
+  },
+  {
+   "id": "stage:hunt_xiangliu_03",
+   "name": "Xiangliu III",
+   "mode": "mode:hunts",
+   "hunt": "hunt:xiangliu",
+   "kind": "hunt",
+   "level": 3,
+   "location": "loc:nine_head_swamp",
+   "realm": "realm:core_formation",
+   "tier": "tier:iii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 23
+     },
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 23
+     },
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 23
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:xiangliu_head_fire",
+      "level": 25
+     },
+     {
+      "enemy": "enemy:xiangliu_head_water",
+      "level": 25
+     },
+     {
+      "enemy": "enemy:xiangliu_head_wood",
+      "level": 25
+     }
+    ]
+   ],
+   "drops": "drops:hunt_xiangliu_03",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 160
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_xiangliu_02"
+   }
+  },
+  {
+   "id": "stage:hunt_xiangliu_04",
+   "name": "Xiangliu IV",
+   "mode": "mode:hunts",
+   "hunt": "hunt:xiangliu",
+   "kind": "hunt",
+   "level": 4,
+   "location": "loc:nine_head_swamp",
+   "realm": "realm:core_formation",
+   "tier": "tier:iii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 28
+     },
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 28
+     },
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 28
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:xiangliu_head_fire",
+      "level": 30
+     },
+     {
+      "enemy": "enemy:xiangliu_head_water",
+      "level": 30
+     },
+     {
+      "enemy": "enemy:xiangliu_head_wood",
+      "level": 30
+     }
+    ]
+   ],
+   "drops": "drops:hunt_xiangliu_04",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 180
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_xiangliu_03"
+   }
+  },
+  {
+   "id": "stage:hunt_xiangliu_05",
+   "name": "Xiangliu V",
+   "mode": "mode:hunts",
+   "hunt": "hunt:xiangliu",
+   "kind": "hunt",
+   "level": 5,
+   "location": "loc:nine_head_swamp",
+   "realm": "realm:nascent_soul",
+   "tier": "tier:iv",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 33
+     },
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 33
+     },
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 33
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:xiangliu_head_fire",
+      "level": 35
+     },
+     {
+      "enemy": "enemy:xiangliu_head_water",
+      "level": 35
+     },
+     {
+      "enemy": "enemy:xiangliu_head_wood",
+      "level": 35
+     }
+    ]
+   ],
+   "drops": "drops:hunt_xiangliu_05",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 200
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_xiangliu_04"
+   }
+  },
+  {
+   "id": "stage:hunt_xiangliu_06",
+   "name": "Xiangliu VI",
+   "mode": "mode:hunts",
+   "hunt": "hunt:xiangliu",
+   "kind": "hunt",
+   "level": 6,
+   "location": "loc:nine_head_swamp",
+   "realm": "realm:nascent_soul",
+   "tier": "tier:iv",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 38
+     },
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 38
+     },
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 38
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:xiangliu_head_fire",
+      "level": 40
+     },
+     {
+      "enemy": "enemy:xiangliu_head_water",
+      "level": 40
+     },
+     {
+      "enemy": "enemy:xiangliu_head_wood",
+      "level": 40
+     }
+    ]
+   ],
+   "drops": "drops:hunt_xiangliu_06",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 220
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_xiangliu_05"
+   }
+  },
+  {
+   "id": "stage:hunt_xiangliu_07",
+   "name": "Xiangliu VII",
+   "mode": "mode:hunts",
+   "hunt": "hunt:xiangliu",
+   "kind": "hunt",
+   "level": 7,
+   "location": "loc:nine_head_swamp",
+   "realm": "realm:spirit_severing",
+   "tier": "tier:v",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 43
+     },
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 43
+     },
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 43
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:xiangliu_head_fire",
+      "level": 45
+     },
+     {
+      "enemy": "enemy:xiangliu_head_water",
+      "level": 45
+     },
+     {
+      "enemy": "enemy:xiangliu_head_wood",
+      "level": 45
+     }
+    ]
+   ],
+   "drops": "drops:hunt_xiangliu_07",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 240
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_xiangliu_06"
+   }
+  },
+  {
+   "id": "stage:hunt_xiangliu_08",
+   "name": "Xiangliu VIII",
+   "mode": "mode:hunts",
+   "hunt": "hunt:xiangliu",
+   "kind": "hunt",
+   "level": 8,
+   "location": "loc:nine_head_swamp",
+   "realm": "realm:spirit_severing",
+   "tier": "tier:v",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 48
+     },
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 48
+     },
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 48
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:xiangliu_head_fire",
+      "level": 50
+     },
+     {
+      "enemy": "enemy:xiangliu_head_water",
+      "level": 50
+     },
+     {
+      "enemy": "enemy:xiangliu_head_wood",
+      "level": 50
+     }
+    ]
+   ],
+   "drops": "drops:hunt_xiangliu_08",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 260
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_xiangliu_07"
+   }
+  },
+  {
+   "id": "stage:hunt_xiangliu_09",
+   "name": "Xiangliu IX",
+   "mode": "mode:hunts",
+   "hunt": "hunt:xiangliu",
+   "kind": "hunt",
+   "level": 9,
+   "location": "loc:nine_head_swamp",
+   "realm": "realm:void_refinement",
+   "tier": "tier:vi",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 53
+     },
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 53
+     },
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 53
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:xiangliu_head_fire",
+      "level": 55
+     },
+     {
+      "enemy": "enemy:xiangliu_head_water",
+      "level": 55
+     },
+     {
+      "enemy": "enemy:xiangliu_head_wood",
+      "level": 55
+     }
+    ]
+   ],
+   "drops": "drops:hunt_xiangliu_09",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 280
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_xiangliu_08"
+   }
+  },
+  {
+   "id": "stage:hunt_xiangliu_10",
+   "name": "Xiangliu X",
+   "mode": "mode:hunts",
+   "hunt": "hunt:xiangliu",
+   "kind": "hunt",
+   "level": 10,
+   "location": "loc:nine_head_swamp",
+   "realm": "realm:void_refinement",
+   "tier": "tier:vi",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 58
+     },
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 58
+     },
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 58
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:xiangliu_head_fire",
+      "level": 60
+     },
+     {
+      "enemy": "enemy:xiangliu_head_water",
+      "level": 60
+     },
+     {
+      "enemy": "enemy:xiangliu_head_wood",
+      "level": 60
+     }
+    ]
+   ],
+   "drops": "drops:hunt_xiangliu_10",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 300
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_xiangliu_09"
+   }
+  },
+  {
+   "id": "stage:hunt_xiangliu_11",
+   "name": "Xiangliu XI",
+   "mode": "mode:hunts",
+   "hunt": "hunt:xiangliu",
+   "kind": "hunt",
+   "level": 11,
+   "location": "loc:nine_head_swamp",
+   "realm": "realm:body_integration",
+   "tier": "tier:vii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 63
+     },
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 63
+     },
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 63
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:xiangliu_head_fire",
+      "level": 65
+     },
+     {
+      "enemy": "enemy:xiangliu_head_water",
+      "level": 65
+     },
+     {
+      "enemy": "enemy:xiangliu_head_wood",
+      "level": 65
+     }
+    ]
+   ],
+   "drops": "drops:hunt_xiangliu_11",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 320
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_xiangliu_10"
+   }
+  },
+  {
+   "id": "stage:hunt_xiangliu_12",
+   "name": "Xiangliu XII",
+   "mode": "mode:hunts",
+   "hunt": "hunt:xiangliu",
+   "kind": "hunt",
+   "level": 12,
+   "location": "loc:nine_head_swamp",
+   "realm": "realm:body_integration",
+   "tier": "tier:vii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 68
+     },
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 68
+     },
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 68
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:xiangliu_head_fire",
+      "level": 70
+     },
+     {
+      "enemy": "enemy:xiangliu_head_water",
+      "level": 70
+     },
+     {
+      "enemy": "enemy:xiangliu_head_wood",
+      "level": 70
+     }
+    ]
+   ],
+   "drops": "drops:hunt_xiangliu_12",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 340
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_xiangliu_11"
+   }
+  },
+  {
+   "id": "stage:hunt_xiangliu_13",
+   "name": "Xiangliu XIII",
+   "mode": "mode:hunts",
+   "hunt": "hunt:xiangliu",
+   "kind": "hunt",
+   "level": 13,
+   "location": "loc:nine_head_swamp",
+   "realm": "realm:mahayana",
+   "tier": "tier:viii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 78
+     },
+     {
+      "enemy": "enemy:serpent_guard",
+      "level": 78
+     },
+     {
+      "enemy": "enemy:river_ghoul",
+      "level": 78
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:xiangliu_head_fire",
+      "level": 80
+     },
+     {
+      "enemy": "enemy:xiangliu_head_water",
+      "level": 80
+     },
+     {
+      "enemy": "enemy:xiangliu_head_wood",
+      "level": 80
+     }
+    ]
+   ],
+   "drops": "drops:hunt_xiangliu_13",
+   "encounters": true,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 360
+    }
+   ],
+   "unlock": {
+    "clear": "stage:hunt_xiangliu_12"
+   }
+  }
+ ]
+}

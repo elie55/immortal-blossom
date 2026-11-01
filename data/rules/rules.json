@@ -1,0 +1,198 @@
+{
+ "about": "Combat, growth and gear rules. Numbers are the card prototype's starting balance.",
+ "records": [
+  {
+   "id": "rules:combat",
+   "name": "Combat rules",
+   "advantage": {
+    "damage": 1.3,
+    "critChance": 0.15
+   },
+   "disadvantage": {
+    "damage": 0.75
+   },
+   "phaseQiPerPoint": 0.08,
+   "phaseQiPerCast": 1,
+   "phaseQiPerUltimate": 2,
+   "harmony": {
+    "stepBonus": 0.15,
+    "cap": 4,
+    "capBonus": 0.45,
+    "spiritQiAtCap": 2,
+    "spiritQiOncePerTurn": true
+   },
+   "kindredQi": {
+    "stepBonus": 0.1,
+    "cap": 0.3,
+    "differentCardsOnly": true,
+    "bestOfChainOrKindred": true
+   },
+   "empowerMultiplier": 1.35,
+   "defenseK": 900,
+   "spiritQi": {
+    "start": 4,
+    "perTurnBase": 2,
+    "perLivingHeroine": 1,
+    "perKill": 3,
+    "max": 30
+   },
+   "qiShield": {
+    "segments": 12,
+    "perHit": 1,
+    "perAdvantagedHit": 2,
+    "refills": "after_boss_turn",
+    "shatterStatus": "status:shattered",
+    "damageTaken": 1.3,
+    "ultimateDelay": 1
+   },
+   "frostSealBreak": 1.3,
+   "karmicMark": 1.25,
+   "tribulation": {
+    "fromRound": 12,
+    "basePct": 0.06,
+    "perRoundPct": 0.03
+   },
+   "encounters": {
+    "rounds": "even",
+    "offers": 3,
+    "purchases": 1,
+    "rerolls": 1,
+    "rerollCost": 2
+   },
+   "targeting": {
+    "advantage": 2,
+    "missingHealth": 1.6,
+    "spiritShield": -0.6,
+    "chance": 0.8,
+    "chanceHeavenDefying": 0.3,
+    "tortoiseArrayPosition1": 1.5,
+    "overrides": [
+     "status:provoke",
+     "status:shadow_veil",
+     "set:black_tortoise"
+    ]
+   },
+   "auto": {
+    "order": "harmony",
+    "techniquesPerPass": 1,
+    "healBelow": 0.72,
+    "empowerUltimateReserve": 2,
+    "empowerS2Reserve": 10,
+    "encounterReserve": 2,
+    "targetScore": {
+     "advantage": 3,
+     "disadvantage": -2,
+     "missingHealth": 2.5,
+     "wouldDefeat": 2,
+     "shieldMultiHit": 2.5,
+     "bossOther": 0.5,
+     "chance": 0.3
+    }
+   },
+   "missions": [
+    "clear",
+    "no_fall",
+    "within_turns",
+    "shatter_times",
+    "harmony_or_kindred",
+    "empower_times",
+    "no_encounters",
+    "defeat_in_one_cast"
+   ],
+   "waves": {
+    "min": 1,
+    "max": 3,
+    "cardSlots": 4,
+    "bossSlots": 2
+   }
+  },
+  {
+   "id": "rules:growth",
+   "name": "Growth formulas",
+   "expToNext": "90 * level^2",
+   "expToFinishQiRefining": 25650,
+   "expToLevel80": 15073200,
+   "heroStat": "base * (1 + 0.08 * (level - 1)) * (1 + 0.10 * breakthroughs)",
+   "enemyStat": "base * (1 + 0.08 * (level - 1)) * (1 + 0.10 * floor((level - 1) / 10))",
+   "rarityBaseMultiplier": {
+    "3": 0.9,
+    "4": 1.0,
+    "5": 1.1
+   },
+   "bankedExp": "EXP past a realm cap is kept and applied after the next breakthrough",
+   "spiritStonesPerExp": 0.1,
+   "bondMax": 10,
+   "bondStatBonus": [
+    0,
+    0,
+    0.02,
+    0.02,
+    0.03,
+    0.03,
+    0.04,
+    0.04,
+    0.05,
+    0.06
+   ],
+   "bondPoints": {
+    "battle": 1,
+    "gift": 20,
+    "likedGift": 40,
+    "dislikedGift": 5,
+    "tea": 30,
+    "lobbyTap": 2,
+    "lobbyTapDailyCap": 10
+   }
+  },
+  {
+   "id": "rules:gear",
+   "name": "Gear rules",
+   "substatsMax": 4,
+   "refineMax": 15,
+   "refineMilestones": [
+    3,
+    6,
+    9,
+    12,
+    15
+   ],
+   "mainStatPerRefine": 0.06,
+   "refineCost": {
+    "formula": "per level L: spirit stones 400 * L * tierScale, Forging Dust 4 * L * tierScale",
+    "refineCosts": [
+     "cur:spirit_stones",
+     "item:forging_dust"
+    ]
+   },
+   "mainStatAtTierVIII": {
+    "stat:atk/flat": 520,
+    "stat:hp/flat": 2800,
+    "stat:def/flat": 300,
+    "stat:atk/pct": 0.48,
+    "stat:hp/pct": 0.48,
+    "stat:def/pct": 0.48,
+    "stat:crit/pct": 0.42,
+    "stat:crit_dmg/pct": 0.56,
+    "stat:haste/flat": 32,
+    "stat:acc/pct": 0.48,
+    "stat:res/pct": 0.48
+   },
+   "substatRollAtTierVIII": {
+    "stat:atk/flat": 40,
+    "stat:hp/flat": 200,
+    "stat:def/flat": 24,
+    "stat:atk/pct": 0.08,
+    "stat:hp/pct": 0.08,
+    "stat:def/pct": 0.08,
+    "stat:crit/pct": 0.06,
+    "stat:crit_dmg/pct": 0.08,
+    "stat:haste/flat": 5,
+    "stat:acc/pct": 0.08,
+    "stat:res/pct": 0.08
+   },
+   "rolls": "value = max for the tier * a roll inside the rarity range; the gauge shows the roll",
+   "reforgeNeeds": "+15",
+   "engravePerPiece": 1
+  }
+ ]
+}

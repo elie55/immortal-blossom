@@ -1,0 +1,173 @@
+{
+ "about": "Places: story regions, the home base, dungeons, lairs and arenas.",
+ "records": [
+  {
+   "id": "loc:hundred_blossoms_pavilion",
+   "name": "Hundred Blossoms Pavilion",
+   "cn": "百花阁",
+   "kind": "home",
+   "about": "The ruined sect you inherit and rebuild; home of the Sect buildings"
+  },
+  {
+   "id": "loc:jade_pool",
+   "name": "Jade Pool of Kunlun",
+   "cn": "昆仑瑶池",
+   "kind": "memory",
+   "about": "The Garden of a Hundred Blossoms as it was before the Withering, seen in dreams"
+  },
+  {
+   "id": "loc:peach_blossom_ford",
+   "name": "Peach Blossom Ford",
+   "cn": "桃花渡",
+   "kind": "region",
+   "about": "A river village of orchards and ferries; chapter 1"
+  },
+  {
+   "id": "loc:frostpeak",
+   "name": "Frostpeak",
+   "cn": "霜峰",
+   "kind": "region",
+   "about": "Snowbound peaks of the Frostpeak Sword Sect; chapter 2"
+  },
+  {
+   "id": "loc:moonshadow_bamboo_sea",
+   "name": "Moonshadow Bamboo Sea",
+   "cn": "月影竹海",
+   "kind": "region",
+   "about": "An endless bamboo forest hiding the assassins of Moonshadow Pavilion; chapter 3"
+  },
+  {
+   "id": "loc:vermilion_ruins",
+   "name": "Vermilion Ruins",
+   "cn": "朱凰遗迹",
+   "kind": "region",
+   "about": "Volcanic ruins where the Phoenix Palace kept its sealed fire; chapter 4"
+  },
+  {
+   "id": "loc:gate_of_the_jade_pool",
+   "name": "Gate of the Jade Pool",
+   "cn": "瑶池之门",
+   "kind": "region",
+   "about": "The sealed gate between the world and the withered Garden; chapter 5"
+  },
+  {
+   "id": "loc:myriad_treasures_hall",
+   "name": "Myriad Treasures Hall",
+   "cn": "万宝楼",
+   "kind": "shop",
+   "about": "The Guild's market hall"
+  },
+  {
+   "id": "loc:tianji_pavilion",
+   "name": "Tianji Pavilion",
+   "cn": "天机阁",
+   "kind": "hub",
+   "about": "Where fate readers sell commissions and secrets"
+  },
+  {
+   "id": "loc:medicine_king_valley",
+   "name": "Medicine King Valley",
+   "cn": "药王谷",
+   "kind": "dungeon",
+   "about": "The Medicine King's valley, overrun by his runaway pill furnaces"
+  },
+  {
+   "id": "loc:five_phases_shrines",
+   "name": "Five Phases Shrines",
+   "cn": "五行祠",
+   "kind": "dungeon",
+   "about": "Five shrines guarded by the Four Symbols and the Yellow Dragon"
+  },
+  {
+   "id": "loc:demon_sealing_pagoda",
+   "name": "Demon-Sealing Pagoda",
+   "cn": "镇妖塔",
+   "kind": "dungeon",
+   "about": "A hundred and twenty floors of sealed demons"
+  },
+  {
+   "id": "loc:heavenly_trial_tower",
+   "name": "Heavenly Trial Tower",
+   "cn": "天道试炼塔",
+   "kind": "dungeon",
+   "about": "A tower whose Heavenly Dao changes every day"
+  },
+  {
+   "id": "loc:howling_gorge",
+   "name": "Howling Gorge",
+   "cn": "啸风峡",
+   "kind": "lair",
+   "about": "Lair of Qiongqi, the winged tiger"
+  },
+  {
+   "id": "loc:bronze_wastes",
+   "name": "Bronze Wastes",
+   "cn": "青铜荒原",
+   "kind": "lair",
+   "about": "Lair of Taotie, the glutton"
+  },
+  {
+   "id": "loc:stone_forest",
+   "name": "Unyielding Stone Forest",
+   "cn": "不屈石林",
+   "kind": "lair",
+   "about": "Lair of Taowu, the unyielding beast"
+  },
+  {
+   "id": "loc:formless_marsh",
+   "name": "Formless Marsh",
+   "cn": "无形泽",
+   "kind": "lair",
+   "about": "Lair of Hundun, faceless chaos"
+  },
+  {
+   "id": "loc:nine_head_swamp",
+   "name": "Nine-Headed Swamp",
+   "cn": "九首泽",
+   "kind": "lair",
+   "about": "Lair of Xiangliu, the nine-headed serpent"
+  },
+  {
+   "id": "loc:mount_zhong",
+   "name": "Mount Zhong",
+   "cn": "钟山",
+   "kind": "raid",
+   "about": "Where Zhulong, the Torch Dragon, opens and closes its eyes"
+  },
+  {
+   "id": "loc:north_sea",
+   "name": "The Northern Abyss",
+   "cn": "北冥",
+   "kind": "raid",
+   "about": "Where Kun the fish becomes Peng the bird"
+  },
+  {
+   "id": "loc:fierce_water",
+   "name": "Fierce Water",
+   "cn": "凶水",
+   "kind": "raid",
+   "about": "Where Jiuying, the nine-headed child of water and fire, lies bound"
+  },
+  {
+   "id": "loc:secret_realms",
+   "name": "Secret Realms",
+   "cn": "秘境",
+   "kind": "dungeon",
+   "about": "Shifting pocket worlds reached through cracks in the Fate Lotus's threads"
+  },
+  {
+   "id": "loc:sect_arena",
+   "name": "Sect Arena",
+   "cn": "论道台",
+   "kind": "arena",
+   "about": "Where rival sects answer your challenges"
+  },
+  {
+   "id": "loc:tournament_grounds",
+   "name": "Martial Tournament Grounds",
+   "cn": "武道大会",
+   "kind": "arena",
+   "about": "Eight sects, one bracket, once a season"
+  }
+ ]
+}

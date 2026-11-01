@@ -1,0 +1,741 @@
+{
+ "about": "Story scenes of Volume 1, chapter 1, Peach Blossom Ford: the dream of the Withering, the ruined Pavilion, and Su Lianhua joining (draft).",
+ "records": [
+  {
+   "id": "scene:v1c1_01_before",
+   "name": "Dream of the Withered Garden",
+   "location": "loc:jade_pool",
+   "cast": [
+    "npc:pavilion_master",
+    "npc:tao_yao",
+    "hero:su_lianhua",
+    "hero:ling_shuang",
+    "hero:yan_feihong",
+    "hero:mo_yingyue"
+   ],
+   "lines": [
+    {
+     "text": "A garden without end, beside a pool of jade. A hundred flowers grow there, and beneath each flower sleeps the shadow of a woman."
+    },
+    {
+     "text": "Then the sky above Kunlun cracks like a bowl, and black fire begins to fall."
+    },
+    {
+     "speaker": "npc:pavilion_master",
+     "expression": "neutral",
+     "text": "Where am I?"
+    },
+    {
+     "text": "A girl's voice answers, from everywhere and nowhere at once."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "sad",
+     "text": "Home."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "worried",
+     "text": "Don't be frightened. This already happened, a very long time ago. But you'll have to fight it anyway."
+    },
+    {
+     "text": "Four women step out from among the flowers: one in plum white with a sword of frost, one in violet with lightning between her fingers, one in vermilion with fire at her sleeves, and one in jade green carrying a lotus lamp."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "determined",
+     "text": "Stay behind me. Whatever comes through that smoke, it does not touch you."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "neutral",
+     "text": "Wraiths. Hundreds of them."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "laugh",
+     "text": "Only hundreds? Good! I was getting bored of watering things."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "smug",
+     "text": "You never water anything, Phoenix. You set the watering can on fire."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "angry",
+     "text": "Enough, Night-Bloom. They're here."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "determined",
+     "text": "Listen to me. Water feeds Wood, Wood feeds Fire, and Fire makes Earth. Let them strike in that order, and each one's Dao will lift the next."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "smile",
+     "text": "That is Harmony. The whole Garden grew from it."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "smile",
+     "text": "You heard her. Plum, Night-Bloom, Phoenix, Lotus. As always."
+    },
+    {
+     "text": "The wraiths pour over the white stones of the pool."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c1_01_after",
+   "name": "The Garden Burns",
+   "location": "loc:jade_pool",
+   "cast": [
+    "hero:yan_feihong",
+    "npc:netherflame_sovereign",
+    "hero:ling_shuang",
+    "hero:su_lianhua",
+    "hero:mo_yingyue",
+    "npc:tao_yao",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "The last wraith comes apart like wet paper. For one heartbeat, the Garden is quiet."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "smug",
+     "text": "Ha! Is that all the Netherworld has?"
+    },
+    {
+     "text": "It is not. Overhead, the black fire opens like an eye."
+    },
+    {
+     "speaker": "npc:netherflame_sovereign",
+     "expression": "smug",
+     "text": "A hundred flowers. A hundred seeds. I will swallow every one."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "expression": "determined",
+     "text": "Then you will choke."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "worried",
+     "text": "The pool is burning... Go! We'll hold him here. All of us."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "expression": "smile",
+     "text": "Don't make that face. You'll find us again. You always find us."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "expression": "determined",
+     "text": "And don't take a thousand years about it!"
+    },
+    {
+     "text": "White, violet, vermilion and jade, the four flowers blaze up together, and the fire takes them."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "sad",
+     "text": "Not again... Wake up. Please, wake up!"
+    },
+    {
+     "text": "The Garden burns. Someone you cannot see is holding your hand, and will not let go."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c1_02_before",
+   "name": "The Ruined Pavilion",
+   "location": "loc:hundred_blossoms_pavilion",
+   "cast": [
+    "npc:tao_yao",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "You wake on cold stone, under a roof with more holes than tiles. Morning light falls through them onto a hall full of dust and dead leaves."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "laugh",
+     "text": "Awake at last! You climbed every one of those mountain steps last night just to fall asleep on the floor of the main hall. And you talked in your sleep. Something about fire?"
+    },
+    {
+     "speaker": "npc:pavilion_master",
+     "expression": "neutral",
+     "text": "That voice... You were in my dream."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "surprised",
+     "text": "Was I?"
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "smile",
+     "text": "Then I must be very memorable! I'm Tao Yao, steward of the Hundred Blossoms Pavilion. Welcome home, Pavilion Master!"
+    },
+    {
+     "speaker": "npc:pavilion_master",
+     "expression": "neutral",
+     "text": "Pavilion Master?"
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "smug",
+     "text": "Mm-hm. The rule here is very simple: whoever the Fate Lotus opens for is the master. And last night, it opened for you."
+    },
+    {
+     "text": "In the middle of the hall lies a round pond, dry and cracked. On a stone at its centre rests a lotus of pale jade, no bigger than two cupped hands."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "smile",
+     "text": "The Fate Pond, and the Fate Lotus. The Pavilion's two great treasures. One of them is currently full of dead leaves."
+    },
+    {
+     "text": "As you look at the Lotus, its petals stir. Threads of red light spill from its heart, thin as hair, running out through the broken walls in every direction."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "neutral",
+     "text": "You can see them, can't you? Threads of fate. Every one of them ends at someone the Pavilion is meant to find."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "smile",
+     "text": "Light a stick of Fate Incense by the pond and follow a thread. If the one at the other end hears you, she'll come. That's how the Pavilion grew, once."
+    },
+    {
+     "speaker": "npc:pavilion_master",
+     "expression": "neutral",
+     "text": "Once?"
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "laugh",
+     "text": "Oh, a while ago. The roof was nicer then."
+    },
+    {
+     "text": "Before you can ask anything more, one thread pulls tight, hot as a coal. Through the broken doors, far down the mountain, a column of smoke climbs over the river."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "worried",
+     "text": "That's Peach Blossom Ford. The orchards... Something down there is burning."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "determined",
+     "text": "And that thread points straight at it. Light the incense first, Pavilion Master. Whoever answers, you'll want her beside you when we go down."
+    },
+    {
+     "speaker": "npc:pavilion_master",
+     "expression": "neutral",
+     "text": "We?"
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "smile",
+     "text": "Naturally! Someone has to show you the road. And carry the snacks."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c1_03_before",
+   "name": "Smoke over the Ford",
+   "location": "loc:peach_blossom_ford",
+   "cast": [
+    "npc:chief_he",
+    "npc:tao_yao",
+    "npc:seer_bai",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "Peach Blossom Ford is burning. Ferry boats smoulder at their moorings, and grey shapes drift between the houses, setting the thatch alight with a touch."
+    },
+    {
+     "speaker": "npc:chief_he",
+     "expression": "worried",
+     "text": "This way! Everyone to the Jade Lotus Temple! Leave the carts, leave the pigs, just run!"
+    },
+    {
+     "speaker": "npc:chief_he",
+     "expression": "surprised",
+     "text": "You there! Did you come down from the old Pavilion? Then for pity's sake, help us! Those things don't bleed!"
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "worried",
+     "text": "Wraiths... real ones. Pavilion Master, they've seen us."
+    },
+    {
+     "speaker": "npc:seer_bai",
+     "expression": "smile",
+     "text": "No need to hurry so, Chief. The fire won't reach the temple."
+    },
+    {
+     "speaker": "npc:chief_he",
+     "expression": "angry",
+     "text": "Old Bai, you're blind! How would you know?"
+    },
+    {
+     "speaker": "npc:seer_bai",
+     "expression": "neutral",
+     "text": "I'm blind, not deaf. I can hear who just walked into the village."
+    },
+    {
+     "text": "As one, the wraiths turn toward you."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c1_04_before",
+   "name": "The Lotus Shield",
+   "location": "loc:peach_blossom_ford",
+   "cast": [
+    "hero:su_lianhua",
+    "npc:pavilion_master",
+    "npc:tao_yao"
+   ],
+   "lines": [
+    {
+     "text": "In the square before the temple road, the refugees huddle under a dome of green light shaped like an opening lotus. A young nun holds it up alone. Her arms are shaking."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "determined",
+     "text": "Stay under the petals, all of you. Grandmother Wang, hold the children's hands. No one steps outside."
+    },
+    {
+     "text": "Black-robed figures circle the shield while their wraiths claw at its edge. Wherever the claws strike, the jade light cracks."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "surprised",
+     "text": "You... you're not with them. Your Qi is clean."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "smile",
+     "text": "I am Su Lianhua of the Jade Lotus Temple. If you mean to help, I won't refuse you. If you get hurt, I'll tend you afterwards."
+    },
+    {
+     "text": "For an instant, a red thread flickers between her hand and yours. She doesn't seem to see it."
+    },
+    {
+     "speaker": "npc:pavilion_master",
+     "expression": "neutral",
+     "text": "Who are they?"
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "angry",
+     "text": "Black robes, grey fire, wraiths on leashes. The Netherflame Sect. The abbess used to tell us stories about them. I thought they were only stories."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "worried",
+     "text": "They're not."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "determined",
+     "text": "Then we fight. I'll keep the shield over the villagers. You keep them off the shield."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c1_05_before",
+   "name": "The Ferryman's Plea",
+   "location": "loc:peach_blossom_ford",
+   "cast": [
+    "npc:ferryman_liu",
+    "npc:chief_he",
+    "npc:tao_yao",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "At the riverbank, an old man in a straw cape sits staring at an empty mooring post."
+    },
+    {
+     "speaker": "npc:ferryman_liu",
+     "expression": "sad",
+     "text": "Forty years I've poled that ferry across this river. Forty years! And now look at it. Gone."
+    },
+    {
+     "speaker": "npc:ferryman_liu",
+     "expression": "angry",
+     "text": "Not burned, mind you. Dragged under! River ghouls, all stirred up by those grey devils. They hauled my boat off to the reed beds like a dog with a bone."
+    },
+    {
+     "speaker": "npc:chief_he",
+     "expression": "worried",
+     "text": "Without Liu's ferry, the refugees can't cross to the far bank. The bridge burned an hour ago."
+    },
+    {
+     "speaker": "npc:ferryman_liu",
+     "expression": "determined",
+     "text": "You look like you know which end of a fight to hold. Bring my boat back, and I'll carry every soul in this village across. Free! Well. Free today."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "smile",
+     "text": "That's a very generous discount."
+    },
+    {
+     "speaker": "npc:pavilion_master",
+     "expression": "neutral",
+     "text": "We'll bring it back."
+    },
+    {
+     "speaker": "npc:ferryman_liu",
+     "expression": "laugh",
+     "text": "Ha! Mind the reeds. Ghouls like to grab ankles."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c1_05_after",
+   "name": "The Ferry Returns",
+   "location": "loc:peach_blossom_ford",
+   "cast": [
+    "npc:ferryman_liu",
+    "hero:su_lianhua",
+    "npc:tao_yao",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "The ferry bobs back to its mooring: muddy, scratched, smelling powerfully of river ghoul, but afloat."
+    },
+    {
+     "speaker": "npc:ferryman_liu",
+     "expression": "laugh",
+     "text": "My girl! Look at her, not a plank missing! Well, one plank. Two."
+    },
+    {
+     "speaker": "npc:ferryman_liu",
+     "expression": "smile",
+     "text": "All aboard! Children first, then grandmothers, then anyone who can swim if it comes to that."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "smile",
+     "text": "Thank you, all of you. The temple won't forget this."
+    },
+    {
+     "speaker": "npc:ferryman_liu",
+     "expression": "shy",
+     "text": "Here, take these. My wife's lotus seed cakes. She made them for the spring festival, and there won't be a festival now. Better someone eats them."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "shy",
+     "text": "Lotus seed cakes... Oh. Those are my favourite."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "smug",
+     "text": "Pavilion Master, I think you've just found the quickest road to a healer's heart."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "surprised",
+     "text": "That isn't... I mean... Please just make sure everyone gets across safely!"
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c1_06_before",
+   "name": "A Peddler on the Road",
+   "location": "loc:peach_blossom_ford",
+   "cast": [
+    "npc:old_qian",
+    "npc:tao_yao",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "Halfway up the temple road, a cart piled high with pots, scrolls and bundles of who-knows-what blocks the way. A round man in a silk cap waves from the top of it."
+    },
+    {
+     "speaker": "npc:old_qian",
+     "expression": "laugh",
+     "text": "Customers! In the middle of a disaster! Heaven still loves Old Qian."
+    },
+    {
+     "speaker": "npc:old_qian",
+     "expression": "smug",
+     "text": "Myriad Treasures Guild, at your service. Lamp oil, bandages, wraith-warding talismans, only slightly expired. Everything a hero needs."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "worried",
+     "text": "Shouldn't you be running away? The village is on fire."
+    },
+    {
+     "speaker": "npc:old_qian",
+     "expression": "smile",
+     "text": "Young miss, the Guild sends me wherever things are on fire. Burning villages need buckets, and buckets need a seller."
+    },
+    {
+     "speaker": "npc:old_qian",
+     "expression": "smug",
+     "text": "Between us, the Guild's auction house sold a \"dragon's tooth\" last month that was very obviously a cow's. Madam Jin made me swear not to tell anyone. So I'm only telling everyone."
+    },
+    {
+     "speaker": "npc:old_qian",
+     "expression": "worried",
+     "text": "And here's some free gossip, since you look honest. Someone has been buying up every Yin-aspected herb in three provinces. Pays in black jade and never haggles. Never haggles! That's not a customer, that's an omen."
+    },
+    {
+     "speaker": "npc:pavilion_master",
+     "expression": "neutral",
+     "text": "Who?"
+    },
+    {
+     "speaker": "npc:old_qian",
+     "expression": "neutral",
+     "text": "Black robes, a polite smile, smells of dry earth. That's all I know, and more than I wanted to. Now, can I interest you in a bucket?"
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c1_07_before",
+   "name": "Ashes of the Peach Grove",
+   "location": "loc:peach_blossom_ford",
+   "cast": [
+    "npc:tao_yao",
+    "npc:abbess_huiming",
+    "hero:su_lianhua",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "From the temple steps you can see the whole valley. The peach orchards are burning row by row, their blossoms going up like sparks."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "sad",
+     "text": "Oh... the peach trees."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "smile",
+     "text": "Sorry! I just like peach trees. They remember everything, you know."
+    },
+    {
+     "speaker": "npc:abbess_huiming",
+     "expression": "worried",
+     "text": "They burn the orchards, but they do not come for the temple. They are not looting. They are calling."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "determined",
+     "text": "Calling me. I can feel it, Abbess. With every tree that burns, they're saying my name."
+    },
+    {
+     "speaker": "npc:abbess_huiming",
+     "expression": "sad",
+     "text": "Since you were small, lotuses have opened wherever you knelt to heal. I prayed no one else would ever notice."
+    },
+    {
+     "speaker": "npc:abbess_huiming",
+     "expression": "determined",
+     "text": "Pavilion Master. I am an old nun, and I have no right to ask anything of you. I ask anyway. Protect her."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "angry",
+     "text": "Abbess, there are farmers in that grove! I won't hide behind these walls while people burn for my sake."
+    },
+    {
+     "speaker": "npc:abbess_huiming",
+     "expression": "smile",
+     "text": "I know, child. That is why I am asking them to go with you, not to keep you here."
+    },
+    {
+     "speaker": "npc:pavilion_master",
+     "expression": "neutral",
+     "text": "She won't be alone."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "smile",
+     "text": "Thank you. Then let's go. Mud does not stain the lotus, and neither will smoke."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c1_08_before",
+   "name": "The Wraith Captain",
+   "location": "loc:peach_blossom_ford",
+   "cast": [
+    "hero:su_lianhua",
+    "npc:tao_yao",
+    "npc:pavilion_master"
+   ],
+   "lines": [
+    {
+     "text": "At the heart of the burning grove stands a figure twice the height of a man: an old general's armour, empty of everything but netherflame, gripping a halberd of black iron."
+    },
+    {
+     "text": "When it speaks, its voice is the crackle of wet wood on a fire. \"The healer. The seed. Give them to the flame.\""
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "worried",
+     "text": "It's looking at me. Not at my face. At something inside me."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "worried",
+     "text": "A seed? What seed? What does it want from me?"
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "determined",
+     "text": "Questions later! Fight now!"
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "worried",
+     "text": "That's the Wraith Captain. It led the raid. Pavilion Master, if it falls, the rest will scatter."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "determined",
+     "text": "Then it falls. I'll keep you standing for as long as it takes."
+    },
+    {
+     "speaker": "npc:pavilion_master",
+     "expression": "neutral",
+     "text": "Together."
+    },
+    {
+     "text": "The Captain raises its halberd, and the whole grove bows toward it in flame."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "scene:v1c1_08_after",
+   "name": "A Lotus Answers",
+   "location": "loc:peach_blossom_ford",
+   "cast": [
+    "npc:tao_yao",
+    "hero:su_lianhua",
+    "npc:pavilion_master",
+    "npc:abbess_huiming"
+   ],
+   "lines": [
+    {
+     "text": "The Wraith Captain's armour falls apart piece by piece, and the netherflame inside it gutters out like a candle in the rain. All across the valley, the wraiths fade with it."
+    },
+    {
+     "text": "Among the ashes where it stood lies a token of black jade, carved with a withered branch."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "worried",
+     "text": "A withered branch... Keep that, Pavilion Master. Someone sent that thing here."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "surprised",
+     "text": "Pavilion Master, the lotus at your belt. It's glowing."
+    },
+    {
+     "text": "The Fate Lotus opens in your hand. A red thread runs from its heart to Su Lianhua's, and where it touches her, something answers: a seed of light deep in her chest, unfolding like a lotus on still water."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "surprised",
+     "text": "I've felt this before, in dreams. A pool of jade, and a garden, and fire..."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "shy",
+     "text": "And you were there. Have we met?"
+    },
+    {
+     "speaker": "npc:pavilion_master",
+     "expression": "neutral",
+     "text": "Lotus."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "surprised",
+     "text": "...No one has ever called me that. Why does it sound like my name?"
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "smile",
+     "text": "Because the Lotus knows its own. Your Dao Seed is waking, Su Lianhua. That's what the Netherflame Sect could smell on the wind."
+    },
+    {
+     "speaker": "npc:abbess_huiming",
+     "expression": "smile",
+     "text": "Then the temple pond was always too small for you, child."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "worried",
+     "text": "Abbess, the refugees, the wounded..."
+    },
+    {
+     "speaker": "npc:abbess_huiming",
+     "expression": "determined",
+     "text": "Have sisters of their own to care for them. Take the old lotus lantern from the shrine. It has waited a long time for someone to carry it out of the gate."
+    },
+    {
+     "speaker": "npc:abbess_huiming",
+     "expression": "smile",
+     "text": "Go with the Pavilion Master. If they mean to hunt you, better they find you among friends."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "determined",
+     "text": "Then I'll go. Pavilion Master, I am Su Lianhua of the Jade Lotus Temple, and from today, of the Hundred Blossoms Pavilion."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "smile",
+     "text": "Now hold still. Let me tend your wounds first."
+    },
+    {
+     "speaker": "npc:tao_yao",
+     "expression": "laugh",
+     "text": "One Blossom found! Only ninety-nine to go!"
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "expression": "surprised",
+     "text": "Ninety-nine?"
+    },
+    {
+     "text": "Far to the north, a new thread of fate pulls tight, cold as snow."
+    }
+   ],
+   "draft": true
+  }
+ ]
+}

@@ -1,0 +1,93 @@
+{
+ "about": "The Martial Tournament: an eight-sect knockout bracket once a season.",
+ "records": [
+  {
+   "id": "tourn:martial_tournament",
+   "name": "Martial Tournament",
+   "location": "loc:tournament_grounds",
+   "herald": "npc:herald_gao",
+   "bracket": 8,
+   "rounds": [
+    "quarterfinal",
+    "semifinal",
+    "final"
+   ],
+   "frequency": "once per Sect Grand Competition season",
+   "entrants": "you and the seven highest-ranked rival sects of the season",
+   "pool": [
+    "rival:primordial_origin_sect",
+    "rival:heaven_s_edge_sword_sect",
+    "rival:golden_crow_palace",
+    "rival:nine_peaks_palace",
+    "rival:seven_stars_hall",
+    "rival:eight_trigrams_sect",
+    "rival:hidden_dragon_valley",
+    "rival:endless_sea_pavilion",
+    "rival:purple_mist_sect",
+    "rival:five_poisons_sect",
+    "rival:thousand_swords_hall",
+    "rival:silver_moon_pavilion",
+    "rival:iron_bell_monastery",
+    "rival:pearl_sea_palace",
+    "rival:falling_star_sect",
+    "rival:thunder_gorge_sect",
+    "rival:mirror_lake_sect",
+    "rival:ten_thousand_beasts_ridge",
+    "rival:rising_sun_pavilion",
+    "rival:peaceful_harmony_sect"
+   ],
+   "levelBonus": 5,
+   "championRewards": [
+    {
+     "art": "art:purple_gold_gourd",
+     "rarity": "rarity:legendary",
+     "seasons": "odd"
+    },
+    {
+     "art": "art:dinghai_pearl",
+     "rarity": "rarity:legendary",
+     "seasons": "even"
+    },
+    {
+     "outfit": "outfit:tournament_yan_feihong"
+    },
+    {
+     "title": "title:tournament_champion"
+    },
+    {
+     "cur": "cur:sect_merit",
+     "qty": 1500
+    }
+   ],
+   "finalistRewards": [
+    {
+     "title": "title:tournament_finalist"
+    },
+    {
+     "cur": "cur:sect_merit",
+     "qty": 800
+    },
+    {
+     "item": "item:artefact_essence",
+     "qty": 20
+    }
+   ],
+   "semifinalRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 400
+    },
+    {
+     "item": "item:artefact_essence",
+     "qty": 10
+    }
+   ],
+   "quarterfinalRewards": [
+    {
+     "cur": "cur:sect_merit",
+     "qty": 200
+    }
+   ]
+  }
+ ]
+}

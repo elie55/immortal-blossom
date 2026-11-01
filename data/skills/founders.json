@@ -1,0 +1,582 @@
+{
+ "about": "Techniques and passives of the four founding Blossoms, as the card prototype plays them.",
+ "records": [
+  {
+   "id": "skill:ling_shuang_s1",
+   "owner": "hero:ling_shuang",
+   "slot": "s1",
+   "name": "Frost Crescent",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.0
+    },
+    {
+     "do": "apply",
+     "status": "status:frost_seal",
+     "turns": 1,
+     "chance": 0.3
+    }
+   ],
+   "text": "Slash one enemy for 100% ATK. 30% chance to Frost Seal it for 1 turn.",
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% effect chance",
+    "+10% damage"
+   ]
+  },
+  {
+   "id": "skill:ling_shuang_s2",
+   "owner": "hero:ling_shuang",
+   "slot": "s2",
+   "name": "Rain of Frozen Swords",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.75
+    },
+    {
+     "do": "delay",
+     "turns": 1
+    }
+   ],
+   "text": "Ice swords hit every enemy for 75% ATK and delay their charging techniques by 1 turn.",
+   "empower": {
+    "cost": 6,
+    "effects": [
+     {
+      "do": "apply",
+      "status": "status:frost_seal",
+      "turns": 1,
+      "target": "healthiest_enemy"
+     }
+    ],
+    "text": "+35% damage and Frost Seals the healthiest enemy."
+   },
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% damage",
+    "Cooldown -1",
+    "+15% damage (petal 3)"
+   ]
+  },
+  {
+   "id": "skill:ling_shuang_s3",
+   "owner": "hero:ling_shuang",
+   "slot": "s3",
+   "name": "Ten-Thousand Frost Array",
+   "cooldown": 5,
+   "start": 4,
+   "target": "enemy",
+   "ultimate": true,
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.7,
+     "hits": 4,
+     "bonusVs": [
+      "status:frost_seal",
+      "wounded"
+     ],
+     "bonus": 0.5
+    },
+    {
+     "do": "apply",
+     "status": "status:frost_seal",
+     "turns": 1
+    }
+   ],
+   "text": "Four sword strikes on one enemy for 70% ATK each, +50% against Frost Sealed or wounded enemies. Frost Seals it.",
+   "empower": {
+    "cost": 10,
+    "effects": [
+     {
+      "do": "damage",
+      "power": 0.6,
+      "target": "other_enemies"
+     }
+    ],
+    "text": "+35% damage and a second fan of swords hits every other enemy for 60% ATK."
+   },
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% damage",
+    "Cooldown -1",
+    "+15% damage (petal 5)"
+   ]
+  },
+  {
+   "id": "skill:ling_shuang_p30",
+   "owner": "hero:ling_shuang",
+   "slot": "p30",
+   "name": "Biting Frost",
+   "trigger": "always",
+   "effects": [
+    {
+     "do": "stat",
+     "damageBonus": 0.25,
+     "when": "single_target_vs_below_half"
+    }
+   ],
+   "text": "Her single-target techniques deal 25% more damage to enemies below half health."
+  },
+  {
+   "id": "skill:ling_shuang_p50",
+   "owner": "hero:ling_shuang",
+   "slot": "p50",
+   "name": "Winter Sword Heart",
+   "trigger": "on_kill",
+   "effects": [
+    {
+     "do": "refresh",
+     "skill": "s3",
+     "turns": 1
+    }
+   ],
+   "text": "Each enemy she defeats brings her ultimate 1 turn closer."
+  },
+  {
+   "id": "skill:mo_yingyue_s1",
+   "owner": "hero:mo_yingyue",
+   "slot": "s1",
+   "name": "Thunderfang Cross",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.55,
+     "hits": 2
+    }
+   ],
+   "text": "Two dagger strikes on one enemy for 55% ATK each.",
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% effect chance",
+    "+10% damage"
+   ]
+  },
+  {
+   "id": "skill:mo_yingyue_s2",
+   "owner": "hero:mo_yingyue",
+   "slot": "s2",
+   "name": "Shadow Lightning Step",
+   "cooldown": 3,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.5
+    },
+    {
+     "do": "refresh",
+     "skill": "s1",
+     "ready": true
+    }
+   ],
+   "text": "Blink through one enemy for 150% ATK. Thunderfang Cross is ready again.",
+   "empower": {
+    "cost": 6,
+    "effects": [
+     {
+      "do": "refresh",
+      "target": "allies",
+      "slot": "charging",
+      "turns": 1
+     }
+    ],
+    "text": "+35% damage and every ally's charging special techniques get 1 turn closer."
+   },
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% damage",
+    "Cooldown -1",
+    "+15% damage (petal 3)"
+   ]
+  },
+  {
+   "id": "skill:mo_yingyue_s3",
+   "owner": "hero:mo_yingyue",
+   "slot": "s3",
+   "name": "Heaven's Execution",
+   "cooldown": 5,
+   "start": 4,
+   "target": "enemy",
+   "ultimate": true,
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.95,
+     "hits": 3,
+     "missingHealthBonus": 1.0
+    },
+    {
+     "do": "apply",
+     "status": "status:soul_shock",
+     "turns": 1
+    }
+   ],
+   "text": "Three strikes of judgement lightning for 95% ATK each, +1% per 1% health the target is missing. Soul Shock for 1 turn.",
+   "empower": {
+    "cost": 10,
+    "effects": [
+     {
+      "do": "refresh",
+      "skill": "s2",
+      "ready": true
+     }
+    ],
+    "text": "+35% damage and Shadow Lightning Step is ready again."
+   },
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% damage",
+    "Cooldown -1",
+    "+15% damage (petal 5)"
+   ]
+  },
+  {
+   "id": "skill:mo_yingyue_p30",
+   "owner": "hero:mo_yingyue",
+   "slot": "p30",
+   "name": "Night Bloom",
+   "trigger": "on_cast",
+   "effects": [
+    {
+     "do": "stat",
+     "stat": "stat:crit",
+     "value": 0.2,
+     "when": "first_technique_each_turn"
+    }
+   ],
+   "text": "Her first technique each turn has +20% critical chance."
+  },
+  {
+   "id": "skill:mo_yingyue_p50",
+   "owner": "hero:mo_yingyue",
+   "slot": "p50",
+   "name": "Thunder Without Shadow",
+   "trigger": "on_crit",
+   "effects": [
+    {
+     "do": "qi",
+     "amount": 1,
+     "once": "turn"
+    }
+   ],
+   "text": "Once per turn, a critical hit gives the team 1 Spirit Qi."
+  },
+  {
+   "id": "skill:yan_feihong_s1",
+   "owner": "hero:yan_feihong",
+   "slot": "s1",
+   "name": "Vermilion Talisman",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.0
+    },
+    {
+     "do": "apply",
+     "status": "status:fire_poison",
+     "turns": 2,
+     "chance": 0.4
+    }
+   ],
+   "text": "Talisman fire hits one enemy for 100% ATK. 40% chance of Fire Poison for 2 turns.",
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% effect chance",
+    "+10% damage"
+   ]
+  },
+  {
+   "id": "skill:yan_feihong_s2",
+   "owner": "hero:yan_feihong",
+   "slot": "s2",
+   "name": "Scarlet Inferno",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.7
+    },
+    {
+     "do": "apply",
+     "status": "status:fire_poison",
+     "turns": 2
+    }
+   ],
+   "text": "Fire sigils hit every enemy for 70% ATK and apply Fire Poison for 2 turns.",
+   "empower": {
+    "cost": 6,
+    "effects": [
+     {
+      "do": "extend",
+      "status": "status:fire_poison",
+      "turns": 1
+     }
+    ],
+    "text": "+35% damage and Fire Poison lasts 3 turns."
+   },
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% damage",
+    "Cooldown -1",
+    "+15% damage (petal 3)"
+   ]
+  },
+  {
+   "id": "skill:yan_feihong_s3",
+   "owner": "hero:yan_feihong",
+   "slot": "s3",
+   "name": "Vermilion Phoenix Covenant",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_enemies",
+   "ultimate": true,
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.7,
+     "bonusVs": [
+      "status:fire_poison"
+     ],
+     "bonus": 0.3
+    }
+   ],
+   "text": "The Vermilion Phoenix sweeps every enemy for 170% ATK, +30% against burning enemies.",
+   "empower": {
+    "cost": 10,
+    "effects": [
+     {
+      "do": "damage",
+      "detonate": "status:fire_poison"
+     }
+    ],
+    "text": "+35% damage and every Fire Poison deals its remaining damage at once."
+   },
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% damage",
+    "Cooldown -1",
+    "+15% damage (petal 5)"
+   ]
+  },
+  {
+   "id": "skill:yan_feihong_p30",
+   "owner": "hero:yan_feihong",
+   "slot": "p30",
+   "name": "Lingering Embers",
+   "trigger": "always",
+   "effects": [
+    {
+     "do": "extend",
+     "status": "status:fire_poison",
+     "turns": 1
+    }
+   ],
+   "text": "Fire Poison she applies lasts 1 turn longer."
+  },
+  {
+   "id": "skill:yan_feihong_p50",
+   "owner": "hero:yan_feihong",
+   "slot": "p50",
+   "name": "Vermilion Rebirth",
+   "trigger": "on_fall",
+   "effects": [
+    {
+     "do": "revive",
+     "pct": 0.3,
+     "self": true,
+     "once": "battle"
+    },
+    {
+     "do": "refresh",
+     "skill": "s3",
+     "ready": true
+    }
+   ],
+   "text": "Once per battle, when she falls she rises at 30% health with her ultimate ready."
+  },
+  {
+   "id": "skill:su_lianhua_s1",
+   "owner": "hero:su_lianhua",
+   "slot": "s1",
+   "name": "Petal Blades",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.3,
+     "hits": 3
+    },
+    {
+     "do": "heal",
+     "power": 0.7,
+     "target": "lowest_ally"
+    }
+   ],
+   "text": "Three petals hit one enemy for 30% ATK each. The most injured ally recovers 70% ATK.",
+   "mastery": [
+    "+5% damage and healing",
+    "+5% healing",
+    "+10% damage and healing",
+    "+10% healing",
+    "+10% damage and healing"
+   ]
+  },
+  {
+   "id": "skill:su_lianhua_s2",
+   "owner": "hero:su_lianhua",
+   "slot": "s2",
+   "name": "Jade Lotus Revival",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_allies",
+   "effects": [
+    {
+     "do": "heal",
+     "power": 0.95
+    },
+    {
+     "do": "cleanse",
+     "count": 1
+    }
+   ],
+   "text": "Every ally recovers 95% ATK and loses one debuff.",
+   "empower": {
+    "cost": 6,
+    "effects": [
+     {
+      "do": "apply",
+      "status": "status:clear_heart",
+      "turns": 1,
+      "target": "all_allies"
+     }
+    ],
+    "text": "+35% healing and Clear Heart: immune to debuffs for 1 turn."
+   },
+   "mastery": [
+    "+5% healing",
+    "+5% healing",
+    "+10% healing",
+    "+10% healing",
+    "Cooldown -1",
+    "+15% healing (petal 3)"
+   ]
+  },
+  {
+   "id": "skill:su_lianhua_s3",
+   "owner": "hero:su_lianhua",
+   "slot": "s3",
+   "name": "Thousand-Petal Sanctuary",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_allies",
+   "ultimate": true,
+   "effects": [
+    {
+     "do": "shield",
+     "status": "status:spirit_shield",
+     "power": 1.3
+    },
+    {
+     "do": "apply",
+     "status": "status:lotus_dew",
+     "turns": 2
+    }
+   ],
+   "text": "Every ally gains a Spirit Shield of 130% ATK and Lotus Dew (recovers 6% health per turn) for 2 turns.",
+   "empower": {
+    "cost": 10,
+    "effects": [
+     {
+      "do": "revive",
+      "pct": 0.3,
+      "count": 1
+     }
+    ],
+    "text": "+35% shield and a fallen ally returns at 30% health."
+   },
+   "mastery": [
+    "+5% shield",
+    "+5% shield",
+    "+10% shield",
+    "+10% shield",
+    "Cooldown -1",
+    "+15% shield (petal 5)"
+   ]
+  },
+  {
+   "id": "skill:su_lianhua_p30",
+   "owner": "hero:su_lianhua",
+   "slot": "p30",
+   "name": "Unstained Lotus",
+   "trigger": "always",
+   "effects": [
+    {
+     "do": "stat",
+     "stat": "stat:healing",
+     "value": 0.4,
+     "when": "target_below_30pct"
+    }
+   ],
+   "text": "Her healing on allies below 30% health is 40% stronger."
+  },
+  {
+   "id": "skill:su_lianhua_p50",
+   "owner": "hero:su_lianhua",
+   "slot": "p50",
+   "name": "Rising from the Mud",
+   "trigger": "on_fall",
+   "effects": [
+    {
+     "do": "heal",
+     "setHealth": 1,
+     "when": "ally_would_fall",
+     "once": "battle"
+    },
+    {
+     "do": "shield",
+     "status": "status:spirit_shield",
+     "power": 0.6
+    }
+   ],
+   "text": "Once per battle, an ally who would fall survives at 1 health with a Spirit Shield worth 60% of Su's Attack."
+  }
+ ]
+}

@@ -1,0 +1,473 @@
+{
+ "about": "Drop tables for the Trial Tower, raids, Secret Realms and natal gear fragments.",
+ "records": [
+  {
+   "id": "drops:unique_fragments",
+   "name": "Natal gear fragments",
+   "pick": "one fragment, weighted toward heroines you own",
+   "entries": [
+    {
+     "item": "item:frag_ling_shuang",
+     "weight": 1
+    },
+    {
+     "item": "item:frag_mo_yingyue",
+     "weight": 1
+    },
+    {
+     "item": "item:frag_yan_feihong",
+     "weight": 1
+    },
+    {
+     "item": "item:frag_su_lianhua",
+     "weight": 1
+    },
+    {
+     "item": "item:frag_gladiolus",
+     "weight": 1
+    },
+    {
+     "item": "item:frag_orchid",
+     "weight": 1
+    },
+    {
+     "item": "item:frag_pomegranate",
+     "weight": 1
+    },
+    {
+     "item": "item:frag_crabapple",
+     "weight": 1
+    },
+    {
+     "item": "item:frag_magnolia",
+     "weight": 1
+    },
+    {
+     "item": "item:frag_wisteria",
+     "weight": 1
+    },
+    {
+     "item": "item:frag_camellia",
+     "weight": 1
+    },
+    {
+     "item": "item:frag_azalea",
+     "weight": 1
+    },
+    {
+     "item": "item:frag_peony",
+     "weight": 1
+    },
+    {
+     "item": "item:frag_pear_blossom",
+     "weight": 1
+    },
+    {
+     "item": "item:frag_iris",
+     "weight": 1
+    },
+    {
+     "item": "item:frag_rose",
+     "weight": 1
+    },
+    {
+     "item": "item:frag_oleander",
+     "weight": 1
+    },
+    {
+     "item": "item:frag_jasmine",
+     "weight": 1
+    },
+    {
+     "item": "item:frag_peach_blossom",
+     "weight": 1
+    },
+    {
+     "item": "item:frag_narcissus",
+     "weight": 1
+    },
+    {
+     "item": "item:frag_hibiscus",
+     "weight": 1
+    },
+    {
+     "item": "item:frag_daylily",
+     "weight": 1
+    },
+    {
+     "item": "item:frag_osmanthus",
+     "weight": 1
+    },
+    {
+     "item": "item:frag_apricot_blossom",
+     "weight": 1
+    },
+    {
+     "item": "item:frag_snow_lotus",
+     "weight": 1
+    },
+    {
+     "item": "item:frag_trumpet_creeper",
+     "weight": 1
+    },
+    {
+     "item": "item:frag_chrysanthemum",
+     "weight": 1
+    },
+    {
+     "item": "item:frag_lily",
+     "weight": 1
+    },
+    {
+     "item": "item:frag_hydrangea",
+     "weight": 1
+    },
+    {
+     "item": "item:frag_safflower",
+     "weight": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:tower",
+   "name": "Trial Tower floors",
+   "entries": [
+    {
+     "item": "item:black_iron",
+     "qty": [
+      2,
+      4
+     ],
+     "chance": 0.3
+    },
+    {
+     "item": "item:spirit_silver",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.25
+    },
+    {
+     "item": "item:starfall_iron",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.15
+    },
+    {
+     "item": "item:void_gold",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.05
+    },
+    {
+     "item": "item:dao_mark",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.1
+    },
+    {
+     "item": "item:forging_dust",
+     "qty": [
+      5,
+      15
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:raid_d1",
+   "name": "Raid difficulty 1",
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:iv",
+      "set": "any",
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:legendary": 0.7,
+       "rarity:mythic": 0.3
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:artefact_essence",
+     "qty": [
+      3,
+      5
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:raid_d2",
+   "name": "Raid difficulty 2",
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:v",
+      "set": "any",
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:mythic": 1.0
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:artefact_essence",
+     "qty": [
+      6,
+      10
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:bodhi_leaf",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.5
+    }
+   ]
+  },
+  {
+   "id": "drops:raid_d3",
+   "name": "Raid difficulty 3",
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:vi",
+      "set": "any",
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:mythic": 0.6,
+       "rarity:immortal": 0.4
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:artefact_essence",
+     "qty": [
+      9,
+      15
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:bodhi_leaf",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.5
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.2
+    }
+   ]
+  },
+  {
+   "id": "drops:raid_d4",
+   "name": "Raid difficulty 4",
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:vii",
+      "set": "any",
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:immortal": 1.0
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:artefact_essence",
+     "qty": [
+      12,
+      20
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:bodhi_leaf",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.5
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.4
+    }
+   ]
+  },
+  {
+   "id": "drops:raid_d5",
+   "name": "Raid difficulty 5",
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:viii",
+      "set": "any",
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:immortal": 0.95,
+       "rarity:divine": 0.05
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:artefact_essence",
+     "qty": [
+      15,
+      25
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:bodhi_leaf",
+     "qty": [
+      1,
+      4
+     ],
+     "chance": 0.5
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.6000000000000001
+    },
+    {
+     "drops": "drops:unique_fragments",
+     "chance": 0.5
+    }
+   ]
+  },
+  {
+   "id": "drops:secret_realm_run",
+   "name": "Secret Realm run chest",
+   "rolls": 3,
+   "entries": [
+    {
+     "gear": {
+      "tier": "scaled",
+      "set": "any",
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:epic": 0.5,
+       "rarity:legendary": 0.5
+      }
+     },
+     "chance": 0.8
+    },
+    {
+     "item": "item:dao_mark",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.4
+    },
+    {
+     "item": "item:egg_common",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.15
+    },
+    {
+     "item": "item:egg_rare",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.05
+    },
+    {
+     "item": "item:egg_celestial",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.01
+    },
+    {
+     "item": "item:snow_lotus",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.2
+    },
+    {
+     "item": "item:fire_lingzhi",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.1
+    },
+    {
+     "item": "item:gift_guqin_strings",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.06
+    },
+    {
+     "item": "item:gift_sandalwood_incense",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.06
+    },
+    {
+     "item": "item:gift_calligraphy_scroll",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.06
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      5000,
+      12000
+     ],
+     "chance": 1
+    }
+   ]
+  }
+ ]
+}

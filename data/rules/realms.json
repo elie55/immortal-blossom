@@ -1,0 +1,252 @@
+{
+ "about": "The eight realms to level 80. Each breakthrough raises the cap by 10 and base stats by 10%.",
+ "records": [
+  {
+   "id": "realm:qi_refining",
+   "order": 1,
+   "name": "Qi Refining",
+   "cn": "练气",
+   "levelCap": 10,
+   "levels": [
+    1,
+    10
+   ],
+   "stages": [
+    "Early",
+    "Middle",
+    "Late",
+    "Peak"
+   ],
+   "tier": "tier:i",
+   "statBonus": 0,
+   "meridianSlot": false
+  },
+  {
+   "id": "realm:foundation_establishment",
+   "order": 2,
+   "name": "Foundation Establishment",
+   "cn": "筑基",
+   "levelCap": 20,
+   "levels": [
+    11,
+    20
+   ],
+   "stages": [
+    "Early",
+    "Middle",
+    "Late",
+    "Peak"
+   ],
+   "tier": "tier:ii",
+   "statBonus": 0.1,
+   "meridianSlot": true,
+   "frame": "White mist",
+   "breakthroughCost": [
+    {
+     "item": "item:foundation_pill",
+     "qty": 1
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 2000
+    }
+   ]
+  },
+  {
+   "id": "realm:core_formation",
+   "order": 3,
+   "name": "Core Formation",
+   "cn": "金丹",
+   "levelCap": 30,
+   "levels": [
+    21,
+    30
+   ],
+   "stages": [
+    "Early",
+    "Middle",
+    "Late",
+    "Peak"
+   ],
+   "tier": "tier:iii",
+   "statBonus": 0.1,
+   "meridianSlot": true,
+   "frame": "Gold ring",
+   "breakthroughCost": [
+    {
+     "item": "item:golden_core_pill",
+     "qty": 1
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 10000
+    }
+   ],
+   "trial": "trial:core_formation",
+   "unlocksPassive": "level 30"
+  },
+  {
+   "id": "realm:nascent_soul",
+   "order": 4,
+   "name": "Nascent Soul",
+   "cn": "元婴",
+   "levelCap": 40,
+   "levels": [
+    31,
+    40
+   ],
+   "stages": [
+    "Early",
+    "Middle",
+    "Late",
+    "Peak"
+   ],
+   "tier": "tier:iv",
+   "statBonus": 0.1,
+   "meridianSlot": true,
+   "frame": "Azure ring",
+   "breakthroughCost": [
+    {
+     "item": "item:nascent_soul_pill",
+     "qty": 1
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 30000
+    }
+   ],
+   "trial": "trial:nascent_soul"
+  },
+  {
+   "id": "realm:spirit_severing",
+   "order": 5,
+   "name": "Spirit Severing",
+   "cn": "化神",
+   "levelCap": 50,
+   "levels": [
+    41,
+    50
+   ],
+   "stages": [
+    "Early",
+    "Middle",
+    "Late",
+    "Peak"
+   ],
+   "tier": "tier:v",
+   "statBonus": 0.1,
+   "meridianSlot": true,
+   "frame": "Violet ring",
+   "breakthroughCost": [
+    {
+     "item": "item:severing_pill",
+     "qty": 1
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 80000
+    }
+   ],
+   "trial": "trial:spirit_severing",
+   "unlocksPassive": "level 50"
+  },
+  {
+   "id": "realm:void_refinement",
+   "order": 6,
+   "name": "Void Refinement",
+   "cn": "炼虚",
+   "levelCap": 60,
+   "levels": [
+    51,
+    60
+   ],
+   "stages": [
+    "Early",
+    "Middle",
+    "Late",
+    "Peak"
+   ],
+   "tier": "tier:vi",
+   "statBonus": 0.1,
+   "meridianSlot": true,
+   "frame": "Five-colour ring",
+   "breakthroughCost": [
+    {
+     "item": "item:void_pill",
+     "qty": 1
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 160000
+    }
+   ],
+   "trial": "trial:void_refinement"
+  },
+  {
+   "id": "realm:body_integration",
+   "order": 7,
+   "name": "Body Integration",
+   "cn": "合体",
+   "levelCap": 70,
+   "levels": [
+    61,
+    70
+   ],
+   "stages": [
+    "Early",
+    "Middle",
+    "Late",
+    "Peak"
+   ],
+   "tier": "tier:vii",
+   "statBonus": 0.1,
+   "meridianSlot": true,
+   "frame": "Jade-and-gold frame",
+   "breakthroughCost": [
+    {
+     "item": "item:integration_pill",
+     "qty": 1
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 300000
+    }
+   ],
+   "trial": "trial:body_integration",
+   "opensRenDu": true
+  },
+  {
+   "id": "realm:mahayana",
+   "order": 8,
+   "name": "Mahayana",
+   "cn": "大乘",
+   "levelCap": 80,
+   "levels": [
+    71,
+    80
+   ],
+   "stages": [
+    "Early",
+    "Middle",
+    "Late",
+    "Peak"
+   ],
+   "tier": "tier:viii",
+   "statBonus": 0.1,
+   "meridianSlot": true,
+   "frame": "Radiant lotus frame",
+   "breakthroughCost": [
+    {
+     "item": "item:mahayana_pill",
+     "qty": 1
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 500000
+    }
+   ],
+   "trial": "trial:mahayana",
+   "opensUniqueGear": true
+  }
+ ]
+}

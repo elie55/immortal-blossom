@@ -1,0 +1,164 @@
+{
+ "about": "Demon Hunts: the Four Fiends and the nine-headed serpent, 13 levels each, two gear sets per hunt.",
+ "records": [
+  {
+   "id": "hunt:qiongqi",
+   "name": "Qiongqi",
+   "cn": "穷奇",
+   "creature": "enemy:qiongqi",
+   "minion": "enemy:wind_imp",
+   "location": "loc:howling_gorge",
+   "gimmick": "Very fast: its techniques recharge 2 turns at a time, so Delay and Frost Seal decide the fight",
+   "sets": [
+    "set:sword_heart",
+    "set:azure_dragon"
+   ],
+   "manuals": [
+    "item:manual_sword_heart",
+    "item:manual_azure_dragon"
+   ],
+   "levels": [
+    "stage:hunt_qiongqi_01",
+    "stage:hunt_qiongqi_02",
+    "stage:hunt_qiongqi_03",
+    "stage:hunt_qiongqi_04",
+    "stage:hunt_qiongqi_05",
+    "stage:hunt_qiongqi_06",
+    "stage:hunt_qiongqi_07",
+    "stage:hunt_qiongqi_08",
+    "stage:hunt_qiongqi_09",
+    "stage:hunt_qiongqi_10",
+    "stage:hunt_qiongqi_11",
+    "stage:hunt_qiongqi_12",
+    "stage:hunt_qiongqi_13"
+   ]
+  },
+  {
+   "id": "hunt:taotie",
+   "name": "Taotie",
+   "cn": "饕餮",
+   "creature": "enemy:taotie",
+   "minion": "enemy:bronze_maw",
+   "location": "loc:bronze_wastes",
+   "gimmick": "Devours buffs and grows stronger from them",
+   "sets": [
+    "set:white_tiger",
+    "set:vermilion_bird"
+   ],
+   "manuals": [
+    "item:manual_white_tiger",
+    "item:manual_vermilion_bird"
+   ],
+   "levels": [
+    "stage:hunt_taotie_01",
+    "stage:hunt_taotie_02",
+    "stage:hunt_taotie_03",
+    "stage:hunt_taotie_04",
+    "stage:hunt_taotie_05",
+    "stage:hunt_taotie_06",
+    "stage:hunt_taotie_07",
+    "stage:hunt_taotie_08",
+    "stage:hunt_taotie_09",
+    "stage:hunt_taotie_10",
+    "stage:hunt_taotie_11",
+    "stage:hunt_taotie_12",
+    "stage:hunt_taotie_13"
+   ]
+  },
+  {
+   "id": "hunt:taowu",
+   "name": "Taowu",
+   "cn": "梼杌",
+   "creature": "enemy:taowu",
+   "minion": "enemy:stone_puppet",
+   "location": "loc:stone_forest",
+   "gimmick": "Huge Qi shield (24 segments); needs multi-hit heroines",
+   "sets": [
+    "set:qilin",
+    "set:black_tortoise"
+   ],
+   "manuals": [
+    "item:manual_qilin",
+    "item:manual_black_tortoise"
+   ],
+   "levels": [
+    "stage:hunt_taowu_01",
+    "stage:hunt_taowu_02",
+    "stage:hunt_taowu_03",
+    "stage:hunt_taowu_04",
+    "stage:hunt_taowu_05",
+    "stage:hunt_taowu_06",
+    "stage:hunt_taowu_07",
+    "stage:hunt_taowu_08",
+    "stage:hunt_taowu_09",
+    "stage:hunt_taowu_10",
+    "stage:hunt_taowu_11",
+    "stage:hunt_taowu_12",
+    "stage:hunt_taowu_13"
+   ]
+  },
+  {
+   "id": "hunt:hundun",
+   "name": "Hundun",
+   "cn": "混沌",
+   "creature": "enemy:hundun",
+   "minion": "enemy:chaos_wisp",
+   "location": "loc:formless_marsh",
+   "gimmick": "Scrambles your heroines' cooldowns each turn; effect resistance resists it",
+   "sets": [
+    "set:heavenly_eye",
+    "set:still_water"
+   ],
+   "manuals": [
+    "item:manual_heavenly_eye",
+    "item:manual_still_water"
+   ],
+   "levels": [
+    "stage:hunt_hundun_01",
+    "stage:hunt_hundun_02",
+    "stage:hunt_hundun_03",
+    "stage:hunt_hundun_04",
+    "stage:hunt_hundun_05",
+    "stage:hunt_hundun_06",
+    "stage:hunt_hundun_07",
+    "stage:hunt_hundun_08",
+    "stage:hunt_hundun_09",
+    "stage:hunt_hundun_10",
+    "stage:hunt_hundun_11",
+    "stage:hunt_hundun_12",
+    "stage:hunt_hundun_13"
+   ]
+  },
+  {
+   "id": "hunt:xiangliu",
+   "name": "Xiangliu",
+   "cn": "相柳",
+   "creature": "enemy:xiangliu_head_fire",
+   "location": "loc:nine_head_swamp",
+   "gimmick": "Poisons the field; each head is a separate card with its own phase",
+   "sets": [
+    "set:blood_lotus",
+    "set:five_elements"
+   ],
+   "manuals": [
+    "item:manual_blood_lotus",
+    "item:manual_five_elements"
+   ],
+   "levels": [
+    "stage:hunt_xiangliu_01",
+    "stage:hunt_xiangliu_02",
+    "stage:hunt_xiangliu_03",
+    "stage:hunt_xiangliu_04",
+    "stage:hunt_xiangliu_05",
+    "stage:hunt_xiangliu_06",
+    "stage:hunt_xiangliu_07",
+    "stage:hunt_xiangliu_08",
+    "stage:hunt_xiangliu_09",
+    "stage:hunt_xiangliu_10",
+    "stage:hunt_xiangliu_11",
+    "stage:hunt_xiangliu_12",
+    "stage:hunt_xiangliu_13"
+   ]
+  }
+ ]
+}

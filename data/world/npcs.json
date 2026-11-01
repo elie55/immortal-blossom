@@ -1,0 +1,198 @@
+{
+ "about": "Core characters. Story-only characters live in world/npcs_story.json; rival sect leaders in modes/competition.json.",
+ "records": [
+  {
+   "id": "npc:pavilion_master",
+   "name": "Pavilion Master",
+   "cn": "阁主",
+   "role": "The player",
+   "faction": "faction:hundred_blossoms_pavilion",
+   "home": "loc:hundred_blossoms_pavilion",
+   "about": "You: an unseen master named by the player, who can see threads of fate"
+  },
+  {
+   "id": "npc:tao_yao",
+   "name": "Tao Yao",
+   "cn": "桃夭",
+   "role": "Pavilion steward",
+   "faction": "faction:hundred_blossoms_pavilion",
+   "home": "loc:hundred_blossoms_pavilion",
+   "about": "Cheerful steward with a peach-blossom motif; hosts the check-in and the first battle"
+  },
+  {
+   "id": "npc:madam_jin",
+   "name": "Madam Jin",
+   "cn": "金掌柜",
+   "role": "Guild market keeper",
+   "faction": "faction:myriad_treasures_guild",
+   "home": "loc:myriad_treasures_hall",
+   "about": "Shrewd keeper of the Myriad Treasures Hall"
+  },
+  {
+   "id": "npc:old_qian",
+   "name": "Old Qian",
+   "cn": "钱老",
+   "role": "Wandering merchant",
+   "faction": "faction:myriad_treasures_guild",
+   "home": "loc:peach_blossom_ford",
+   "about": "A Guild peddler who turns up on every road"
+  },
+  {
+   "id": "npc:scribe_lu",
+   "name": "Scribe Lu Wen",
+   "cn": "陆闻",
+   "role": "Tianji fate reader",
+   "faction": "faction:tianji_pavilion",
+   "home": "loc:tianji_pavilion",
+   "about": "Sells secrets and posts commissions"
+  },
+  {
+   "id": "npc:seer_bai",
+   "name": "Old Seer Bai",
+   "cn": "白瞎子",
+   "role": "Fortune teller",
+   "home": "loc:peach_blossom_ford",
+   "about": "A blind fortune teller met on the road; always right in the end"
+  },
+  {
+   "id": "npc:medicine_king",
+   "name": "The Medicine King",
+   "cn": "药王",
+   "role": "Lingering spirit",
+   "home": "loc:medicine_king_valley",
+   "about": "The remnant spirit of a great alchemist, embarrassed by his runaway furnaces"
+  },
+  {
+   "id": "npc:netherflame_sovereign",
+   "name": "Netherflame Sovereign",
+   "cn": "冥焰帝君",
+   "role": "Main antagonist",
+   "faction": "faction:netherflame_sect",
+   "home": "loc:gate_of_the_jade_pool",
+   "about": "Burned the Garden three thousand years ago; sealed, but stirring"
+  },
+  {
+   "id": "npc:netherflame_matriarch",
+   "name": "Netherflame Matriarch",
+   "cn": "冥焰圣母",
+   "role": "Sect matriarch",
+   "faction": "faction:netherflame_sect",
+   "home": "loc:gate_of_the_jade_pool",
+   "about": "Mistress of the Withered Garden; harvests Dao Seeds for the Sovereign"
+  },
+  {
+   "id": "npc:envoy_ku_ye",
+   "name": "Envoy Ku Ye",
+   "cn": "枯夜",
+   "role": "Netherflame envoy",
+   "faction": "faction:netherflame_sect",
+   "home": "loc:moonshadow_bamboo_sea",
+   "about": "The Matriarch's smiling envoy: buys traitors, hires assassins, steals fire"
+  },
+  {
+   "id": "npc:elder_han_lie",
+   "name": "Elder Han Lie",
+   "cn": "寒烈",
+   "role": "Frostpeak traitor",
+   "faction": "faction:frostpeak_sword_sect",
+   "home": "loc:frostpeak",
+   "about": "A Frostpeak elder who sells his own disciples to the Netherflame Sect"
+  },
+  {
+   "id": "npc:frostpeak_master",
+   "name": "Sect Master Bai Xue",
+   "cn": "白雪",
+   "role": "Frostpeak sect master",
+   "faction": "faction:frostpeak_sword_sect",
+   "home": "loc:frostpeak",
+   "about": "Ling Shuang's master, imprisoned by the traitor"
+  },
+  {
+   "id": "npc:madam_yue",
+   "name": "Madam Yue",
+   "cn": "月夫人",
+   "role": "Moonshadow mistress",
+   "faction": "faction:moonshadow_pavilion",
+   "home": "loc:moonshadow_bamboo_sea",
+   "about": "Mistress of the Moonshadow Pavilion; keeps the assassins' code"
+  },
+  {
+   "id": "npc:abbess_huiming",
+   "name": "Abbess Huiming",
+   "cn": "慧明师太",
+   "role": "Jade Lotus abbess",
+   "faction": "faction:jade_lotus_temple",
+   "home": "loc:peach_blossom_ford",
+   "about": "Su Lianhua's teacher"
+  },
+  {
+   "id": "npc:elder_zhu_yan",
+   "name": "Elder Zhu Yan",
+   "cn": "朱焰",
+   "role": "Phoenix Palace elder",
+   "faction": "faction:vermilion_phoenix_palace",
+   "home": "loc:vermilion_ruins",
+   "about": "Keeper of the sealed fire, and of Yan Feihong's temper"
+  },
+  {
+   "id": "npc:hu_yinling",
+   "name": "Hu Yinling",
+   "cn": "胡银铃",
+   "role": "Silver Fox thief",
+   "faction": "faction:fox_clan",
+   "home": "loc:vermilion_ruins",
+   "about": "A fox renegade who steals the Phoenix Palace's sealed fire"
+  },
+  {
+   "id": "npc:chief_he",
+   "name": "Village Chief He",
+   "cn": "何村长",
+   "role": "Peach Blossom Ford chief",
+   "home": "loc:peach_blossom_ford",
+   "about": "Leads the refugees of the burned ford"
+  },
+  {
+   "id": "npc:ferryman_liu",
+   "name": "Old Liu the Ferryman",
+   "cn": "刘艄公",
+   "role": "Ferryman",
+   "home": "loc:peach_blossom_ford",
+   "about": "Lost his ferry to the river ghouls"
+  },
+  {
+   "id": "npc:lady_hu_qiao",
+   "name": "Lady Hu Qiao",
+   "cn": "胡巧",
+   "role": "Fox Clan matriarch",
+   "faction": "faction:fox_clan",
+   "home": "loc:moonshadow_bamboo_sea",
+   "about": "Smiles a great deal; trusts no one"
+  },
+  {
+   "id": "npc:chief_bai_lin",
+   "name": "Chief Bai Lin",
+   "cn": "白鳞",
+   "role": "Serpent Clan chief",
+   "faction": "faction:serpent_clan",
+   "home": "loc:peach_blossom_ford",
+   "about": "Old, patient, and owed many favours"
+  },
+  {
+   "id": "npc:elder_he_ling",
+   "name": "Elder He Ling",
+   "cn": "鹤龄",
+   "role": "Crane Clan elder",
+   "faction": "faction:crane_clan",
+   "home": "loc:frostpeak",
+   "about": "Watches Frostpeak from the cliffs"
+  },
+  {
+   "id": "npc:herald_gao",
+   "name": "Herald Gao",
+   "cn": "高司仪",
+   "role": "Tournament herald",
+   "home": "loc:tournament_grounds",
+   "about": "Announces every bout of the Martial Tournament, loudly"
+  }
+ ]
+}

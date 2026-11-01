@@ -1,0 +1,85 @@
+{
+ "about": "Titles shown beside the Pavilion Master's name.",
+ "records": [
+  {
+   "id": "title:outer_disciple",
+   "name": "Outer Disciple"
+  },
+  {
+   "id": "title:inner_disciple",
+   "name": "Inner Disciple"
+  },
+  {
+   "id": "title:core_disciple",
+   "name": "Core Disciple"
+  },
+  {
+   "id": "title:elder",
+   "name": "Elder"
+  },
+  {
+   "id": "title:grand_elder",
+   "name": "Grand Elder"
+  },
+  {
+   "id": "title:sect_patriarch",
+   "name": "Sect Patriarch"
+  },
+  {
+   "id": "title:tournament_finalist",
+   "name": "Tournament Finalist"
+  },
+  {
+   "id": "title:tournament_champion",
+   "name": "Martial Champion"
+  },
+  {
+   "id": "title:pavilion_restorer",
+   "name": "Restorer of the Pavilion"
+  },
+  {
+   "id": "title:heaven_defier",
+   "name": "Heaven Defier"
+  },
+  {
+   "id": "title:demon_slayer",
+   "name": "Slayer of the Four Fiends"
+  },
+  {
+   "id": "title:pagoda_conqueror",
+   "name": "Pagoda Conqueror"
+  },
+  {
+   "id": "title:hundred_blossoms",
+   "name": "Gardener of a Hundred Blossoms"
+  },
+  {
+   "id": "title:first_bloom",
+   "name": "First Full Bloom"
+  },
+  {
+   "id": "title:tribulation_master",
+   "name": "Master of Tribulations"
+  },
+  {
+   "id": "title:raid_breaker",
+   "name": "Beast Breaker"
+  },
+  {
+   "id": "title:realm_walker",
+   "name": "Realm Walker"
+  },
+  {
+   "id": "title:tower_climber",
+   "name": "Tower Climber"
+  },
+  {
+   "id": "title:alchemist",
+   "name": "Perfect Alchemist"
+  },
+  {
+   "id": "title:kindred_spirit",
+   "name": "Kindred Spirit"
+  }
+ ]
+}

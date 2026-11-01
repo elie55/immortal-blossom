@@ -1,0 +1,65 @@
+{
+ "about": "Card stats. Gear, meridians, arrays, sets and bonds add to them.",
+ "records": [
+  {
+   "id": "stat:hp",
+   "name": "Health",
+   "form": "flat or %",
+   "about": "Damage a card can take"
+  },
+  {
+   "id": "stat:atk",
+   "name": "Attack",
+   "form": "flat or %",
+   "about": "Scales damage, healing and shields"
+  },
+  {
+   "id": "stat:def",
+   "name": "Defense",
+   "form": "flat or %",
+   "about": "Damage taken = damage / (1 + Defense / 900)"
+  },
+  {
+   "id": "stat:crit",
+   "name": "Critical chance",
+   "form": "%",
+   "about": "Chance to land a critical hit"
+  },
+  {
+   "id": "stat:crit_dmg",
+   "name": "Critical damage",
+   "form": "%",
+   "about": "Multiplier of a critical hit"
+  },
+  {
+   "id": "stat:haste",
+   "name": "Haste",
+   "form": "flat",
+   "about": "Fills a meter each turn; at 100 her charging techniques recharge one extra turn"
+  },
+  {
+   "id": "stat:acc",
+   "name": "Accuracy",
+   "form": "%",
+   "about": "Chance for debuffs to land"
+  },
+  {
+   "id": "stat:res",
+   "name": "Effect resistance",
+   "form": "%",
+   "about": "Chance to resist debuffs"
+  },
+  {
+   "id": "stat:healing",
+   "name": "Healing done",
+   "form": "%",
+   "about": "More healing and shields cast"
+  },
+  {
+   "id": "stat:heal_received",
+   "name": "Healing received",
+   "form": "%",
+   "about": "More healing received"
+  }
+ ]
+}

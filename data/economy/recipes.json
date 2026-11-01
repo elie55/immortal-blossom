@@ -1,0 +1,1658 @@
+{
+ "about": "Alchemy and Forge recipes. Alchemy pills roll a quality (Low to Perfect); the forge makes set pieces, natal gear and some artefacts.",
+ "records": [
+  {
+   "id": "recipe:brew_qi_gathering_pill",
+   "name": "Brew: Qi Gathering Pill",
+   "station": "bld:alchemy_pavilion",
+   "inputs": [
+    {
+     "item": "item:spirit_grass",
+     "qty": 3
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 500
+    }
+   ],
+   "output": {
+    "item": "item:qi_gathering_pill",
+    "qty": 1
+   },
+   "hours": 1,
+   "quality": [
+    "Low",
+    "Middle",
+    "High",
+    "Perfect"
+   ]
+  },
+  {
+   "id": "recipe:brew_spirit_condensing_pill",
+   "name": "Brew: Spirit Condensing Pill",
+   "station": "bld:alchemy_pavilion",
+   "inputs": [
+    {
+     "item": "item:blood_ginseng",
+     "qty": 2
+    },
+    {
+     "item": "item:spirit_grass",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 1500
+    }
+   ],
+   "output": {
+    "item": "item:spirit_condensing_pill",
+    "qty": 1
+   },
+   "hours": 2,
+   "quality": [
+    "Low",
+    "Middle",
+    "High",
+    "Perfect"
+   ]
+  },
+  {
+   "id": "recipe:brew_heaven_earth_pill",
+   "name": "Brew: Heaven Earth Pill",
+   "station": "bld:alchemy_pavilion",
+   "inputs": [
+    {
+     "item": "item:snow_lotus",
+     "qty": 2
+    },
+    {
+     "item": "item:blood_ginseng",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 5000
+    }
+   ],
+   "output": {
+    "item": "item:heaven_earth_pill",
+    "qty": 1
+   },
+   "hours": 4,
+   "quality": [
+    "Low",
+    "Middle",
+    "High",
+    "Perfect"
+   ]
+  },
+  {
+   "id": "recipe:brew_nine_revolution_golden_pill",
+   "name": "Brew: Nine Revolution Golden Pill",
+   "station": "bld:alchemy_pavilion",
+   "inputs": [
+    {
+     "item": "item:nine_leaf_lingzhi",
+     "qty": 1
+    },
+    {
+     "item": "item:fire_lingzhi",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 15000
+    }
+   ],
+   "output": {
+    "item": "item:nine_revolution_golden_pill",
+    "qty": 1
+   },
+   "hours": 8,
+   "quality": [
+    "Low",
+    "Middle",
+    "High",
+    "Perfect"
+   ]
+  },
+  {
+   "id": "recipe:brew_foundation_pill",
+   "name": "Brew: Foundation Pill",
+   "station": "bld:alchemy_pavilion",
+   "inputs": [
+    {
+     "item": "item:spirit_grass",
+     "qty": 10
+    },
+    {
+     "item": "item:blood_ginseng",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 2000
+    }
+   ],
+   "output": {
+    "item": "item:foundation_pill",
+    "qty": 1
+   },
+   "hours": 2,
+   "quality": [
+    "Low",
+    "Middle",
+    "High",
+    "Perfect"
+   ]
+  },
+  {
+   "id": "recipe:brew_golden_core_pill",
+   "name": "Brew: Golden Core Pill",
+   "station": "bld:alchemy_pavilion",
+   "inputs": [
+    {
+     "item": "item:blood_ginseng",
+     "qty": 8
+    },
+    {
+     "item": "item:snow_lotus",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 8000
+    }
+   ],
+   "output": {
+    "item": "item:golden_core_pill",
+    "qty": 1
+   },
+   "hours": 4,
+   "quality": [
+    "Low",
+    "Middle",
+    "High",
+    "Perfect"
+   ]
+  },
+  {
+   "id": "recipe:brew_nascent_soul_pill",
+   "name": "Brew: Nascent Soul Pill",
+   "station": "bld:alchemy_pavilion",
+   "inputs": [
+    {
+     "item": "item:snow_lotus",
+     "qty": 6
+    },
+    {
+     "item": "item:fire_lingzhi",
+     "qty": 1
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 20000
+    }
+   ],
+   "output": {
+    "item": "item:nascent_soul_pill",
+    "qty": 1
+   },
+   "hours": 6,
+   "quality": [
+    "Low",
+    "Middle",
+    "High",
+    "Perfect"
+   ]
+  },
+  {
+   "id": "recipe:brew_severing_pill",
+   "name": "Brew: Severing Pill",
+   "station": "bld:alchemy_pavilion",
+   "inputs": [
+    {
+     "item": "item:snow_lotus",
+     "qty": 8
+    },
+    {
+     "item": "item:fire_lingzhi",
+     "qty": 3
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 40000
+    }
+   ],
+   "output": {
+    "item": "item:severing_pill",
+    "qty": 1
+   },
+   "hours": 8,
+   "quality": [
+    "Low",
+    "Middle",
+    "High",
+    "Perfect"
+   ]
+  },
+  {
+   "id": "recipe:brew_void_pill",
+   "name": "Brew: Void Pill",
+   "station": "bld:alchemy_pavilion",
+   "inputs": [
+    {
+     "item": "item:fire_lingzhi",
+     "qty": 6
+    },
+    {
+     "item": "item:nine_leaf_lingzhi",
+     "qty": 1
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 80000
+    }
+   ],
+   "output": {
+    "item": "item:void_pill",
+    "qty": 1
+   },
+   "hours": 10,
+   "quality": [
+    "Low",
+    "Middle",
+    "High",
+    "Perfect"
+   ]
+  },
+  {
+   "id": "recipe:brew_integration_pill",
+   "name": "Brew: Integration Pill",
+   "station": "bld:alchemy_pavilion",
+   "inputs": [
+    {
+     "item": "item:fire_lingzhi",
+     "qty": 8
+    },
+    {
+     "item": "item:nine_leaf_lingzhi",
+     "qty": 2
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": 1
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 150000
+    }
+   ],
+   "output": {
+    "item": "item:integration_pill",
+    "qty": 1
+   },
+   "hours": 12,
+   "quality": [
+    "Low",
+    "Middle",
+    "High",
+    "Perfect"
+   ]
+  },
+  {
+   "id": "recipe:brew_mahayana_pill",
+   "name": "Brew: Mahayana Pill",
+   "station": "bld:alchemy_pavilion",
+   "inputs": [
+    {
+     "item": "item:nine_leaf_lingzhi",
+     "qty": 5
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 300000
+    }
+   ],
+   "output": {
+    "item": "item:mahayana_pill",
+    "qty": 1
+   },
+   "hours": 12,
+   "quality": [
+    "Low",
+    "Middle",
+    "High",
+    "Perfect"
+   ]
+  },
+  {
+   "id": "recipe:brew_resolve_elixir",
+   "name": "Brew: Resolve Elixir",
+   "station": "bld:alchemy_pavilion",
+   "inputs": [
+    {
+     "item": "item:spirit_grass",
+     "qty": 4
+    },
+    {
+     "item": "item:blood_ginseng",
+     "qty": 1
+    }
+   ],
+   "output": {
+    "item": "item:resolve_elixir",
+    "qty": 1
+   },
+   "hours": 1,
+   "quality": [
+    "Low",
+    "Middle",
+    "High",
+    "Perfect"
+   ]
+  },
+  {
+   "id": "recipe:brew_spirit_elixir",
+   "name": "Brew: Spirit Elixir",
+   "station": "bld:alchemy_pavilion",
+   "inputs": [
+    {
+     "item": "item:blood_ginseng",
+     "qty": 3
+    },
+    {
+     "item": "item:snow_lotus",
+     "qty": 1
+    }
+   ],
+   "output": {
+    "item": "item:spirit_elixir",
+    "qty": 1
+   },
+   "hours": 2,
+   "quality": [
+    "Low",
+    "Middle",
+    "High",
+    "Perfect"
+   ]
+  },
+  {
+   "id": "recipe:brew_revival_elixir",
+   "name": "Brew: Revival Elixir",
+   "station": "bld:alchemy_pavilion",
+   "inputs": [
+    {
+     "item": "item:snow_lotus",
+     "qty": 2
+    },
+    {
+     "item": "item:fire_lingzhi",
+     "qty": 1
+    }
+   ],
+   "output": {
+    "item": "item:revival_elixir",
+    "qty": 1
+   },
+   "hours": 3,
+   "quality": [
+    "Low",
+    "Middle",
+    "High",
+    "Perfect"
+   ]
+  },
+  {
+   "id": "recipe:refine_wood_essence",
+   "name": "Refine Wood Essence",
+   "station": "bld:alchemy_pavilion",
+   "inputs": [
+    {
+     "item": "item:water_essence",
+     "qty": 2
+    }
+   ],
+   "output": {
+    "item": "item:wood_essence",
+    "qty": 1
+   },
+   "hours": 1,
+   "note": "Water feeds Wood: two water essences make one wood essence"
+  },
+  {
+   "id": "recipe:refine_fire_essence",
+   "name": "Refine Fire Essence",
+   "station": "bld:alchemy_pavilion",
+   "inputs": [
+    {
+     "item": "item:wood_essence",
+     "qty": 2
+    }
+   ],
+   "output": {
+    "item": "item:fire_essence",
+    "qty": 1
+   },
+   "hours": 1,
+   "note": "Wood feeds Fire: two wood essences make one fire essence"
+  },
+  {
+   "id": "recipe:refine_earth_essence",
+   "name": "Refine Earth Essence",
+   "station": "bld:alchemy_pavilion",
+   "inputs": [
+    {
+     "item": "item:fire_essence",
+     "qty": 2
+    }
+   ],
+   "output": {
+    "item": "item:earth_essence",
+    "qty": 1
+   },
+   "hours": 1,
+   "note": "Fire feeds Earth: two fire essences make one earth essence"
+  },
+  {
+   "id": "recipe:refine_metal_essence",
+   "name": "Refine Metal Essence",
+   "station": "bld:alchemy_pavilion",
+   "inputs": [
+    {
+     "item": "item:earth_essence",
+     "qty": 2
+    }
+   ],
+   "output": {
+    "item": "item:metal_essence",
+    "qty": 1
+   },
+   "hours": 1,
+   "note": "Earth feeds Metal: two earth essences make one metal essence"
+  },
+  {
+   "id": "recipe:refine_water_essence",
+   "name": "Refine Water Essence",
+   "station": "bld:alchemy_pavilion",
+   "inputs": [
+    {
+     "item": "item:metal_essence",
+     "qty": 2
+    }
+   ],
+   "output": {
+    "item": "item:water_essence",
+    "qty": 1
+   },
+   "hours": 1,
+   "note": "Metal feeds Water: two metal essences make one water essence"
+  },
+  {
+   "id": "recipe:forge_set_sword_heart",
+   "name": "Forge a Sword Heart piece",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:manual_sword_heart",
+     "qty": 1
+    },
+    {
+     "item": "item:forging_dust",
+     "qty": 50
+    },
+    {
+     "item": "item:black_iron",
+     "qty": 5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 20000
+    }
+   ],
+   "output": {
+    "gear": {
+     "set": "set:sword_heart",
+     "slot": "chosen",
+     "tier": "your highest unlocked",
+     "rarityOdds": {
+      "rarity:rare": 0.5,
+      "rarity:epic": 0.35,
+      "rarity:legendary": 0.15
+     }
+    }
+   },
+   "hours": 4
+  },
+  {
+   "id": "recipe:forge_set_azure_dragon",
+   "name": "Forge a Azure Dragon piece",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:manual_azure_dragon",
+     "qty": 1
+    },
+    {
+     "item": "item:forging_dust",
+     "qty": 50
+    },
+    {
+     "item": "item:black_iron",
+     "qty": 5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 20000
+    }
+   ],
+   "output": {
+    "gear": {
+     "set": "set:azure_dragon",
+     "slot": "chosen",
+     "tier": "your highest unlocked",
+     "rarityOdds": {
+      "rarity:rare": 0.5,
+      "rarity:epic": 0.35,
+      "rarity:legendary": 0.15
+     }
+    }
+   },
+   "hours": 4
+  },
+  {
+   "id": "recipe:forge_set_white_tiger",
+   "name": "Forge a White Tiger piece",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:manual_white_tiger",
+     "qty": 1
+    },
+    {
+     "item": "item:forging_dust",
+     "qty": 50
+    },
+    {
+     "item": "item:black_iron",
+     "qty": 5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 20000
+    }
+   ],
+   "output": {
+    "gear": {
+     "set": "set:white_tiger",
+     "slot": "chosen",
+     "tier": "your highest unlocked",
+     "rarityOdds": {
+      "rarity:rare": 0.5,
+      "rarity:epic": 0.35,
+      "rarity:legendary": 0.15
+     }
+    }
+   },
+   "hours": 4
+  },
+  {
+   "id": "recipe:forge_set_vermilion_bird",
+   "name": "Forge a Vermilion Bird piece",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:manual_vermilion_bird",
+     "qty": 1
+    },
+    {
+     "item": "item:forging_dust",
+     "qty": 50
+    },
+    {
+     "item": "item:black_iron",
+     "qty": 5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 20000
+    }
+   ],
+   "output": {
+    "gear": {
+     "set": "set:vermilion_bird",
+     "slot": "chosen",
+     "tier": "your highest unlocked",
+     "rarityOdds": {
+      "rarity:rare": 0.5,
+      "rarity:epic": 0.35,
+      "rarity:legendary": 0.15
+     }
+    }
+   },
+   "hours": 4
+  },
+  {
+   "id": "recipe:forge_set_qilin",
+   "name": "Forge a Qilin piece",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:manual_qilin",
+     "qty": 1
+    },
+    {
+     "item": "item:forging_dust",
+     "qty": 50
+    },
+    {
+     "item": "item:black_iron",
+     "qty": 5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 20000
+    }
+   ],
+   "output": {
+    "gear": {
+     "set": "set:qilin",
+     "slot": "chosen",
+     "tier": "your highest unlocked",
+     "rarityOdds": {
+      "rarity:rare": 0.5,
+      "rarity:epic": 0.35,
+      "rarity:legendary": 0.15
+     }
+    }
+   },
+   "hours": 4
+  },
+  {
+   "id": "recipe:forge_set_black_tortoise",
+   "name": "Forge a Black Tortoise piece",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:manual_black_tortoise",
+     "qty": 1
+    },
+    {
+     "item": "item:forging_dust",
+     "qty": 50
+    },
+    {
+     "item": "item:black_iron",
+     "qty": 5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 20000
+    }
+   ],
+   "output": {
+    "gear": {
+     "set": "set:black_tortoise",
+     "slot": "chosen",
+     "tier": "your highest unlocked",
+     "rarityOdds": {
+      "rarity:rare": 0.5,
+      "rarity:epic": 0.35,
+      "rarity:legendary": 0.15
+     }
+    }
+   },
+   "hours": 4
+  },
+  {
+   "id": "recipe:forge_set_heavenly_eye",
+   "name": "Forge a Heavenly Eye piece",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:manual_heavenly_eye",
+     "qty": 1
+    },
+    {
+     "item": "item:forging_dust",
+     "qty": 50
+    },
+    {
+     "item": "item:black_iron",
+     "qty": 5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 20000
+    }
+   ],
+   "output": {
+    "gear": {
+     "set": "set:heavenly_eye",
+     "slot": "chosen",
+     "tier": "your highest unlocked",
+     "rarityOdds": {
+      "rarity:rare": 0.5,
+      "rarity:epic": 0.35,
+      "rarity:legendary": 0.15
+     }
+    }
+   },
+   "hours": 4
+  },
+  {
+   "id": "recipe:forge_set_still_water",
+   "name": "Forge a Still Water piece",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:manual_still_water",
+     "qty": 1
+    },
+    {
+     "item": "item:forging_dust",
+     "qty": 50
+    },
+    {
+     "item": "item:black_iron",
+     "qty": 5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 20000
+    }
+   ],
+   "output": {
+    "gear": {
+     "set": "set:still_water",
+     "slot": "chosen",
+     "tier": "your highest unlocked",
+     "rarityOdds": {
+      "rarity:rare": 0.5,
+      "rarity:epic": 0.35,
+      "rarity:legendary": 0.15
+     }
+    }
+   },
+   "hours": 4
+  },
+  {
+   "id": "recipe:forge_set_blood_lotus",
+   "name": "Forge a Blood Lotus piece",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:manual_blood_lotus",
+     "qty": 1
+    },
+    {
+     "item": "item:forging_dust",
+     "qty": 50
+    },
+    {
+     "item": "item:black_iron",
+     "qty": 5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 20000
+    }
+   ],
+   "output": {
+    "gear": {
+     "set": "set:blood_lotus",
+     "slot": "chosen",
+     "tier": "your highest unlocked",
+     "rarityOdds": {
+      "rarity:rare": 0.5,
+      "rarity:epic": 0.35,
+      "rarity:legendary": 0.15
+     }
+    }
+   },
+   "hours": 4
+  },
+  {
+   "id": "recipe:forge_set_five_elements",
+   "name": "Forge a Five Elements piece",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:manual_five_elements",
+     "qty": 1
+    },
+    {
+     "item": "item:forging_dust",
+     "qty": 50
+    },
+    {
+     "item": "item:black_iron",
+     "qty": 5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 20000
+    }
+   ],
+   "output": {
+    "gear": {
+     "set": "set:five_elements",
+     "slot": "chosen",
+     "tier": "your highest unlocked",
+     "rarityOdds": {
+      "rarity:rare": 0.5,
+      "rarity:epic": 0.35,
+      "rarity:legendary": 0.15
+     }
+    }
+   },
+   "hours": 4
+  },
+  {
+   "id": "recipe:forge_unique_ling_shuang",
+   "name": "Forge natal gear: Ling Shuang",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:frag_ling_shuang",
+     "qty": 10
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 500000
+    }
+   ],
+   "output": {
+    "unique": "unique:ling_shuang"
+   },
+   "hours": 12,
+   "requiresRealm": "realm:mahayana"
+  },
+  {
+   "id": "recipe:forge_unique_mo_yingyue",
+   "name": "Forge natal gear: Mo Yingyue",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:frag_mo_yingyue",
+     "qty": 10
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 500000
+    }
+   ],
+   "output": {
+    "unique": "unique:mo_yingyue"
+   },
+   "hours": 12,
+   "requiresRealm": "realm:mahayana"
+  },
+  {
+   "id": "recipe:forge_unique_yan_feihong",
+   "name": "Forge natal gear: Yan Feihong",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:frag_yan_feihong",
+     "qty": 10
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 500000
+    }
+   ],
+   "output": {
+    "unique": "unique:yan_feihong"
+   },
+   "hours": 12,
+   "requiresRealm": "realm:mahayana"
+  },
+  {
+   "id": "recipe:forge_unique_su_lianhua",
+   "name": "Forge natal gear: Su Lianhua",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:frag_su_lianhua",
+     "qty": 10
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 500000
+    }
+   ],
+   "output": {
+    "unique": "unique:su_lianhua"
+   },
+   "hours": 12,
+   "requiresRealm": "realm:mahayana"
+  },
+  {
+   "id": "recipe:forge_unique_gladiolus",
+   "name": "Forge natal gear: Gladiolus",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:frag_gladiolus",
+     "qty": 10
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 500000
+    }
+   ],
+   "output": {
+    "unique": "unique:gladiolus"
+   },
+   "hours": 12,
+   "requiresRealm": "realm:mahayana"
+  },
+  {
+   "id": "recipe:forge_unique_orchid",
+   "name": "Forge natal gear: Orchid",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:frag_orchid",
+     "qty": 10
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 500000
+    }
+   ],
+   "output": {
+    "unique": "unique:orchid"
+   },
+   "hours": 12,
+   "requiresRealm": "realm:mahayana"
+  },
+  {
+   "id": "recipe:forge_unique_pomegranate",
+   "name": "Forge natal gear: Pomegranate",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:frag_pomegranate",
+     "qty": 10
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 500000
+    }
+   ],
+   "output": {
+    "unique": "unique:pomegranate"
+   },
+   "hours": 12,
+   "requiresRealm": "realm:mahayana"
+  },
+  {
+   "id": "recipe:forge_unique_crabapple",
+   "name": "Forge natal gear: Crabapple",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:frag_crabapple",
+     "qty": 10
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 500000
+    }
+   ],
+   "output": {
+    "unique": "unique:crabapple"
+   },
+   "hours": 12,
+   "requiresRealm": "realm:mahayana"
+  },
+  {
+   "id": "recipe:forge_unique_magnolia",
+   "name": "Forge natal gear: Magnolia",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:frag_magnolia",
+     "qty": 10
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 500000
+    }
+   ],
+   "output": {
+    "unique": "unique:magnolia"
+   },
+   "hours": 12,
+   "requiresRealm": "realm:mahayana"
+  },
+  {
+   "id": "recipe:forge_unique_wisteria",
+   "name": "Forge natal gear: Wisteria",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:frag_wisteria",
+     "qty": 10
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 500000
+    }
+   ],
+   "output": {
+    "unique": "unique:wisteria"
+   },
+   "hours": 12,
+   "requiresRealm": "realm:mahayana"
+  },
+  {
+   "id": "recipe:forge_unique_camellia",
+   "name": "Forge natal gear: Camellia",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:frag_camellia",
+     "qty": 10
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 500000
+    }
+   ],
+   "output": {
+    "unique": "unique:camellia"
+   },
+   "hours": 12,
+   "requiresRealm": "realm:mahayana"
+  },
+  {
+   "id": "recipe:forge_unique_azalea",
+   "name": "Forge natal gear: Azalea",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:frag_azalea",
+     "qty": 10
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 500000
+    }
+   ],
+   "output": {
+    "unique": "unique:azalea"
+   },
+   "hours": 12,
+   "requiresRealm": "realm:mahayana"
+  },
+  {
+   "id": "recipe:forge_unique_peony",
+   "name": "Forge natal gear: Peony",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:frag_peony",
+     "qty": 10
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 500000
+    }
+   ],
+   "output": {
+    "unique": "unique:peony"
+   },
+   "hours": 12,
+   "requiresRealm": "realm:mahayana"
+  },
+  {
+   "id": "recipe:forge_unique_pear_blossom",
+   "name": "Forge natal gear: Pear Blossom",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:frag_pear_blossom",
+     "qty": 10
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 500000
+    }
+   ],
+   "output": {
+    "unique": "unique:pear_blossom"
+   },
+   "hours": 12,
+   "requiresRealm": "realm:mahayana"
+  },
+  {
+   "id": "recipe:forge_unique_iris",
+   "name": "Forge natal gear: Iris",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:frag_iris",
+     "qty": 10
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 500000
+    }
+   ],
+   "output": {
+    "unique": "unique:iris"
+   },
+   "hours": 12,
+   "requiresRealm": "realm:mahayana"
+  },
+  {
+   "id": "recipe:forge_unique_rose",
+   "name": "Forge natal gear: Rose",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:frag_rose",
+     "qty": 10
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 500000
+    }
+   ],
+   "output": {
+    "unique": "unique:rose"
+   },
+   "hours": 12,
+   "requiresRealm": "realm:mahayana"
+  },
+  {
+   "id": "recipe:forge_unique_oleander",
+   "name": "Forge natal gear: Oleander",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:frag_oleander",
+     "qty": 10
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 500000
+    }
+   ],
+   "output": {
+    "unique": "unique:oleander"
+   },
+   "hours": 12,
+   "requiresRealm": "realm:mahayana"
+  },
+  {
+   "id": "recipe:forge_unique_jasmine",
+   "name": "Forge natal gear: Jasmine",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:frag_jasmine",
+     "qty": 10
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 500000
+    }
+   ],
+   "output": {
+    "unique": "unique:jasmine"
+   },
+   "hours": 12,
+   "requiresRealm": "realm:mahayana"
+  },
+  {
+   "id": "recipe:forge_unique_peach_blossom",
+   "name": "Forge natal gear: Peach Blossom",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:frag_peach_blossom",
+     "qty": 10
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 500000
+    }
+   ],
+   "output": {
+    "unique": "unique:peach_blossom"
+   },
+   "hours": 12,
+   "requiresRealm": "realm:mahayana"
+  },
+  {
+   "id": "recipe:forge_unique_narcissus",
+   "name": "Forge natal gear: Narcissus",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:frag_narcissus",
+     "qty": 10
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 500000
+    }
+   ],
+   "output": {
+    "unique": "unique:narcissus"
+   },
+   "hours": 12,
+   "requiresRealm": "realm:mahayana"
+  },
+  {
+   "id": "recipe:forge_unique_hibiscus",
+   "name": "Forge natal gear: Hibiscus",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:frag_hibiscus",
+     "qty": 10
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 500000
+    }
+   ],
+   "output": {
+    "unique": "unique:hibiscus"
+   },
+   "hours": 12,
+   "requiresRealm": "realm:mahayana"
+  },
+  {
+   "id": "recipe:forge_unique_daylily",
+   "name": "Forge natal gear: Daylily",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:frag_daylily",
+     "qty": 10
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 500000
+    }
+   ],
+   "output": {
+    "unique": "unique:daylily"
+   },
+   "hours": 12,
+   "requiresRealm": "realm:mahayana"
+  },
+  {
+   "id": "recipe:forge_unique_osmanthus",
+   "name": "Forge natal gear: Osmanthus",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:frag_osmanthus",
+     "qty": 10
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 500000
+    }
+   ],
+   "output": {
+    "unique": "unique:osmanthus"
+   },
+   "hours": 12,
+   "requiresRealm": "realm:mahayana"
+  },
+  {
+   "id": "recipe:forge_unique_apricot_blossom",
+   "name": "Forge natal gear: Apricot Blossom",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:frag_apricot_blossom",
+     "qty": 10
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 500000
+    }
+   ],
+   "output": {
+    "unique": "unique:apricot_blossom"
+   },
+   "hours": 12,
+   "requiresRealm": "realm:mahayana"
+  },
+  {
+   "id": "recipe:forge_unique_snow_lotus",
+   "name": "Forge natal gear: Snow Lotus",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:frag_snow_lotus",
+     "qty": 10
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 500000
+    }
+   ],
+   "output": {
+    "unique": "unique:snow_lotus"
+   },
+   "hours": 12,
+   "requiresRealm": "realm:mahayana"
+  },
+  {
+   "id": "recipe:forge_unique_trumpet_creeper",
+   "name": "Forge natal gear: Trumpet Creeper",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:frag_trumpet_creeper",
+     "qty": 10
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 500000
+    }
+   ],
+   "output": {
+    "unique": "unique:trumpet_creeper"
+   },
+   "hours": 12,
+   "requiresRealm": "realm:mahayana"
+  },
+  {
+   "id": "recipe:forge_unique_chrysanthemum",
+   "name": "Forge natal gear: Chrysanthemum",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:frag_chrysanthemum",
+     "qty": 10
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 500000
+    }
+   ],
+   "output": {
+    "unique": "unique:chrysanthemum"
+   },
+   "hours": 12,
+   "requiresRealm": "realm:mahayana"
+  },
+  {
+   "id": "recipe:forge_unique_lily",
+   "name": "Forge natal gear: Lily",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:frag_lily",
+     "qty": 10
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 500000
+    }
+   ],
+   "output": {
+    "unique": "unique:lily"
+   },
+   "hours": 12,
+   "requiresRealm": "realm:mahayana"
+  },
+  {
+   "id": "recipe:forge_unique_hydrangea",
+   "name": "Forge natal gear: Hydrangea",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:frag_hydrangea",
+     "qty": 10
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 500000
+    }
+   ],
+   "output": {
+    "unique": "unique:hydrangea"
+   },
+   "hours": 12,
+   "requiresRealm": "realm:mahayana"
+  },
+  {
+   "id": "recipe:forge_unique_safflower",
+   "name": "Forge natal gear: Safflower",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:frag_safflower",
+     "qty": 10
+    },
+    {
+     "item": "item:dao_crystal",
+     "qty": 2
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 500000
+    }
+   ],
+   "output": {
+    "unique": "unique:safflower"
+   },
+   "hours": 12,
+   "requiresRealm": "realm:mahayana"
+  },
+  {
+   "id": "recipe:forge_art_lotus_lantern",
+   "name": "Forge Lotus Lantern",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:artefact_essence",
+     "qty": 60
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 50000
+    }
+   ],
+   "output": {
+    "art": "art:lotus_lantern",
+    "rarity": "rarity:epic"
+   },
+   "hours": 8
+  },
+  {
+   "id": "recipe:forge_art_immortal_binding_rope",
+   "name": "Forge Immortal Binding Rope",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:artefact_essence",
+     "qty": 60
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 50000
+    }
+   ],
+   "output": {
+    "art": "art:immortal_binding_rope",
+    "rarity": "rarity:epic"
+   },
+   "hours": 8
+  },
+  {
+   "id": "recipe:forge_art_demon_revealing_mirror",
+   "name": "Forge Demon Revealing Mirror",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:artefact_essence",
+     "qty": 60
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 50000
+    }
+   ],
+   "output": {
+    "art": "art:demon_revealing_mirror",
+    "rarity": "rarity:epic"
+   },
+   "hours": 8
+  },
+  {
+   "id": "recipe:forge_art_plantain_fan",
+   "name": "Forge Plantain Fan",
+   "station": "bld:artifact_forge",
+   "inputs": [
+    {
+     "item": "item:artefact_essence",
+     "qty": 60
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 50000
+    }
+   ],
+   "output": {
+    "art": "art:plantain_fan",
+    "rarity": "rarity:epic"
+   },
+   "hours": 8
+  }
+ ]
+}

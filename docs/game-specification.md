@@ -829,13 +829,17 @@ The game stays a web app: the card prototype's HTML, CSS, Canvas and JavaScript 
 
 ### Data model
 
-| File | Holds |
+All content lives in the repository's data/ folder as JSON. Every record has a typed id, such as hero:ling\_shuang or item:qi\_gathering\_pill, and links to other records by id. tools/validate.mjs fails on any broken link, any record the game cannot reach, and any item with no source or no use; docs/data-model.md explains the format.
+
+| Folder | Holds |
 | --- | --- |
-| heroines.json | Identity, phase, path, rarity, stat curves, skill ids, Dao Blossom, unique gear, Karmic Threads, gift tastes, voice lines |
-| skills.json | Numbers, cooldowns, Empower costs and effect lists; each technique's choreography stays in code, as in the prototype's skills.js |
-| enemies.json, stages.json, chapters.json | Enemy kits, waves, stage missions, drops, map nodes |
-| items.json, gear\_sets.json, unique\_gear.json, artefacts.json, encounters.json, drop\_tables.json | Everything that can be owned and where it comes from |
-| story/\*.json | Every story script |
+| rules/ | Combat, growth and gear rules; phases, paths, stats, realms, status effects, and the systems that spend and produce items |
+| heroines/, skills/ | Heroines with their petals, gifts and bond outfits; Karmic Threads; every technique and passive; each technique's choreography stays in code, as in the prototype's skills.js |
+| enemies/, stages/ | Enemy templates, and every fixed battle: Journey, hunts, Valley, shrines, Pagoda, Tower and raids, with waves, missions and drops |
+| story/, world/ | Chapters and every story scene; factions, places and characters |
+| modes/ | Hunts, Secret Realms, tribulation trials, raids, the Tower, the Sect Grand Competition and the Martial Tournament |
+| items/, gear/, battle/, beasts/ | Everything that can be owned: currencies, materials, gifts, fragments, outfits, gear rules and sets, unique gear, Spirit Artefacts, encounters, arrays, spirit beasts |
+| economy/, sect/, progression/ | Drop tables, recipes and shops; Sect buildings and expeditions; Sect Rank, check-in, Path of Ascension, duties, Renown, titles and the Fate Pond |
 
 - **Save:** one JSON document in IndexedDB with a schema version and migrations; autosave after every battle and transaction; battle state every turn; export and import as a file; a checksum to detect corruption (not to stop cheating, since the game is single-player).
 - **Time:** idle gains come from timestamps. Clock changes are tolerated; time running backwards is ignored.

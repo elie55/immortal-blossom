@@ -1,0 +1,3495 @@
+{
+ "about": "Drop tables for Demon Hunts: two sets per hunt, rarity by level.",
+ "records": [
+  {
+   "id": "drops:hunt_qiongqi_01",
+   "name": "Qiongqi level 1",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:ii",
+      "sets": [
+       "set:sword_heart",
+       "set:azure_dragon"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:uncommon": 0.7,
+       "rarity:rare": 0.3
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_sword_heart",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.044
+    },
+    {
+     "item": "item:manual_azure_dragon",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.044
+    },
+    {
+     "item": "item:black_iron",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      800,
+      1500
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_qiongqi_02",
+   "name": "Qiongqi level 2",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:ii",
+      "sets": [
+       "set:sword_heart",
+       "set:azure_dragon"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:uncommon": 0.45,
+       "rarity:rare": 0.55
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_sword_heart",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.048
+    },
+    {
+     "item": "item:manual_azure_dragon",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.048
+    },
+    {
+     "item": "item:black_iron",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      1600,
+      3000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_qiongqi_03",
+   "name": "Qiongqi level 3",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:iii",
+      "sets": [
+       "set:sword_heart",
+       "set:azure_dragon"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:rare": 0.7,
+       "rarity:epic": 0.3
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_sword_heart",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.052000000000000005
+    },
+    {
+     "item": "item:manual_azure_dragon",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.052000000000000005
+    },
+    {
+     "item": "item:black_iron",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      2400,
+      4500
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_qiongqi_04",
+   "name": "Qiongqi level 4",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:iii",
+      "sets": [
+       "set:sword_heart",
+       "set:azure_dragon"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:rare": 0.45,
+       "rarity:epic": 0.55
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_sword_heart",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.056
+    },
+    {
+     "item": "item:manual_azure_dragon",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.056
+    },
+    {
+     "item": "item:black_iron",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      3200,
+      6000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_qiongqi_05",
+   "name": "Qiongqi level 5",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:iv",
+      "sets": [
+       "set:sword_heart",
+       "set:azure_dragon"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:epic": 0.65,
+       "rarity:legendary": 0.35
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_sword_heart",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.06
+    },
+    {
+     "item": "item:manual_azure_dragon",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.06
+    },
+    {
+     "item": "item:spirit_silver",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      4000,
+      7500
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_qiongqi_06",
+   "name": "Qiongqi level 6",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:iv",
+      "sets": [
+       "set:sword_heart",
+       "set:azure_dragon"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:epic": 0.4,
+       "rarity:legendary": 0.6
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_sword_heart",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.064
+    },
+    {
+     "item": "item:manual_azure_dragon",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.064
+    },
+    {
+     "item": "item:spirit_silver",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      4800,
+      9000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_qiongqi_07",
+   "name": "Qiongqi level 7",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:v",
+      "sets": [
+       "set:sword_heart",
+       "set:azure_dragon"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:legendary": 1.0
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_sword_heart",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.068
+    },
+    {
+     "item": "item:manual_azure_dragon",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.068
+    },
+    {
+     "item": "item:spirit_silver",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      5600,
+      10500
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_qiongqi_08",
+   "name": "Qiongqi level 8",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:v",
+      "sets": [
+       "set:sword_heart",
+       "set:azure_dragon"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:legendary": 0.7,
+       "rarity:mythic": 0.3
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_sword_heart",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.07200000000000001
+    },
+    {
+     "item": "item:manual_azure_dragon",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.07200000000000001
+    },
+    {
+     "item": "item:spirit_silver",
+     "qty": [
+      1,
+      4
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      6400,
+      12000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_qiongqi_09",
+   "name": "Qiongqi level 9",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:vi",
+      "sets": [
+       "set:sword_heart",
+       "set:azure_dragon"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:mythic": 1.0
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_sword_heart",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.07600000000000001
+    },
+    {
+     "item": "item:manual_azure_dragon",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.07600000000000001
+    },
+    {
+     "item": "item:starfall_iron",
+     "qty": [
+      1,
+      4
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      7200,
+      13500
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_qiongqi_10",
+   "name": "Qiongqi level 10",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:vi",
+      "sets": [
+       "set:sword_heart",
+       "set:azure_dragon"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:mythic": 1.0
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_sword_heart",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.08
+    },
+    {
+     "item": "item:manual_azure_dragon",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.08
+    },
+    {
+     "item": "item:starfall_iron",
+     "qty": [
+      1,
+      4
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      8000,
+      15000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_qiongqi_11",
+   "name": "Qiongqi level 11",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:vii",
+      "sets": [
+       "set:sword_heart",
+       "set:azure_dragon"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:mythic": 0.6,
+       "rarity:immortal": 0.4
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_sword_heart",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.08399999999999999
+    },
+    {
+     "item": "item:manual_azure_dragon",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.08399999999999999
+    },
+    {
+     "item": "item:starfall_iron",
+     "qty": [
+      1,
+      4
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      8800,
+      16500
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_qiongqi_12",
+   "name": "Qiongqi level 12",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:vii",
+      "sets": [
+       "set:sword_heart",
+       "set:azure_dragon"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:immortal": 1.0
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_sword_heart",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.088
+    },
+    {
+     "item": "item:manual_azure_dragon",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.088
+    },
+    {
+     "item": "item:starfall_iron",
+     "qty": [
+      1,
+      5
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      9600,
+      18000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_qiongqi_13",
+   "name": "Qiongqi level 13",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:viii",
+      "sets": [
+       "set:sword_heart",
+       "set:azure_dragon"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:immortal": 0.97,
+       "rarity:divine": 0.03
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_sword_heart",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.092
+    },
+    {
+     "item": "item:manual_azure_dragon",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.092
+    },
+    {
+     "item": "item:void_gold",
+     "qty": [
+      1,
+      5
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      10400,
+      19500
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_taotie_01",
+   "name": "Taotie level 1",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:ii",
+      "sets": [
+       "set:white_tiger",
+       "set:vermilion_bird"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:uncommon": 0.7,
+       "rarity:rare": 0.3
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_white_tiger",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.044
+    },
+    {
+     "item": "item:manual_vermilion_bird",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.044
+    },
+    {
+     "item": "item:black_iron",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      800,
+      1500
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_taotie_02",
+   "name": "Taotie level 2",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:ii",
+      "sets": [
+       "set:white_tiger",
+       "set:vermilion_bird"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:uncommon": 0.45,
+       "rarity:rare": 0.55
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_white_tiger",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.048
+    },
+    {
+     "item": "item:manual_vermilion_bird",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.048
+    },
+    {
+     "item": "item:black_iron",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      1600,
+      3000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_taotie_03",
+   "name": "Taotie level 3",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:iii",
+      "sets": [
+       "set:white_tiger",
+       "set:vermilion_bird"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:rare": 0.7,
+       "rarity:epic": 0.3
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_white_tiger",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.052000000000000005
+    },
+    {
+     "item": "item:manual_vermilion_bird",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.052000000000000005
+    },
+    {
+     "item": "item:black_iron",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      2400,
+      4500
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_taotie_04",
+   "name": "Taotie level 4",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:iii",
+      "sets": [
+       "set:white_tiger",
+       "set:vermilion_bird"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:rare": 0.45,
+       "rarity:epic": 0.55
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_white_tiger",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.056
+    },
+    {
+     "item": "item:manual_vermilion_bird",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.056
+    },
+    {
+     "item": "item:black_iron",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      3200,
+      6000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_taotie_05",
+   "name": "Taotie level 5",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:iv",
+      "sets": [
+       "set:white_tiger",
+       "set:vermilion_bird"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:epic": 0.65,
+       "rarity:legendary": 0.35
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_white_tiger",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.06
+    },
+    {
+     "item": "item:manual_vermilion_bird",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.06
+    },
+    {
+     "item": "item:spirit_silver",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      4000,
+      7500
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_taotie_06",
+   "name": "Taotie level 6",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:iv",
+      "sets": [
+       "set:white_tiger",
+       "set:vermilion_bird"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:epic": 0.4,
+       "rarity:legendary": 0.6
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_white_tiger",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.064
+    },
+    {
+     "item": "item:manual_vermilion_bird",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.064
+    },
+    {
+     "item": "item:spirit_silver",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      4800,
+      9000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_taotie_07",
+   "name": "Taotie level 7",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:v",
+      "sets": [
+       "set:white_tiger",
+       "set:vermilion_bird"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:legendary": 1.0
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_white_tiger",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.068
+    },
+    {
+     "item": "item:manual_vermilion_bird",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.068
+    },
+    {
+     "item": "item:spirit_silver",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      5600,
+      10500
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_taotie_08",
+   "name": "Taotie level 8",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:v",
+      "sets": [
+       "set:white_tiger",
+       "set:vermilion_bird"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:legendary": 0.7,
+       "rarity:mythic": 0.3
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_white_tiger",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.07200000000000001
+    },
+    {
+     "item": "item:manual_vermilion_bird",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.07200000000000001
+    },
+    {
+     "item": "item:spirit_silver",
+     "qty": [
+      1,
+      4
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      6400,
+      12000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_taotie_09",
+   "name": "Taotie level 9",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:vi",
+      "sets": [
+       "set:white_tiger",
+       "set:vermilion_bird"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:mythic": 1.0
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_white_tiger",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.07600000000000001
+    },
+    {
+     "item": "item:manual_vermilion_bird",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.07600000000000001
+    },
+    {
+     "item": "item:starfall_iron",
+     "qty": [
+      1,
+      4
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      7200,
+      13500
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_taotie_10",
+   "name": "Taotie level 10",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:vi",
+      "sets": [
+       "set:white_tiger",
+       "set:vermilion_bird"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:mythic": 1.0
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_white_tiger",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.08
+    },
+    {
+     "item": "item:manual_vermilion_bird",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.08
+    },
+    {
+     "item": "item:starfall_iron",
+     "qty": [
+      1,
+      4
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      8000,
+      15000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_taotie_11",
+   "name": "Taotie level 11",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:vii",
+      "sets": [
+       "set:white_tiger",
+       "set:vermilion_bird"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:mythic": 0.6,
+       "rarity:immortal": 0.4
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_white_tiger",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.08399999999999999
+    },
+    {
+     "item": "item:manual_vermilion_bird",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.08399999999999999
+    },
+    {
+     "item": "item:starfall_iron",
+     "qty": [
+      1,
+      4
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      8800,
+      16500
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_taotie_12",
+   "name": "Taotie level 12",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:vii",
+      "sets": [
+       "set:white_tiger",
+       "set:vermilion_bird"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:immortal": 1.0
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_white_tiger",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.088
+    },
+    {
+     "item": "item:manual_vermilion_bird",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.088
+    },
+    {
+     "item": "item:starfall_iron",
+     "qty": [
+      1,
+      5
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      9600,
+      18000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_taotie_13",
+   "name": "Taotie level 13",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:viii",
+      "sets": [
+       "set:white_tiger",
+       "set:vermilion_bird"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:immortal": 0.97,
+       "rarity:divine": 0.03
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_white_tiger",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.092
+    },
+    {
+     "item": "item:manual_vermilion_bird",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.092
+    },
+    {
+     "item": "item:void_gold",
+     "qty": [
+      1,
+      5
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      10400,
+      19500
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_taowu_01",
+   "name": "Taowu level 1",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:ii",
+      "sets": [
+       "set:qilin",
+       "set:black_tortoise"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:uncommon": 0.7,
+       "rarity:rare": 0.3
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_qilin",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.044
+    },
+    {
+     "item": "item:manual_black_tortoise",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.044
+    },
+    {
+     "item": "item:black_iron",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      800,
+      1500
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_taowu_02",
+   "name": "Taowu level 2",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:ii",
+      "sets": [
+       "set:qilin",
+       "set:black_tortoise"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:uncommon": 0.45,
+       "rarity:rare": 0.55
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_qilin",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.048
+    },
+    {
+     "item": "item:manual_black_tortoise",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.048
+    },
+    {
+     "item": "item:black_iron",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      1600,
+      3000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_taowu_03",
+   "name": "Taowu level 3",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:iii",
+      "sets": [
+       "set:qilin",
+       "set:black_tortoise"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:rare": 0.7,
+       "rarity:epic": 0.3
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_qilin",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.052000000000000005
+    },
+    {
+     "item": "item:manual_black_tortoise",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.052000000000000005
+    },
+    {
+     "item": "item:black_iron",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      2400,
+      4500
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_taowu_04",
+   "name": "Taowu level 4",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:iii",
+      "sets": [
+       "set:qilin",
+       "set:black_tortoise"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:rare": 0.45,
+       "rarity:epic": 0.55
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_qilin",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.056
+    },
+    {
+     "item": "item:manual_black_tortoise",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.056
+    },
+    {
+     "item": "item:black_iron",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      3200,
+      6000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_taowu_05",
+   "name": "Taowu level 5",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:iv",
+      "sets": [
+       "set:qilin",
+       "set:black_tortoise"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:epic": 0.65,
+       "rarity:legendary": 0.35
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_qilin",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.06
+    },
+    {
+     "item": "item:manual_black_tortoise",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.06
+    },
+    {
+     "item": "item:spirit_silver",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      4000,
+      7500
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_taowu_06",
+   "name": "Taowu level 6",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:iv",
+      "sets": [
+       "set:qilin",
+       "set:black_tortoise"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:epic": 0.4,
+       "rarity:legendary": 0.6
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_qilin",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.064
+    },
+    {
+     "item": "item:manual_black_tortoise",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.064
+    },
+    {
+     "item": "item:spirit_silver",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      4800,
+      9000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_taowu_07",
+   "name": "Taowu level 7",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:v",
+      "sets": [
+       "set:qilin",
+       "set:black_tortoise"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:legendary": 1.0
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_qilin",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.068
+    },
+    {
+     "item": "item:manual_black_tortoise",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.068
+    },
+    {
+     "item": "item:spirit_silver",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      5600,
+      10500
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_taowu_08",
+   "name": "Taowu level 8",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:v",
+      "sets": [
+       "set:qilin",
+       "set:black_tortoise"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:legendary": 0.7,
+       "rarity:mythic": 0.3
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_qilin",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.07200000000000001
+    },
+    {
+     "item": "item:manual_black_tortoise",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.07200000000000001
+    },
+    {
+     "item": "item:spirit_silver",
+     "qty": [
+      1,
+      4
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      6400,
+      12000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_taowu_09",
+   "name": "Taowu level 9",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:vi",
+      "sets": [
+       "set:qilin",
+       "set:black_tortoise"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:mythic": 1.0
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_qilin",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.07600000000000001
+    },
+    {
+     "item": "item:manual_black_tortoise",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.07600000000000001
+    },
+    {
+     "item": "item:starfall_iron",
+     "qty": [
+      1,
+      4
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      7200,
+      13500
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_taowu_10",
+   "name": "Taowu level 10",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:vi",
+      "sets": [
+       "set:qilin",
+       "set:black_tortoise"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:mythic": 1.0
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_qilin",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.08
+    },
+    {
+     "item": "item:manual_black_tortoise",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.08
+    },
+    {
+     "item": "item:starfall_iron",
+     "qty": [
+      1,
+      4
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      8000,
+      15000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_taowu_11",
+   "name": "Taowu level 11",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:vii",
+      "sets": [
+       "set:qilin",
+       "set:black_tortoise"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:mythic": 0.6,
+       "rarity:immortal": 0.4
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_qilin",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.08399999999999999
+    },
+    {
+     "item": "item:manual_black_tortoise",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.08399999999999999
+    },
+    {
+     "item": "item:starfall_iron",
+     "qty": [
+      1,
+      4
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      8800,
+      16500
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_taowu_12",
+   "name": "Taowu level 12",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:vii",
+      "sets": [
+       "set:qilin",
+       "set:black_tortoise"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:immortal": 1.0
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_qilin",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.088
+    },
+    {
+     "item": "item:manual_black_tortoise",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.088
+    },
+    {
+     "item": "item:starfall_iron",
+     "qty": [
+      1,
+      5
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      9600,
+      18000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_taowu_13",
+   "name": "Taowu level 13",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:viii",
+      "sets": [
+       "set:qilin",
+       "set:black_tortoise"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:immortal": 0.97,
+       "rarity:divine": 0.03
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_qilin",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.092
+    },
+    {
+     "item": "item:manual_black_tortoise",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.092
+    },
+    {
+     "item": "item:void_gold",
+     "qty": [
+      1,
+      5
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      10400,
+      19500
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_hundun_01",
+   "name": "Hundun level 1",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:ii",
+      "sets": [
+       "set:heavenly_eye",
+       "set:still_water"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:uncommon": 0.7,
+       "rarity:rare": 0.3
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_heavenly_eye",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.044
+    },
+    {
+     "item": "item:manual_still_water",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.044
+    },
+    {
+     "item": "item:black_iron",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      800,
+      1500
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_hundun_02",
+   "name": "Hundun level 2",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:ii",
+      "sets": [
+       "set:heavenly_eye",
+       "set:still_water"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:uncommon": 0.45,
+       "rarity:rare": 0.55
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_heavenly_eye",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.048
+    },
+    {
+     "item": "item:manual_still_water",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.048
+    },
+    {
+     "item": "item:black_iron",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      1600,
+      3000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_hundun_03",
+   "name": "Hundun level 3",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:iii",
+      "sets": [
+       "set:heavenly_eye",
+       "set:still_water"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:rare": 0.7,
+       "rarity:epic": 0.3
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_heavenly_eye",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.052000000000000005
+    },
+    {
+     "item": "item:manual_still_water",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.052000000000000005
+    },
+    {
+     "item": "item:black_iron",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      2400,
+      4500
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_hundun_04",
+   "name": "Hundun level 4",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:iii",
+      "sets": [
+       "set:heavenly_eye",
+       "set:still_water"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:rare": 0.45,
+       "rarity:epic": 0.55
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_heavenly_eye",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.056
+    },
+    {
+     "item": "item:manual_still_water",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.056
+    },
+    {
+     "item": "item:black_iron",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      3200,
+      6000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_hundun_05",
+   "name": "Hundun level 5",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:iv",
+      "sets": [
+       "set:heavenly_eye",
+       "set:still_water"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:epic": 0.65,
+       "rarity:legendary": 0.35
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_heavenly_eye",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.06
+    },
+    {
+     "item": "item:manual_still_water",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.06
+    },
+    {
+     "item": "item:spirit_silver",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      4000,
+      7500
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_hundun_06",
+   "name": "Hundun level 6",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:iv",
+      "sets": [
+       "set:heavenly_eye",
+       "set:still_water"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:epic": 0.4,
+       "rarity:legendary": 0.6
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_heavenly_eye",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.064
+    },
+    {
+     "item": "item:manual_still_water",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.064
+    },
+    {
+     "item": "item:spirit_silver",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      4800,
+      9000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_hundun_07",
+   "name": "Hundun level 7",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:v",
+      "sets": [
+       "set:heavenly_eye",
+       "set:still_water"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:legendary": 1.0
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_heavenly_eye",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.068
+    },
+    {
+     "item": "item:manual_still_water",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.068
+    },
+    {
+     "item": "item:spirit_silver",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      5600,
+      10500
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_hundun_08",
+   "name": "Hundun level 8",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:v",
+      "sets": [
+       "set:heavenly_eye",
+       "set:still_water"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:legendary": 0.7,
+       "rarity:mythic": 0.3
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_heavenly_eye",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.07200000000000001
+    },
+    {
+     "item": "item:manual_still_water",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.07200000000000001
+    },
+    {
+     "item": "item:spirit_silver",
+     "qty": [
+      1,
+      4
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      6400,
+      12000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_hundun_09",
+   "name": "Hundun level 9",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:vi",
+      "sets": [
+       "set:heavenly_eye",
+       "set:still_water"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:mythic": 1.0
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_heavenly_eye",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.07600000000000001
+    },
+    {
+     "item": "item:manual_still_water",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.07600000000000001
+    },
+    {
+     "item": "item:starfall_iron",
+     "qty": [
+      1,
+      4
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      7200,
+      13500
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_hundun_10",
+   "name": "Hundun level 10",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:vi",
+      "sets": [
+       "set:heavenly_eye",
+       "set:still_water"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:mythic": 1.0
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_heavenly_eye",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.08
+    },
+    {
+     "item": "item:manual_still_water",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.08
+    },
+    {
+     "item": "item:starfall_iron",
+     "qty": [
+      1,
+      4
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      8000,
+      15000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_hundun_11",
+   "name": "Hundun level 11",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:vii",
+      "sets": [
+       "set:heavenly_eye",
+       "set:still_water"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:mythic": 0.6,
+       "rarity:immortal": 0.4
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_heavenly_eye",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.08399999999999999
+    },
+    {
+     "item": "item:manual_still_water",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.08399999999999999
+    },
+    {
+     "item": "item:starfall_iron",
+     "qty": [
+      1,
+      4
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      8800,
+      16500
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_hundun_12",
+   "name": "Hundun level 12",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:vii",
+      "sets": [
+       "set:heavenly_eye",
+       "set:still_water"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:immortal": 1.0
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_heavenly_eye",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.088
+    },
+    {
+     "item": "item:manual_still_water",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.088
+    },
+    {
+     "item": "item:starfall_iron",
+     "qty": [
+      1,
+      5
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      9600,
+      18000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_hundun_13",
+   "name": "Hundun level 13",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:viii",
+      "sets": [
+       "set:heavenly_eye",
+       "set:still_water"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:immortal": 0.97,
+       "rarity:divine": 0.03
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_heavenly_eye",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.092
+    },
+    {
+     "item": "item:manual_still_water",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.092
+    },
+    {
+     "item": "item:void_gold",
+     "qty": [
+      1,
+      5
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      10400,
+      19500
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_xiangliu_01",
+   "name": "Xiangliu level 1",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:ii",
+      "sets": [
+       "set:blood_lotus",
+       "set:five_elements"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:uncommon": 0.7,
+       "rarity:rare": 0.3
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_blood_lotus",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.044
+    },
+    {
+     "item": "item:manual_five_elements",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.044
+    },
+    {
+     "item": "item:black_iron",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      800,
+      1500
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_xiangliu_02",
+   "name": "Xiangliu level 2",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:ii",
+      "sets": [
+       "set:blood_lotus",
+       "set:five_elements"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:uncommon": 0.45,
+       "rarity:rare": 0.55
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_blood_lotus",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.048
+    },
+    {
+     "item": "item:manual_five_elements",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.048
+    },
+    {
+     "item": "item:black_iron",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      1600,
+      3000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_xiangliu_03",
+   "name": "Xiangliu level 3",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:iii",
+      "sets": [
+       "set:blood_lotus",
+       "set:five_elements"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:rare": 0.7,
+       "rarity:epic": 0.3
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_blood_lotus",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.052000000000000005
+    },
+    {
+     "item": "item:manual_five_elements",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.052000000000000005
+    },
+    {
+     "item": "item:black_iron",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      2400,
+      4500
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_xiangliu_04",
+   "name": "Xiangliu level 4",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:iii",
+      "sets": [
+       "set:blood_lotus",
+       "set:five_elements"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:rare": 0.45,
+       "rarity:epic": 0.55
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_blood_lotus",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.056
+    },
+    {
+     "item": "item:manual_five_elements",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.056
+    },
+    {
+     "item": "item:black_iron",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      3200,
+      6000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_xiangliu_05",
+   "name": "Xiangliu level 5",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:iv",
+      "sets": [
+       "set:blood_lotus",
+       "set:five_elements"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:epic": 0.65,
+       "rarity:legendary": 0.35
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_blood_lotus",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.06
+    },
+    {
+     "item": "item:manual_five_elements",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.06
+    },
+    {
+     "item": "item:spirit_silver",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      4000,
+      7500
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_xiangliu_06",
+   "name": "Xiangliu level 6",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:iv",
+      "sets": [
+       "set:blood_lotus",
+       "set:five_elements"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:epic": 0.4,
+       "rarity:legendary": 0.6
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_blood_lotus",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.064
+    },
+    {
+     "item": "item:manual_five_elements",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.064
+    },
+    {
+     "item": "item:spirit_silver",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      4800,
+      9000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_xiangliu_07",
+   "name": "Xiangliu level 7",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:v",
+      "sets": [
+       "set:blood_lotus",
+       "set:five_elements"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:legendary": 1.0
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_blood_lotus",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.068
+    },
+    {
+     "item": "item:manual_five_elements",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.068
+    },
+    {
+     "item": "item:spirit_silver",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      5600,
+      10500
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_xiangliu_08",
+   "name": "Xiangliu level 8",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:v",
+      "sets": [
+       "set:blood_lotus",
+       "set:five_elements"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:legendary": 0.7,
+       "rarity:mythic": 0.3
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_blood_lotus",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.07200000000000001
+    },
+    {
+     "item": "item:manual_five_elements",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.07200000000000001
+    },
+    {
+     "item": "item:spirit_silver",
+     "qty": [
+      1,
+      4
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      6400,
+      12000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_xiangliu_09",
+   "name": "Xiangliu level 9",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:vi",
+      "sets": [
+       "set:blood_lotus",
+       "set:five_elements"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:mythic": 1.0
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_blood_lotus",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.07600000000000001
+    },
+    {
+     "item": "item:manual_five_elements",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.07600000000000001
+    },
+    {
+     "item": "item:starfall_iron",
+     "qty": [
+      1,
+      4
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      7200,
+      13500
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_xiangliu_10",
+   "name": "Xiangliu level 10",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:vi",
+      "sets": [
+       "set:blood_lotus",
+       "set:five_elements"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:mythic": 1.0
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_blood_lotus",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.08
+    },
+    {
+     "item": "item:manual_five_elements",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.08
+    },
+    {
+     "item": "item:starfall_iron",
+     "qty": [
+      1,
+      4
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      8000,
+      15000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_xiangliu_11",
+   "name": "Xiangliu level 11",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:vii",
+      "sets": [
+       "set:blood_lotus",
+       "set:five_elements"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:mythic": 0.6,
+       "rarity:immortal": 0.4
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_blood_lotus",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.08399999999999999
+    },
+    {
+     "item": "item:manual_five_elements",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.08399999999999999
+    },
+    {
+     "item": "item:starfall_iron",
+     "qty": [
+      1,
+      4
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      8800,
+      16500
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_xiangliu_12",
+   "name": "Xiangliu level 12",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:vii",
+      "sets": [
+       "set:blood_lotus",
+       "set:five_elements"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:immortal": 1.0
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_blood_lotus",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.088
+    },
+    {
+     "item": "item:manual_five_elements",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.088
+    },
+    {
+     "item": "item:starfall_iron",
+     "qty": [
+      1,
+      5
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      9600,
+      18000
+     ],
+     "chance": 1
+    }
+   ]
+  },
+  {
+   "id": "drops:hunt_xiangliu_13",
+   "name": "Xiangliu level 13",
+   "rolls": 2,
+   "entries": [
+    {
+     "gear": {
+      "tier": "tier:viii",
+      "sets": [
+       "set:blood_lotus",
+       "set:five_elements"
+      ],
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:immortal": 0.97,
+       "rarity:divine": 0.03
+      }
+     },
+     "chance": 1
+    },
+    {
+     "item": "item:manual_blood_lotus",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.092
+    },
+    {
+     "item": "item:manual_five_elements",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.092
+    },
+    {
+     "item": "item:void_gold",
+     "qty": [
+      1,
+      5
+     ],
+     "chance": 0.5
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      10400,
+      19500
+     ],
+     "chance": 1
+    }
+   ]
+  }
+ ]
+}

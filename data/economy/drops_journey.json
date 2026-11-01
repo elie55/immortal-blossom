@@ -1,0 +1,633 @@
+{
+ "about": "Drop tables for Journey stages, normal and Heaven-Defying.",
+ "records": [
+  {
+   "id": "drops:v1c1",
+   "name": "Peach Blossom Ford drops",
+   "entries": [
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      300,
+      600
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:qi_gathering_pill",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.35
+    },
+    {
+     "item": "item:spirit_grass",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.4
+    },
+    {
+     "gear": {
+      "tier": "tier:i",
+      "set": null,
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:common": 0.8,
+       "rarity:uncommon": 0.2
+      }
+     },
+     "chance": 0.5
+    },
+    {
+     "item": "item:gift_lotus_seed_cakes",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.04
+    }
+   ]
+  },
+  {
+   "id": "drops:v1c1_hd",
+   "name": "Peach Blossom Ford (Heaven-Defying) drops",
+   "entries": [
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      2400,
+      4600
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:spirit_condensing_pill",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.35
+    },
+    {
+     "item": "item:heaven_earth_pill",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.08
+    },
+    {
+     "item": "item:blood_ginseng",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.3
+    },
+    {
+     "item": "item:snow_lotus",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.1
+    },
+    {
+     "gear": {
+      "tier": "tier:iii",
+      "set": null,
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:rare": 0.6,
+       "rarity:epic": 0.4
+      }
+     },
+     "chance": 0.6
+    },
+    {
+     "item": "item:metal_essence",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.2
+    }
+   ]
+  },
+  {
+   "id": "drops:v1c2",
+   "name": "Frostpeak drops",
+   "entries": [
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      600,
+      1200
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:qi_gathering_pill",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.35
+    },
+    {
+     "item": "item:spirit_grass",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.4
+    },
+    {
+     "gear": {
+      "tier": "tier:i",
+      "set": null,
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:common": 0.8,
+       "rarity:uncommon": 0.2
+      }
+     },
+     "chance": 0.5
+    },
+    {
+     "item": "item:gift_hawthorn_candy",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.04
+    }
+   ]
+  },
+  {
+   "id": "drops:v1c2_hd",
+   "name": "Frostpeak (Heaven-Defying) drops",
+   "entries": [
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      2800,
+      5200
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:spirit_condensing_pill",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.35
+    },
+    {
+     "item": "item:heaven_earth_pill",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.08
+    },
+    {
+     "item": "item:blood_ginseng",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.3
+    },
+    {
+     "item": "item:snow_lotus",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.1
+    },
+    {
+     "gear": {
+      "tier": "tier:iii",
+      "set": null,
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:rare": 0.6,
+       "rarity:epic": 0.4
+      }
+     },
+     "chance": 0.6
+    },
+    {
+     "item": "item:wood_essence",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.2
+    }
+   ]
+  },
+  {
+   "id": "drops:v1c3",
+   "name": "Moonshadow Bamboo Sea drops",
+   "entries": [
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      900,
+      1800
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:qi_gathering_pill",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.35
+    },
+    {
+     "item": "item:spirit_condensing_pill",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.12
+    },
+    {
+     "item": "item:spirit_grass",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.4
+    },
+    {
+     "item": "item:blood_ginseng",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.15
+    },
+    {
+     "gear": {
+      "tier": "tier:ii",
+      "set": null,
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:common": 0.55,
+       "rarity:uncommon": 0.45
+      }
+     },
+     "chance": 0.5
+    },
+    {
+     "item": "item:gift_spirit_tea",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.04
+    }
+   ]
+  },
+  {
+   "id": "drops:v1c3_hd",
+   "name": "Moonshadow Bamboo Sea (Heaven-Defying) drops",
+   "entries": [
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      3200,
+      5800
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:spirit_condensing_pill",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.35
+    },
+    {
+     "item": "item:heaven_earth_pill",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.08
+    },
+    {
+     "item": "item:blood_ginseng",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.3
+    },
+    {
+     "item": "item:snow_lotus",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.1
+    },
+    {
+     "gear": {
+      "tier": "tier:iii",
+      "set": null,
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:rare": 0.6,
+       "rarity:epic": 0.4
+      }
+     },
+     "chance": 0.6
+    },
+    {
+     "item": "item:water_essence",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.2
+    }
+   ]
+  },
+  {
+   "id": "drops:v1c4",
+   "name": "Vermilion Ruins drops",
+   "entries": [
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      1200,
+      2400
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:qi_gathering_pill",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.35
+    },
+    {
+     "item": "item:spirit_condensing_pill",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.12
+    },
+    {
+     "item": "item:spirit_grass",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.4
+    },
+    {
+     "item": "item:blood_ginseng",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.15
+    },
+    {
+     "gear": {
+      "tier": "tier:ii",
+      "set": null,
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:common": 0.55,
+       "rarity:uncommon": 0.45
+      }
+     },
+     "chance": 0.5
+    },
+    {
+     "item": "item:gift_plum_wine",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.04
+    }
+   ]
+  },
+  {
+   "id": "drops:v1c4_hd",
+   "name": "Vermilion Ruins (Heaven-Defying) drops",
+   "entries": [
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      3600,
+      6400
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:spirit_condensing_pill",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.35
+    },
+    {
+     "item": "item:heaven_earth_pill",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.15
+    },
+    {
+     "item": "item:blood_ginseng",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.3
+    },
+    {
+     "item": "item:snow_lotus",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.1
+    },
+    {
+     "gear": {
+      "tier": "tier:iv",
+      "set": null,
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:rare": 0.6,
+       "rarity:epic": 0.4
+      }
+     },
+     "chance": 0.6
+    },
+    {
+     "item": "item:fire_essence",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.2
+    }
+   ]
+  },
+  {
+   "id": "drops:v1c5",
+   "name": "Gate of the Jade Pool drops",
+   "entries": [
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      1500,
+      3000
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:qi_gathering_pill",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.35
+    },
+    {
+     "item": "item:spirit_condensing_pill",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.12
+    },
+    {
+     "item": "item:spirit_grass",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.4
+    },
+    {
+     "item": "item:blood_ginseng",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.15
+    },
+    {
+     "gear": {
+      "tier": "tier:ii",
+      "set": null,
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:common": 0.55,
+       "rarity:uncommon": 0.45
+      }
+     },
+     "chance": 0.5
+    },
+    {
+     "item": "item:gift_silk_fan",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.04
+    }
+   ]
+  },
+  {
+   "id": "drops:v1c5_hd",
+   "name": "Gate of the Jade Pool (Heaven-Defying) drops",
+   "entries": [
+    {
+     "cur": "cur:spirit_stones",
+     "qty": [
+      4000,
+      7000
+     ],
+     "chance": 1
+    },
+    {
+     "item": "item:spirit_condensing_pill",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.35
+    },
+    {
+     "item": "item:heaven_earth_pill",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.15
+    },
+    {
+     "item": "item:blood_ginseng",
+     "qty": [
+      1,
+      3
+     ],
+     "chance": 0.3
+    },
+    {
+     "item": "item:snow_lotus",
+     "qty": [
+      1,
+      1
+     ],
+     "chance": 0.1
+    },
+    {
+     "gear": {
+      "tier": "tier:iv",
+      "set": null,
+      "slot": "any",
+      "rarityOdds": {
+       "rarity:rare": 0.6,
+       "rarity:epic": 0.4
+      }
+     },
+     "chance": 0.6
+    },
+    {
+     "item": "item:earth_essence",
+     "qty": [
+      1,
+      2
+     ],
+     "chance": 0.2
+    }
+   ]
+  }
+ ]
+}

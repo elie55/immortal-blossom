@@ -1,0 +1,100 @@
+{
+ "about": "The Five Phases plus Yin and Yang. feeds = the generating cycle (Harmony order); overcomes = advantage.",
+ "records": [
+  {
+   "id": "phase:metal",
+   "name": "Metal",
+   "glyph": "金",
+   "color": "#efe6c8",
+   "feeds": "phase:water",
+   "overcomes": "phase:wood",
+   "variants": [
+    "Sword light",
+    "moonsteel"
+   ],
+   "style": "Precision, critical hits, armor piercing"
+  },
+  {
+   "id": "phase:wood",
+   "name": "Wood",
+   "glyph": "木",
+   "color": "#86e38f",
+   "feeds": "phase:fire",
+   "overcomes": "phase:earth",
+   "variants": [
+    "Thunder",
+    "wind"
+   ],
+   "style": "Haste, multi-hit, poison, cooldown tricks"
+  },
+  {
+   "id": "phase:water",
+   "name": "Water",
+   "glyph": "水",
+   "color": "#7cc6ff",
+   "feeds": "phase:wood",
+   "overcomes": "phase:fire",
+   "variants": [
+    "Ice",
+    "mist"
+   ],
+   "style": "Freezes, control, sustain"
+  },
+  {
+   "id": "phase:fire",
+   "name": "Fire",
+   "glyph": "火",
+   "color": "#ff8048",
+   "feeds": "phase:earth",
+   "overcomes": "phase:metal",
+   "variants": [
+    "Lava",
+    "phoenix flame"
+   ],
+   "style": "Area burst, burns"
+  },
+  {
+   "id": "phase:earth",
+   "name": "Earth",
+   "glyph": "土",
+   "color": "#e4b45a",
+   "feeds": "phase:metal",
+   "overcomes": "phase:water",
+   "variants": [
+    "Jade",
+    "sand",
+    "stone"
+   ],
+   "style": "Defense, barriers, healing"
+  },
+  {
+   "id": "phase:yin",
+   "name": "Yin",
+   "glyph": "阴",
+   "color": "#b98cff",
+   "feeds": "phase:yang",
+   "overcomes": "phase:yang",
+   "variants": [
+    "Shadow",
+    "moon",
+    "netherflame"
+   ],
+   "style": "Debuffs, life drain",
+   "heroRarity": 5
+  },
+  {
+   "id": "phase:yang",
+   "name": "Yang",
+   "glyph": "阳",
+   "color": "#ffd76a",
+   "feeds": "phase:yin",
+   "overcomes": "phase:yin",
+   "variants": [
+    "Sun",
+    "holy light"
+   ],
+   "style": "Buffs, revival",
+   "heroRarity": 5
+  }
+ ]
+}

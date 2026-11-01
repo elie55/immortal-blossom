@@ -1,0 +1,263 @@
+{
+ "about": "Ten sets: a 2-piece stat bonus and a 4-piece effect that changes play. Four pieces give both. \"Lowest health\" means the lowest share of max health.",
+ "records": [
+  {
+   "id": "set:sword_heart",
+   "name": "Sword Heart",
+   "cn": "剑心",
+   "twoPiece": {
+    "stat": "stat:crit",
+    "value": 0.12
+   },
+   "fourPiece": {
+    "name": "Unbroken Edge",
+    "trigger": "on_kill",
+    "effects": [
+     {
+      "do": "refresh",
+      "skill": "s1",
+      "ready": true,
+      "once": "turn"
+     }
+    ],
+    "text": "When her technique defeats an enemy, her S1 is ready again, once per turn"
+   },
+   "hunt": "hunt:qiongqi",
+   "manual": "item:manual_sword_heart",
+   "recipe": "recipe:forge_set_sword_heart"
+  },
+  {
+   "id": "set:azure_dragon",
+   "name": "Azure Dragon",
+   "cn": "青龙",
+   "twoPiece": {
+    "stat": "stat:haste",
+    "value": 12
+   },
+   "fourPiece": {
+    "name": "Rising Dragon",
+    "trigger": "on_ultimate",
+    "effects": [
+     {
+      "do": "refresh",
+      "target": "allies",
+      "slot": "s2",
+      "turns": 1
+     }
+    ],
+    "text": "When she casts her ultimate, every ally's charging S2 comes 1 turn closer"
+   },
+   "hunt": "hunt:qiongqi",
+   "manual": "item:manual_azure_dragon",
+   "recipe": "recipe:forge_set_azure_dragon"
+  },
+  {
+   "id": "set:white_tiger",
+   "name": "White Tiger",
+   "cn": "白虎",
+   "twoPiece": {
+    "stat": "stat:atk",
+    "value": 0.15
+   },
+   "fourPiece": {
+    "name": "Tiger's Pounce",
+    "trigger": "on_hit",
+    "effects": [
+     {
+      "do": "splash",
+      "pct": 0.3,
+      "when": "single_target"
+     }
+    ],
+    "text": "Her single-target techniques also strike the cards beside the target for 30% of the damage"
+   },
+   "hunt": "hunt:taotie",
+   "manual": "item:manual_white_tiger",
+   "recipe": "recipe:forge_set_white_tiger"
+  },
+  {
+   "id": "set:vermilion_bird",
+   "name": "Vermilion Bird",
+   "cn": "朱雀",
+   "twoPiece": {
+    "stat": "stat:crit_dmg",
+    "value": 0.2
+   },
+   "fourPiece": {
+    "name": "Burning Feathers",
+    "trigger": "on_crit",
+    "effects": [
+     {
+      "do": "apply",
+      "status": "status:fire_poison",
+      "turns": 2
+     }
+    ],
+    "text": "Her critical hits apply Fire Poison for 2 turns"
+   },
+   "hunt": "hunt:taotie",
+   "manual": "item:manual_vermilion_bird",
+   "recipe": "recipe:forge_set_vermilion_bird"
+  },
+  {
+   "id": "set:qilin",
+   "name": "Qilin",
+   "cn": "麒麟",
+   "twoPiece": {
+    "stat": "stat:hp",
+    "value": 0.15
+   },
+   "fourPiece": {
+    "name": "Auspicious Guard",
+    "trigger": "turn_start",
+    "effects": [
+     {
+      "do": "shield",
+      "status": "status:spirit_shield",
+      "target": "lowest_ally",
+      "pctOfWearerMaxHp": 0.08,
+      "turns": 1,
+      "stacks": false
+     }
+    ],
+    "text": "At the start of each of your turns, the ally with the lowest health gains a Spirit Shield worth 8% of the wearer's max Health until your next turn (Qilin shields don't stack)"
+   },
+   "hunt": "hunt:taowu",
+   "manual": "item:manual_qilin",
+   "recipe": "recipe:forge_set_qilin"
+  },
+  {
+   "id": "set:black_tortoise",
+   "name": "Black Tortoise",
+   "cn": "玄武",
+   "twoPiece": {
+    "stat": "stat:def",
+    "value": 0.15
+   },
+   "fourPiece": {
+    "name": "Shell of the North",
+    "trigger": "on_ally_low",
+    "effects": [
+     {
+      "do": "redirect",
+      "below": 0.3,
+      "reduce": 0.25,
+      "ties": "healthier"
+     }
+    ],
+    "text": "Single-target hits aimed at an ally below 30% health strike her instead, for 25% less damage (with two wearers, the healthier one)"
+   },
+   "hunt": "hunt:taowu",
+   "manual": "item:manual_black_tortoise",
+   "recipe": "recipe:forge_set_black_tortoise"
+  },
+  {
+   "id": "set:heavenly_eye",
+   "name": "Heavenly Eye",
+   "cn": "天眼",
+   "twoPiece": {
+    "stat": "stat:acc",
+    "value": 0.2
+   },
+   "fourPiece": {
+    "name": "Piercing Gaze",
+    "trigger": "always",
+    "effects": [
+     {
+      "do": "extend",
+      "turns": 1,
+      "except": "skips_turn"
+     },
+     {
+      "do": "break",
+      "segments": 1,
+      "when": "debuff_lands_on_boss"
+     }
+    ],
+    "text": "Her debuffs last 1 turn longer, except those that skip turns, and each debuff she lands on a boss breaks 1 more Qi shield segment"
+   },
+   "hunt": "hunt:hundun",
+   "manual": "item:manual_heavenly_eye",
+   "recipe": "recipe:forge_set_heavenly_eye"
+  },
+  {
+   "id": "set:still_water",
+   "name": "Still Water",
+   "cn": "止水",
+   "twoPiece": {
+    "stat": "stat:res",
+    "value": 0.2
+   },
+   "fourPiece": {
+    "name": "Mirror Lake",
+    "trigger": "on_debuff",
+    "effects": [
+     {
+      "do": "reflect",
+      "once": "enemy_turn"
+     }
+    ],
+    "text": "The first debuff that would land on her each enemy turn is reflected to its caster"
+   },
+   "hunt": "hunt:hundun",
+   "manual": "item:manual_still_water",
+   "recipe": "recipe:forge_set_still_water"
+  },
+  {
+   "id": "set:blood_lotus",
+   "name": "Blood Lotus",
+   "cn": "血莲",
+   "twoPiece": {
+    "stat": "stat:heal_received",
+    "value": 0.15
+   },
+   "fourPiece": {
+    "name": "Crimson Bloom",
+    "trigger": "on_hit",
+    "effects": [
+     {
+      "do": "lifesteal",
+      "pct": 0.2
+     },
+     {
+      "do": "overflow",
+      "to": "lowest_ally"
+     }
+    ],
+    "text": "She heals for 20% of the damage she deals, and healing past her full health goes to the ally with the lowest health"
+   },
+   "hunt": "hunt:xiangliu",
+   "manual": "item:manual_blood_lotus",
+   "recipe": "recipe:forge_set_blood_lotus"
+  },
+  {
+   "id": "set:five_elements",
+   "name": "Five Elements",
+   "cn": "五行",
+   "twoPiece": {
+    "trigger": "battle_start",
+    "effects": [
+     {
+      "do": "phase_qi",
+      "amount": 1,
+      "phase": "own"
+     }
+    ]
+   },
+   "fourPiece": {
+    "name": "Unbroken Cycle",
+    "trigger": "always",
+    "effects": [
+     {
+      "do": "harmony",
+      "mode": "hold"
+     }
+    ],
+    "text": "When she casts out of order, the chain holds at its length instead of breaking"
+   },
+   "hunt": "hunt:xiangliu",
+   "manual": "item:manual_five_elements",
+   "recipe": "recipe:forge_set_five_elements"
+  }
+ ]
+}

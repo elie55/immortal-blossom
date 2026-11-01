@@ -1,0 +1,331 @@
+{
+ "about": "Tribulation trials: each heroine fights her own at six major thresholds; the Heart Demon copies her card.",
+ "records": [
+  {
+   "id": "trial:core_formation",
+   "name": "Core Formation Tribulation",
+   "realm": "realm:core_formation",
+   "level": 20,
+   "allies": 3,
+   "waves": [
+    [
+     {
+      "enemy": "enemy:thunder_spirit",
+      "level": 20
+     },
+     {
+      "enemy": "enemy:thunder_spirit",
+      "level": 20
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:thunder_spirit",
+      "level": 21
+     },
+     {
+      "enemy": "enemy:thunder_spirit",
+      "level": 21
+     },
+     {
+      "enemy": "enemy:thunder_spirit",
+      "level": 21
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:heart_demon",
+      "level": 22
+     }
+    ]
+   ],
+   "onWin": "the breakthrough and a one-time reward",
+   "onLoss": "nothing is lost; retry any time",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 400
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 2
+    }
+   ]
+  },
+  {
+   "id": "trial:nascent_soul",
+   "name": "Nascent Soul Tribulation",
+   "realm": "realm:nascent_soul",
+   "level": 30,
+   "allies": 3,
+   "waves": [
+    [
+     {
+      "enemy": "enemy:thunder_spirit",
+      "level": 30
+     },
+     {
+      "enemy": "enemy:thunder_spirit",
+      "level": 30
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:thunder_spirit",
+      "level": 31
+     },
+     {
+      "enemy": "enemy:thunder_spirit",
+      "level": 31
+     },
+     {
+      "enemy": "enemy:thunder_spirit",
+      "level": 31
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:heart_demon",
+      "level": 32
+     }
+    ]
+   ],
+   "onWin": "the breakthrough and a one-time reward",
+   "onLoss": "nothing is lost; retry any time",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 600
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 3
+    }
+   ]
+  },
+  {
+   "id": "trial:spirit_severing",
+   "name": "Spirit Severing Tribulation",
+   "realm": "realm:spirit_severing",
+   "level": 40,
+   "allies": 3,
+   "waves": [
+    [
+     {
+      "enemy": "enemy:thunder_spirit",
+      "level": 40
+     },
+     {
+      "enemy": "enemy:thunder_spirit",
+      "level": 40
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:thunder_spirit",
+      "level": 41
+     },
+     {
+      "enemy": "enemy:thunder_spirit",
+      "level": 41
+     },
+     {
+      "enemy": "enemy:thunder_spirit",
+      "level": 41
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:heart_demon",
+      "level": 42
+     }
+    ]
+   ],
+   "onWin": "the breakthrough and a one-time reward",
+   "onLoss": "nothing is lost; retry any time",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 800
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 4
+    },
+    {
+     "item": "item:bodhi_leaf",
+     "qty": 1
+    }
+   ]
+  },
+  {
+   "id": "trial:void_refinement",
+   "name": "Void Refinement Tribulation",
+   "realm": "realm:void_refinement",
+   "level": 50,
+   "allies": 3,
+   "waves": [
+    [
+     {
+      "enemy": "enemy:thunder_spirit",
+      "level": 50
+     },
+     {
+      "enemy": "enemy:thunder_spirit",
+      "level": 50
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:thunder_spirit",
+      "level": 51
+     },
+     {
+      "enemy": "enemy:thunder_spirit",
+      "level": 51
+     },
+     {
+      "enemy": "enemy:thunder_spirit",
+      "level": 51
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:heart_demon",
+      "level": 52
+     }
+    ]
+   ],
+   "onWin": "the breakthrough and a one-time reward",
+   "onLoss": "nothing is lost; retry any time",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 1000
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 5
+    },
+    {
+     "item": "item:bodhi_leaf",
+     "qty": 2
+    }
+   ]
+  },
+  {
+   "id": "trial:body_integration",
+   "name": "Body Integration Tribulation",
+   "realm": "realm:body_integration",
+   "level": 60,
+   "allies": 3,
+   "waves": [
+    [
+     {
+      "enemy": "enemy:thunder_spirit",
+      "level": 60
+     },
+     {
+      "enemy": "enemy:thunder_spirit",
+      "level": 60
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:thunder_spirit",
+      "level": 61
+     },
+     {
+      "enemy": "enemy:thunder_spirit",
+      "level": 61
+     },
+     {
+      "enemy": "enemy:thunder_spirit",
+      "level": 61
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:heart_demon",
+      "level": 62
+     }
+    ]
+   ],
+   "onWin": "the breakthrough and a one-time reward",
+   "onLoss": "nothing is lost; retry any time",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 1200
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 6
+    },
+    {
+     "item": "item:bodhi_leaf",
+     "qty": 3
+    }
+   ]
+  },
+  {
+   "id": "trial:mahayana",
+   "name": "Mahayana Tribulation",
+   "realm": "realm:mahayana",
+   "level": 70,
+   "allies": 3,
+   "waves": [
+    [
+     {
+      "enemy": "enemy:thunder_spirit",
+      "level": 70
+     },
+     {
+      "enemy": "enemy:thunder_spirit",
+      "level": 70
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:thunder_spirit",
+      "level": 71
+     },
+     {
+      "enemy": "enemy:thunder_spirit",
+      "level": 71
+     },
+     {
+      "enemy": "enemy:thunder_spirit",
+      "level": 71
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:heart_demon",
+      "level": 72
+     }
+    ]
+   ],
+   "onWin": "the breakthrough and a one-time reward",
+   "onLoss": "nothing is lost; retry any time",
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 1400
+    },
+    {
+     "item": "item:enlightenment_scroll",
+     "qty": 7
+    },
+    {
+     "item": "item:bodhi_leaf",
+     "qty": 4
+    },
+    {
+     "fragment": "own",
+     "qty": 3
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,131 @@
+{
+ "about": "Gear tiers I to VIII, one per realm of the content that dropped the piece. Reforging a +15 piece raises its tier.",
+ "records": [
+  {
+   "id": "tier:i",
+   "order": 1,
+   "name": "Tier I",
+   "realm": "realm:qi_refining",
+   "baseScale": 0.2
+  },
+  {
+   "id": "tier:ii",
+   "order": 2,
+   "name": "Tier II",
+   "realm": "realm:foundation_establishment",
+   "baseScale": 0.3,
+   "reforgeCost": [
+    {
+     "item": "item:black_iron",
+     "qty": 10
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 20000
+    }
+   ]
+  },
+  {
+   "id": "tier:iii",
+   "order": 3,
+   "name": "Tier III",
+   "realm": "realm:core_formation",
+   "baseScale": 0.42,
+   "reforgeCost": [
+    {
+     "item": "item:black_iron",
+     "qty": 15
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 80000
+    }
+   ]
+  },
+  {
+   "id": "tier:iv",
+   "order": 4,
+   "name": "Tier IV",
+   "realm": "realm:nascent_soul",
+   "baseScale": 0.55,
+   "reforgeCost": [
+    {
+     "item": "item:spirit_silver",
+     "qty": 20
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 180000
+    }
+   ]
+  },
+  {
+   "id": "tier:v",
+   "order": 5,
+   "name": "Tier V",
+   "realm": "realm:spirit_severing",
+   "baseScale": 0.68,
+   "reforgeCost": [
+    {
+     "item": "item:spirit_silver",
+     "qty": 25
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 320000
+    }
+   ]
+  },
+  {
+   "id": "tier:vi",
+   "order": 6,
+   "name": "Tier VI",
+   "realm": "realm:void_refinement",
+   "baseScale": 0.8,
+   "reforgeCost": [
+    {
+     "item": "item:starfall_iron",
+     "qty": 30
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 500000
+    }
+   ]
+  },
+  {
+   "id": "tier:vii",
+   "order": 7,
+   "name": "Tier VII",
+   "realm": "realm:body_integration",
+   "baseScale": 0.9,
+   "reforgeCost": [
+    {
+     "item": "item:starfall_iron",
+     "qty": 35
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 720000
+    }
+   ]
+  },
+  {
+   "id": "tier:viii",
+   "order": 8,
+   "name": "Tier VIII",
+   "realm": "realm:mahayana",
+   "baseScale": 1.0,
+   "reforgeCost": [
+    {
+     "item": "item:void_gold",
+     "qty": 40
+    },
+    {
+     "cur": "cur:spirit_stones",
+     "qty": 980000
+    }
+   ]
+  }
+ ]
+}

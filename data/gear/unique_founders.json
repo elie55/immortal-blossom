@@ -1,0 +1,69 @@
+{
+ "about": "Natal gear (本命) of the four founding Blossoms: always Divine, from Mahayana on, forged from ten fragments.",
+ "records": [
+  {
+   "id": "unique:ling_shuang",
+   "hero": "hero:ling_shuang",
+   "name": "Snowplum Sword",
+   "cn": "雪梅剑",
+   "slot": "slot:weapon",
+   "rarity": "rarity:divine",
+   "rewrites": "skill:ling_shuang_s1",
+   "effect": "Frost Crescent strikes twice and each hit can Frost Seal: she turns from finisher to controller",
+   "fragments": {
+    "item": "item:frag_ling_shuang",
+    "qty": 10
+   },
+   "recipe": "recipe:forge_unique_ling_shuang",
+   "requiresRealm": "realm:mahayana"
+  },
+  {
+   "id": "unique:mo_yingyue",
+   "hero": "hero:mo_yingyue",
+   "name": "Twin Violet Lightning",
+   "cn": "紫电双刃",
+   "slot": "slot:weapon",
+   "rarity": "rarity:divine",
+   "rewrites": "skill:mo_yingyue_s2",
+   "effect": "Shadow Lightning Step readies all her techniques but costs 15% of her health: burst turns at a price",
+   "fragments": {
+    "item": "item:frag_mo_yingyue",
+    "qty": 10
+   },
+   "recipe": "recipe:forge_unique_mo_yingyue",
+   "requiresRealm": "realm:mahayana"
+  },
+  {
+   "id": "unique:su_lianhua",
+   "hero": "hero:su_lianhua",
+   "name": "Jade Purity Vase",
+   "cn": "玉净瓶",
+   "slot": "slot:artefact",
+   "rarity": "rarity:divine",
+   "rewrites": "skill:su_lianhua_p30",
+   "effect": "Healing past full health becomes a Spirit Shield, so she protects even an unhurt team",
+   "fragments": {
+    "item": "item:frag_su_lianhua",
+    "qty": 10
+   },
+   "recipe": "recipe:forge_unique_su_lianhua",
+   "requiresRealm": "realm:mahayana"
+  },
+  {
+   "id": "unique:yan_feihong",
+   "hero": "hero:yan_feihong",
+   "name": "Vermilion Feather Fan",
+   "cn": "朱雀羽扇",
+   "slot": "slot:artefact",
+   "rarity": "rarity:divine",
+   "rewrites": "skill:yan_feihong_s2",
+   "effect": "Fire Poison stacks up to 3 times on one enemy",
+   "fragments": {
+    "item": "item:frag_yan_feihong",
+    "qty": 10
+   },
+   "recipe": "recipe:forge_unique_yan_feihong",
+   "requiresRealm": "realm:mahayana"
+  }
+ ]
+}

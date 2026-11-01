@@ -1,0 +1,490 @@
+{
+ "about": "Medicine King Valley levels: one per realm; enemies take the day's phase.",
+ "records": [
+  {
+   "id": "stage:valley_1",
+   "name": "Medicine King Valley I",
+   "mode": "mode:valley",
+   "kind": "dungeon",
+   "level": 1,
+   "location": "loc:medicine_king_valley",
+   "realm": "realm:qi_refining",
+   "tier": "tier:i",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:pill_golem",
+      "level": 5
+     },
+     {
+      "enemy": "enemy:herb_spirit",
+      "level": 5
+     },
+     {
+      "enemy": "enemy:pill_golem",
+      "level": 5
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:herb_spirit",
+      "level": 5
+     },
+     {
+      "enemy": "enemy:pill_golem",
+      "level": 5
+     },
+     {
+      "enemy": "enemy:herb_spirit",
+      "level": 5
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:furnace_guardian",
+      "level": 7
+     },
+     {
+      "enemy": "enemy:pill_golem",
+      "level": 5
+     }
+    ]
+   ],
+   "drops": "drops:valley_1",
+   "expPerRun": 22000,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 80
+    }
+   ]
+  },
+  {
+   "id": "stage:valley_2",
+   "name": "Medicine King Valley II",
+   "mode": "mode:valley",
+   "kind": "dungeon",
+   "level": 2,
+   "location": "loc:medicine_king_valley",
+   "realm": "realm:foundation_establishment",
+   "tier": "tier:ii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:pill_golem",
+      "level": 15
+     },
+     {
+      "enemy": "enemy:herb_spirit",
+      "level": 15
+     },
+     {
+      "enemy": "enemy:pill_golem",
+      "level": 15
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:herb_spirit",
+      "level": 15
+     },
+     {
+      "enemy": "enemy:pill_golem",
+      "level": 15
+     },
+     {
+      "enemy": "enemy:herb_spirit",
+      "level": 15
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:furnace_guardian",
+      "level": 17
+     },
+     {
+      "enemy": "enemy:pill_golem",
+      "level": 15
+     }
+    ]
+   ],
+   "drops": "drops:valley_2",
+   "expPerRun": 60500,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 100
+    }
+   ],
+   "unlock": {
+    "realm": "realm:foundation_establishment"
+   }
+  },
+  {
+   "id": "stage:valley_3",
+   "name": "Medicine King Valley III",
+   "mode": "mode:valley",
+   "kind": "dungeon",
+   "level": 3,
+   "location": "loc:medicine_king_valley",
+   "realm": "realm:core_formation",
+   "tier": "tier:iii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:pill_golem",
+      "level": 25
+     },
+     {
+      "enemy": "enemy:herb_spirit",
+      "level": 25
+     },
+     {
+      "enemy": "enemy:pill_golem",
+      "level": 25
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:herb_spirit",
+      "level": 25
+     },
+     {
+      "enemy": "enemy:pill_golem",
+      "level": 25
+     },
+     {
+      "enemy": "enemy:herb_spirit",
+      "level": 25
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:furnace_guardian",
+      "level": 27
+     },
+     {
+      "enemy": "enemy:pill_golem",
+      "level": 25
+     }
+    ]
+   ],
+   "drops": "drops:valley_3",
+   "expPerRun": 132000,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 120
+    }
+   ],
+   "unlock": {
+    "realm": "realm:core_formation"
+   }
+  },
+  {
+   "id": "stage:valley_4",
+   "name": "Medicine King Valley IV",
+   "mode": "mode:valley",
+   "kind": "dungeon",
+   "level": 4,
+   "location": "loc:medicine_king_valley",
+   "realm": "realm:nascent_soul",
+   "tier": "tier:iv",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:pill_golem",
+      "level": 35
+     },
+     {
+      "enemy": "enemy:herb_spirit",
+      "level": 35
+     },
+     {
+      "enemy": "enemy:pill_golem",
+      "level": 35
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:herb_spirit",
+      "level": 35
+     },
+     {
+      "enemy": "enemy:pill_golem",
+      "level": 35
+     },
+     {
+      "enemy": "enemy:herb_spirit",
+      "level": 35
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:furnace_guardian",
+      "level": 37
+     },
+     {
+      "enemy": "enemy:pill_golem",
+      "level": 35
+     }
+    ]
+   ],
+   "drops": "drops:valley_4",
+   "expPerRun": 198000,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 140
+    }
+   ],
+   "unlock": {
+    "realm": "realm:nascent_soul"
+   }
+  },
+  {
+   "id": "stage:valley_5",
+   "name": "Medicine King Valley V",
+   "mode": "mode:valley",
+   "kind": "dungeon",
+   "level": 5,
+   "location": "loc:medicine_king_valley",
+   "realm": "realm:spirit_severing",
+   "tier": "tier:v",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:pill_golem",
+      "level": 45
+     },
+     {
+      "enemy": "enemy:herb_spirit",
+      "level": 45
+     },
+     {
+      "enemy": "enemy:pill_golem",
+      "level": 45
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:herb_spirit",
+      "level": 45
+     },
+     {
+      "enemy": "enemy:pill_golem",
+      "level": 45
+     },
+     {
+      "enemy": "enemy:herb_spirit",
+      "level": 45
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:furnace_guardian",
+      "level": 47
+     },
+     {
+      "enemy": "enemy:pill_golem",
+      "level": 45
+     }
+    ]
+   ],
+   "drops": "drops:valley_5",
+   "expPerRun": 297000,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 160
+    }
+   ],
+   "unlock": {
+    "realm": "realm:spirit_severing"
+   }
+  },
+  {
+   "id": "stage:valley_6",
+   "name": "Medicine King Valley VI",
+   "mode": "mode:valley",
+   "kind": "dungeon",
+   "level": 6,
+   "location": "loc:medicine_king_valley",
+   "realm": "realm:void_refinement",
+   "tier": "tier:vi",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:pill_golem",
+      "level": 55
+     },
+     {
+      "enemy": "enemy:herb_spirit",
+      "level": 55
+     },
+     {
+      "enemy": "enemy:pill_golem",
+      "level": 55
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:herb_spirit",
+      "level": 55
+     },
+     {
+      "enemy": "enemy:pill_golem",
+      "level": 55
+     },
+     {
+      "enemy": "enemy:herb_spirit",
+      "level": 55
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:furnace_guardian",
+      "level": 57
+     },
+     {
+      "enemy": "enemy:pill_golem",
+      "level": 55
+     }
+    ]
+   ],
+   "drops": "drops:valley_6",
+   "expPerRun": 448500,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 180
+    }
+   ],
+   "unlock": {
+    "realm": "realm:void_refinement"
+   }
+  },
+  {
+   "id": "stage:valley_7",
+   "name": "Medicine King Valley VII",
+   "mode": "mode:valley",
+   "kind": "dungeon",
+   "level": 7,
+   "location": "loc:medicine_king_valley",
+   "realm": "realm:body_integration",
+   "tier": "tier:vii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:pill_golem",
+      "level": 65
+     },
+     {
+      "enemy": "enemy:herb_spirit",
+      "level": 65
+     },
+     {
+      "enemy": "enemy:pill_golem",
+      "level": 65
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:herb_spirit",
+      "level": 65
+     },
+     {
+      "enemy": "enemy:pill_golem",
+      "level": 65
+     },
+     {
+      "enemy": "enemy:herb_spirit",
+      "level": 65
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:furnace_guardian",
+      "level": 67
+     },
+     {
+      "enemy": "enemy:pill_golem",
+      "level": 65
+     }
+    ]
+   ],
+   "drops": "drops:valley_7",
+   "expPerRun": 600000,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 200
+    }
+   ],
+   "unlock": {
+    "realm": "realm:body_integration"
+   }
+  },
+  {
+   "id": "stage:valley_8",
+   "name": "Medicine King Valley VIII",
+   "mode": "mode:valley",
+   "kind": "dungeon",
+   "level": 8,
+   "location": "loc:medicine_king_valley",
+   "realm": "realm:mahayana",
+   "tier": "tier:viii",
+   "waves": [
+    [
+     {
+      "enemy": "enemy:pill_golem",
+      "level": 75
+     },
+     {
+      "enemy": "enemy:herb_spirit",
+      "level": 75
+     },
+     {
+      "enemy": "enemy:pill_golem",
+      "level": 75
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:herb_spirit",
+      "level": 75
+     },
+     {
+      "enemy": "enemy:pill_golem",
+      "level": 75
+     },
+     {
+      "enemy": "enemy:herb_spirit",
+      "level": 75
+     }
+    ],
+    [
+     {
+      "enemy": "enemy:furnace_guardian",
+      "level": 77
+     },
+     {
+      "enemy": "enemy:pill_golem",
+      "level": 75
+     }
+    ]
+   ],
+   "drops": "drops:valley_8",
+   "expPerRun": 849000,
+   "firstClearRewards": [
+    {
+     "cur": "cur:immortal_jade",
+     "qty": 220
+    }
+   ],
+   "unlock": {
+    "realm": "realm:mahayana"
+   }
+  }
+ ]
+}
