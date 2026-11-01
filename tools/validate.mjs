@@ -216,6 +216,10 @@ for (const t of all('thread')) {
 if (all('thread').length) for (const h of heroes) {
   const n = threadCount.get(h.id) || 0;
   need(n >= 2 && n <= 4, `${h.id}: has ${n} Karmic Threads (2 to 4)`);
+  // Both heroines of a thread list it, and a heroine lists only her own threads
+  const mine = all('thread').filter((t) => t.a === h.id || t.b === h.id).map((t) => t.id).sort();
+  const listed = [...(h.threads || [])].sort();
+  need(JSON.stringify(mine) === JSON.stringify(listed), `${h.id}: threads field should list exactly ${mine.join(', ') || 'none'}`);
 }
 
 // Stages

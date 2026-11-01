@@ -1,0 +1,881 @@
+{
+ "about": "Karmic Threads for all 30 launch heroines: two to four ties each. Fielding tied heroines grants Resonance (+5% Attack) and unlocks their camp talk in Secret Realms.",
+ "records": [
+  {
+   "id": "thread:gladiolus__ling_shuang",
+   "a": "hero:gladiolus",
+   "b": "hero:ling_shuang",
+   "kind": "rivals",
+   "story": "Frostpeak's two finest swords have dueled forty-nine times without settling anything; Shang Jianlan was away on a sword pilgrimage when the sect was betrayed, and has not forgiven herself for it.",
+   "campTalk": [
+    {
+     "speaker": "hero:gladiolus",
+     "text": "Forty-nine bouts. Twenty-four each and one draw. Tomorrow, at dawn."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "text": "You said that last week."
+    },
+    {
+     "speaker": "hero:gladiolus",
+     "text": "And you overslept. Plum blossoms bloom in winter, Ling Shuang, not at noon."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "thread:ling_shuang__orchid",
+   "a": "hero:ling_shuang",
+   "b": "hero:orchid",
+   "kind": "sworn_sisters",
+   "story": "Plum and Orchid swore sisterhood with Chrysanthemum under the Gentlemen's Pact, and keep a fourth seat empty for the bamboo who has not yet been found.",
+   "campTalk": [
+    {
+     "speaker": "hero:orchid",
+     "text": "Three cups poured. Four places set."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "text": "The bamboo will come. The Pact was made for four."
+    },
+    {
+     "speaker": "hero:orchid",
+     "text": "Then I will keep playing until she hears it."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "thread:chrysanthemum__ling_shuang",
+   "a": "hero:chrysanthemum",
+   "b": "hero:ling_shuang",
+   "kind": "sworn_sisters",
+   "story": "Ju Yannian has treated every frostbite and sword cut Ling Shuang ever earned, and both their flowers are praised in poems for defying the frost.",
+   "campTalk": [
+    {
+     "speaker": "hero:chrysanthemum",
+     "text": "Sit. Tongue out. You haven't slept since the pass, have you?"
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "text": "Frost doesn't sleep."
+    },
+    {
+     "speaker": "hero:chrysanthemum",
+     "text": "Frost isn't my patient. Drink. All of it."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "thread:chrysanthemum__orchid",
+   "a": "hero:chrysanthemum",
+   "b": "hero:orchid",
+   "kind": "sworn_sisters",
+   "story": "Orchid plays and Chrysanthemum brews: the Gentlemen's Pact meets over tea whenever the war allows.",
+   "campTalk": [
+    {
+     "speaker": "hero:chrysanthemum",
+     "text": "Too much ginseng in your tea makes your playing sharp."
+    },
+    {
+     "speaker": "hero:orchid",
+     "text": "My playing is sharp because Ling Shuang keeps cutting my strings."
+    },
+    {
+     "speaker": "hero:chrysanthemum",
+     "text": "Then she drinks the bitter pot tonight."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "thread:mo_yingyue__pear_blossom",
+   "a": "hero:mo_yingyue",
+   "b": "hero:pear_blossom",
+   "kind": "master_disciple",
+   "story": "Mo Yingyue taught Li Qianshu how to vanish; Qianshu is still working on the quiet part.",
+   "campTalk": [
+    {
+     "speaker": "hero:pear_blossom",
+     "text": "Senior Sister! I built a case that fires three hundred needles!"
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "text": "Does it fire them quietly?"
+    },
+    {
+     "speaker": "hero:pear_blossom",
+     "text": "...It plays a little tune first."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "thread:mo_yingyue__orchid",
+   "a": "hero:mo_yingyue",
+   "b": "hero:orchid",
+   "kind": "old_friends",
+   "story": "Madam Yue sent Gu Youlan to bring the contract-breaker home; she came back alone, with a bag of candied hawthorns and a report that said only: the contract held a lie.",
+   "campTalk": [
+    {
+     "speaker": "hero:mo_yingyue",
+     "text": "You could have dragged me back, you know."
+    },
+    {
+     "speaker": "hero:orchid",
+     "text": "The code binds the honest. Your client was not."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "text": "So that's a no on sharing the hawthorns."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "thread:mo_yingyue__rose",
+   "a": "hero:mo_yingyue",
+   "b": "hero:rose",
+   "kind": "rivals",
+   "story": "The fox and the assassin keep landing on the same rooftop, and each insists she was there first.",
+   "campTalk": [
+    {
+     "speaker": "hero:rose",
+     "text": "Darling, black is so dreary. Let me dress you in red."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "text": "Red shows blood. Yours or mine?"
+    },
+    {
+     "speaker": "hero:rose",
+     "text": "Ooh. You do flirt, in your way."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "thread:hibiscus__yan_feihong",
+   "a": "hero:hibiscus",
+   "b": "hero:yan_feihong",
+   "kind": "rivals",
+   "story": "The Phoenix Palace's two prodigies argue every day about whose fire is older, the sun's or the phoenix's.",
+   "campTalk": [
+    {
+     "speaker": "hero:hibiscus",
+     "text": "The sun was rising long before any phoenix learned to burn."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "text": "And the phoenix rises from its own ashes. Can your sun do that?"
+    },
+    {
+     "speaker": "hero:hibiscus",
+     "text": "Every morning, Feihong. Every single morning."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "thread:pomegranate__yan_feihong",
+   "a": "hero:pomegranate",
+   "b": "hero:yan_feihong",
+   "kind": "sworn_sisters",
+   "story": "Born in the same fire month, Zhu Liuhuo and Yan Feihong swore sisterhood over a burnt banquet that neither will explain.",
+   "campTalk": [
+    {
+     "speaker": "hero:pomegranate",
+     "text": "Sister! Race you to the boss!"
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "text": "Last one there scrubs the cauldron."
+    },
+    {
+     "speaker": "hero:pomegranate",
+     "text": "You said that at the banquet. Look how that ended."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "thread:safflower__yan_feihong",
+   "a": "hero:safflower",
+   "b": "hero:yan_feihong",
+   "kind": "old_friends",
+   "story": "Fang Yanzhi has treated Yan Feihong's burns since they were apprentices, and has never once been thanked out loud.",
+   "campTalk": [
+    {
+     "speaker": "hero:safflower",
+     "text": "Hands out. You singed yourself again."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "text": "It's my own fire. It doesn't count."
+    },
+    {
+     "speaker": "hero:safflower",
+     "text": "It counts when it blisters. And a little rouge, while I'm here."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "thread:magnolia__su_lianhua",
+   "a": "hero:magnolia",
+   "b": "hero:su_lianhua",
+   "kind": "clan_kin",
+   "story": "The temple's gate guardian and its healer: one keeps danger out, the other mends whatever gets in anyway.",
+   "campTalk": [
+    {
+     "speaker": "hero:magnolia",
+     "text": "Stay behind me tomorrow, Sister Lianhua."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "text": "I'll stay beside you. A healer has to see the wounds."
+    },
+    {
+     "speaker": "hero:magnolia",
+     "text": "...Then I won't take any."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "thread:snow_lotus__su_lianhua",
+   "a": "hero:snow_lotus",
+   "b": "hero:su_lianhua",
+   "kind": "garden_neighbours",
+   "story": "In the Garden their flowers grew at the two ends of the Jade Pool, the lotus in the warm shallows and the snow lotus on the frozen rock, and each still dreams of the other.",
+   "campTalk": [
+    {
+     "speaker": "hero:snow_lotus",
+     "text": "You smell like warm water. I used to dream of that smell."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "text": "And I of snow. I always wanted to visit your end of the pool."
+    },
+    {
+     "speaker": "hero:snow_lotus",
+     "text": "It was cold. You would have liked it. Briefly."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "thread:gladiolus__osmanthus",
+   "a": "hero:gladiolus",
+   "b": "hero:osmanthus",
+   "kind": "old_friends",
+   "story": "Shang Jianlan once climbed the crane cliffs at midnight to train in silence, and Gui Chanjuan let her stay, which she has let no one else do.",
+   "campTalk": [
+    {
+     "speaker": "hero:gladiolus",
+     "text": "The moon is bright tonight."
+    },
+    {
+     "speaker": "hero:osmanthus",
+     "text": "That is talking."
+    },
+    {
+     "speaker": "hero:gladiolus",
+     "text": "...It's still bright."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "thread:crabapple__pomegranate",
+   "a": "hero:crabapple",
+   "b": "hero:pomegranate",
+   "kind": "rivals",
+   "story": "Zhu Liuhuo has challenged Tang Mian to eleven duels, and Tang Mian has won all eleven without fully waking up.",
+   "campTalk": [
+    {
+     "speaker": "hero:pomegranate",
+     "text": "Duel me! Properly this time!"
+    },
+    {
+     "speaker": "hero:crabapple",
+     "text": "Mm... was I awake for the last one?"
+    },
+    {
+     "speaker": "hero:pomegranate",
+     "text": "THAT IS THE PROBLEM!"
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "thread:crabapple__peony",
+   "a": "hero:crabapple",
+   "b": "hero:peony",
+   "kind": "sworn_guard",
+   "story": "Tang Mian is the Guild heiress's personal bodyguard, which mostly means napping in the corridor outside Wei Zi's door.",
+   "campTalk": [
+    {
+     "speaker": "hero:peony",
+     "text": "My guard is asleep on the cargo again."
+    },
+    {
+     "speaker": "hero:crabapple",
+     "text": "I'm guarding it. From the inside of my eyelids."
+    },
+    {
+     "speaker": "hero:peony",
+     "text": "...Someone fetch her a cushion. The good one."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "thread:peony__rose",
+   "a": "hero:peony",
+   "b": "hero:rose",
+   "kind": "rivals",
+   "story": "The Queen of Flowers and the Crimson Thorn Fox each believe the other is the second most beautiful woman alive.",
+   "campTalk": [
+    {
+     "speaker": "hero:rose",
+     "text": "Purple again, Wei Zi? Bold, with your complexion."
+    },
+    {
+     "speaker": "hero:peony",
+     "text": "Red again, fox? Do you own anything that isn't a warning?"
+    },
+    {
+     "speaker": "hero:rose",
+     "text": "Darling. I am the warning."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "thread:lily__peony",
+   "a": "hero:lily",
+   "b": "hero:peony",
+   "kind": "old_friends",
+   "story": "An Baihe grew up in the Guild hall beside the heiress, and has been trying to find Wei Zi a worthy suitor ever since.",
+   "campTalk": [
+    {
+     "speaker": "hero:lily",
+     "text": "I've found you the perfect match! Handsome, rich, very patient."
+    },
+    {
+     "speaker": "hero:peony",
+     "text": "Patient is the worst thing you could have said. Next."
+    },
+    {
+     "speaker": "hero:lily",
+     "text": "I'm putting you down as extremely difficult. Again."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "thread:apricot_blossom__rose",
+   "a": "hero:apricot_blossom",
+   "b": "hero:rose",
+   "kind": "clan_kin",
+   "story": "Cousins of the Fox Clan: Wen Xingyu pours the wine, Hu Qiangwei breaks the hearts, and Lady Hu Qiao blames them both.",
+   "campTalk": [
+    {
+     "speaker": "hero:apricot_blossom",
+     "text": "Cousin! The tavern's full of heartbroken scholars again. Your doing?"
+    },
+    {
+     "speaker": "hero:rose",
+     "text": "They came for your wine. They stayed for me."
+    },
+    {
+     "speaker": "hero:apricot_blossom",
+     "text": "Then they pay double."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "thread:apricot_blossom__peach_blossom",
+   "a": "hero:apricot_blossom",
+   "b": "hero:peach_blossom",
+   "kind": "rivals",
+   "story": "Yu Lei is certain the Apricot Blossom Village tavern is haunted by a fox spirit; she is right, and the fox spirit keeps serving her free plum soup.",
+   "campTalk": [
+    {
+     "speaker": "hero:peach_blossom",
+     "text": "I know you're a fox! Peachwood charm, begone!"
+    },
+    {
+     "speaker": "hero:apricot_blossom",
+     "text": "Mm, that tickles. Plum soup, little exorcist?"
+    },
+    {
+     "speaker": "hero:peach_blossom",
+     "text": "...Is it the one with the sugar?"
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "thread:apricot_blossom__azalea",
+   "a": "hero:apricot_blossom",
+   "b": "hero:azalea",
+   "kind": "master_disciple",
+   "story": "Wen Xingyu took on the clan's hopeless case and is still trying to teach Du Tihong a single illusion.",
+   "campTalk": [
+    {
+     "speaker": "hero:apricot_blossom",
+     "text": "Again. Picture a peony, then show it to me."
+    },
+    {
+     "speaker": "hero:azalea",
+     "text": "I'm picturing it! It's so beautiful! I'm crying!"
+    },
+    {
+     "speaker": "hero:apricot_blossom",
+     "text": "Lovely, darling. It's still a rock."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "thread:magnolia__peach_blossom",
+   "a": "hero:magnolia",
+   "b": "hero:peach_blossom",
+   "kind": "clan_kin",
+   "story": "Yu Lei covers the temple gate in peachwood talismans every morning, and Jiang Yulan, who guards that gate, ends up wearing most of them.",
+   "campTalk": [
+    {
+     "speaker": "hero:peach_blossom",
+     "text": "Hold still, Sister Yulan, there's a spirit on your back!"
+    },
+    {
+     "speaker": "hero:magnolia",
+     "text": "That is the fourth talisman today."
+    },
+    {
+     "speaker": "hero:peach_blossom",
+     "text": "And no spirit has got you, has it?"
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "thread:daylily__peach_blossom",
+   "a": "hero:daylily",
+   "b": "hero:peach_blossom",
+   "kind": "clan_kin",
+   "story": "Xuan Wangyou took in the little orphan from the ford orchards, and Yu Lei still keeps a talisman on the kitchen door to keep her safe.",
+   "campTalk": [
+    {
+     "speaker": "hero:daylily",
+     "text": "Have you eaten, Lei'er?"
+    },
+    {
+     "speaker": "hero:peach_blossom",
+     "text": "Twice! And I warded the pot so no ghost can steal the soup."
+    },
+    {
+     "speaker": "hero:daylily",
+     "text": "So that's why the lid won't open."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "thread:iris__pear_blossom",
+   "a": "hero:iris",
+   "b": "hero:pear_blossom",
+   "kind": "old_friends",
+   "story": "Lan Yuan carries letters to the Moonshadow Pavilion, and Li Qianshu is the only one who ever notices her arrive.",
+   "campTalk": [
+    {
+     "speaker": "hero:pear_blossom",
+     "text": "Yuan! I heard you come in!"
+    },
+    {
+     "speaker": "hero:iris",
+     "text": "Nobody hears me come in."
+    },
+    {
+     "speaker": "hero:pear_blossom",
+     "text": "Your sleeve rustles in a minor key. I built a thing that listens."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "thread:iris__jasmine",
+   "a": "hero:iris",
+   "b": "hero:jasmine",
+   "kind": "clan_kin",
+   "story": "The Tianji Pavilion's courier and its scribe: one carries the secrets, the other writes them down very neatly.",
+   "campTalk": [
+    {
+     "speaker": "hero:jasmine",
+     "text": "You resealed this letter, Lan Yuan."
+    },
+    {
+     "speaker": "hero:iris",
+     "text": "...It was already open."
+    },
+    {
+     "speaker": "hero:jasmine",
+     "text": "It was not. I sealed it. My seals are perfect."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "thread:hydrangea__jasmine",
+   "a": "hero:hydrangea",
+   "b": "hero:jasmine",
+   "kind": "master_disciple",
+   "story": "Ning Suxin records every reading Ying Wucai gives, which is hard, because the oracle changes her mind with the weather.",
+   "campTalk": [
+    {
+     "speaker": "hero:jasmine",
+     "text": "Yesterday you said the omen was blue. Today it's pink?"
+    },
+    {
+     "speaker": "hero:hydrangea",
+     "text": "It rained in the night. The soil changed."
+    },
+    {
+     "speaker": "hero:jasmine",
+     "text": "I'm writing 'see weather' in the margin. Again."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "thread:hydrangea__narcissus",
+   "a": "hero:hydrangea",
+   "b": "hero:narcissus",
+   "kind": "garden_neighbours",
+   "story": "In the Garden the narcissus pool watered the hydrangea bed: one flower learned to reflect, the other to change.",
+   "campTalk": [
+    {
+     "speaker": "hero:narcissus",
+     "text": "Show me your colour today, Wucai."
+    },
+    {
+     "speaker": "hero:hydrangea",
+     "text": "Whatever yours is. You know that."
+    },
+    {
+     "speaker": "hero:narcissus",
+     "text": "Then we match. How lovely to look at."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "thread:narcissus__oleander",
+   "a": "hero:narcissus",
+   "b": "hero:oleander",
+   "kind": "clan_kin",
+   "story": "Chief Bai Lin's granddaughter and the clan's poisoner grew up in the same marsh, and She Qingzhu has never once poisoned Lingbo's tea, a fact she mentions often.",
+   "campTalk": [
+    {
+     "speaker": "hero:oleander",
+     "text": "Tea, Lingbo? It's safe, I promise. Probably."
+    },
+    {
+     "speaker": "hero:narcissus",
+     "text": "You say that every time."
+    },
+    {
+     "speaker": "hero:oleander",
+     "text": "And every time you've lived. You're welcome."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "thread:narcissus__wisteria",
+   "a": "hero:narcissus",
+   "b": "hero:wisteria",
+   "kind": "sworn_guard",
+   "story": "Teng Yin swore to Chief Bai Lin that she would guard his granddaughter, and has been coiled protectively around her ever since.",
+   "campTalk": [
+    {
+     "speaker": "hero:wisteria",
+     "text": "Stay in my shade, Lingbo. The sun is harsh today."
+    },
+    {
+     "speaker": "hero:narcissus",
+     "text": "It's raining, Teng Yin."
+    },
+    {
+     "speaker": "hero:wisteria",
+     "text": "Then stay closer."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "thread:oleander__wisteria",
+   "a": "hero:oleander",
+   "b": "hero:wisteria",
+   "kind": "clan_kin",
+   "story": "Teng Yin scolds the clan's poisoner like an elder sister, and She Qingzhu lets her, because nobody else dares.",
+   "campTalk": [
+    {
+     "speaker": "hero:wisteria",
+     "text": "Qingzhu. What did you put in the cakes?"
+    },
+    {
+     "speaker": "hero:oleander",
+     "text": "A little something. For flavour."
+    },
+    {
+     "speaker": "hero:wisteria",
+     "text": "Say cinnamon, or I start squeezing."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "thread:chrysanthemum__oleander",
+   "a": "hero:chrysanthemum",
+   "b": "hero:oleander",
+   "kind": "rivals",
+   "story": "For every poison She Qingzhu brews, Ju Yannian brews the antidote, and both of them keep score.",
+   "campTalk": [
+    {
+     "speaker": "hero:oleander",
+     "text": "I made a new one. It smells of osmanthus. Lovely, isn't it?"
+    },
+    {
+     "speaker": "hero:chrysanthemum",
+     "text": "The antidote is already steeping. Ninety-three to ninety-two."
+    },
+    {
+     "speaker": "hero:oleander",
+     "text": "Ninety-two? You counted the cough syrup!"
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "thread:azalea__safflower",
+   "a": "hero:azalea",
+   "b": "hero:safflower",
+   "kind": "life_debt",
+   "story": "When Du Tihong wept blood after a battle (a cuckoo thing), Fang Yanzhi stopped it, and the fox has trailed her medic like a grateful puppy ever since.",
+   "campTalk": [
+    {
+     "speaker": "hero:azalea",
+     "text": "Yanzhi! No blood today! Only regular tears!"
+    },
+    {
+     "speaker": "hero:safflower",
+     "text": "Good. Come here, those I can fix with a little rouge."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "thread:camellia__lily",
+   "a": "hero:camellia",
+   "b": "hero:lily",
+   "kind": "clan_kin",
+   "story": "The Guild's tea house and its matchmaker share a back door, a gossip habit and a great deal of spilled tea.",
+   "campTalk": [
+    {
+     "speaker": "hero:lily",
+     "text": "That scholar came back again. Third time this week. For the tea?"
+    },
+    {
+     "speaker": "hero:camellia",
+     "text": "Nobody comes back for my tea."
+    },
+    {
+     "speaker": "hero:lily",
+     "text": "Exactly. I'm writing his name down."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "thread:camellia__snow_lotus",
+   "a": "hero:camellia",
+   "b": "hero:snow_lotus",
+   "kind": "sworn_sisters",
+   "story": "Xue Lianxin's first stop in the lowlands was Lin Chaxue's tea house, where she drank a tea so bad that she swore sisterhood with the brewer on the spot.",
+   "campTalk": [
+    {
+     "speaker": "hero:snow_lotus",
+     "text": "Brew me the bad tea again, Chaxue."
+    },
+    {
+     "speaker": "hero:camellia",
+     "text": "It's not bad! ...It's a little bad."
+    },
+    {
+     "speaker": "hero:snow_lotus",
+     "text": "It's hot. That is all I ask of tea."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "thread:osmanthus__snow_lotus",
+   "a": "hero:osmanthus",
+   "b": "hero:snow_lotus",
+   "kind": "clan_kin",
+   "story": "Two recluses of the crane cliffs: Gui Chanjuan watched Xue Lianxin grow up on the next ledge and never once said hello, which both consider a close friendship.",
+   "campTalk": [
+    {
+     "speaker": "hero:snow_lotus",
+     "text": "Chanjuan. The lowlands are warm, and loud."
+    },
+    {
+     "speaker": "hero:osmanthus",
+     "text": "I know. That is why I stayed up here."
+    },
+    {
+     "speaker": "hero:snow_lotus",
+     "text": "You came down anyway."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "thread:osmanthus__trumpet_creeper",
+   "a": "hero:osmanthus",
+   "b": "hero:trumpet_creeper",
+   "kind": "master_disciple",
+   "story": "Qiao Lingxiao has begged Gui Chanjuan to teach her to fly every day for three years; the recluse has never said no, which Lingxiao counts as yes.",
+   "campTalk": [
+    {
+     "speaker": "hero:trumpet_creeper",
+     "text": "Shifu! Today is the day you teach me to fly!"
+    },
+    {
+     "speaker": "hero:osmanthus",
+     "text": "I never agreed to be your teacher."
+    },
+    {
+     "speaker": "hero:trumpet_creeper",
+     "text": "You never said no! That's a thousand days of yes!"
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "thread:snow_lotus__trumpet_creeper",
+   "a": "hero:snow_lotus",
+   "b": "hero:trumpet_creeper",
+   "kind": "clan_kin",
+   "story": "Nestmates on the crane cliffs: Xue Lianxin was the only one who never laughed when Qiao Lingxiao climbed instead of flying.",
+   "campTalk": [
+    {
+     "speaker": "hero:trumpet_creeper",
+     "text": "Lianxin! I climbed the north face! Without falling! Much!"
+    },
+    {
+     "speaker": "hero:snow_lotus",
+     "text": "I saw. You fell twice."
+    },
+    {
+     "speaker": "hero:trumpet_creeper",
+     "text": "Climbing back up counts double."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "thread:daylily__hibiscus",
+   "a": "hero:daylily",
+   "b": "hero:hibiscus",
+   "kind": "old_friends",
+   "story": "Sang Chaoxi wakes before the sun to greet it, and the only one ever up before her is Xuan Wangyou, already cooking breakfast.",
+   "campTalk": [
+    {
+     "speaker": "hero:hibiscus",
+     "text": "Up, everyone! The sun is... oh. You're up."
+    },
+    {
+     "speaker": "hero:daylily",
+     "text": "Congee's ready. Sit."
+    },
+    {
+     "speaker": "hero:hibiscus",
+     "text": "One day I'll wake before you, Wangyou."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "thread:daylily__su_lianhua",
+   "a": "hero:daylily",
+   "b": "hero:su_lianhua",
+   "kind": "clan_kin",
+   "story": "When the wraiths burned Peach Blossom Ford, Su Lianhua shielded the refugees while Xuan Wangyou fed them; the Jade Lotus Temple calls them its two hands.",
+   "campTalk": [
+    {
+     "speaker": "hero:daylily",
+     "text": "Lianhua, you skipped supper to tend the wounded again."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "text": "They needed me more than the soup did."
+    },
+    {
+     "speaker": "hero:daylily",
+     "text": "The soup disagrees. Sit. Eat. Then heal."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "thread:ling_shuang__mo_yingyue",
+   "a": "hero:ling_shuang",
+   "b": "hero:mo_yingyue",
+   "kind": "rivals",
+   "story": "Ling Shuang has slept with her sword unsheathed since the assassin who was paid to kill their master joined the Pavilion; Mo Yingyue finds this deeply flattering.",
+   "campTalk": [
+    {
+     "speaker": "hero:mo_yingyue",
+     "text": "You can put the sword down. If I wanted the Pavilion Master dead, I'd have finished in chapter three."
+    },
+    {
+     "speaker": "hero:ling_shuang",
+     "text": "Then I will keep it drawn until chapter four."
+    },
+    {
+     "speaker": "hero:mo_yingyue",
+     "text": "Charming. Want a candied hawthorn? No? More for me."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "id": "thread:su_lianhua__yan_feihong",
+   "a": "hero:su_lianhua",
+   "b": "hero:yan_feihong",
+   "kind": "garden_neighbours",
+   "story": "In the dream of the Garden, Lotus and Phoenix stood side by side, fire feeding earth; in this life Yan Feihong keeps setting Su Lianhua's tea alight, and Su keeps healing the burns.",
+   "campTalk": [
+    {
+     "speaker": "hero:yan_feihong",
+     "text": "I was only warming it! Tea should be hot."
+    },
+    {
+     "speaker": "hero:su_lianhua",
+     "text": "It was hot. Now it is charcoal. Give me your hand, you singed your fingers again."
+    },
+    {
+     "speaker": "hero:yan_feihong",
+     "text": "...It doesn't hurt. Much. Thank you, Lotus."
+    }
+   ],
+   "draft": true
+  }
+ ]
+}

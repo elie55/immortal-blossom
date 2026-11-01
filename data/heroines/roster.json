@@ -1,0 +1,2773 @@
+{
+ "about": "The 26 summonable launch heroines beyond the four founders (10 at 5★, 6 at 4★, 10 at 3★). Stats: \"base\" is level 1.",
+ "records": [
+  {
+   "id": "hero:gladiolus",
+   "name": "Shang Jianlan",
+   "cn": "商剑兰",
+   "title": "Thousand-Floret Sword Saint",
+   "rarity": 5,
+   "phase": "phase:metal",
+   "path": "path:sword",
+   "flower": "Gladiolus (sword orchid)",
+   "faction": "faction:frostpeak_sword_sect",
+   "zodiac": "Monkey",
+   "birthday": "08-24",
+   "base": {
+    "hp": 2871,
+    "atk": 364,
+    "def": 144,
+    "crit": 0.22,
+    "critDmg": 1.65
+   },
+   "skills": [
+    "skill:gladiolus_s1",
+    "skill:gladiolus_s2",
+    "skill:gladiolus_s3"
+   ],
+   "passives": [
+    "skill:gladiolus_p30",
+    "skill:gladiolus_p50"
+   ],
+   "petals": [
+    {
+     "n": 1,
+     "modifies": "skill:gladiolus_s1",
+     "text": "Rising Floret Cut strikes a third time for 40% ATK"
+    },
+    {
+     "n": 2,
+     "modifies": "skill:gladiolus_s2",
+     "text": "Sword Orchid Ladder also applies 2 Sword Wound stacks for 2 turns"
+    },
+    {
+     "n": 3,
+     "modifies": "skill:gladiolus_s2",
+     "text": "Sword Orchid Ladder can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 4,
+     "modifies": "skill:gladiolus_p30",
+     "text": "Climbing Blooms also adds 10% critical damage per step"
+    },
+    {
+     "n": 5,
+     "modifies": "skill:gladiolus_s3",
+     "text": "Thousand Florets, One Edge can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 6,
+     "modifies": "skill:gladiolus_s3",
+     "text": "Thousand Florets, One Edge strikes nine times, and each critical strike makes the next one 20% stronger instead of 10%"
+    }
+   ],
+   "unique": "unique:gladiolus",
+   "threads": [
+    "thread:gladiolus__ling_shuang",
+    "thread:gladiolus__osmanthus"
+   ],
+   "gifts": {
+    "likes": [
+     "item:gift_sword_tassel",
+     "item:gift_calligraphy_scroll"
+    ],
+    "dislikes": [
+     "item:gift_embroidered_pouch"
+    ]
+   },
+   "bondRewards": [
+    {
+     "level": 6,
+     "outfit": "outfit:gladiolus_bond6"
+    },
+    {
+     "level": 10,
+     "outfit": "outfit:gladiolus_bond10"
+    }
+   ],
+   "profile": {
+    "motto": "A blade blooms from the bottom up. So do I.",
+    "specialty": "Climbing-floret sword arts",
+    "hobby": "Sharpening swords that are already sharp",
+    "likes": "Sword tassels, autumn wind, a worthy duel",
+    "dislikes": "Dull blades, idle chatter, losing to Ling Shuang"
+   },
+   "quotes": {
+    "intro": "Shang Jianlan, first sword of Frostpeak, back from the western passes. Who sold my sect while I was away?",
+    "victory": "Every floret open. Every foe down.",
+    "ultimate": "Thousand florets, one edge!"
+   },
+   "art": {
+    "card": "card_gladiolus",
+    "cutin": "gladiolus_cutin",
+    "face": "gladiolus_face"
+   },
+   "recruit": "summon",
+   "draft": true
+  },
+  {
+   "id": "hero:orchid",
+   "name": "Gu Youlan",
+   "cn": "谷幽兰",
+   "title": "Empty Valley Sword",
+   "rarity": 5,
+   "phase": "phase:wood",
+   "path": "path:sword",
+   "flower": "Orchid",
+   "faction": "faction:moonshadow_pavilion",
+   "zodiac": "Rabbit",
+   "birthday": "03-20",
+   "base": {
+    "hp": 2900,
+    "atk": 358,
+    "def": 144,
+    "crit": 0.2,
+    "critDmg": 1.6
+   },
+   "skills": [
+    "skill:orchid_s1",
+    "skill:orchid_s2",
+    "skill:orchid_s3"
+   ],
+   "passives": [
+    "skill:orchid_p30",
+    "skill:orchid_p50"
+   ],
+   "petals": [
+    {
+     "n": 1,
+     "modifies": "skill:orchid_s1",
+     "text": "Valley Wind Cut's chance to remove a buff rises from 35% to 60%"
+    },
+    {
+     "n": 2,
+     "modifies": "skill:orchid_s2",
+     "text": "Empty Valley Orchid also gives Wind Step to the ally with the lowest Haste"
+    },
+    {
+     "n": 3,
+     "modifies": "skill:orchid_s2",
+     "text": "Empty Valley Orchid can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 4,
+     "modifies": "skill:orchid_p50",
+     "text": "Accompanying Wind can follow up twice per turn"
+    },
+    {
+     "n": 5,
+     "modifies": "skill:orchid_s3",
+     "text": "Gentleman's Verdict can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 6,
+     "modifies": "skill:orchid_s3",
+     "text": "Gentleman's Verdict ignores Spirit Shields and Golden Bell, and strikes twice more for 40% ATK if it removed a buff"
+    }
+   ],
+   "unique": "unique:orchid",
+   "threads": [
+    "thread:chrysanthemum__orchid",
+    "thread:ling_shuang__orchid",
+    "thread:mo_yingyue__orchid"
+   ],
+   "gifts": {
+    "likes": [
+     "item:gift_guqin_strings",
+     "item:gift_poetry_anthology"
+    ],
+    "dislikes": [
+     "item:gift_hawthorn_candy"
+    ]
+   },
+   "bondRewards": [
+    {
+     "level": 6,
+     "outfit": "outfit:orchid_bond6"
+    },
+    {
+     "level": 10,
+     "outfit": "outfit:orchid_bond10"
+    }
+   ],
+   "profile": {
+    "motto": "An orchid in an empty valley is fragrant for no one. That is the point.",
+    "specialty": "Wind-sword arts; judging broken contracts",
+    "hobby": "Playing the guqin to an empty room",
+    "likes": "Guqin strings, old poems, silences that mean something",
+    "dislikes": "Liars, sweets, being hurried"
+   },
+   "quotes": {
+    "intro": "Gu Youlan, the Moonshadow Pavilion's sword of the code. Madam Yue lends me to you. Do not make her regret it.",
+    "victory": "The wind has nothing more to say.",
+    "ultimate": "Hidden fragrance, ten li of wind."
+   },
+   "art": {
+    "card": "card_orchid",
+    "cutin": "orchid_cutin",
+    "face": "orchid_face"
+   },
+   "recruit": "summon",
+   "draft": true
+  },
+  {
+   "id": "hero:pomegranate",
+   "name": "Zhu Liuhuo",
+   "cn": "朱榴火",
+   "title": "Crimson Skirt Blade",
+   "rarity": 4,
+   "phase": "phase:fire",
+   "path": "path:sword",
+   "flower": "Pomegranate blossom",
+   "faction": "faction:vermilion_phoenix_palace",
+   "zodiac": "Horse",
+   "birthday": "06-12",
+   "base": {
+    "hp": 2610,
+    "atk": 336,
+    "def": 128,
+    "crit": 0.2,
+    "critDmg": 1.6
+   },
+   "skills": [
+    "skill:pomegranate_s1",
+    "skill:pomegranate_s2",
+    "skill:pomegranate_s3"
+   ],
+   "passives": [
+    "skill:pomegranate_p30",
+    "skill:pomegranate_p50"
+   ],
+   "petals": [
+    {
+     "n": 1,
+     "modifies": "skill:pomegranate_s1",
+     "text": "Seed-Scatter Slash's chance of Sword Wound rises from 50% to 80%"
+    },
+    {
+     "n": 2,
+     "modifies": "skill:pomegranate_s2",
+     "text": "Pomegranate Skirt Whirl gives her Surging Qi for 1 turn"
+    },
+    {
+     "n": 3,
+     "modifies": "skill:pomegranate_s2",
+     "text": "Pomegranate Skirt Whirl can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 4,
+     "modifies": "skill:pomegranate_p50",
+     "text": "Stacks passed on by Many Seeds gain 1 more stack"
+    },
+    {
+     "n": 5,
+     "modifies": "skill:pomegranate_s3",
+     "text": "Thousand Seeds Burst can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 6,
+     "modifies": "skill:pomegranate_s3",
+     "text": "Thousand Seeds Burst no longer uses up Sword Wound: the stacks burst and stay"
+    }
+   ],
+   "unique": "unique:pomegranate",
+   "threads": [
+    "thread:crabapple__pomegranate",
+    "thread:pomegranate__yan_feihong"
+   ],
+   "gifts": {
+    "likes": [
+     "item:gift_hawthorn_candy",
+     "item:gift_sword_tassel"
+    ],
+    "dislikes": [
+     "item:gift_poetry_anthology"
+    ]
+   },
+   "bondRewards": [
+    {
+     "level": 6,
+     "outfit": "outfit:pomegranate_bond6"
+    },
+    {
+     "level": 10,
+     "outfit": "outfit:pomegranate_bond10"
+    }
+   ],
+   "profile": {
+    "motto": "Bow before the pomegranate skirt, or bleed before it.",
+    "specialty": "Seed-scatter sabre; dueling",
+    "hobby": "Challenging anyone who looks strong; eating pomegranates one seed at a time",
+    "likes": "Candied hawthorns, red silk, loud crowds",
+    "dislikes": "Poetry recitals, losing, being called little sister"
+   },
+   "quotes": {
+    "intro": "Zhu Liuhuo, sabre of the Phoenix Palace! Feihong says you're interesting. Prove it.",
+    "victory": "Burst open. Like fruit.",
+    "ultimate": "A thousand seeds, every one of them burning!"
+   },
+   "art": {
+    "card": "card_pomegranate",
+    "cutin": "pomegranate_cutin",
+    "face": "pomegranate_face"
+   },
+   "recruit": "summon",
+   "draft": true
+  },
+  {
+   "id": "hero:crabapple",
+   "name": "Tang Mian",
+   "cn": "棠眠",
+   "title": "Sleeping Crabapple Greatsword",
+   "rarity": 3,
+   "phase": "phase:earth",
+   "path": "path:sword",
+   "flower": "Crabapple",
+   "faction": "faction:myriad_treasures_guild",
+   "zodiac": "Pig",
+   "birthday": "11-27",
+   "base": {
+    "hp": 2420,
+    "atk": 298,
+    "def": 125,
+    "crit": 0.15,
+    "critDmg": 1.6
+   },
+   "skills": [
+    "skill:crabapple_s1",
+    "skill:crabapple_s2",
+    "skill:crabapple_s3"
+   ],
+   "passives": [
+    "skill:crabapple_p30",
+    "skill:crabapple_p50"
+   ],
+   "petals": [
+    {
+     "n": 1,
+     "modifies": "skill:crabapple_s1",
+     "text": "Drowsy Cleave has a 30% chance to Body Shatter for 1 turn"
+    },
+    {
+     "n": 2,
+     "modifies": "skill:crabapple_s2",
+     "text": "Stone Pillow Smash's Body Shatter lasts 3 turns"
+    },
+    {
+     "n": 3,
+     "modifies": "skill:crabapple_s2",
+     "text": "Stone Pillow Smash can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 4,
+     "modifies": "skill:crabapple_p30",
+     "text": "Rude Awakening also gives her Iron Body for 1 turn"
+    },
+    {
+     "n": 5,
+     "modifies": "skill:crabapple_s3",
+     "text": "The Crabapple Wakes can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 6,
+     "modifies": "skill:crabapple_s3",
+     "text": "The Crabapple Wakes puts the healthiest other enemy into Lotus Dream even without Empower, and its cooldown drops to 4"
+    }
+   ],
+   "unique": "unique:crabapple",
+   "threads": [
+    "thread:crabapple__peony",
+    "thread:crabapple__pomegranate"
+   ],
+   "gifts": {
+    "likes": [
+     "item:gift_lotus_seed_cakes",
+     "item:gift_embroidered_pouch"
+    ],
+    "dislikes": [
+     "item:gift_spirit_tea"
+    ]
+   },
+   "bondRewards": [
+    {
+     "level": 6,
+     "outfit": "outfit:crabapple_bond6"
+    },
+    {
+     "level": 10,
+     "outfit": "outfit:crabapple_bond10"
+    }
+   ],
+   "profile": {
+    "motto": "Wake me when it's worth it.",
+    "specialty": "Stone greatsword; sleeping anywhere",
+    "hobby": "Napping on Guild cargo",
+    "likes": "Lotus seed cakes, soft sachets, sunny crates",
+    "dislikes": "Spirit tea, early starts, being poked"
+   },
+   "quotes": {
+    "intro": "Mm... Tang Mian. Guild caravan guard. Is it lunch? No? Then who do I hit?",
+    "victory": "Done. Nap time.",
+    "ultimate": "I'm... awake... NOW!"
+   },
+   "art": {
+    "card": "card_crabapple",
+    "cutin": "crabapple_cutin",
+    "face": "crabapple_face"
+   },
+   "recruit": "summon",
+   "draft": true
+  },
+  {
+   "id": "hero:magnolia",
+   "name": "Jiang Yulan",
+   "cn": "江玉兰",
+   "title": "Golden Bell Magnolia",
+   "rarity": 4,
+   "phase": "phase:metal",
+   "path": "path:guardian",
+   "flower": "Magnolia",
+   "faction": "faction:jade_lotus_temple",
+   "zodiac": "Dog",
+   "birthday": "10-20",
+   "base": {
+    "hp": 3150,
+    "atk": 252,
+    "def": 200,
+    "crit": 0.1,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:magnolia_s1",
+    "skill:magnolia_s2",
+    "skill:magnolia_s3"
+   ],
+   "passives": [
+    "skill:magnolia_p30",
+    "skill:magnolia_p50"
+   ],
+   "petals": [
+    {
+     "n": 1,
+     "modifies": "skill:magnolia_s1",
+     "text": "Magnolia Palm's chance to Provoke rises from 40% to 70%"
+    },
+    {
+     "n": 2,
+     "modifies": "skill:magnolia_s2",
+     "text": "Golden Bell Shield also removes one debuff from every ally"
+    },
+    {
+     "n": 3,
+     "modifies": "skill:magnolia_s2",
+     "text": "Golden Bell Shield can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 4,
+     "modifies": "skill:magnolia_p50",
+     "text": "Bodhi Bell's counterattack applies Qi Disruption for 1 turn"
+    },
+    {
+     "n": 5,
+     "modifies": "skill:magnolia_s3",
+     "text": "Bodhi Wall of Jade Magnolia can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 6,
+     "modifies": "skill:magnolia_s3",
+     "text": "Bodhi Wall's shields last until broken, and an ally whose shield breaks gains Iron Body for 1 turn"
+    }
+   ],
+   "unique": "unique:magnolia",
+   "threads": [
+    "thread:magnolia__peach_blossom",
+    "thread:magnolia__su_lianhua"
+   ],
+   "gifts": {
+    "likes": [
+     "item:gift_embroidered_pouch",
+     "item:gift_sandalwood_incense"
+    ],
+    "dislikes": [
+     "item:gift_plum_wine"
+    ]
+   },
+   "bondRewards": [
+    {
+     "level": 6,
+     "outfit": "outfit:magnolia_bond6"
+    },
+    {
+     "level": 10,
+     "outfit": "outfit:magnolia_bond10"
+    }
+   ],
+   "profile": {
+    "motto": "The gate stands. So do I.",
+    "specialty": "Golden Bell Shield; temple palm arts",
+    "hobby": "Embroidery, in secret",
+    "likes": "Embroidered pouches, sandalwood, a quiet gate at dusk",
+    "dislikes": "Wine, people who run from a fight, being called stiff"
+   },
+   "quotes": {
+    "intro": "Jiang Yulan, gate guardian of the Jade Lotus Temple. Stand behind me.",
+    "victory": "No one passed.",
+    "ultimate": "Jade magnolia, bloom into a wall!"
+   },
+   "art": {
+    "card": "card_magnolia",
+    "cutin": "magnolia_cutin",
+    "face": "magnolia_face"
+   },
+   "recruit": "summon",
+   "draft": true
+  },
+  {
+   "id": "hero:wisteria",
+   "name": "Teng Yin",
+   "cn": "藤荫",
+   "title": "Violet Canopy Warden",
+   "rarity": 4,
+   "phase": "phase:wood",
+   "path": "path:guardian",
+   "flower": "Wisteria",
+   "faction": "faction:serpent_clan",
+   "zodiac": "Snake",
+   "birthday": "05-08",
+   "base": {
+    "hp": 3280,
+    "atk": 245,
+    "def": 185,
+    "crit": 0.1,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:wisteria_s1",
+    "skill:wisteria_s2",
+    "skill:wisteria_s3"
+   ],
+   "passives": [
+    "skill:wisteria_p30",
+    "skill:wisteria_p50"
+   ],
+   "petals": [
+    {
+     "n": 1,
+     "modifies": "skill:wisteria_s1",
+     "text": "Coiling Vine's chance to Entangle rises from 35% to 55%"
+    },
+    {
+     "n": 2,
+     "modifies": "skill:wisteria_s2",
+     "text": "Violet Canopy also gives Thorn Lotus to the ally with the lowest health"
+    },
+    {
+     "n": 3,
+     "modifies": "skill:wisteria_s2",
+     "text": "Violet Canopy can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 4,
+     "modifies": "skill:wisteria_p30",
+     "text": "Clinging Vine reduces damage by 20% instead of 10%"
+    },
+    {
+     "n": 5,
+     "modifies": "skill:wisteria_s3",
+     "text": "Thousand-Year Embrace can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 6,
+     "modifies": "skill:wisteria_s3",
+     "text": "Thousand-Year Embrace's Thorn Lotus counterattacks Entangle the attacker, and its cooldown drops to 4"
+    }
+   ],
+   "unique": "unique:wisteria",
+   "threads": [
+    "thread:narcissus__wisteria",
+    "thread:oleander__wisteria"
+   ],
+   "gifts": {
+    "likes": [
+     "item:gift_jade_hairpin",
+     "item:gift_lotus_seed_cakes"
+    ],
+    "dislikes": [
+     "item:gift_calligraphy_scroll"
+    ]
+   },
+   "bondRewards": [
+    {
+     "level": 6,
+     "outfit": "outfit:wisteria_bond6"
+    },
+    {
+     "level": 10,
+     "outfit": "outfit:wisteria_bond10"
+    }
+   ],
+   "profile": {
+    "motto": "Come here. Closer. Nothing gets through me.",
+    "specialty": "Coiling-vine body arts",
+    "hobby": "Hugging people who did not ask to be hugged",
+    "likes": "Jade hairpins, lotus seed cakes, warm stones in the sun",
+    "dislikes": "Calligraphy lessons, cold nights, anyone who upsets Lingbo"
+   },
+   "quotes": {
+    "intro": "Teng Yin of the Serpent Clan. I look after Lingbo, and now, I suppose, you. Hold still.",
+    "victory": "There. Everyone's safe in my shade.",
+    "ultimate": "A thousand years of vines. Hold on to me!"
+   },
+   "art": {
+    "card": "card_wisteria",
+    "cutin": "wisteria_cutin",
+    "face": "wisteria_face"
+   },
+   "recruit": "summon",
+   "draft": true
+  },
+  {
+   "id": "hero:camellia",
+   "name": "Lin Chaxue",
+   "cn": "林茶雪",
+   "title": "Snowbound Camellia Shield",
+   "rarity": 3,
+   "phase": "phase:water",
+   "path": "path:guardian",
+   "flower": "Camellia",
+   "faction": "faction:myriad_treasures_guild",
+   "zodiac": "Ox",
+   "birthday": "01-20",
+   "base": {
+    "hp": 2900,
+    "atk": 222,
+    "def": 172,
+    "crit": 0.1,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:camellia_s1",
+    "skill:camellia_s2",
+    "skill:camellia_s3"
+   ],
+   "passives": [
+    "skill:camellia_p30",
+    "skill:camellia_p50"
+   ],
+   "petals": [
+    {
+     "n": 1,
+     "modifies": "skill:camellia_s1",
+     "text": "Tea-Mist Palm's chance of Mist Veil rises from 30% to 50%"
+    },
+    {
+     "n": 2,
+     "modifies": "skill:camellia_s2",
+     "text": "Winter Camellia Guard also removes one debuff from her"
+    },
+    {
+     "n": 3,
+     "modifies": "skill:camellia_s2",
+     "text": "Winter Camellia Guard can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 4,
+     "modifies": "skill:camellia_p50",
+     "text": "Falls Whole also gives every ally Clear Heart for 1 turn"
+    },
+    {
+     "n": 5,
+     "modifies": "skill:camellia_s3",
+     "text": "Whole-Bloom Fall can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 6,
+     "modifies": "skill:camellia_s3",
+     "text": "Whole-Bloom Fall gives Lotus Dew even without Empower, and its cooldown drops to 4"
+    }
+   ],
+   "unique": "unique:camellia",
+   "threads": [
+    "thread:camellia__lily",
+    "thread:camellia__snow_lotus"
+   ],
+   "gifts": {
+    "likes": [
+     "item:gift_spirit_tea",
+     "item:gift_lotus_seed_cakes"
+    ],
+    "dislikes": [
+     "item:gift_plum_wine"
+    ]
+   },
+   "bondRewards": [
+    {
+     "level": 6,
+     "outfit": "outfit:camellia_bond6"
+    },
+    {
+     "level": 10,
+     "outfit": "outfit:camellia_bond10"
+    }
+   ],
+   "profile": {
+    "motto": "I'll get it right next time. The tea, I mean. The fighting I can do.",
+    "specialty": "Tea-mist guard; holding a line",
+    "hobby": "Brewing tea nobody can drink",
+    "likes": "Spirit tea, lotus seed cakes, the first snow",
+    "dislikes": "Plum wine, broken teacups, being rushed"
+   },
+   "quotes": {
+    "intro": "Lin Chaxue, from the Guild's tea house! I can't brew, but I can block. Is that still useful?",
+    "victory": "Everyone's fine! Tea? Oh. No. Sorry.",
+    "ultimate": "Camellias don't drop their petals. We fall whole!"
+   },
+   "art": {
+    "card": "card_camellia",
+    "cutin": "camellia_cutin",
+    "face": "camellia_face"
+   },
+   "recruit": "summon",
+   "draft": true
+  },
+  {
+   "id": "hero:azalea",
+   "name": "Du Tihong",
+   "cn": "杜啼红",
+   "title": "Bloodsong Azalea Guard",
+   "rarity": 3,
+   "phase": "phase:fire",
+   "path": "path:guardian",
+   "flower": "Azalea",
+   "faction": "faction:fox_clan",
+   "zodiac": "Dragon",
+   "birthday": "04-26",
+   "base": {
+    "hp": 2850,
+    "atk": 232,
+    "def": 165,
+    "crit": 0.1,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:azalea_s1",
+    "skill:azalea_s2",
+    "skill:azalea_s3"
+   ],
+   "passives": [
+    "skill:azalea_p30",
+    "skill:azalea_p50"
+   ],
+   "petals": [
+    {
+     "n": 1,
+     "modifies": "skill:azalea_s1",
+     "text": "Cuckoo's Cry's chance to Provoke rises from 40% to 60%"
+    },
+    {
+     "n": 2,
+     "modifies": "skill:azalea_s2",
+     "text": "Weeping Blood Bloom's Thorn Lotus counterattacks apply Fire Poison for 1 turn"
+    },
+    {
+     "n": 3,
+     "modifies": "skill:azalea_s2",
+     "text": "Weeping Blood Bloom can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 4,
+     "modifies": "skill:azalea_p30",
+     "text": "Tears Like Fire's chance rises from 25% to 50%"
+    },
+    {
+     "n": 5,
+     "modifies": "skill:azalea_s3",
+     "text": "Mountains Ablaze in Red can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 6,
+     "modifies": "skill:azalea_s3",
+     "text": "Mountains Ablaze in Red also Provokes every enemy for 1 turn and gives her Thorn Lotus, and its cooldown drops to 4"
+    }
+   ],
+   "unique": "unique:azalea",
+   "threads": [
+    "thread:apricot_blossom__azalea",
+    "thread:azalea__safflower"
+   ],
+   "gifts": {
+    "likes": [
+     "item:gift_hawthorn_candy",
+     "item:gift_poetry_anthology"
+    ],
+    "dislikes": [
+     "item:gift_sandalwood_incense"
+    ]
+   },
+   "bondRewards": [
+    {
+     "level": 6,
+     "outfit": "outfit:azalea_bond6"
+    },
+    {
+     "level": 10,
+     "outfit": "outfit:azalea_bond10"
+    }
+   ],
+   "profile": {
+    "motto": "I cry a lot. I never back down. Both are true.",
+    "specialty": "Fire body arts; shouting",
+    "hobby": "Reading tragic poems and sobbing",
+    "likes": "Candied hawthorns, tragic poetry, mountain azaleas",
+    "dislikes": "Incense smoke, illusions, lies (she cannot tell one)"
+   },
+   "quotes": {
+    "intro": "Du Tihong! The only fox in the clan who can't cast an illusion, so I learned to hit things. Hello!",
+    "victory": "We won! I'm not crying. Fine, I'm crying.",
+    "ultimate": "Hear the cuckoo! The mountains burn red!"
+   },
+   "art": {
+    "card": "card_azalea",
+    "cutin": "azalea_cutin",
+    "face": "azalea_face"
+   },
+   "recruit": "summon",
+   "draft": true
+  },
+  {
+   "id": "hero:peony",
+   "name": "Wei Zi",
+   "cn": "魏紫",
+   "title": "Queen of Flowers, Unbowed",
+   "rarity": 5,
+   "phase": "phase:earth",
+   "path": "path:guardian",
+   "flower": "Peony",
+   "faction": "faction:myriad_treasures_guild",
+   "zodiac": "Dragon",
+   "birthday": "04-20",
+   "base": {
+    "hp": 3560,
+    "atk": 272,
+    "def": 212,
+    "crit": 0.1,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:peony_s1",
+    "skill:peony_s2",
+    "skill:peony_s3"
+   ],
+   "passives": [
+    "skill:peony_p30",
+    "skill:peony_p50"
+   ],
+   "petals": [
+    {
+     "n": 1,
+     "modifies": "skill:peony_s1",
+     "text": "Imperial Fan Strike's shield rises to 10% of her max Health"
+    },
+    {
+     "n": 2,
+     "modifies": "skill:peony_s2",
+     "text": "Unbowed Before the Empress's Clear Heart lasts 2 turns"
+    },
+    {
+     "n": 3,
+     "modifies": "skill:peony_s2",
+     "text": "Unbowed Before the Empress can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 4,
+     "modifies": "skill:peony_p50",
+     "text": "Wealth and Rank pays 2 Spirit Qi when the hit is a critical hit"
+    },
+    {
+     "n": 5,
+     "modifies": "skill:peony_s3",
+     "text": "Queen of a Hundred Flowers can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 6,
+     "modifies": "skill:peony_s3",
+     "text": "Queen of a Hundred Flowers gives 5 Spirit Qi instead of 3 and readies every ally's S1"
+    }
+   ],
+   "unique": "unique:peony",
+   "threads": [
+    "thread:crabapple__peony",
+    "thread:lily__peony",
+    "thread:peony__rose"
+   ],
+   "gifts": {
+    "likes": [
+     "item:gift_jade_hairpin",
+     "item:gift_silk_fan"
+    ],
+    "dislikes": [
+     "item:gift_hawthorn_candy"
+    ]
+   },
+   "bondRewards": [
+    {
+     "level": 6,
+     "outfit": "outfit:peony_bond6"
+    },
+    {
+     "level": 10,
+     "outfit": "outfit:peony_bond10"
+    }
+   ],
+   "profile": {
+    "motto": "An empress once ordered me to bloom. I declined.",
+    "specialty": "Jade-shield body arts; spending money beautifully",
+    "hobby": "Being admired; hosting banquets nobody asked for",
+    "likes": "Jade hairpins, silk fans, an audience",
+    "dislikes": "Street food, being ignored, anyone wearing purple better"
+   },
+   "quotes": {
+    "intro": "Wei Zi, heiress of the Myriad Treasures Guild and Queen of a Hundred Flowers. You may feel honoured now.",
+    "victory": "Naturally.",
+    "ultimate": "Bloom for your queen, and stand behind her!"
+   },
+   "art": {
+    "card": "card_peony",
+    "cutin": "peony_cutin",
+    "face": "peony_face"
+   },
+   "recruit": "summon",
+   "draft": true
+  },
+  {
+   "id": "hero:pear_blossom",
+   "name": "Li Qianshu",
+   "cn": "黎千树",
+   "title": "Rainstorm Needle Shadow",
+   "rarity": 4,
+   "phase": "phase:metal",
+   "path": "path:shadow",
+   "flower": "Pear blossom",
+   "faction": "faction:moonshadow_pavilion",
+   "zodiac": "Rabbit",
+   "birthday": "04-02",
+   "base": {
+    "hp": 2280,
+    "atk": 348,
+    "def": 112,
+    "crit": 0.32,
+    "critDmg": 1.65
+   },
+   "skills": [
+    "skill:pear_blossom_s1",
+    "skill:pear_blossom_s2",
+    "skill:pear_blossom_s3"
+   ],
+   "passives": [
+    "skill:pear_blossom_p30",
+    "skill:pear_blossom_p50"
+   ],
+   "petals": [
+    {
+     "n": 1,
+     "modifies": "skill:pear_blossom_s1",
+     "text": "Pear Petal Needles fires five needles instead of four"
+    },
+    {
+     "n": 2,
+     "modifies": "skill:pear_blossom_s2",
+     "text": "Rainstorm Pear Blossom Needles has +20% critical chance"
+    },
+    {
+     "n": 3,
+     "modifies": "skill:pear_blossom_s2",
+     "text": "Rainstorm Pear Blossom Needles can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 4,
+     "modifies": "skill:pear_blossom_p30",
+     "text": "Hidden Weapon Case breaks 2 extra segments instead of 1"
+    },
+    {
+     "n": 5,
+     "modifies": "skill:pear_blossom_s3",
+     "text": "A Thousand Trees in One Night can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 6,
+     "modifies": "skill:pear_blossom_s3",
+     "text": "A Thousand Trees in One Night fires sixteen needles, and needles meant for a fallen target fly on to the next enemy"
+    }
+   ],
+   "unique": "unique:pear_blossom",
+   "threads": [
+    "thread:iris__pear_blossom",
+    "thread:mo_yingyue__pear_blossom"
+   ],
+   "gifts": {
+    "likes": [
+     "item:gift_embroidered_pouch",
+     "item:gift_hawthorn_candy"
+    ],
+    "dislikes": [
+     "item:gift_poetry_anthology"
+    ]
+   },
+   "bondRewards": [
+    {
+     "level": 6,
+     "outfit": "outfit:pear_blossom_bond6"
+    },
+    {
+     "level": 10,
+     "outfit": "outfit:pear_blossom_bond10"
+    }
+   ],
+   "profile": {
+    "motto": "Why throw one needle when you can throw three hundred?",
+    "specialty": "Hidden weapons; needle-case mechanisms",
+    "hobby": "Taking apart things that worked fine",
+    "likes": "Embroidered pouches (for needles), candied hawthorns, springs and gears",
+    "dislikes": "Poetry recitals, sitting still, Senior Sister Mo calling her kid"
+   },
+   "quotes": {
+    "intro": "Li Qianshu, Moonshadow Pavilion! Senior Sister Mo says I talk too much. She's right. Want to see my needle case?",
+    "victory": "Overnight, a thousand trees in bloom!",
+    "ultimate": "Spring wind comes in one night!"
+   },
+   "art": {
+    "card": "card_pear_blossom",
+    "cutin": "pear_blossom_cutin",
+    "face": "pear_blossom_face"
+   },
+   "recruit": "summon",
+   "draft": true
+  },
+  {
+   "id": "hero:iris",
+   "name": "Lan Yuan",
+   "cn": "蓝鸢",
+   "title": "Mist Kite Courier",
+   "rarity": 3,
+   "phase": "phase:water",
+   "path": "path:shadow",
+   "flower": "Iris",
+   "faction": "faction:tianji_pavilion",
+   "zodiac": "Snake",
+   "birthday": "05-27",
+   "base": {
+    "hp": 2100,
+    "atk": 312,
+    "def": 104,
+    "crit": 0.28,
+    "critDmg": 1.7
+   },
+   "skills": [
+    "skill:iris_s1",
+    "skill:iris_s2",
+    "skill:iris_s3"
+   ],
+   "passives": [
+    "skill:iris_p30",
+    "skill:iris_p50"
+   ],
+   "petals": [
+    {
+     "n": 1,
+     "modifies": "skill:iris_s1",
+     "text": "Kite-Tail Darts' chance of Mist Veil rises from 25% to 45%"
+    },
+    {
+     "n": 2,
+     "modifies": "skill:iris_s2",
+     "text": "Blue Kite Vanishing also gives her Wind Step for 2 turns"
+    },
+    {
+     "n": 3,
+     "modifies": "skill:iris_s2",
+     "text": "Blue Kite Vanishing can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 4,
+     "modifies": "skill:iris_p30",
+     "text": "Unseen Courier's Shadow Veil lasts 2 turns and returns at the start of each wave"
+    },
+    {
+     "n": 5,
+     "modifies": "skill:iris_s3",
+     "text": "Rainbow Messenger can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 6,
+     "modifies": "skill:iris_s3",
+     "text": "Rainbow Messenger brings every ally's S2 1 turn closer even without Empower, and its cooldown drops to 4"
+    }
+   ],
+   "unique": "unique:iris",
+   "threads": [
+    "thread:iris__jasmine",
+    "thread:iris__pear_blossom"
+   ],
+   "gifts": {
+    "likes": [
+     "item:gift_poetry_anthology",
+     "item:gift_calligraphy_scroll"
+    ],
+    "dislikes": [
+     "item:gift_plum_wine"
+    ]
+   },
+   "bondRewards": [
+    {
+     "level": 6,
+     "outfit": "outfit:iris_bond6"
+    },
+    {
+     "level": 10,
+     "outfit": "outfit:iris_bond10"
+    }
+   ],
+   "profile": {
+    "motto": "The letter arrives. Nobody sees who brought it.",
+    "specialty": "Mist steps; delivering what should not be read",
+    "hobby": "Reading the letters she delivers (she reseals them perfectly)",
+    "likes": "Poetry anthologies, calligraphy, rainy mornings",
+    "dislikes": "Plum wine, loud rooms, being noticed"
+   },
+   "quotes": {
+    "intro": "...Oh! You saw me. Lan Yuan, Tianji Pavilion courier. I have a letter for you. It's from me.",
+    "victory": "Delivered.",
+    "ultimate": "Through the mist, past the rainbow!"
+   },
+   "art": {
+    "card": "card_iris",
+    "cutin": "iris_cutin",
+    "face": "iris_face"
+   },
+   "recruit": "summon",
+   "draft": true
+  },
+  {
+   "id": "hero:rose",
+   "name": "Hu Qiangwei",
+   "cn": "胡蔷薇",
+   "title": "Crimson Thorn Fox",
+   "rarity": 5,
+   "phase": "phase:fire",
+   "path": "path:shadow",
+   "flower": "Rose",
+   "faction": "faction:fox_clan",
+   "zodiac": "Snake",
+   "birthday": "05-14",
+   "base": {
+    "hp": 2540,
+    "atk": 390,
+    "def": 122,
+    "crit": 0.3,
+    "critDmg": 1.75
+   },
+   "skills": [
+    "skill:rose_s1",
+    "skill:rose_s2",
+    "skill:rose_s3"
+   ],
+   "passives": [
+    "skill:rose_p30",
+    "skill:rose_p50"
+   ],
+   "petals": [
+    {
+     "n": 1,
+     "modifies": "skill:rose_s1",
+     "text": "Thorned Kiss's chance of Heart Demon rises from 25% to 40%"
+    },
+    {
+     "n": 2,
+     "modifies": "skill:rose_s2",
+     "text": "Fox-Fire Rose's Thorn Lotus counterattacks add a Heart Demon stack"
+    },
+    {
+     "n": 3,
+     "modifies": "skill:rose_s2",
+     "text": "Fox-Fire Rose can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 4,
+     "modifies": "skill:rose_p50",
+     "text": "Nine-Tailed Allure also gives the team 2 Spirit Qi"
+    },
+    {
+     "n": 5,
+     "modifies": "skill:rose_s3",
+     "text": "Rose of the Crimson Moon can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 6,
+     "modifies": "skill:rose_s3",
+     "text": "An enemy charmed after Rose of the Crimson Moon attacks its allies with its strongest ready technique instead of a basic attack"
+    }
+   ],
+   "unique": "unique:rose",
+   "threads": [
+    "thread:apricot_blossom__rose",
+    "thread:mo_yingyue__rose",
+    "thread:peony__rose"
+   ],
+   "gifts": {
+    "likes": [
+     "item:gift_jade_hairpin",
+     "item:gift_plum_wine"
+    ],
+    "dislikes": [
+     "item:gift_spirit_tea"
+    ]
+   },
+   "bondRewards": [
+    {
+     "level": 6,
+     "outfit": "outfit:rose_bond6"
+    },
+    {
+     "level": 10,
+     "outfit": "outfit:rose_bond10"
+    }
+   ],
+   "profile": {
+    "motto": "Admire me from a distance. Closer costs extra.",
+    "specialty": "Fox-fire, charm, thorned blades",
+    "hobby": "Collecting broken hearts and jade hairpins",
+    "likes": "Jade hairpins, plum wine, being the loveliest in the room",
+    "dislikes": "Spirit tea, plain clothes, Wei Zi"
+   },
+   "quotes": {
+    "intro": "Hu Qiangwei of the Fox Clan. Yes, the beautiful one. Mind the thorns, darling.",
+    "victory": "Every rose leaves a mark.",
+    "ultimate": "Bloom red under the crimson moon!"
+   },
+   "art": {
+    "card": "card_rose",
+    "cutin": "rose_cutin",
+    "face": "rose_face"
+   },
+   "recruit": "summon",
+   "draft": true
+  },
+  {
+   "id": "hero:oleander",
+   "name": "She Qingzhu",
+   "cn": "佘青竹",
+   "title": "Bamboo-Leaf Viper",
+   "rarity": 5,
+   "phase": "phase:earth",
+   "path": "path:shadow",
+   "flower": "Oleander",
+   "faction": "faction:serpent_clan",
+   "zodiac": "Pig",
+   "birthday": "11-13",
+   "base": {
+    "hp": 2600,
+    "atk": 380,
+    "def": 128,
+    "crit": 0.25,
+    "critDmg": 1.6
+   },
+   "skills": [
+    "skill:oleander_s1",
+    "skill:oleander_s2",
+    "skill:oleander_s3"
+   ],
+   "passives": [
+    "skill:oleander_p30",
+    "skill:oleander_p50"
+   ],
+   "petals": [
+    {
+     "n": 1,
+     "modifies": "skill:oleander_s1",
+     "text": "Bamboo-Leaf Fang's chance of Gu Venom rises from 40% to 70%"
+    },
+    {
+     "n": 2,
+     "modifies": "skill:oleander_s2",
+     "text": "Sweet Oleander Mist always applies Withering, for 2 turns"
+    },
+    {
+     "n": 3,
+     "modifies": "skill:oleander_s2",
+     "text": "Sweet Oleander Mist can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 4,
+     "modifies": "skill:oleander_p50",
+     "text": "Poison Without Order caps at +60%, and a chain break at the cap gives the team 1 Spirit Qi once per turn"
+    },
+    {
+     "n": 5,
+     "modifies": "skill:oleander_s3",
+     "text": "Every Petal a Poison can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 6,
+     "modifies": "skill:oleander_s3",
+     "text": "Every Petal a Poison strikes every enemy carrying Gu Venom, not only its target"
+    }
+   ],
+   "unique": "unique:oleander",
+   "threads": [
+    "thread:chrysanthemum__oleander",
+    "thread:narcissus__oleander",
+    "thread:oleander__wisteria"
+   ],
+   "gifts": {
+    "likes": [
+     "item:gift_spirit_tea",
+     "item:gift_silk_fan"
+    ],
+    "dislikes": [
+     "item:gift_calligraphy_scroll"
+    ]
+   },
+   "bondRewards": [
+    {
+     "level": 6,
+     "outfit": "outfit:oleander_bond6"
+    },
+    {
+     "level": 10,
+     "outfit": "outfit:oleander_bond10"
+    }
+   ],
+   "profile": {
+    "motto": "Order is only a poison that hasn't worked yet.",
+    "specialty": "Venoms, and antidotes she refuses to share",
+    "hobby": "Brewing tea that may or may not be safe",
+    "likes": "Spirit tea, silk fans, chaos at banquets",
+    "dislikes": "Calligraphy, schedules, Ju Yannian's antidotes"
+   },
+   "quotes": {
+    "intro": "She Qingzhu, Serpent Clan. Pretty flowers, poisonous leaves. Do sit down, the tea is mostly fine.",
+    "victory": "Oh dear. Was that too much?",
+    "ultimate": "Every petal, a poison!"
+   },
+   "art": {
+    "card": "card_oleander",
+    "cutin": "oleander_cutin",
+    "face": "oleander_face"
+   },
+   "recruit": "summon",
+   "draft": true
+  },
+  {
+   "id": "hero:jasmine",
+   "name": "Ning Suxin",
+   "cn": "宁素馨",
+   "title": "White Jasmine Scribe",
+   "rarity": 3,
+   "phase": "phase:metal",
+   "path": "path:talisman",
+   "flower": "Jasmine",
+   "faction": "faction:tianji_pavilion",
+   "zodiac": "Goat",
+   "birthday": "07-22",
+   "base": {
+    "hp": 2240,
+    "atk": 290,
+    "def": 126,
+    "crit": 0.16,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:jasmine_s1",
+    "skill:jasmine_s2",
+    "skill:jasmine_s3"
+   ],
+   "passives": [
+    "skill:jasmine_p30",
+    "skill:jasmine_p50"
+   ],
+   "petals": [
+    {
+     "n": 1,
+     "modifies": "skill:jasmine_s1",
+     "text": "White Jasmine Seal's chance of Karmic Mark rises from 30% to 50%"
+    },
+    {
+     "n": 2,
+     "modifies": "skill:jasmine_s2",
+     "text": "Scripture of Silence also delays the target's charging techniques by 1 turn"
+    },
+    {
+     "n": 3,
+     "modifies": "skill:jasmine_s2",
+     "text": "Scripture of Silence can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 4,
+     "modifies": "skill:jasmine_p50",
+     "text": "Song of the Jasmine also gives her +10% damage for the turn"
+    },
+    {
+     "n": 5,
+     "modifies": "skill:jasmine_s3",
+     "text": "Fragrance Fills the Garden can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 6,
+     "modifies": "skill:jasmine_s3",
+     "text": "Fragrance Fills the Garden applies Body Shatter even without Empower, and its cooldown drops to 4"
+    }
+   ],
+   "unique": "unique:jasmine",
+   "threads": [
+    "thread:hydrangea__jasmine",
+    "thread:iris__jasmine"
+   ],
+   "gifts": {
+    "likes": [
+     "item:gift_calligraphy_scroll",
+     "item:gift_spirit_tea"
+    ],
+    "dislikes": [
+     "item:gift_hawthorn_candy"
+    ]
+   },
+   "bondRewards": [
+    {
+     "level": 6,
+     "outfit": "outfit:jasmine_bond6"
+    },
+    {
+     "level": 10,
+     "outfit": "outfit:jasmine_bond10"
+    }
+   ],
+   "profile": {
+    "motto": "Write it neatly, and even fate has to read it.",
+    "specialty": "Silence talismans; perfect calligraphy",
+    "hobby": "Humming the jasmine song while copying records",
+    "likes": "Calligraphy scrolls, jasmine tea, fresh ink",
+    "dislikes": "Candied hawthorns (sticky fingers), smudges, interruptions"
+   },
+   "quotes": {
+    "intro": "Ning Suxin, scribe of the Tianji Pavilion. I will record your deeds. Please make them legible.",
+    "victory": "Recorded. Neatly.",
+    "ultimate": "Let the fragrance fill the whole garden!"
+   },
+   "art": {
+    "card": "card_jasmine",
+    "cutin": "jasmine_cutin",
+    "face": "jasmine_face"
+   },
+   "recruit": "summon",
+   "draft": true
+  },
+  {
+   "id": "hero:peach_blossom",
+   "name": "Yu Lei",
+   "cn": "郁蕾",
+   "title": "Peachwood Exorcist",
+   "rarity": 3,
+   "phase": "phase:wood",
+   "path": "path:talisman",
+   "flower": "Peach blossom",
+   "faction": "faction:jade_lotus_temple",
+   "zodiac": "Tiger",
+   "birthday": "03-03",
+   "base": {
+    "hp": 2270,
+    "atk": 285,
+    "def": 128,
+    "crit": 0.15,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:peach_blossom_s1",
+    "skill:peach_blossom_s2",
+    "skill:peach_blossom_s3"
+   ],
+   "passives": [
+    "skill:peach_blossom_p30",
+    "skill:peach_blossom_p50"
+   ],
+   "petals": [
+    {
+     "n": 1,
+     "modifies": "skill:peach_blossom_s1",
+     "text": "Peachwood Charm has a 30% chance to Entangle for 1 turn"
+    },
+    {
+     "n": 2,
+     "modifies": "skill:peach_blossom_s2",
+     "text": "Door God's Ward removes two buffs from each enemy"
+    },
+    {
+     "n": 3,
+     "modifies": "skill:peach_blossom_s2",
+     "text": "Door God's Ward can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 4,
+     "modifies": "skill:peach_blossom_p30",
+     "text": "Ward Against Evil gives +25% effect resistance instead of 15%"
+    },
+    {
+     "n": 5,
+     "modifies": "skill:peach_blossom_s3",
+     "text": "Peach Grove Exorcism can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 6,
+     "modifies": "skill:peach_blossom_s3",
+     "text": "Peach Grove Exorcism also Soul Shocks Yin enemies for 1 turn, and its cooldown drops to 4"
+    }
+   ],
+   "unique": "unique:peach_blossom",
+   "threads": [
+    "thread:apricot_blossom__peach_blossom",
+    "thread:daylily__peach_blossom",
+    "thread:magnolia__peach_blossom"
+   ],
+   "gifts": {
+    "likes": [
+     "item:gift_sandalwood_incense",
+     "item:gift_hawthorn_candy"
+    ],
+    "dislikes": [
+     "item:gift_jade_hairpin"
+    ]
+   },
+   "bondRewards": [
+    {
+     "level": 6,
+     "outfit": "outfit:peach_blossom_bond6"
+    },
+    {
+     "level": 10,
+     "outfit": "outfit:peach_blossom_bond10"
+    }
+   ],
+   "profile": {
+    "motto": "Evil spirits, begone! ...Is it gone? Check behind the door.",
+    "specialty": "Peachwood charms; exorcism (in theory)",
+    "hobby": "Sticking talismans on doors, on furniture, on the Pavilion Master",
+    "likes": "Sandalwood incense, candied hawthorns, the Shangsi festival",
+    "dislikes": "Jade hairpins (she wears peachwood), dark corridors, being mistaken for Tao Yao"
+   },
+   "quotes": {
+    "intro": "Yu Lei, exorcist of the Jade Lotus Temple! No, I'm not Tao Yao, different peach. Hold still, there's a ghost on you. ...There. Gone.",
+    "victory": "Exorcised! Probably!",
+    "ultimate": "Peach grove, drive out every evil!"
+   },
+   "art": {
+    "card": "card_peach_blossom",
+    "cutin": "peach_blossom_cutin",
+    "face": "peach_blossom_face"
+   },
+   "recruit": "summon",
+   "draft": true
+  },
+  {
+   "id": "hero:narcissus",
+   "name": "Bai Lingbo",
+   "cn": "白凌波",
+   "title": "Wave-Treading Water Immortal",
+   "rarity": 5,
+   "phase": "phase:water",
+   "path": "path:talisman",
+   "flower": "Narcissus (water immortal)",
+   "faction": "faction:serpent_clan",
+   "zodiac": "Rat",
+   "birthday": "12-21",
+   "base": {
+    "hp": 2780,
+    "atk": 348,
+    "def": 156,
+    "crit": 0.15,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:narcissus_s1",
+    "skill:narcissus_s2",
+    "skill:narcissus_s3"
+   ],
+   "passives": [
+    "skill:narcissus_p30",
+    "skill:narcissus_p50"
+   ],
+   "petals": [
+    {
+     "n": 1,
+     "modifies": "skill:narcissus_s1",
+     "text": "Wave-Treading Talisman's chance of Qi Disruption rises from 35% to 55%"
+    },
+    {
+     "n": 2,
+     "modifies": "skill:narcissus_s2",
+     "text": "Mirror of Still Water also delays the enemy whose ultimate is closest by 1 turn"
+    },
+    {
+     "n": 3,
+     "modifies": "skill:narcissus_s2",
+     "text": "Mirror of Still Water can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 4,
+     "modifies": "skill:narcissus_p50",
+     "text": "When Reflection's Kindred Qi reaches +45%, the team gains 1 Spirit Qi, once per turn"
+    },
+    {
+     "n": 5,
+     "modifies": "skill:narcissus_s3",
+     "text": "Reflection of the Water Immortal can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 6,
+     "modifies": "skill:narcissus_s3",
+     "text": "The reflection recasts the previous two ally techniques instead of one"
+    }
+   ],
+   "unique": "unique:narcissus",
+   "threads": [
+    "thread:hydrangea__narcissus",
+    "thread:narcissus__oleander",
+    "thread:narcissus__wisteria"
+   ],
+   "gifts": {
+    "likes": [
+     "item:gift_guqin_strings",
+     "item:gift_jade_hairpin"
+    ],
+    "dislikes": [
+     "item:gift_plum_wine"
+    ]
+   },
+   "bondRewards": [
+    {
+     "level": 6,
+     "outfit": "outfit:narcissus_bond6"
+    },
+    {
+     "level": 10,
+     "outfit": "outfit:narcissus_bond10"
+    }
+   ],
+   "profile": {
+    "motto": "Look closely. The water shows you what you are.",
+    "specialty": "Mirror talismans; reflections",
+    "hobby": "Admiring her reflection, and other people's, politely",
+    "likes": "Guqin strings, jade hairpins, still ponds",
+    "dislikes": "Festival wine (white serpents and wine end badly), muddy water, haste"
+   },
+   "quotes": {
+    "intro": "Bai Lingbo of the Serpent Clan. Grandfather Bai Lin sends his regards. Shall we see what the water thinks of you?",
+    "victory": "The ripples settle. So do they.",
+    "ultimate": "Rise, my reflection. Tread the waves with me."
+   },
+   "art": {
+    "card": "card_narcissus",
+    "cutin": "narcissus_cutin",
+    "face": "narcissus_face"
+   },
+   "recruit": "summon",
+   "draft": true
+  },
+  {
+   "id": "hero:hibiscus",
+   "name": "Sang Chaoxi",
+   "cn": "桑朝曦",
+   "title": "Dawn-Bearer of Fusang",
+   "rarity": 5,
+   "phase": "phase:fire",
+   "path": "path:talisman",
+   "flower": "Hibiscus (the Fusang sun tree)",
+   "faction": "faction:vermilion_phoenix_palace",
+   "zodiac": "Rooster",
+   "birthday": "09-12",
+   "base": {
+    "hp": 2720,
+    "atk": 358,
+    "def": 150,
+    "crit": 0.17,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:hibiscus_s1",
+    "skill:hibiscus_s2",
+    "skill:hibiscus_s3"
+   ],
+   "passives": [
+    "skill:hibiscus_p30",
+    "skill:hibiscus_p50"
+   ],
+   "petals": [
+    {
+     "n": 1,
+     "modifies": "skill:hibiscus_s1",
+     "text": "Morning Sun Talisman's chance of Fire Poison rises from 35% to 60%"
+    },
+    {
+     "n": 2,
+     "modifies": "skill:hibiscus_s2",
+     "text": "Golden Crow Seal also Seals Meridians for 1 turn"
+    },
+    {
+     "n": 3,
+     "modifies": "skill:hibiscus_s2",
+     "text": "Golden Crow Seal can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 4,
+     "modifies": "skill:hibiscus_p30",
+     "text": "First Light also gives every ally Wind Step for 2 turns"
+    },
+    {
+     "n": 5,
+     "modifies": "skill:hibiscus_s3",
+     "text": "Ten Suns over Fusang can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 6,
+     "modifies": "skill:hibiscus_s3",
+     "text": "Ten Suns over Fusang delays enemy techniques by 2 turns and brings allies' S2 2 turns closer"
+    }
+   ],
+   "unique": "unique:hibiscus",
+   "threads": [
+    "thread:daylily__hibiscus",
+    "thread:hibiscus__yan_feihong"
+   ],
+   "gifts": {
+    "likes": [
+     "item:gift_calligraphy_scroll",
+     "item:gift_hawthorn_candy"
+    ],
+    "dislikes": [
+     "item:gift_embroidered_pouch"
+    ]
+   },
+   "bondRewards": [
+    {
+     "level": 6,
+     "outfit": "outfit:hibiscus_bond6"
+    },
+    {
+     "level": 10,
+     "outfit": "outfit:hibiscus_bond10"
+    }
+   ],
+   "profile": {
+    "motto": "The sun has never once been late. Neither have I.",
+    "specialty": "Sun talismans; waking people up",
+    "hobby": "Watching every sunrise and reporting on it",
+    "likes": "Calligraphy scrolls, candied hawthorns, rooftops at dawn",
+    "dislikes": "Embroidered pouches, curtains, anyone still asleep at sunrise"
+   },
+   "quotes": {
+    "intro": "Sang Chaoxi, Sun Talisman Saint of the Phoenix Palace! It's dawn somewhere, Pavilion Master. Up!",
+    "victory": "And the sun rises on us again.",
+    "ultimate": "Ten suns over Fusang! Morning has come!"
+   },
+   "art": {
+    "card": "card_hibiscus",
+    "cutin": "hibiscus_cutin",
+    "face": "hibiscus_face"
+   },
+   "recruit": "summon",
+   "draft": true
+  },
+  {
+   "id": "hero:daylily",
+   "name": "Xuan Wangyou",
+   "cn": "萱忘忧",
+   "title": "Sorrowless Daylily",
+   "rarity": 4,
+   "phase": "phase:earth",
+   "path": "path:talisman",
+   "flower": "Daylily",
+   "faction": "faction:jade_lotus_temple",
+   "zodiac": "Goat",
+   "birthday": "07-08",
+   "base": {
+    "hp": 2560,
+    "atk": 312,
+    "def": 145,
+    "crit": 0.14,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:daylily_s1",
+    "skill:daylily_s2",
+    "skill:daylily_s3"
+   ],
+   "passives": [
+    "skill:daylily_p30",
+    "skill:daylily_p50"
+   ],
+   "petals": [
+    {
+     "n": 1,
+     "modifies": "skill:daylily_s1",
+     "text": "Sorrowless Charm's chance of Lotus Dream rises from 25% to 40%"
+    },
+    {
+     "n": 2,
+     "modifies": "skill:daylily_s2",
+     "text": "Forget-Sorrow Talisman's Sealed Meridians lasts 2 turns"
+    },
+    {
+     "n": 3,
+     "modifies": "skill:daylily_s2",
+     "text": "Forget-Sorrow Talisman can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 4,
+     "modifies": "skill:daylily_p50",
+     "text": "A Mother's Worry also gives that ally Lotus Dew for 2 turns"
+    },
+    {
+     "n": 5,
+     "modifies": "skill:daylily_s3",
+     "text": "Mother's Hall can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 6,
+     "modifies": "skill:daylily_s3",
+     "text": "Mother's Hall puts the two healthiest enemies into Lotus Dream for 1 turn, even without Empower"
+    }
+   ],
+   "unique": "unique:daylily",
+   "threads": [
+    "thread:daylily__hibiscus",
+    "thread:daylily__peach_blossom",
+    "thread:daylily__su_lianhua"
+   ],
+   "gifts": {
+    "likes": [
+     "item:gift_lotus_seed_cakes",
+     "item:gift_embroidered_pouch"
+    ],
+    "dislikes": [
+     "item:gift_sword_tassel"
+    ]
+   },
+   "bondRewards": [
+    {
+     "level": 6,
+     "outfit": "outfit:daylily_bond6"
+    },
+    {
+     "level": 10,
+     "outfit": "outfit:daylily_bond10"
+    }
+   ],
+   "profile": {
+    "motto": "Eat something first. Sorrow can wait until after supper.",
+    "specialty": "Forgetting talismans; soup",
+    "hobby": "Cooking for refugees, for the Pavilion, for anyone who stands still",
+    "likes": "Lotus seed cakes, embroidered pouches, a full table",
+    "dislikes": "Sword tassels (weapons make her worry), skipped meals, goodbyes"
+   },
+   "quotes": {
+    "intro": "Xuan Wangyou, from the Jade Lotus Temple kitchen. Have you eaten? You look like you haven't eaten.",
+    "victory": "There, it's over. Forget it, and come have some soup.",
+    "ultimate": "Forget your sorrows. Mother's hall is open."
+   },
+   "art": {
+    "card": "card_daylily",
+    "cutin": "daylily_cutin",
+    "face": "daylily_face"
+   },
+   "recruit": "summon",
+   "draft": true
+  },
+  {
+   "id": "hero:osmanthus",
+   "name": "Gui Chanjuan",
+   "cn": "桂婵娟",
+   "title": "Recluse of the Moon Palace",
+   "rarity": 5,
+   "phase": "phase:metal",
+   "path": "path:arcane",
+   "flower": "Osmanthus (the moon palace tree)",
+   "faction": "faction:crane_clan",
+   "zodiac": "Rooster",
+   "birthday": "09-15",
+   "base": {
+    "hp": 2680,
+    "atk": 404,
+    "def": 128,
+    "crit": 0.22,
+    "critDmg": 1.65
+   },
+   "skills": [
+    "skill:osmanthus_s1",
+    "skill:osmanthus_s2",
+    "skill:osmanthus_s3"
+   ],
+   "passives": [
+    "skill:osmanthus_p30",
+    "skill:osmanthus_p50"
+   ],
+   "petals": [
+    {
+     "n": 1,
+     "modifies": "skill:osmanthus_s1",
+     "text": "Moonsteel Petal ignores 30% of Defense instead of 15%"
+    },
+    {
+     "n": 2,
+     "modifies": "skill:osmanthus_s2",
+     "text": "Wu Gang's Endless Axe grows up to +80%"
+    },
+    {
+     "n": 3,
+     "modifies": "skill:osmanthus_s2",
+     "text": "Wu Gang's Endless Axe can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 4,
+     "modifies": "skill:osmanthus_p50",
+     "text": "Her casts still give Phase Qi, to the phase the chain needs next instead of the phase she feeds"
+    },
+    {
+     "n": 5,
+     "modifies": "skill:osmanthus_s3",
+     "text": "The Cold Palace Descends can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 6,
+     "modifies": "skill:osmanthus_s3",
+     "text": "The Cold Palace Descends falls again at the start of your next turn, hitting every enemy for 60% ATK"
+    }
+   ],
+   "unique": "unique:osmanthus",
+   "threads": [
+    "thread:gladiolus__osmanthus",
+    "thread:osmanthus__snow_lotus",
+    "thread:osmanthus__trumpet_creeper"
+   ],
+   "gifts": {
+    "likes": [
+     "item:gift_plum_wine",
+     "item:gift_guqin_strings"
+    ],
+    "dislikes": [
+     "item:gift_poetry_anthology"
+    ]
+   },
+   "bondRewards": [
+    {
+     "level": 6,
+     "outfit": "outfit:osmanthus_bond6"
+    },
+    {
+     "level": 10,
+     "outfit": "outfit:osmanthus_bond10"
+    }
+   ],
+   "profile": {
+    "motto": "The moon has company enough. It has me.",
+    "specialty": "Moonsteel arcana",
+    "hobby": "Drinking osmanthus wine alone; feeding her jade rabbit",
+    "likes": "Plum wine (osmanthus wine is better), guqin strings, empty cliffs at night",
+    "dislikes": "Poetry anthologies (every poet writes about the moon; none has visited), crowds, being asked to join in"
+   },
+   "quotes": {
+    "intro": "Gui Chanjuan. I live on the cliff nearest the moon. You climbed all this way? ...Fine. I'll come down. Once.",
+    "victory": "Quiet again.",
+    "ultimate": "The cold palace descends."
+   },
+   "art": {
+    "card": "card_osmanthus",
+    "cutin": "osmanthus_cutin",
+    "face": "osmanthus_face"
+   },
+   "recruit": "summon",
+   "draft": true
+  },
+  {
+   "id": "hero:apricot_blossom",
+   "name": "Wen Xingyu",
+   "cn": "温杏雨",
+   "title": "Spring Thunder of Apricot Village",
+   "rarity": 5,
+   "phase": "phase:wood",
+   "path": "path:arcane",
+   "flower": "Apricot blossom",
+   "faction": "faction:fox_clan",
+   "zodiac": "Tiger",
+   "birthday": "02-19",
+   "base": {
+    "hp": 2720,
+    "atk": 398,
+    "def": 130,
+    "crit": 0.2,
+    "critDmg": 1.6
+   },
+   "skills": [
+    "skill:apricot_blossom_s1",
+    "skill:apricot_blossom_s2",
+    "skill:apricot_blossom_s3"
+   ],
+   "passives": [
+    "skill:apricot_blossom_p30",
+    "skill:apricot_blossom_p50"
+   ],
+   "petals": [
+    {
+     "n": 1,
+     "modifies": "skill:apricot_blossom_s1",
+     "text": "Apricot Rain falls four times instead of three"
+    },
+    {
+     "n": 2,
+     "modifies": "skill:apricot_blossom_s2",
+     "text": "Thunder Wakes the Insects' chance to Entangle rises from 40% to 60%"
+    },
+    {
+     "n": 3,
+     "modifies": "skill:apricot_blossom_s2",
+     "text": "Thunder Wakes the Insects can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 4,
+     "modifies": "skill:apricot_blossom_p50",
+     "text": "Spring Thunder strikes for 50% ATK instead of 30%"
+    },
+    {
+     "n": 5,
+     "modifies": "skill:apricot_blossom_s3",
+     "text": "Apricot Blossom Village can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 6,
+     "modifies": "skill:apricot_blossom_s3",
+     "text": "Apricot Blossom Village leaves a spring rain for 2 turns: at the start of your turns every enemy takes three hits of 15% ATK"
+    }
+   ],
+   "unique": "unique:apricot_blossom",
+   "threads": [
+    "thread:apricot_blossom__azalea",
+    "thread:apricot_blossom__peach_blossom",
+    "thread:apricot_blossom__rose"
+   ],
+   "gifts": {
+    "likes": [
+     "item:gift_plum_wine",
+     "item:gift_silk_fan"
+    ],
+    "dislikes": [
+     "item:gift_sandalwood_incense"
+    ]
+   },
+   "bondRewards": [
+    {
+     "level": 6,
+     "outfit": "outfit:apricot_blossom_bond6"
+    },
+    {
+     "level": 10,
+     "outfit": "outfit:apricot_blossom_bond10"
+    }
+   ],
+   "profile": {
+    "motto": "Spring bustles on the branch. So should you.",
+    "specialty": "Spring storms; brewing apricot wine",
+    "hobby": "Keeping the tavern at Apricot Blossom Village, where travellers lose their way and their purses",
+    "likes": "Plum wine, silk fans, festivals that run all night",
+    "dislikes": "Sandalwood incense, early nights, exorcists"
+   },
+   "quotes": {
+    "intro": "Wen Xingyu, keeper of the Apricot Blossom Village tavern! The herd boy points the way, darling. First cup's free.",
+    "victory": "Rain's over. Drinks are on the Pavilion Master!",
+    "ultimate": "Spring thunder! Everyone up and dancing!"
+   },
+   "art": {
+    "card": "card_apricot_blossom",
+    "cutin": "apricot_blossom_cutin",
+    "face": "apricot_blossom_face"
+   },
+   "recruit": "summon",
+   "draft": true
+  },
+  {
+   "id": "hero:snow_lotus",
+   "name": "Xue Lianxin",
+   "cn": "雪莲心",
+   "title": "Snowline Frost Arcanist",
+   "rarity": 4,
+   "phase": "phase:water",
+   "path": "path:arcane",
+   "flower": "Snow lotus",
+   "faction": "faction:crane_clan",
+   "zodiac": "Goat",
+   "birthday": "07-30",
+   "base": {
+    "hp": 2500,
+    "atk": 358,
+    "def": 122,
+    "crit": 0.2,
+    "critDmg": 1.6
+   },
+   "skills": [
+    "skill:snow_lotus_s1",
+    "skill:snow_lotus_s2",
+    "skill:snow_lotus_s3"
+   ],
+   "passives": [
+    "skill:snow_lotus_p30",
+    "skill:snow_lotus_p50"
+   ],
+   "petals": [
+    {
+     "n": 1,
+     "modifies": "skill:snow_lotus_s1",
+     "text": "Snowline Petal's chance to Frost Seal rises from 25% to 40%"
+    },
+    {
+     "n": 2,
+     "modifies": "skill:snow_lotus_s2",
+     "text": "Tianshan Blizzard's chance to Frost Seal rises from 25% to 35%"
+    },
+    {
+     "n": 3,
+     "modifies": "skill:snow_lotus_s2",
+     "text": "Tianshan Blizzard can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 4,
+     "modifies": "skill:snow_lotus_p30",
+     "text": "Cold Purity also heals the most injured ally for 30% ATK"
+    },
+    {
+     "n": 5,
+     "modifies": "skill:snow_lotus_s3",
+     "text": "Thousand-Year Snow Lotus can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 6,
+     "modifies": "skill:snow_lotus_s3",
+     "text": "Thousand-Year Snow Lotus heals 80% ATK and removes one debuff from every ally"
+    }
+   ],
+   "unique": "unique:snow_lotus",
+   "threads": [
+    "thread:camellia__snow_lotus",
+    "thread:osmanthus__snow_lotus",
+    "thread:snow_lotus__su_lianhua",
+    "thread:snow_lotus__trumpet_creeper"
+   ],
+   "gifts": {
+    "likes": [
+     "item:gift_lotus_seed_cakes",
+     "item:gift_hawthorn_candy"
+    ],
+    "dislikes": [
+     "item:gift_silk_fan"
+    ]
+   },
+   "bondRewards": [
+    {
+     "level": 6,
+     "outfit": "outfit:snow_lotus_bond6"
+    },
+    {
+     "level": 10,
+     "outfit": "outfit:snow_lotus_bond10"
+    }
+   ],
+   "profile": {
+    "motto": "Cold keeps things pure. And fresh.",
+    "specialty": "Ice arcana; snow lotus medicine",
+    "hobby": "Tasting lowland food for the first time, all of it",
+    "likes": "Lotus seed cakes, candied hawthorns, anything hot",
+    "dislikes": "Silk fans (why be colder?), lowland summers, being called fragile"
+   },
+   "quotes": {
+    "intro": "Xue Lianxin, from above the snowline. Elder He Ling says I should see the world. Is the world always this warm?",
+    "victory": "Frozen. Preserved. Good.",
+    "ultimate": "A thousand years of snow, one bloom."
+   },
+   "art": {
+    "card": "card_snow_lotus",
+    "cutin": "snow_lotus_cutin",
+    "face": "snow_lotus_face"
+   },
+   "recruit": "summon",
+   "draft": true
+  },
+  {
+   "id": "hero:trumpet_creeper",
+   "name": "Qiao Lingxiao",
+   "cn": "乔凌霄",
+   "title": "Cloud-Climbing Fledgling",
+   "rarity": 3,
+   "phase": "phase:earth",
+   "path": "path:arcane",
+   "flower": "Trumpet creeper",
+   "faction": "faction:crane_clan",
+   "zodiac": "Monkey",
+   "birthday": "08-08",
+   "base": {
+    "hp": 2260,
+    "atk": 322,
+    "def": 112,
+    "crit": 0.18,
+    "critDmg": 1.6
+   },
+   "skills": [
+    "skill:trumpet_creeper_s1",
+    "skill:trumpet_creeper_s2",
+    "skill:trumpet_creeper_s3"
+   ],
+   "passives": [
+    "skill:trumpet_creeper_p30",
+    "skill:trumpet_creeper_p50"
+   ],
+   "petals": [
+    {
+     "n": 1,
+     "modifies": "skill:trumpet_creeper_s1",
+     "text": "Climbing Stone has a 25% chance of Body Shatter for 1 turn"
+    },
+    {
+     "n": 2,
+     "modifies": "skill:trumpet_creeper_s2",
+     "text": "Pillar to the Clouds' Iron Body lasts 2 turns"
+    },
+    {
+     "n": 3,
+     "modifies": "skill:trumpet_creeper_s2",
+     "text": "Pillar to the Clouds can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 4,
+     "modifies": "skill:trumpet_creeper_p30",
+     "text": "Borrowed Height gives +25% damage instead of 15%"
+    },
+    {
+     "n": 5,
+     "modifies": "skill:trumpet_creeper_s3",
+     "text": "Soaring Over the Empyrean can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 6,
+     "modifies": "skill:trumpet_creeper_s3",
+     "text": "Soaring Over the Empyrean always applies Body Shatter, and its cooldown drops to 4"
+    }
+   ],
+   "unique": "unique:trumpet_creeper",
+   "threads": [
+    "thread:osmanthus__trumpet_creeper",
+    "thread:snow_lotus__trumpet_creeper"
+   ],
+   "gifts": {
+    "likes": [
+     "item:gift_jade_hairpin",
+     "item:gift_silk_fan"
+    ],
+    "dislikes": [
+     "item:gift_embroidered_pouch"
+    ]
+   },
+   "bondRewards": [
+    {
+     "level": 6,
+     "outfit": "outfit:trumpet_creeper_bond6"
+    },
+    {
+     "level": 10,
+     "outfit": "outfit:trumpet_creeper_bond10"
+    }
+   ],
+   "profile": {
+    "motto": "Today a vine. Tomorrow, the clouds.",
+    "specialty": "Stone-pillar arcana; climbing",
+    "hobby": "Climbing anything taller than she is, then telling everyone",
+    "likes": "Jade hairpins, silk fans, the view from the top",
+    "dislikes": "Homemade gifts, being told to wait her turn, the word fledgling"
+   },
+   "quotes": {
+    "intro": "Qiao Lingxiao of the Crane Clan! I can't fly yet, so I climb. Someday I'll stand higher than all of them. Starting with you!",
+    "victory": "Did you see? From up here you all look tiny!",
+    "ultimate": "Soar past the clouds!"
+   },
+   "art": {
+    "card": "card_trumpet_creeper",
+    "cutin": "trumpet_creeper_cutin",
+    "face": "trumpet_creeper_face"
+   },
+   "recruit": "summon",
+   "draft": true
+  },
+  {
+   "id": "hero:chrysanthemum",
+   "name": "Ju Yannian",
+   "cn": "鞠延年",
+   "title": "Frost-Defying Herbalist",
+   "rarity": 3,
+   "phase": "phase:metal",
+   "path": "path:healer",
+   "flower": "Chrysanthemum",
+   "faction": "faction:frostpeak_sword_sect",
+   "zodiac": "Dog",
+   "birthday": "10-09",
+   "base": {
+    "hp": 2510,
+    "atk": 240,
+    "def": 148,
+    "crit": 0.14,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:chrysanthemum_s1",
+    "skill:chrysanthemum_s2",
+    "skill:chrysanthemum_s3"
+   ],
+   "passives": [
+    "skill:chrysanthemum_p30",
+    "skill:chrysanthemum_p50"
+   ],
+   "petals": [
+    {
+     "n": 1,
+     "modifies": "skill:chrysanthemum_s1",
+     "text": "Eastern Fence Needle heals the two most injured allies"
+    },
+    {
+     "n": 2,
+     "modifies": "skill:chrysanthemum_s2",
+     "text": "Chrysanthemum Tea removes two debuffs"
+    },
+    {
+     "n": 3,
+     "modifies": "skill:chrysanthemum_s2",
+     "text": "Chrysanthemum Tea can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 4,
+     "modifies": "skill:chrysanthemum_p30",
+     "text": "Defying Frost gives +20% critical chance instead of 10%"
+    },
+    {
+     "n": 5,
+     "modifies": "skill:chrysanthemum_s3",
+     "text": "Double Ninth Longevity can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 6,
+     "modifies": "skill:chrysanthemum_s3",
+     "text": "Double Ninth Longevity also gives Lotus Dew for 2 turns, and its cooldown drops to 4"
+    }
+   ],
+   "unique": "unique:chrysanthemum",
+   "threads": [
+    "thread:chrysanthemum__ling_shuang",
+    "thread:chrysanthemum__oleander",
+    "thread:chrysanthemum__orchid"
+   ],
+   "gifts": {
+    "likes": [
+     "item:gift_spirit_tea",
+     "item:gift_poetry_anthology"
+    ],
+    "dislikes": [
+     "item:gift_plum_wine"
+    ]
+   },
+   "bondRewards": [
+    {
+     "level": 6,
+     "outfit": "outfit:chrysanthemum_bond6"
+    },
+    {
+     "level": 10,
+     "outfit": "outfit:chrysanthemum_bond10"
+    }
+   ],
+   "profile": {
+    "motto": "Bed by the hour of the boar. No exceptions. Not even for heroes.",
+    "specialty": "Acupuncture; chrysanthemum medicine",
+    "hobby": "Picking chrysanthemums by the eastern fence; scolding",
+    "likes": "Spirit tea, Tao Yuanming's poems, an early night",
+    "dislikes": "Plum wine (think of your liver), late nights, She Qingzhu's tea"
+   },
+   "quotes": {
+    "intro": "Ju Yannian, Frostpeak's physician. Sit. Tongue out. When did you last sleep? Don't lie to me.",
+    "victory": "Everyone drink your tea. All of it.",
+    "ultimate": "Double Ninth! A long life to every one of you!"
+   },
+   "art": {
+    "card": "card_chrysanthemum",
+    "cutin": "chrysanthemum_cutin",
+    "face": "chrysanthemum_face"
+   },
+   "recruit": "summon",
+   "draft": true
+  },
+  {
+   "id": "hero:lily",
+   "name": "An Baihe",
+   "cn": "安百合",
+   "title": "Red-Thread Lily",
+   "rarity": 3,
+   "phase": "phase:wood",
+   "path": "path:healer",
+   "flower": "Lily",
+   "faction": "faction:myriad_treasures_guild",
+   "zodiac": "Horse",
+   "birthday": "06-28",
+   "base": {
+    "hp": 2550,
+    "atk": 236,
+    "def": 144,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:lily_s1",
+    "skill:lily_s2",
+    "skill:lily_s3"
+   ],
+   "passives": [
+    "skill:lily_p30",
+    "skill:lily_p50"
+   ],
+   "petals": [
+    {
+     "n": 1,
+     "modifies": "skill:lily_s1",
+     "text": "Lily Bulb Remedy heals the two most injured allies"
+    },
+    {
+     "n": 2,
+     "modifies": "skill:lily_s2",
+     "text": "Hundred Years in Harmony's Lotus Dew lasts 3 turns"
+    },
+    {
+     "n": 3,
+     "modifies": "skill:lily_s2",
+     "text": "Hundred Years in Harmony can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 4,
+     "modifies": "skill:lily_p30",
+     "text": "Matchmaker's Eye gives +35% healing instead of 20%"
+    },
+    {
+     "n": 5,
+     "modifies": "skill:lily_s3",
+     "text": "Red Thread Bloom can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 6,
+     "modifies": "skill:lily_s3",
+     "text": "Red Thread Bloom also readies the S1 of the most injured ally, and its cooldown drops to 4"
+    }
+   ],
+   "unique": "unique:lily",
+   "threads": [
+    "thread:camellia__lily",
+    "thread:lily__peony"
+   ],
+   "gifts": {
+    "likes": [
+     "item:gift_embroidered_pouch",
+     "item:gift_lotus_seed_cakes"
+    ],
+    "dislikes": [
+     "item:gift_guqin_strings"
+    ]
+   },
+   "bondRewards": [
+    {
+     "level": 6,
+     "outfit": "outfit:lily_bond6"
+    },
+    {
+     "level": 10,
+     "outfit": "outfit:lily_bond10"
+    }
+   ],
+   "profile": {
+    "motto": "Everyone belongs with someone. I just help them notice.",
+    "specialty": "Matchmaking; lily-bulb medicine",
+    "hobby": "Keeping a ledger of who likes whom (it is very long)",
+    "likes": "Embroidered pouches, lotus seed cakes, weddings",
+    "dislikes": "Sad songs, broken engagements, people who insist they like being alone"
+   },
+   "quotes": {
+    "intro": "An Baihe, the Guild's matchmaker! A hundred years of harmony, guaranteed. Now, Pavilion Master, about your future...",
+    "victory": "See? We work well together. I'm writing that down.",
+    "ultimate": "Tie the red thread! Nobody falls alone!"
+   },
+   "art": {
+    "card": "card_lily",
+    "cutin": "lily_cutin",
+    "face": "lily_face"
+   },
+   "recruit": "summon",
+   "draft": true
+  },
+  {
+   "id": "hero:hydrangea",
+   "name": "Ying Wucai",
+   "cn": "应五彩",
+   "title": "Five-Colour Hydrangea Saint",
+   "rarity": 5,
+   "phase": "phase:water",
+   "path": "path:healer",
+   "flower": "Hydrangea",
+   "faction": "faction:tianji_pavilion",
+   "zodiac": "Dragon",
+   "birthday": "05-03",
+   "base": {
+    "hp": 3100,
+    "atk": 292,
+    "def": 175,
+    "crit": 0.12,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:hydrangea_s1",
+    "skill:hydrangea_s2",
+    "skill:hydrangea_s3"
+   ],
+   "passives": [
+    "skill:hydrangea_p30",
+    "skill:hydrangea_p50"
+   ],
+   "petals": [
+    {
+     "n": 1,
+     "modifies": "skill:hydrangea_s1",
+     "text": "Five-Colour Petals heals the two most injured allies"
+    },
+    {
+     "n": 2,
+     "modifies": "skill:hydrangea_s2",
+     "text": "Changing Soil's phase buff lasts 2 turns"
+    },
+    {
+     "n": 3,
+     "modifies": "skill:hydrangea_s2",
+     "text": "Changing Soil can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 4,
+     "modifies": "skill:hydrangea_p30",
+     "text": "Rain-Season Bloom's Lotus Dew lasts 2 turns"
+    },
+    {
+     "n": 5,
+     "modifies": "skill:hydrangea_s3",
+     "text": "Embroidered Ball of Five Colours can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 6,
+     "modifies": "skill:hydrangea_s3",
+     "text": "Embroidered Ball of Five Colours gives Phoenix Rebirth to the two most injured allies, and its cooldown drops to 4"
+    }
+   ],
+   "unique": "unique:hydrangea",
+   "threads": [
+    "thread:hydrangea__jasmine",
+    "thread:hydrangea__narcissus"
+   ],
+   "gifts": {
+    "likes": [
+     "item:gift_embroidered_pouch",
+     "item:gift_poetry_anthology"
+    ],
+    "dislikes": [
+     "item:gift_sword_tassel"
+    ]
+   },
+   "bondRewards": [
+    {
+     "level": 6,
+     "outfit": "outfit:hydrangea_bond6"
+    },
+    {
+     "level": 10,
+     "outfit": "outfit:hydrangea_bond10"
+    }
+   ],
+   "profile": {
+    "motto": "Tell me where I'm planted, and I'll tell you what colour I am.",
+    "specialty": "Shifting healing arts; reading the soil of a fight",
+    "hobby": "Embroidery in every colour; trying to pick a favourite",
+    "likes": "Embroidered pouches, poetry anthologies, rainy-season gardens",
+    "dislikes": "Sword tassels, being asked her favourite colour, the embroidered-ball incident"
+   },
+   "quotes": {
+    "intro": "Ying Wucai of the Tianji Pavilion. Today I'm blue, I think. Ask me again after the battle.",
+    "victory": "Pink! I'm pink now. We won, so pink.",
+    "ultimate": "Five colours, one blossom! Catch!"
+   },
+   "art": {
+    "card": "card_hydrangea",
+    "cutin": "hydrangea_cutin",
+    "face": "hydrangea_face"
+   },
+   "recruit": "summon",
+   "draft": true
+  },
+  {
+   "id": "hero:safflower",
+   "name": "Fang Yanzhi",
+   "cn": "方胭脂",
+   "title": "Rouge-Red Field Medic",
+   "rarity": 3,
+   "phase": "phase:fire",
+   "path": "path:healer",
+   "flower": "Safflower",
+   "faction": "faction:vermilion_phoenix_palace",
+   "zodiac": "Tiger",
+   "birthday": "02-27",
+   "base": {
+    "hp": 2480,
+    "atk": 246,
+    "def": 140,
+    "crit": 0.13,
+    "critDmg": 1.5
+   },
+   "skills": [
+    "skill:safflower_s1",
+    "skill:safflower_s2",
+    "skill:safflower_s3"
+   ],
+   "passives": [
+    "skill:safflower_p30",
+    "skill:safflower_p50"
+   ],
+   "petals": [
+    {
+     "n": 1,
+     "modifies": "skill:safflower_s1",
+     "text": "Rouge Strike has a 30% chance of Fire Poison for 2 turns"
+    },
+    {
+     "n": 2,
+     "modifies": "skill:safflower_s2",
+     "text": "Quicken the Blood gives Surging Qi to the two allies with the highest Attack"
+    },
+    {
+     "n": 3,
+     "modifies": "skill:safflower_s2",
+     "text": "Quicken the Blood can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 4,
+     "modifies": "skill:safflower_p50",
+     "text": "A Little Rouge also gives every ally Wind Step for 1 turn"
+    },
+    {
+     "n": 5,
+     "modifies": "skill:safflower_s3",
+     "text": "Red Flower Cautery can reach mastery +6",
+     "mastery": 6
+    },
+    {
+     "n": 6,
+     "modifies": "skill:safflower_s3",
+     "text": "Red Flower Cautery no longer costs health, and it also gives Lotus Dew for 2 turns"
+    }
+   ],
+   "unique": "unique:safflower",
+   "threads": [
+    "thread:azalea__safflower",
+    "thread:safflower__yan_feihong"
+   ],
+   "gifts": {
+    "likes": [
+     "item:gift_silk_fan",
+     "item:gift_hawthorn_candy"
+    ],
+    "dislikes": [
+     "item:gift_guqin_strings"
+    ]
+   },
+   "bondRewards": [
+    {
+     "level": 6,
+     "outfit": "outfit:safflower_bond6"
+    },
+    {
+     "level": 10,
+     "outfit": "outfit:safflower_bond10"
+    }
+   ],
+   "profile": {
+    "motto": "A little rouge, a little fire, and you'll live.",
+    "specialty": "Blood-quickening medicine; cauterising",
+    "hobby": "Making rouge from safflowers; doing everyone's makeup before battle",
+    "likes": "Silk fans, candied hawthorns, a busy infirmary",
+    "dislikes": "Guqin laments, patients who won't sit still, pale faces"
+   },
+   "quotes": {
+    "intro": "Fang Yanzhi, Phoenix Palace field medic! Hold still. This will sting, and then you'll be fine. Also, a little rouge.",
+    "victory": "Everyone's cheeks are rosy again!",
+    "ultimate": "Red flower, burn the hurt away!"
+   },
+   "art": {
+    "card": "card_safflower",
+    "cutin": "safflower_cutin",
+    "face": "safflower_face"
+   },
+   "recruit": "summon",
+   "draft": true
+  }
+ ]
+}

@@ -1,0 +1,4000 @@
+{
+ "about": "Techniques and passives of the 26 summonable launch heroines: S1, S2, S3, and the level 30 and level 50 passives.",
+ "records": [
+  {
+   "id": "skill:gladiolus_s1",
+   "owner": "hero:gladiolus",
+   "slot": "s1",
+   "name": "Rising Floret Cut",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.5,
+     "hits": 2,
+     "pierce": 0.2
+    }
+   ],
+   "text": "Two rising cuts on one enemy for 50% ATK each, ignoring 20% of its Defense.",
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% effect chance",
+    "+10% damage"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:gladiolus_s2",
+   "owner": "hero:gladiolus",
+   "slot": "s2",
+   "name": "Sword Orchid Ladder",
+   "cooldown": 3,
+   "start": 2,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.4,
+     "pierce": 0.3
+    },
+    {
+     "do": "apply",
+     "status": "status:sword_intent",
+     "turns": 2,
+     "target": "self"
+    }
+   ],
+   "text": "A climbing thrust hits one enemy for 140% ATK, ignoring 30% of its Defense. She gains Sword Intent for 2 turns.",
+   "empower": {
+    "cost": 6,
+    "effects": [
+     {
+      "do": "refresh",
+      "skill": "s1",
+      "ready": true
+     }
+    ],
+    "text": "+35% damage and Rising Floret Cut is ready again."
+   },
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% damage",
+    "Cooldown -1",
+    "+15% damage (petal 3)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:gladiolus_s3",
+   "owner": "hero:gladiolus",
+   "slot": "s3",
+   "name": "Thousand Florets, One Edge",
+   "cooldown": 5,
+   "start": 4,
+   "target": "enemy",
+   "ultimate": true,
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.32,
+     "hits": 7,
+     "rampPerHit": 0.1
+    }
+   ],
+   "text": "Seven strikes climb the blade on one enemy for 32% ATK, each 10% stronger than the last (291% ATK in all).",
+   "empower": {
+    "cost": 10,
+    "effects": [
+     {
+      "do": "apply",
+      "status": "status:body_shatter",
+      "turns": 2,
+      "first": true
+     }
+    ],
+    "text": "+35% damage and Body Shatter for 2 turns before the first strike."
+   },
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% damage",
+    "Cooldown -1",
+    "+15% damage (petal 5)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:gladiolus_p30",
+   "owner": "hero:gladiolus",
+   "slot": "p30",
+   "name": "Climbing Blooms",
+   "trigger": "on_cast",
+   "effects": [
+    {
+     "do": "stat",
+     "damageBonus": 0.15,
+     "per": "earlier_cast_this_turn",
+     "max": 0.45
+    }
+   ],
+   "text": "Each technique she casts in a turn gives her later ones that turn +15% damage, up to +45%.",
+   "draft": true
+  },
+  {
+   "id": "skill:gladiolus_p50",
+   "owner": "hero:gladiolus",
+   "slot": "p50",
+   "name": "Metal Carries Water",
+   "trigger": "always",
+   "effects": [
+    {
+     "do": "stat",
+     "stat": "stat:crit",
+     "value": 0.25,
+     "when": "extends_harmony_chain"
+    }
+   ],
+   "text": "Her casts that extend a Harmony chain gain +25% critical chance.",
+   "draft": true
+  },
+  {
+   "id": "skill:orchid_s1",
+   "owner": "hero:orchid",
+   "slot": "s1",
+   "name": "Valley Wind Cut",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.0
+    },
+    {
+     "do": "dispel",
+     "count": 1,
+     "chance": 0.35
+    }
+   ],
+   "text": "A wind-edged cut hits one enemy for 100% ATK, with a 35% chance to remove one buff.",
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% effect chance",
+    "+10% damage"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:orchid_s2",
+   "owner": "hero:orchid",
+   "slot": "s2",
+   "name": "Empty Valley Orchid",
+   "cooldown": 3,
+   "start": 2,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.4,
+     "bonusVs": [
+      "no_buffs"
+     ],
+     "bonus": 0.3
+    },
+    {
+     "do": "apply",
+     "status": "status:wind_step",
+     "turns": 2,
+     "target": "self"
+    }
+   ],
+   "text": "One clean thrust for 140% ATK, +30% if the enemy has no buffs. She gains Wind Step for 2 turns.",
+   "empower": {
+    "cost": 6,
+    "effects": [
+     {
+      "do": "dispel",
+      "all": true,
+      "first": true
+     }
+    ],
+    "text": "+35% damage and every buff on the target is removed before the thrust."
+   },
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% damage",
+    "Cooldown -1",
+    "+15% damage (petal 3)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:orchid_s3",
+   "owner": "hero:orchid",
+   "slot": "s3",
+   "name": "Gentleman's Verdict",
+   "cooldown": 5,
+   "start": 4,
+   "target": "enemy",
+   "ultimate": true,
+   "effects": [
+    {
+     "do": "dispel",
+     "count": 2
+    },
+    {
+     "do": "damage",
+     "power": 0.95,
+     "hits": 3,
+     "bonusPerBuffRemoved": 0.15
+    }
+   ],
+   "text": "Removes two buffs from one enemy, then three verdict strikes for 95% ATK each, +15% for each buff removed.",
+   "empower": {
+    "cost": 10,
+    "effects": [
+     {
+      "do": "apply",
+      "status": "status:sealed_meridians",
+      "turns": 1
+     }
+    ],
+    "text": "+35% damage and Sealed Meridians for 1 turn."
+   },
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% damage",
+    "Cooldown -1",
+    "+15% damage (petal 5)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:orchid_p30",
+   "owner": "hero:orchid",
+   "slot": "p30",
+   "name": "Fragrance on the Wind",
+   "trigger": "always",
+   "effects": [
+    {
+     "do": "stat",
+     "stat": "stat:haste",
+     "value": 15
+    }
+   ],
+   "text": "+15 Haste.",
+   "draft": true
+  },
+  {
+   "id": "skill:orchid_p50",
+   "owner": "hero:orchid",
+   "slot": "p50",
+   "name": "Accompanying Wind",
+   "trigger": "always",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.6,
+     "when": "ally_single_target_hit",
+     "target": "that_enemy",
+     "once": "turn"
+    }
+   ],
+   "text": "Once per turn, when an ally's single-target technique hits an enemy, she follows up on it for 60% ATK.",
+   "draft": true
+  },
+  {
+   "id": "skill:pomegranate_s1",
+   "owner": "hero:pomegranate",
+   "slot": "s1",
+   "name": "Seed-Scatter Slash",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.0
+    },
+    {
+     "do": "apply",
+     "status": "status:sword_wound",
+     "turns": 2,
+     "chance": 0.5,
+     "stacks": 1
+    }
+   ],
+   "text": "Slash one enemy for 100% ATK. 50% chance of 1 Sword Wound stack for 2 turns.",
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% effect chance",
+    "+10% damage"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:pomegranate_s2",
+   "owner": "hero:pomegranate",
+   "slot": "s2",
+   "name": "Pomegranate Skirt Whirl",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.7
+    },
+    {
+     "do": "apply",
+     "status": "status:sword_wound",
+     "turns": 2,
+     "stacks": 1
+    }
+   ],
+   "text": "A whirling skirt of blades hits every enemy for 70% ATK and adds 1 Sword Wound stack for 2 turns.",
+   "empower": {
+    "cost": 6,
+    "effects": [
+     {
+      "do": "apply",
+      "status": "status:sword_wound",
+      "turns": 2,
+      "stacks": 1
+     }
+    ],
+    "text": "+35% damage and a second Sword Wound stack."
+   },
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% damage",
+    "Cooldown -1",
+    "+15% damage (petal 3)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:pomegranate_s3",
+   "owner": "hero:pomegranate",
+   "slot": "s3",
+   "name": "Thousand Seeds Burst",
+   "cooldown": 5,
+   "start": 4,
+   "target": "enemy",
+   "ultimate": true,
+   "effects": [
+    {
+     "do": "damage",
+     "power": 2.0
+    },
+    {
+     "do": "damage",
+     "detonate": "status:sword_wound",
+     "powerPerStack": 0.3
+    }
+   ],
+   "text": "Cleaves one enemy for 200% ATK, then every Sword Wound stack on it bursts for 30% ATK.",
+   "empower": {
+    "cost": 10,
+    "effects": [
+     {
+      "do": "damage",
+      "power": 0.5,
+      "target": "other_enemies"
+     },
+     {
+      "do": "apply",
+      "status": "status:sword_wound",
+      "turns": 2,
+      "stacks": 1,
+      "target": "other_enemies"
+     }
+    ],
+    "text": "+35% damage and the burst sprays every other enemy for 50% ATK and 1 Sword Wound stack."
+   },
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% damage",
+    "Cooldown -1",
+    "+15% damage (petal 5)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:pomegranate_p30",
+   "owner": "hero:pomegranate",
+   "slot": "p30",
+   "name": "Red as May Fire",
+   "trigger": "always",
+   "effects": [
+    {
+     "do": "transform",
+     "what": "status_counts_as",
+     "source": "status:sword_wound",
+     "into": "status:fire_poison"
+    }
+   ],
+   "text": "Enemies carrying Sword Wound count as burning for every ally's bonuses against Fire Poison.",
+   "draft": true
+  },
+  {
+   "id": "skill:pomegranate_p50",
+   "owner": "hero:pomegranate",
+   "slot": "p50",
+   "name": "Many Seeds",
+   "trigger": "on_kill",
+   "effects": [
+    {
+     "do": "apply",
+     "status": "status:sword_wound",
+     "turns": 2,
+     "stacks": "inherited",
+     "target": "healthiest_enemy",
+     "when": "target_had_sword_wound"
+    }
+   ],
+   "text": "When an enemy with Sword Wound falls, its stacks pass to the healthiest enemy.",
+   "draft": true
+  },
+  {
+   "id": "skill:crabapple_s1",
+   "owner": "hero:crabapple",
+   "slot": "s1",
+   "name": "Drowsy Cleave",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.05
+    }
+   ],
+   "text": "A slow, heavy swing hits one enemy for 105% ATK.",
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% effect chance",
+    "+10% damage"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:crabapple_s2",
+   "owner": "hero:crabapple",
+   "slot": "s2",
+   "name": "Stone Pillow Smash",
+   "cooldown": 3,
+   "start": 2,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.4
+    },
+    {
+     "do": "apply",
+     "status": "status:body_shatter",
+     "turns": 2
+    }
+   ],
+   "text": "Brings her stone greatsword down on one enemy for 140% ATK and Body Shatters it for 2 turns.",
+   "empower": {
+    "cost": 6,
+    "effects": [
+     {
+      "do": "apply",
+      "status": "status:soul_shock",
+      "turns": 1
+     }
+    ],
+    "text": "+35% damage and Soul Shock for 1 turn."
+   },
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% damage",
+    "Cooldown -1",
+    "+15% damage (petal 3)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:crabapple_s3",
+   "owner": "hero:crabapple",
+   "slot": "s3",
+   "name": "The Crabapple Wakes",
+   "cooldown": 5,
+   "start": 4,
+   "target": "enemy",
+   "ultimate": true,
+   "effects": [
+    {
+     "do": "damage",
+     "power": 2.6,
+     "bonusVs": [
+      "status:body_shatter"
+     ],
+     "bonus": 0.3
+    }
+   ],
+   "text": "One wide-awake swing for 260% ATK, +30% against Body Shattered enemies.",
+   "empower": {
+    "cost": 10,
+    "effects": [
+     {
+      "do": "apply",
+      "status": "status:lotus_dream",
+      "turns": 1,
+      "target": "healthiest_other_enemy"
+     }
+    ],
+    "text": "+35% damage and her yawn puts the healthiest other enemy into Lotus Dream for 1 turn."
+   },
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% damage",
+    "Cooldown -1",
+    "+15% damage (petal 5)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:crabapple_p30",
+   "owner": "hero:crabapple",
+   "slot": "p30",
+   "name": "Rude Awakening",
+   "trigger": "on_hit_taken",
+   "effects": [
+    {
+     "do": "stat",
+     "damageBonus": 0.2,
+     "duration": "next_technique",
+     "once": "turn"
+    }
+   ],
+   "text": "When she is hit, her next technique deals 20% more damage.",
+   "draft": true
+  },
+  {
+   "id": "skill:crabapple_p50",
+   "owner": "hero:crabapple",
+   "slot": "p50",
+   "name": "Candles for the Sleeping Flower",
+   "trigger": "always",
+   "effects": [
+    {
+     "do": "stat",
+     "damageBonus": 0.2,
+     "when": "target_skips_turn"
+    }
+   ],
+   "text": "Her techniques deal 20% more damage to enemies under Lotus Dream, Soul Shock or Frost Seal.",
+   "draft": true
+  },
+  {
+   "id": "skill:magnolia_s1",
+   "owner": "hero:magnolia",
+   "slot": "s1",
+   "name": "Magnolia Palm",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.0
+    },
+    {
+     "do": "apply",
+     "status": "status:provoke",
+     "turns": 1,
+     "chance": 0.4
+    }
+   ],
+   "text": "A palm strike hits one enemy for 100% ATK. 40% chance to Provoke it for 1 turn.",
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% effect chance",
+    "+10% damage"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:magnolia_s2",
+   "owner": "hero:magnolia",
+   "slot": "s2",
+   "name": "Golden Bell Shield",
+   "cooldown": 4,
+   "start": 2,
+   "target": "self",
+   "effects": [
+    {
+     "do": "apply",
+     "status": "status:golden_bell",
+     "turns": 1,
+     "target": "self"
+    },
+    {
+     "do": "apply",
+     "status": "status:provoke",
+     "turns": 1,
+     "target": "all_enemies"
+    }
+   ],
+   "text": "She takes no damage for 1 turn (Golden Bell) and Provokes every enemy for 1 turn.",
+   "empower": {
+    "cost": 6,
+    "effects": [
+     {
+      "do": "apply",
+      "status": "status:iron_body",
+      "turns": 1,
+      "target": "all_allies"
+     }
+    ],
+    "text": "Every ally also gains Iron Body for 1 turn."
+   },
+   "mastery": [
+    "Cooldown -1",
+    "+10% effect chance",
+    "+10% effect chance",
+    "+10% effect chance",
+    "+10% effect chance",
+    "Provoke lasts 2 turns (petal 3)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:magnolia_s3",
+   "owner": "hero:magnolia",
+   "slot": "s3",
+   "name": "Bodhi Wall of Jade Magnolia",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_allies",
+   "ultimate": true,
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.8,
+     "target": "all_enemies"
+    },
+    {
+     "do": "shield",
+     "status": "status:spirit_shield",
+     "pctOfMaxHp": 0.12,
+     "turns": 2
+    }
+   ],
+   "text": "Magnolia petals strike every enemy for 80% ATK; every ally gains a Spirit Shield worth 12% of her max Health for 2 turns.",
+   "empower": {
+    "cost": 10,
+    "effects": [
+     {
+      "do": "apply",
+      "status": "status:clear_heart",
+      "turns": 1,
+      "target": "all_allies"
+     }
+    ],
+    "text": "+35% damage and shield, and Clear Heart for every ally for 1 turn."
+   },
+   "mastery": [
+    "+5% shield",
+    "+5% shield",
+    "+10% shield",
+    "+10% shield",
+    "Cooldown -1",
+    "+15% shield (petal 5)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:magnolia_p30",
+   "owner": "hero:magnolia",
+   "slot": "p30",
+   "name": "Iron Root",
+   "trigger": "always",
+   "effects": [
+    {
+     "do": "stat",
+     "stat": "stat:def",
+     "value": 0.2
+    }
+   ],
+   "text": "+20% Defense.",
+   "draft": true
+  },
+  {
+   "id": "skill:magnolia_p50",
+   "owner": "hero:magnolia",
+   "slot": "p50",
+   "name": "Bodhi Bell",
+   "trigger": "on_hit_taken",
+   "effects": [
+    {
+     "do": "counter",
+     "power": 0.6,
+     "once": "turn"
+    }
+   ],
+   "text": "Once per turn, when she is hit, she counterattacks for 60% ATK.",
+   "draft": true
+  },
+  {
+   "id": "skill:wisteria_s1",
+   "owner": "hero:wisteria",
+   "slot": "s1",
+   "name": "Coiling Vine",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.9
+    },
+    {
+     "do": "apply",
+     "status": "status:entangle",
+     "turns": 1,
+     "chance": 0.35
+    }
+   ],
+   "text": "A whipping vine hits one enemy for 90% ATK. 35% chance to Entangle it for 1 turn.",
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% effect chance",
+    "+10% damage"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:wisteria_s2",
+   "owner": "hero:wisteria",
+   "slot": "s2",
+   "name": "Violet Canopy",
+   "cooldown": 3,
+   "start": 0,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.5
+    },
+    {
+     "do": "apply",
+     "status": "status:entangle",
+     "turns": 1,
+     "chance": 0.5
+    },
+    {
+     "do": "apply",
+     "status": "status:thorn_lotus",
+     "turns": 2,
+     "target": "self"
+    }
+   ],
+   "text": "Vines lash every enemy for 50% ATK with a 50% chance to Entangle for 1 turn. She gains Thorn Lotus for 2 turns.",
+   "empower": {
+    "cost": 6,
+    "effects": [
+     {
+      "do": "apply",
+      "status": "status:provoke",
+      "turns": 1
+     }
+    ],
+    "text": "+35% damage and every enemy is Provoked for 1 turn."
+   },
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% effect chance",
+    "Cooldown -1",
+    "+15% damage (petal 3)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:wisteria_s3",
+   "owner": "hero:wisteria",
+   "slot": "s3",
+   "name": "Thousand-Year Embrace",
+   "cooldown": 5,
+   "start": 4,
+   "target": "self",
+   "ultimate": true,
+   "effects": [
+    {
+     "do": "apply",
+     "status": "status:provoke",
+     "turns": 1,
+     "target": "all_enemies"
+    },
+    {
+     "do": "apply",
+     "status": "status:iron_body",
+     "turns": 2,
+     "target": "self"
+    },
+    {
+     "do": "apply",
+     "status": "status:thorn_lotus",
+     "turns": 2,
+     "target": "self"
+    },
+    {
+     "do": "apply",
+     "status": "status:lotus_dew",
+     "turns": 2,
+     "target": "all_allies"
+    }
+   ],
+   "text": "She Provokes every enemy for 1 turn and gains Iron Body and Thorn Lotus for 2 turns; every ally gains Lotus Dew for 2 turns.",
+   "empower": {
+    "cost": 10,
+    "effects": [
+     {
+      "do": "apply",
+      "status": "status:entangle",
+      "turns": 1,
+      "target": "all_enemies"
+     }
+    ],
+    "text": "Every enemy is also Entangled for 1 turn."
+   },
+   "mastery": [
+    "Cooldown -1",
+    "+10% effect chance",
+    "+10% effect chance",
+    "+10% effect chance",
+    "Lotus Dew lasts 3 turns",
+    "Provoke lasts 2 turns (petal 5)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:wisteria_p30",
+   "owner": "hero:wisteria",
+   "slot": "p30",
+   "name": "Clinging Vine",
+   "trigger": "always",
+   "effects": [
+    {
+     "do": "stat",
+     "damageTaken": -0.1,
+     "target": "adjacent_allies"
+    }
+   ],
+   "text": "The allies beside her take 10% less damage.",
+   "draft": true
+  },
+  {
+   "id": "skill:wisteria_p50",
+   "owner": "hero:wisteria",
+   "slot": "p50",
+   "name": "Serpent Coil",
+   "trigger": "on_hit_taken",
+   "effects": [
+    {
+     "do": "apply",
+     "status": "status:entangle",
+     "turns": 1,
+     "chance": 0.3,
+     "target": "attacker"
+    }
+   ],
+   "text": "An enemy that hits her has a 30% chance to be Entangled for 1 turn.",
+   "draft": true
+  },
+  {
+   "id": "skill:camellia_s1",
+   "owner": "hero:camellia",
+   "slot": "s1",
+   "name": "Tea-Mist Palm",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.0
+    },
+    {
+     "do": "apply",
+     "status": "status:mist_veil",
+     "turns": 1,
+     "chance": 0.3
+    }
+   ],
+   "text": "A steaming palm hits one enemy for 100% ATK. 30% chance of Mist Veil for 1 turn.",
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% effect chance",
+    "+10% damage"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:camellia_s2",
+   "owner": "hero:camellia",
+   "slot": "s2",
+   "name": "Winter Camellia Guard",
+   "cooldown": 3,
+   "start": 2,
+   "target": "self",
+   "effects": [
+    {
+     "do": "apply",
+     "status": "status:provoke",
+     "turns": 1,
+     "target": "all_enemies"
+    },
+    {
+     "do": "apply",
+     "status": "status:iron_body",
+     "turns": 2,
+     "target": "self"
+    }
+   ],
+   "text": "She Provokes every enemy for 1 turn and gains Iron Body for 2 turns.",
+   "empower": {
+    "cost": 6,
+    "effects": [
+     {
+      "do": "shield",
+      "status": "status:spirit_shield",
+      "pctOfMaxHp": 0.12,
+      "target": "self",
+      "turns": 2
+     }
+    ],
+    "text": "She also gains a Spirit Shield worth 12% of her max Health for 2 turns."
+   },
+   "mastery": [
+    "Cooldown -1",
+    "+10% effect chance",
+    "+10% effect chance",
+    "+10% effect chance",
+    "Iron Body lasts 3 turns",
+    "Provoke lasts 2 turns (petal 3)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:camellia_s3",
+   "owner": "hero:camellia",
+   "slot": "s3",
+   "name": "Whole-Bloom Fall",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_allies",
+   "ultimate": true,
+   "effects": [
+    {
+     "do": "shield",
+     "status": "status:spirit_shield",
+     "pctOfMaxHp": 0.12,
+     "turns": 2
+    },
+    {
+     "do": "apply",
+     "status": "status:mist_veil",
+     "turns": 1,
+     "target": "all_enemies"
+    }
+   ],
+   "text": "Every ally gains a Spirit Shield worth 12% of her max Health for 2 turns, and tea mist gives every enemy Mist Veil for 1 turn.",
+   "empower": {
+    "cost": 10,
+    "effects": [
+     {
+      "do": "apply",
+      "status": "status:lotus_dew",
+      "turns": 2,
+      "target": "all_allies"
+     }
+    ],
+    "text": "+35% shield and Lotus Dew for every ally for 2 turns."
+   },
+   "mastery": [
+    "+5% shield",
+    "+5% shield",
+    "+10% shield",
+    "+10% shield",
+    "Cooldown -1",
+    "+15% shield (petal 5)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:camellia_p30",
+   "owner": "hero:camellia",
+   "slot": "p30",
+   "name": "Snowbound Blossom",
+   "trigger": "always",
+   "effects": [
+    {
+     "do": "stat",
+     "stat": "stat:def",
+     "value": 0.3,
+     "when": "below_half_health"
+    }
+   ],
+   "text": "+30% Defense while she is below half health.",
+   "draft": true
+  },
+  {
+   "id": "skill:camellia_p50",
+   "owner": "hero:camellia",
+   "slot": "p50",
+   "name": "Falls Whole",
+   "trigger": "on_fall",
+   "effects": [
+    {
+     "do": "shield",
+     "status": "status:spirit_shield",
+     "pctOfMaxHp": 0.15,
+     "target": "all_allies",
+     "turns": 2,
+     "once": "battle"
+    }
+   ],
+   "text": "When she falls, every ally gains a Spirit Shield worth 15% of her max Health for 2 turns.",
+   "draft": true
+  },
+  {
+   "id": "skill:azalea_s1",
+   "owner": "hero:azalea",
+   "slot": "s1",
+   "name": "Cuckoo's Cry",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.0
+    },
+    {
+     "do": "apply",
+     "status": "status:provoke",
+     "turns": 1,
+     "chance": 0.4
+    }
+   ],
+   "text": "A ringing strike hits one enemy for 100% ATK. 40% chance to Provoke it for 1 turn.",
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% effect chance",
+    "+10% damage"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:azalea_s2",
+   "owner": "hero:azalea",
+   "slot": "s2",
+   "name": "Weeping Blood Bloom",
+   "cooldown": 3,
+   "start": 2,
+   "target": "self",
+   "effects": [
+    {
+     "do": "apply",
+     "status": "status:provoke",
+     "turns": 1,
+     "target": "all_enemies"
+    },
+    {
+     "do": "apply",
+     "status": "status:thorn_lotus",
+     "turns": 2,
+     "target": "self"
+    }
+   ],
+   "text": "She cries out, Provoking every enemy for 1 turn, and gains Thorn Lotus for 2 turns.",
+   "empower": {
+    "cost": 6,
+    "effects": [
+     {
+      "do": "apply",
+      "status": "status:iron_body",
+      "turns": 2,
+      "target": "self"
+     }
+    ],
+    "text": "She also gains Iron Body for 2 turns."
+   },
+   "mastery": [
+    "Cooldown -1",
+    "+10% effect chance",
+    "+10% counterattack damage",
+    "+10% effect chance",
+    "+10% counterattack damage",
+    "Thorn Lotus lasts 3 turns (petal 3)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:azalea_s3",
+   "owner": "hero:azalea",
+   "slot": "s3",
+   "name": "Mountains Ablaze in Red",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_enemies",
+   "ultimate": true,
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.9
+    },
+    {
+     "do": "apply",
+     "status": "status:fire_poison",
+     "turns": 2
+    },
+    {
+     "do": "apply",
+     "status": "status:iron_body",
+     "turns": 2,
+     "target": "self"
+    }
+   ],
+   "text": "Azalea fire sweeps every enemy for 90% ATK and applies Fire Poison for 2 turns. She gains Iron Body for 2 turns.",
+   "empower": {
+    "cost": 10,
+    "effects": [
+     {
+      "do": "shield",
+      "status": "status:spirit_shield",
+      "pctOfMaxHp": 0.15,
+      "target": "all_allies",
+      "turns": 2
+     }
+    ],
+    "text": "+35% damage and every ally gains a Spirit Shield worth 15% of her max Health for 2 turns."
+   },
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% damage",
+    "Cooldown -1",
+    "+15% damage (petal 5)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:azalea_p30",
+   "owner": "hero:azalea",
+   "slot": "p30",
+   "name": "Tears Like Fire",
+   "trigger": "on_hit_taken",
+   "effects": [
+    {
+     "do": "apply",
+     "status": "status:fire_poison",
+     "turns": 1,
+     "chance": 0.25,
+     "target": "attacker"
+    }
+   ],
+   "text": "An enemy that hits her has a 25% chance to catch Fire Poison for 1 turn.",
+   "draft": true
+  },
+  {
+   "id": "skill:azalea_p50",
+   "owner": "hero:azalea",
+   "slot": "p50",
+   "name": "Cry Until It Bleeds",
+   "trigger": "always",
+   "effects": [
+    {
+     "do": "stat",
+     "damageBonus": 0.01,
+     "perMissingHealth": 0.02
+    }
+   ],
+   "text": "Her damage rises by 1% for every 2% of health she is missing.",
+   "draft": true
+  },
+  {
+   "id": "skill:peony_s1",
+   "owner": "hero:peony",
+   "slot": "s1",
+   "name": "Imperial Fan Strike",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.9
+    },
+    {
+     "do": "shield",
+     "status": "status:spirit_shield",
+     "pctOfMaxHp": 0.06,
+     "target": "lowest_ally",
+     "turns": 1
+    }
+   ],
+   "text": "A sweep of her jade fan hits one enemy for 90% ATK; the most injured ally gains a Spirit Shield worth 6% of her max Health for 1 turn.",
+   "mastery": [
+    "+5% damage and shield",
+    "+5% damage and shield",
+    "+10% damage and shield",
+    "+10% shield",
+    "+10% damage and shield"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:peony_s2",
+   "owner": "hero:peony",
+   "slot": "s2",
+   "name": "Unbowed Before the Empress",
+   "cooldown": 4,
+   "start": 0,
+   "target": "all_allies",
+   "effects": [
+    {
+     "do": "apply",
+     "status": "status:provoke",
+     "turns": 1,
+     "target": "all_enemies"
+    },
+    {
+     "do": "apply",
+     "status": "status:clear_heart",
+     "turns": 1,
+     "target": "all_allies"
+    },
+    {
+     "do": "apply",
+     "status": "status:iron_body",
+     "turns": 2,
+     "target": "self"
+    }
+   ],
+   "text": "She Provokes every enemy for 1 turn, every ally gains Clear Heart for 1 turn, and she gains Iron Body for 2 turns.",
+   "empower": {
+    "cost": 6,
+    "effects": [
+     {
+      "do": "cleanse",
+      "all": true,
+      "target": "all_allies",
+      "first": true
+     }
+    ],
+    "text": "Every debuff on every ally is removed first."
+   },
+   "mastery": [
+    "Cooldown -1",
+    "+10% effect chance",
+    "+10% effect chance",
+    "+10% effect chance",
+    "Iron Body lasts 3 turns",
+    "Provoke lasts 2 turns (petal 3)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:peony_s3",
+   "owner": "hero:peony",
+   "slot": "s3",
+   "name": "Queen of a Hundred Flowers",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_allies",
+   "ultimate": true,
+   "effects": [
+    {
+     "do": "shield",
+     "status": "status:spirit_shield",
+     "pctOfMaxHp": 0.15,
+     "turns": 2
+    },
+    {
+     "do": "qi",
+     "amount": 3
+    }
+   ],
+   "text": "Every ally gains a Spirit Shield worth 15% of her max Health for 2 turns, and the team gains 3 Spirit Qi.",
+   "empower": {
+    "cost": 10,
+    "effects": [
+     {
+      "do": "apply",
+      "status": "status:golden_bell",
+      "turns": 1,
+      "target": "lowest_ally"
+     }
+    ],
+    "text": "+35% shield and the most injured ally gains Golden Bell for 1 turn."
+   },
+   "mastery": [
+    "+5% shield",
+    "+5% shield",
+    "+10% shield",
+    "+10% shield",
+    "Cooldown -1",
+    "+15% shield (petal 5)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:peony_p30",
+   "owner": "hero:peony",
+   "slot": "p30",
+   "name": "National Beauty, Heavenly Fragrance",
+   "trigger": "always",
+   "effects": [
+    {
+     "do": "stat",
+     "damageTaken": -0.1,
+     "target": "all_allies",
+     "when": "while_she_stands"
+    }
+   ],
+   "text": "While she stands, every ally takes 10% less damage.",
+   "draft": true
+  },
+  {
+   "id": "skill:peony_p50",
+   "owner": "hero:peony",
+   "slot": "p50",
+   "name": "Wealth and Rank",
+   "trigger": "on_hit_taken",
+   "effects": [
+    {
+     "do": "qi",
+     "amount": 1,
+     "once": "turn"
+    }
+   ],
+   "text": "Once per turn, when she is hit, the team gains 1 Spirit Qi.",
+   "draft": true
+  },
+  {
+   "id": "skill:pear_blossom_s1",
+   "owner": "hero:pear_blossom",
+   "slot": "s1",
+   "name": "Pear Petal Needles",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.25,
+     "hits": 4
+    }
+   ],
+   "text": "Four needles hit one enemy for 25% ATK each.",
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% effect chance",
+    "+10% damage"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:pear_blossom_s2",
+   "owner": "hero:pear_blossom",
+   "slot": "s2",
+   "name": "Rainstorm Pear Blossom Needles",
+   "cooldown": 3,
+   "start": 0,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.24,
+     "hits": 3
+    }
+   ],
+   "text": "A storm of needles hits every enemy three times for 24% ATK each.",
+   "empower": {
+    "cost": 6,
+    "effects": [
+     {
+      "do": "apply",
+      "status": "status:sword_wound",
+      "turns": 2,
+      "stacks": 1,
+      "perHit": true
+     }
+    ],
+    "text": "+35% damage and each hit adds a Sword Wound stack for 2 turns."
+   },
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% damage",
+    "Cooldown -1",
+    "+15% damage (petal 3)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:pear_blossom_s3",
+   "owner": "hero:pear_blossom",
+   "slot": "s3",
+   "name": "A Thousand Trees in One Night",
+   "cooldown": 5,
+   "start": 4,
+   "target": "enemy",
+   "ultimate": true,
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.23,
+     "hits": 12,
+     "bonusVs": [
+      "status:shattered"
+     ],
+     "bonus": 0.4
+    }
+   ],
+   "text": "Twelve needles hit one enemy for 23% ATK each, +40% against Shattered enemies: enough hits to break a whole Qi shield.",
+   "empower": {
+    "cost": 10,
+    "effects": [
+     {
+      "do": "apply",
+      "status": "status:shadow_veil",
+      "turns": 1,
+      "target": "self"
+     },
+     {
+      "do": "apply",
+      "status": "status:wind_step",
+      "turns": 2,
+      "target": "self"
+     }
+    ],
+    "text": "+35% damage, then she gains Shadow Veil for 1 turn and Wind Step for 2 turns."
+   },
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% damage",
+    "Cooldown -1",
+    "+15% damage (petal 5)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:pear_blossom_p30",
+   "owner": "hero:pear_blossom",
+   "slot": "p30",
+   "name": "Hidden Weapon Case",
+   "trigger": "always",
+   "effects": [
+    {
+     "do": "break",
+     "segments": 1,
+     "when": "multi_hit_cast"
+    }
+   ],
+   "text": "Each of her multi-hit techniques breaks 1 extra Qi shield segment.",
+   "draft": true
+  },
+  {
+   "id": "skill:pear_blossom_p50",
+   "owner": "hero:pear_blossom",
+   "slot": "p50",
+   "name": "Snow on Ten Thousand Branches",
+   "trigger": "on_break",
+   "effects": [
+    {
+     "do": "refresh",
+     "slot": "all",
+     "turns": 1
+    }
+   ],
+   "text": "When she Shatters a boss's Qi shield, all her techniques come 1 turn closer.",
+   "draft": true
+  },
+  {
+   "id": "skill:iris_s1",
+   "owner": "hero:iris",
+   "slot": "s1",
+   "name": "Kite-Tail Darts",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.5,
+     "hits": 2
+    },
+    {
+     "do": "apply",
+     "status": "status:mist_veil",
+     "turns": 1,
+     "chance": 0.25
+    }
+   ],
+   "text": "Two darts hit one enemy for 50% ATK each. 25% chance of Mist Veil for 1 turn.",
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% effect chance",
+    "+10% damage"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:iris_s2",
+   "owner": "hero:iris",
+   "slot": "s2",
+   "name": "Blue Kite Vanishing",
+   "cooldown": 3,
+   "start": 2,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.3
+    },
+    {
+     "do": "apply",
+     "status": "status:shadow_veil",
+     "turns": 2,
+     "target": "self"
+    }
+   ],
+   "text": "She strikes one enemy for 130% ATK and vanishes into the mist: Shadow Veil for 2 turns.",
+   "empower": {
+    "cost": 6,
+    "effects": [
+     {
+      "do": "refresh",
+      "skill": "s1",
+      "ready": true
+     }
+    ],
+    "text": "+35% damage and Kite-Tail Darts is ready again."
+   },
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% damage",
+    "Cooldown -1",
+    "+15% damage (petal 3)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:iris_s3",
+   "owner": "hero:iris",
+   "slot": "s3",
+   "name": "Rainbow Messenger",
+   "cooldown": 5,
+   "start": 4,
+   "target": "enemy",
+   "ultimate": true,
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.9,
+     "hits": 3
+    },
+    {
+     "do": "apply",
+     "status": "status:mist_veil",
+     "turns": 2
+    }
+   ],
+   "text": "Three rainbow strikes hit one enemy for 90% ATK each and apply Mist Veil for 2 turns.",
+   "empower": {
+    "cost": 10,
+    "effects": [
+     {
+      "do": "refresh",
+      "target": "allies",
+      "slot": "s2",
+      "turns": 1
+     }
+    ],
+    "text": "+35% damage and every ally's charging S2 comes 1 turn closer."
+   },
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% damage",
+    "Cooldown -1",
+    "+15% damage (petal 5)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:iris_p30",
+   "owner": "hero:iris",
+   "slot": "p30",
+   "name": "Unseen Courier",
+   "trigger": "battle_start",
+   "effects": [
+    {
+     "do": "apply",
+     "status": "status:shadow_veil",
+     "turns": 1,
+     "target": "self"
+    }
+   ],
+   "text": "She starts each battle with Shadow Veil for 1 turn.",
+   "draft": true
+  },
+  {
+   "id": "skill:iris_p50",
+   "owner": "hero:iris",
+   "slot": "p50",
+   "name": "Letters on the Wind",
+   "trigger": "always",
+   "effects": [
+    {
+     "do": "stat",
+     "damageBonus": 0.25,
+     "when": "has_shadow_veil"
+    }
+   ],
+   "text": "+25% damage while she has Shadow Veil.",
+   "draft": true
+  },
+  {
+   "id": "skill:rose_s1",
+   "owner": "hero:rose",
+   "slot": "s1",
+   "name": "Thorned Kiss",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.5,
+     "hits": 2
+    },
+    {
+     "do": "apply",
+     "status": "status:heart_demon",
+     "turns": 3,
+     "chance": 0.25,
+     "stacks": 1,
+     "perHit": true
+    }
+   ],
+   "text": "Two thorned strikes on one enemy for 50% ATK each; each has a 25% chance to add a Heart Demon stack.",
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% effect chance",
+    "+10% damage"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:rose_s2",
+   "owner": "hero:rose",
+   "slot": "s2",
+   "name": "Fox-Fire Rose",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.7
+    },
+    {
+     "do": "apply",
+     "status": "status:heart_demon",
+     "turns": 3,
+     "chance": 0.6,
+     "stacks": 1
+    },
+    {
+     "do": "apply",
+     "status": "status:thorn_lotus",
+     "turns": 2,
+     "target": "self"
+    }
+   ],
+   "text": "Fox-fire petals hit every enemy for 70% ATK with a 60% chance to add a Heart Demon stack. She gains Thorn Lotus for 2 turns.",
+   "empower": {
+    "cost": 6,
+    "effects": [
+     {
+      "do": "apply",
+      "status": "status:heart_demon",
+      "turns": 3,
+      "stacks": 1
+     }
+    ],
+    "text": "+35% damage and every enemy surely gains a Heart Demon stack."
+   },
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% damage",
+    "Cooldown -1",
+    "+15% damage (petal 3)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:rose_s3",
+   "owner": "hero:rose",
+   "slot": "s3",
+   "name": "Rose of the Crimson Moon",
+   "cooldown": 5,
+   "start": 4,
+   "target": "enemy",
+   "ultimate": true,
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.95,
+     "hits": 3,
+     "bonusVs": [
+      "status:heart_demon"
+     ],
+     "bonus": 0.3
+    },
+    {
+     "do": "apply",
+     "status": "status:heart_demon",
+     "turns": 3,
+     "stacks": 2
+    }
+   ],
+   "text": "Three strikes on one enemy for 95% ATK each, +30% against Heart Demon, then 2 Heart Demon stacks. At 3 stacks a charmed enemy attacks its own ally.",
+   "empower": {
+    "cost": 10,
+    "effects": [
+     {
+      "do": "apply",
+      "status": "status:fire_poison",
+      "turns": 2,
+      "target": "enemies_with_heart_demon"
+     }
+    ],
+    "text": "+35% damage and every enemy with Heart Demon catches Fire Poison for 2 turns."
+   },
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% damage",
+    "Cooldown -1",
+    "+15% damage (petal 5)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:rose_p30",
+   "owner": "hero:rose",
+   "slot": "p30",
+   "name": "Every Rose Has Thorns",
+   "trigger": "on_hit_taken",
+   "effects": [
+    {
+     "do": "apply",
+     "status": "status:heart_demon",
+     "turns": 3,
+     "stacks": 1,
+     "target": "attacker"
+    }
+   ],
+   "text": "An enemy that hits her gains a Heart Demon stack.",
+   "draft": true
+  },
+  {
+   "id": "skill:rose_p50",
+   "owner": "hero:rose",
+   "slot": "p50",
+   "name": "Nine-Tailed Allure",
+   "trigger": "always",
+   "effects": [
+    {
+     "do": "refresh",
+     "slot": "all",
+     "turns": 1,
+     "when": "enemy_turned_by_heart_demon",
+     "once": "turn"
+    }
+   ],
+   "text": "Once per turn, when Heart Demon turns an enemy against its ally, all her techniques come 1 turn closer.",
+   "draft": true
+  },
+  {
+   "id": "skill:oleander_s1",
+   "owner": "hero:oleander",
+   "slot": "s1",
+   "name": "Bamboo-Leaf Fang",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.5,
+     "hits": 2
+    },
+    {
+     "do": "apply",
+     "status": "status:gu_venom",
+     "turns": 2,
+     "chance": 0.4
+    }
+   ],
+   "text": "Two fang strikes on one enemy for 50% ATK each. 40% chance of Gu Venom for 2 turns.",
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% effect chance",
+    "+10% damage"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:oleander_s2",
+   "owner": "hero:oleander",
+   "slot": "s2",
+   "name": "Sweet Oleander Mist",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.65
+    },
+    {
+     "do": "apply",
+     "status": "status:gu_venom",
+     "turns": 2
+    },
+    {
+     "do": "apply",
+     "status": "status:withering",
+     "turns": 1,
+     "chance": 0.5
+    }
+   ],
+   "text": "Sweet poison mist hits every enemy for 65% ATK and applies Gu Venom for 2 turns, with a 50% chance of Withering for 1 turn.",
+   "empower": {
+    "cost": 6,
+    "effects": [
+     {
+      "do": "extend",
+      "status": "status:gu_venom",
+      "turns": 1
+     }
+    ],
+    "text": "+35% damage and Gu Venom lasts 3 turns."
+   },
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% damage",
+    "Cooldown -1",
+    "+15% damage (petal 3)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:oleander_s3",
+   "owner": "hero:oleander",
+   "slot": "s3",
+   "name": "Every Petal a Poison",
+   "cooldown": 5,
+   "start": 4,
+   "target": "enemy",
+   "ultimate": true,
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.3,
+     "hits": 2,
+     "bonusPerDebuff": 0.1
+    },
+    {
+     "do": "damage",
+     "detonate": "status:gu_venom"
+    }
+   ],
+   "text": "Two strikes on one enemy for 130% ATK each, +10% for each debuff it carries; then its Gu Venom deals all its remaining damage at once.",
+   "empower": {
+    "cost": 10,
+    "effects": [
+     {
+      "do": "transform",
+      "what": "spread_debuffs",
+      "target": "other_enemies"
+     }
+    ],
+    "text": "+35% damage and every debuff on the target spreads to every other enemy."
+   },
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% damage",
+    "Cooldown -1",
+    "+15% damage (petal 5)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:oleander_p30",
+   "owner": "hero:oleander",
+   "slot": "p30",
+   "name": "Viper's Patience",
+   "trigger": "always",
+   "effects": [
+    {
+     "do": "stat",
+     "damageBonus": 0.08,
+     "per": "debuff_on_target",
+     "max": 0.4
+    }
+   ],
+   "text": "Her damage rises by 8% for each debuff on the target, up to +40%.",
+   "draft": true
+  },
+  {
+   "id": "skill:oleander_p50",
+   "owner": "hero:oleander",
+   "slot": "p50",
+   "name": "Poison Without Order",
+   "trigger": "on_chain_break",
+   "effects": [
+    {
+     "do": "stat",
+     "damageBonus": 0.1,
+     "duration": "turn",
+     "max": 0.4
+    }
+   ],
+   "text": "Each cast that breaks a chain gives her +10% damage for the turn, up to +40%.",
+   "draft": true
+  },
+  {
+   "id": "skill:jasmine_s1",
+   "owner": "hero:jasmine",
+   "slot": "s1",
+   "name": "White Jasmine Seal",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.0
+    },
+    {
+     "do": "apply",
+     "status": "status:karmic_mark",
+     "turns": 1,
+     "chance": 0.3
+    }
+   ],
+   "text": "A white talisman hits one enemy for 100% ATK. 30% chance of Karmic Mark for 1 turn.",
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% effect chance",
+    "+10% damage"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:jasmine_s2",
+   "owner": "hero:jasmine",
+   "slot": "s2",
+   "name": "Scripture of Silence",
+   "cooldown": 3,
+   "start": 2,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.1
+    },
+    {
+     "do": "apply",
+     "status": "status:sealed_meridians",
+     "turns": 1
+    }
+   ],
+   "text": "A sealing scripture hits one enemy for 110% ATK and Seals its Meridians for 1 turn.",
+   "empower": {
+    "cost": 6,
+    "effects": [
+     {
+      "do": "apply",
+      "status": "status:karmic_mark",
+      "turns": 2
+     }
+    ],
+    "text": "+35% damage and Karmic Mark for 2 turns."
+   },
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% damage",
+    "Cooldown -1",
+    "+15% damage (petal 3)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:jasmine_s3",
+   "owner": "hero:jasmine",
+   "slot": "s3",
+   "name": "Fragrance Fills the Garden",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_enemies",
+   "ultimate": true,
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.5
+    },
+    {
+     "do": "apply",
+     "status": "status:karmic_mark",
+     "turns": 2
+    }
+   ],
+   "text": "Jasmine talismans hit every enemy for 150% ATK and apply Karmic Mark for 2 turns.",
+   "empower": {
+    "cost": 10,
+    "effects": [
+     {
+      "do": "apply",
+      "status": "status:body_shatter",
+      "turns": 1
+     }
+    ],
+    "text": "+35% damage and Body Shatter on every enemy for 1 turn."
+   },
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% damage",
+    "Cooldown -1",
+    "+15% damage (petal 5)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:jasmine_p30",
+   "owner": "hero:jasmine",
+   "slot": "p30",
+   "name": "Neat Hand",
+   "trigger": "always",
+   "effects": [
+    {
+     "do": "stat",
+     "stat": "stat:acc",
+     "value": 0.15
+    }
+   ],
+   "text": "+15% accuracy, so her debuffs land more often.",
+   "draft": true
+  },
+  {
+   "id": "skill:jasmine_p50",
+   "owner": "hero:jasmine",
+   "slot": "p50",
+   "name": "Song of the Jasmine",
+   "trigger": "on_debuff",
+   "effects": [
+    {
+     "do": "qi",
+     "amount": 1,
+     "once": "turn"
+    }
+   ],
+   "text": "Once per turn, when she lands a debuff, the team gains 1 Spirit Qi.",
+   "draft": true
+  },
+  {
+   "id": "skill:peach_blossom_s1",
+   "owner": "hero:peach_blossom",
+   "slot": "s1",
+   "name": "Peachwood Charm",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.0,
+     "bonusVs": [
+      "phase:yin"
+     ],
+     "bonus": 0.3
+    }
+   ],
+   "text": "A peachwood charm hits one enemy for 100% ATK, +30% against Yin enemies.",
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% effect chance",
+    "+10% damage"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:peach_blossom_s2",
+   "owner": "hero:peach_blossom",
+   "slot": "s2",
+   "name": "Door God's Ward",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.6
+    },
+    {
+     "do": "dispel",
+     "count": 1
+    },
+    {
+     "do": "apply",
+     "status": "status:entangle",
+     "turns": 1,
+     "chance": 0.5
+    }
+   ],
+   "text": "Door-god charms hit every enemy for 60% ATK, remove one buff from each, and have a 50% chance to Entangle for 1 turn.",
+   "empower": {
+    "cost": 6,
+    "effects": [
+     {
+      "do": "apply",
+      "status": "status:clear_heart",
+      "turns": 1,
+      "target": "all_allies"
+     }
+    ],
+    "text": "+35% damage and every ally gains Clear Heart for 1 turn."
+   },
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% damage",
+    "Cooldown -1",
+    "+15% damage (petal 3)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:peach_blossom_s3",
+   "owner": "hero:peach_blossom",
+   "slot": "s3",
+   "name": "Peach Grove Exorcism",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_enemies",
+   "ultimate": true,
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.6,
+     "bonusVs": [
+      "phase:yin"
+     ],
+     "bonus": 0.4
+    },
+    {
+     "do": "delay",
+     "turns": 1
+    }
+   ],
+   "text": "A grove of peachwood swords hits every enemy for 160% ATK, +40% against Yin enemies, and delays their charging techniques by 1 turn.",
+   "empower": {
+    "cost": 10,
+    "effects": [
+     {
+      "do": "dispel",
+      "count": 2
+     }
+    ],
+    "text": "+35% damage and two buffs are removed from every enemy."
+   },
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% damage",
+    "Cooldown -1",
+    "+15% damage (petal 5)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:peach_blossom_p30",
+   "owner": "hero:peach_blossom",
+   "slot": "p30",
+   "name": "Ward Against Evil",
+   "trigger": "always",
+   "effects": [
+    {
+     "do": "stat",
+     "stat": "stat:res",
+     "value": 0.15,
+     "target": "all_allies"
+    }
+   ],
+   "text": "Every ally gains +15% effect resistance.",
+   "draft": true
+  },
+  {
+   "id": "skill:peach_blossom_p50",
+   "owner": "hero:peach_blossom",
+   "slot": "p50",
+   "name": "Shentu and Yulei",
+   "trigger": "battle_start",
+   "effects": [
+    {
+     "do": "apply",
+     "status": "status:clear_heart",
+     "turns": "battle",
+     "charges": 1,
+     "target": "all_allies"
+    }
+   ],
+   "text": "At battle start every ally is warded: the first debuff that would land on her is blocked.",
+   "draft": true
+  },
+  {
+   "id": "skill:narcissus_s1",
+   "owner": "hero:narcissus",
+   "slot": "s1",
+   "name": "Wave-Treading Talisman",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.0
+    },
+    {
+     "do": "apply",
+     "status": "status:qi_disruption",
+     "turns": 1,
+     "chance": 0.35
+    }
+   ],
+   "text": "A rippling talisman hits one enemy for 100% ATK. 35% chance of Qi Disruption for 1 turn.",
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% effect chance",
+    "+10% damage"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:narcissus_s2",
+   "owner": "hero:narcissus",
+   "slot": "s2",
+   "name": "Mirror of Still Water",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.7
+    },
+    {
+     "do": "dispel",
+     "count": 1
+    },
+    {
+     "do": "apply",
+     "status": "status:mist_veil",
+     "turns": 1,
+     "chance": 0.6
+    }
+   ],
+   "text": "The pond's mirror hits every enemy for 70% ATK, removes one buff from each and has a 60% chance of Mist Veil for 1 turn.",
+   "empower": {
+    "cost": 6,
+    "effects": [
+     {
+      "do": "transform",
+      "what": "removed_buffs_to_allies"
+     }
+    ],
+    "text": "+35% damage and the removed buffs pass to your allies."
+   },
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% damage",
+    "Cooldown -1",
+    "+15% damage (petal 3)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:narcissus_s3",
+   "owner": "hero:narcissus",
+   "slot": "s3",
+   "name": "Reflection of the Water Immortal",
+   "cooldown": 6,
+   "start": 5,
+   "target": "all_enemies",
+   "ultimate": true,
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.2
+    },
+    {
+     "do": "apply",
+     "status": "status:frost_seal",
+     "turns": 1,
+     "target": "healthiest_enemy"
+    },
+    {
+     "do": "summon",
+     "what": "reflection",
+     "recasts": "previous_ally_technique",
+     "powerScale": 0.6
+    }
+   ],
+   "text": "Waves hit every enemy for 120% ATK and Frost Seal the healthiest one. Then her reflection recasts the previous ally technique of this turn at 60% power; it counts as another card for Kindred Qi.",
+   "empower": {
+    "cost": 10,
+    "effects": [
+     {
+      "do": "summon",
+      "what": "reflection",
+      "powerScale": 1.0
+     }
+    ],
+    "text": "+35% damage and the reflection recasts at full power."
+   },
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% damage",
+    "Cooldown -1",
+    "+15% damage (petal 5)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:narcissus_p30",
+   "owner": "hero:narcissus",
+   "slot": "p30",
+   "name": "White Serpent's Calm",
+   "trigger": "always",
+   "effects": [
+    {
+     "do": "reflect",
+     "chance": 0.3
+    }
+   ],
+   "text": "30% chance to reflect a debuff cast on her back at its caster.",
+   "draft": true
+  },
+  {
+   "id": "skill:narcissus_p50",
+   "owner": "hero:narcissus",
+   "slot": "p50",
+   "name": "Reflection",
+   "trigger": "always",
+   "effects": [
+    {
+     "do": "harmony",
+     "mode": "kindred_double",
+     "perRepeat": 0.2,
+     "cap": 0.45
+    }
+   ],
+   "text": "Kindred Qi counts double for her team: +20% per repeat, up to +45%.",
+   "draft": true
+  },
+  {
+   "id": "skill:hibiscus_s1",
+   "owner": "hero:hibiscus",
+   "slot": "s1",
+   "name": "Morning Sun Talisman",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.0
+    },
+    {
+     "do": "apply",
+     "status": "status:fire_poison",
+     "turns": 2,
+     "chance": 0.35
+    }
+   ],
+   "text": "A blazing talisman hits one enemy for 100% ATK. 35% chance of Fire Poison for 2 turns.",
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% effect chance",
+    "+10% damage"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:hibiscus_s2",
+   "owner": "hero:hibiscus",
+   "slot": "s2",
+   "name": "Golden Crow Seal",
+   "cooldown": 3,
+   "start": 2,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.2
+    },
+    {
+     "do": "apply",
+     "status": "status:fire_poison",
+     "turns": 2
+    },
+    {
+     "do": "apply",
+     "status": "status:withering",
+     "turns": 2
+    }
+   ],
+   "text": "The golden crow's seal hits one enemy for 120% ATK and applies Fire Poison and Withering for 2 turns.",
+   "empower": {
+    "cost": 6,
+    "effects": [
+     {
+      "do": "apply",
+      "status": "status:fire_poison",
+      "turns": 2,
+      "target": "all_enemies"
+     }
+    ],
+    "text": "+35% damage and Fire Poison spreads to every enemy for 2 turns."
+   },
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% damage",
+    "Cooldown -1",
+    "+15% damage (petal 3)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:hibiscus_s3",
+   "owner": "hero:hibiscus",
+   "slot": "s3",
+   "name": "Ten Suns over Fusang",
+   "cooldown": 6,
+   "start": 5,
+   "target": "all_enemies",
+   "ultimate": true,
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.5
+    },
+    {
+     "do": "delay",
+     "turns": 1
+    },
+    {
+     "do": "refresh",
+     "target": "allies",
+     "slot": "s2",
+     "turns": 1
+    }
+   ],
+   "text": "Ten suns rise: every enemy takes 150% ATK and its charging techniques are delayed by 1 turn, while every ally's charging S2 comes 1 turn closer.",
+   "empower": {
+    "cost": 10,
+    "effects": [
+     {
+      "do": "apply",
+      "status": "status:fire_poison",
+      "turns": 2
+     }
+    ],
+    "text": "+35% damage and Fire Poison on every enemy for 2 turns."
+   },
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% damage",
+    "Cooldown -1",
+    "+15% damage (petal 5)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:hibiscus_p30",
+   "owner": "hero:hibiscus",
+   "slot": "p30",
+   "name": "First Light",
+   "trigger": "battle_start",
+   "effects": [
+    {
+     "do": "refresh",
+     "target": "allies",
+     "slot": "s2",
+     "turns": 1
+    }
+   ],
+   "text": "At battle start, every ally's S2 starts 1 turn closer.",
+   "draft": true
+  },
+  {
+   "id": "skill:hibiscus_p50",
+   "owner": "hero:hibiscus",
+   "slot": "p50",
+   "name": "Ten Thousand Dawns",
+   "trigger": "battle_start",
+   "effects": [
+    {
+     "do": "apply",
+     "status": "status:phoenix_rebirth",
+     "turns": "battle",
+     "target": "lowest_max_hp_ally",
+     "once": "battle"
+    }
+   ],
+   "text": "At battle start, the ally with the lowest max Health gains Phoenix Rebirth: she revives once at 30% health.",
+   "draft": true
+  },
+  {
+   "id": "skill:daylily_s1",
+   "owner": "hero:daylily",
+   "slot": "s1",
+   "name": "Sorrowless Charm",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.0
+    },
+    {
+     "do": "apply",
+     "status": "status:lotus_dream",
+     "turns": 1,
+     "chance": 0.25
+    }
+   ],
+   "text": "A soft talisman hits one enemy for 100% ATK. 25% chance of Lotus Dream for 1 turn.",
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% effect chance",
+    "+10% damage"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:daylily_s2",
+   "owner": "hero:daylily",
+   "slot": "s2",
+   "name": "Forget-Sorrow Talisman",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.6
+    },
+    {
+     "do": "apply",
+     "status": "status:sealed_meridians",
+     "turns": 1,
+     "chance": 0.5
+    },
+    {
+     "do": "cleanse",
+     "count": 1,
+     "target": "most_debuffed_ally"
+    }
+   ],
+   "text": "Forgetting talismans hit every enemy for 60% ATK with a 50% chance to Seal Meridians for 1 turn; the ally with the most debuffs forgets one.",
+   "empower": {
+    "cost": 6,
+    "effects": [
+     {
+      "do": "apply",
+      "status": "status:sealed_meridians",
+      "turns": 1
+     }
+    ],
+    "text": "+35% damage and Sealed Meridians lands on every enemy."
+   },
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% damage",
+    "Cooldown -1",
+    "+15% damage (petal 3)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:daylily_s3",
+   "owner": "hero:daylily",
+   "slot": "s3",
+   "name": "Mother's Hall",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_enemies",
+   "ultimate": true,
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.5
+    },
+    {
+     "do": "delay",
+     "turns": 1
+    },
+    {
+     "do": "cleanse",
+     "count": 1,
+     "target": "all_allies"
+    }
+   ],
+   "text": "Every enemy takes 150% ATK and its charging techniques are delayed by 1 turn; every ally loses one debuff.",
+   "empower": {
+    "cost": 10,
+    "effects": [
+     {
+      "do": "apply",
+      "status": "status:lotus_dream",
+      "turns": 1,
+      "chance": 0.5
+     }
+    ],
+    "text": "+35% damage and a 50% chance of Lotus Dream on every enemy for 1 turn."
+   },
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% damage",
+    "Cooldown -1",
+    "+15% damage (petal 5)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:daylily_p30",
+   "owner": "hero:daylily",
+   "slot": "p30",
+   "name": "Grass of Forgetting",
+   "trigger": "always",
+   "effects": [
+    {
+     "do": "stat",
+     "damageBonus": 0.2,
+     "when": "target_lotus_dream_or_sealed"
+    }
+   ],
+   "text": "She deals 20% more damage to enemies under Lotus Dream or Sealed Meridians.",
+   "draft": true
+  },
+  {
+   "id": "skill:daylily_p50",
+   "owner": "hero:daylily",
+   "slot": "p50",
+   "name": "A Mother's Worry",
+   "trigger": "on_ally_low",
+   "effects": [
+    {
+     "do": "cleanse",
+     "all": true,
+     "target": "that_ally",
+     "once": "ally_per_battle"
+    },
+    {
+     "do": "shield",
+     "status": "status:spirit_shield",
+     "power": 0.6,
+     "target": "that_ally"
+    }
+   ],
+   "text": "When an ally drops below 30% health, she removes its debuffs and gives it a Spirit Shield worth 60% of her Attack, once per ally per battle.",
+   "draft": true
+  },
+  {
+   "id": "skill:osmanthus_s1",
+   "owner": "hero:osmanthus",
+   "slot": "s1",
+   "name": "Moonsteel Petal",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.0,
+     "pierce": 0.15
+    }
+   ],
+   "text": "A falling moonsteel petal hits one enemy for 100% ATK, ignoring 15% of its Defense.",
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% effect chance",
+    "+10% damage"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:osmanthus_s2",
+   "owner": "hero:osmanthus",
+   "slot": "s2",
+   "name": "Wu Gang's Endless Axe",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.7,
+     "growsPerCast": 0.1,
+     "max": 0.5
+    }
+   ],
+   "text": "The axe that can never fell the moon tree falls on every enemy for 70% ATK. Each cast this battle makes it 10% stronger, up to +50%.",
+   "empower": {
+    "cost": 6,
+    "effects": [
+     {
+      "do": "apply",
+      "status": "status:body_shatter",
+      "turns": 1
+     }
+    ],
+    "text": "+35% damage and Body Shatter on every enemy for 1 turn."
+   },
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% damage",
+    "Cooldown -1",
+    "+15% damage (petal 3)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:osmanthus_s3",
+   "owner": "hero:osmanthus",
+   "slot": "s3",
+   "name": "The Cold Palace Descends",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_enemies",
+   "ultimate": true,
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.7
+    },
+    {
+     "do": "apply",
+     "status": "status:karmic_mark",
+     "turns": 2
+    }
+   ],
+   "text": "The Guanghan Palace's moonlight falls on every enemy for 170% ATK and applies Karmic Mark for 2 turns.",
+   "empower": {
+    "cost": 10,
+    "effects": [
+     {
+      "do": "heal",
+      "power": 0.5,
+      "target": "all_allies"
+     }
+    ],
+    "text": "+35% damage and her jade rabbit's elixir heals every ally for 50% ATK."
+   },
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% damage",
+    "Cooldown -1",
+    "+15% damage (petal 5)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:osmanthus_p30",
+   "owner": "hero:osmanthus",
+   "slot": "p30",
+   "name": "Fragrance Beyond the Clouds",
+   "trigger": "always",
+   "effects": [
+    {
+     "do": "stat",
+     "stat": "stat:crit",
+     "value": 0.15,
+     "when": "area_technique"
+    }
+   ],
+   "text": "Her area techniques gain +15% critical chance.",
+   "draft": true
+  },
+  {
+   "id": "skill:osmanthus_p50",
+   "owner": "hero:osmanthus",
+   "slot": "p50",
+   "name": "Moon Palace Solitude",
+   "trigger": "always",
+   "effects": [
+    {
+     "do": "harmony",
+     "mode": "ignore"
+    },
+    {
+     "do": "stat",
+     "damageBonus": 0.2
+    }
+   ],
+   "text": "She ignores Harmony: her casts neither break nor extend a chain, and she deals 20% more damage.",
+   "draft": true
+  },
+  {
+   "id": "skill:apricot_blossom_s1",
+   "owner": "hero:apricot_blossom",
+   "slot": "s1",
+   "name": "Apricot Rain",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.34,
+     "hits": 3
+    }
+   ],
+   "text": "Three drops of spring rain hit one enemy for 34% ATK each.",
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% effect chance",
+    "+10% damage"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:apricot_blossom_s2",
+   "owner": "hero:apricot_blossom",
+   "slot": "s2",
+   "name": "Thunder Wakes the Insects",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.36,
+     "hits": 2
+    },
+    {
+     "do": "apply",
+     "status": "status:entangle",
+     "turns": 1,
+     "chance": 0.4
+    }
+   ],
+   "text": "Spring thunder hits every enemy twice for 36% ATK each, with a 40% chance to Entangle for 1 turn.",
+   "empower": {
+    "cost": 6,
+    "effects": [
+     {
+      "do": "refresh",
+      "skill": "s1",
+      "ready": true
+     }
+    ],
+    "text": "+35% damage and Apricot Rain is ready again."
+   },
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% damage",
+    "Cooldown -1",
+    "+15% damage (petal 3)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:apricot_blossom_s3",
+   "owner": "hero:apricot_blossom",
+   "slot": "s3",
+   "name": "Apricot Blossom Village",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_enemies",
+   "ultimate": true,
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.57,
+     "hits": 3
+    },
+    {
+     "do": "apply",
+     "status": "status:mist_veil",
+     "turns": 2
+    },
+    {
+     "do": "apply",
+     "status": "status:wind_step",
+     "turns": 2,
+     "target": "all_allies"
+    }
+   ],
+   "text": "A spring storm hits every enemy three times for 57% ATK each and leaves them tipsy with Mist Veil for 2 turns. Every ally gains Wind Step for 2 turns.",
+   "empower": {
+    "cost": 10,
+    "effects": [
+     {
+      "do": "apply",
+      "status": "status:qi_disruption",
+      "turns": 2
+     }
+    ],
+    "text": "+35% damage and Qi Disruption on every enemy for 2 turns."
+   },
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% damage",
+    "Cooldown -1",
+    "+15% damage (petal 5)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:apricot_blossom_p30",
+   "owner": "hero:apricot_blossom",
+   "slot": "p30",
+   "name": "Spring Bustles on the Branch",
+   "trigger": "on_hit",
+   "effects": [
+    {
+     "do": "stat",
+     "stat": "stat:haste",
+     "value": 2,
+     "per": "enemy_hit_by_area",
+     "max": 30
+    }
+   ],
+   "text": "Each enemy her area techniques hit gives her 2 Haste for the rest of the battle, up to 30.",
+   "draft": true
+  },
+  {
+   "id": "skill:apricot_blossom_p50",
+   "owner": "hero:apricot_blossom",
+   "slot": "p50",
+   "name": "Spring Thunder",
+   "trigger": "on_cast",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.3,
+     "target": "all_enemies",
+     "when": "extends_harmony_chain",
+     "once": "turn"
+    }
+   ],
+   "text": "Once per turn, when her technique extends a Harmony chain, thunder strikes every enemy once more for 30% ATK.",
+   "draft": true
+  },
+  {
+   "id": "skill:snow_lotus_s1",
+   "owner": "hero:snow_lotus",
+   "slot": "s1",
+   "name": "Snowline Petal",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.0
+    },
+    {
+     "do": "apply",
+     "status": "status:frost_seal",
+     "turns": 1,
+     "chance": 0.25
+    }
+   ],
+   "text": "A frozen petal hits one enemy for 100% ATK. 25% chance to Frost Seal it for 1 turn.",
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% effect chance",
+    "+10% damage"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:snow_lotus_s2",
+   "owner": "hero:snow_lotus",
+   "slot": "s2",
+   "name": "Tianshan Blizzard",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.7
+    },
+    {
+     "do": "apply",
+     "status": "status:frost_seal",
+     "turns": 1,
+     "chance": 0.25
+    }
+   ],
+   "text": "A blizzard hits every enemy for 70% ATK, with a 25% chance each to Frost Seal for 1 turn.",
+   "empower": {
+    "cost": 6,
+    "effects": [
+     {
+      "do": "apply",
+      "status": "status:frost_seal",
+      "turns": 1,
+      "target": "healthiest_enemy"
+     }
+    ],
+    "text": "+35% damage and the healthiest enemy is surely Frost Sealed."
+   },
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% damage",
+    "Cooldown -1",
+    "+15% damage (petal 3)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:snow_lotus_s3",
+   "owner": "hero:snow_lotus",
+   "slot": "s3",
+   "name": "Thousand-Year Snow Lotus",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_enemies",
+   "ultimate": true,
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.7,
+     "bonusVs": [
+      "status:frost_seal"
+     ],
+     "bonus": 0.3
+    },
+    {
+     "do": "heal",
+     "power": 0.4,
+     "target": "all_allies"
+    }
+   ],
+   "text": "The snow lotus blooms: every enemy takes 170% ATK, +30% if Frost Sealed, and every ally recovers 40% ATK.",
+   "empower": {
+    "cost": 10,
+    "effects": [
+     {
+      "do": "apply",
+      "status": "status:frost_seal",
+      "turns": 1,
+      "chance": 0.4
+     }
+    ],
+    "text": "+35% damage and healing, and a 40% chance to Frost Seal each enemy for 1 turn."
+   },
+   "mastery": [
+    "+5% damage and healing",
+    "+5% damage and healing",
+    "+10% damage and healing",
+    "+10% damage and healing",
+    "Cooldown -1",
+    "+15% damage and healing (petal 5)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:snow_lotus_p30",
+   "owner": "hero:snow_lotus",
+   "slot": "p30",
+   "name": "Cold Purity",
+   "trigger": "always",
+   "effects": [
+    {
+     "do": "qi",
+     "amount": 1,
+     "when": "her_frost_seal_breaks",
+     "once": "turn"
+    }
+   ],
+   "text": "Once per turn, when a Frost Seal she applied breaks, the team gains 1 Spirit Qi.",
+   "draft": true
+  },
+  {
+   "id": "skill:snow_lotus_p50",
+   "owner": "hero:snow_lotus",
+   "slot": "p50",
+   "name": "Blooms Once in Sixty Years",
+   "trigger": "on_fall",
+   "effects": [
+    {
+     "do": "apply",
+     "status": "status:frost_seal",
+     "turns": 1,
+     "chance": 0.5,
+     "target": "all_enemies"
+    },
+    {
+     "do": "heal",
+     "pctMaxHp": 0.15,
+     "target": "all_allies"
+    }
+   ],
+   "text": "When she falls, each enemy has a 50% chance to be Frost Sealed for 1 turn and every ally recovers 15% health.",
+   "draft": true
+  },
+  {
+   "id": "skill:trumpet_creeper_s1",
+   "owner": "hero:trumpet_creeper",
+   "slot": "s1",
+   "name": "Climbing Stone",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.0
+    }
+   ],
+   "text": "A climbing stone spike hits one enemy for 100% ATK.",
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% effect chance",
+    "+10% damage"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:trumpet_creeper_s2",
+   "owner": "hero:trumpet_creeper",
+   "slot": "s2",
+   "name": "Pillar to the Clouds",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_enemies",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.7
+    },
+    {
+     "do": "apply",
+     "status": "status:iron_body",
+     "turns": 1,
+     "target": "self"
+    }
+   ],
+   "text": "Stone pillars burst under every enemy for 70% ATK, and she climbs one: Iron Body for 1 turn.",
+   "empower": {
+    "cost": 6,
+    "effects": [
+     {
+      "do": "apply",
+      "status": "status:soul_shock",
+      "turns": 1,
+      "chance": 0.25
+     }
+    ],
+    "text": "+35% damage and a 25% chance of Soul Shock on each enemy for 1 turn."
+   },
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% damage",
+    "Cooldown -1",
+    "+15% damage (petal 3)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:trumpet_creeper_s3",
+   "owner": "hero:trumpet_creeper",
+   "slot": "s3",
+   "name": "Soaring Over the Empyrean",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_enemies",
+   "ultimate": true,
+   "effects": [
+    {
+     "do": "damage",
+     "power": 1.7
+    },
+    {
+     "do": "apply",
+     "status": "status:body_shatter",
+     "turns": 1,
+     "chance": 0.5
+    }
+   ],
+   "text": "She rides a rising mountain into the sky and brings it down on every enemy for 170% ATK, with a 50% chance of Body Shatter for 1 turn.",
+   "empower": {
+    "cost": 10,
+    "effects": [
+     {
+      "do": "apply",
+      "status": "status:body_shatter",
+      "turns": 1
+     }
+    ],
+    "text": "+35% damage and Body Shatter always lands."
+   },
+   "mastery": [
+    "+5% damage",
+    "+5% damage",
+    "+10% damage",
+    "+10% damage",
+    "Cooldown -1",
+    "+15% damage (petal 5)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:trumpet_creeper_p30",
+   "owner": "hero:trumpet_creeper",
+   "slot": "p30",
+   "name": "Borrowed Height",
+   "trigger": "always",
+   "effects": [
+    {
+     "do": "stat",
+     "damageBonus": 0.15,
+     "when": "has_buff"
+    }
+   ],
+   "text": "+15% damage while she has a buff.",
+   "draft": true
+  },
+  {
+   "id": "skill:trumpet_creeper_p50",
+   "owner": "hero:trumpet_creeper",
+   "slot": "p50",
+   "name": "Reach the Clouds",
+   "trigger": "on_ultimate",
+   "effects": [
+    {
+     "do": "phase_qi",
+     "amount": 2,
+     "phase": "fed"
+    }
+   ],
+   "text": "Her ultimate gives 2 more Phase Qi to the phase she feeds.",
+   "draft": true
+  },
+  {
+   "id": "skill:chrysanthemum_s1",
+   "owner": "hero:chrysanthemum",
+   "slot": "s1",
+   "name": "Eastern Fence Needle",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.5,
+     "hits": 2
+    },
+    {
+     "do": "heal",
+     "power": 0.7,
+     "target": "lowest_ally"
+    }
+   ],
+   "text": "Two acupuncture needles hit one enemy for 50% ATK each. The most injured ally recovers 70% ATK.",
+   "mastery": [
+    "+5% damage and healing",
+    "+5% healing",
+    "+10% damage and healing",
+    "+10% healing",
+    "+10% damage and healing"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:chrysanthemum_s2",
+   "owner": "hero:chrysanthemum",
+   "slot": "s2",
+   "name": "Chrysanthemum Tea",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_allies",
+   "effects": [
+    {
+     "do": "heal",
+     "power": 0.9
+    },
+    {
+     "do": "cleanse",
+     "count": 1
+    }
+   ],
+   "text": "Every ally recovers 90% ATK and loses one debuff.",
+   "empower": {
+    "cost": 6,
+    "effects": [
+     {
+      "do": "apply",
+      "status": "status:sword_intent",
+      "turns": 1,
+      "target": "all_allies"
+     }
+    ],
+    "text": "+35% healing and Sword Intent for every ally for 1 turn."
+   },
+   "mastery": [
+    "+5% healing",
+    "+5% healing",
+    "+10% healing",
+    "+10% healing",
+    "Cooldown -1",
+    "+15% healing (petal 3)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:chrysanthemum_s3",
+   "owner": "hero:chrysanthemum",
+   "slot": "s3",
+   "name": "Double Ninth Longevity",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_allies",
+   "ultimate": true,
+   "effects": [
+    {
+     "do": "heal",
+     "power": 0.8
+    },
+    {
+     "do": "apply",
+     "status": "status:sword_intent",
+     "turns": 2
+    }
+   ],
+   "text": "Every ally recovers 80% ATK and gains Sword Intent for 2 turns.",
+   "empower": {
+    "cost": 10,
+    "effects": [
+     {
+      "do": "apply",
+      "status": "status:clear_heart",
+      "turns": 1,
+      "target": "all_allies"
+     }
+    ],
+    "text": "+35% healing and Clear Heart for every ally for 1 turn."
+   },
+   "mastery": [
+    "+5% healing",
+    "+5% healing",
+    "+10% healing",
+    "+10% healing",
+    "Cooldown -1",
+    "+15% healing (petal 5)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:chrysanthemum_p30",
+   "owner": "hero:chrysanthemum",
+   "slot": "p30",
+   "name": "Defying Frost",
+   "trigger": "on_heal",
+   "effects": [
+    {
+     "do": "stat",
+     "stat": "stat:crit",
+     "value": 0.1,
+     "target": "healed_ally",
+     "turns": 1
+    }
+   ],
+   "text": "Allies she heals gain +10% critical chance for 1 turn.",
+   "draft": true
+  },
+  {
+   "id": "skill:chrysanthemum_p50",
+   "owner": "hero:chrysanthemum",
+   "slot": "p50",
+   "name": "Prolonging Years",
+   "trigger": "on_ally_low",
+   "effects": [
+    {
+     "do": "heal",
+     "power": 1.2,
+     "target": "that_ally",
+     "once": "battle"
+    }
+   ],
+   "text": "Once per battle, when an ally drops below 30% health, she heals it for 120% ATK.",
+   "draft": true
+  },
+  {
+   "id": "skill:lily_s1",
+   "owner": "hero:lily",
+   "slot": "s1",
+   "name": "Lily Bulb Remedy",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.9
+    },
+    {
+     "do": "heal",
+     "power": 0.65,
+     "target": "lowest_ally"
+    }
+   ],
+   "text": "A lily dart hits one enemy for 90% ATK. The most injured ally recovers 65% ATK.",
+   "mastery": [
+    "+5% damage and healing",
+    "+5% healing",
+    "+10% damage and healing",
+    "+10% healing",
+    "+10% damage and healing"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:lily_s2",
+   "owner": "hero:lily",
+   "slot": "s2",
+   "name": "Hundred Years in Harmony",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_allies",
+   "effects": [
+    {
+     "do": "heal",
+     "power": 0.85
+    },
+    {
+     "do": "apply",
+     "status": "status:lotus_dew",
+     "turns": 2
+    }
+   ],
+   "text": "Every ally recovers 85% ATK and gains Lotus Dew for 2 turns.",
+   "empower": {
+    "cost": 6,
+    "effects": [
+     {
+      "do": "apply",
+      "status": "status:wind_step",
+      "turns": 2,
+      "target": "all_allies"
+     }
+    ],
+    "text": "+35% healing and Wind Step for every ally for 2 turns."
+   },
+   "mastery": [
+    "+5% healing",
+    "+5% healing",
+    "+10% healing",
+    "+10% healing",
+    "Cooldown -1",
+    "+15% healing (petal 3)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:lily_s3",
+   "owner": "hero:lily",
+   "slot": "s3",
+   "name": "Red Thread Bloom",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_allies",
+   "ultimate": true,
+   "effects": [
+    {
+     "do": "heal",
+     "power": 1.0
+    },
+    {
+     "do": "cleanse",
+     "count": 1
+    },
+    {
+     "do": "apply",
+     "status": "status:wind_step",
+     "turns": 2
+    }
+   ],
+   "text": "Every ally recovers 100% ATK, loses one debuff and gains Wind Step for 2 turns.",
+   "empower": {
+    "cost": 10,
+    "effects": [
+     {
+      "do": "cleanse",
+      "count": 2
+     }
+    ],
+    "text": "+35% healing and two more debuffs are removed from every ally."
+   },
+   "mastery": [
+    "+5% healing",
+    "+5% healing",
+    "+10% healing",
+    "+10% healing",
+    "Cooldown -1",
+    "+15% healing (petal 5)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:lily_p30",
+   "owner": "hero:lily",
+   "slot": "p30",
+   "name": "Matchmaker's Eye",
+   "trigger": "always",
+   "effects": [
+    {
+     "do": "stat",
+     "stat": "stat:healing",
+     "value": 0.2,
+     "when": "extends_harmony_chain"
+    }
+   ],
+   "text": "Her healing is 20% stronger when her cast extends a Harmony chain.",
+   "draft": true
+  },
+  {
+   "id": "skill:lily_p50",
+   "owner": "hero:lily",
+   "slot": "p50",
+   "name": "A Hundred Years Together",
+   "trigger": "battle_start",
+   "effects": [
+    {
+     "do": "apply",
+     "status": "status:lotus_dew",
+     "turns": 2,
+     "target": "all_allies"
+    }
+   ],
+   "text": "At battle start, every ally gains Lotus Dew for 2 turns.",
+   "draft": true
+  },
+  {
+   "id": "skill:hydrangea_s1",
+   "owner": "hero:hydrangea",
+   "slot": "s1",
+   "name": "Five-Colour Petals",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.5,
+     "hits": 2
+    },
+    {
+     "do": "heal",
+     "power": 0.7,
+     "target": "lowest_ally"
+    }
+   ],
+   "text": "Two petals hit one enemy for 50% ATK each. The most injured ally recovers 70% ATK.",
+   "mastery": [
+    "+5% damage and healing",
+    "+5% healing",
+    "+10% damage and healing",
+    "+10% healing",
+    "+10% damage and healing"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:hydrangea_s2",
+   "owner": "hero:hydrangea",
+   "slot": "s2",
+   "name": "Changing Soil",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_allies",
+   "effects": [
+    {
+     "do": "heal",
+     "power": 0.9
+    },
+    {
+     "do": "apply",
+     "byPhase": {
+      "phase:metal": "status:sword_intent",
+      "phase:wood": "status:wind_step",
+      "phase:water": "status:lotus_dew",
+      "phase:fire": "status:surging_qi",
+      "phase:earth": "status:iron_body"
+     },
+     "turns": 1
+    }
+   ],
+   "text": "Every ally recovers 90% ATK and gains a buff that follows her current phase for 1 turn: Metal Sword Intent, Wood Wind Step, Water Lotus Dew, Fire Surging Qi, Earth Iron Body.",
+   "empower": {
+    "cost": 6,
+    "effects": [
+     {
+      "do": "cleanse",
+      "count": 1
+     }
+    ],
+    "text": "+35% healing and every ally loses one debuff."
+   },
+   "mastery": [
+    "+5% healing",
+    "+5% healing",
+    "+10% healing",
+    "+10% healing",
+    "Cooldown -1",
+    "+15% healing (petal 3)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:hydrangea_s3",
+   "owner": "hero:hydrangea",
+   "slot": "s3",
+   "name": "Embroidered Ball of Five Colours",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_allies",
+   "ultimate": true,
+   "effects": [
+    {
+     "do": "heal",
+     "power": 1.0
+    },
+    {
+     "do": "apply",
+     "status": "status:phoenix_rebirth",
+     "turns": 2,
+     "target": "lowest_ally"
+    }
+   ],
+   "text": "Every ally recovers 100% ATK, and the tossed embroidered ball gives the most injured ally Phoenix Rebirth for 2 turns.",
+   "empower": {
+    "cost": 10,
+    "effects": [
+     {
+      "do": "apply",
+      "byPhase": {
+       "phase:metal": "status:sword_intent",
+       "phase:wood": "status:wind_step",
+       "phase:water": "status:lotus_dew",
+       "phase:fire": "status:surging_qi",
+       "phase:earth": "status:iron_body"
+      },
+      "turns": 2,
+      "target": "all_allies"
+     }
+    ],
+    "text": "+35% healing and every ally gains her current phase's buff for 2 turns."
+   },
+   "mastery": [
+    "+5% healing",
+    "+5% healing",
+    "+10% healing",
+    "+10% healing",
+    "Cooldown -1",
+    "+15% healing (petal 5)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:hydrangea_p30",
+   "owner": "hero:hydrangea",
+   "slot": "p30",
+   "name": "Rain-Season Bloom",
+   "trigger": "on_heal",
+   "effects": [
+    {
+     "do": "apply",
+     "status": "status:lotus_dew",
+     "turns": 1,
+     "target": "healed_ally",
+     "when": "below_half_health"
+    }
+   ],
+   "text": "When she heals an ally below half health, it also gains Lotus Dew for 1 turn.",
+   "draft": true
+  },
+  {
+   "id": "skill:hydrangea_p50",
+   "owner": "hero:hydrangea",
+   "slot": "p50",
+   "name": "Shifting Colours",
+   "trigger": "always",
+   "effects": [
+    {
+     "do": "harmony",
+     "mode": "wildcard"
+    }
+   ],
+   "text": "Her techniques take the phase that extends the current chain, as hydrangeas change colour with their soil. The borrowed phase also sets her advantage and Phase Qi.",
+   "draft": true
+  },
+  {
+   "id": "skill:safflower_s1",
+   "owner": "hero:safflower",
+   "slot": "s1",
+   "name": "Rouge Strike",
+   "cooldown": 1,
+   "start": 0,
+   "target": "enemy",
+   "effects": [
+    {
+     "do": "damage",
+     "power": 0.9
+    },
+    {
+     "do": "heal",
+     "power": 0.6,
+     "target": "lowest_ally"
+    }
+   ],
+   "text": "A rouge-red palm hits one enemy for 90% ATK. The most injured ally recovers 60% ATK.",
+   "mastery": [
+    "+5% damage and healing",
+    "+5% healing",
+    "+10% damage and healing",
+    "+10% healing",
+    "+10% damage and healing"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:safflower_s2",
+   "owner": "hero:safflower",
+   "slot": "s2",
+   "name": "Quicken the Blood",
+   "cooldown": 3,
+   "start": 2,
+   "target": "all_allies",
+   "effects": [
+    {
+     "do": "heal",
+     "power": 0.8
+    },
+    {
+     "do": "apply",
+     "status": "status:surging_qi",
+     "turns": 1,
+     "target": "highest_atk_ally"
+    }
+   ],
+   "text": "Every ally recovers 80% ATK, and the ally with the highest Attack gains Surging Qi for 1 turn.",
+   "empower": {
+    "cost": 6,
+    "effects": [
+     {
+      "do": "apply",
+      "status": "status:surging_qi",
+      "turns": 1,
+      "target": "all_allies"
+     }
+    ],
+    "text": "+35% healing and Surging Qi for every ally for 1 turn."
+   },
+   "mastery": [
+    "+5% healing",
+    "+5% healing",
+    "+10% healing",
+    "+10% healing",
+    "Cooldown -1",
+    "+15% healing (petal 3)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:safflower_s3",
+   "owner": "hero:safflower",
+   "slot": "s3",
+   "name": "Red Flower Cautery",
+   "cooldown": 5,
+   "start": 4,
+   "target": "all_allies",
+   "ultimate": true,
+   "effects": [
+    {
+     "do": "cost_health",
+     "pct": 0.1
+    },
+    {
+     "do": "heal",
+     "power": 1.1
+    },
+    {
+     "do": "cleanse",
+     "count": 2
+    }
+   ],
+   "text": "She spends 10% of her health: every ally recovers 110% ATK and loses two debuffs.",
+   "empower": {
+    "cost": 10,
+    "effects": [
+     {
+      "do": "apply",
+      "status": "status:phoenix_rebirth",
+      "turns": 2,
+      "target": "lowest_ally"
+     }
+    ],
+    "text": "+35% healing and the most injured ally gains Phoenix Rebirth for 2 turns."
+   },
+   "mastery": [
+    "+5% healing",
+    "+5% healing",
+    "+10% healing",
+    "+10% healing",
+    "Cooldown -1",
+    "+15% healing (petal 5)"
+   ],
+   "draft": true
+  },
+  {
+   "id": "skill:safflower_p30",
+   "owner": "hero:safflower",
+   "slot": "p30",
+   "name": "Hot Blood",
+   "trigger": "on_heal",
+   "effects": [
+    {
+     "do": "cleanse",
+     "statuses": [
+      "status:fire_poison",
+      "status:gu_venom"
+     ],
+     "target": "healed_ally"
+    }
+   ],
+   "text": "Her healing also removes Fire Poison and Gu Venom from the ally she heals.",
+   "draft": true
+  },
+  {
+   "id": "skill:safflower_p50",
+   "owner": "hero:safflower",
+   "slot": "p50",
+   "name": "A Little Rouge",
+   "trigger": "battle_start",
+   "effects": [
+    {
+     "do": "apply",
+     "status": "status:surging_qi",
+     "turns": 1,
+     "target": "all_allies"
+    }
+   ],
+   "text": "At battle start, every ally gains Surging Qi for 1 turn.",
+   "draft": true
+  }
+ ]
+}

@@ -1,0 +1,265 @@
+{
+ "about": "Natal gear fragments of the 26 summonable heroines. Ten forge her unique gear.",
+ "records": [
+  {
+   "id": "item:frag_gladiolus",
+   "name": "Thousand-Floret Edge Fragment",
+   "cn": "千蕊锋残片",
+   "category": "fragment",
+   "rarity": 5,
+   "hero": "hero:gladiolus",
+   "about": "Ten forge Thousand-Floret Edge at the Forge",
+   "draft": true
+  },
+  {
+   "id": "item:frag_orchid",
+   "name": "Empty Valley Qin-Sword Fragment",
+   "cn": "空谷琴剑残片",
+   "category": "fragment",
+   "rarity": 5,
+   "hero": "hero:orchid",
+   "about": "Ten forge Empty Valley Qin-Sword at the Forge",
+   "draft": true
+  },
+  {
+   "id": "item:frag_pomegranate",
+   "name": "Fire-Pomegranate Sabre Fragment",
+   "cn": "榴火刀残片",
+   "category": "fragment",
+   "rarity": 5,
+   "hero": "hero:pomegranate",
+   "about": "Ten forge Fire-Pomegranate Sabre at the Forge",
+   "draft": true
+  },
+  {
+   "id": "item:frag_crabapple",
+   "name": "Stone Pillow Greatsword Fragment",
+   "cn": "石枕剑残片",
+   "category": "fragment",
+   "rarity": 5,
+   "hero": "hero:crabapple",
+   "about": "Ten forge Stone Pillow Greatsword at the Forge",
+   "draft": true
+  },
+  {
+   "id": "item:frag_magnolia",
+   "name": "Bodhi Bronze Bell Fragment",
+   "cn": "菩提铜钟残片",
+   "category": "fragment",
+   "rarity": 5,
+   "hero": "hero:magnolia",
+   "about": "Ten forge Bodhi Bronze Bell at the Forge",
+   "draft": true
+  },
+  {
+   "id": "item:frag_wisteria",
+   "name": "Purple Vine Armlet Fragment",
+   "cn": "紫藤臂环残片",
+   "category": "fragment",
+   "rarity": 5,
+   "hero": "hero:wisteria",
+   "about": "Ten forge Purple Vine Armlet at the Forge",
+   "draft": true
+  },
+  {
+   "id": "item:frag_camellia",
+   "name": "Snow-Camellia Teapot Fragment",
+   "cn": "雪茶壶残片",
+   "category": "fragment",
+   "rarity": 5,
+   "hero": "hero:camellia",
+   "about": "Ten forge Snow-Camellia Teapot at the Forge",
+   "draft": true
+  },
+  {
+   "id": "item:frag_azalea",
+   "name": "Cuckoo-Blood Bracer Fragment",
+   "cn": "啼血护臂残片",
+   "category": "fragment",
+   "rarity": 5,
+   "hero": "hero:azalea",
+   "about": "Ten forge Cuckoo-Blood Bracer at the Forge",
+   "draft": true
+  },
+  {
+   "id": "item:frag_peony",
+   "name": "Wei Purple Jade Seal Fragment",
+   "cn": "魏紫玉印残片",
+   "category": "fragment",
+   "rarity": 5,
+   "hero": "hero:peony",
+   "about": "Ten forge Wei Purple Jade Seal at the Forge",
+   "draft": true
+  },
+  {
+   "id": "item:frag_pear_blossom",
+   "name": "Rainstorm Needle Case Fragment",
+   "cn": "暴雨梨花匣残片",
+   "category": "fragment",
+   "rarity": 5,
+   "hero": "hero:pear_blossom",
+   "about": "Ten forge Rainstorm Needle Case at the Forge",
+   "draft": true
+  },
+  {
+   "id": "item:frag_iris",
+   "name": "Blue Kite Letter-Knife Fragment",
+   "cn": "蓝鸢信刀残片",
+   "category": "fragment",
+   "rarity": 5,
+   "hero": "hero:iris",
+   "about": "Ten forge Blue Kite Letter-Knife at the Forge",
+   "draft": true
+  },
+  {
+   "id": "item:frag_rose",
+   "name": "Crimson Moon Thorn Hairpin Fragment",
+   "cn": "赤月刺簪残片",
+   "category": "fragment",
+   "rarity": 5,
+   "hero": "hero:rose",
+   "about": "Ten forge Crimson Moon Thorn Hairpin at the Forge",
+   "draft": true
+  },
+  {
+   "id": "item:frag_oleander",
+   "name": "Bamboo-Leaf Viper Fangs Fragment",
+   "cn": "竹叶青双刺残片",
+   "category": "fragment",
+   "rarity": 5,
+   "hero": "hero:oleander",
+   "about": "Ten forge Bamboo-Leaf Viper Fangs at the Forge",
+   "draft": true
+  },
+  {
+   "id": "item:frag_jasmine",
+   "name": "Jasmine Ink Brush Fragment",
+   "cn": "素馨笔残片",
+   "category": "fragment",
+   "rarity": 5,
+   "hero": "hero:jasmine",
+   "about": "Ten forge Jasmine Ink Brush at the Forge",
+   "draft": true
+  },
+  {
+   "id": "item:frag_peach_blossom",
+   "name": "Peachwood Door-God Sword Fragment",
+   "cn": "桃木门神剑残片",
+   "category": "fragment",
+   "rarity": 5,
+   "hero": "hero:peach_blossom",
+   "about": "Ten forge Peachwood Door-God Sword at the Forge",
+   "draft": true
+  },
+  {
+   "id": "item:frag_narcissus",
+   "name": "Wave-Treading Mirror Fragment",
+   "cn": "凌波镜残片",
+   "category": "fragment",
+   "rarity": 5,
+   "hero": "hero:narcissus",
+   "about": "Ten forge Wave-Treading Mirror at the Forge",
+   "draft": true
+  },
+  {
+   "id": "item:frag_hibiscus",
+   "name": "Golden Crow Array Flag Fragment",
+   "cn": "金乌阵旗残片",
+   "category": "fragment",
+   "rarity": 5,
+   "hero": "hero:hibiscus",
+   "about": "Ten forge Golden Crow Array Flag at the Forge",
+   "draft": true
+  },
+  {
+   "id": "item:frag_daylily",
+   "name": "Mother's Hall Talisman Box Fragment",
+   "cn": "萱堂符匣残片",
+   "category": "fragment",
+   "rarity": 5,
+   "hero": "hero:daylily",
+   "about": "Ten forge Mother's Hall Talisman Box at the Forge",
+   "draft": true
+  },
+  {
+   "id": "item:frag_osmanthus",
+   "name": "Guanghan Moon Mirror Fragment",
+   "cn": "广寒月镜残片",
+   "category": "fragment",
+   "rarity": 5,
+   "hero": "hero:osmanthus",
+   "about": "Ten forge Guanghan Moon Mirror at the Forge",
+   "draft": true
+  },
+  {
+   "id": "item:frag_apricot_blossom",
+   "name": "Spring Thunder Fan Fragment",
+   "cn": "惊蛰扇残片",
+   "category": "fragment",
+   "rarity": 5,
+   "hero": "hero:apricot_blossom",
+   "about": "Ten forge Spring Thunder Fan at the Forge",
+   "draft": true
+  },
+  {
+   "id": "item:frag_snow_lotus",
+   "name": "Tianshan Ice Orb Fragment",
+   "cn": "天山冰珠残片",
+   "category": "fragment",
+   "rarity": 5,
+   "hero": "hero:snow_lotus",
+   "about": "Ten forge Tianshan Ice Orb at the Forge",
+   "draft": true
+  },
+  {
+   "id": "item:frag_trumpet_creeper",
+   "name": "Cloud-Climbing Jade Orb Fragment",
+   "cn": "凌霄玉珠残片",
+   "category": "fragment",
+   "rarity": 5,
+   "hero": "hero:trumpet_creeper",
+   "about": "Ten forge Cloud-Climbing Jade Orb at the Forge",
+   "draft": true
+  },
+  {
+   "id": "item:frag_chrysanthemum",
+   "name": "Eastern Fence Whisk Fragment",
+   "cn": "东篱拂尘残片",
+   "category": "fragment",
+   "rarity": 5,
+   "hero": "hero:chrysanthemum",
+   "about": "Ten forge Eastern Fence Whisk at the Forge",
+   "draft": true
+  },
+  {
+   "id": "item:frag_lily",
+   "name": "Red Thread Lily Lamp Fragment",
+   "cn": "红线百合灯残片",
+   "category": "fragment",
+   "rarity": 5,
+   "hero": "hero:lily",
+   "about": "Ten forge Red Thread Lily Lamp at the Forge",
+   "draft": true
+  },
+  {
+   "id": "item:frag_hydrangea",
+   "name": "Five-Colour Embroidered Ball Fragment",
+   "cn": "五彩绣球残片",
+   "category": "fragment",
+   "rarity": 5,
+   "hero": "hero:hydrangea",
+   "about": "Ten forge Five-Colour Embroidered Ball at the Forge",
+   "draft": true
+  },
+  {
+   "id": "item:frag_safflower",
+   "name": "Safflower Rouge Cauldron Fragment",
+   "cn": "红花胭脂鼎残片",
+   "category": "fragment",
+   "rarity": 5,
+   "hero": "hero:safflower",
+   "about": "Ten forge Safflower Rouge Cauldron at the Forge",
+   "draft": true
+  }
+ ]
+}

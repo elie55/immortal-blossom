@@ -95,6 +95,12 @@
     "victory": "Snow settles. So does this.",
     "ultimate": "Ten thousand swords, one winter."
    },
+   "threads": [
+    "thread:gladiolus__ling_shuang",
+    "thread:ling_shuang__orchid",
+    "thread:chrysanthemum__ling_shuang",
+    "thread:ling_shuang__mo_yingyue"
+   ],
    "art": {
     "card": "card_ling",
     "cutin": "ling_cutin",
@@ -196,6 +202,12 @@
     "victory": "Done before the thunder.",
     "ultimate": "Heaven passes judgement. I carry it out."
    },
+   "threads": [
+    "thread:mo_yingyue__pear_blossom",
+    "thread:mo_yingyue__orchid",
+    "thread:mo_yingyue__rose",
+    "thread:ling_shuang__mo_yingyue"
+   ],
    "art": {
     "card": "card_mo",
     "cutin": "mo_cutin",
@@ -297,6 +309,12 @@
     "victory": "Ash. All of it.",
     "ultimate": "Rise, Vermilion Phoenix!"
    },
+   "threads": [
+    "thread:hibiscus__yan_feihong",
+    "thread:pomegranate__yan_feihong",
+    "thread:safflower__yan_feihong",
+    "thread:su_lianhua__yan_feihong"
+   ],
    "art": {
     "card": "card_yan",
     "cutin": "yan_cutin",
@@ -398,6 +416,12 @@
     "victory": "Everyone is still standing. Good.",
     "ultimate": "A thousand petals, one sanctuary."
    },
+   "threads": [
+    "thread:magnolia__su_lianhua",
+    "thread:snow_lotus__su_lianhua",
+    "thread:daylily__su_lianhua",
+    "thread:su_lianhua__yan_feihong"
+   ],
    "art": {
     "card": "card_su",
     "cutin": "su_cutin",
