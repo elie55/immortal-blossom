@@ -1,9 +1,10 @@
 // The player's save: one JSON document kept in IndexedDB (localStorage as a fallback, memory if both fail),
 // with a schema version, a checksum, autosave and export/import as text. Also the rules that change it:
 // rewards and costs, EXP and breakthroughs, stage clears and stars, summons.
-import { get, all, expToNext, levelCap, nextRealm, SLICE_HEROES, rollDrops, battleExp } from './data.js';
+import { get, all, expToNext, levelCap, nextRealm, SLICE_HEROES, battleExp, heroStats } from './data.js';
+import { rollGearEntry, makeArtefact, refineCost, refineOnce, salvageValue, engrave, engraveCost, canReforge, reforgeCost, nextTier, gearBonus, withGear, canWear, POSITIONS, POS_SLOT, rarityOrder, tierOrder, rollScore } from './gear.js';
 
-const SCHEMA = 1;
+const SCHEMA = 2;
 const DB_NAME = 'immortal-blossoms', STORE = 'saves', SLOT = 'slot1', LS_KEY = 'ib_save_slot1';
 
 export function freshSave() {
@@ -17,11 +18,15 @@ export function freshSave() {
     stages: {},
     chapterRewards: {},
     pond: { pulls: 0, pity: 0, fatePoints: 0, guided: false },
+    // the Storage Ring: every piece by id; recently salvaged pieces (newest first) with what they returned
+    gear: { seq: 0, pieces: {}, recent: [], auto: freshAuto(), view: { sort: 'rarity', dir: -1, filter: {} } },
     flags: { seen: {} },
     settings: { muted: false, speed: 1, textSpeed: 1 },
     log: { battles: 0, wins: 0, playMs: 0 },
   };
 }
+/** Auto-salvage rules: off until the player sets them. */
+export function freshAuto() { return { on: false, below: 'rarity:rare', belowTier: false, minScore: 0, allowTop: false, keepAbove: 0.9 }; }
 export const SAVE = { data: freshSave(), storage: 'memory' };
 const D = () => SAVE.data;
 
@@ -38,6 +43,10 @@ function migrate(d) {
   // future schema changes upgrade d.v here; unknown fields are kept, missing ones filled
   for (const k of Object.keys(base)) if (d[k] === undefined) d[k] = base[k];
   d.cur = { ...base.cur, ...d.cur }; d.pond = { ...base.pond, ...d.pond }; d.flags = { ...base.flags, ...d.flags }; d.settings = { ...base.settings, ...d.settings };
+  // schema 2: the Storage Ring; Spirit Artefacts kept as items become pieces
+  d.gear = { ...base.gear, ...d.gear }; d.gear.auto = { ...freshAuto(), ...d.gear.auto }; d.gear.view = { ...base.gear.view, ...d.gear.view };
+  for (const h of Object.values(d.heroes)) if (!h.eq) h.eq = {};
+  for (const k of Object.keys(d.items)) if (k.startsWith('art:')) { for (let i = 0; i < d.items[k]; i++) storePiece(d, makeArtefact(k, 'rarity:rare')); delete d.items[k]; }
   d.v = SCHEMA;
   return d;
 }
@@ -91,7 +100,8 @@ export function grant(list = []) {
   for (const r of list) {
     if (r.cur || r.item) { add(r.cur || r.item, r.qty); out.push({ ...r }); }
     else if (r.hero) out.push(gainHero(r.hero));
-    else if (r.art) { D().items[r.art] = (D().items[r.art] || 0) + 1; out.push({ ...r }); }
+    else if (r.gear) out.push(addPiece(r.gear));
+    else if (r.art) out.push(addPiece(makeArtefact(r.art, r.rarity || 'rarity:rare')));
   }
   persist();
   return out;
@@ -104,7 +114,7 @@ export const prog = hid => D().heroes[hid];
 /** A heroine joins; a duplicate opens a Dao Blossom petal, and past six it becomes Blossom Dew. */
 export function gainHero(hid) {
   const h = D().heroes[hid];
-  if (!h) { D().heroes[hid] = { level: 1, exp: 0, bt: 0, petals: 0, bond: 0, got: Date.now() }; if (!D().lobby) D().lobby = hid; return { hero: hid, isNew: true }; }
+  if (!h) { D().heroes[hid] = { level: 1, exp: 0, bt: 0, petals: 0, bond: 0, eq: {}, got: Date.now() }; if (!D().lobby) D().lobby = hid; return { hero: hid, isNew: true }; }
   if (h.petals < 6) { h.petals++; return { hero: hid, petal: h.petals }; }
   const dew = { 3: 10, 4: 30, 5: 80 }[get(hid).rarity] || 10;
   add('cur:blossom_dew', dew);
@@ -174,6 +184,7 @@ export function clearStage(stage, result = {}) {
   const rewards = [];
   if (first && stage.firstClearRewards) rewards.push(...stage.firstClearRewards);
   if (stage.drops && result.win !== false) rewards.push(...rollDrops(stage.drops));
+  if (result.win !== false && result.extraDrops) rewards.push(...result.extraDrops);
   if (first && stage.unlocks) for (const u of stage.unlocks) D().flags[u] = true;
   const granted = grant(rewards);
   const exp = [];
@@ -185,6 +196,114 @@ export function clearStage(stage, result = {}) {
   persist();
   return { first, granted, exp, missions: st.missions };
 }
+
+// ---------------- drops ----------------
+/** Roll a drop table: currencies, items, gear pieces and nested tables; "rolls" rolls it that many times. */
+export function rollDrops(dropsId, depth = 0) {
+  const d = get(dropsId); if (!d || depth > 3) return [];
+  const out = [];
+  for (let n = 0; n < (d.rolls || 1); n++) {
+    for (const e of d.entries || []) {
+      if (Math.random() > (e.chance ?? 1)) continue;
+      if (e.gear) { if (e.gear.tier && get(e.gear.tier)) out.push({ gear: rollGearEntry(e.gear) }); continue; }
+      if (e.drops) { out.push(...rollDrops(e.drops, depth + 1)); continue; }
+      const [lo, hi] = Array.isArray(e.qty) ? e.qty : [e.qty || 1, e.qty || 1];
+      const q = Math.round(lo + Math.random() * (hi - lo));
+      if (e.cur) out.push({ cur: e.cur, qty: q }); else if (e.item) out.push({ item: e.item, qty: q });
+    }
+  }
+  return out;
+}
+
+// ---------------- gear: the Storage Ring ----------------
+const G = () => D().gear;
+export const pieces = () => Object.values(G().pieces);
+export const piece = id => G().pieces[id] || null;
+function storePiece(d, p) { d.gear.seq++; const id = `g${d.gear.seq}`; d.gear.pieces[id] = { ...p, id, lock: false, hero: null, pos: null, got: Date.now(), new: true }; return d.gear.pieces[id]; }
+/** Does an auto-salvage rule take this new piece? */
+export function autoTakes(p, a = G().auto) {
+  if (!a.on || p.kind === 'art') return false;
+  if (rarityOrder(p.rarity) >= 7 && !a.allowTop) return false;                     // Immortal and Divine stay unless allowed
+  if (a.keepAbove && [p.main.roll, ...p.subs.flatMap(s => s.rolls)].some(r => r >= a.keepAbove)) return false;
+  if (a.below && rarityOrder(p.rarity) < rarityOrder(a.below)) return true;
+  if (a.belowTier && tierOrder(p.tier) < highestTier()) return true;
+  if (a.minScore && rollScore(p) < a.minScore) return true;
+  return false;
+}
+const highestTier = () => pieces().reduce((m, p) => Math.max(m, p.kind === 'art' ? 0 : tierOrder(p.tier)), 0);
+/** Put a new piece in the ring (or straight through auto-salvage). Returns a reward entry for the results. */
+export function addPiece(p) {
+  if (autoTakes(p)) {
+    const back = salvageValue(p);
+    for (const c of back) add(c.cur || c.item, c.qty);
+    remember({ ...p, id: null }, back);
+    return { gear: p, salvaged: back };
+  }
+  return { gear: storePiece(D(), p) };
+}
+function remember(p, back) { G().recent.unshift({ piece: { ...p, hero: null, pos: null, lock: false }, back, at: Date.now() }); G().recent.length = Math.min(G().recent.length, 30); }
+/** The pieces a heroine wears, by position. */
+export function heroGear(hid) { const eq = D().heroes[hid]?.eq || {}; return POSITIONS.map(pos => (eq[pos] && piece(eq[pos])) || null); }
+export const heroBonus = hid => gearBonus(heroGear(hid));
+/** A heroine's stats with her gear on. */
+export function finalStats(hid, level, bt) { const p = D().heroes[hid] || {}; return withGear(heroStats(hid, level ?? p.level ?? 1, bt ?? p.bt ?? 0), heroBonus(hid)); }
+/** Equip a piece at a position (a ring may go on either ring finger). Takes it off whoever wore it. */
+export function equip(hid, pos, id) {
+  const p = piece(id), h = D().heroes[hid];
+  if (!p || !h || POS_SLOT[pos] !== p.slot || !canWear(p, get(hid))) return false;
+  if (p.hero) unequip(p.hero, p.pos);
+  if (h.eq[pos]) unequip(hid, pos);
+  h.eq[pos] = id; p.hero = hid; p.pos = pos; p.new = false;
+  persist();
+  return true;
+}
+export function unequip(hid, pos) {
+  const h = D().heroes[hid]; const id = h?.eq?.[pos]; if (!id) return false;
+  const p = piece(id); if (p) { p.hero = null; p.pos = null; }
+  delete h.eq[pos]; persist();
+  return true;
+}
+export function setLock(id, on) { const p = piece(id); if (p) { p.lock = !!on; persist(); } }
+export function markSeen(ids) { for (const id of ids) { const p = piece(id); if (p) p.new = false; } persist(); }
+/** Refine once; returns what changed, or null if it could not be paid. */
+export function refine(id) {
+  const p = piece(id); if (!p || p.plus >= 15) return null;
+  if (!pay(refineCost(p))) return null;
+  const r = refineOnce(p); persist(); return r;
+}
+/** Salvage pieces (locked and equipped ones are skipped). Returns the total returned. */
+export function salvage(ids) {
+  const total = {};
+  for (const id of ids) {
+    const p = piece(id); if (!p || p.lock || p.hero) continue;
+    const back = salvageValue(p);
+    for (const c of back) { add(c.cur || c.item, c.qty); total[c.cur || c.item] = (total[c.cur || c.item] || 0) + c.qty; }
+    remember(p, back);
+    delete G().pieces[id];
+  }
+  persist();
+  return Object.entries(total).map(([k, qty]) => (k.startsWith('cur:') ? { cur: k, qty } : { item: k, qty }));
+}
+/** Restore a recently salvaged piece by paying back what it returned. */
+export function restore(i) {
+  const r = G().recent[i]; if (!r || !pay(r.back)) return null;
+  G().recent.splice(i, 1);
+  const p = storePiece(D(), r.piece); p.new = false; persist();
+  return p;
+}
+export function engravePiece(id, i, key) {
+  const p = piece(id); if (!p || p.engraved || !canPay(engraveCost(p))) return false;
+  const probe = JSON.parse(JSON.stringify(p));
+  if (!engrave(probe, i, key)) return false;
+  pay(engraveCost(p)); p.subs = probe.subs; p.engraved = true; persist();
+  return true;
+}
+export function reforge(id) {
+  const p = piece(id); if (!p || !canReforge(p) || !pay(reforgeCost(p))) return false;
+  p.tier = nextTier(p).id; persist();
+  return true;
+}
+export function setAutoSalvage(rules) { G().auto = { ...G().auto, ...rules }; persist(); }
 
 // ---------------- the Fate Pond ----------------
 export function pondPool() {

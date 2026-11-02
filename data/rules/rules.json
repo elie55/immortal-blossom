@@ -104,6 +104,10 @@
     "max": 3,
     "cardSlots": 4,
     "bossSlots": 2
+   },
+   "debuffResist": {
+    "formula": "A debuff that passes its own chance is then resisted with chance (target's effect resistance - caster's accuracy), between 0 and the cap",
+    "cap": 0.85
    }
   },
   {
@@ -160,7 +164,7 @@
    ],
    "mainStatPerRefine": 0.06,
    "refineCost": {
-    "formula": "per level L: spirit stones 400 * L * tierScale, Forging Dust 4 * L * tierScale",
+    "formula": "per level L: spirit stones 400 x L x tier baseScale, Forging Dust 4 x L x tier baseScale (at least 1)",
     "refineCosts": [
      "cur:spirit_stones",
      "item:forging_dust"
@@ -192,9 +196,22 @@
     "stat:acc/pct": 0.08,
     "stat:res/pct": 0.08
    },
-   "rolls": "value = max for the tier * a roll inside the rarity range; the gauge shows the roll",
+   "rolls": "A stat's best value for the piece's tier is the tier VIII value times the tier's baseScale; every value is that best value times a roll inside the rarity's range, and the gauge shows the roll",
    "reforgeNeeds": "+15",
-   "engravePerPiece": 1
+   "engravePerPiece": 1,
+   "mainStatValue": "mainStatAtTierVIII is a 100% roll at +15. A main stat is worth best value x roll x (1 + mainStatPerRefine x refine) / (1 + mainStatPerRefine x 15), so +0 is 53% of +15",
+   "substatValue": "Each roll of a substat adds substatRollAtTierVIII x tier baseScale x roll; a substat has one roll at drop and one more for each refining milestone that raised it",
+   "substatsUnique": "A piece never has two lines of the same stat and form (Attack % and flat Attack can sit together)",
+   "salvageTierMultiplier": "Salvage returns the rarity's salvage list times (tier baseScale / 0.2), so tier I x1 and tier VIII x5, plus 80% of what its refining cost",
+   "artefactValue": "A Spirit Artefact's Attack, Health and passive are its Divine values x the rarity's artefactPower x (1 + 0.06 x refine) / 1.9",
+   "artefactRefineCost": {
+    "formula": "per level L: spirit stones 500 x L, Artefact Essence 1 + floor(L / 5)",
+    "refineCosts": [
+     "cur:spirit_stones",
+     "item:artefact_essence"
+    ]
+   },
+   "setsCount": "Pieces in the eight set slots count toward their set; 2 or more give the 2-piece bonus once, 4 or more also the 4-piece effect, and different sets stack"
   }
  ]
 }

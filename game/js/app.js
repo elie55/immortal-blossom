@@ -1,6 +1,7 @@
 // The app shell: screen router, top bar, dialogs, toasts and the battle host that hands a stage to the engine.
 import { BT, ui, tutorial, clock, audio, CYCLE_SVG, LOTUS } from './engine.js';
-import { get, iconUrl, faceUrl, num, standUrl, npcUrl } from './data.js';
+import { get, iconUrl, faceUrl, num, standUrl, npcUrl, hasArt, keyOf } from './data.js';
+import { pieceName, pieceIcon, rarityColor, ROMAN, tierOrder } from './gear.js';
 import { qty, persist, settings } from './state.js';
 
 export const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -13,8 +14,31 @@ export const npcSays = (id, html) => {
   return `<div class="npc-say">${u ? `<div class="npc-fig${standUrl(id) ? '' : ' flat'}"><img src="${u}" alt=""></div>` : ''}<div>${html}</div></div>`;
 };
 export const starStr = n => '★'.repeat(n);
-/** A reward chip: icon (or glyph) with its quantity. */
+// ---------------- gear tiles ----------------
+const SLOT_GLYPH = { 'slot:weapon': '剑', 'slot:helmet': '冠', 'slot:body': '袍', 'slot:gloves': '腕', 'slot:pants': '裤', 'slot:boots': '靴', 'slot:ring': '戒', 'slot:pendant': '佩', 'slot:artefact': '宝' };
+export const SET_COLOR = { 'set:sword_heart': '#cfe3ff', 'set:azure_dragon': '#4fd1c5', 'set:white_tiger': '#f2f2f2', 'set:vermilion_bird': '#ff6a4a', 'set:qilin': '#ffd36a', 'set:black_tortoise': '#8fa6c8', 'set:heavenly_eye': '#c58bff', 'set:still_water': '#7cc6ff', 'set:blood_lotus': '#ff5a7a', 'set:five_elements': '#9be36e' };
+export const slotGlyph = slot => SLOT_GLYPH[slot] || '器';
+export const pieceIconUrl = p => (hasArt(`icons/${pieceIcon(p)}.webp`) ? `assets/icons/${pieceIcon(p)}.webp` : null);
+/** A piece of gear as a tile: rarity frame, icon, tier, refining, set badge; opts: { sel, cls, face } */
+export function gearTile(p, opts = {}) {
+  const icon = pieceIconUrl(p), col = rarityColor(p.rarity);
+  const set = p.set ? get(p.set) : null;
+  return `<div class="gt rar-${keyOf(p.rarity)} ${opts.cls || ''}${opts.sel ? ' sel' : ''}${p.lock ? ' locked' : ''}" ${p.id ? `data-pid="${p.id}"` : ''} style="--rc:${col}" title="${esc(get(p.rarity)?.name)} ${esc(pieceName(p))}">
+    ${icon ? `<img src="${icon}" alt="">` : `<span class="g">${slotGlyph(p.slot)}</span>`}
+    ${p.kind !== 'art' ? `<i class="tr">${ROMAN[tierOrder(p.tier)]}</i>` : ''}${p.plus ? `<b class="pl">+${p.plus}</b>` : ''}
+    ${set ? `<span class="sg" style="--sc:${SET_COLOR[p.set] || '#ccc'}">${esc(set.cn[0])}</span>` : ''}
+    ${p.lock ? '<span class="lk">锁</span>' : ''}${opts.face && p.hero && faceUrl(p.hero) ? `<img class="eqf" src="${faceUrl(p.hero)}" alt="">` : ''}${opts.isNew && p.new ? '<span class="nw"></span>' : ''}
+  </div>`;
+}
+/** A reward chip: icon (or glyph) with its quantity. Gear pieces show as tiles. */
 export function rewardChip(r, cls = '') {
+  if (r.gear) return gearTile(r.gear, { cls: `rw-g ${cls}${r.salvaged ? ' salv' : ''}` });
+  if (r.art) return gearTile({ kind: 'art', slot: 'slot:artefact', art: r.art, rarity: r.rarity || 'rarity:rare', plus: 0 }, { cls: `rw-g ${cls}` });
+  if (r.gearOdds) { // a drop table's gear: the best rarity it can roll, its tier, and the odds on hover
+    const g = r.gearOdds, best = Object.keys(g.rarityOdds).sort((a, b) => get(b).order - get(a).order)[0];
+    const odds = Object.entries(g.rarityOdds).map(([k, v]) => `${get(k).name} ${Math.round(v * 100)}%`).join(' · ');
+    return `<div class="gt rw-g rar-${keyOf(best)} ${cls}" style="--rc:${rarityColor(best)}" title="Gear, tier ${ROMAN[tierOrder(g.tier)]}${g.sets || g.set ? ' with a set' : ''}: ${odds}${r.chance < 1 ? ` (${Math.round(r.chance * 100)}% a run)` : ''}"><span class="g">器</span><i class="tr">${ROMAN[tierOrder(g.tier)]}</i></div>`;
+  }
   const id = r.cur || r.item || r.hero || r.art || r.id, rec = get(id);
   const icon = r.hero ? faceUrl(r.hero) : iconUrl(id);
   const glyph = r.art ? '宝' : (r.hero ? '花' : '物');

@@ -167,6 +167,7 @@ function configureRules(c) {
     qiStart: q.start ?? RULES.qiStart, qiBase: q.perTurnBase ?? RULES.qiBase, qiPerHeroine: q.perLivingHeroine ?? RULES.qiPerHeroine,
     qiPerKill: q.perKill ?? RULES.qiPerKill, qiMax: q.max ?? RULES.qiMax,
     tribulationRound: t.fromRound ?? RULES.tribulationRound, tribulationBase: t.basePct ?? RULES.tribulationBase, tribulationStep: t.perRoundPct ?? RULES.tribulationStep,
+    resistCap: c.debuffResist?.cap ?? 0.85,
   });
 }
 
@@ -1320,6 +1321,9 @@ function makeUnit(d, side, slot) {
     techs: d.techs.map(t => ({ ...t, cur: t.start ?? 0 })), status: [], barrier: 0, alive: true,
     wide: !!d.wide, boss: !!d.boss, qiShield: d.qiShield ? { max: d.qiShield, cur: d.qiShield } : null,
     attached: [null, null], stats: { dmg: 0, heal: 0, taken: 0 }, d,
+    // gear: accuracy, effect resistance, healing, 4-piece sets and the Spirit Artefact (power = share of its Divine +15 values)
+    acc: d.acc || 0, res: d.res || 0, healRecv: d.healRecv || 0, healing: d.healing || 0,
+    sets4: new Set(d.sets4 || []), artefact: d.artefact || null, gearPhaseQi: d.gearPhaseQi || 0,
   };
 }
 const getUnit = uid => B.units.find(u => u.uid === uid);
@@ -1339,6 +1343,17 @@ const atkOf = u => u.atk * (has(u, 'surge') ? 1.5 : 1);
 const defOf = u => u.defense * (has(u, 'iron') ? 1.6 : 1) * (has(u, 'bshatter') ? 0.3 : 1);
 const critOf = u => u.crit + (has(u, 'intent') ? 0.3 : 0) + (u.attached && u.attached.some(a => a && a.id === 'sword_insight') ? 0.25 : 0);
 const hasteOf = u => (u.haste || 0) + (has(u, 'wind') ? 30 : 0);
+// Gear: a 4-piece set effect she wears, and her Spirit Artefact's power if it is the one named.
+const set4 = (u, id) => !!(u.sets4 && u.sets4.has(id));
+const artPow = (u, id) => (u.artefact && u.artefact.id === id ? u.artefact.power : 0);
+const SKIPS_TURN = new Set(['frost', 'shock', 'dream']);
+function gearCallout(u, text) { const c = board.center(u, 0.16); V.floatText(text, c.x, c.y, 'info', { size: 20 }); B.log.gear[text] = (B.log.gear[text] || 0) + 1; }
+/** The cards beside one on its side of the board. */
+function beside(t) {
+  const row = B.units.filter(x => x.side === t.side && x.alive).sort((a, b) => (a.slotX ?? a.slot) - (b.slotX ?? b.slot));
+  const i = row.indexOf(t);
+  return i < 0 ? [] : [row[i - 1], row[i + 1]].filter(Boolean);
+}
 
 // ======================= setup =======================
 /**
@@ -1354,9 +1369,16 @@ async function startBattle(def) {
     qi: RULES.qiStart, gather: 0, points: { hero: freshPoints(), enemy: freshPoints() },
     chain: { len: 0, last: null, list: [] }, kin: { phase: null, uid: null, n: 0 }, maxChain: 0, sel: null, emp: false,
     pendingEnc: null, encounter: null, tutorial: !!def.tutorial, def, combos: new Set(def.combos || []), counters: [], comboQi: 0,
-    log: { casts: 0, falls: 0, empowers: 0, shatters: 0, encounters: 0, maxKills: 0, kindred: 0, harmony: 0, combos: {} },
+    log: { casts: 0, falls: 0, empowers: 0, shatters: 0, encounters: 0, maxKills: 0, kindred: 0, harmony: 0, combos: {}, gear: {} },
   });
   def.heroes.forEach((d, i) => B.units.push(makeUnit(d, 'hero', i)));
+  B.gourdDone = false;
+  for (const u of heroes()) {
+    if (u.gearPhaseQi) B.points.hero[u.phase] += u.gearPhaseQi;                       // Five Elements, 2 pieces
+    const pearl = artPow(u, 'art:dinghai_pearl'); if (pearl) B.points.hero[GEN[u.phase]] += Math.max(1, Math.round(2 * pearl));
+    const pouch = artPow(u, 'art:qiankun_pouch'); if (pouch) B.qi = Math.min(RULES.qiMax, B.qi + Math.max(1, Math.round(6 * pouch)));
+    if (artPow(u, 'art:wind_fire_wheels')) for (const t of u.techs) t.cur = Math.max(0, t.cur - 1);
+  }
   for (const u of heroes()) board.createCard(u, ui.boardEl);
   ui.resetBattle(def);
   const done = new Promise(res => { B.resolve = res; });
@@ -1537,6 +1559,16 @@ async function startOfTurn(side) {
     u.techs.forEach((t, i) => { t.blocked = !!(u.alive && has(u, 'sealed') && i > 0); });
     board.refreshCard(u);
   }
+  // Qilin: the ally with the lowest health takes a Spirit Shield of 8% of the wearer's max health until the next turn
+  for (const w of B.units.filter(x => x.side === side && x.alive && set4(x, 'set:qilin'))) {
+    const to = allies(w).sort((a, b) => a.hp / a.maxHp - b.hp / b.maxHp)[0];
+    const amt = Math.round(w.maxHp * 0.08);
+    if (to && amt > to.barrier) {
+      to.barrier = amt; addStatus(to, 'shield', 2, { src: w });
+      const c = board.center(to, 0.45); V.floatText('+' + amt.toLocaleString('en-US'), c.x, c.y + 30, 'shield', { label: 'AUSPICIOUS GUARD' });
+      B.log.gear['AUSPICIOUS GUARD'] = (B.log.gear['AUSPICIOUS GUARD'] || 0) + 1;
+    }
+  }
   const us = B.units.filter(u => u.side === side && u.alive);
   if (B.round >= RULES.tribulationRound) {
     const pct = RULES.tribulationBase + RULES.tribulationStep * (B.round - RULES.tribulationRound);
@@ -1617,6 +1649,23 @@ function addStatus(u, id, turns, extra = {}) {
   if (!u.alive || !id) return false;
   const d = STATUS[id];
   if (d.debuff && has(u, 'clear')) { const c = board.center(u, 0.4); V.floatText('IMMUNE', c.x, c.y, 'info'); return false; }
+  const src = extra.src;
+  if (d.debuff && src && src.side !== u.side) {
+    // Still Water: the first debuff that would land on her each enemy turn goes back to its caster
+    if (set4(u, 'set:still_water') && B.side !== u.side && u.mirrorRound !== B.round && src.alive) {
+      u.mirrorRound = B.round; gearCallout(u, 'MIRROR LAKE');
+      addStatus(src, id, turns + (B.side === src.side ? 1 : 0), { ...extra, src: u });
+      return false;
+    }
+    // effect resistance against the caster's accuracy
+    const resist = Math.min(RULES.resistCap ?? 0.85, Math.max(0, (u.res || 0) - (src.acc || 0)));
+    if (resist > 0 && Math.random() < resist) { const c = board.center(u, 0.4); V.floatText('RESISTED', c.x, c.y - 40, 'info'); B.log.gear.RESISTED = (B.log.gear.RESISTED || 0) + 1; return false; }
+    // Heavenly Eye: her debuffs last a turn longer (not the ones that skip turns) and chip a boss's Qi shield
+    if (set4(src, 'set:heavenly_eye')) {
+      if (!SKIPS_TURN.has(id)) turns += 1;
+      if (u.boss && u.qiShield && !has(u, 'shatter') && u.qiShield.cur > 0) { u.qiShield.cur -= 1; if (u.qiShield.cur === 0) shatter(u); }
+    }
+  }
   const ex = has(u, id);
   if (id === 'demon' || id === 'wound') {
     const n = extra.stacks || 1;
@@ -1627,6 +1676,8 @@ function addStatus(u, id, turns, extra = {}) {
   if ((id === 'frost' || id === 'shock' || id === 'dream') && B.side === u.side && B.phase === 'input') u.skip = true;
   if (id === 'sealed') u.techs.forEach((t, i) => { if (i > 0) t.blocked = true; });
   board.refreshCard(u);
+  // Heaven-Shaking Seal: taunting an enemy also disrupts its Qi
+  if (id === 'provoke' && src && artPow(src, 'art:heaven_shaking_seal')) addStatus(u, 'disrupt', turns, { src });
   return true;
 }
 function removeStatus(u, id) {
@@ -1711,12 +1762,21 @@ function applyDamage(src, tgt, power, o = {}) {
   return h;
 }
 
-function applyHealAmount(src, tgt, amount) {
+/** Heal: o.raw skips the healing stats (an amount already counted), o.noOverflow stops Blood Lotus passing it on. */
+function applyHealAmount(src, tgt, amount, o = {}) {
   if (!tgt.alive) return 0;
   if (has(tgt, 'wither')) { const c = board.center(tgt, 0.4); V.floatText('WITHERED', c.x, c.y, 'info'); return 0; }
-  const amt = Math.round(amount), real = Math.min(tgt.maxHp - tgt.hp, amt);
+  const amt = Math.round(o.raw ? amount : amount * (1 + (src.healing || 0)) * (1 + (tgt.healRecv || 0))), real = Math.min(tgt.maxHp - tgt.hp, amt);
   tgt.hp += real; src.stats.heal += real;
   board.refreshCard(tgt);
+  // Blood Lotus: healing past her full health flows to the ally with the lowest health
+  if (!o.noOverflow && amt > real && set4(tgt, 'set:blood_lotus')) {
+    const to = allies(tgt).filter(a => a !== tgt && a.hp < a.maxHp).sort((a, b) => a.hp / a.maxHp - b.hp / b.maxHp)[0];
+    if (to) {
+      const n = applyHealAmount(src, to, amt - real, { raw: true, noOverflow: true });
+      if (n) { const c = board.center(to, 0.45); V.floatText('+' + Math.min(n, to.maxHp).toLocaleString('en-US'), c.x, c.y + 20, 'heal', { label: 'CRIMSON BLOOM' }); B.log.gear['CRIMSON BLOOM'] = (B.log.gear['CRIMSON BLOOM'] || 0) + 1; }
+    }
+  }
   return amt;
 }
 
@@ -1771,6 +1831,7 @@ function comboFire(id, u, fn) {
 function chainStep(u) {
   const c = B.chain, k = B.kin;
   if (c.last && GEN[c.last] === u.phase && c.last !== u.phase && c.len < 9) { c.len += 1; c.list.push(u.phase); }
+  else if (c.len >= 2 && set4(u, 'set:five_elements')) { c.list.push(u.phase); gearCallout(u, 'UNBROKEN CYCLE'); } // the chain holds
   else { c.len = 1; c.list = [u.phase]; }
   // Kindred Qi: the same phase again, from a different card
   if (k.phase === u.phase && k.uid !== u.uid) k.n += 1; else if (k.phase !== u.phase) k.n = 0;
@@ -1805,6 +1866,7 @@ async function doCast(u, t, target, emp) {
   try {
     const run = SKILLS[t.chor] || SKILLS.generic;
     await run(ctx);
+    gearOnCast(u, t);
   } catch (e) { console.error('skill error', t.id, e); }
   await board.lift(u, false);
   if (u.side === 'hero') B.log.maxKills = Math.max(B.log.maxKills, B.castKills || 0);
@@ -1856,6 +1918,11 @@ function makeCtx(u, t, target, emp, hm) {
     /** Damage + feedback (number, shake, sparks). */
     hit(tgt, power, o = {}) {
       if (!tgt || !tgt.alive) return null;
+      // Black Tortoise: a single-target hit on an ally below 30% health strikes the wearer instead, for 25% less
+      if (single && !o.splash && u.side !== tgt.side && tgt.hp / tgt.maxHp < 0.3) {
+        const g = allies(tgt).filter(a => a !== tgt && set4(a, 'set:black_tortoise')).sort((a, b) => b.hp / b.maxHp - a.hp / a.maxHp)[0];
+        if (g) { gearCallout(g, 'SHELL OF THE NORTH'); tgt = g; power *= 0.75; }
+      }
       const h = applyDamage(u, tgt, power, { hm, emp, single, ...o });
       if (!h) return null;
       const c = board.center(tgt, o.fy ?? 0.45);
@@ -1868,6 +1935,7 @@ function makeCtx(u, t, target, emp, hm) {
       V.emitP('spark', c.x, c.y, h.crit ? 18 : 10, { color: col, speed: [200, 640] });
       if (h.crit) { hitStop(70); V.shake(9, 240); sfx('crit'); } else { sfx('hit'); if (!o.small) V.shake(4, 160); }
       if (h.killed) killUnit(tgt);
+      if (!o.splash) gearOnHit(ctx, tgt, h, power, o);
       return h;
     },
     heal(tgt, power, o = {}) {
@@ -1887,10 +1955,7 @@ function makeCtx(u, t, target, emp, hm) {
       const c = board.center(tgt, 0.45); V.floatText('+' + amt.toLocaleString('en-US'), c.x, c.y + 30, 'shield', { label: 'SPIRIT SHIELD' });
       return amt;
     },
-    status: (tgt, id, turns, extra = {}) => {
-      if (sid(id) === 'provoke' && !extra.src) extra = { ...extra, src: u };
-      return addStatus(tgt, id, turns, extra);
-    },
+    status: (tgt, id, turns, extra = {}) => addStatus(tgt, id, turns, extra.src ? extra : { ...extra, src: u }),
     burn(tgt, turns = 2) {
       if (u.id === 'hero:yan_feihong' && combo('combo:phoenix_among_peonies') && has(tgt, 'provoke')?.src?.id === 'hero:wei_zi') turns += 1;
       return addStatus(tgt, 'burn', turns, { value: Math.round(atkOf(u) * 0.35 * phaseMul(u.side, 'fire') * (emp ? RULES.empowerMul : 1)), src: u });
@@ -1921,6 +1986,52 @@ function makeCtx(u, t, target, emp, hm) {
     flare: (tgt, id) => flare(tgt, sid(id)),
   };
   return ctx;
+}
+
+// ======================= gear effects on hits and casts =======================
+function gearOnHit(x, tgt, h, power, o) {
+  const u = x.u;
+  if (!h || !u.alive) return;
+  // Vermilion Bird: her critical hits apply Fire Poison for 2 turns
+  if (h.crit && tgt.alive && set4(u, 'set:vermilion_bird')) addStatus(tgt, 'burn', 2, { value: Math.round(atkOf(u) * 0.35 * phaseMul(u.side, 'fire')), src: u });
+  // Blood Lotus: she heals for 20% of the damage she deals
+  if (h.dmg > 0 && set4(u, 'set:blood_lotus') && u.hp < u.maxHp) {
+    const n = applyHealAmount(u, u, h.dmg * 0.2);
+    if (n) { const c = board.center(u, 0.45); V.floatText('+' + Math.min(n, u.maxHp).toLocaleString('en-US'), c.x, c.y + 10, 'heal', { label: 'CRIMSON BLOOM' }); B.log.gear['CRIMSON BLOOM'] = (B.log.gear['CRIMSON BLOOM'] || 0) + 1; }
+  }
+  // White Tiger: her single-target hits also strike the cards beside the target for 30%
+  if (o.single !== false && x.t.target === 'enemy' && set4(u, 'set:white_tiger') && h.dmg > 0) {
+    for (const n of beside(tgt)) { const s = x.hit(n, power * 0.3, { splash: true, noCrit: true, small: true }); if (s) gearCallout(n, "TIGER'S POUNCE"); }
+  }
+  // Sword Heart: when her technique defeats an enemy, her S1 is ready again, once per turn
+  if (h.killed && set4(u, 'set:sword_heart') && u.edgeRound !== B.round) {
+    const s1 = u.techs.find(t => t.slot === 's1') || u.techs[0];
+    if (s1 && s1.cur > 0) { s1.cur = 0; u.edgeRound = B.round; gearCallout(u, 'UNBROKEN EDGE'); board.refreshCard(u); }
+  }
+  // Demon-Revealing Mirror: her first hit of the battle strips buffs
+  const mir = artPow(u, 'art:demon_revealing_mirror');
+  if (mir && !u.mirrorDone && tgt.alive) { u.mirrorDone = true; if (dispel(tgt, Math.max(1, Math.round(2 * mir))).length) gearCallout(tgt, 'DEMON REVEALED'); }
+  // Immortal-Binding Rope: a chance to Entangle on hit
+  const rope = artPow(u, 'art:immortal_binding_rope');
+  if (rope && tgt.alive && Math.random() < 0.2 * rope && addStatus(tgt, 'entangle', 1, { src: u })) gearCallout(tgt, 'BOUND');
+}
+function gearOnCast(u, t) {
+  // Azure Dragon: her ultimate brings every ally's charging S2 a turn closer
+  if (t.ult && set4(u, 'set:azure_dragon')) {
+    let any = false;
+    for (const a of allies(u)) for (const tt of a.techs) if (tt.slot === 's2' && tt.cur > 0) { tt.cur -= 1; any = true; board.refreshCard(a); }
+    if (any) gearCallout(u, 'RISING DRAGON');
+  }
+  // Plantain Fan: her area techniques delay the enemy technique closest to ready by a turn
+  if (t.target === 'allEnemies' && artPow(u, 'art:plantain_fan')) {
+    const cands = foes(u).flatMap(f => f.techs.filter(tt => tt.cd > 1).map(tt => ({ f, tt }))).sort((a, b) => a.tt.cur - b.tt.cur);
+    if (cands[0]) { cands[0].tt.cur += 1; board.refreshCard(cands[0].f); gearCallout(cands[0].f, 'DELAYED'); }
+  }
+  // Purple-Gold Gourd: the first enemy to cast an ultimate has its meridians sealed
+  if (u.side === 'enemy' && t.ult && u.alive && !B.gourdDone) {
+    const g = heroes().find(h => h.alive && artPow(h, 'art:purple_gold_gourd'));
+    if (g) { B.gourdDone = true; if (addStatus(u, 'sealed', 2, { src: g })) gearCallout(u, 'SEALED BY THE GOURD'); }
+  }
 }
 
 // ======================= player input =======================

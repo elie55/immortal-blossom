@@ -3,6 +3,7 @@
 import { GAME_DATA } from './gamedata.js';
 import { ASSET_FILES } from './assets.js';
 import { CHOREO } from './engine.js';
+import { withGear, pieceName, pieceIcon, rarityColor } from './gear.js';
 
 const byId = new Map(), byType = new Map();
 for (const r of GAME_DATA.records) {
@@ -98,15 +99,19 @@ export function techOf(sid, icon, isBoss = false) {
 }
 
 // ---------------- units for the battle engine ----------------
-export function heroUnit(hid, prog = {}, arrayBonus = {}) {
+/** A heroine for the battle engine. gear: what her equipped pieces give (gear.js gearBonus), or nothing. */
+export function heroUnit(hid, prog = {}, arrayBonus = {}, gear = null) {
   const h = get(hid), art = heroArt(hid), lv = prog.level || 1, bt = prog.bt || 0;
-  const s = heroStats(hid, lv, bt);
+  const s = gear ? withGear(heroStats(hid, lv, bt), gear) : { ...heroStats(hid, lv, bt), acc: 0, res: 0, healRecv: 0, healing: 0 };
   const hp = Math.round(s.hp * (1 + (arrayBonus.hp || 0)));
   return {
     key: art.key, id: hid, name: h.name, cn: h.cn, title: h.title, phase: phaseOf(h.phase), path: h.path, pathName: get(h.path)?.name,
     rarity: h.rarity, art: art.card, cutin: art.cutin, face: art.face, lvl: lv,
     hp, atk: Math.round(s.atk * (1 + (arrayBonus.atk || 0))), def: Math.round(s.def * (1 + (arrayBonus.def || 0))),
-    crit: s.crit, critDmg: s.critDmg + (arrayBonus.crit_dmg || 0), haste: arrayBonus.haste || 0,
+    crit: s.crit, critDmg: s.critDmg + (arrayBonus.crit_dmg || 0), haste: (s.haste || 0) + (arrayBonus.haste || 0),
+    acc: s.acc, res: s.res, healRecv: s.healRecv, healing: s.healing,
+    // gear effects the engine plays: 4-piece sets, the Spirit Artefact's passive, Five Elements' Phase Qi
+    sets4: gear?.sets4 || [], artefact: gear?.artefact || null, gearPhaseQi: gear?.phaseQi || 0,
     techs: h.skills.map((sid, i) => techOf(sid, art.icons[i])),
   };
 }
@@ -140,7 +145,7 @@ export function stageBattle(stage, team, progress, arrayId = 'array:yellow_drago
       enemies: w.map(e => enemyUnit(e.enemy, e.level)),
     };
   });
-  const heroes = team.filter(Boolean).map((hid, i) => heroUnit(hid, opts.fixedLevel ? { level: opts.fixedLevel } : (progress[hid] || { level: opts.guestLevel || 1 }), arrayBonus(arrayId, i)));
+  const heroes = team.filter(Boolean).map((hid, i) => heroUnit(hid, opts.fixedLevel ? { level: opts.fixedLevel } : (progress[hid] || { level: opts.guestLevel || 1 }), arrayBonus(arrayId, i), progress[hid] && opts.gear ? opts.gear(hid) : null));
   const combos = teamCombos(team);
   const loc = get(stage.location);
   return {
@@ -160,21 +165,9 @@ export function rewardEntries(list = []) {
     if (r.cur) return { kind: 'cur', id: r.cur, qty: r.qty, name: get(r.cur)?.name, icon: iconUrl(r.cur) };
     if (r.item) return { kind: 'item', id: r.item, qty: r.qty, name: get(r.item)?.name, icon: iconUrl(r.item) };
     if (r.hero) return { kind: 'hero', id: r.hero, qty: 1, name: get(r.hero)?.name, icon: faceUrl(r.hero) };
-    if (r.art) return { kind: 'art', id: r.art, qty: 1, name: get(r.art)?.name, icon: null };
+    if (r.gear) return { kind: 'gear', id: r.gear.id || null, qty: 1, name: pieceName(r.gear), icon: hasArt(`icons/${pieceIcon(r.gear)}.webp`) ? `assets/icons/${pieceIcon(r.gear)}.webp` : null, color: rarityColor(r.gear.rarity), piece: r.gear, salvaged: r.salvaged || null };
+    if (r.art) return { kind: 'art', id: r.art, qty: 1, name: get(r.art)?.name, icon: hasArt(`icons/art_${keyOf(r.art)}.webp`) ? `assets/icons/art_${keyOf(r.art)}.webp` : null, color: rarityColor(r.rarity) };
     return null;
   }).filter(Boolean);
-}
-/** Roll a drop table (gear entries are skipped: gear arrives with the core loop alpha). */
-export function rollDrops(dropsId) {
-  const d = get(dropsId); if (!d) return [];
-  const out = [];
-  for (const e of d.entries || []) {
-    if (e.gear || e.drops) continue;
-    if (Math.random() > (e.chance ?? 1)) continue;
-    const [lo, hi] = Array.isArray(e.qty) ? e.qty : [e.qty || 1, e.qty || 1];
-    const qty = Math.round(lo + Math.random() * (hi - lo));
-    if (e.cur) out.push({ cur: e.cur, qty }); else if (e.item) out.push({ item: e.item, qty });
-  }
-  return out;
 }
 export const num = n => Math.round(n).toLocaleString('en-US');

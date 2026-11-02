@@ -1,7 +1,7 @@
 // Journey (the chapter map), Formation (team ready) and the victory screens.
 import { App, esc, phTag, rewardChip, starStr, PH_COLOR } from './app.js';
 import { get, all, cardUrl, faceUrl, locBg, enemyArt, phaseOf, rewardEntries, heroStats, power, teamCombos, battleExp, num, hasArt } from './data.js';
-import { data, persist, isCleared, isUnlocked, stars, stageState, chapterStars, starRewardState, claimStarReward, ownedHeroes, owned, prog } from './state.js';
+import { data, persist, isCleared, isUnlocked, stars, stageState, chapterStars, starRewardState, claimStarReward, ownedHeroes, owned, prog, finalStats } from './state.js';
 import { Flow, Scene, missionText } from './story.js';
 
 const KIND = { battle: ['战', 'Battle', ''], story: ['卷', 'Story', 'story'], commission: ['委', 'Commission', ''], encounter: ['遇', 'Encounter', 'story'], boss: ['首', 'Boss', 'boss'] };
@@ -37,13 +37,12 @@ App.register('journey', {
     const detail = (s) => {
       const [, label] = KIND[s.kind] || KIND.battle, un = isUnlocked(s), cleared = isCleared(s.id), ss = stageState(s.id);
       const foes = s.waves ? [...new Map(s.waves.flat().map(e => [e.enemy, e])).values()] : [];
-      const first = rewardEntries(s.firstClearRewards || []);
-      const drops = s.drops ? (get(s.drops).entries || []).filter(e => e.cur || e.item) : [];
+      const drops = s.drops ? (get(s.drops).entries || []).filter(e => e.cur || e.item || e.gear) : [];
       const exp = s.waves ? battleExp(s) : 0;
       return `<div class="sd-scroll"><div class="kind">${label.toUpperCase()} · ${esc(get(s.location)?.name || '')}</div><h2>${esc(s.name)}</h2><p class="beat">${esc(s.beat || '')}</p>
         ${foes.length ? `<div class="sd-h">ENEMIES</div><div class="foes">${foes.map(f => { const e = get(f.enemy); return `<span class="foe"><img src="assets/cards/${enemyArt(e)}.webp" alt="">${phTag(phaseOf(e.phase))}${esc(e.name)} <span class="mut">Lv ${f.level}</span></span>`; }).join('')}</div>` : ''}
         ${s.missions ? `<div class="sd-h">MISSIONS</div><div class="missions">${s.missions.map((m, i) => `<span class="${ss?.missions?.[i] ? 'ok' : ''}">${esc(missionText(m))}</span>`).join('')}</div>` : ''}
-        <div class="sd-h">REWARDS${exp ? ` · <span class="mut">${num(exp)} EXP each</span>` : ''}</div><div class="rw">${first.map(r => rewardChip({ [r.kind]: r.id, qty: r.qty }, 'first' + (cleared ? ' done' : ''))).join('')}${drops.map(d => rewardChip({ cur: d.cur, item: d.item, qty: Array.isArray(d.qty) ? d.qty[1] : d.qty })).join('')}</div>
+        <div class="sd-h">REWARDS${exp ? ` · <span class="mut">${num(exp)} EXP each</span>` : ''}</div><div class="rw">${(s.firstClearRewards || []).map(r => rewardChip(r, 'first' + (cleared ? ' done' : ''))).join('')}${drops.map(d => (d.gear ? rewardChip({ gearOdds: d.gear, chance: d.chance }) : rewardChip({ cur: d.cur, item: d.item, qty: Array.isArray(d.qty) ? d.qty[1] : d.qty }))).join('')}</div>
         </div><div class="sd-btns">${cleared && (s.scenes?.before || s.scenes?.after) ? '<button class="btn ink" data-act="story">Story</button>' : ''}
           <button class="btn${un ? '' : ' off'}" data-act="go">${s.waves ? (cleared ? 'Fight again' : 'Formation') : (cleared ? 'Replay' : 'Begin')}</button></div>`;
     };
@@ -66,7 +65,7 @@ App.register('formation', {
     let team = [...guests, ...(data().team || []).filter(h => owned(h) && !guests.includes(h))].slice(0, 4);
     for (const h of roster) { if (team.length >= 4) break; if (!team.includes(h)) team.push(h); }
     const draw = () => {
-      const stats = team.map(h => heroStats(h, prog(h)?.level || Math.max(...st.waves.flat().map(e => e.level)), prog(h)?.bt || 0));
+      const stats = team.map(h => (prog(h) ? finalStats(h) : heroStats(h, Math.max(...st.waves.flat().map(e => e.level)), 0)));
       const pw = stats.reduce((a, s) => a + power(s), 0);
       const combos = teamCombos(team);
       // chain preview: the team in feeding order

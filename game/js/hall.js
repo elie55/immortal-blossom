@@ -43,6 +43,7 @@ App.register('hall', {
       <div class="hall-left">
         <div class="disc" data-act="settings"><i>設</i>Settings</div>
         <div class="disc" data-act="rules"><i>五</i>Five Phases</div>
+        <div class="disc" data-act="ring"><i>戒</i>Storage Ring</div>
         <div class="disc locked" data-act="locked" data-k="trials"><i>途</i>Path of Ascension</div>
       </div>
       <div class="hall-menu">
@@ -68,6 +69,7 @@ App.register('hall', {
       pond: () => App.go('pond', {}),
       settings: () => settingsDialog(),
       rules: () => App.rulesDialog(),
+      ring: () => App.go('ring', {}),
       locked: (b) => App.toast(LOCKED[b.dataset.k] || 'Coming soon'),
       tap: () => { const q = lh.quotes || {}; const lines = [q.intro, q.victory, q.ultimate, lh.profile?.motto].filter(Boolean); say(`<b style="font-family:Cinzel">${esc(lh.name)}</b><br>“${esc(lines[Math.floor(Math.random() * lines.length)])}”`, lobby); },
     });

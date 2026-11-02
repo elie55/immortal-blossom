@@ -1,13 +1,15 @@
 // Boot: stage scaling, the frame loop that drives battles, asset preloading, the save, then the title screen.
 import { ui, board, BT, clock, tickClock, timeScale, initVfx, resizeVfx, updateVfx, renderVfx, shakeState, tutorial, configureRules, loadAll, FX_LIST, initAudio } from './engine.js';
 import { get, SLICE_HEROES, heroArt, stageBattle } from './data.js';
-import { loadSave, SAVE } from './state.js';
+import { loadSave, SAVE, addPiece, equip, heroBonus, gainHero, finalStats, grant, rollDrops } from './state.js';
+import { makePiece, makeArtefact } from './gear.js';
 import { App } from './app.js';
 import { Scene, Flow } from './story.js';
 import './journey.js';
 import './hall.js';
 import './heroines.js';
 import './pond.js';
+import './ring.js';
 
 const stage = document.getElementById('stage');
 const battleEl = document.getElementById('battle');
@@ -78,5 +80,8 @@ window.__ib = {
   fight: (stageId, team, level = 5) => App.runBattle(stageBattle(get(stageId), team, {}, 'array:yellow_dragon', { fixedLevel: level })),
   /** Test hook: play one story scene. */
   scene: (sceneId) => Scene.play(sceneId),
+  /** Test hooks for gear: make pieces, equip them, fight with owned heroines, their levels and their gear. */
+  gear: { makePiece, makeArtefact, addPiece, equip, heroBonus, finalStats, gainHero, grant, rollDrops },
+  fightOwned: (stageId, team) => App.runBattle(stageBattle(get(stageId), team, SAVE.data.heroes, 'array:yellow_dragon', { gear: heroBonus })),
   flow: Flow, get,
 };

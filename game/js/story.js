@@ -2,7 +2,7 @@
 // stage by stage through chapter 1, from the dream battle to the Wraith Captain.
 import { App, npcSays, esc, PH_GLYPH } from './app.js';
 import { get, cardUrl, npcUrl, standUrl, locBg, phaseOf, stageBattle, iconUrl, num } from './data.js';
-import { flags, data, persist, clearStage, grant, isCleared, pay } from './state.js';
+import { flags, data, persist, clearStage, grant, isCleared, pay, heroBonus } from './state.js';
 
 const MISSION_TEXT = {
   clear: () => 'Clear the stage', no_fall: () => 'No heroine falls', harmony_or_kindred: () => 'Make a Harmony chain or Kindred Qi',
@@ -156,7 +156,7 @@ export const Flow = {
     else team = await new Promise(r => App.go('formation', { st, resolve: r }, { replace: true }));
     if (!team) return null;
     const guestLevel = Math.max(...st.waves.flat().map(e => e.level));
-    const def = stageBattle(st, team, data().heroes, 'array:yellow_dragon', { tutorial: !!st.tutorial && !flags().tutorialDone, fixedLevel: st.fixedTeam ? 4 : 0, guestLevel });
+    const def = stageBattle(st, team, data().heroes, 'array:yellow_dragon', { tutorial: !!st.tutorial && !flags().tutorialDone, fixedLevel: st.fixedTeam ? 4 : 0, guestLevel, gear: heroBonus });
     data().log.battles++;
     const res = await App.runBattle(def);
     if (st.tutorial) { flags().tutorialDone = true; persist(); }
