@@ -2,6 +2,8 @@
 
 A premium, fully offline, landscape card-battle RPG for Android with a xianxia setting. You rebuild a fallen sect by gathering reborn flower immortals, raise them through the cultivation realms, and win card battles built on the Five Phases. No shop, no stamina wall, no PvP.
 
+**Play it in the browser: [elie55.github.io/immortal-blossom](https://elie55.github.io/immortal-blossom/)** (landscape; on a phone, turn it sideways). The save stays in that browser.
+
 ## Documents
 
 - [Game specification](docs/game-specification.md): world, heroines, card combat, cultivation, equipment, game modes, the Sect, summoning, screens, tech and milestones.
@@ -18,6 +20,8 @@ A premium, fully offline, landscape card-battle RPG for Android with a xianxia s
 python3 tools/build_game.py            # builds dist/ from game/ and data/
 cd dist && python3 -m http.server       # then open http://localhost:8000
 ```
+
+GitHub Pages serves `main`: the `index.html` at the root (made by `tools/build_game.py`) loads the game from `game/`, so every push to `main` updates the [web version](https://elie55.github.io/immortal-blossom/) within a minute or two.
 
 On Android, install the debug APK from the [android-alpha pre-release](https://github.com/elie55/immortal-blossom/releases/tag/android-alpha); GitHub Actions rebuilds it on every push to `main`.
 
