@@ -575,16 +575,20 @@ function drawTexts(ctx) {
 // Board: card DOM, slot layout, and a per-card motion model (offset tweens + shake + knockback + flash)
 // driven by the game clock, so impact frames and the x2 speed toggle apply to cards as well as VFX.
 
-const CARD = { w: 170, h: 244, gap: 16 };
-const geo = { W: 1600, H: 720, x0: 0, enemyY: 26, heroY: 385 };
+const CARD = { w: 175, h: 250, gap: 36 };
+const geo = { W: 1600, H: 720, x0: 0, cx: 800, enemyY: 94, heroY: 362 };
 const tweens = [];
 function clearTweens() { tweens.length = 0; }
 
+/** The whole screen is the battlefield: the enemies across the top, the heroines across the bottom, between the
+ *  round buttons on the left and the turn column on the right; a wider screen shares its extra width between both
+ *  sides. */
 function layoutBoard(W, H) {
   geo.W = W; geo.H = H;
   const rowW = 4 * CARD.w + 3 * CARD.gap;
-  geo.x0 = Math.round((W - rowW) / 2);
-  geo.enemyY = 84; geo.heroY = H - 90 - CARD.h;
+  geo.x0 = 100 + Math.round((W - 1280) / 2);
+  geo.cx = geo.x0 + rowW / 2;
+  geo.enemyY = 94; geo.heroY = geo.enemyY + CARD.h + 18;
 }
 /** Rect of a unit's card in stage coordinates. Enemy rows are centred whatever their size. */
 function slotRect(u) {
@@ -602,6 +606,8 @@ function center(u, fy = 0.5) {
 /** The winged emblem at the foot of a card: the heroine's path, or demon and boss for enemies. */
 const EMBLEM = { 'path:sword': 'sword', 'path:guardian': 'guardian', 'path:shadow': 'shadow', 'path:talisman': 'talisman', 'path:arcane': 'arcane', 'path:healer': 'healer' };
 const emblemOf = u => (u.boss ? 'boss' : u.side === 'enemy' ? 'demon' : (EMBLEM[u.path] || 'sword'));
+/** The enamel of a card's frame, by phase: richer than the phase's light text colour. */
+const FRAME = { water: '#2f86d8', wood: '#3fa04a', fire: '#e2541f', earth: '#a8702e', metal: '#d9b450', yin: '#8a4fd8', yang: '#e9b230' };
 const techIcon = (t) => (t.icon || 'g:技').startsWith('g:')
   ? `<span class="glyph">${(t.icon || 'g:技').slice(2)}</span>`
   : `<img src="assets/ui/${t.icon}.webp" alt="" draggable="false">`;
@@ -612,6 +618,7 @@ function createCard(u, parent) {
   el.className = `card ${u.side}${u.wide ? ' wide' : ''}${u.boss ? ' boss' : ''}${u.d?.demonOf ? ' demon' : ''}${u.qiShield ? ' has-qi' : ''}`;
   el.dataset.uid = u.uid;
   el.style.setProperty('--ph', ph.color);
+  el.style.setProperty('--pf', FRAME[u.phase] || '#d9b450');
   const r = slotRect(u);
   Object.assign(el.style, { left: r.x + 'px', top: r.y + 'px', width: r.w + 'px', height: r.h + 'px' });
   el.innerHTML = `
@@ -1049,7 +1056,7 @@ const SKILLS = {
     await cut(x);
     const a = C(u, 0.35);
     V.rays({ x: a.x, y: a.y, color: 'gold', len: 520, dur: 1600, alpha: 0.5 });
-    V.fx('lotus_bloom', { x: board.geo.W / 2, y: board.geo.heroY + 150, w: 900, dur: 2200, s0: 0.2, s1: 1, fadeIn: 0.12, alpha: 0.55, back: true, ease: ease.outBack });
+    V.fx('lotus_bloom', { x: board.geo.cx, y: board.geo.heroY + 150, w: 900, dur: 2200, s0: 0.2, s1: 1, fadeIn: 0.12, alpha: 0.55, back: true, ease: ease.outBack });
     sfx('heal');
     await wait(300);
     if (x.emp || (x.petal(6) && !u.lotusRevived)) {
@@ -1119,7 +1126,7 @@ const SKILLS = {
   async tide(x) {
     sfx('rumble');
     const hs = x.foes(), g = board.geo;
-    V.fx('ghost_burst', { x: g.W / 2, y: g.heroY + 140, w: 900, dur: 900, s0: 0.4, s1: 1.2, alpha: 0.7 });
+    V.fx('ghost_burst', { x: g.cx, y: g.heroY + 140, w: 900, dur: 900, s0: 0.4, s1: 1.2, alpha: 0.7 });
     await wait(320);
     for (const h of hs) { const c = C(h); V.emitP('wisp', c.x, c.y, 8, { color: 'ice', speed: [30, 120], spread: 60 }); x.hit(h, 0.5, { color: 'ice', small: true }); if (h.alive) x.status(h, 'disrupt', 1); }
     V.shake(7, 260);
@@ -1154,7 +1161,7 @@ const SKILLS = {
     await ui.cutin(x.u, x.t, false, true);
     const hs = x.foes(), g = board.geo;
     V.flash('#6a3cff', 0.35); sfx('rumble'); sfx('ghost');
-    V.fx('ghost_burst', { x: g.W / 2, y: g.heroY + 150, w: 1100, dur: 1300, s0: 0.3, s1: 1.25, alpha: 0.85 });
+    V.fx('ghost_burst', { x: g.cx, y: g.heroY + 150, w: 1100, dur: 1300, s0: 0.3, s1: 1.25, alpha: 0.85 });
     for (const h of hs) { const c = C(h); V.fx('ghost_flame', { x: c.x, y: c.y + 140, w: 300, ay: 1, dur: 1300, s0: 0.4, s1: 1.15, bloom: 0.35 }); V.fx('curse_sigil', { x: c.x, y: c.y + 40, w: 300, dur: 1300, back: true, spin: 1.2 }); }
     await wait(500);
     sfx('boom'); hitStop(110); V.shake(16, 520);
@@ -2522,7 +2529,7 @@ async function applyEncounter(offr, tgt) {
       sfx('heal');
       for (const h of heroes().filter(x => x.alive)) { const c = board.center(h); V.fx('heal_burst', { x: c.x, y: c.y, w: 260, dur: 700 }); const amt = applyHealAmount(h, h, h.maxHp * 0.2); if (amt) V.floatText('+' + amt.toLocaleString('en-US'), c.x, c.y, 'heal'); }
       break;
-    case 'gather_array': B.gather += 1; V.floatText('+2 SPIRIT QI EACH TURN', board.geo.W / 2, board.geo.heroY - 20, 'info'); break;
+    case 'gather_array': B.gather += 1; V.floatText('+2 SPIRIT QI EACH TURN', board.geo.cx, board.geo.heroY - 20, 'info'); break;
     case 'mark_tal':
       for (const f of enemies().filter(x => x.alive)) { const c = board.center(f); V.fx('curse_sigil', { x: c.x, y: c.y, w: 260, dur: 700, back: true }); addStatus(f, 'mark', 2); }
       break;
@@ -2620,36 +2627,38 @@ const ui = {
   stage: null, boardEl: null,
   init(stage) {
     this.stage = stage;
+    // the layout of the mockups: the board between two bars (each side's counters, Phase Qi orbs and portrait),
+    // the jade medallion and the turn controls on the right, round buttons on the left
+    const bar = (side) => `
+      <div id="hud-${side === 'enemy' ? 'top' : 'bot'}" class="hud-bar ${side}">
+        <div class="hb-stats">${side === 'enemy'
+          ? '<div class="hb-stat" id="foes-box"><b id="foes">0</b><img src="assets/ui/emb_demon.webp" alt="" draggable="false"><small>Foes</small></div><div class="hb-stat sm"><b id="wave-n">1/1</b><small>Wave</small></div>'
+          : '<div class="hb-stat qi-box" id="qi-box"><b id="qi">0</b><img src="assets/ui/orb_qi.webp" alt="" draggable="false"><small>Spirit Qi</small><i id="qi-pop"></i></div><div class="hb-stat sm"><b id="qi-rate">+0</b><small>Per turn</small></div>'}</div>
+        <div class="hb-pool"><div class="pool" id="pool-${side}"></div></div>
+        <div class="hb-rolls"><i></i><i></i></div>
+        <div class="hb-port"><b id="${side === 'enemy' ? 'side-name' : 'team-name'}">${side === 'enemy' ? 'Enemies' : 'Pavilion'}</b><div class="hb-pic" id="pic-${side}"></div></div>
+      </div>`;
     stage.insertAdjacentHTML('beforeend', `
-      <div id="bg"><div class="bg-img"></div><div class="bg-shade"></div><div class="bg-table"></div></div>
-      <div id="mid"><div id="chain"></div></div>
-      <div id="hud-top" class="hud-bar">
-        <div class="hb-in">
-          <div class="hb-name"><b id="side-name">Enemies</b><em id="wave">Wave 1/2</em></div>
-          <div class="pool" id="pool-enemy"></div>
-        </div>
-      </div>
-      <div id="hud-bot" class="hud-bar">
-        <div class="hb-in">
-          <div class="qi-box" id="qi-box"><div class="qi-ic"><img src="assets/ui/orb_qi.webp" alt="" draggable="false"></div><div><b id="qi">0</b><small>Spirit Qi</small></div><i id="qi-pop"></i></div>
-          <div class="pool" id="pool-hero"></div>
-        </div>
-      </div>
+      <div id="bg"><div class="bg-img"></div><div class="bg-shade"></div><div class="bg-medal"></div></div>
+      ${bar('enemy')}${bar('hero')}
       <div id="lp">
-        <div class="ctls">
-          <button class="ctl" id="b-help" aria-label="How to play">?</button>
-          <button class="ctl" id="b-auto">Auto</button>
-          <button class="ctl" id="b-speed">×1</button>
-          <button class="ctl" id="b-sound" aria-label="Sound"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 8v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg></button>
-          <button class="ctl" id="b-restart" aria-label="Retreat" title="Retreat">⚑</button>
+        <button class="rb" id="b-auto" aria-label="Auto battle"><span>Auto</span></button>
+        <button class="rb" id="b-speed" aria-label="Battle speed"><span>×1</span></button>
+        <button class="rb" id="b-menu" aria-label="Menu"><i></i><i></i><i></i></button>
+        <div class="menu-pop" id="menu-pop">
+          <button id="b-help">How battles work</button>
+          <button id="b-sound">Sound <b></b></button>
+          <button id="b-restart">Retreat</button>
         </div>
-        <div id="techcard"></div>
-        <div class="cyc-ref"><div class="cyc-t">Five Phases</div>${CYCLE_SVG}</div>
       </div>
       <div id="rp">
-        <div class="seal" id="seal"><div class="seal-in"><small>Round</small><b id="round">1</b><span id="whose">Your turn</span></div></div>
-        <button id="b-end" class="endturn"><span>End Turn</span></button>
-        <button id="b-enc" class="enc"><img src="assets/ui/hall_market.webp" alt="" draggable="false"><span>Encounter</span></button>
+        <div class="turn-row">
+          <button id="b-end" class="endturn"><span>End Turn</span></button>
+          <div class="seal" id="seal"><em id="wave">Wave 1/1</em><b>Round <span id="round">1</span></b><span id="whose">Your turn</span></div>
+        </div>
+        <div id="mid"><div id="chain"></div></div>
+        <div id="techcard"></div>
+        <button id="b-enc" class="enc"><i><img src="assets/ui/hall_market.webp" alt="" draggable="false"></i><span>Encounter</span></button>
       </div>
       <div id="world"><canvas id="fxb"></canvas><div id="board"></div><canvas id="fxf"></canvas></div>
       <div id="turnban"></div>
@@ -2681,13 +2690,16 @@ const ui = {
         if (!BT.B.sel && !BT.B.pendingEnc) { if (BT.B.gate && !BT.B.gate('detail', u)) return; this.openDetail(u); return; }
         return;
       }
+      const pop = $('#menu-pop', st);
+      if (e.target.closest('#b-menu')) { pop.classList.toggle('on'); sfx('click'); return; }
+      if (pop.classList.contains('on') && !e.target.closest('#menu-pop')) pop.classList.remove('on');
       if (e.target.closest('#b-end')) { BT.endTurn(); return; }
       if (e.target.closest('#b-enc')) { this.openShop(); return; }
       if (e.target.closest('#b-auto')) { BT.setAuto(!BT.B.auto); sfx('click'); return; }
       if (e.target.closest('#b-speed')) { clock.speed = clock.speed >= 3 ? 1 : clock.speed + 1; document.documentElement.style.setProperty('--spd', clock.speed); this.refreshControls(); sfx('click'); return; }
       if (e.target.closest('#b-sound')) { audio.muted = !audio.muted; this.refreshControls(); return; }
-      if (e.target.closest('#b-restart')) { this.onRetreat && this.onRetreat(); return; }
-      if (e.target.closest('#b-help')) { this.onHelp && this.onHelp(); return; }
+      if (e.target.closest('#b-restart')) { pop.classList.remove('on'); this.onRetreat && this.onRetreat(); return; }
+      if (e.target.closest('#b-help')) { pop.classList.remove('on'); this.onHelp && this.onHelp(); return; }
       if (e.target.closest('.emp-btn')) { BT.toggleEmpower(); sfx('click'); return; }
       if (e.target.closest('.tc-cancel')) { if (BT.B.pendingEnc) BT.cancelPending(); else BT.deselect(); return; }
       if (e.target.closest('.offer .buy')) { BT.buyEncounter(+e.target.closest('.offer').dataset.i); return; }
@@ -2700,8 +2712,14 @@ const ui = {
   },
 
   resetBattle(def) {
-    $('#result').classList.remove('show'); this.closeShop(); this.closeDetail();
-    if (def) { $('#side-name').textContent = def.side || 'Enemies'; $('.bg-img', this.stage).style.backgroundImage = def.bg ? `url(${def.bg})` : ''; }
+    $('#result').classList.remove('show'); this.closeShop(); this.closeDetail(); $('#menu-pop').classList.remove('on');
+    if (def) {
+      $('#side-name').textContent = def.side || 'Enemies';
+      $('#team-name').textContent = def.team || 'Pavilion';
+      $('.bg-img', this.stage).style.backgroundImage = def.bg ? `url(${def.bg})` : '';
+      const lead = BT.heroes()[0];
+      $('#pic-hero').style.backgroundImage = lead ? `url(assets/cards/${lead.art}.webp)` : '';
+    }
     this.refreshAll(); this.showChain();
   },
 
@@ -2710,6 +2728,8 @@ const ui = {
     const B = BT.B; if (!B.points.hero) return;
     for (const u of B.units) board.refreshCard(u);
     $('#qi').textContent = B.qi;
+    $('#qi-rate').textContent = `+${RULES.qiBase + BT.heroes().filter(h => h.alive).length * RULES.qiPerHeroine + B.gather * 2}`;
+    $('#foes').textContent = BT.enemies().filter(u => u.alive).length;
     this.renderPool('hero'); this.renderPool('enemy');
     $('#round').textContent = B.round;
     const enc = $('#b-enc');
@@ -2732,16 +2752,26 @@ const ui = {
       return `<div class="orb${n ? ' on' : ''}" data-ph="${k}" style="--pc:${p.color}" data-tip="phase:${k}" data-tip-note="Phase Qi ${n}: +${n * 8}% ${p.name} damage and healing for this side"><i><img src="assets/ui/orb_${k}.webp" alt="${p.glyph}" draggable="false"></i><b>${n}</b>${side === 'hero' ? `<small>+${n * 8}%</small>` : ''}</div>`;
     }).join('');
   },
-  waveInfo(i, n) { $('#wave').textContent = i + 1 === n ? 'Boss wave' : `Wave ${i + 1}/${n}`; },
+  waveInfo(i, n) {
+    const boss = BT.B.def.waves[i]?.boss;
+    $('#wave').textContent = boss && n > 1 ? 'Boss wave' : `Wave ${i + 1}/${n}`;
+    $('#wave-n').textContent = `${i + 1}/${n}`;
+    // the top bar's portrait: the wave's boss, or its first enemy
+    const es = BT.enemies(), face = es.find(u => u.boss) || es[0];
+    $('#pic-enemy').style.backgroundImage = face ? `url(assets/cards/${face.art}.webp)` : '';
+  },
   setTurn(side) {
     const s = $('#seal'); s.classList.toggle('enemy', side === 'enemy');
     $('#whose').textContent = side === 'hero' ? 'Your turn' : 'Enemy turn';
+    $('#b-end span').textContent = side === 'hero' ? 'End Turn' : 'Enemy Turn';
+    $('#b-end').classList.toggle('theirs', side === 'enemy');
     $('#round').textContent = BT.B.round;
     this.refreshAll();
   },
   refreshControls() {
     $('#b-auto').classList.toggle('on', BT.B.auto);
-    $('#b-speed').textContent = '×' + clock.speed;
+    $('#b-speed span').textContent = '×' + clock.speed;
+    $('#b-sound b').textContent = audio.muted ? 'off' : 'on';
     $('#b-sound').classList.toggle('off', audio.muted);
   },
   lock() { this.refreshAll(); },
@@ -2780,8 +2810,8 @@ const ui = {
   harmonyBurst() {
     const g = board.geo;
     V.flash('#ffe8a8', 0.25); sfx('win');
-    V.floatText('FIVE PHASES HARMONY', g.W / 2, g.heroY - 26, 'big', { label: '+2 SPIRIT QI' });
-    V.rays({ x: g.W / 2, y: g.heroY - 26, color: 'gold', len: 600, dur: 1400, alpha: 0.45 });
+    V.floatText('FIVE PHASES HARMONY', g.cx, g.heroY - 26, 'big', { label: '+2 SPIRIT QI' });
+    V.rays({ x: g.cx, y: g.heroY - 26, color: 'gold', len: 600, dur: 1400, alpha: 0.45 });
   },
 
   // ---------------- selection & technique panel ----------------
@@ -2982,12 +3012,12 @@ const STEPS = [
   { id: 'heroes', target: () => BT.heroes().map(cardEl), place: 'above', text: `These are your four <b>Blossoms</b>. Each card shows her <b>phase</b> (top left), her <b>health</b> and three <b>techniques</b>.` },
   { id: 'enemies', target: () => BT.enemies().map(cardEl), place: 'below', text: `The <b>Netherflame Sect</b>. Destroy every enemy card to win. Two waves of wraiths stand in this dream.` },
   { id: 'rings', target: () => hero('ling').el.querySelector('.c-techs'), place: 'above', text: `Glowing techniques are <b>ready</b>. A number at the end of a technique counts the turns until it is ready again. Each turn you may cast <b>every</b> ready technique, in any order.` },
-  { id: 'cycle', target: () => $('#chain'), place: 'below', cycle: true, text: `Everything follows the <b>Five Phases</b>. Gold arrows: each phase <b>feeds</b> the next. Red arrows: each phase <b>overcomes</b> another for +30% damage.` },
+  { id: 'cycle', target: () => $('#chain'), place: 'left', cycle: true, text: `Everything follows the <b>Five Phases</b>. Gold arrows: each phase <b>feeds</b> the next. Red arrows: each phase <b>overcomes</b> another for +30% damage.` },
   { id: 'ling', target: () => techBtn('ling', 0), place: 'above', arrow: true, wait: 'selected', allowEls: () => [techBtn('ling', 0)], allow: (a, p) => a !== 'select' || p.t.chor === 'ling_s1',
     text: `Ling Shuang is ${W_} <b>Water</b>, and Water overcomes ${F_} Fire. Tap her <b>Frost Crescent</b>.` },
   { id: 'ling-t', needSel: ['ling', 0], target: () => cardEl(foe('ember_wraith')), place: 'below', arrow: true, wait: 'cast', allowEls: () => [cardEl(foe('ember_wraith'))], allow: (a, p) => a !== 'target' || p.target.key === 'ember_wraith',
     text: `The green tag on the <b>Ember Wraith</b> means ${W_} Water overcomes ${F_} Fire: +30% damage. Tap the wraith to strike.` },
-  { id: 'mo', target: () => [techBtn('mo', 0), $('#chain')], place: 'above', arrow: true, wait: 'selected', allowEls: () => [techBtn('mo', 0)], allow: (a, p) => a !== 'select' || p.t.chor === 'mo_s1',
+  { id: 'mo', target: () => techBtn('mo', 0), place: 'above', arrow: true, wait: 'selected', allowEls: () => [techBtn('mo', 0)], allow: (a, p) => a !== 'select' || p.t.chor === 'mo_s1',
     text: `${W_} Water feeds ${WD} Wood. Casting <b>Mo Yingyue</b> next continues the <b>Harmony chain</b>: +15% per link. Tap her <b>Thunderfang Cross</b>.` },
   { id: 'mo-t', needSel: ['mo', 0], target: () => cardEl(foe('mire_wraith')), place: 'below', arrow: true, wait: 'cast', allowEls: () => [cardEl(foe('mire_wraith'))], allow: (a, p) => a !== 'target' || p.target.key === 'mire_wraith',
     text: `${WD} Wood overcomes ${E_} Earth. Strike the <b>Mire Wraith</b>.` },
@@ -3003,7 +3033,7 @@ const STEPS = [
   { id: 'qi', target: () => $('#qi-box'), place: 'above', text: `<b>Spirit Qi</b> flows in every turn. Spend it to <b>✦ Empower</b> a technique, or on <b>Fortuitous Encounters</b>.` },
   { id: 'mo2', target: () => techBtn('mo', 1), place: 'above', arrow: true, wait: 'selected', allowEls: () => [techBtn('mo', 1)], allow: (a, p) => a !== 'select' || p.t.chor === 'mo_s2',
     text: `Mo's <b>Shadow Lightning Step</b> is ready too, and it refreshes her Thunderfang Cross. It starts a new chain, which is fine. Tap it.` },
-  { id: 'emp', target: () => $('#techcard .emp-btn'), place: 'right', wait: 'empower', allowEls: () => [$('#techcard .emp-btn')],
+  { id: 'emp', target: () => $('#techcard .emp-btn'), place: 'left', wait: 'empower', allowEls: () => [$('#techcard .emp-btn')],
     text: `Tap <b>✦ Empower</b>: it spends 6 Spirit Qi for +35% damage and a bonus effect.` },
   { id: 'emp-t', needSel: ['mo', 1, true], target: () => BT.enemies().filter(e => e.alive).map(cardEl), place: 'below', wait: 'cast', allowEls: () => BT.enemies().map(cardEl),
     text: `Empowered! Now tap any enemy.` },
@@ -3015,7 +3045,7 @@ const STEPS = [
     text: `Even rounds bring a <b>Fortuitous Encounter</b>: talismans, pills and treasures for Spirit Qi. Tap it.` },
   { id: 'shop', target: () => $('#shop .offers'), place: 'below', wait: 'shopClose', free: true,
     text: `Buy one if you can afford it, or leave. Later rounds bring rarer finds.` },
-  { id: 'done', text: `That's everything! <b>Auto</b> and <b>×2</b> are at the top left, and tapping a card shows its details. Good luck, Pavilion Master.`, last: true },
+  { id: 'done', text: `That's everything! <b>Auto</b> and the battle speed are the round buttons on the left, and tapping a card shows its details. Good luck, Pavilion Master.`, last: true },
 ];
 const EXTRA = {
   boss: { id: 'boss', target: () => BT.enemies().find(e => e.boss)?.el, place: 'below',
