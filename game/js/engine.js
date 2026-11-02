@@ -575,7 +575,7 @@ function drawTexts(ctx) {
 // Board: card DOM, slot layout, and a per-card motion model (offset tweens + shake + knockback + flash)
 // driven by the game clock, so impact frames and the x2 speed toggle apply to cards as well as VFX.
 
-const CARD = { w: 206, h: 309, gap: 18 };
+const CARD = { w: 170, h: 244, gap: 16 };
 const geo = { W: 1600, H: 720, x0: 0, enemyY: 26, heroY: 385 };
 const tweens = [];
 function clearTweens() { tweens.length = 0; }
@@ -584,7 +584,7 @@ function layoutBoard(W, H) {
   geo.W = W; geo.H = H;
   const rowW = 4 * CARD.w + 3 * CARD.gap;
   geo.x0 = Math.round((W - rowW) / 2);
-  geo.enemyY = 24; geo.heroY = H - 24 - CARD.h;
+  geo.enemyY = 84; geo.heroY = H - 90 - CARD.h;
 }
 /** Rect of a unit's card in stage coordinates. Enemy rows are centred whatever their size. */
 function slotRect(u) {
@@ -599,6 +599,9 @@ function center(u, fy = 0.5) {
 }
 
 // ---------------- card DOM ----------------
+/** The winged emblem at the foot of a card: the heroine's path, or demon and boss for enemies. */
+const EMBLEM = { 'path:sword': 'sword', 'path:guardian': 'guardian', 'path:shadow': 'shadow', 'path:talisman': 'talisman', 'path:arcane': 'arcane', 'path:healer': 'healer' };
+const emblemOf = u => (u.boss ? 'boss' : u.side === 'enemy' ? 'demon' : (EMBLEM[u.path] || 'sword'));
 const techIcon = (t) => (t.icon || 'g:技').startsWith('g:')
   ? `<span class="glyph">${(t.icon || 'g:技').slice(2)}</span>`
   : `<img src="assets/ui/${t.icon}.webp" alt="" draggable="false">`;
@@ -606,7 +609,7 @@ const techIcon = (t) => (t.icon || 'g:技').startsWith('g:')
 function createCard(u, parent) {
   const ph = PHASES[u.phase];
   const el = document.createElement('div');
-  el.className = `card ${u.side}${u.wide ? ' wide' : ''}${u.boss ? ' boss' : ''}${u.d?.demonOf ? ' demon' : ''}`;
+  el.className = `card ${u.side}${u.wide ? ' wide' : ''}${u.boss ? ' boss' : ''}${u.d?.demonOf ? ' demon' : ''}${u.qiShield ? ' has-qi' : ''}`;
   el.dataset.uid = u.uid;
   el.style.setProperty('--ph', ph.color);
   const r = slotRect(u);
@@ -620,7 +623,7 @@ function createCard(u, parent) {
         ${u.side === 'hero' && u.petals >= 6 ? `<div class="c-bloom" title="Full Bloom">${'<i></i>'.repeat(8)}</div>` : ''}
         <div class="c-frame"></div>
         <div class="c-head">
-          <div class="c-phase" data-tip="phase:${u.phase}">${ph.glyph}</div>
+          <div class="c-phase" data-tip="phase:${u.phase}"><img src="assets/ui/orb_${u.phase}.webp" alt="${ph.glyph}" draggable="false"></div>
           <div class="c-name">${u.name}</div>
           <div class="c-lvl">${u.lvl}</div>
         </div>
@@ -629,18 +632,17 @@ function createCard(u, parent) {
         ${u.boss ? '<div class="c-tele"></div>' : ''}
         <div class="c-techs">${u.techs.map((t, i) => `
           <button class="tech${t.ult ? ' ult' : ''}" data-i="${i}" aria-label="${t.name}">
-            ${techIcon(t)}
-            <svg viewBox="0 0 60 60"><circle class="trk" cx="30" cy="30" r="27"/><circle class="arc" cx="30" cy="30" r="27"/></svg>
-            <b></b>
+            <span class="t-ic">${techIcon(t)}</span><span class="t-nm">${t.name}</span><b></b>
           </button>`).join('')}
         </div>
         ${u.qiShield ? `<div class="c-qi">${'<i></i>'.repeat(u.qiShield.max)}</div>` : ''}
         <div class="c-hp"><i class="lag"></i><i class="fill"></i><i class="bar-sh"></i><span></span></div>
+        <div class="c-emb"><img src="assets/ui/emb_${emblemOf(u)}.webp" alt="" draggable="false"></div>
         <div class="c-adv"></div>
-        <div class="c-crack"><span>殒</span><b>Fallen</b></div>
+        <div class="c-crack"><b>Fallen</b></div>
         <div class="c-flash"></div>
       </div>
-      <div class="c-back"><span>蓮</span></div>
+      <div class="c-back"></div>
     </div>`;
   parent.appendChild(el);
   u.el = el; u.body = el.querySelector('.c-body');
@@ -655,19 +657,16 @@ function placeCard(u) {
   Object.assign(u.el.style, { left: r.x + 'px', top: r.y + 'px', width: r.w + 'px', height: r.h + 'px' });
 }
 
-const CIRC = 2 * Math.PI * 27;
 /** Sync a card's DOM with its unit state (HP text, techniques, statuses, shields, slots). */
 function refreshCard(u, first = false) {
   const el = u.el; if (!el) return;
-  el.querySelector('.c-hp span').textContent = `${Math.max(0, Math.ceil(u.hp)).toLocaleString('en-US')}${u.barrier > 0 ? ` +${Math.ceil(u.barrier).toLocaleString('en-US')}` : ''}`;
+  const hpTxt = Math.max(0, Math.ceil(u.hp)).toLocaleString('en-US');
+  el.querySelector('.c-hp span').textContent = u.barrier > 0 ? `${hpTxt} +${Math.ceil(u.barrier).toLocaleString('en-US')}` : `${hpTxt}/${Math.ceil(u.maxHp).toLocaleString('en-US')}`;
   el.querySelectorAll('.tech').forEach((b, i) => {
     const t = u.techs[i], ready = t.cur <= 0;
     b.classList.toggle('ready', ready);
     b.classList.toggle('blocked', !!t.blocked);
     b.querySelector('b').textContent = ready ? '' : t.cur;
-    const frac = ready ? 1 : 1 - t.cur / t.cd;
-    const arc = b.querySelector('.arc');
-    arc.style.strokeDasharray = `${CIRC * frac} ${CIRC}`;
   });
   // statuses
   const st = el.querySelector('.c-status');
@@ -2115,11 +2114,11 @@ async function doCast(u, t, target, emp) {
   if (u.alive) addPoints(u, ignoresHarmony(u) && petal(u, 4) && B.chain.last ? GEN[B.chain.last] : GEN[u.castPhase || u.phase], t.ult ? 2 : 1);
   if (B.chain.len >= 2) {
     const c = board.center(u, 0.2);
-    V.floatText(`HARMONY ×${B.chain.len}`, c.x, c.y + 6, 'harmony', { label: B.chain.list.map(p => PHASES[p].glyph).join(' → '), size: 34 });
+    V.floatText(`HARMONY ×${B.chain.len}`, c.x, c.y + 6, 'harmony', { label: B.chain.list.map(p => PHASES[p].name).join(' → '), size: 34 });
     if (B.chain.len === RULES.harmonyCap && u.side === 'hero') { gainQi(RULES.harmonyQi); ui.harmonyBurst(); }
   } else if (B.kin.n >= 1) {
     const c = board.center(u, 0.2);
-    V.floatText(`KINDRED +${Math.round(Math.min(RULES.kindredCap, RULES.kindredStep * B.kin.n) * 100)}%`, c.x, c.y + 6, 'harmony', { label: `${PHASES[u.phase].glyph} 同气`, size: 30 });
+    V.floatText(`KINDRED +${Math.round(Math.min(RULES.kindredCap, RULES.kindredStep * B.kin.n) * 100)}%`, c.x, c.y + 6, 'harmony', { label: `${PHASES[u.phase].name} Qi`, size: 30 });
   }
   // Thorn Lotus counters and Phoenix Among Peonies flares, after the technique
   for (const k of B.counters) if (k.u.alive && k.target.alive) {
@@ -2601,17 +2600,19 @@ async function finish(win, retreat = false) {
 const $ = (s, r = document) => r.querySelector(s);
 const fmt = n => Math.round(n).toLocaleString('en-US');
 const TARGET_TXT = { enemy: 'One enemy', allEnemies: 'All enemies', ally: 'One ally', allAllies: 'All allies', self: 'Self' };
+/** A phase as its painted orb, for text and badges (the orbs replace the Chinese glyphs on the battlefield). */
+const orbImg = (k, cls = 'ph-i') => `<img class="${cls}" src="assets/ui/orb_${k}.webp" alt="${PHASES[k]?.name || k}" draggable="false">`;
 const glyphIcon = t => t.icon.startsWith('g:') ? `<span class="glyph">${t.icon.slice(2)}</span>` : `<img src="assets/ui/${t.icon}.webp" alt="">`;
 const LOTUS = `<svg viewBox="0 0 64 64" aria-hidden="true"><g fill="currentColor"><path d="M32 6c6 8 8 17 0 30C24 23 26 14 32 6z"/><path d="M10 22c10 0 17 5 21 15-11 2-19-3-21-15z" opacity=".85"/><path d="M54 22c-10 0-17 5-21 15 11 2 19-3 21-15z" opacity=".85"/><path d="M4 38c11-4 21-1 28 7-12 6-22 3-28-7z" opacity=".7"/><path d="M60 38c-11-4-21-1-28 7 12 6 22 3 28-7z" opacity=".7"/></g></svg>`;
 
 const CYCLE_SVG = (() => {
-  const cx = 105, cy = 80, R = 58, nodes = [['火', '#ff8048', -90], ['土', '#e4b45a', -18], ['金', '#efe6c8', 54], ['水', '#7cc6ff', 126], ['木', '#86e38f', 198]];
+  const cx = 105, cy = 80, R = 58, nodes = [['fire', '#ff8048', -90], ['earth', '#e4b45a', -18], ['metal', '#efe6c8', 54], ['water', '#7cc6ff', 126], ['wood', '#86e38f', 198]];
   const pos = nodes.map(([g, c, a]) => [g, c, cx + Math.cos(a * Math.PI / 180) * R, cy + Math.sin(a * Math.PI / 180) * R]);
   const arc = (i) => { const a0 = (nodes[i][2] + 15) * Math.PI / 180, a1 = (nodes[(i + 1) % 5][2] - 15) * Math.PI / 180; return `<path d="M${cx + Math.cos(a0) * R} ${cy + Math.sin(a0) * R} A${R} ${R} 0 0 1 ${cx + Math.cos(a1) * R} ${cy + Math.sin(a1) * R}" stroke="#e8c77d" stroke-width="2" fill="none" marker-end="url(#ga)"/>`; };
   const star = (i) => { const a = pos[i], b = pos[(i + 2) % 5], dx = b[2] - a[2], dy = b[3] - a[3], L = Math.hypot(dx, dy), ux = dx / L, uy = dy / L; return `<line x1="${a[2] + ux * 16}" y1="${a[3] + uy * 16}" x2="${b[2] - ux * 18}" y2="${b[3] - uy * 18}" stroke="#ff7a8a" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#oa)"/>`; };
   return `<svg viewBox="0 0 210 160"><defs><marker id="ga" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#e8c77d"/></marker><marker id="oa" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#ff7a8a"/></marker></defs>
     ${[0, 1, 2, 3, 4].map(arc).join('')}${[0, 1, 2, 3, 4].map(star).join('')}
-    ${pos.map(([g, c, x, y]) => `<circle cx="${x}" cy="${y}" r="15" fill="${c}" stroke="#fff3c4" stroke-width="1.5"/><text x="${x}" y="${y + 6}" text-anchor="middle" font-family="Noto Serif SC, serif" font-weight="900" font-size="16" fill="#10141c">${g}</text>`).join('')}
+    ${pos.map(([k, c, x, y]) => `<image href="assets/ui/orb_${k}.webp" x="${x - 17}" y="${y - 17}" width="34" height="34"/>`).join('')}
     <text x="6" y="157" text-anchor="start" font-family="Cinzel, serif" font-size="10.5" fill="#e8c77d">— feeds</text><text x="204" y="157" text-anchor="end" font-family="Cinzel, serif" font-size="10.5" fill="#ff7a8a">overcomes - -</text></svg>`;
 })();
 
@@ -2622,19 +2623,19 @@ const ui = {
     stage.insertAdjacentHTML('beforeend', `
       <div id="bg"><div class="bg-img"></div><div class="bg-shade"></div><div class="bg-table"></div></div>
       <div id="mid"><div id="chain"></div></div>
-      <div id="lp">
-        <div class="side side-enemy">
-          <div class="side-title"><span id="side-name">Enemies</span><em id="wave">Wave 1/2</em></div>
+      <div id="hud-top" class="hud-bar">
+        <div class="hb-in">
+          <div class="hb-name"><b id="side-name">Enemies</b><em id="wave">Wave 1/2</em></div>
           <div class="pool" id="pool-enemy"></div>
-          <div class="cyc-ref"><div class="cyc-t">Five Phases</div>${CYCLE_SVG}</div>
         </div>
-        <div class="side side-hero">
-          <div class="qi-box" id="qi-box"><div class="qi-ic">${LOTUS}</div><div><b id="qi">0</b><small>Spirit Qi</small></div><i id="qi-pop"></i></div>
-          <div class="pool-title">Phase Qi <small>+8% per point</small></div>
+      </div>
+      <div id="hud-bot" class="hud-bar">
+        <div class="hb-in">
+          <div class="qi-box" id="qi-box"><div class="qi-ic"><img src="assets/ui/orb_qi.webp" alt="" draggable="false"></div><div><b id="qi">0</b><small>Spirit Qi</small></div><i id="qi-pop"></i></div>
           <div class="pool" id="pool-hero"></div>
         </div>
       </div>
-      <div id="rp">
+      <div id="lp">
         <div class="ctls">
           <button class="ctl" id="b-help" aria-label="How to play">?</button>
           <button class="ctl" id="b-auto">Auto</button>
@@ -2642,10 +2643,13 @@ const ui = {
           <button class="ctl" id="b-sound" aria-label="Sound"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 8v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg></button>
           <button class="ctl" id="b-restart" aria-label="Retreat" title="Retreat">⚑</button>
         </div>
-        <div class="seal" id="seal"><small>Round</small><b id="round">1</b><span id="whose">Your turn</span></div>
         <div id="techcard"></div>
-        <button id="b-enc" class="enc"><span class="g">奇遇</span><span>Encounter</span></button>
+        <div class="cyc-ref"><div class="cyc-t">Five Phases</div>${CYCLE_SVG}</div>
+      </div>
+      <div id="rp">
+        <div class="seal" id="seal"><div class="seal-in"><small>Round</small><b id="round">1</b><span id="whose">Your turn</span></div></div>
         <button id="b-end" class="endturn"><span>End Turn</span></button>
+        <button id="b-enc" class="enc"><img src="assets/ui/hall_market.webp" alt="" draggable="false"><span>Encounter</span></button>
       </div>
       <div id="world"><canvas id="fxb"></canvas><div id="board"></div><canvas id="fxf"></canvas></div>
       <div id="turnban"></div>
@@ -2690,7 +2694,7 @@ const ui = {
       if (e.target.closest('#shop .reroll')) { BT.rerollEncounter(); return; }
       if (e.target.closest('#shop .leave') || e.target.id === 'shop') { this.closeShop(); return; }
       if (e.target.closest('#detail')) { this.closeDetail(); return; }
-      if (!e.target.closest('#rp') && !e.target.closest('#lp') && (BT.B.sel)) BT.deselect();
+      if (!e.target.closest('#rp, #lp, .hud-bar') && (BT.B.sel)) BT.deselect();
     }, true);
     board.bindTilt(st, uid => BT.getUnit(uid));
   },
@@ -2725,7 +2729,7 @@ const ui = {
     const keys = side === 'hero' ? CYCLE : [...CYCLE, 'yin'];
     el.innerHTML = keys.map(k => {
       const p = PHASES[k], n = B.points[side][k] || 0;
-      return `<div class="orb${n ? ' on' : ''}" data-ph="${k}" style="--pc:${p.color}" data-tip="phase:${k}" data-tip-note="Phase Qi ${n}: +${n * 8}% ${p.name} damage and healing for this side"><i>${p.glyph}</i><b>${n}</b>${side === 'hero' ? `<small>+${n * 8}%</small>` : ''}</div>`;
+      return `<div class="orb${n ? ' on' : ''}" data-ph="${k}" style="--pc:${p.color}" data-tip="phase:${k}" data-tip-note="Phase Qi ${n}: +${n * 8}% ${p.name} damage and healing for this side"><i><img src="assets/ui/orb_${k}.webp" alt="${p.glyph}" draggable="false"></i><b>${n}</b>${side === 'hero' ? `<small>+${n * 8}%</small>` : ''}</div>`;
     }).join('');
   },
   waveInfo(i, n) { $('#wave').textContent = i + 1 === n ? 'Boss wave' : `Wave ${i + 1}/${n}`; },
@@ -2766,11 +2770,11 @@ const ui = {
   showChain() {
     const c = BT.B.chain, el = $('#chain');
     const list = c.list || [];
-    if (!list.length) { this._chainN = 0; el.className = 'idle'; el.innerHTML = `<span class="lbl">Harmony</span>${CYCLE.map((p, i) => `<i style="--pc:${PHASES[p].color}">${PHASES[p].glyph}</i>${i < 4 ? '<em>›</em>' : ''}`).join('')}`; return; }
+    if (!list.length) { this._chainN = 0; el.className = 'idle'; el.innerHTML = `<span class="lbl">Harmony</span>${CYCLE.map((p, i) => `<i style="--pc:${PHASES[p].color}">${orbImg(p, '')}</i>${i < 4 ? '<em>›</em>' : ''}`).join('')}`; return; }
     el.className = `live ${BT.B.side}`;
     const prevN = this._chainN;
     const mult = Math.round(RULES.harmonyStep * (Math.min(c.len, RULES.harmonyCap) - 1) * 100);
-    el.innerHTML = `<span class="lbl">Harmony ×${c.len}</span>${list.map((p, i) => `<i class="lit${i === list.length - 1 && this._chainN !== list.length ? ' new' : ''}" style="--pc:${PHASES[p].color}">${PHASES[p].glyph}</i>${i < list.length - 1 ? '<em>›</em>' : ''}`).join('')}${c.len < 5 ? `<em>›</em><i class="next" style="--pc:${PHASES[GEN[c.last]].color}">${PHASES[GEN[c.last]].glyph}</i>` : ''}<span class="mul">${mult ? `+${mult}%` : 'start'}</span>`;
+    el.innerHTML = `<span class="lbl">Harmony ×${c.len}</span>${list.map((p, i) => `<i class="lit${i === list.length - 1 && this._chainN !== list.length ? ' new' : ''}" style="--pc:${PHASES[p].color}">${orbImg(p, '')}</i>${i < list.length - 1 ? '<em>›</em>' : ''}`).join('')}${c.len < 5 ? `<em>›</em><i class="next" style="--pc:${PHASES[GEN[c.last]].color}">${orbImg(GEN[c.last], '')}</i>` : ''}<span class="mul">${mult ? `+${mult}%` : 'start'}</span>`;
     this._chainN = list.length; void prevN;
   },
   harmonyBurst() {
@@ -2807,8 +2811,8 @@ const ui = {
     if (ts.includes(u)) u.el.classList.add('targetable');
     if (t.target === 'enemy' || t.target === 'allEnemies') for (const f of ts) {
       const a = BT.advantage(u.phase, f.phase), el = f.el.querySelector('.c-adv');
-      if (a > 0) { el.className = 'c-adv good'; el.innerHTML = `<b>▲</b>${PHASES[u.phase].glyph} overcomes ${PHASES[f.phase].glyph}`; }
-      else if (a < 0) { el.className = 'c-adv bad'; el.innerHTML = `<b>▼</b>${PHASES[f.phase].glyph} overcomes ${PHASES[u.phase].glyph}`; }
+      if (a > 0) { el.className = 'c-adv good'; el.innerHTML = `<b>▲</b>${orbImg(u.phase)} overcomes ${orbImg(f.phase)}`; }
+      else if (a < 0) { el.className = 'c-adv bad'; el.innerHTML = `<b>▼</b>${orbImg(f.phase)} overcomes ${orbImg(u.phase)}`; }
     }
     const c = B.chain, cont = c.last && GEN[c.last] === u.phase && c.last !== u.phase;
     const nextLen = cont ? c.len + 1 : 1;
@@ -2817,7 +2821,7 @@ const ui = {
     tc.innerHTML = `
       <div class="tc-h"><span class="tc-ic">${glyphIcon(t)}</span><div><b>${t.name}</b><small>${t.ult ? 'Ultimate · ' : ''}Cooldown ${t.cd} · ${TARGET_TXT[t.target]}</small></div></div>
       <p>${t.desc}</p>
-      ${nextLen > 1 ? `<div class="tc-harm">Harmony ×${nextLen}: +${Math.round((Math.min(nextLen, RULES.harmonyCap) - 1) * RULES.harmonyStep * 100)}% (${PHASES[c.last].glyph} feeds ${PHASES[u.phase].glyph})</div>` : (c.len ? `<div class="tc-harm off">Breaks the Harmony chain (${PHASES[GEN[c.last]].glyph} would continue it)</div>` : '')}
+      ${nextLen > 1 ? `<div class="tc-harm">Harmony ×${nextLen}: +${Math.round((Math.min(nextLen, RULES.harmonyCap) - 1) * RULES.harmonyStep * 100)}% (${orbImg(c.last)} feeds ${orbImg(u.phase)})</div>` : (c.len ? `<div class="tc-harm off">Breaks the Harmony chain (${orbImg(GEN[c.last])} would continue it)</div>` : '')}
       ${t.emp ? `<button class="emp-btn${B.emp ? ' on' : ''}${canEmp ? '' : ' no'}"><span>✦ Empower</span><em>${t.emp.cost} Spirit Qi</em><small>${t.emp.desc}</small></button>` : ''}
       <div class="tc-hint">${t.target === 'enemy' ? 'Tap an enemy' : (t.target === 'allEnemies' ? 'Tap any enemy, or the technique again' : (t.target === 'self' ? 'Tap her card, or the technique again' : 'Tap any ally, or the technique again'))}</div>
       <button class="tc-cancel">Cancel</button>`;
@@ -2863,7 +2867,7 @@ const ui = {
     c.innerHTML = `<div class="ci-wash"></div><div class="ci-lines"></div>
       <div class="ci-band ci-back"></div>
       <div class="ci-band ci-main"><div class="ci-art" style="background-image:url(${art})"></div><div class="ci-shine"></div></div>
-      <div class="ci-text"><small>${u.name}${emp ? ' · ✦ Empowered' : ''}</small><b>${t.name}</b><i>${ph.glyph}</i></div>
+      <div class="ci-text"><small>${u.name}${emp ? ' · ✦ Empowered' : ''}</small><b>${t.name}</b><i>${orbImg(u.phase, '')}</i></div>
       <div class="ci-flash"></div>`;
     void c.offsetWidth; c.classList.add('show');
     sfx('ult');
@@ -2927,7 +2931,7 @@ const ui = {
     d.innerHTML = `<div class="det-box" style="--ph:${ph.color}">
       <div class="det-art" style="background-image:url(assets/cards/${u.art}.webp)"></div>
       <div class="det-info">
-        <div class="det-h"><span class="det-ph">${ph.glyph}</span><div><b>${u.name}</b><small>${u.title || ''}${u.pathName ? ` · ${u.pathName}` : ''} · ${ph.name} · Level ${u.lvl}</small></div></div>
+        <div class="det-h"><span class="det-ph">${orbImg(u.phase, '')}</span><div><b>${u.name}</b><small>${u.title || ''}${u.pathName ? ` · ${u.pathName}` : ''} · ${ph.name} · Level ${u.lvl}</small></div></div>
         <div class="det-stats"><span>Health <b>${fmt(u.hp)} / ${fmt(u.maxHp)}</b></span><span>Attack <b>${fmt(u.atk)}</b></span><span>Defense <b>${fmt(u.defense)}</b></span><span>Critical <b>${Math.round(u.crit * 100)}%</b></span></div>
         <div class="det-cyc">${ph.name} feeds <b style="color:${PHASES[GEN[u.phase]]?.color}">${PHASES[GEN[u.phase]]?.name}</b>${OVER[u.phase] ? ` · overcomes <b style="color:${PHASES[OVER[u.phase]].color}">${PHASES[OVER[u.phase]].name}</b>` : ' · neutral to the five phases'}</div>
         ${u.techs.map(t => `<div class="det-t"><span class="tc-ic">${glyphIcon(t)}</span><div><b>${t.name}</b> <small>${t.ult ? 'Ultimate · ' : ''}CD ${t.cd} · ${TARGET_TXT[t.target]}${t.cur > 0 ? ` · ready in ${t.cur}` : ' · ready'}</small><p>${t.desc}</p>${t.emp ? `<p class="emp">✦ Empowered (${t.emp.cost} Spirit Qi): ${t.emp.desc}</p>` : ''}</div></div>`).join('')}
@@ -2961,8 +2965,8 @@ function validTarget(card) { return card.classList.contains('targetable'); }
 // ===== tutorial =====
 // Guided first battle: spotlight + Tao Yao tooltips, gated actions, event-driven steps.
 
-const ph = (g, c) => `<span class="ph" style="color:${c}">${g}</span>`;
-const W_ = ph('水', '#7cc6ff'), WD = ph('木', '#86e38f'), F_ = ph('火', '#ff8048'), E_ = ph('土', '#e4b45a'), M_ = ph('金', '#efe6c8');
+const ph = k => `<img class="ph" src="assets/ui/orb_${k}.webp" alt="" draggable="false">`;
+const W_ = ph('water'), WD = ph('wood'), F_ = ph('fire'), E_ = ph('earth'), M_ = ph('metal');
 
 let active = false, idx = -1, unsub = [], hidden = false, extraQueue = [], current = null, seen = {};
 const hero = k => BT.heroes().find(h => h.key === k);
@@ -2977,7 +2981,7 @@ const STEPS = [
   { id: 'welcome', text: `Welcome to the Hundred Blossoms Pavilion! I'm <b>Tao Yao</b>. Let me show you how Blossoms fight. It only takes one turn.` },
   { id: 'heroes', target: () => BT.heroes().map(cardEl), place: 'above', text: `These are your four <b>Blossoms</b>. Each card shows her <b>phase</b> (top left), her <b>health</b> and three <b>techniques</b>.` },
   { id: 'enemies', target: () => BT.enemies().map(cardEl), place: 'below', text: `The <b>Netherflame Sect</b>. Destroy every enemy card to win. Two waves of wraiths stand in this dream.` },
-  { id: 'rings', target: () => hero('ling').el.querySelector('.c-techs'), place: 'above', text: `Glowing techniques are <b>ready</b>. A number in the ring counts the turns until it is ready again. Each turn you may cast <b>every</b> ready technique, in any order.` },
+  { id: 'rings', target: () => hero('ling').el.querySelector('.c-techs'), place: 'above', text: `Glowing techniques are <b>ready</b>. A number at the end of a technique counts the turns until it is ready again. Each turn you may cast <b>every</b> ready technique, in any order.` },
   { id: 'cycle', target: () => $('#chain'), place: 'below', cycle: true, text: `Everything follows the <b>Five Phases</b>. Gold arrows: each phase <b>feeds</b> the next. Red arrows: each phase <b>overcomes</b> another for +30% damage.` },
   { id: 'ling', target: () => techBtn('ling', 0), place: 'above', arrow: true, wait: 'selected', allowEls: () => [techBtn('ling', 0)], allow: (a, p) => a !== 'select' || p.t.chor === 'ling_s1',
     text: `Ling Shuang is ${W_} <b>Water</b>, and Water overcomes ${F_} Fire. Tap her <b>Frost Crescent</b>.` },
@@ -2995,23 +2999,23 @@ const STEPS = [
     text: `${F_} Fire makes ${E_} Earth: close the chain with <b>Su Lianhua</b>. Her <b>Petal Blades</b> also heal the most injured ally.` },
   { id: 'su-t', needSel: ['su', 0], target: () => BT.enemies().filter(e => e.alive).map(cardEl), place: 'below', wait: 'cast', allowEls: () => BT.enemies().map(cardEl),
     text: `Tap any enemy. That makes a <b>Harmony ×4</b>, worth +45% on the last link plus bonus Spirit Qi!` },
-  { id: 'points', target: () => $('#pool-hero'), place: 'right', text: `Each technique also adds <b>Phase Qi</b> to the phase it feeds. Every point gives that phase <b>+8%</b> for the rest of the battle, so your chain grows stronger each turn.` },
-  { id: 'qi', target: () => $('#qi-box'), place: 'right', text: `<b>Spirit Qi</b> flows in every turn. Spend it to <b>✦ Empower</b> a technique, or on <b>Fortuitous Encounters</b>.` },
+  { id: 'points', target: () => $('#pool-hero'), place: 'above', text: `Each technique also adds <b>Phase Qi</b> to the phase it feeds. Every point gives that phase <b>+8%</b> for the rest of the battle, so your chain grows stronger each turn.` },
+  { id: 'qi', target: () => $('#qi-box'), place: 'above', text: `<b>Spirit Qi</b> flows in every turn. Spend it to <b>✦ Empower</b> a technique, or on <b>Fortuitous Encounters</b>.` },
   { id: 'mo2', target: () => techBtn('mo', 1), place: 'above', arrow: true, wait: 'selected', allowEls: () => [techBtn('mo', 1)], allow: (a, p) => a !== 'select' || p.t.chor === 'mo_s2',
     text: `Mo's <b>Shadow Lightning Step</b> is ready too, and it refreshes her Thunderfang Cross. It starts a new chain, which is fine. Tap it.` },
-  { id: 'emp', target: () => $('#techcard .emp-btn'), place: 'left', wait: 'empower', allowEls: () => [$('#techcard .emp-btn')],
+  { id: 'emp', target: () => $('#techcard .emp-btn'), place: 'right', wait: 'empower', allowEls: () => [$('#techcard .emp-btn')],
     text: `Tap <b>✦ Empower</b>: it spends 6 Spirit Qi for +35% damage and a bonus effect.` },
   { id: 'emp-t', needSel: ['mo', 1, true], target: () => BT.enemies().filter(e => e.alive).map(cardEl), place: 'below', wait: 'cast', allowEls: () => BT.enemies().map(cardEl),
     text: `Empowered! Now tap any enemy.` },
   { id: 'end', target: () => $('#b-end'), place: 'left', wait: 'turnEnd', free: true,
     text: `Thunderfang is ready again: use it if you like. Unused techniques keep their charge. When you are done, tap <b>End Turn</b>.` },
   { id: 'enemy', target: () => BT.enemies().filter(e => e.alive).map(u => u.el.querySelector('.c-techs')), place: 'below', onTurn: 'hero',
-    text: `The enemy follows the same rules, Harmony included. Watch the rings on their cards: a <b>1</b> means that technique fires on their next turn.` },
+    text: `The enemy follows the same rules, Harmony included. Watch the numbers on their techniques: a <b>1</b> means that technique fires on their next turn.` },
   { id: 'enc', target: () => $('#b-enc'), place: 'left', arrow: true, wait: 'shopOpen', allowEls: () => [$('#b-enc')],
-    text: `Even rounds bring a <b>Fortuitous Encounter</b> (奇遇): talismans, pills and treasures for Spirit Qi. Tap it.` },
+    text: `Even rounds bring a <b>Fortuitous Encounter</b>: talismans, pills and treasures for Spirit Qi. Tap it.` },
   { id: 'shop', target: () => $('#shop .offers'), place: 'below', wait: 'shopClose', free: true,
     text: `Buy one if you can afford it, or leave. Later rounds bring rarer finds.` },
-  { id: 'done', text: `That's everything! <b>Auto</b> and <b>×2</b> are at the top right, and tapping a card shows its details. Good luck, Pavilion Master.`, last: true },
+  { id: 'done', text: `That's everything! <b>Auto</b> and <b>×2</b> are at the top left, and tapping a card shows its details. Good luck, Pavilion Master.`, last: true },
 ];
 const EXTRA = {
   boss: { id: 'boss', target: () => BT.enemies().find(e => e.boss)?.el, place: 'below',

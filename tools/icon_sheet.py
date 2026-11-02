@@ -3,7 +3,8 @@
 
     python3 tools/icon_sheet.py <sheet.png> <name>,<name>,... [--size 160]
 
-The names go in reading order (rows top to bottom, each row left to right) and become game/assets/ui/<name>.webp.
+The names go in reading order (rows top to bottom, each row left to right) and become game/assets/ui/<name>.webp;
+"name@240" gives one its own size, and "name~" keeps its proportions (its longer side gets the size) instead of a square.
 Rows may hold different numbers of icons: the rows are found first, then the icons within each row. An icon is found
 by its opaque pixels (the faint glow around it is ignored to find it, then kept in a margin), centred on a square
 and saved at `size` px with its alpha. tools/tab_icons.py and tools/hall_icons.py use it.
@@ -45,16 +46,25 @@ def cut(path, names, size=160, out_dir=OUT):
     if len(boxes) != len(names):
         raise SystemExit(f'{path}: found {len(boxes)} icons, expected {len(names)} ({", ".join(names)})')
     os.makedirs(out_dir, exist_ok=True)
-    for name, ((bx0, by0, bx1, by1), (cx0, cx1, cy0, cy1)) in zip(names, boxes):
+    for spec, ((bx0, by0, bx1, by1), (cx0, cx1, cy0, cy1)) in zip(names, boxes):
+        # "name@240" sets this one's size; "name~" keeps its proportions (the longer side gets the size) instead of a square
+        keep = '~' in spec; name, _, sz = spec.replace('~', '').partition('@'); sz = int(sz) if sz else size
         own = Image.new('RGBA', im.size, (0, 0, 0, 0))   # only this icon's cell, so a wide one takes no piece of its neighbours
         own.paste(im.crop((cx0, cy0, cx1, cy1)), (cx0, cy0))
-        side = int(max(bx1 - bx0, by1 - by0) * (1 + 2 * MARGIN))
         cx, cy = (bx0 + bx1) // 2, (by0 + by1) // 2
-        sq = Image.new('RGBA', (side, side), (0, 0, 0, 0))
-        sq.alpha_composite(own.crop((cx - side // 2, cy - side // 2, cx - side // 2 + side, cy - side // 2 + side)))
+        if keep:
+            w, h = int((bx1 - bx0) * (1 + 2 * MARGIN)), int((by1 - by0) * (1 + 2 * MARGIN))
+            box = Image.new('RGBA', (w, h), (0, 0, 0, 0))
+            box.alpha_composite(own.crop((cx - w // 2, cy - h // 2, cx - w // 2 + w, cy - h // 2 + h)))
+            k = sz / max(w, h); out_im = box.resize((max(1, round(w * k)), max(1, round(h * k))), Image.LANCZOS)
+        else:
+            side = int(max(bx1 - bx0, by1 - by0) * (1 + 2 * MARGIN))
+            sq = Image.new('RGBA', (side, side), (0, 0, 0, 0))
+            sq.alpha_composite(own.crop((cx - side // 2, cy - side // 2, cx - side // 2 + side, cy - side // 2 + side)))
+            out_im = sq.resize((sz, sz), Image.LANCZOS)
         out = os.path.join(out_dir, f'{name}.webp')
-        sq.resize((size, size), Image.LANCZOS).save(out, quality=90, method=6)
-        print(f'{name:16s} from {bx1 - bx0}x{by1 - by0} at ({bx0},{by0}) -> {os.path.relpath(out, ROOT)}')
+        out_im.save(out, quality=90, method=6)
+        print(f'{name:16s} from {bx1 - bx0}x{by1 - by0} at ({bx0},{by0}) -> {os.path.relpath(out, ROOT)} {out_im.size[0]}x{out_im.size[1]}')
 
 
 if __name__ == '__main__':

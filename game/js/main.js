@@ -32,7 +32,7 @@ function insets() {
 function layout() {
   const ins = insets(), H = 720;
   const vw = Math.max(320, window.innerWidth - ins.l - ins.r), vh = Math.max(200, window.innerHeight - ins.t - ins.b);
-  const W = Math.round(Math.max(1360, Math.min(1640, vw / vh * H)));
+  const W = Math.round(Math.max(1280, Math.min(1640, vw / vh * H))); // 16:9 fills the screen (PC first)
   const s = Math.min(vw / W, vh / H);
   stage.style.width = W + 'px'; stage.style.height = H + 'px';
   stage.style.transform = `translate(${(ins.l + (vw - W * s) / 2).toFixed(1)}px, ${(ins.t + (vh - H * s) / 2).toFixed(1)}px) scale(${s})`;
