@@ -67,6 +67,14 @@ The checker reads the key a link sits under to know whether the player gains or 
 - **recipe**: `station (bld), inputs[], output, hours`. **shop**: `keeper (npc), location, refresh, stock[{item | cur | insight, qty, price[], limit}]`.
 - **scene**: `name, location, cast[], lines[{speaker?, expression?, text}]`; a line without a speaker is narration.
 
+## The save (game/js/state.js)
+
+The game keeps one JSON save (schema 2) in IndexedDB, with localStorage as a fallback and a checksum; Settings exports and imports it as a code. Older saves are upgraded on load.
+
+- **Wallet:** `cur{}` and `items{}` by id. **Heroines:** `heroes{hid: {level, exp, bt, petals, bond, eq{position: piece id}}}`, where the ten positions are `weapon, helmet, body, gloves, pants, boots, ring1, ring2, pendant, artefact`.
+- **Storage Ring:** `gear{seq, pieces{id: piece}, recent[], auto{}, view{sort, dir, filter}}`. A piece is `{id, kind: 'gear', slot, rarity, tier, set, main{stat, form, roll}, subs[{stat, form, rolls[]}], plus, engraved, lock, hero, pos, got, new}`; a Spirit Artefact is `{id, kind: 'art', slot: 'slot:artefact', art, rarity, plus, ...}`. Rolls are shares of the best value (0 to 1); values come from `rules:gear` and the tier, so a reforged piece keeps its rolls. `recent` keeps the last 30 salvaged pieces with what they returned.
+- **Progress:** `stages{id: {clear, missions[3], clears}}`, `chapterRewards`, `pond{pulls, pity, fatePoints, guided}`, `flags`, `settings`, `log`.
+
 ## Adding content
 
 - New stage: give it a realm and tier from the progression map, waves of existing enemies inside the realm's level band, a drop table of the same tier, an unlock, and link it from its mode (or chapter).
