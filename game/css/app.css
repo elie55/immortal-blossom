@@ -75,7 +75,9 @@
 .hm b { display: block; font: 700 28px Cinzel, serif; color: #fff3d6; letter-spacing: .06em; }
 .hm small { font: 600 19px 'Cormorant Garamond', serif; color: var(--mut); }
 .hm.locked { opacity: .5; border-right-color: #555; }
-.hm.locked::after { content: '锁'; position: absolute; right: 16px; font: 900 22px 'Noto Serif SC', serif; color: #888; }
+.hm.locked::after { content: ''; position: absolute; right: 14px; top: 50%; width: 36px; height: 36px; margin-top: -18px; background: url(../assets/ui/hall_lock.webp) center / contain no-repeat; filter: grayscale(.35) brightness(.85); }
+.hm .g img { display: block; width: 62px; height: 62px; margin: 0 -4px; object-fit: contain; filter: drop-shadow(0 0 8px rgba(232, 199, 125, .3)); }
+.disc i img { width: 50px; height: 50px; object-fit: contain; filter: drop-shadow(0 0 6px rgba(232, 199, 125, .3)); }
 .hm .dot { position: absolute; right: 14px; top: 12px; width: 14px; height: 14px; border-radius: 50%; background: var(--verm); box-shadow: 0 0 10px var(--verm); }
 .hm:not(.locked):hover { background: linear-gradient(90deg, rgba(40, 32, 12, .45), rgba(30, 24, 10, .9) 35%); }
 .hall-banner { position: absolute; right: 26px; bottom: 22px; width: 380px; height: 92px; z-index: 3; border-radius: 12px; overflow: hidden; cursor: pointer; border: 1px solid var(--gold);

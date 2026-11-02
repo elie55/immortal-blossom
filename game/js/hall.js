@@ -29,6 +29,9 @@ App.register('title', {
 
 // ---------------- Pavilion Hall ----------------
 const LOCKED = { trials: 'The Path of Ascension opens with the content beta' };
+/** A hall icon from assets/ui (tools/hall_icons.py), or its glyph until the art exists. */
+const hallIc = (key, glyph) => (hasArt(`ui/hall_${key}.webp`) ? `<img src="assets/ui/hall_${key}.webp" alt="">` : glyph);
+
 App.register('hall', {
   cls: 'hall',
   render(el) {
@@ -43,18 +46,18 @@ App.register('hall', {
         <div class="lobby-name"><span>${esc(lh.cn)}</span><b>${esc(lh.name)}</b><small>${esc(lh.title)}</small></div>` : ''}
       ${App.topbar({ back: false, title: 'Hundred Blossoms Pavilion', cn: '百花阁', chips: ['cur:spirit_stones', 'cur:immortal_jade', 'cur:fate_incense', 'cur:blossom_dew'] })}
       <div class="hall-left">
-        <div class="disc" data-act="settings"><i>設</i>Settings</div>
-        <div class="disc" data-act="rules"><i>五</i>Five Phases</div>
-        <div class="disc" data-act="ring"><i>戒</i>Storage Ring</div>
-        <div class="disc locked" data-act="locked" data-k="trials"><i>途</i>Path of Ascension</div>
+        <div class="disc" data-act="settings"><i>${hallIc('settings', '設')}</i>Settings</div>
+        <div class="disc" data-act="rules"><i>${hallIc('phases', '五')}</i>Five Phases</div>
+        <div class="disc" data-act="ring"><i>${hallIc('ring', '戒')}</i>Storage Ring</div>
+        <div class="disc locked" data-act="locked" data-k="trials"><i>${hallIc('ascension', '途')}</i>Path of Ascension</div>
       </div>
       <div class="hall-menu">
-        <button class="hm" data-act="journey"><span class="g">历</span><span><b>Journey</b><small>${next ? `Next: ${esc(next.name)}` : 'Chapter 1 complete'}</small></span>${next ? '<i class="dot"></i>' : ''}</button>
-        <button class="hm" data-act="trials"><span class="g">试</span><span><b>Trials</b><small>${modeOpen('mode:hunts') ? 'Hunts, the Valley, Shrines, the Forge' : 'Opens after chapter 1'}</small></span></button>
-        <button class="hm" data-act="heroines"><span class="g">芳</span><span><b>Heroines</b><small>${mine.length} of ${SLICE_HEROES.length} gathered</small></span></button>
-        <button class="hm" data-act="pond"><span class="g">莲</span><span><b>Fate Pond</b><small>${qty('cur:fate_incense')} Fate Incense</small></span>${qty('cur:fate_incense') >= 1 ? '<i class="dot"></i>' : ''}</button>
-        <button class="hm${bldUnlocked('bld:main_hall') ? '' : ' locked'}" data-act="sect"><span class="g">宗</span><span><b>The Sect</b><small>${bldUnlocked('bld:main_hall') ? 'Caves, garden, alchemy, missions, duties' : 'Opens with Peach Blossom Ford'}</small></span>${sectAlerts() ? '<i class="dot"></i>' : ''}</button>
-        <button class="hm${bldUnlocked('bld:tea_house') ? '' : ' locked'}" data-act="market"><span class="g">市</span><span><b>Market</b><small>Myriad Treasures, Merit Exchange</small></span></button>
+        <button class="hm" data-act="journey"><span class="g">${hallIc('journey', '历')}</span><span><b>Journey</b><small>${next ? `Next: ${esc(next.name)}` : 'Chapter 1 complete'}</small></span>${next ? '<i class="dot"></i>' : ''}</button>
+        <button class="hm" data-act="trials"><span class="g">${hallIc('trials', '试')}</span><span><b>Trials</b><small>${modeOpen('mode:hunts') ? 'Hunts, the Valley, Shrines, the Forge' : 'Opens after chapter 1'}</small></span></button>
+        <button class="hm" data-act="heroines"><span class="g">${hallIc('heroines', '芳')}</span><span><b>Heroines</b><small>${mine.length} of ${SLICE_HEROES.length} gathered</small></span></button>
+        <button class="hm" data-act="pond"><span class="g">${hallIc('pond', '莲')}</span><span><b>Fate Pond</b><small>${qty('cur:fate_incense')} Fate Incense</small></span>${qty('cur:fate_incense') >= 1 ? '<i class="dot"></i>' : ''}</button>
+        <button class="hm${bldUnlocked('bld:main_hall') ? '' : ' locked'}" data-act="sect"><span class="g">${hallIc('sect', '宗')}</span><span><b>The Sect</b><small>${bldUnlocked('bld:main_hall') ? 'Caves, garden, alchemy, missions' : 'Opens with Peach Blossom Ford'}</small></span>${sectAlerts() ? '<i class="dot"></i>' : ''}</button>
+        <button class="hm${bldUnlocked('bld:tea_house') ? '' : ' locked'}" data-act="market"><span class="g">${hallIc('market', '市')}</span><span><b>Market</b><small>Myriad Treasures, Merit Exchange</small></span></button>
       </div>
       ${feat ? `<div class="hall-banner" data-act="pond" style="background-image:url(${cardUrl(feat)})"><div><b>Fate Pond · Featured</b><small>${esc(get(feat).name)} ${esc(get(feat).cn)}, ${esc(get(feat).title)}</small></div></div>` : ''}`;
     const say = (text, who = 'npc:tao_yao') => {
