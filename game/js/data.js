@@ -46,13 +46,27 @@ export const cardUrl = hid => { const a = heroArt(hid); return a.card ? `assets/
 export const faceUrl = hid => { const a = heroArt(hid); return a.face ? `assets/ui/${a.face}.webp` : cardUrl(hid); };
 export function enemyArt(e) {
   if (e.art && hasArt(`cards/${e.art}.webp`)) return e.art;
+  if (e.wide) return 'boss_wraith_captain';
   const fallback = { 'phase:water': 'wraith_drowned', 'phase:fire': 'wraith_ember', 'phase:earth': 'wraith_mire', 'phase:metal': 'wraith_bone', 'phase:wood': 'wraith_thorn' };
   return fallback[e.phase] || 'wraith_ember';
+}
+const DAYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+/** The phase a mode's table gives today (Valley enemies, the doubled shrine); weekends take the player's pick. */
+export function todayPhase(modeId = 'mode:valley', pick = null, date = new Date()) {
+  const m = get(modeId), table = m?.phaseByDay || m?.doubledByDay || {};
+  const v = table[DAYS[date.getDay()]];
+  return v && v.startsWith('phase:') ? v : (pick || null);
 }
 export const npcUrl = nid => (hasArt(`npc/${keyOf(nid)}.webp`) ? `assets/npc/${keyOf(nid)}.webp` : null);
 /** Transparent standing art for story scenes and dialogues (heroines and NPCs alike). */
 export const standUrl = id => (hasArt(`stand/${keyOf(id)}.webp`) ? `assets/stand/${keyOf(id)}.webp` : null);
-export const iconUrl = id => (hasArt(`icons/${keyOf(id)}.webp`) ? `assets/icons/${keyOf(id)}.webp` : null);
+/** An item's icon; manuals and fragments share one icon for their category. */
+export function iconUrl(id) {
+  if (!id) return null;
+  if (hasArt(`icons/${keyOf(id)}.webp`)) return `assets/icons/${keyOf(id)}.webp`;
+  const cat = get(id)?.category;
+  return cat && hasArt(`icons/cat_${cat}.webp`) ? `assets/icons/cat_${cat}.webp` : null;
+}
 const LOC_BG = { 'loc:hundred_blossoms_pavilion': 'pavilion', 'loc:peach_blossom_ford': 'peach_ford', 'loc:jade_pool': 'jade_pool' };
 export function locBg(loc) {
   const k = LOC_BG[loc];
@@ -115,10 +129,11 @@ export function heroUnit(hid, prog = {}, arrayBonus = {}, gear = null) {
     techs: h.skills.map((sid, i) => techOf(sid, art.icons[i])),
   };
 }
-export function enemyUnit(eid, level) {
+/** An enemy for the battle engine. phase overrides its own (the Valley's day phase, a shrine's phase). */
+export function enemyUnit(eid, level, phase = null) {
   const e = get(eid), s = enemyStats(eid, level);
   return {
-    key: keyOf(eid), id: eid, name: e.name, cn: e.cn, title: e.title, phase: phaseOf(e.phase), path: null, family: e.family, profile: e.profile,
+    key: keyOf(eid), id: eid, name: e.name, cn: e.cn, title: e.title, phase: phaseOf(phase || e.phase), path: null, family: e.family, profile: e.profile, script: e.script || null,
     art: enemyArt(e), cutin: null, face: null, lvl: level, hp: s.hp, atk: s.atk, def: s.def, crit: s.crit, critDmg: s.critDmg,
     wide: !!e.wide, boss: !!e.boss, qiShield: e.qiShield || 0,
     techs: e.skills.map(sid => techOf(sid, null, !!e.boss)),
@@ -142,7 +157,7 @@ export function stageBattle(stage, team, progress, arrayId = 'array:yellow_drago
     return {
       title: boss ? 'Boss wave' : (i === arr.length - 1 && arr.length > 1 ? 'Final wave' : `Wave ${i + 1}`),
       sub: boss ? get(w.find(e => get(e.enemy)?.boss).enemy).name : stage.name, boss,
-      enemies: w.map(e => enemyUnit(e.enemy, e.level)),
+      enemies: w.map(e => enemyUnit(e.enemy, e.level, e.phase || ({ day: opts.dayPhase || todayPhase('mode:valley', 'phase:metal'), shrine: stage.phase || 'phase:earth' }[get(e.enemy).phase]) || null)),
     };
   });
   const heroes = team.filter(Boolean).map((hid, i) => heroUnit(hid, opts.fixedLevel ? { level: opts.fixedLevel } : (progress[hid] || { level: opts.guestLevel || 1 }), arrayBonus(arrayId, i), progress[hid] && opts.gear ? opts.gear(hid) : null));

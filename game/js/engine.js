@@ -1233,6 +1233,7 @@ SKILLS.generic = async function generic(x) {
             V.emitP(fx.part, c.x, c.y, area ? 6 : 10, { color: fx.col, speed: [120, 420] });
             sfx(k ? 'hit' : fx.sfx);
             const h = x.hit(f, p, { color: fx.col, small: hits > 1 || area, pierce: e.pierce, critBonus: e.critBonus });
+            if (h) x.dealt = (x.dealt || 0) + h.dmg;
             if (h && e.detonate && f.alive) await x.flare(f, e.detonate === true ? 'burn' : e.detonate);
           }
           if (area) V.shake(6, 220);
@@ -1251,6 +1252,7 @@ SKILLS.generic = async function generic(x) {
       }
       case 'apply': {
         const id = sid(e.status); if (!id) break;
+        if (e.when === 'dispelled' && !x.lastDispelled) break;
         const debuff = STATUS[id].debuff;
         for (const a of ts) {
           if (!a.alive) continue;
@@ -1270,8 +1272,28 @@ SKILLS.generic = async function generic(x) {
         await wait(160); break;
       }
       case 'dispel': {
-        for (const a of ts) { if (e.chance && Math.random() >= e.chance) continue; const n = x.dispel(a, e.all ? 99 : (e.count || 1)); if (n) { const c = C(a); V.floatText('BUFF REMOVED', c.x, c.y - 60, 'info'); } }
+        x.lastDispelled = 0;
+        for (const a of ts) { if (e.chance && Math.random() >= e.chance) continue; const n = x.dispel(a, e.all ? 99 : (e.count || 1)); x.lastDispelled += n; if (n) { const c = C(a); V.floatText('BUFF REMOVED', c.x, c.y - 60, 'info'); } }
         await wait(160); break;
+      }
+      case 'lifesteal': { // heal for a share of the damage this technique dealt
+        const amt = Math.round((x.dealt || 0) * (e.pct || 0.3));
+        if (amt && u.alive) { const n = applyHealAmount(u, u, amt); if (n) { const c = C(u); V.floatText('+' + Math.min(n, u.maxHp).toLocaleString('en-US'), c.x, c.y, 'heal', { label: 'DEVOURED' }); } }
+        break;
+      }
+      case 'transform': { // Hundun scrambles every charging cooldown by a random shift; effect resistance resists it
+        if (e.what !== 'cooldowns') break;
+        const [lo, hi] = e.range || [-1, 2];
+        for (const a of ts) {
+          if (!a.alive) continue;
+          const res = Math.min(RULES.resistCap ?? 0.85, Math.max(0, (a.res || 0) - (u.acc || 0)));
+          const c = C(a);
+          if (res > 0 && Math.random() < res) { V.floatText('RESISTED', c.x, c.y - 40, 'info'); continue; }
+          for (const tt of a.techs) if (tt.cur > 0) tt.cur = Math.max(0, Math.min(tt.cd, tt.cur + lo + Math.floor(Math.random() * (hi - lo + 1))));
+          V.floatText('SCRAMBLED', c.x, c.y - 60, 'info'); V.emitP('wisp', c.x, c.y, 10, { color: 'violet', speed: [40, 160] });
+          board.refreshCard(a);
+        }
+        await wait(240); break;
       }
       case 'delay': for (const a of ts) { if (a.alive) { x.delay(a, e.turns || 1); const c = C(a); V.floatText('DELAYED', c.x, c.y - 60, 'info'); } } break;
       case 'refresh': {
@@ -1542,7 +1564,8 @@ function chainOrder(units) {
 async function startOfTurn(side) {
   for (const u of B.units.filter(x => x.side === side)) {
     const tangled = u.alive && has(u, 'entangle');
-    if (!tangled) for (const t of u.techs) if (t.cur > 0) t.cur -= 1;
+    const tick = u.d?.script?.cooldownTick || 1; // Qiongqi's techniques recharge two turns at a time
+    if (!tangled) for (const t of u.techs) if (t.cur > 0) t.cur = Math.max(0, t.cur - tick);
     // Haste: a meter fills each turn; at 100 her charging techniques recharge one extra turn.
     const hs = u.alive ? hasteOf(u) : 0;
     if (hs > 0) {
