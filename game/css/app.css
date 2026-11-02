@@ -512,3 +512,16 @@
 .fg-slots button i { font: 900 18px 'Noto Serif SC', serif; font-style: normal; color: var(--gold); } .fg-slots button.on { background: var(--gold); color: #1a1206; } .fg-slots button.on i { color: #1a1206; }
 .fg-odds { margin: 0; font: 600 16px Oswald, sans-serif; }
 .fg-detail .sd-btns { margin-top: auto; }
+
+/* Journey: chapters and Heaven-Defying */
+.ch-nav { display: flex; gap: 8px; margin-right: 8px; } .ch-nav .tl { height: 44px; font-size: 16px; }
+.ch-nav .hdb { border-color: #ff8a7a; color: #ffb0a0; } .ch-nav .hdb.on { background: var(--verm); color: #fff; }
+.hd-tag { color: #ff8a7a; }
+
+.fm-array { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; width: 100%; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--line); background: rgba(255, 255, 255, .04); text-align: left; cursor: pointer; }
+.fm-array b { font: 700 20px Cinzel, serif; } .fm-array small { font: 600 15px 'Cormorant Garamond', serif; color: #d8cfbe; } .fm-array span { font: 600 14px Oswald, sans-serif; color: var(--gold); }
+.fm-slot .pos small { display: block; font: 600 12px Oswald, sans-serif; color: #8fe6a8; letter-spacing: 0; }
+.arr-list { display: flex; flex-direction: column; gap: 8px; }
+.arr { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; padding: 10px 14px; border-radius: 12px; border: 1px solid var(--line); background: rgba(255, 255, 255, .04); text-align: left; cursor: pointer; color: #e9e0cc; }
+.arr b { font: 700 21px Cinzel, serif; color: #fff3d6; } .arr small { font: 600 16px 'Cormorant Garamond', serif; color: var(--gold); } .arr span { font: 600 15px Oswald, sans-serif; color: #cfc6b2; }
+.arr em { font: 600 14px Oswald, sans-serif; font-style: normal; color: #ff9a8a; } .arr.on { border-color: var(--gold); background: rgba(232, 199, 125, .14); } .arr.locked { opacity: .5; cursor: default; }

@@ -3,7 +3,7 @@
 // and scrolls, one shrine doubled each weekday). Battles here can repeat on Auto and the spoils add up.
 import { App, esc, rewardChip, phTag, PH_COLOR, PH_GLYPH, npcSays, SET_COLOR, mergeRewards } from './app.js';
 import { get, all, locBg, enemyArt, phaseOf, stageBattle, todayPhase, num, hasArt, keyOf, realmOf } from './data.js';
-import { data, persist, isCleared, stars, clearStage, heroBonus, ownedHeroes, prog } from './state.js';
+import { data, persist, isCleared, stars, clearStage, heroBonus, ownedHeroes, prog, currentArray, arrayLevel } from './state.js';
 import { missionText, missionDone } from './story.js';
 import { twoPieceText } from './ring.js';
 import { ROMAN, tierOrder, rarityColor } from './gear.js';
@@ -45,7 +45,7 @@ async function battleLoop(st, team, back, repeat) {
   let runs = 0, res = null, out = null;
   const doubled = st.mode === 'mode:shrines' && st.phase === doubledShrine();
   while (runs < total) {
-    const def = stageBattle(st, team, data().heroes, 'array:yellow_dragon', { gear: heroBonus, dayPhase: valleyPhase() });
+    const def = stageBattle(st, team, data().heroes, currentArray(), { arrayLevel: arrayLevel(currentArray()), gear: heroBonus, dayPhase: valleyPhase() });
     if (repeat) { def.auto = true; if (runs) App.toast(`Repeat battle ${runs + 1} of ${total}`); }
     data().log.battles++;
     res = await App.runBattle(def);

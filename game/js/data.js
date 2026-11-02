@@ -125,7 +125,9 @@ export function heroUnit(hid, prog = {}, arrayBonus = {}, gear = null) {
     crit: s.crit, critDmg: s.critDmg + (arrayBonus.crit_dmg || 0), haste: (s.haste || 0) + (arrayBonus.haste || 0),
     acc: s.acc, res: s.res, healRecv: s.healRecv, healing: s.healing,
     // gear effects the engine plays: 4-piece sets, the Spirit Artefact's passive, Five Elements' Phase Qi
-    sets4: gear?.sets4 || [], artefact: gear?.artefact || null, gearPhaseQi: gear?.phaseQi || 0,
+    sets4: gear?.sets4 || [], artefact: gear?.artefact || null, gearPhaseQi: gear?.phaseQi || 0, targeted: arrayBonus.targeted || 1,
+    // passives open at levels 30 and 50
+    passives: (h.passives || []).map(get).filter(p => p && lv >= (p.slot === 'p50' ? 50 : 30)).map(p => ({ id: p.id, name: p.name, trigger: p.trigger, effects: p.effects || [] })),
     techs: h.skills.map((sid, i) => techOf(sid, art.icons[i])),
   };
 }
@@ -145,10 +147,19 @@ export function teamCombos(team) {
   return all('combo').filter(c => c.members.every(m => set.has(m)));
 }
 const ARRAY_STAT = { 'stat:hp': 'hp', 'stat:atk': 'atk', 'stat:def': 'def', 'stat:haste': 'haste', 'stat:crit_dmg': 'crit_dmg' };
-export function arrayBonus(arrayId, pos) {
+/** What an array's position gives at a level: level 1 values, up to double at level 10. */
+export function arrayBonus(arrayId, pos, level = 1) {
   const a = get(arrayId); const p = a?.positions?.[pos];
   if (!p) return {};
-  return { [ARRAY_STAT[p.stat] || 'hp']: p.value };
+  const k = 1 + (Math.min(10, Math.max(1, level)) - 1) / 9, v = p.value * k;
+  return { [ARRAY_STAT[p.stat] || 'hp']: p.stat === 'stat:haste' ? Math.round(v) : v, ...(p.targeted ? { targeted: p.targeted } : {}) };
+}
+/** "+5% Health", "+8 Haste" for an array position. */
+export function arrayText(arrayId, pos, level = 1) {
+  const b = arrayBonus(arrayId, pos, level), [k, v] = Object.entries(b).find(([x]) => x !== 'targeted') || [];
+  if (!k) return 'None';
+  const name = { hp: 'Health', atk: 'Attack', def: 'Defense', haste: 'Haste', crit_dmg: 'Crit dmg' }[k];
+  return (k === 'haste' ? `+${v} ${name}` : `+${Math.round(v * 100)}% ${name}`) + (b.targeted ? ', taunts' : '');
 }
 /** Build the engine's battle definition for a stage and a team (hero ids, with progress). */
 export function stageBattle(stage, team, progress, arrayId = 'array:yellow_dragon', opts = {}) {
@@ -160,7 +171,8 @@ export function stageBattle(stage, team, progress, arrayId = 'array:yellow_drago
       enemies: w.map(e => enemyUnit(e.enemy, e.level, e.phase || ({ day: opts.dayPhase || todayPhase('mode:valley', 'phase:metal'), shrine: stage.phase || 'phase:earth' }[get(e.enemy).phase]) || null)),
     };
   });
-  const heroes = team.filter(Boolean).map((hid, i) => heroUnit(hid, opts.fixedLevel ? { level: opts.fixedLevel } : (progress[hid] || { level: opts.guestLevel || 1 }), arrayBonus(arrayId, i), progress[hid] && opts.gear ? opts.gear(hid) : null));
+  if (stage.hd) for (const w of waves) for (const u of w.enemies) if (!u.qiShield && u.profile !== 'minion') u.qiShield = 4; // Heaven-Defying elites
+  const heroes = team.filter(Boolean).map((hid, i) => heroUnit(hid, opts.fixedLevel ? { level: opts.fixedLevel } : (progress[hid] || { level: opts.guestLevel || 1 }), arrayBonus(arrayId, i, opts.arrayLevel || 1), progress[hid] && opts.gear ? opts.gear(hid) : null));
   const combos = teamCombos(team);
   const loc = get(stage.location);
   return {
@@ -169,6 +181,14 @@ export function stageBattle(stage, team, progress, arrayId = 'array:yellow_drago
     side: (get(get(stage.waves?.[0]?.[0]?.enemy)?.faction)?.name) || 'Enemies', stageName: stage.name,
     bg: locBg(stage.location), location: loc?.name,
   };
+}
+/** A Journey stage on Heaven-Defying difficulty: higher levels, Qi shields on its elites, its own drops and
+ *  first-clear rewards, no story. prevId chains the unlocks inside a chapter. */
+export function hdStage(st, prevId = null) {
+  const hd = st.heavenDefying; if (!hd) return null;
+  return { ...st, id: `${st.id}#hd`, base: st.id, hd: true, tier: hd.tier || st.tier, drops: hd.drops || st.drops, firstClearRewards: hd.firstClearRewards || [], mechanic: hd.mechanic,
+    waves: st.waves.map(w => w.map(e => ({ ...e, level: e.level + (hd.levelOffset || 0) }))), scenes: null, guests: null, fixedTeam: null, tutorial: false, shop: null, encounters: st.encounters,
+    unlock: prevId ? { clear: prevId } : null };
 }
 /** EXP each heroine earns from a battle stage. */
 export const battleExp = stage => 12 * (stage.waves || []).flat().reduce((s, e) => s + e.level * e.level, 0);

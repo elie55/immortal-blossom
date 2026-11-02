@@ -381,6 +381,12 @@ export function summon(n) {
   persist();
   return res;
 }
+// ---------------- Battle Arrays ----------------
+/** Arrays the story has unlocked, and the one chosen for battle. */
+export const arraysOpen = () => all('array').filter(a => a.unlockedBy === 'start' || isCleared(a.unlockedBy)).sort((a, b) => (a.unlockedBy === 'start' ? -1 : 0) - (b.unlockedBy === 'start' ? -1 : 0));
+export function currentArray() { const id = D().array; return id && arraysOpen().some(a => a.id === id) ? id : 'array:yellow_dragon'; }
+export const arrayLevel = id => (D().arrayLevels || {})[id] || 1;
+export function setArray(id) { D().array = id; persist(); }
 export const flags = () => D().flags;
 export const settings = () => D().settings;
 export const data = () => D();

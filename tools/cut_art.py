@@ -34,23 +34,22 @@ SIZE = {'card': (640, 960), 'boss': (1280, 853), 'bg': (1600, 1067)}
 
 
 def bands(lum, axis, n):
-    """Tile spans along one axis: cut at the flattest run of lines near each expected cut."""
+    """Tile spans along one axis. A gutter is a thin run of dark, flat lines near each expected cut."""
     size = lum.shape[1 - axis]
     if n == 1:
         return [(0, size)]
-    std = lum.std(axis=axis)
-    flat = std < np.percentile(std, 12) * 1.3 + 2
+    score = lum.mean(axis=axis) + lum.std(axis=axis)  # dark and flat: low score
     edges = [0]
     for k in range(1, n):
-        c = round(size * k / n); lo, hi = c - size // 8, c + size // 8
-        idx = [i for i in range(lo, hi) if flat[i]]
-        if not idx:
-            edges += [c - 3, c + 3]; continue
-        runs, s = [], idx[0]
-        for a, b in zip(idx, idx[1:] + [None]):
-            if b != a + 1: runs.append((s, a)); s = b
-        r = max(runs, key=lambda r: r[1] - r[0])
-        edges += [r[0], r[1] + 1]
+        c = round(size * k / n); w = max(8, size // 16)
+        lo, hi = c - w, c + w
+        i0 = lo + int(np.argmin(score[lo:hi]))
+        thr = score[i0] + 12
+        a = i0
+        while a > lo and score[a - 1] <= thr and i0 - a < 20: a -= 1
+        b = i0
+        while b < hi - 1 and score[b + 1] <= thr and b - i0 < 20: b += 1
+        edges += [a, b + 1]
     edges.append(size)
     return [(edges[2 * i], edges[2 * i + 1]) for i in range(n)]
 

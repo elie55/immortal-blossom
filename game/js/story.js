@@ -2,7 +2,7 @@
 // stage by stage through chapter 1, from the dream battle to the Wraith Captain.
 import { App, npcSays, esc, PH_GLYPH } from './app.js';
 import { get, cardUrl, npcUrl, standUrl, locBg, phaseOf, stageBattle, iconUrl, num } from './data.js';
-import { flags, data, persist, clearStage, grant, isCleared, pay, heroBonus } from './state.js';
+import { flags, data, persist, clearStage, grant, isCleared, isUnlocked, pay, heroBonus, currentArray, arrayLevel } from './state.js';
 
 const MISSION_TEXT = {
   clear: () => 'Clear the stage', no_fall: () => 'No heroine falls', harmony_or_kindred: () => 'Make a Harmony chain or Kindred Qi',
@@ -122,11 +122,15 @@ App.register('scene', {
 });
 
 // ---------------- the slice's flow ----------------
-const CH1 = 'chapter:v1c1';
 export const Flow = {
-  chapter: () => get(CH1),
-  /** The next stage to play in chapter 1, or null when it is done. */
-  nextStage() { return this.chapter().stages.map(get).find(s => !isCleared(s.id)) || null; },
+  /** Volume 1's chapters in order. */
+  chapters: () => get('mode:journey').chapters.map(get),
+  chapterOpen: ch => isUnlocked(get(ch.stages[0])),
+  chapterDone: ch => isCleared(ch.stages[ch.stages.length - 1]),
+  /** The chapter to show: the first open one with a stage left, else the last open one. */
+  chapter() { const open = this.chapters().filter(c => this.chapterOpen(c)); return open.find(c => !this.chapterDone(c)) || open[open.length - 1]; },
+  /** The next story stage to play, across the chapters, or null when Volume 1 is done. */
+  nextStage() { for (const c of this.chapters()) { const s = c.stages.map(get).find(x => !isCleared(x.id)); if (s) return isUnlocked(s) ? s : null; } return null; },
   async newGame() {
     flags().started = true; persist();
     await this.playStage('stage:v1c1_01');
@@ -156,7 +160,7 @@ export const Flow = {
     else team = await new Promise(r => App.go('formation', { st, resolve: r }, { replace: true }));
     if (!team) return null;
     const guestLevel = Math.max(...st.waves.flat().map(e => e.level));
-    const def = stageBattle(st, team, data().heroes, 'array:yellow_dragon', { tutorial: !!st.tutorial && !flags().tutorialDone, fixedLevel: st.fixedTeam ? 4 : 0, guestLevel, gear: heroBonus });
+    const def = stageBattle(st, team, data().heroes, currentArray(), { arrayLevel: arrayLevel(currentArray()), tutorial: !!st.tutorial && !flags().tutorialDone, fixedLevel: st.fixedTeam ? 4 : 0, guestLevel, gear: heroBonus });
     data().log.battles++;
     const res = await App.runBattle(def);
     if (st.tutorial) { flags().tutorialDone = true; persist(); }
@@ -195,11 +199,18 @@ export const Flow = {
       App.go('pond', { guided: true }, { root: true });
       return;
     }
-    if (st.id === 'stage:v1c1_08') {
-      await App.dialog({ title: 'Chapter 1 complete', cn: '桃花渡', body: `<p><b class="gold">Peach Blossom Ford</b> is safe, and Su Lianhua has joined the Pavilion.</p><p>This is the end of the vertical slice. Chapter 2, Frostpeak, comes with the core loop alpha. Replay stages for stars and spirit stones, cultivate your heroines and try for a full Dao Blossom.</p>`, buttons: [{ label: 'Return to the Pavilion', value: true }] });
-      App.go('hall', {}, { root: true });
+    const ch = get(st.chapter);
+    if (ch && ch.stages[ch.stages.length - 1] === st.id && (data().stages[st.id]?.clears || 0) <= 1) {
+      // the chapter's last stage, the first time: the chapter is complete
+      const chs = this.chapters(), next = chs[chs.indexOf(ch) + 1];
+      const joined = (ch.joins || []).map(h => `<b class="gold">${esc(get(h).name)}</b>`).join(' and ');
+      await App.dialog({ title: `Chapter ${ch.number} complete`, cn: ch.cn, body: `<p><b class="gold">${esc(ch.name)}</b> is behind you.${joined ? ` ${joined} ${ch.joins.length > 1 ? 'have' : 'has'} joined the Pavilion.` : ''}</p>
+        <p>Heaven-Defying difficulty is now open for this chapter: higher levels, Qi shields on the elites and tier ${ch.heavenDefying?.tier ? ['', 'I', 'II', 'III', 'IV', 'V'][get(ch.heavenDefying.tier).order] : 'III'} gear.</p>
+        ${next ? `<p>Next: Chapter ${next.number}, <b>${esc(next.name)}</b> ${esc(next.cn)}.</p>` : '<p><b class="gold">Volume 1 is complete.</b> The Heavenly Trial Tower is open in the Trials.</p>'}`,
+        buttons: [{ label: next ? `On to ${next.name}` : 'Return to the Pavilion', value: true }] });
+      if (next) App.go('journey', { ch: next.id }, { root: true }); else App.go('hall', {}, { root: true });
       return;
     }
-    App.go('journey', { sel: this.nextStage()?.id || st.id }, { root: true });
+    App.go('journey', { ch: st.chapter, sel: this.nextStage()?.chapter === st.chapter ? this.nextStage().id : st.id }, { root: true });
   },
 };

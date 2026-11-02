@@ -1345,8 +1345,14 @@ function makeUnit(d, side, slot) {
     attached: [null, null], stats: { dmg: 0, heal: 0, taken: 0 }, d,
     // gear: accuracy, effect resistance, healing, 4-piece sets and the Spirit Artefact (power = share of its Divine +15 values)
     acc: d.acc || 0, res: d.res || 0, healRecv: d.healRecv || 0, healing: d.healing || 0,
-    sets4: new Set(d.sets4 || []), artefact: d.artefact || null, gearPhaseQi: d.gearPhaseQi || 0,
+    sets4: new Set(d.sets4 || []), artefact: d.artefact || null, gearPhaseQi: d.gearPhaseQi || 0, targeted: d.targeted || 1,
+    passives: d.passives || [],
   };
+}
+// Passives that are a plain stat with no condition (Ning Suxin's +15% accuracy) apply when the unit is made.
+const STAT_FIELD = { 'stat:acc': 'acc', 'stat:res': 'res', 'stat:crit': 'crit', 'stat:crit_dmg': 'critDmg', 'stat:haste': 'haste', 'stat:healing': 'healing', 'stat:heal_received': 'healRecv' };
+function applyStaticPassives(u) {
+  for (const p of u.passives) if (p.trigger === 'always') for (const e of p.effects || []) if (e.do === 'stat' && e.stat && !e.when && STAT_FIELD[e.stat]) u[STAT_FIELD[e.stat]] += e.value;
 }
 const getUnit = uid => B.units.find(u => u.uid === uid);
 const heroes = () => B.units.filter(u => u.side === 'hero');
@@ -1362,7 +1368,7 @@ function advantage(a, d) {
 const combo = id => B.combos.has(id);
 // Effective stats with buffs and debuffs.
 const atkOf = u => u.atk * (has(u, 'surge') ? 1.5 : 1);
-const defOf = u => u.defense * (has(u, 'iron') ? 1.6 : 1) * (has(u, 'bshatter') ? 0.3 : 1);
+const defOf = u => u.defense * (has(u, 'iron') ? 1.6 : 1) * (has(u, 'bshatter') ? 0.3 : 1) * (u.hp / u.maxHp < 0.5 ? hasWhen(u, 'below_half_health').reduce((m, e) => m * (1 + (e.stat === 'stat:def' ? e.value : 0)), 1) : 1);
 const critOf = u => u.crit + (has(u, 'intent') ? 0.3 : 0) + (u.attached && u.attached.some(a => a && a.id === 'sword_insight') ? 0.25 : 0);
 const hasteOf = u => (u.haste || 0) + (has(u, 'wind') ? 30 : 0);
 // Gear: a 4-piece set effect she wears, and her Spirit Artefact's power if it is the one named.
@@ -1370,6 +1376,18 @@ const set4 = (u, id) => !!(u.sets4 && u.sets4.has(id));
 const artPow = (u, id) => (u.artefact && u.artefact.id === id ? u.artefact.power : 0);
 const SKIPS_TURN = new Set(['frost', 'shock', 'dream']);
 function gearCallout(u, text) { const c = board.center(u, 0.16); V.floatText(text, c.x, c.y, 'info', { size: 20 }); B.log.gear[text] = (B.log.gear[text] || 0) + 1; }
+// ======================= passives (levels 30 and 50) =======================
+/** A heroine's passive effects for a trigger, each with its passive's id and name. */
+const pFx = (u, trig, verb) => (u.passives || []).filter(p => p.trigger === trig).flatMap(p => (p.effects || []).filter(e => !verb || e.do === verb).map(e => ({ ...e, pid: p.id, pname: p.name })));
+const hasWhen = (u, when, verb = 'stat') => pFx(u, 'always', verb).filter(e => e.when === when);
+/** "once per turn" and "once per battle" bookkeeping. */
+function useOnce(u, e) {
+  if (!e.once) return true;
+  const k = `${u.uid}:${e.pid}:${e.do}:${e.once === 'turn' ? `${B.round}${B.side}` : 'battle'}`;
+  if (B.onceUsed.has(k)) return false;
+  B.onceUsed.add(k); return true;
+}
+function passiveCallout(u, name) { const c = board.center(u, 0.1); V.floatText(String(name).toUpperCase(), c.x, c.y, 'harmony', { size: 22, label: 'PASSIVE' }); B.log.passives[name] = (B.log.passives[name] || 0) + 1; }
 /** The cards beside one on its side of the board. */
 function beside(t) {
   const row = B.units.filter(x => x.side === t.side && x.alive).sort((a, b) => (a.slotX ?? a.slot) - (b.slotX ?? b.slot));
@@ -1391,10 +1409,12 @@ async function startBattle(def) {
     qi: RULES.qiStart, gather: 0, points: { hero: freshPoints(), enemy: freshPoints() },
     chain: { len: 0, last: null, list: [] }, kin: { phase: null, uid: null, n: 0 }, maxChain: 0, sel: null, emp: false,
     pendingEnc: null, encounter: null, tutorial: !!def.tutorial, def, combos: new Set(def.combos || []), counters: [], comboQi: 0,
-    log: { casts: 0, falls: 0, empowers: 0, shatters: 0, encounters: 0, maxKills: 0, kindred: 0, harmony: 0, combos: {}, gear: {} },
+    log: { casts: 0, falls: 0, empowers: 0, shatters: 0, encounters: 0, maxKills: 0, kindred: 0, harmony: 0, combos: {}, gear: {}, passives: {} },
   });
   def.heroes.forEach((d, i) => B.units.push(makeUnit(d, 'hero', i)));
-  B.gourdDone = false;
+  B.gourdDone = false; B.onceUsed = new Set();
+  for (const u of heroes()) applyStaticPassives(u);
+  B.pendingStart = heroes().flatMap(u => pFx(u, 'battle_start', 'apply').map(e => ({ u, e })));
   for (const u of heroes()) {
     if (u.gearPhaseQi) B.points.hero[u.phase] += u.gearPhaseQi;                       // Five Elements, 2 pieces
     const pearl = artPow(u, 'art:dinghai_pearl'); if (pearl) B.points.hero[GEN[u.phase]] += Math.max(1, Math.round(2 * pearl));
@@ -1436,6 +1456,10 @@ async function spawnWave(i) {
     board.hitCard(b, { power: 0.8, color: '#ffb08a' });
   }
   ui.refreshAll();
+  if (i === 0 && B.pendingStart?.length) {
+    for (const { u, e } of B.pendingStart) { for (const a of e.target === 'all_allies' ? allies(u) : [u]) addStatus(a, e.status, e.turns || 1, { src: u }); passiveCallout(u, e.pname); }
+    B.pendingStart = null;
+  }
   emit('wave', { index: i, boss: !!b });
 }
 
@@ -1451,6 +1475,7 @@ async function loop() {
 }
 
 async function heroTurn() {
+  for (const h of heroes()) h.castsThisTurn = 0;
   B.side = 'hero'; B.phase = 'start'; B.chain = { len: 0, last: null, list: [] }; B.kin = { phase: null, uid: null, n: 0 }; B.comboQi = 0;
   board.geo.side = 'hero'; ui.setTurn('hero'); ui.showChain();
   await ui.turnBanner('Your Turn', `Round ${B.round}`, 'hero');
@@ -1699,6 +1724,11 @@ function addStatus(u, id, turns, extra = {}) {
   if ((id === 'frost' || id === 'shock' || id === 'dream') && B.side === u.side && B.phase === 'input') u.skip = true;
   if (id === 'sealed') u.techs.forEach((t, i) => { if (i > 0) t.blocked = true; });
   board.refreshCard(u);
+  // passives on the caster: Lingering Embers (Fire Poison lasts longer), Qi when she lands a debuff
+  if (src && src.side !== u.side && d.debuff) {
+    for (const e of pFx(src, 'always', 'extend')) if (sid(e.status) === id) { const st = has(u, id); if (st) st.turns += e.turns || 1; }
+    if (src.side === 'hero') for (const e of pFx(src, 'on_debuff', 'qi')) if (useOnce(src, e)) { gainQi(e.amount || 1); passiveCallout(src, e.pname); }
+  }
   // Heaven-Shaking Seal: taunting an enemy also disrupts its Qi
   if (id === 'provoke' && src && artPow(src, 'art:heaven_shaking_seal')) addStatus(u, 'disrupt', turns, { src });
   return true;
@@ -1745,7 +1775,14 @@ function computeHit(src, tgt, power, o = {}) {
   }
   const glance = has(src, 'mist') && Math.random() < 0.5;
   if (glance) mul *= 0.5;
-  const critCh = critOf(src) + (adv > 0 ? RULES.advCrit : 0) + (o.critBonus || 0);
+  // passives that change damage
+  for (const e of hasWhen(src, 'single_target_vs_below_half')) if (o.single && tgt.hp / tgt.maxHp < 0.5) mul *= 1 + e.damageBonus;
+  for (const e of hasWhen(src, 'target_skips_turn')) if (has(tgt, 'frost') || has(tgt, 'shock') || has(tgt, 'dream')) mul *= 1 + e.damageBonus;
+  if (src.nextTechBonus) mul *= 1 + src.nextTechBonus;
+  for (const w of B.units) if (w.alive && w.side === tgt.side) for (const e of hasWhen(w, 'while_she_stands')) if (e.damageTaken) mul *= 1 + e.damageTaken;
+  let pCrit = 0;
+  for (const e of pFx(src, 'on_cast', 'stat')) if (e.when === 'first_technique_each_turn' && e.stat === 'stat:crit' && src.castsThisTurn === 1) pCrit += e.value;
+  const critCh = critOf(src) + (adv > 0 ? RULES.advCrit : 0) + (o.critBonus || 0) + pCrit;
   const crit = !o.noCrit && !glance && Math.random() < critCh;
   if (crit) mul *= src.critDmg;
   const def = defOf(tgt) * (1 - (o.pierce || 0));
@@ -1773,6 +1810,13 @@ function applyDamage(src, tgt, power, o = {}) {
     if (tgt.qiShield.cur === 0) { shatter(tgt); h.shattered = true; }
   }
   h.killed = tgt.hp <= 0;
+  if (h.dmg > 0 && src.side !== tgt.side && tgt.side === 'hero' && !h.killed) {
+    for (const e of pFx(tgt, 'on_hit_taken')) {
+      if (!useOnce(tgt, e)) continue;
+      if (e.do === 'qi') { gainQi(e.amount || 1); passiveCallout(tgt, e.pname); }
+      if (e.do === 'stat' && e.damageBonus) { tgt.nextTechBonus = e.damageBonus; passiveCallout(tgt, e.pname); }
+    }
+  }
   // Twin Blooms that fire on a hit
   if (h.twin === 'combo:frost_and_thunder' && !h.killed) comboFire(h.twin, src, () => addStatus(tgt, 'shock', 1));
   if (tgt.id === 'hero:wei_zi' && src.side === 'enemy' && combo('combo:phoenix_among_peonies')) {
@@ -1789,7 +1833,12 @@ function applyDamage(src, tgt, power, o = {}) {
 function applyHealAmount(src, tgt, amount, o = {}) {
   if (!tgt.alive) return 0;
   if (has(tgt, 'wither')) { const c = board.center(tgt, 0.4); V.floatText('WITHERED', c.x, c.y, 'info'); return 0; }
-  const amt = Math.round(o.raw ? amount : amount * (1 + (src.healing || 0)) * (1 + (tgt.healRecv || 0))), real = Math.min(tgt.maxHp - tgt.hp, amt);
+  let pHeal = 0;
+  if (!o.raw) {
+    for (const e of hasWhen(src, 'target_below_30pct')) if (e.stat === 'stat:healing' && tgt.hp / tgt.maxHp < 0.3) pHeal += e.value;
+    for (const e of hasWhen(src, 'extends_harmony_chain')) if (e.stat === 'stat:healing' && src.castExtended) pHeal += e.value;
+  }
+  const amt = Math.round(o.raw ? amount : amount * (1 + (src.healing || 0) + pHeal) * (1 + (tgt.healRecv || 0))), real = Math.min(tgt.maxHp - tgt.hp, amt);
   tgt.hp += real; src.stats.heal += real;
   board.refreshCard(tgt);
   // Blood Lotus: healing past her full health flows to the ally with the lowest health
@@ -1818,6 +1867,23 @@ function shatter(u) {
 
 function killUnit(u) {
   if (!u.alive) return;
+  if (u.side === 'hero') {
+    // Rising from the Mud: once per battle an ally who would fall survives at 1 health behind a Spirit Shield
+    for (const sv of heroes().filter(x => x.alive)) for (const e of pFx(sv, 'on_fall', 'heal')) {
+      if (e.when !== 'ally_would_fall' || !useOnce(sv, e)) continue;
+      u.hp = 1; const sh = pFx(sv, 'on_fall', 'shield')[0];
+      if (sh) { u.barrier = Math.max(u.barrier, Math.round(atkOf(sv) * (sh.power || 0.6))); addStatus(u, 'shield', 2, { src: sv }); }
+      passiveCallout(u, e.pname); board.refreshCard(u); return;
+    }
+    // Vermilion Rebirth: once per battle she rises at 30% health with her ultimate ready
+    for (const e of pFx(u, 'on_fall', 'revive')) {
+      if (!e.self || !useOnce(u, e)) continue;
+      u.hp = Math.round(u.maxHp * (e.pct || 0.3)); u.status = u.status.filter(x => !STATUS[x.id].debuff);
+      for (const r of pFx(u, 'on_fall', 'refresh')) { const t3 = u.techs.find(x => x.slot === r.skill) || u.techs[2]; if (t3) t3.cur = 0; }
+      const c = board.center(u); V.fx('phoenix', { x: c.x, y: c.y, w: 420, dur: 900, s0: 0.6, s1: 1.1 });
+      passiveCallout(u, e.pname); board.refreshCard(u); return;
+    }
+  }
   const fi = u.attached ? u.attached.findIndex(a => a && a.id === 'phoenix_feather') : -1;
   const rb = has(u, 'rebirth');
   if (fi >= 0 || rb) {
@@ -1835,6 +1901,12 @@ function killUnit(u) {
   else B.log.falls++;
   board.refreshCard(u);
   ui.killFx(u);
+  // a falling heroine's last gift (Lin Chaxue: Spirit Shields for every ally)
+  for (const e of pFx(u, 'on_fall', 'shield')) {
+    if (e.target !== 'all_allies' || !useOnce(u, e)) continue;
+    for (const a of allies(u)) { a.barrier = Math.max(a.barrier, Math.round(u.maxHp * (e.pctOfMaxHp || 0.15))); addStatus(a, 'shield', e.turns || 2, { src: u }); }
+    passiveCallout(u, e.pname);
+  }
 }
 function gainQi(n) { if (!n) return; B.qi = Math.max(0, Math.min(RULES.qiMax, B.qi + n)); ui.qiGain(n); }
 
@@ -1880,7 +1952,10 @@ async function doCast(u, t, target, emp) {
   if (emp) { B.qi -= t.emp.cost; ui.qiGain(-t.emp.cost); if (u.side === 'hero') B.log.empowers++; }
   t.cur = t.cd;
   board.refreshCard(u);
+  u.castsThisTurn = (u.castsThisTurn || 0) + 1;
+  const lenBefore = B.chain.len;
   const hm = chainStep(u);
+  u.castExtended = B.chain.len > lenBefore && B.chain.len >= 2;
   const ctx = makeCtx(u, t, target, emp, hm);
   B.log.casts++; B.log[t.id] = (B.log[t.id] || 0) + 1;
   B.castKills = 0; B.counters = []; B.pendingFlares = [];
@@ -1893,6 +1968,7 @@ async function doCast(u, t, target, emp) {
   } catch (e) { console.error('skill error', t.id, e); }
   await board.lift(u, false);
   if (u.side === 'hero') B.log.maxKills = Math.max(B.log.maxKills, B.castKills || 0);
+  u.nextTechBonus = 0; u.castExtended = false;
   if (u.alive) addPoints(u, GEN[u.phase], t.ult ? 2 : 1);
   if (B.chain.len >= 2) {
     const c = board.center(u, 0.2);
@@ -1959,6 +2035,10 @@ function makeCtx(u, t, target, emp, hm) {
       if (h.crit) { hitStop(70); V.shake(9, 240); sfx('crit'); } else { sfx('hit'); if (!o.small) V.shake(4, 160); }
       if (h.killed) killUnit(tgt);
       if (!o.splash) gearOnHit(ctx, tgt, h, power, o);
+      if (u.side === 'hero') {
+        if (h.killed && !tgt.alive) for (const e of pFx(u, 'on_kill', 'refresh')) { const t3 = u.techs.find(x => x.slot === e.skill) || u.techs[2]; if (t3 && t3.cur > 0) { t3.cur = e.ready ? 0 : Math.max(0, t3.cur - (e.turns || 1)); board.refreshCard(u); passiveCallout(u, e.pname); } }
+        if (h.crit) for (const e of pFx(u, 'on_crit', 'qi')) if (useOnce(u, e)) { gainQi(e.amount || 1); passiveCallout(u, e.pname); }
+      }
       return h;
     },
     heal(tgt, power, o = {}) {
@@ -1967,6 +2047,7 @@ function makeCtx(u, t, target, emp, hm) {
       const amt = base * phaseMul(u.side, u.phase) * hm * (emp ? RULES.empowerMul : 1) * rand(0.97, 1.03);
       const real = applyHealAmount(u, tgt, amt);
       if (real) { const c = board.center(tgt, 0.45); V.floatText('+' + real.toLocaleString('en-US'), c.x + rand(-20, 20), c.y, 'heal'); }
+      for (const e of pFx(u, 'on_heal', 'cleanse')) { let n = 0; for (const st of e.statuses || []) if (has(tgt, st)) { removeStatus(tgt, st); n++; } if (n) passiveCallout(tgt, e.pname); }
       return real;
     },
     shield(tgt, power, o = {}) {
@@ -2170,7 +2251,8 @@ function aiTarget(e, t) {
   if (t.target !== 'enemy') return t.target === 'allAllies' ? allies(e)[0] : hs[0];
   const pv = has(e, 'provoke'); if (pv && pv.src && pv.src.alive) return pv.src;
   const seen = hs.filter(h => !has(h, 'veil')); if (seen.length) hs = seen;
-  const sc = h => (advantage(e.phase, h.phase) > 0 ? 2 : 0) + (1 - h.hp / h.maxHp) * 1.6 - (h.barrier > 0 ? 0.6 : 0) + Math.random() * 0.8;
+  // the Black Tortoise array's front heroine draws single-target techniques
+  const sc = h => (advantage(e.phase, h.phase) > 0 ? 2 : 0) + (1 - h.hp / h.maxHp) * 1.6 - (h.barrier > 0 ? 0.6 : 0) + Math.random() * 0.8 + ((h.targeted || 1) - 1) * 2;
   return hs.sort((a, b) => sc(b) - sc(a))[0];
 }
 
