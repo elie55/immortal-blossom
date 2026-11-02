@@ -1,7 +1,7 @@
-// Story scenes (dialogue with portraits, auto, log and skip) and the flow that strings the slice together:
+// Story scenes (standing figures with no background, auto, log and skip) and the flow that strings the slice together:
 // stage by stage through chapter 1, from the dream battle to the Wraith Captain.
-import { App, esc, PH_GLYPH } from './app.js';
-import { get, cardUrl, npcUrl, locBg, phaseOf, stageBattle, iconUrl, num } from './data.js';
+import { App, npcSays, esc, PH_GLYPH } from './app.js';
+import { get, cardUrl, npcUrl, standUrl, locBg, phaseOf, stageBattle, iconUrl, num } from './data.js';
 import { flags, data, persist, clearStage, grant, isCleared, pay } from './state.js';
 
 const MISSION_TEXT = {
@@ -34,13 +34,16 @@ export const Scene = {
     return new Promise(resolve => App.go('scene', { sc, resolve, title: opts.title }, { replace: true }));
   },
 };
+/** The move a standing figure makes for a line's expression (none for calm ones). */
+const EMOTE = { laugh: 'em-hop', surprised: 'em-jolt', angry: 'em-shake', determined: 'em-lean', sad: 'em-sink', worried: 'em-sink', shy: 'em-sway' };
 function speakerInfo(id) {
   if (!id) return null;
   const r = get(id); if (!r) return null;
-  if (id === 'npc:pavilion_master') return { name: 'You', cn: '阁主', you: true };
-  if (id.startsWith('hero:')) return { name: r.name, cn: r.cn, img: cardUrl(id), kind: 'hero', phase: phaseOf(r.phase) };
-  if (id === 'npc:tao_yao') return { name: r.name, cn: '桃夭', img: npcUrl(id), kind: 'hero' };
-  return { name: r.name, cn: r.cn || '', img: npcUrl(id), kind: 'npc' };
+  if (id === 'npc:pavilion_master') return { id, name: 'You', cn: '阁主', you: true };
+  const stand = standUrl(id);
+  if (id.startsWith('hero:')) return { id, name: r.name, cn: r.cn, stand, img: stand || cardUrl(id), kind: 'hero', phase: phaseOf(r.phase) };
+  if (id === 'npc:tao_yao') return { id, name: r.name, cn: '桃夭', stand, img: stand || npcUrl(id), kind: 'hero' };
+  return { id, name: r.name, cn: r.cn || '', stand, img: stand || npcUrl(id), kind: 'npc' };
 }
 App.register('scene', {
   cls: 'scene',
@@ -49,20 +52,45 @@ App.register('scene', {
     let i = -1, typing = null, auto = false, autoT = null, done = false;
     const loc = get(sc.location);
     el.innerHTML = `<div class="scr-bg" style="background-image:url(${locBg(sc.location)})"></div><div class="scr-shade"></div>
-      <div class="sc-port l gone"></div><div class="sc-port r gone"></div>
+      <div class="sc-stage"></div>
       <div class="sc-ctl"><button data-act="auto">Auto</button><button data-act="log">Log</button><button data-act="skip">Skip</button></div>
       <div class="sc-box panel"><div class="sc-name" style="display:none"></div><div class="sc-text"></div><div class="sc-next">▼</div></div>
       ${title !== false ? `<div class="sc-title"><div><b>${esc(loc?.cn || '')}</b></div><small>${esc(title || sc.name)}</small></div>` : ''}`;
-    const box = el.querySelector('.sc-box'), txt = el.querySelector('.sc-text'), nm = el.querySelector('.sc-name');
-    const ports = { l: el.querySelector('.sc-port.l'), r: el.querySelector('.sc-port.r') };
-    const side = { l: null, r: null };
+    const txt = el.querySelector('.sc-text'), nm = el.querySelector('.sc-name');
+    const stageEl = el.querySelector('.sc-stage');
+    // start loading the cast's art while the title shows
+    for (const id of sc.cast || []) { const u = speakerInfo(id)?.img; if (u) new Image().src = u; }
+    // Two places on stage, left and right. Heroines and Tao Yao enter on the left, other characters on the right;
+    // a newcomer takes the free side, or the side of whoever spoke longest ago.
+    const slots = { l: null, r: null };
+    let tick = 0;
     const finish = () => { if (done) return; done = true; clearTimeout(autoT); clearInterval(typing); resolve(); };
-    const place = (sp) => {
-      for (const k of ['l', 'r']) ports[k].classList.add('dim');
-      if (!sp || sp.you || !sp.img) return;
-      let k = Object.keys(side).find(x => side[x] === sp.name);
-      if (!k) { k = sp.kind === 'npc' ? 'r' : 'l'; if (side[k] && side[k] !== sp.name && !side[k === 'l' ? 'r' : 'l']) k = k === 'l' ? 'r' : 'l'; side[k] = sp.name; ports[k].style.backgroundImage = `url(${sp.img})`; ports[k].className = `sc-port ${k}${sp.kind === 'npc' ? ' npc' : ''}`; }
-      ports[k].classList.remove('dim', 'gone');
+    const place = (sp, expression) => {
+      for (const k of ['l', 'r']) if (slots[k]) slots[k].el.classList.remove('speak');
+      if (!sp || sp.you || !sp.img) { for (const k of ['l', 'r']) if (slots[k]) slots[k].el.classList.add('dim'); return null; }
+      let k = ['l', 'r'].find(x => slots[x]?.id === sp.id);
+      if (!k) {
+        const pref = sp.kind === 'npc' ? 'r' : 'l', other = pref === 'l' ? 'r' : 'l';
+        k = !slots[pref] ? pref : (!slots[other] ? other : (slots[pref].at <= slots[other].at ? pref : other));
+        if (slots[k]) { const old = slots[k].el; old.classList.add('out'); setTimeout(() => old.remove(), 420); }
+        // figure (place, light) > emote (one-shot moves) > image (breathing)
+        const fig = document.createElement('div');
+        fig.className = `sc-ch ${k} enter${sp.stand ? '' : ' flat'}`;
+        fig.innerHTML = `<div class="sc-em"><img alt="" src="${sp.img}"></div>`;
+        stageEl.appendChild(fig);
+        const im = fig.querySelector('img');
+        (im.decode ? im.decode() : Promise.resolve()).catch(() => {}).then(() => requestAnimationFrame(() => fig.classList.remove('enter')));
+        slots[k] = { id: sp.id, el: fig, at: 0 };
+      }
+      const fig = slots[k].el;
+      slots[k].at = ++tick;
+      fig.classList.remove('dim'); fig.classList.add('speak');
+      const o = k === 'l' ? 'r' : 'l'; if (slots[o]) slots[o].el.classList.add('dim');
+      // a small move for the line's mood
+      const em = fig.querySelector('.sc-em'), mv = EMOTE[expression];
+      em.className = 'sc-em';
+      if (mv) { void em.offsetWidth; em.classList.add(mv); }
+      return k;
     };
     const step = () => {
       clearTimeout(autoT);
@@ -73,20 +101,23 @@ App.register('scene', {
       if (sp) { nm.style.display = ''; nm.innerHTML = `<b>${esc(sp.name)}</b>${sp.phase ? `<span>${PH_GLYPH[sp.phase]}</span>` : (sp.cn ? `<span>${esc(sp.cn)}</span>` : '')}`; }
       else nm.style.display = 'none';
       txt.className = 'sc-text' + (sp ? '' : ' narr');
-      place(sp);
+      nm.classList.toggle('r', place(sp, ln.expression) === 'r'); // the name plate sits on the speaker's side
       let n = 0; const full = ln.text || '';
       const speed = 1.6 * (data().settings.textSpeed || 1);
       txt.textContent = '';
       typing = setInterval(() => { n = Math.min(full.length, n + Math.ceil(speed)); txt.textContent = full.slice(0, n); if (n >= full.length) { clearInterval(typing); typing = null; armAuto(); } }, 16);
     };
     const armAuto = () => { if (auto) autoT = setTimeout(step, 900 + (lines[i]?.text || '').length * 28); };
-    box.addEventListener('click', step);
+    // tap anywhere to advance (the controls and the opening title excepted)
+    let started = false;
+    const begin = () => { if (!started) { started = true; step(); } };
+    el.addEventListener('click', e => { if (done || e.target.closest('.sc-ctl, button')) return; if (!started) begin(); else step(); });
     App.bind(el, {
       auto: (b) => { auto = !auto; b.classList.toggle('on', auto); if (auto && !typing) armAuto(); },
       log: () => App.dialog({ title: 'Log', body: `<div class="sc-log-in">${lines.slice(0, i + 1).map(l => { const sp = speakerInfo(l.speaker); return `<p>${sp ? `<b>${esc(sp.name)}</b>` : ''}${esc(l.text)}</p>`; }).join('')}</div>` }),
       skip: () => App.confirm('Skip the scene?', 'You can read it again from the Journey later.', 'Skip').then(ok => ok && finish()),
     });
-    setTimeout(step, title !== false ? 1500 : 200);
+    setTimeout(begin, title !== false ? 1500 : 200);
   },
 });
 
@@ -147,7 +178,7 @@ export const Flow = {
     if (!stock.length) return;
     const row = s => { const p = s.price || s.cost; const pr = Array.isArray(p) ? p[0] : p; const it = get(s.item || s.cur), ic = iconUrl(s.item || s.cur); return `<div class="pill-row">${ic ? `<img src="${ic}" alt="">` : '<span class="rw-i"><span class="g">礼</span></span>'}<b>${esc(it?.name)} ×${s.qty || 1}<small>${esc(it?.about || '')}</small></b><button class="btn" data-buy="${esc(s.item || s.cur)}">${num(pr.qty)} <img class="ic" src="${iconUrl(pr.cur || pr.item)}" alt=""></button></div>`; };
     await App.dialog({
-      title: shop.name, cn: '行商', body: `<p>Old Qian opens his cart: “Everything a cultivator needs, nothing a cultivator can afford. Mostly.”</p>${stock.map(row).join('')}`,
+      title: shop.name, cn: '行商', body: `${npcSays('npc:old_qian', '<p>Old Qian opens his cart: “Everything a cultivator needs, nothing a cultivator can afford. Mostly.”</p>')}${stock.map(row).join('')}`,
       buttons: [{ label: 'Leave', cls: 'ink', value: true }],
       onOpen: (w) => w.addEventListener('click', e => {
         const b = e.target.closest('[data-buy]'); if (!b) return;

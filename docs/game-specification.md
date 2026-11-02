@@ -90,7 +90,7 @@ The four heroines of the card prototype join through the story, so every player 
 
 Later volumes arrive as free updates: *The Drowned Dragon Palace* (Water), *Desert of Nine Suns* (Yang), *The Netherworld* (Yin) and *Return to Kunlun*.
 
-Story scenes use portraits with expressions, act and location title cards, auto-play, a log and a skip button, as in your captures.
+Story scenes stage whoever speaks as a standing figure with no background: the speaker is lit and in front, the others step back into shadow, and a line's expression adds a small move (a hop for a laugh, a shake for anger). Act and location title cards, auto-play, a log and a skip button work as in your captures.
 
 ## Heroines
 
@@ -185,7 +185,7 @@ Frost and Thunder, Phoenix Among Peonies and Returned Karma come with the vertic
 ### What every heroine needs (production checklist)
 
 - A card illustration: a 2:3 portrait with no frame or text, because the game draws the frame, name, techniques and health (ChatGPT).
-- An ultimate cut-in, three portrait expressions for story scenes and a face icon (ChatGPT).
+- An ultimate cut-in, a standing figure with no background for story scenes (a transparent three-quarter body, later in three expressions) and a face icon (ChatGPT).
 - Three technique icons. Effects come from her phase's shared set, so a new heroine needs no new effect art.
 - Optional: an AutoSprite idle loop for the lobby and a living card at Full Bloom (about 6 credits).
 - Profile, about 30 voice lines as text, two passives, six Dao Blossom petals and her unique gear.
@@ -824,7 +824,7 @@ Every screen in your Epic Seven captures has a xianxia counterpart, plus the scr
 | Episode map | Journey chapter map | Stage list, chapter art, synopsis, rewards, star milestones, Formation and Begin |
 | Team ready | Formation | Four card slots on the array, array picker, Harmony order preview, power, enemy phases |
 | Act and location titles | Title cards | Brush-calligraphy place names over the location art |
-| Dialogue | Story scene | Portrait with expression, nameplate with phase glyph, auto, log, skip with confirmation |
+| Dialogue | Story scene | Standing figures with no background (speaker lit, others dimmed, a small move per expression), nameplate on the speaker's side with phase glyph, auto, log, skip with confirmation |
 | Battle | Card battle | Card board as in the prototype: heroine cards below, enemy cards above, Phase Qi pools, Spirit Qi, Harmony track and End Turn |
 | Ultimate | Dao Manifestation cut-in | As in the card prototype |
 | Running between waves | Wave transition | New enemy cards are dealt onto the board |
@@ -854,7 +854,7 @@ The game stays a web app: the card prototype's HTML, CSS, Canvas and JavaScript 
 - Menus: HTML and CSS, like the prototype's side panels. With 40+ screens ahead, a light UI library (Preact or Lit) is worth deciding before the vertical slice.
 - Android: Capacitor wraps the game in a WebView with landscape lock, fullscreen, back-button handling, file access for save export and optional local notifications (“expedition complete”).
 - Offline: no network calls at all; content updates ship as store updates.
-- Size: a heroine's card, cut-in, portraits and icons weigh about 1 MB as WebP, so 30 heroines take about 30 MB and 100 about 100 MB. With effects, backgrounds and music the game stays well under the 500 MB base module Google Play allows ([Google Play Console Help](https://support.google.com/googleplay/android-developer/answer/9859372?hl=en)), so nothing needs to stream.
+- Size: a heroine's card, cut-in, standing figure and icons weigh about 1 MB as WebP, so 30 heroines take about 30 MB and 100 about 100 MB. With effects, backgrounds and music the game stays well under the 500 MB base module Google Play allows ([Google Play Console Help](https://support.google.com/googleplay/android-developer/answer/9859372?hl=en)), so nothing needs to stream.
 
 ### Data model
 
@@ -878,7 +878,7 @@ All content lives in the repository's data/ folder as JSON. Every record has a t
 | Asset | Tool | Steps |
 | --- | --- | --- |
 | Card illustrations | ChatGPT on your PC | A 2:3 portrait with no frame or text, saved to the Images folder and converted to WebP; the game draws frames, names, techniques and health |
-| Cut-ins, portraits, icons, backgrounds | ChatGPT on your PC | Generate, save to the Images folder, slice and convert to WebP |
+| Cut-ins, standing figures, icons, backgrounds | ChatGPT on your PC | Generate (standing figures with a transparent background), save to the Images folder, slice and convert to WebP |
 | Enemy variants | Recolours of one illustration | As the prototype's five wraiths, made from one wraith |
 | Effect sprites | ChatGPT 2×2 sheets on black | slice.py and fx\_post.py turn them into additive sprites, shared by every heroine of a phase |
 | Living-card idles (optional) | AutoSprite API, about 6 credits each | Idle loops for the lobby heroine and Full Bloom cards |

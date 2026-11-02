@@ -1,12 +1,17 @@
 // The app shell: screen router, top bar, dialogs, toasts and the battle host that hands a stage to the engine.
 import { BT, ui, tutorial, clock, audio, CYCLE_SVG, LOTUS } from './engine.js';
-import { get, iconUrl, faceUrl, num } from './data.js';
+import { get, iconUrl, faceUrl, num, standUrl, npcUrl } from './data.js';
 import { qty, persist, settings } from './state.js';
 
 export const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 export const PH_COLOR = { water: '#7cc6ff', wood: '#86e38f', fire: '#ff8048', earth: '#e4b45a', metal: '#efe6c8', yin: '#b98cff', yang: '#ffd36a' };
 export const PH_GLYPH = { water: '水', wood: '木', fire: '火', earth: '土', metal: '金', yin: '阴', yang: '阳' };
 export const phTag = p => `<span class="ph-tag" style="--pc:${PH_COLOR[p] || '#ccc'}">${PH_GLYPH[p] || '?'}</span>`;
+/** A character speaking in a dialogue: her standing art (upper body, no background) beside the words. */
+export const npcSays = (id, html) => {
+  const u = standUrl(id) || npcUrl(id);
+  return `<div class="npc-say">${u ? `<div class="npc-fig${standUrl(id) ? '' : ' flat'}"><img src="${u}" alt=""></div>` : ''}<div>${html}</div></div>`;
+};
 export const starStr = n => '★'.repeat(n);
 /** A reward chip: icon (or glyph) with its quantity. */
 export function rewardChip(r, cls = '') {

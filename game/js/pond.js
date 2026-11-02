@@ -1,6 +1,6 @@
 // The Fate Pond: summon heroines with Fate Incense. A lotus opens (white 3★, violet 4★, gold 5★), the cards flip,
 // and every new heroine introduces herself. The first ten-summon is guided by Tao Yao.
-import { App, esc, phTag, starStr } from './app.js';
+import { App, npcSays, esc, phTag, starStr } from './app.js';
 import { get, cardUrl, phaseOf, SLICE_HEROES, hasArt, num } from './data.js';
 import { qty, pondPool, pityLeft, summon, data, grant } from './state.js';
 import { sfx } from './engine.js';
@@ -25,7 +25,7 @@ App.register('pond', {
         <button class="btn ink" data-act="one"${guided && !data().pond.guided ? ' disabled' : ''}>Summon ×1<small><img class="ic" src="assets/icons/fate_incense.webp" style="width:22px;height:22px;vertical-align:-5px"> 1</small></button>
         <button class="btn" data-act="ten">Summon ×10<small><img class="ic" src="assets/icons/fate_incense.webp" style="width:22px;height:22px;vertical-align:-5px"> 10</small></button>
       </div>`;
-    if (guided && !data().pond.guided) setTimeout(() => App.dialog({ title: 'Tao Yao', cn: '桃夭', body: `<div style="display:flex;gap:18px;align-items:center"><img src="assets/npc/tao_yao.webp" style="width:150px;height:150px;border-radius:50%;object-fit:cover;object-position:50% 20%"><p>Light ten sticks of Fate Incense at once and follow the threads. Whoever answers will walk down to Peach Blossom Ford with you. I have a very good feeling about this one!</p></div>`, buttons: [{ label: 'Light the incense', value: true }] }), 400);
+    if (guided && !data().pond.guided) setTimeout(() => App.dialog({ title: 'Tao Yao', cn: '桃夭', body: npcSays('npc:tao_yao', '<p>Light ten sticks of Fate Incense at once and follow the threads. Whoever answers will walk down to Peach Blossom Ford with you. I have a very good feeling about this one!</p>'), buttons: [{ label: 'Light the incense', value: true }] }), 400);
     const run = async (n) => {
       if (qty('cur:fate_incense') < n) { App.toast(`You need ${n} Fate Incense. Clear stages and open star chests for more.`); return; }
       const res = summon(n);

@@ -49,6 +49,8 @@ export function enemyArt(e) {
   return fallback[e.phase] || 'wraith_ember';
 }
 export const npcUrl = nid => (hasArt(`npc/${keyOf(nid)}.webp`) ? `assets/npc/${keyOf(nid)}.webp` : null);
+/** Transparent standing art for story scenes and dialogues (heroines and NPCs alike). */
+export const standUrl = id => (hasArt(`stand/${keyOf(id)}.webp`) ? `assets/stand/${keyOf(id)}.webp` : null);
 export const iconUrl = id => (hasArt(`icons/${keyOf(id)}.webp`) ? `assets/icons/${keyOf(id)}.webp` : null);
 const LOC_BG = { 'loc:hundred_blossoms_pavilion': 'pavilion', 'loc:peach_blossom_ford': 'peach_ford', 'loc:jade_pool': 'jade_pool' };
 export function locBg(loc) {

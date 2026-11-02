@@ -16,7 +16,7 @@ cd dist && python3 -m http.server     # then open http://localhost:8000
 | Screen | What it does |
 | --- | --- |
 | Title | New game or continue; the save lives in IndexedDB (local storage as a fallback) |
-| Story scenes | Chapter 1's scenes: portraits, nameplates, typewriter text, Auto, Log, Skip, title cards |
+| Story scenes | Chapter 1's scenes: standing figures with no background (speaker lit, others dimmed, a small move per expression), nameplates, typewriter text, tap anywhere, Auto, Log, Skip, title cards |
 | Card battles | The prototype's engine, now fed by stage, heroine and enemy data: Haste, Kindred Qi, all 27 statuses, three Twin Blooms, missions; the dream battle keeps the 23-step tutorial |
 | Victory | Mission seals, MVP, EXP and level ups, first-clear rewards and drops, battle report |
 | Pavilion Hall | Lobby heroine (tap her), Journey, Heroines, Fate Pond; the Sect and Market are shown locked |
@@ -27,6 +27,8 @@ cd dist && python3 -m http.server     # then open http://localhost:8000
 | Settings | Sound, text speed, save code export and import, reset |
 
 Ten heroines have art in the slice: the four founders, Wei Zi (5★), and five 3★ heroines (Ning Suxin, Tang Mian, Lin Chaxue, An Baihe, Fang Yanzhi). The Fate Pond only offers heroines with art.
+
+Everyone who speaks in chapter 1 (Tao Yao, the four founders and six villagers and foes) has a standing figure with a transparent background in `assets/stand/<key>.webp`, made from `stand_<key>.png` in the Images folder (trimmed to the figure, 1200 px high). Scenes and the dialogues where a character talks (Tao Yao at the Fate Pond, Old Qian's cart) use it; a speaker without one falls back to her card or portrait.
 
 ## Code
 

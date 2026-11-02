@@ -3,7 +3,7 @@ import { ui, board, BT, clock, tickClock, timeScale, initVfx, resizeVfx, updateV
 import { get, SLICE_HEROES, heroArt, stageBattle } from './data.js';
 import { loadSave, SAVE } from './state.js';
 import { App } from './app.js';
-import './story.js';
+import { Scene, Flow } from './story.js';
 import './journey.js';
 import './hall.js';
 import './heroines.js';
@@ -76,4 +76,7 @@ window.__ib = {
   App, BT, clock, tutorial, save: () => SAVE.data,
   /** Test hook: fight a stage with any team at a given level. */
   fight: (stageId, team, level = 5) => App.runBattle(stageBattle(get(stageId), team, {}, 'array:yellow_dragon', { fixedLevel: level })),
+  /** Test hook: play one story scene. */
+  scene: (sceneId) => Scene.play(sceneId),
+  flow: Flow, get,
 };
