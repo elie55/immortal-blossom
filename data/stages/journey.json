@@ -517,6 +517,10 @@
      "rarity": "rarity:rare"
     },
     {
+     "item": "item:foundation_pill",
+     "qty": 1
+    },
+    {
      "cur": "cur:immortal_jade",
      "qty": 300
     }

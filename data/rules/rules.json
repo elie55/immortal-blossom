@@ -143,7 +143,8 @@
     "lobbyTap": 2,
     "lobbyTapDailyCap": 10
    },
-   "rarityPowerIndex": "mean of hp/HP0, offense/OFF0 and def/DEF0 against the path's standard, where offense = atk * (1 + crit * (critDmg - 1)); it must equal the rarity multiplier within 0.01"
+   "rarityPowerIndex": "mean of hp/HP0, offense/OFF0 and def/DEF0 against the path's standard, where offense = atk * (1 + crit * (critDmg - 1)); it must equal the rarity multiplier within 0.01",
+   "battleExp": "12 * the sum of every enemy level squared over all waves, to each heroine who fought; a heroine who fell gets half"
   },
   {
    "id": "rules:gear",

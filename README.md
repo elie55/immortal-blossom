@@ -9,6 +9,17 @@ A premium, fully offline, landscape card-battle RPG for Android with a xianxia s
 - [Data model](docs/data-model.md): how the game databases in `data/` are organised and linked.
 - [Data report](docs/data-report.md): generated counts, the source and use of every item, and the story order.
 
+## Play the vertical slice
+
+`game/` is the first playable slice: chapter 1 of the Journey with story scenes, data-driven card battles, the Pavilion Hall, Formation, heroine growth and the Fate Pond. See [game/README.md](game/README.md).
+
+```
+python3 tools/build_game.py            # builds dist/ from game/ and data/
+cd dist && python3 -m http.server       # then open http://localhost:8000
+```
+
+`prototype/` keeps the original card battle prototype that the slice grew from.
+
 ## Game data
 
 Every heroine, technique, enemy, stage, item, shop, building and story scene is a JSON record in `data/`, linked to the others by id. The checker proves the whole graph holds together:

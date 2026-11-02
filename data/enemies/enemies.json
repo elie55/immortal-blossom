@@ -124,7 +124,8 @@
    "skills": [
     "skill:ashen_slash",
     "skill:cinder_cleave"
-   ]
+   ],
+   "art": "cultist_blade"
   },
   {
    "id": "enemy:netherflame_hexer",
@@ -144,7 +145,8 @@
    "skills": [
     "skill:hex_bolt",
     "skill:binding_hex"
-   ]
+   ],
+   "art": "cultist_hexer"
   },
   {
    "id": "enemy:netherflame_flamecaller",
@@ -164,7 +166,8 @@
    "skills": [
     "skill:flame_bolt",
     "skill:netherfire_rain"
-   ]
+   ],
+   "art": "cultist_flamecaller"
   },
   {
    "id": "enemy:netherflame_bonewarden",
@@ -184,7 +187,8 @@
    "skills": [
     "skill:bone_bash",
     "skill:bone_ward"
-   ]
+   ],
+   "art": "cultist_bonewarden"
   },
   {
    "id": "enemy:netherflame_shade",
@@ -224,7 +228,8 @@
    "skills": [
     "skill:wither_bolt",
     "skill:netherflame_litany"
-   ]
+   ],
+   "art": "cultist_priestess"
   },
   {
    "id": "enemy:wraith_captain",
@@ -249,7 +254,8 @@
    ],
    "boss": true,
    "wide": true,
-   "qiShield": 12
+   "qiShield": 12,
+   "art": "boss_wraith_captain"
   },
   {
    "id": "enemy:elder_han",
@@ -452,7 +458,8 @@
    },
    "skills": [
     "skill:drowning_grip"
-   ]
+   ],
+   "art": "river_ghoul"
   },
   {
    "id": "enemy:snow_wolf",
