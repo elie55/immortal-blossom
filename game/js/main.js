@@ -10,6 +10,8 @@ import './hall.js';
 import './heroines.js';
 import './pond.js';
 import './ring.js';
+import './trials.js';
+import './forge.js';
 
 const stage = document.getElementById('stage');
 const battleEl = document.getElementById('battle');

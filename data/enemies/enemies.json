@@ -400,7 +400,8 @@
    "skills": [
     "skill:venom_fang",
     "skill:crushing_coil"
-   ]
+   ],
+   "art": "serpent_guard"
   },
   {
    "id": "enemy:crane_dancer",
@@ -477,7 +478,8 @@
    },
    "skills": [
     "skill:frost_fang"
-   ]
+   ],
+   "art": "snow_wolf"
   },
   {
    "id": "enemy:bamboo_spider",
@@ -533,7 +535,8 @@
    "skills": [
     "skill:stone_fist",
     "skill:stone_skin"
-   ]
+   ],
+   "art": "stone_puppet"
   },
   {
    "id": "enemy:pill_golem",
@@ -552,7 +555,8 @@
    },
    "skills": [
     "skill:furnace_punch"
-   ]
+   ],
+   "art": "pill_golem"
   },
   {
    "id": "enemy:herb_spirit",
@@ -572,7 +576,8 @@
    "skills": [
     "skill:spore_burst",
     "skill:healing_sap"
-   ]
+   ],
+   "art": "herb_spirit"
   },
   {
    "id": "enemy:furnace_guardian",
@@ -596,7 +601,8 @@
    ],
    "boss": true,
    "wide": true,
-   "qiShield": 12
+   "qiShield": 12,
+   "art": "boss_furnace_guardian"
   },
   {
    "id": "enemy:guardian_white_tiger",
@@ -620,7 +626,8 @@
    ],
    "boss": true,
    "wide": true,
-   "qiShield": 12
+   "qiShield": 12,
+   "art": "boss_white_tiger"
   },
   {
    "id": "enemy:guardian_azure_dragon",
@@ -644,7 +651,8 @@
    ],
    "boss": true,
    "wide": true,
-   "qiShield": 12
+   "qiShield": 12,
+   "art": "boss_azure_dragon"
   },
   {
    "id": "enemy:guardian_black_tortoise",
@@ -668,7 +676,8 @@
    ],
    "boss": true,
    "wide": true,
-   "qiShield": 12
+   "qiShield": 12,
+   "art": "boss_black_tortoise"
   },
   {
    "id": "enemy:guardian_vermilion_bird",
@@ -692,7 +701,8 @@
    ],
    "boss": true,
    "wide": true,
-   "qiShield": 12
+   "qiShield": 12,
+   "art": "boss_vermilion_bird"
   },
   {
    "id": "enemy:guardian_yellow_dragon",
@@ -716,7 +726,8 @@
    ],
    "boss": true,
    "wide": true,
-   "qiShield": 12
+   "qiShield": 12,
+   "art": "boss_yellow_dragon"
   },
   {
    "id": "enemy:shrine_spirit",
@@ -735,7 +746,8 @@
    },
    "skills": [
     "skill:spirit_spark"
-   ]
+   ],
+   "art": "shrine_spirit"
   },
   {
    "id": "enemy:qiongqi",
@@ -762,7 +774,8 @@
    "qiShield": 12,
    "script": {
     "cooldownTick": 2
-   }
+   },
+   "art": "boss_qiongqi"
   },
   {
    "id": "enemy:taotie",
@@ -789,7 +802,8 @@
    "qiShield": 12,
    "script": {
     "devoursBuffs": true
-   }
+   },
+   "art": "boss_taotie"
   },
   {
    "id": "enemy:taowu",
@@ -816,7 +830,8 @@
    "qiShield": 24,
    "script": {
     "hugeShield": true
-   }
+   },
+   "art": "boss_taowu"
   },
   {
    "id": "enemy:hundun",
@@ -844,7 +859,8 @@
    "script": {
     "scramblesCooldowns": true,
     "resistedBy": "stat:res"
-   }
+   },
+   "art": "boss_hundun"
   },
   {
    "id": "enemy:wind_imp",
@@ -862,7 +878,8 @@
    },
    "skills": [
     "skill:gust_claw"
-   ]
+   ],
+   "art": "wind_imp"
   },
   {
    "id": "enemy:bronze_maw",
@@ -880,7 +897,8 @@
    },
    "skills": [
     "skill:bronze_bite"
-   ]
+   ],
+   "art": "bronze_maw"
   },
   {
    "id": "enemy:chaos_wisp",
@@ -898,7 +916,8 @@
    },
    "skills": [
     "skill:wisp_flicker"
-   ]
+   ],
+   "art": "chaos_wisp"
   },
   {
    "id": "enemy:xiangliu_head_fire",
@@ -921,7 +940,8 @@
     "skill:serpent_deluge"
    ],
    "qiShield": 6,
-   "elite": true
+   "elite": true,
+   "art": "xiangliu_fire"
   },
   {
    "id": "enemy:xiangliu_head_water",
@@ -944,7 +964,8 @@
     "skill:serpent_deluge"
    ],
    "qiShield": 6,
-   "elite": true
+   "elite": true,
+   "art": "xiangliu_water"
   },
   {
    "id": "enemy:xiangliu_head_wood",
@@ -967,7 +988,8 @@
     "skill:serpent_deluge"
    ],
    "qiShield": 6,
-   "elite": true
+   "elite": true,
+   "art": "xiangliu_wood"
   },
   {
    "id": "enemy:bone_lantern",

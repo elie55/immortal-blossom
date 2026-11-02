@@ -14,6 +14,8 @@ export const npcSays = (id, html) => {
   return `<div class="npc-say">${u ? `<div class="npc-fig${standUrl(id) ? '' : ' flat'}"><img src="${u}" alt=""></div>` : ''}<div>${html}</div></div>`;
 };
 export const starStr = n => '★'.repeat(n);
+/** 1,234 · 12.3k · 320k · 1.2M: short numbers for small chips. */
+export const compact = n => (n >= 1e6 ? `${+(n / 1e6).toFixed(1)}M` : n >= 1e4 ? `${Math.round(n / 1e3)}k` : n >= 1e3 ? `${+(n / 1e3).toFixed(1)}k` : String(Math.round(n)));
 // ---------------- gear tiles ----------------
 const SLOT_GLYPH = { 'slot:weapon': '剑', 'slot:helmet': '冠', 'slot:body': '袍', 'slot:gloves': '腕', 'slot:pants': '裤', 'slot:boots': '靴', 'slot:ring': '戒', 'slot:pendant': '佩', 'slot:artefact': '宝' };
 export const SET_COLOR = { 'set:sword_heart': '#cfe3ff', 'set:azure_dragon': '#4fd1c5', 'set:white_tiger': '#f2f2f2', 'set:vermilion_bird': '#ff6a4a', 'set:qilin': '#ffd36a', 'set:black_tortoise': '#8fa6c8', 'set:heavenly_eye': '#c58bff', 'set:still_water': '#7cc6ff', 'set:blood_lotus': '#ff5a7a', 'set:five_elements': '#9be36e' };
@@ -29,6 +31,16 @@ export function gearTile(p, opts = {}) {
     ${set ? `<span class="sg" style="--sc:${SET_COLOR[p.set] || '#ccc'}">${esc(set.cn[0])}</span>` : ''}
     ${p.lock ? '<span class="lk">锁</span>' : ''}${opts.face && p.hero && faceUrl(p.hero) ? `<img class="eqf" src="${faceUrl(p.hero)}" alt="">` : ''}${opts.isNew && p.new ? '<span class="nw"></span>' : ''}
   </div>`;
+}
+/** Add up a reward list: one entry per currency or item; gear pieces and heroines stay separate. */
+export function mergeRewards(list) {
+  const out = [], idx = {};
+  for (const r of list) {
+    const k = !r.gear && !r.hero && !r.art && (r.cur || r.item);
+    if (k && !r.salvaged) { if (idx[k] != null) { out[idx[k]] = { ...out[idx[k]], qty: out[idx[k]].qty + r.qty }; continue; } idx[k] = out.length; }
+    out.push({ ...r });
+  }
+  return out;
 }
 /** A reward chip: icon (or glyph) with its quantity. Gear pieces show as tiles. */
 export function rewardChip(r, cls = '') {
@@ -119,7 +131,7 @@ export const App = {
   /** Show what a reward list granted. */
   rewardsDialog(granted, title = 'Rewards', cn = '奖励') {
     if (!granted || !granted.length) return Promise.resolve();
-    const items = granted.map(g => {
+    const items = mergeRewards(granted).map(g => {
       if (g.hero && g.isNew) return rewardChip({ hero: g.hero }, 'first');
       if (g.hero && g.petal) return rewardChip({ hero: g.hero }) ;
       if (g.hero && g.dew) return rewardChip({ cur: 'cur:blossom_dew', qty: g.dew });
@@ -149,6 +161,7 @@ export const App = {
     BT.B.endTurnResolve = null; BT.B.gate = null;
     tutorial.stop();
     if (def.tutorial) tutorial.begin();
+    if (def.auto) { const off = BT.on('turnStart', () => { off(); BT.setAuto(true); }); }
     const res = await BT.startBattle(def);
     tutorial.stop();
     settings().speed = clock.speed; settings().muted = audio.muted; persist();

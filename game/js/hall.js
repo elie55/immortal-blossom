@@ -3,6 +3,7 @@ import { App, esc } from './app.js';
 import { get, cardUrl, npcUrl, SLICE_HEROES, hasArt } from './data.js';
 import { data, flags, hasProgress, ownedHeroes, owned, qty, persist, exportCode, importCode, resetSave, SAVE } from './state.js';
 import { Flow } from './story.js';
+import { modeOpen } from './trials.js';
 
 // ---------------- title ----------------
 App.register('title', {
@@ -48,6 +49,7 @@ App.register('hall', {
       </div>
       <div class="hall-menu">
         <button class="hm" data-act="journey"><span class="g">历</span><span><b>Journey</b><small>${next ? `Next: ${esc(next.name)}` : 'Chapter 1 complete'}</small></span>${next ? '<i class="dot"></i>' : ''}</button>
+        <button class="hm" data-act="trials"><span class="g">试</span><span><b>Trials</b><small>${modeOpen('mode:hunts') ? 'Hunts, the Valley, Shrines, the Forge' : 'Opens after chapter 1'}</small></span></button>
         <button class="hm" data-act="heroines"><span class="g">芳</span><span><b>Heroines</b><small>${mine.length} of ${SLICE_HEROES.length} gathered</small></span></button>
         <button class="hm" data-act="pond"><span class="g">莲</span><span><b>Fate Pond</b><small>${qty('cur:fate_incense')} Fate Incense</small></span>${qty('cur:fate_incense') >= 1 ? '<i class="dot"></i>' : ''}</button>
         <button class="hm locked" data-act="locked" data-k="sect"><span class="g">宗</span><span><b>The Sect</b><small>Caves, garden, alchemy</small></span></button>
@@ -65,6 +67,7 @@ App.register('hall', {
     else if (next && Math.random() < 0.5) setTimeout(() => say(`Next on the road: <b>${esc(next.name)}</b>.`), 700);
     App.bind(el, {
       journey: () => App.go('journey', {}),
+      trials: () => (modeOpen('mode:hunts') ? App.go('trials', {}) : App.toast('Trials open once Peach Blossom Ford is safe (clear chapter 1)')),
       heroines: () => App.go('heroines', {}),
       pond: () => App.go('pond', {}),
       settings: () => settingsDialog(),

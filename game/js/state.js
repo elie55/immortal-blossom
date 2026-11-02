@@ -20,6 +20,7 @@ export function freshSave() {
     pond: { pulls: 0, pity: 0, fatePoints: 0, guided: false },
     // the Storage Ring: every piece by id; recently salvaged pieces (newest first) with what they returned
     gear: { seq: 0, pieces: {}, recent: [], auto: freshAuto(), view: { sort: 'rarity', dir: -1, filter: {} } },
+    forge: { job: null },
     flags: { seen: {} },
     settings: { muted: false, speed: 1, textSpeed: 1 },
     log: { battles: 0, wins: 0, playMs: 0 },
@@ -44,6 +45,7 @@ function migrate(d) {
   for (const k of Object.keys(base)) if (d[k] === undefined) d[k] = base[k];
   d.cur = { ...base.cur, ...d.cur }; d.pond = { ...base.pond, ...d.pond }; d.flags = { ...base.flags, ...d.flags }; d.settings = { ...base.settings, ...d.settings };
   // schema 2: the Storage Ring; Spirit Artefacts kept as items become pieces
+  d.forge = { ...base.forge, ...d.forge };
   d.gear = { ...base.gear, ...d.gear }; d.gear.auto = { ...freshAuto(), ...d.gear.auto }; d.gear.view = { ...base.gear.view, ...d.gear.view };
   for (const h of Object.values(d.heroes)) if (!h.eq) h.eq = {};
   for (const k of Object.keys(d.items)) if (k.startsWith('art:')) { for (let i = 0; i < d.items[k]; i++) storePiece(d, makeArtefact(k, 'rarity:rare')); delete d.items[k]; }
@@ -183,7 +185,7 @@ export function clearStage(stage, result = {}) {
   if (result.missions) st.missions = st.missions.map((m, i) => m || !!result.missions[i]);
   const rewards = [];
   if (first && stage.firstClearRewards) rewards.push(...stage.firstClearRewards);
-  if (stage.drops && result.win !== false) rewards.push(...rollDrops(stage.drops));
+  if (stage.drops && result.win !== false) for (let i = 0; i < (result.dropMul || 1); i++) rewards.push(...rollDrops(stage.drops)); // a doubled shrine rolls twice
   if (result.win !== false && result.extraDrops) rewards.push(...result.extraDrops);
   if (first && stage.unlocks) for (const u of stage.unlocks) D().flags[u] = true;
   const granted = grant(rewards);
@@ -232,8 +234,8 @@ export function autoTakes(p, a = G().auto) {
 }
 const highestTier = () => pieces().reduce((m, p) => Math.max(m, p.kind === 'art' ? 0 : tierOrder(p.tier)), 0);
 /** Put a new piece in the ring (or straight through auto-salvage). Returns a reward entry for the results. */
-export function addPiece(p) {
-  if (autoTakes(p)) {
+export function addPiece(p, opts = {}) {
+  if (!opts.noAuto && autoTakes(p)) {
     const back = salvageValue(p);
     for (const c of back) add(c.cur || c.item, c.qty);
     remember({ ...p, id: null }, back);
@@ -304,6 +306,35 @@ export function reforge(id) {
   return true;
 }
 export function setAutoSalvage(rules) { G().auto = { ...G().auto, ...rules }; persist(); }
+
+// ---------------- the Artifact Forge ----------------
+/** The highest gear tier of anything cleared: what the Forge crafts at. */
+export function highestTierId() {
+  let best = 1;
+  for (const [id, st] of Object.entries(D().stages)) if (st.clear) best = Math.max(best, tierOrder(get(id)?.tier) || 1);
+  return all('tier').find(t => t.order === best)?.id || 'tier:i';
+}
+export const forgeJob = () => D().forge.job;
+/** Start a recipe (paid now, ready after its hours). slot: the chosen slot for a set piece. */
+export function startForge(recipeId, slot = null) {
+  const r = get(recipeId); if (!r || D().forge.job) return false;
+  if (r.requiresRealm && !ownedHeroes().some(h => (D().heroes[h].bt || 0) + 1 >= (get(r.requiresRealm)?.order || 99))) return false;
+  if (!pay(r.inputs)) return false;
+  const now = Date.now();
+  D().forge.job = { recipe: recipeId, slot, start: now, end: now + (r.hours || 1) * 3600e3 };
+  persist();
+  return true;
+}
+/** Collect a finished job: the new piece goes to the ring (never through auto-salvage). */
+export function collectForge(now = Date.now()) {
+  const j = D().forge.job; if (!j || now < j.end) return null;
+  const o = get(j.recipe).output;
+  let got = null;
+  if (o.gear) got = addPiece(rollGearEntry({ tier: highestTierId(), set: o.gear.set, slot: j.slot, rarityOdds: o.gear.rarityOdds }), { noAuto: true });
+  else if (o.art) got = addPiece(makeArtefact(o.art, o.rarity || 'rarity:rare'), { noAuto: true });
+  D().forge.job = null; persist();
+  return got;
+}
 
 // ---------------- the Fate Pond ----------------
 export function pondPool() {

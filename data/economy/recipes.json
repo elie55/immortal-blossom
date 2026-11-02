@@ -532,7 +532,7 @@
   },
   {
    "id": "recipe:forge_set_azure_dragon",
-   "name": "Forge a Azure Dragon piece",
+   "name": "Forge an Azure Dragon piece",
    "station": "bld:artifact_forge",
    "inputs": [
     {

@@ -104,7 +104,7 @@ App.register('formation', {
 // ---------------- Victory ----------------
 App.register('results', {
   cls: 'results',
-  render(el, { st, res, out, resolve }) {
+  render(el, { st, res, out, resolve, actions = null }) {
     const hs = res.heroes;
     const mvp = [...hs].sort((a, b) => (b.dmg + b.heal * 1.2) - (a.dmg + a.heal * 1.2))[0];
     const mh = get(mvp.id);
@@ -116,12 +116,13 @@ App.register('results', {
         <div class="res-title">Victory</div>
         <div class="seals">${missions.map((m, i) => `<div class="seal-m${out.missions[i] ? ' ok' : ''}" style="--d:${0.3 + i * 0.35}s">${esc(missionText(m))}</div>`).join('')}</div>
         <div class="res-sec panel"><h3>CULTIVATION</h3><div class="exp-row">${out.exp.map(x => `<span class="exp-h"><img src="${faceUrl(x.id)}" alt=""><span>${esc(get(x.id).name)}<br><b>+${num(x.exp)} EXP</b> ${x.after > x.before ? `<span class="up">Lv ${x.after}!</span>` : `<span class="mut">Lv ${x.after}</span>`}${x.atCap ? ' <span class="mut">(cap)</span>' : ''}</span></span>`).join('') || '<span class="mut">A dream: no EXP.</span>'}</div></div>
-        <div class="res-sec panel"><h3>SPOILS${out.first ? ' · FIRST CLEAR' : ''}</h3><div class="got" style="justify-content:flex-start">${out.granted.map(g => g.hero ? rewardChip({ hero: g.hero }, 'first') : rewardChip(g)).join('') || '<span class="mut">Nothing this time.</span>'}</div></div>
-        <div class="res-btns"><button class="btn ink" data-act="report">Battle report</button><button class="btn" data-act="go">Continue</button></div>
+        <div class="res-sec panel"><h3>SPOILS${out.runs > 1 ? ` · ${out.runs} BATTLES` : ''}${out.first ? ' · FIRST CLEAR' : ''}</h3><div class="got" style="justify-content:flex-start">${out.granted.map(g => g.hero ? rewardChip({ hero: g.hero }, 'first') : rewardChip(g)).join('') || '<span class="mut">Nothing this time.</span>'}</div></div>
+        <div class="res-btns"><button class="btn ink" data-act="report">Battle report</button>${actions ? actions.map(a => `<button class="btn ${a.cls || ''}" data-act="choose" data-v="${esc(a.value)}">${esc(a.label)}</button>`).join('') : '<button class="btn" data-act="go">Continue</button>'}</div>
       </div>`;
     App.bind(el, {
       go: () => resolve(),
-      report: () => App.dialog({ title: 'Battle report', cn: '战报', body: `<p class="mut">${res.rounds} rounds · longest Harmony ×${res.log.maxChain || 0}${Object.keys(res.log.combos || {}).length ? ' · Twin Blooms fired: ' + Object.entries(res.log.combos).map(([k, n]) => `${esc(get(k)?.name)} ×${n}`).join(', ') : ''}</p>
+      choose: (b) => resolve(b.dataset.v),
+      report: () => App.dialog({ title: 'Battle report', cn: '战报', body: `<p class="mut">${res.rounds} rounds · longest Harmony ×${res.log.maxChain || 0}${Object.keys(res.log.combos || {}).length ? ' · Twin Blooms fired: ' + Object.entries(res.log.combos).map(([k, n]) => `${esc(get(k)?.name)} ×${n}`).join(', ') : ''}${Object.keys(res.log.gear || {}).length ? ' · Gear: ' + Object.entries(res.log.gear).map(([k, n]) => `${esc(k.charAt(0) + k.slice(1).toLowerCase())} ×${n}`).join(', ') : ''}</p>
         <table class="report"><tr><td></td><td class="n">Damage</td><td class="n">Healing</td><td class="n">Taken</td></tr>${hs.map(h => `<tr><td>${esc(get(h.id).name)}${h.alive ? '' : ' <span class="mut">(fell)</span>'}</td><td class="n">${num(h.dmg)}</td><td class="n">${num(h.heal)}</td><td class="n">${num(h.taken)}</td></tr>`).join('')}</table>` }),
     });
     void PH_COLOR; void hasArt; void all;

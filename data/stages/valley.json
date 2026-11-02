@@ -1,5 +1,5 @@
 {
- "about": "Medicine King Valley levels: one per realm; enemies take the day's phase.",
+ "about": "Medicine King Valley levels: one per realm; enemies take the day's phase. Each level has three missions; three stars unlock sweeps.",
  "records": [
   {
    "id": "stage:valley_1",
@@ -56,6 +56,18 @@
     {
      "cur": "cur:immortal_jade",
      "qty": 80
+    }
+   ],
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "within_turns",
+     "turns": 8
     }
    ]
   },
@@ -118,7 +130,19 @@
    ],
    "unlock": {
     "realm": "realm:foundation_establishment"
-   }
+   },
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "within_turns",
+     "turns": 8
+    }
+   ]
   },
   {
    "id": "stage:valley_3",
@@ -179,7 +203,19 @@
    ],
    "unlock": {
     "realm": "realm:core_formation"
-   }
+   },
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "within_turns",
+     "turns": 8
+    }
+   ]
   },
   {
    "id": "stage:valley_4",
@@ -240,7 +276,19 @@
    ],
    "unlock": {
     "realm": "realm:nascent_soul"
-   }
+   },
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "within_turns",
+     "turns": 8
+    }
+   ]
   },
   {
    "id": "stage:valley_5",
@@ -301,7 +349,19 @@
    ],
    "unlock": {
     "realm": "realm:spirit_severing"
-   }
+   },
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "within_turns",
+     "turns": 8
+    }
+   ]
   },
   {
    "id": "stage:valley_6",
@@ -362,7 +422,19 @@
    ],
    "unlock": {
     "realm": "realm:void_refinement"
-   }
+   },
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "within_turns",
+     "turns": 8
+    }
+   ]
   },
   {
    "id": "stage:valley_7",
@@ -423,7 +495,19 @@
    ],
    "unlock": {
     "realm": "realm:body_integration"
-   }
+   },
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "within_turns",
+     "turns": 8
+    }
+   ]
   },
   {
    "id": "stage:valley_8",
@@ -484,7 +568,19 @@
    ],
    "unlock": {
     "realm": "realm:mahayana"
-   }
+   },
+   "missions": [
+    {
+     "kind": "clear"
+    },
+    {
+     "kind": "no_fall"
+    },
+    {
+     "kind": "within_turns",
+     "turns": 8
+    }
+   ]
   }
  ]
 }

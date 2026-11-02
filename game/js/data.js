@@ -69,7 +69,7 @@ export function iconUrl(id) {
 }
 const LOC_BG = { 'loc:hundred_blossoms_pavilion': 'pavilion', 'loc:peach_blossom_ford': 'peach_ford', 'loc:jade_pool': 'jade_pool' };
 export function locBg(loc) {
-  const k = LOC_BG[loc];
+  const k = LOC_BG[loc] || (loc && keyOf(loc));
   if (k && hasArt(`bg/${k}.webp`)) return `assets/bg/${k}.webp`;
   if (loc === 'loc:peach_blossom_ford' || loc === 'loc:jade_pool') return 'assets/bg/arena.webp';
   return hasArt('bg/pavilion.webp') ? 'assets/bg/pavilion.webp' : 'assets/bg/arena.webp';
