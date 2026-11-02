@@ -892,7 +892,7 @@ The game stays a web app: the card prototype's HTML, CSS, Canvas and JavaScript 
 
 - Battle: HTML cards with CSS 3D transforms over a Canvas 2D effects layer, as in the card prototype. The effects engine (impact frames, slow motion, particles, lightning) comes from the combat demo.
 - Menus: HTML and CSS, like the prototype's side panels. With 40+ screens ahead, a light UI library (Preact or Lit) is worth deciding before the vertical slice.
-- Android: Capacitor wraps the game in a WebView with landscape lock, fullscreen, back-button handling, file access for save export and optional local notifications (“expedition complete”).
+- Android: Capacitor wraps the game in a WebView with landscape lock, fullscreen, back-button handling, file access for save export and optional local notifications (“expedition complete”). Built for the alpha: GitHub Actions turns every push into a debug APK (landscape, immersive, the fonts bundled so it runs offline, one signing key so updates keep the saves), published on the repository's android-alpha pre-release.
 - Offline: no network calls at all; content updates ship as store updates.
 - Size: a heroine's card, cut-in, standing figure and icons weigh about 1 MB as WebP, so 30 heroines take about 30 MB and 100 about 100 MB. With effects, backgrounds and music the game stays well under the 500 MB base module Google Play allows ([Google Play Console Help](https://support.google.com/googleplay/android-developer/answer/9859372?hl=en)), so nothing needs to stream.
 
@@ -931,7 +931,7 @@ One heroine costs about 5 or 6 ChatGPT images (card, cut-in, three expressions, 
 - Combat demo, done: four heroines against two wraiths with 39 AutoSprite animations. Its effects engine carries over.
 - Card battle prototype, done: the four Blossoms against two waves and the Netherflame Matriarch, with Harmony chains, Phase Qi, Spirit Qi, Fortuitous Encounters, the Qi shield, the Heavenly Tribulation and a 23-step tutorial.
 - Vertical slice, playable in the browser: Pavilion Hall, Journey chapter 1 (8 stages and 11 scenes), Formation, card battles with Haste, Kindred Qi and three Twin Blooms, victory flow, heroine overview, Cultivate and Breakthrough, Fate Pond with a guided first summon, saving with save codes; 10 heroines. Everything it shows comes from the data. Left for its gate: the Android build with Capacitor and 30 minutes timed on a phone.
-- Core loop alpha, built: Volume 1 complete, gear, hunts, Medicine King Valley and the Forge, the Sect's caves, garden, alchemy and missions, meridians, techniques, Dao Blossom and bonds; 14 heroines. Gate: 15 hours of content with a simulated economy, met after the balance pass (see Difficulty and the pace of play). Left: the Android build.
+- Core loop alpha, built: Volume 1 complete, gear, hunts, Medicine King Valley and the Forge, the Sect's caves, garden, alchemy and missions, meridians, techniques, Dao Blossom and bonds; 14 heroines. Gate: 15 hours of content with a simulated economy, met after the balance pass (see Difficulty and the pace of play). The Android debug APK builds in GitHub Actions; left: playing it on a phone.
 - Content beta: pagoda, Secret Realms, shrines, Sect Grand Competition, Trial Tower and raid; 30 heroines; a balance pass. Gate: a closed test on Google Play.
 - Launch: polish, audio, localization, store page and price.
 - After launch: Volume 2 and the first Yin and Yang heroines.
