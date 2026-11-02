@@ -41,6 +41,15 @@ button { font-family: inherit; color: inherit; cursor: pointer; }
 .c-foil { position: absolute; inset: 0; border-radius: 14px; pointer-events: none; mix-blend-mode: screen;
   background: linear-gradient(115deg, transparent 38%, rgba(255, 255, 255, .2) 47%, rgba(255, 236, 190, .1) 52%, transparent 60%); background-size: 280% 100%; animation: foil 8s linear infinite; }
 @keyframes foil { 0% { background-position: 170% 0; } 35%, 100% { background-position: -70% 0; } }
+/* Full Bloom: six petals open, her flower's petals drift across her card */
+.c-bloom { position: absolute; inset: 0; border-radius: 14px; overflow: hidden; pointer-events: none; }
+.c-bloom i { position: absolute; top: -16px; width: 13px; height: 13px; border-radius: 70% 0 70% 0; opacity: 0;
+  background: radial-gradient(circle at 30% 30%, #fff4f8, #f6b3cc 55%, #e57fa6); box-shadow: 0 0 6px rgba(255, 190, 215, .7); animation: bloom-drift 7.5s linear infinite; }
+.c-bloom i:nth-child(1) { left: 8%; animation-delay: 0s; } .c-bloom i:nth-child(2) { left: 30%; animation-delay: -1.1s; animation-duration: 8.4s; }
+.c-bloom i:nth-child(3) { left: 55%; animation-delay: -2.3s; } .c-bloom i:nth-child(4) { left: 78%; animation-delay: -3.2s; animation-duration: 6.8s; }
+.c-bloom i:nth-child(5) { left: 18%; animation-delay: -4.4s; animation-duration: 9s; } .c-bloom i:nth-child(6) { left: 44%; animation-delay: -5.1s; }
+.c-bloom i:nth-child(7) { left: 66%; animation-delay: -6.3s; animation-duration: 8s; } .c-bloom i:nth-child(8) { left: 90%; animation-delay: -6.9s; }
+@keyframes bloom-drift { 0% { transform: translate(0, 0) rotate(0deg); opacity: 0; } 8% { opacity: .95; } 85% { opacity: .8; } 100% { transform: translate(-46px, 345px) rotate(600deg); opacity: 0; } }
 .c-frame { position: absolute; inset: 0; border-radius: 14px; border: 2px solid rgba(232, 199, 125, .9); pointer-events: none; transition: box-shadow .2s, border-color .2s;
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .7), inset 0 0 20px rgba(0, 0, 0, .55), 0 8px 22px rgba(0, 0, 0, .6); }
 .c-frame::before { content: ''; position: absolute; inset: 5px; border-radius: 10px; border: 1px solid color-mix(in srgb, var(--ph) 55%, transparent); }

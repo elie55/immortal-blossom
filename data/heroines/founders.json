@@ -33,12 +33,14 @@
     {
      "n": 1,
      "modifies": "skill:ling_shuang_s1",
-     "text": "Frost Crescent's chance to Frost Seal rises from 30% to 50%"
+     "text": "Frost Crescent's chance to Frost Seal rises from 30% to 50%",
+     "played": "choreography"
     },
     {
      "n": 2,
      "modifies": "skill:ling_shuang_s2",
-     "text": "Rain of Frozen Swords also Frost Seals the enemy with the lowest health"
+     "text": "Rain of Frozen Swords also Frost Seals the enemy with the lowest health",
+     "played": "choreography"
     },
     {
      "n": 3,
@@ -49,7 +51,8 @@
     {
      "n": 4,
      "modifies": "skill:ling_shuang_p30",
-     "text": "The first time each turn she hits a Frost Sealed enemy, the team gains 1 Spirit Qi"
+     "text": "The first time each turn she hits a Frost Sealed enemy, the team gains 1 Spirit Qi",
+     "played": "choreography"
     },
     {
      "n": 5,
@@ -60,7 +63,13 @@
     {
      "n": 6,
      "modifies": "skill:ling_shuang_s3",
-     "text": "Ten-Thousand Frost Array strikes six times instead of four, and its cooldown drops to 4"
+     "text": "Ten-Thousand Frost Array strikes six times instead of four, and its cooldown drops to 4",
+     "patch": [
+      {
+       "cooldown": 4
+      }
+     ],
+     "played": "choreography"
     }
    ],
    "unique": "unique:ling_shuang",
@@ -144,12 +153,14 @@
     {
      "n": 1,
      "modifies": "skill:mo_yingyue_s1",
-     "text": "Thunderfang Cross strikes a third time for 40% ATK"
+     "text": "Thunderfang Cross strikes a third time for 40% ATK",
+     "played": "choreography"
     },
     {
      "n": 2,
      "modifies": "skill:mo_yingyue_s2",
-     "text": "Shadow Lightning Step also applies Karmic Mark for 1 turn"
+     "text": "Shadow Lightning Step also applies Karmic Mark for 1 turn",
+     "played": "choreography"
     },
     {
      "n": 3,
@@ -160,7 +171,8 @@
     {
      "n": 4,
      "modifies": "skill:mo_yingyue_s3",
-     "text": "Defeating an enemy with Heaven's Execution refunds 5 Spirit Qi"
+     "text": "Defeating an enemy with Heaven's Execution refunds 5 Spirit Qi",
+     "played": "choreography"
     },
     {
      "n": 5,
@@ -171,7 +183,8 @@
     {
      "n": 6,
      "modifies": "skill:mo_yingyue_s3",
-     "text": "When Heaven's Execution defeats its target, its remaining strikes leap to the next enemy"
+     "text": "When Heaven's Execution defeats its target, its remaining strikes leap to the next enemy",
+     "played": "choreography"
     }
    ],
    "unique": "unique:mo_yingyue",
@@ -255,12 +268,14 @@
     {
      "n": 1,
      "modifies": "skill:yan_feihong_s1",
-     "text": "Vermilion Talisman's chance of Fire Poison rises from 40% to 70%"
+     "text": "Vermilion Talisman's chance of Fire Poison rises from 40% to 70%",
+     "played": "choreography"
     },
     {
      "n": 2,
      "modifies": "skill:yan_feihong_s2",
-     "text": "Scarlet Inferno's Fire Poison lasts 3 turns"
+     "text": "Scarlet Inferno's Fire Poison lasts 3 turns",
+     "played": "choreography"
     },
     {
      "n": 3,
@@ -271,7 +286,8 @@
     {
      "n": 4,
      "modifies": "skill:yan_feihong_p30",
-     "text": "Each burning enemy that falls gives the team 1 Spirit Qi"
+     "text": "Each burning enemy that falls gives the team 1 Spirit Qi",
+     "played": "choreography"
     },
     {
      "n": 5,
@@ -282,7 +298,8 @@
     {
      "n": 6,
      "modifies": "skill:yan_feihong_s3",
-     "text": "Vermilion Phoenix Covenant leaves the phoenix circling: it hits every enemy for 40% ATK at the start of your next two turns"
+     "text": "Vermilion Phoenix Covenant leaves the phoenix circling: it hits every enemy for 40% ATK at the start of your next two turns",
+     "played": "choreography"
     }
    ],
    "unique": "unique:yan_feihong",
@@ -366,12 +383,14 @@
     {
      "n": 1,
      "modifies": "skill:su_lianhua_s1",
-     "text": "Petal Blades heals the two most injured allies"
+     "text": "Petal Blades heals the two most injured allies",
+     "played": "choreography"
     },
     {
      "n": 2,
      "modifies": "skill:su_lianhua_s2",
-     "text": "Jade Lotus Revival removes two debuffs"
+     "text": "Jade Lotus Revival removes two debuffs",
+     "played": "choreography"
     },
     {
      "n": 3,
@@ -382,7 +401,8 @@
     {
      "n": 4,
      "modifies": "skill:su_lianhua_s3",
-     "text": "Lotus Dew from Thousand-Petal Sanctuary lasts 3 turns"
+     "text": "Lotus Dew from Thousand-Petal Sanctuary lasts 3 turns",
+     "played": "choreography"
     },
     {
      "n": 5,
@@ -393,7 +413,8 @@
     {
      "n": 6,
      "modifies": "skill:su_lianhua_s3",
-     "text": "Once per battle, Thousand-Petal Sanctuary revives a fallen ally at 30% health even without Empower"
+     "text": "Once per battle, Thousand-Petal Sanctuary revives a fallen ally at 30% health even without Empower",
+     "played": "choreography"
     }
    ],
    "unique": "unique:su_lianhua",

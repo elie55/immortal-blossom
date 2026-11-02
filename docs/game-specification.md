@@ -445,20 +445,20 @@ Level 80 is the maximum. Two peaks along the way unlock passives: level 30, the 
 
 Five meridians follow the organs that Chinese medicine links to the five phases. The sixth is the Ren and Du vessels, whose opening is the most famous breakthrough in cultivation novels.
 
-| Meridian | Phase | Grants | Main cost |
+| Meridian | Phase | Grants, per node (five nodes) | Main cost |
 | --- | --- | --- | --- |
-| Lung | Metal | Attack | Metal essence |
-| Liver | Wood | Haste | Wood essence |
-| Kidney | Water | Health | Water essence |
-| Heart | Fire | Critical damage | Fire essence |
-| Spleen | Earth | Defense | Earth essence |
-| Ren and Du vessels | All | Upgrades one technique with a new effect | All five essences and a Dao Crystal |
+| Lung 肺经 | Metal | +3% Attack | Metal essence |
+| Liver 肝经 | Wood | +2 Haste | Wood essence |
+| Kidney 肾经 | Water | +3% Health | Water essence |
+| Heart 心经 | Fire | +5% critical damage | Fire essence |
+| Spleen 脾经 | Earth | +4% Defense | Earth essence |
+| Ren and Du vessels 任督二脉 | All | Upgrades her S2 or her ultimate (her choice): Empowering it costs half the Spirit Qi | 50 of each essence, a Dao Crystal and 250,000 spirit stones |
 
-Each breakthrough opens one meridian slot: the five organ meridians in the order the player chooses, then the Ren and Du vessels at Body Integration. A heroine needs twice as much essence of her own phase.
+Each breakthrough opens one meridian slot: the five organ meridians in the order the player chooses, then the Ren and Du vessels at Body Integration. Node N costs 10 × N essence and 5,000 × N spirit stones, so a full meridian takes 150 essence and 75,000 stones; a heroine needs twice as much essence of her own phase. Meridians, like the bond bonus, multiply her base stats before gear. In the heroine screen the five meridians sit on a pentagon in generating order, with the Ren and Du vessels at its heart.
 
 ### Technique mastery
 
-- Each technique levels from +1 to +5; Dao Blossom petals 3 and 5 take her S2 and her ultimate to +6. A level adds damage, effect chance or one turn off the cooldown.
+- Each technique levels from +1 to +5; Dao Blossom petals 3 and 5 take her S2 and her ultimate to +6. A level adds damage, healing or shield, effect chance, a turn of a status, or one turn off the cooldown, as her technique's mastery list says. Costs: 2, 4, 8, 12 and 16 Enlightenment Scrolls, plus 1 and 2 Bodhi Leaves for +4 and +5; +6 costs 4 Bodhi Leaves.
 - Enlightenment scrolls are common (shrines, pagoda). Bodhi leaves are rare (pagoda milestones and raids) and gate the last levels, like Molagora in Epic Seven.
 - During closed-door cultivation a heroine can have an epiphany, a small chance of free mastery progress.
 
@@ -483,9 +483,9 @@ Example, Ling Shuang's six petals:
 
 ### Bonds
 
-- Bond levels 1 to 10 with each heroine (Epic Seven's Friendship). They rise by fighting together, gifts (liked gifts count double), a daily tea at the Pavilion and lobby taps (capped per day).
-- Unlocks, as in your captures: profile entries (motto, specialty, hobby, likes, dislikes), voice lines, outfits at levels 6 and 10, a lobby illustration at level 10 and a +2% to +6% stat bonus.
-- **Karmic Threads** replace Epic Seven's relationship map. Each heroine is tied to two to four others: sworn sisters, rivals, master and disciple, a life debt. Fielding tied heroines together grants Resonance (+5% Attack) and unlocks their conversations at camp in the Secret Realms.
+- Bond levels 1 to 10 with each heroine (Epic Seven's Friendship). They rise by fighting together (1 point a battle), gifts (20 points; liked gifts 40, disliked 5), one tea a day with the heroine of your choice (30) and lobby taps (2 points, 10 a day). Levels 2 to 10 need 40, 120, 240, 400, 600, 850, 1,150, 1,500 and 2,000 points in all, about a month and a half for a heroine you field every day.
+- Unlocks, as in your captures: profile entries (motto at 1, specialty 2, hobby 3, likes 4, dislikes 5; her liked and disliked gifts are marked from then on), voice lines (greeting 2, victory 5, ultimate 7), outfits at levels 6 and 10, a lobby illustration at level 10 and a +2% to +6% stat bonus (Health, Attack and Defense, from bond 3).
+- **Karmic Threads** replace Epic Seven's relationship map. Each heroine is tied to two to four others: sworn sisters, rivals, master and disciple, a life debt. Fielding tied heroines together grants Resonance (+5% Attack for each of them, once however many threads) and unlocks their conversations at camp in the Secret Realms. Formation lists the team's threads.
 - Tone: affectionate and teasing, never explicit.
 
 ## Equipment and Spirit Artefacts

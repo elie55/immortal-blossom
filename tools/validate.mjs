@@ -194,6 +194,15 @@ for (const h of heroes) {
   need(petals[2]?.modifies === h.skills?.[1] && petals[2]?.mastery === 6, `${h.id}: petal 3 takes her S2 to mastery +6`);
   need(petals[4]?.modifies === h.skills?.[2] && petals[4]?.mastery === 6, `${h.id}: petal 5 takes her ultimate to mastery +6`);
   for (const p of petals) need(p.modifies && recs.has(p.modifies), `${h.id} petal ${p.n}: names what it changes`);
+  // Petal patches (the game applies them to the technique or passive): every match finds an effect, every added effect has a verb.
+  for (const p of petals) for (const x of p.patch || []) {
+    const s = get(x.skill || p.modifies), effs = s?.effects || [];
+    const hits = m => effs.some(e => Object.entries(m).every(([k, v]) => e[k] === v));
+    if (x.set) need(hits(x.match || {}), `${h.id} petal ${p.n}: its patch matches no effect of ${s?.id}`);
+    if (x.remove) need(hits(x.remove), `${h.id} petal ${p.n}: its patch removes no effect of ${s?.id}`);
+    if (x.add) need(typeof x.add.do === 'string', `${h.id} petal ${p.n}: an added effect needs a verb`);
+    if (x.cooldown) need(Number.isInteger(x.cooldown) && x.cooldown >= 1, `${h.id} petal ${p.n}: a cooldown is a whole number`);
+  }
   const u = get(h.unique);
   need(u && u.hero === h.id, `${h.id}: unique gear ${h.unique} must point back to her`);
   for (const g of [...(h.gifts?.likes || []), ...(h.gifts?.dislikes || [])]) need(get(g)?.category === 'gift', `${h.id}: ${g} is not a gift`);

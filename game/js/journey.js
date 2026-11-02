@@ -1,6 +1,6 @@
 // Journey (the chapter map), Formation (team ready) and the victory screens.
 import { App, esc, phTag, rewardChip, starStr, PH_COLOR } from './app.js';
-import { get, all, cardUrl, faceUrl, locBg, enemyArt, phaseOf, heroStats, power, teamCombos, battleExp, num, hasArt, hdStage, arrayText } from './data.js';
+import { get, all, cardUrl, faceUrl, locBg, enemyArt, phaseOf, heroStats, power, teamCombos, teamThreads, battleExp, num, hasArt, hdStage, arrayText } from './data.js';
 import { data, persist, isCleared, isUnlocked, stars, stageState, chapterStars, starRewardState, claimStarReward, ownedHeroes, owned, prog, finalStats, arraysOpen, currentArray, arrayLevel, setArray } from './state.js';
 import { Flow, Scene, missionText } from './story.js';
 import { runTrial } from './trials.js';
@@ -76,7 +76,7 @@ App.register('formation', {
     const draw = () => {
       const stats = team.map(h => (prog(h) ? finalStats(h) : heroStats(h, Math.max(...st.waves.flat().map(e => e.level)), 0)));
       const pw = stats.reduce((a, s) => a + power(s), 0);
-      const combos = teamCombos(team);
+      const combos = teamCombos(team), threads = teamThreads(team);
       // chain preview: the team in feeding order
       const phases = team.map(h => phaseOf(get(h).phase));
       const order = ['water', 'wood', 'fire', 'earth', 'metal'];
@@ -87,7 +87,8 @@ App.register('formation', {
         <div class="fm-side l panel"><h3>ARRAY</h3><button class="fm-array" data-act="array"><b class="gold">${esc(get(currentArray()).name)} 阵</b><small>${esc(get(currentArray()).theme)}</small><span>Change ›</span></button>
           <div class="mut">${arraysOpen().length > 1 ? `${arraysOpen().length} of 5 arrays open` : 'More arrays unlock with the chapter bosses.'}</div>
           <h3 style="margin-top:14px">POWER</h3><div class="power">${num(pw)}</div>
-          <h3 style="margin-top:14px">TWIN BLOOMS 并蒂</h3>${combos.length ? combos.map(c => `<div class="twin"><b>${esc(c.name)} ${esc(c.cn)}</b><small>${esc(c.howTo)}</small></div>`).join('') : '<div class="mut">No combo in this team. Pairs such as Ling Shuang and Mo Yingyue, or Wei Zi and Yan Feihong, have one.</div>'}</div>
+          <h3 style="margin-top:14px">TWIN BLOOMS 并蒂</h3>${combos.length ? combos.map(c => `<div class="twin"><b>${esc(c.name)} ${esc(c.cn)}</b><small>${esc(c.howTo)}</small></div>`).join('') : '<div class="mut">No combo in this team. Pairs such as Ling Shuang and Mo Yingyue, or Wei Zi and Yan Feihong, have one.</div>'}
+          ${threads.length ? `<h3 style="margin-top:14px">RESONANCE 因缘</h3>${threads.map(t => `<div class="twin"><b>${esc(get(t.a).name)} · ${esc(get(t.b).name)}</b><small>${esc((t.kind || '').replace(/_/g, ' '))}: +5% Attack for both</small></div>`).join('')}` : ''}</div>
         <div class="fm-slots">${[0, 1, 2, 3].map(i => { const h = team[i]; const g = h && guests.includes(h);
           return `<div class="fm-slot${h ? '' : ' empty'}${g ? ' guest' : ''}" data-act="slot" data-i="${i}">${h ? miniCard(h, g ? '<span class="lv">Guest</span>' : '') : ''}<div class="pos">${['Front · 1', '2', '3', 'Rear · 4'][i]}<small>${esc(arrayText(currentArray(), i, arrayLevel(currentArray())))}</small></div></div>`; }).join('')}</div>
         <div class="fm-chain">${best.length > 1 ? `<span class="mut">Harmony order</span> ${best.map(p => phTag(p)).join('<em>›</em>')} <span class="gold">×${best.length}</span>` : '<span class="mut">No two phases of this team feed each other: try Kindred Qi or mix phases.</span>'}</div>

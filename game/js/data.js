@@ -89,6 +89,76 @@ export function heroStats(hid, level = 1, bt = 0) {
   const b = get(hid).base, g = growth(level, bt);
   return { hp: Math.round(b.hp * g), atk: Math.round(b.atk * g), def: Math.round(b.def * g), crit: b.crit, critDmg: b.critDmg, haste: 0 };
 }
+// A heroine's growth beyond level and realm: technique mastery, Dao Blossom petals, meridians and bonds.
+// prog is her save record: { level, bt, petals, bond, mastery: { skillId: n }, meridians: { key: nodes }, renDu }.
+const RG = () => get('rules:growth') || {};
+export const meridians = () => get('sys:meridians')?.meridians || [];
+/** Bond level 1 to 10 from her bond points. */
+export function bondLevel(points = 0) { const L = RG().bondLevels || [0]; let lv = 1; for (let i = 1; i < L.length; i++) if (points >= L[i]) lv = i + 1; return lv; }
+/** Points for the next bond level (null at the top). */
+export const bondNext = lv => (RG().bondLevels || [])[lv] ?? null;
+export const bondBonus = lv => (RG().bondStatBonus || [])[lv - 1] || 0;
+const M_STAT = { 'stat:atk': 'atk', 'stat:hp': 'hp', 'stat:def': 'def', 'stat:crit_dmg': 'critDmg', 'stat:haste': 'haste' };
+/** What her meridians and bond add: fractions of base Health, Attack and Defense, crit damage and Haste. */
+export function growthBonus(prog = {}) {
+  const b = { hp: 0, atk: 0, def: 0, critDmg: 0, haste: 0 };
+  const bs = bondBonus(bondLevel(prog.bond || 0)); b.hp += bs; b.atk += bs; b.def += bs;
+  for (const m of meridians()) { const n = (prog.meridians || {})[m.key] || 0; if (n && M_STAT[m.stat]) b[M_STAT[m.stat]] += m.perNode * n; }
+  return b;
+}
+/** Base stats with meridians and bond: what gear then adds to. */
+export function heroBase(hid, prog = {}) {
+  const s = heroStats(hid, prog.level || 1, prog.bt || 0), g = growthBonus(prog);
+  return { ...s, hp: Math.round(s.hp * (1 + g.hp)), atk: Math.round(s.atk * (1 + g.atk)), def: Math.round(s.def * (1 + g.def)), critDmg: s.critDmg + g.critDmg, haste: (s.haste || 0) + g.haste };
+}
+/** One mastery step: "+10% damage and healing", "Cooldown -1", "Iron Body lasts 3 turns". */
+export function masteryStep(text) {
+  const m = {}, s = String(text).replace(/\s*\(petal \d\)\s*$/, '');
+  let r;
+  if ((r = s.match(/^\+(\d+)% (.+)$/))) {
+    for (const k of r[2].split(' and ')) { const key = { damage: 'dmg', healing: 'heal', shield: 'shield', 'effect chance': 'chance', 'counterattack damage': 'counter' }[k.trim()]; if (key) m[key] = +r[1] / 100; }
+  } else if ((r = s.match(/^Cooldown -(\d+)$/))) m.cd = +r[1];
+  else if ((r = s.match(/^(.+) lasts (\d+) turns?$/))) { const st = all('status').find(x => x.name === r[1]); if (st) m.turns = { [st.id]: +r[2] }; }
+  return m;
+}
+/** Everything a technique's first `level` mastery steps add up to. */
+export function masteryMods(sk, level = 0) {
+  const out = { dmg: 0, heal: 0, shield: 0, chance: 0, counter: 0, cd: 0, turns: {} };
+  for (const step of (sk?.mastery || []).slice(0, level)) {
+    const m = masteryStep(step);
+    for (const k of ['dmg', 'heal', 'shield', 'chance', 'counter', 'cd']) out[k] += m[k] || 0;
+    Object.assign(out.turns, m.turns || {});
+  }
+  return out;
+}
+/** The highest mastery a technique can reach now: +5, or +6 once the petal that allows it is open. */
+export function masteryCap(hid, sid, petals = 0) {
+  const sk = get(sid), steps = (sk?.mastery || []).length;
+  const six = (get(hid)?.petals || []).some(p => p.modifies === sid && p.mastery === 6 && p.n <= petals);
+  return Math.min(steps, six ? 6 : 5);
+}
+const matches = (e, m = {}) => Object.entries(m).every(([k, v]) => e[k] === v);
+/** A technique or passive with her open petals' patches applied ({ cooldown, effects, empower }, all copies). */
+export function patched(hid, sid, petals = 0) {
+  const sk = get(sid);
+  const out = { cooldown: sk.cooldown, effects: JSON.parse(JSON.stringify(sk.effects || [])), empower: sk.empower ? JSON.parse(JSON.stringify(sk.empower)) : null };
+  for (const p of get(hid)?.petals || []) {
+    if (p.n > petals) continue;
+    for (const x of p.patch || []) {
+      if ((x.skill || p.modifies) !== sid) continue;
+      if (x.cooldown) out.cooldown = x.cooldown;
+      if (x.remove) out.effects = out.effects.filter(e => !matches(e, x.remove));
+      if (x.set) for (const e of out.effects) if (matches(e, x.match)) Object.assign(e, x.set);
+      if (x.add) out.effects.push({ ...x.add });
+    }
+  }
+  return out;
+}
+/** Karmic Threads that tie heroines of a team together; each tied heroine gains Resonance. */
+export function teamThreads(team) {
+  const set = new Set(team.filter(Boolean));
+  return all('thread').filter(t => set.has(t.a) && set.has(t.b));
+}
 export function enemyStats(eid, level) {
   const b = get(eid).base, g = (1 + 0.08 * (level - 1)) * (1 + 0.1 * Math.floor((level - 1) / 10));
   return { hp: Math.round(b.hp * g), atk: Math.round(b.atk * g), def: Math.round(b.def * g), crit: b.crit, critDmg: b.critDmg };
@@ -98,37 +168,47 @@ export function power(s) { return Math.round((s.atk * (1 + s.crit * (s.critDmg -
 
 // ---------------- techniques ----------------
 const TT = { enemy: 'enemy', all_enemies: 'allEnemies', all_allies: 'allAllies', self: 'self', ally: 'ally' };
-export function techOf(sid, icon, isBoss = false) {
+/** A technique for the engine. g (heroines only): { hid, petals, mastery, halfEmp } applies her petals' patches,
+ *  her mastery (mods: damage, healing, shield, effect chance, cooldown, status turns) and the Ren and Du vessels. */
+export function techOf(sid, icon, isBoss = false, g = null) {
   const sk = get(sid);
   const ult = !!sk.ultimate || sk.slot === 's3';
-  const heals = (sk.effects || []).some(e => e.do === 'heal' || e.do === 'cleanse');
+  const pt = g ? patched(g.hid, sid, g.petals || 0) : { cooldown: sk.cooldown, effects: sk.effects || [], empower: sk.empower || null };
+  const mods = g ? masteryMods(sk, g.mastery || 0) : null;
+  let effects = pt.effects;
+  if (mods && Object.keys(mods.turns).length) effects = effects.map(e => (e.do === 'apply' && mods.turns[e.status] ? { ...e, turns: mods.turns[e.status] } : e));
+  const cd = Math.max(1, pt.cooldown - (mods?.cd || 0)), cut = sk.cooldown - cd;
+  const heals = effects.some(e => e.do === 'heal' || e.do === 'cleanse');
   return {
-    id: sk.id, chor: CHOREO[sk.id], name: sk.name, slot: sk.slot, cd: sk.cooldown, start: sk.start ?? 0,
+    id: sk.id, chor: CHOREO[sk.id], name: sk.name, slot: sk.slot, cd, start: Math.max(0, (sk.start ?? 0) - Math.max(0, cut)),
     target: TT[sk.target] || 'enemy', ult, tele: isBoss && ult, heals, desc: sk.text,
-    emp: sk.empower ? { cost: sk.empower.cost, desc: sk.empower.text } : null,
-    effects: sk.effects || [], empEffects: sk.empower?.effects || null,
+    emp: pt.empower ? { cost: g?.halfEmp ? Math.ceil(pt.empower.cost / 2) : pt.empower.cost, desc: pt.empower.text } : null,
+    effects, empEffects: pt.empower?.effects || null, mods, mastery: g?.mastery || 0,
     icon: icon || `g:${ENEMY_GLYPH[sk.id] || (ult ? '极' : '击')}`,
-    multi: (sk.effects || []).some(e => (e.hits || 1) > 2) || /ling_shuang_s3|mo_yingyue_s1|mo_yingyue_s3|su_lianhua_s1/.test(sk.id),
+    multi: effects.some(e => (e.hits || 1) > 2) || /ling_shuang_s3|mo_yingyue_s1|mo_yingyue_s3|su_lianhua_s1/.test(sk.id),
   };
 }
 
 // ---------------- units for the battle engine ----------------
-/** A heroine for the battle engine. gear: what her equipped pieces give (gear.js gearBonus), or nothing. */
-export function heroUnit(hid, prog = {}, arrayBonus = {}, gear = null) {
-  const h = get(hid), art = heroArt(hid), lv = prog.level || 1, bt = prog.bt || 0;
-  const s = gear ? withGear(heroStats(hid, lv, bt), gear) : { ...heroStats(hid, lv, bt), acc: 0, res: 0, healRecv: 0, healing: 0 };
+/** A heroine for the battle engine. gear: what her equipped pieces give (gear.js gearBonus), or nothing.
+ *  extra: { resonance } when a Karmic Thread ties her to a teammate. */
+export function heroUnit(hid, prog = {}, arrayBonus = {}, gear = null, extra = {}) {
+  const h = get(hid), art = heroArt(hid), lv = prog.level || 1, petals = prog.petals || 0;
+  const base = heroBase(hid, prog);
+  const s = gear ? withGear(base, gear) : { ...base, acc: 0, res: 0, healRecv: 0, healing: 0 };
   const hp = Math.round(s.hp * (1 + (arrayBonus.hp || 0)));
+  const res = extra.resonance ? (RG().resonance?.value || 0.05) : 0;
   return {
     key: art.key, id: hid, name: h.name, cn: h.cn, title: h.title, phase: phaseOf(h.phase), path: h.path, pathName: get(h.path)?.name,
-    rarity: h.rarity, art: art.card, cutin: art.cutin, face: art.face, lvl: lv,
-    hp, atk: Math.round(s.atk * (1 + (arrayBonus.atk || 0))), def: Math.round(s.def * (1 + (arrayBonus.def || 0))),
+    rarity: h.rarity, art: art.card, cutin: art.cutin, face: art.face, lvl: lv, petals, resonance: !!extra.resonance,
+    hp, atk: Math.round(s.atk * (1 + (arrayBonus.atk || 0) + res)), def: Math.round(s.def * (1 + (arrayBonus.def || 0))),
     crit: s.crit, critDmg: s.critDmg + (arrayBonus.crit_dmg || 0), haste: (s.haste || 0) + (arrayBonus.haste || 0),
     acc: s.acc, res: s.res, healRecv: s.healRecv, healing: s.healing,
     // gear effects the engine plays: 4-piece sets, the Spirit Artefact's passive, Five Elements' Phase Qi
     sets4: gear?.sets4 || [], artefact: gear?.artefact || null, gearPhaseQi: gear?.phaseQi || 0, targeted: arrayBonus.targeted || 1,
-    // passives open at levels 30 and 50
-    passives: (h.passives || []).map(get).filter(p => p && lv >= (p.slot === 'p50' ? 50 : 30)).map(p => ({ id: p.id, name: p.name, trigger: p.trigger, effects: p.effects || [] })),
-    techs: h.skills.map((sid, i) => techOf(sid, art.icons[i])),
+    // passives open at levels 30 and 50; open petals may patch them
+    passives: (h.passives || []).map(get).filter(p => p && lv >= (p.slot === 'p50' ? 50 : 30)).map(p => ({ id: p.id, name: p.name, trigger: p.trigger, effects: patched(hid, p.id, petals).effects })),
+    techs: h.skills.map((sid, i) => techOf(sid, art.icons[i], false, { hid, petals, mastery: (prog.mastery || {})[sid] || 0, halfEmp: prog.renDu === sid })),
   };
 }
 /** An enemy for the battle engine. phase overrides its own (the Valley's day phase, a shrine's phase). */
@@ -172,7 +252,8 @@ export function stageBattle(stage, team, progress, arrayId = 'array:yellow_drago
     };
   });
   if (stage.hd) for (const w of waves) for (const u of w.enemies) if (!u.qiShield && u.profile !== 'minion') u.qiShield = 4; // Heaven-Defying elites
-  const heroes = team.filter(Boolean).map((hid, i) => heroUnit(hid, opts.fixedLevel ? { level: opts.fixedLevel } : (progress[hid] || { level: opts.guestLevel || 1 }), arrayBonus(arrayId, i, opts.arrayLevel || 1), progress[hid] && opts.gear ? opts.gear(hid) : null));
+  const tied = new Set(teamThreads(team).flatMap(t => [t.a, t.b]));
+  const heroes = team.filter(Boolean).map((hid, i) => heroUnit(hid, opts.fixedLevel ? { level: opts.fixedLevel } : (progress[hid] || { level: opts.guestLevel || 1 }), arrayBonus(arrayId, i, opts.arrayLevel || 1), progress[hid] && opts.gear ? opts.gear(hid) : null, { resonance: tied.has(hid) }));
   const combos = teamCombos(team);
   const loc = get(stage.location);
   return {

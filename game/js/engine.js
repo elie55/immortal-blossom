@@ -615,6 +615,7 @@ function createCard(u, parent) {
         <div class="c-art"><img src="assets/cards/${u.art}.webp" alt="" draggable="false" style="animation-delay:${-rand(0, 6).toFixed(2)}s"></div>
         <div class="c-shade"></div>
         <div class="c-foil" style="animation-delay:${-rand(0, 8).toFixed(2)}s"></div>
+        ${u.side === 'hero' && u.petals >= 6 ? `<div class="c-bloom" title="Full Bloom">${'<i></i>'.repeat(8)}</div>` : ''}
         <div class="c-frame"></div>
         <div class="c-head">
           <div class="c-phase" title="${ph.name}">${ph.glyph}</div>
@@ -803,7 +804,7 @@ const SKILLS = {
     V.fx('ice_crescent', { x: c.x, y: c.y, w: 330, dur: 420, rot: -0.4, sweep: { a0: -Math.PI, a1: Math.PI, t: 0.3, color: 'ice' }, bloom: 0.4, s0: 0.9, s1: 1.12, fadeIn: 0.01 });
     V.emitP('shard', c.x, c.y, 12, { color: 'ice', speed: [200, 600], up: 100 });
     const h = x.hit(t, 1.0, { color: 'ice', flash: '#d6f0ff' });
-    if (h && t.alive && Math.random() < 0.3 && x.status(t, 'frost', 1)) frostFx(t);
+    if (h && t.alive && x.chance(x.petal(1) ? 0.5 : 0.3) && x.status(t, 'frost', 1)) frostFx(t);
     await back();
   },
   async ling_s2(x) {
@@ -825,6 +826,7 @@ const SKILLS = {
     sfx('shatter'); V.shake(7, 260);
     for (const f of fs) { burstAt('ice_burst', f, { w: 280 }); x.hit(f, 0.75, { color: 'ice', small: true }); if (f.alive) x.delay(f, 1); }
     if (x.emp) { const tg = fs.filter(f => f.alive).sort((a, b) => b.hp - a.hp)[0]; if (tg && x.status(tg, 'frost', 1)) frostFx(tg); }
+    if (x.petal(2)) { const lo = fs.filter(f => f.alive && !x.hasStatus(f, 'frost')).sort((a, b) => a.hp / a.maxHp - b.hp / b.maxHp)[0]; if (lo && x.status(lo, 'frost', 1)) frostFx(lo); }
     await wait(420);
   },
   async ling_s3(x) {
@@ -839,11 +841,12 @@ const SKILLS = {
       const ang = -1.1 + 2.2 * i / (n - 1), sx = c.x + Math.sin(ang) * R, sy = c.y - Math.cos(ang) * R;
       V.fx('ice_sword', { w: 80, dur: 300, delay: i * 40, ay: 0.92, rot: -ang, fadeOut: 0.1, bloom: 0.5, path: k => ({ x: lerp(sx, c.x, ease.inCubic(k)), y: lerp(sy, c.y, ease.inCubic(k)) }) });
     }
-    for (let k = 0; k < 4; k++) {
+    const strikes = x.petal(6) ? 6 : 4;
+    for (let k = 0; k < strikes; k++) {
       await wait(k ? 95 : 300);
       sfx('slash');
-      V.fx('ice_crescent', { x: c.x + rand(-20, 20), y: c.y + rand(-30, 30), w: 340, dur: 420, rot: [0.3, -0.9, 1.4, -0.2][k], flip: k % 2 === 1, sweep: { a0: -Math.PI, a1: Math.PI, t: 0.28, color: 'ice' }, bloom: 0.4 });
-      x.hit(t, 0.7 * finisher(), { color: 'ice', small: k < 3, keepFrost: true });
+      V.fx('ice_crescent', { x: c.x + rand(-20, 20), y: c.y + rand(-30, 30), w: 340, dur: 420, rot: [0.3, -0.9, 1.4, -0.2][k % 4], flip: k % 2 === 1, sweep: { a0: -Math.PI, a1: Math.PI, t: 0.28, color: 'ice' }, bloom: 0.4 });
+      x.hit(t, 0.7 * finisher(), { color: 'ice', small: k < strikes - 1, keepFrost: true });
       if (!t.alive) break;
     }
     if (x.emp) for (const f of x.foes().filter(f => f !== t)) {
@@ -873,6 +876,13 @@ const SKILLS = {
       if (!t.alive) break;
       await wait(130);
     }
+    if (x.petal(1) && t.alive) {
+      sfx('slash'); sfx('zap');
+      V.fx('thunder_x', { x: c.x, y: c.y, w: 340, dur: 420, s0: 0.6, s1: 1.2, rot: 1.2, bloom: 0.45, ease: ease.outExpo });
+      V.bolt({ x0: c.x, y0: c.y - 120, x1: c.x, y1: c.y + 100, color: 'violet', width: 4, dur: 200, branches: 2 });
+      x.hit(t, 0.4, { color: 'violet', flash: '#e6d0ff' });
+      await wait(120);
+    }
     await back();
   },
   async mo_s2(x) {
@@ -888,6 +898,7 @@ const SKILLS = {
     V.fx('thunder_burst', { x: c.x, y: c.y, w: 360, dur: 480, s0: 0.6, s1: 1.2, bloom: 0.4 });
     V.fx('thunder_x', { x: c.x, y: c.y, w: 320, dur: 420, s0: 0.7, s1: 1.2, rot: 0.2, bloom: 0.4 });
     x.hit(t, 1.5, { color: 'violet', flash: '#e6d0ff' });
+    if (x.petal(2) && t.alive && x.status(t, 'mark', 1)) V.floatText('KARMIC MARK', c.x, c.y - 70, 'info');
     V.shake(8, 240);
     await wait(160);
     await board.tweenCard(u, { o: 1, s: 1.07 }, 140);
@@ -897,9 +908,10 @@ const SKILLS = {
     await wait(200);
   },
   async mo_s3(x) {
-    const { u, target: t } = x;
+    const { u } = x;
+    let t = x.target;
     await cut(x);
-    const c = C(t);
+    let c = C(t);
     sfx('charge');
     V.fx('glow:violet', { x: c.x, y: c.y, w: 380, dur: 600, s0: 0.3, s1: 1.2, alpha: 0.6 });
     await wait(260);
@@ -908,9 +920,14 @@ const SKILLS = {
       V.bolt({ x0: c.x + rand(-80, 80), y0: -40, x1: c.x + rand(-20, 20), y1: c.y, color: 'violet', width: 7, dur: 320, branches: 3 });
       V.fx('thunder_bolt', { x: c.x, y: c.y + 120, w: 360, ay: 1, dur: 520, s0: 0.9, s1: 1.05, bloom: 0.3 });
       const missing = 1 + (1 - t.hp / t.maxHp);
-      x.hit(t, 0.95 * missing, { color: 'violet', small: i < 2, flash: '#efe0ff' });
+      const h = x.hit(t, 0.95 * missing, { color: 'violet', small: i < 2, flash: '#efe0ff' });
       V.flash('#c9a8ff', 0.18);
-      if (!t.alive) break;
+      if (h && h.killed && x.petal(4)) { x.gainQi(5); V.floatText('+5 SPIRIT QI', c.x, c.y - 110, 'harmony', { size: 26, label: 'EXECUTION' }); }
+      if (!t.alive) {
+        const next = x.petal(6) && i < 2 ? x.foes().sort((a, b) => a.hp / a.maxHp - b.hp / b.maxHp)[0] : null;
+        if (!next) break;
+        t = next; c = C(t); V.floatText('THE THUNDER LEAPS', c.x, c.y - 90, 'info');
+      }
       await wait(170);
     }
     sfx('boom'); hitStop(120); slowMo(0.35, 480); V.shake(14, 420);
@@ -931,7 +948,7 @@ const SKILLS = {
     V.fx('fire_burst', { x: c.x, y: c.y, w: 300, dur: 520, s0: 0.6, s1: 1.15, bloom: 0.3 });
     V.emitP('ember', c.x, c.y, 16, { color: 'fire', speed: [80, 300] });
     const h = x.hit(t, 1.0, { color: 'fire', flash: '#ffd2b0' });
-    if (h && t.alive && Math.random() < 0.4 && x.burn(t, 2)) V.floatText('FIRE POISON', c.x, c.y - 70, 'info');
+    if (h && t.alive && x.chance(x.petal(1) ? 0.7 : 0.4) && x.burn(t, 2)) V.floatText('FIRE POISON', c.x, c.y - 70, 'info');
     await wait(260);
   },
   async yan_s2(x) {
@@ -945,7 +962,7 @@ const SKILLS = {
       V.fx('fire_burst', { x: c.x, y: c.y, w: 320, dur: 600, s0: 0.5, s1: 1.2, bloom: 0.3 });
       V.emitP('ember', c.x, c.y + 40, 18, { color: 'fire', speed: [60, 260], spread: 50 });
       x.hit(f, 0.7, { color: 'fire', small: true });
-      if (f.alive) x.burn(f, x.emp ? 3 : 2);
+      if (f.alive) x.burn(f, (x.petal(2) ? 3 : 2) + (x.emp ? 1 : 0));
     }
     await wait(500);
   },
@@ -981,6 +998,7 @@ const SKILLS = {
     }
     void start;
     sfx('boom'); hitStop(110); V.shake(12, 380); V.flash('#ffc89a', 0.3);
+    if (x.petal(6) && u.alive) { x.B.phoenix = { u, left: 2 }; const cu = C(u, 0.3); V.floatText('THE PHOENIX CIRCLES', cu.x, cu.y, 'harmony', { size: 26 }); }
     await wait(600);
   },
 
@@ -997,11 +1015,11 @@ const SKILLS = {
       });
     }
     await wait(560);
-    const al = x.allies().filter(v => v.alive).sort((p, q) => p.hp / p.maxHp - q.hp / q.maxHp)[0];
-    if (al) {
+    const als = x.allies().filter(v => v.alive).sort((p, q) => p.hp / p.maxHp - q.hp / q.maxHp).slice(0, x.petal(1) ? 2 : 1);
+    for (const [i, al] of als.entries()) { const ac = C(al); V.orb({ x0: a.x, y0: a.y, x1: ac.x, y1: ac.y, color: 'jade', dur: 420, arc: i ? 60 : -60, size: 16 }); }
+    if (als.length) await wait(420);
+    for (const al of als) {
       const ac = C(al);
-      V.orb({ x0: a.x, y0: a.y, x1: ac.x, y1: ac.y, color: 'jade', dur: 420, arc: -60, size: 16 });
-      await wait(420);
       V.fx('heal_burst', { x: ac.x, y: ac.y, w: 240, dur: 600, s0: 0.6, s1: 1.1 });
       V.emitP('petal', ac.x, ac.y, 8, { color: 'jade', speed: [30, 140], up: 60 });
       sfx('heal'); x.heal(al, 0.7);
@@ -1019,7 +1037,7 @@ const SKILLS = {
       V.fx('heal_burst', { x: c.x, y: c.y, w: 280, dur: 700, s0: 0.5, s1: 1.15 });
       V.emitP('petal', c.x, c.y + 60, 10, { color: 'jade', speed: [40, 160], up: 80, spread: 50 });
       x.heal(al, 0.95);
-      if (x.cleanse(al, 1)) V.floatText('CLEANSED', c.x, c.y - 70, 'info');
+      if (x.cleanse(al, x.petal(2) ? 2 : 1)) V.floatText('CLEANSED', c.x, c.y - 70, 'info');
       if (x.emp) x.status(al, 'clear', 1);
     }
     await wait(550);
@@ -1032,13 +1050,16 @@ const SKILLS = {
     V.fx('lotus_bloom', { x: board.geo.W / 2, y: board.geo.heroY + 150, w: 900, dur: 2200, s0: 0.2, s1: 1, fadeIn: 0.12, alpha: 0.55, back: true, ease: ease.outBack });
     sfx('heal');
     await wait(300);
-    if (x.emp) { const dead = x.B.units.find(v => v.side === u.side && !v.alive); if (dead) x.revive(dead, 0.3); }
+    if (x.emp || (x.petal(6) && !u.lotusRevived)) {
+      const dead = x.B.units.find(v => v.side === u.side && !v.alive);
+      if (dead) { x.revive(dead, 0.3); if (!x.emp) u.lotusRevived = true; }
+    }
     for (const al of x.allies()) {
       const c = C(al);
       V.fx('jade_pillar', { x: c.x, y: c.y + 150, w: 230, ay: 1, dur: 1200, s0: 0.8, s1: 1.05, fadeIn: 0.12, bloom: 0.25 });
       V.emitP('petal', c.x, c.y, 10, { color: 'gold', speed: [30, 150], up: 60, spread: 60 });
       x.shield(al, 1.3);
-      x.status(al, 'dew', 2);
+      x.status(al, 'dew', x.petal(4) ? 3 : 2);
       await wait(90);
     }
     await wait(650);
@@ -1181,6 +1202,9 @@ function effTargets(x, e, techTarget) {
     case 'ally': case 'that_ally': return target && target.side === u.side ? [target] : [u];
     case 'all_allies': case 'allies': return as;
     case 'lowest_ally': case 'healed_ally': return as.sort((a, b) => a.hp / a.maxHp - b.hp / b.maxHp).slice(0, 1);
+    case 'lowest_2_allies': return as.sort((a, b) => a.hp / a.maxHp - b.hp / b.maxHp).slice(0, 2);
+    case 'highest_atk_2_allies': return as.sort((a, b) => b.atk - a.atk).slice(0, 2);
+    case 'lowest_enemy': return fs.sort((a, b) => a.hp / a.maxHp - b.hp / b.maxHp).slice(0, 1);
     case 'lowest_max_hp_ally': return as.sort((a, b) => a.maxHp - b.maxHp).slice(0, 1);
     case 'most_debuffed_ally': return as.sort((a, b) => b.status.filter(s => STATUS[s.id].debuff).length - a.status.filter(s => STATUS[s.id].debuff).length).slice(0, 1);
     case 'highest_atk_ally': return as.sort((a, b) => b.atk - a.atk).slice(0, 1);
@@ -1256,7 +1280,7 @@ SKILLS.generic = async function generic(x) {
         const debuff = STATUS[id].debuff;
         for (const a of ts) {
           if (!a.alive) continue;
-          if (e.chance && Math.random() >= e.chance * (has(u, 'mist') && debuff ? 0.5 : 1)) continue;
+          if (e.chance && Math.random() >= (e.chance + (t.mods?.chance || 0)) * (has(u, 'mist') && debuff ? 0.5 : 1)) continue;
           const ok = id === 'burn' ? x.burn(a, e.turns || 2) : x.status(a, id, e.turns || 1, { stacks: e.stacks, src: u, value: id === 'wound' ? Math.round(atkOf(u) * 0.12) : undefined });
           if (ok) {
             const c = C(a), k = ts.indexOf(a);
@@ -1347,8 +1371,12 @@ function makeUnit(d, side, slot) {
     acc: d.acc || 0, res: d.res || 0, healRecv: d.healRecv || 0, healing: d.healing || 0,
     sets4: new Set(d.sets4 || []), artefact: d.artefact || null, gearPhaseQi: d.gearPhaseQi || 0, targeted: d.targeted || 1,
     passives: d.passives || [],
+    // growth: open Dao Blossom petals (the founders' choreography reads them) and counterattack mastery
+    petals: d.petals || 0, counterMod: Math.max(0, ...(d.techs || []).map(t => t.mods?.counter || 0)),
   };
 }
+/** Has this heroine opened petal n of her Dao Blossom? */
+const petal = (u, n) => (u.petals || 0) >= n;
 // Passives that are a plain stat with no condition (Ning Suxin's +15% accuracy) apply when the unit is made.
 const STAT_FIELD = { 'stat:acc': 'acc', 'stat:res': 'res', 'stat:crit': 'crit', 'stat:crit_dmg': 'critDmg', 'stat:haste': 'haste', 'stat:healing': 'healing', 'stat:heal_received': 'healRecv' };
 function applyStaticPassives(u) {
@@ -1412,7 +1440,7 @@ async function startBattle(def) {
     log: { casts: 0, falls: 0, empowers: 0, shatters: 0, encounters: 0, maxKills: 0, kindred: 0, harmony: 0, combos: {}, gear: {}, passives: {} },
   });
   def.heroes.forEach((d, i) => B.units.push(makeUnit(d, 'hero', i)));
-  B.gourdDone = false; B.onceUsed = new Set();
+  B.gourdDone = false; B.onceUsed = new Set(); B.phoenix = null;
   for (const u of heroes()) applyStaticPassives(u);
   B.pendingStart = heroes().flatMap(u => pFx(u, 'battle_start', 'apply').map(e => ({ u, e })));
   for (const u of heroes()) {
@@ -1617,6 +1645,27 @@ async function startOfTurn(side) {
       B.log.gear['AUSPICIOUS GUARD'] = (B.log.gear['AUSPICIOUS GUARD'] || 0) + 1;
     }
   }
+  // Vermilion Phoenix Covenant (Yan Feihong, petal 6): the phoenix circles back at the start of her next two turns
+  if (side === 'hero' && B.phoenix && B.phoenix.left > 0) {
+    const pu = B.phoenix.u; B.phoenix.left -= 1;
+    const fs = enemies().filter(f => f.alive);
+    if (pu.alive && fs.length) {
+      const g = board.geo, y = g.enemyY + 150, x0 = g.x0 - 320, x1 = g.W + 320, dur = 820;
+      const path = k => ({ x: lerp(x0, x1, ease.inOutCubic(k)), y: y - Math.sin(k * Math.PI) * 30 });
+      sfx('fire'); V.fx('phoenix', { w: 560, dur, path, fadeIn: 0.06, fadeOut: 0.1, bloom: 0.3 });
+      await wait(dur * 0.45);
+      for (const f of fs) {
+        const h = applyDamage(pu, f, 0.4); if (!h) continue;
+        const c = board.center(f);
+        V.fx('fire_burst', { x: c.x, y: c.y, w: 300, dur: 560, s0: 0.5, s1: 1.15, bloom: 0.3 });
+        V.floatText(h.dmg.toLocaleString('en-US'), c.x, c.y, h.crit ? 'crit' : 'dmg', { label: 'CIRCLING PHOENIX', size: 30 });
+        board.hitCard(f, { power: 0.6, color: '#ffb08a' });
+        if (h.killed) killUnit(f);
+      }
+      await wait(450);
+    }
+    if (B.phoenix && B.phoenix.left <= 0) B.phoenix = null;
+  }
   const us = B.units.filter(u => u.side === side && u.alive);
   if (B.round >= RULES.tribulationRound) {
     const pct = RULES.tribulationBase + RULES.tribulationStep * (B.round - RULES.tribulationRound);
@@ -1728,6 +1777,8 @@ function addStatus(u, id, turns, extra = {}) {
   if (src && src.side !== u.side && d.debuff) {
     for (const e of pFx(src, 'always', 'extend')) if (sid(e.status) === id) { const st = has(u, id); if (st) st.turns += e.turns || 1; }
     if (src.side === 'hero') for (const e of pFx(src, 'on_debuff', 'qi')) if (useOnce(src, e)) { gainQi(e.amount || 1); passiveCallout(src, e.pname); }
+    // Song of the Jasmine (Ning Suxin, petal 4): landing a debuff also gives her +10% damage for the turn
+    if (src.side === 'hero') for (const e of pFx(src, 'on_debuff', 'stat')) if (e.damageBonus && useOnce(src, e)) src.turnBonus = { k: `${B.round}${B.side}`, v: e.damageBonus };
   }
   // Heaven-Shaking Seal: taunting an enemy also disrupts its Qi
   if (id === 'provoke' && src && artPow(src, 'art:heaven_shaking_seal')) addStatus(u, 'disrupt', turns, { src });
@@ -1761,7 +1812,8 @@ const phaseMul = (side, phase) => 1 + RULES.pointBonus * (B.points[side][phase] 
 function computeHit(src, tgt, power, o = {}) {
   const phase = o.phase || src.phase;
   const adv = advantage(phase, tgt.phase);
-  let mul = phaseMul(src.side, phase) * (o.hm || 1) * (o.emp ? RULES.empowerMul : 1) * (o.extraMul || 1);
+  let mul = phaseMul(src.side, phase) * (o.hm || 1) * (o.emp ? RULES.empowerMul : 1) * (o.extraMul || 1) * (o.mast || 1);
+  if (src.turnBonus && src.turnBonus.k === `${B.round}${B.side}`) mul *= 1 + src.turnBonus.v; // Song of the Jasmine (petal 4)
   if (adv > 0) mul *= RULES.advMul; else if (adv < 0) mul *= RULES.resMul;
   if (has(src, 'disrupt')) mul *= 0.7;
   if (has(tgt, 'mark')) mul *= RULES.markMul;
@@ -1794,6 +1846,7 @@ function computeHit(src, tgt, power, o = {}) {
 function applyDamage(src, tgt, power, o = {}) {
   if (!tgt.alive) return null;
   const h = computeHit(src, tgt, power, o);
+  B.log.hits = (B.log.hits || 0) + 1;
   if (has(tgt, 'bell')) { h.dmg = 0; h.bell = true; const c = board.center(tgt, 0.4); V.floatText('GOLDEN BELL', c.x, c.y - 30, 'info'); }
   if (h.frost) removeStatus(tgt, 'frost');
   if (has(tgt, 'dream')) { removeStatus(tgt, 'dream'); h.woke = true; }
@@ -1813,8 +1866,9 @@ function applyDamage(src, tgt, power, o = {}) {
   if (h.dmg > 0 && src.side !== tgt.side && tgt.side === 'hero' && !h.killed) {
     for (const e of pFx(tgt, 'on_hit_taken')) {
       if (!useOnce(tgt, e)) continue;
-      if (e.do === 'qi') { gainQi(e.amount || 1); passiveCallout(tgt, e.pname); }
+      if (e.do === 'qi') { gainQi(h.crit && e.critAmount ? e.critAmount : (e.amount || 1)); passiveCallout(tgt, e.pname); }
       if (e.do === 'stat' && e.damageBonus) { tgt.nextTechBonus = e.damageBonus; passiveCallout(tgt, e.pname); }
+      if (e.do === 'apply') addStatus(tgt, e.status, e.turns || 1, { src: tgt });               // Rude Awakening (petal 4): Iron Body
     }
   }
   // Twin Blooms that fire on a hit
@@ -1896,6 +1950,11 @@ function killUnit(u) {
     sfx('heal'); board.refreshCard(u);
     return;
   }
+  // Lingering Embers (Yan Feihong, petal 4): each burning enemy that falls gives the team 1 Spirit Qi
+  if (u.side === 'enemy' && has(u, 'burn')) {
+    const yan = heroes().find(x => x.alive && x.id === 'hero:yan_feihong' && petal(x, 4));
+    if (yan) { gainQi(1); passiveCallout(yan, 'Lingering Embers'); }
+  }
   u.alive = false; u.hp = 0; u.status = []; u.barrier = 0; u.skip = false;
   if (u.side === 'enemy') { gainQi(RULES.qiPerKill); B.castKills = (B.castKills || 0) + 1; }
   else B.log.falls++;
@@ -1906,6 +1965,11 @@ function killUnit(u) {
     if (e.target !== 'all_allies' || !useOnce(u, e)) continue;
     for (const a of allies(u)) { a.barrier = Math.max(a.barrier, Math.round(u.maxHp * (e.pctOfMaxHp || 0.15))); addStatus(a, 'shield', e.turns || 2, { src: u }); }
     passiveCallout(u, e.pname);
+  }
+  // ...and statuses for every ally (Lin Chaxue, petal 4: Clear Heart)
+  for (const e of pFx(u, 'on_fall', 'apply')) {
+    if (!useOnce(u, e)) continue;
+    for (const a of e.target === 'all_allies' ? allies(u) : []) addStatus(a, e.status, e.turns || 1, { src: u });
   }
 }
 function gainQi(n) { if (!n) return; B.qi = Math.max(0, Math.min(RULES.qiMax, B.qi + n)); ui.qiGain(n); }
@@ -1980,7 +2044,7 @@ async function doCast(u, t, target, emp) {
   }
   // Thorn Lotus counters and Phoenix Among Peonies flares, after the technique
   for (const k of B.counters) if (k.u.alive && k.target.alive) {
-    const h = applyDamage(k.u, k.target, 0.5, { noCrit: true });
+    const h = applyDamage(k.u, k.target, 0.5 * (1 + (k.u.counterMod || 0)), { noCrit: true });
     if (h) { const c = board.center(k.target, 0.45); V.fx('ghost_slash', { x: c.x, y: c.y, w: 260, dur: 420, flip: true }); V.floatText(h.dmg.toLocaleString('en-US'), c.x, c.y, k.u.side === 'hero' ? 'dmg' : 'enemy', { label: 'THORN LOTUS' }); board.hitCard(k.target, { power: 0.6 }); if (h.killed) killUnit(k.target); }
   }
   for (const f of B.pendingFlares) if (f.alive) await flare(f, 'burn');
@@ -2022,8 +2086,11 @@ function makeCtx(u, t, target, emp, hm) {
         const g = allies(tgt).filter(a => a !== tgt && set4(a, 'set:black_tortoise')).sort((a, b) => b.hp / b.maxHp - a.hp / a.maxHp)[0];
         if (g) { gearCallout(g, 'SHELL OF THE NORTH'); tgt = g; power *= 0.75; }
       }
-      const h = applyDamage(u, tgt, power, { hm, emp, single, ...o });
+      const sealed = u.id === 'hero:ling_shuang' && petal(u, 4) && !!has(tgt, 'frost');
+      const h = applyDamage(u, tgt, power, { hm, emp, single, mast: 1 + (t.mods?.dmg || 0), ...o });
       if (!h) return null;
+      // Biting Frost (Ling Shuang, petal 4): the first time each turn she hits a Frost Sealed enemy, +1 Spirit Qi
+      if (sealed && useOnce(u, { once: 'turn', pid: 'ling_petal4', do: 'qi' })) { gainQi(1); passiveCallout(u, 'Biting Frost'); }
       const c = board.center(tgt, o.fy ?? 0.45);
       const style = u.side === 'hero' ? (h.crit ? 'crit' : 'dmg') : (h.crit ? 'ecrit' : 'enemy');
       const label = h.glance ? 'GLANCE' : (h.adv > 0 ? 'OVERCOME' : (h.adv < 0 ? 'RESISTED' : (h.frost ? 'SEAL BROKEN' : null)));
@@ -2044,7 +2111,7 @@ function makeCtx(u, t, target, emp, hm) {
     heal(tgt, power, o = {}) {
       if (!tgt || !tgt.alive) return 0;
       const base = o.pctMaxHp ? tgt.maxHp * o.pctMaxHp : atkOf(u) * power;
-      const amt = base * phaseMul(u.side, u.phase) * hm * (emp ? RULES.empowerMul : 1) * rand(0.97, 1.03);
+      const amt = base * phaseMul(u.side, u.phase) * hm * (emp ? RULES.empowerMul : 1) * (1 + (t.mods?.heal || 0)) * rand(0.97, 1.03);
       const real = applyHealAmount(u, tgt, amt);
       if (real) { const c = board.center(tgt, 0.45); V.floatText('+' + real.toLocaleString('en-US'), c.x + rand(-20, 20), c.y, 'heal'); }
       for (const e of pFx(u, 'on_heal', 'cleanse')) { let n = 0; for (const st of e.statuses || []) if (has(tgt, st)) { removeStatus(tgt, st); n++; } if (n) passiveCallout(tgt, e.pname); }
@@ -2053,13 +2120,17 @@ function makeCtx(u, t, target, emp, hm) {
     shield(tgt, power, o = {}) {
       if (!tgt || !tgt.alive) return 0;
       const base = o.pctOfMaxHp ? u.maxHp * o.pctOfMaxHp : atkOf(u) * power;
-      const amt = Math.round(base * phaseMul(u.side, u.phase) * hm * (emp ? RULES.empowerMul : 1));
+      const amt = Math.round(base * phaseMul(u.side, u.phase) * hm * (emp ? RULES.empowerMul : 1) * (1 + (t.mods?.shield || 0)));
       tgt.barrier = Math.max(tgt.barrier, amt);
       addStatus(tgt, 'shield', o.turns || 2, { src: u });
       const c = board.center(tgt, 0.45); V.floatText('+' + amt.toLocaleString('en-US'), c.x, c.y + 30, 'shield', { label: 'SPIRIT SHIELD' });
       return amt;
     },
     status: (tgt, id, turns, extra = {}) => addStatus(tgt, id, turns, extra.src ? extra : { ...extra, src: u }),
+    /** Roll a technique's effect chance, with her mastery's bonus. */
+    chance: base => Math.random() < base + (t.mods?.chance || 0),
+    /** Has she opened petal n? (the founders' choreography plays their petals) */
+    petal: n => petal(u, n),
     burn(tgt, turns = 2) {
       if (u.id === 'hero:yan_feihong' && combo('combo:phoenix_among_peonies') && has(tgt, 'provoke')?.src?.id === 'hero:wei_zi') turns += 1;
       return addStatus(tgt, 'burn', turns, { value: Math.round(atkOf(u) * 0.35 * phaseMul(u.side, 'fire') * (emp ? RULES.empowerMul : 1)), src: u });

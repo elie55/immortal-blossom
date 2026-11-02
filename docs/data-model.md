@@ -69,9 +69,9 @@ The checker reads the key a link sits under to know whether the player gains or 
 
 ## The save (game/js/state.js)
 
-The game keeps one JSON save (schema 2) in IndexedDB, with localStorage as a fallback and a checksum; Settings exports and imports it as a code. Older saves are upgraded on load.
+The game keeps one JSON save (schema 3) in IndexedDB, with localStorage as a fallback and a checksum; Settings exports and imports it as a code. Older saves are upgraded on load.
 
-- **Wallet:** `cur{}` and `items{}` by id. **Heroines:** `heroes{hid: {level, exp, bt, petals, bond, eq{position: piece id}}}`, where the ten positions are `weapon, helmet, body, gloves, pants, boots, ring1, ring2, pendant, artefact`.
+- **Wallet:** `cur{}` and `items{}` by id. **Heroines:** `heroes{hid: {level, exp, bt, petals, bond, mastery{skill id: level}, meridians{lung|liver|kidney|heart|spleen|ren_du: nodes}, renDu, eq{position: piece id}}}`, where `bond` counts bond points (the level comes from `rules:growth.bondLevels`), `renDu` is the technique the Ren and Du vessels upgrade, and the ten positions are `weapon, helmet, body, gloves, pants, boots, ring1, ring2, pendant, artefact`. `day{key, tea, taps}` holds today's tea (one heroine a day) and lobby-tap points.
 - **Storage Ring:** `gear{seq, pieces{id: piece}, recent[], auto{}, view{sort, dir, filter}}`. A piece is `{id, kind: 'gear', slot, rarity, tier, set, main{stat, form, roll}, subs[{stat, form, rolls[]}], plus, engraved, lock, hero, pos, got, new}`; a Spirit Artefact is `{id, kind: 'art', slot: 'slot:artefact', art, rarity, plus, ...}`. Rolls are shares of the best value (0 to 1); values come from `rules:gear` and the tier, so a reforged piece keeps its rolls. `recent` keeps the last 30 salvaged pieces with what they returned.
 - **Progress:** `stages{id: {clear, missions[3], clears}}`, `chapterRewards`, `pond{pulls, pity, fatePoints, guided}`, `flags`, `settings`, `log`.
 
@@ -79,5 +79,5 @@ The game keeps one JSON save (schema 2) in IndexedDB, with localStorage as a fal
 
 - New stage: give it a realm and tier from the progression map, waves of existing enemies inside the realm's level band, a drop table of the same tier, an unlock, and link it from its mode (or chapter).
 - New item: add it, then give it at least one source (a drop table, reward, shop, recipe output or system) and one use (a cost, recipe input, shop price or system).
-- New heroine: follow `heroines/founders.json`; add her five skills, her unique gear, its fragment and forge recipe, two bond outfits, 2 to 4 Karmic Threads and any Twin Blooms (`heroines/combos.json`); add her to the Fate Pond pool (and Sect Recruitment if 3★ or 4★).
+- New heroine: follow `heroines/founders.json`; add her five skills, her unique gear, its fragment and forge recipe, two bond outfits, 2 to 4 Karmic Threads and any Twin Blooms (`heroines/combos.json`); add her to the Fate Pond pool (and Sect Recruitment if 3★ or 4★). Give petals 1, 2, 4 and 6 a `patch` so the game plays them: `{"match": {...}, "set": {...}}` changes the matching effects, `{"add": effect}` appends one, `{"remove": {...}}` drops the matching ones, `{"cooldown": n}` sets the cooldown; `skill` names another technique or passive than the petal's `modifies`. Mastery steps are read from the technique's `mastery` strings ("+10% damage and healing", "+10% effect chance", "Cooldown -1", "Iron Body lasts 3 turns").
 - Then run the checker; it names anything left unconnected.

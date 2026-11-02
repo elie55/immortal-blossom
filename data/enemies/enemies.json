@@ -208,7 +208,8 @@
    "skills": [
     "skill:shade_stab",
     "skill:veil_of_ash"
-   ]
+   ],
+   "art": "netherflame_shade"
   },
   {
    "id": "enemy:netherflame_priestess",
@@ -281,7 +282,8 @@
    "boss": true,
    "wide": true,
    "qiShield": 12,
-   "character": "npc:elder_han_lie"
+   "character": "npc:elder_han_lie",
+   "art": "boss_han_lie"
   },
   {
    "id": "enemy:envoy_ku_ye",
@@ -307,7 +309,8 @@
    "boss": true,
    "wide": true,
    "qiShield": 12,
-   "character": "npc:envoy_ku_ye"
+   "character": "npc:envoy_ku_ye",
+   "art": "boss_ku_ye"
   },
   {
    "id": "enemy:silver_fox_thief",
@@ -333,7 +336,8 @@
    "boss": true,
    "wide": true,
    "qiShield": 12,
-   "character": "npc:hu_yinling"
+   "character": "npc:hu_yinling",
+   "art": "boss_hu_yinling"
   },
   {
    "id": "enemy:netherflame_matriarch",
@@ -380,7 +384,8 @@
    "skills": [
     "skill:fox_claw",
     "skill:bewitching_mist"
-   ]
+   ],
+   "art": "fox_trickster"
   },
   {
    "id": "enemy:serpent_guard",
@@ -421,7 +426,8 @@
    "skills": [
     "skill:crane_beak",
     "skill:feather_storm"
-   ]
+   ],
+   "art": "crane_dancer"
   },
   {
    "id": "enemy:frostpeak_traitor",
@@ -441,7 +447,8 @@
    "skills": [
     "skill:traitor_frost_slash",
     "skill:icy_lunge"
-   ]
+   ],
+   "art": "frostpeak_traitor"
   },
   {
    "id": "enemy:river_ghoul",
@@ -498,7 +505,8 @@
    "skills": [
     "skill:silk_spit",
     "skill:spider_venom_bite"
-   ]
+   ],
+   "art": "bamboo_spider"
   },
   {
    "id": "enemy:ash_hound",
@@ -516,7 +524,8 @@
    },
    "skills": [
     "skill:ember_bite"
-   ]
+   ],
+   "art": "ash_hound"
   },
   {
    "id": "enemy:stone_puppet",
@@ -2162,7 +2171,8 @@
    "skills": [
     "skill:heavenly_bolt",
     "skill:tribulation_storm"
-   ]
+   ],
+   "art": "thunder_spirit"
   },
   {
    "id": "enemy:heart_demon",
@@ -2180,7 +2190,8 @@
     "critDmg": 1.6
    },
    "skills": [],
-   "mirror": "The heroine on trial: her card, phase, techniques and stats, darkened"
+   "mirror": "The heroine on trial: her card, phase, techniques and stats, darkened",
+   "art": "heart_demon"
   }
  ]
 }

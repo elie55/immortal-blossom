@@ -34,45 +34,85 @@
    "name": "Meridians",
    "meridians": [
     {
+     "key": "lung",
      "name": "Lung",
+     "cn": "肺经",
      "phase": "phase:metal",
      "stat": "stat:atk",
+     "perNode": 0.03,
      "cost": "item:metal_essence"
     },
     {
+     "key": "liver",
      "name": "Liver",
+     "cn": "肝经",
      "phase": "phase:wood",
      "stat": "stat:haste",
+     "perNode": 2,
      "cost": "item:wood_essence"
     },
     {
+     "key": "kidney",
      "name": "Kidney",
+     "cn": "肾经",
      "phase": "phase:water",
      "stat": "stat:hp",
+     "perNode": 0.03,
      "cost": "item:water_essence"
     },
     {
+     "key": "heart",
      "name": "Heart",
+     "cn": "心经",
      "phase": "phase:fire",
      "stat": "stat:crit_dmg",
+     "perNode": 0.05,
      "cost": "item:fire_essence"
     },
     {
+     "key": "spleen",
      "name": "Spleen",
+     "cn": "脾经",
      "phase": "phase:earth",
      "stat": "stat:def",
+     "perNode": 0.04,
      "cost": "item:earth_essence"
     },
     {
+     "key": "ren_du",
      "name": "Ren and Du vessels",
-     "upgrades": "one technique gains a new effect",
+     "cn": "任督二脉",
+     "opensAt": "realm:body_integration",
+     "upgrades": "one technique gains a new effect: choose her S2 or her ultimate, and Empowering it costs half the Spirit Qi",
      "cost": [
-      "item:metal_essence",
-      "item:wood_essence",
-      "item:water_essence",
-      "item:fire_essence",
-      "item:earth_essence",
-      "item:dao_crystal"
+      {
+       "item": "item:metal_essence",
+       "qty": 50
+      },
+      {
+       "item": "item:wood_essence",
+       "qty": 50
+      },
+      {
+       "item": "item:water_essence",
+       "qty": 50
+      },
+      {
+       "item": "item:fire_essence",
+       "qty": 50
+      },
+      {
+       "item": "item:earth_essence",
+       "qty": 50
+      },
+      {
+       "item": "item:dao_crystal",
+       "qty": 1
+      },
+      {
+       "cur": "cur:spirit_stones",
+       "qty": 250000
+      }
      ]
     }
    ],
@@ -85,7 +125,15 @@
     "item:earth_essence",
     "item:dao_crystal",
     "cur:spirit_stones"
-   ]
+   ],
+   "nodes": 5,
+   "nodeCostParams": {
+    "essencePerN": 10,
+    "ownPhaseMultiplier": 2,
+    "stonesPerN": 5000
+   },
+   "slots": "one organ meridian per breakthrough (Foundation Establishment opens the first, Void Refinement the fifth), in the order the player chooses; the Ren and Du vessels open at Body Integration",
+   "statsOn": "a meridian multiplies her base stats (level and realm) before gear, like the bond bonus"
   },
   {
    "id": "sys:mastery",

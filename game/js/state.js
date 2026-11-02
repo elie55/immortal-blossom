@@ -1,10 +1,10 @@
 // The player's save: one JSON document kept in IndexedDB (localStorage as a fallback, memory if both fail),
 // with a schema version, a checksum, autosave and export/import as text. Also the rules that change it:
 // rewards and costs, EXP and breakthroughs, stage clears and stars, summons.
-import { get, all, expToNext, levelCap, nextRealm, SLICE_HEROES, battleExp, heroStats } from './data.js';
+import { get, all, expToNext, levelCap, nextRealm, SLICE_HEROES, battleExp, heroBase, bondLevel, masteryCap, meridians } from './data.js';
 import { rollGearEntry, makeArtefact, refineCost, refineOnce, salvageValue, engrave, engraveCost, canReforge, reforgeCost, nextTier, gearBonus, withGear, canWear, POSITIONS, POS_SLOT, rarityOrder, tierOrder, rollScore } from './gear.js';
 
-const SCHEMA = 2;
+const SCHEMA = 3;
 const DB_NAME = 'immortal-blossoms', STORE = 'saves', SLOT = 'slot1', LS_KEY = 'ib_save_slot1';
 
 export function freshSave() {
@@ -21,6 +21,8 @@ export function freshSave() {
     // the Storage Ring: every piece by id; recently salvaged pieces (newest first) with what they returned
     gear: { seq: 0, pieces: {}, recent: [], auto: freshAuto(), view: { sort: 'rarity', dir: -1, filter: {} } },
     forge: { job: null },
+    // today's bond chores: one tea with one heroine, lobby taps up to a cap
+    day: { key: '', tea: null, taps: 0 },
     flags: { seen: {} },
     settings: { muted: false, speed: 1, textSpeed: 1 },
     log: { battles: 0, wins: 0, playMs: 0 },
@@ -49,6 +51,9 @@ function migrate(d) {
   d.gear = { ...base.gear, ...d.gear }; d.gear.auto = { ...freshAuto(), ...d.gear.auto }; d.gear.view = { ...base.gear.view, ...d.gear.view };
   for (const h of Object.values(d.heroes)) if (!h.eq) h.eq = {};
   for (const k of Object.keys(d.items)) if (k.startsWith('art:')) { for (let i = 0; i < d.items[k]; i++) storePiece(d, makeArtefact(k, 'rarity:rare')); delete d.items[k]; }
+  // schema 3: technique mastery, meridians and bond points on every heroine; the day's tea and taps
+  for (const h of Object.values(d.heroes)) { h.mastery = h.mastery || {}; h.meridians = h.meridians || {}; h.bond = h.bond || 0; h.petals = h.petals || 0; }
+  d.day = { ...base.day, ...d.day };
   d.v = SCHEMA;
   return d;
 }
@@ -116,7 +121,7 @@ export const prog = hid => D().heroes[hid];
 /** A heroine joins; a duplicate opens a Dao Blossom petal, and past six it becomes Blossom Dew. */
 export function gainHero(hid) {
   const h = D().heroes[hid];
-  if (!h) { D().heroes[hid] = { level: 1, exp: 0, bt: 0, petals: 0, bond: 0, eq: {}, got: Date.now() }; if (!D().lobby) D().lobby = hid; return { hero: hid, isNew: true }; }
+  if (!h) { D().heroes[hid] = { level: 1, exp: 0, bt: 0, petals: 0, bond: 0, eq: {}, mastery: {}, meridians: {}, got: Date.now() }; if (!D().lobby) D().lobby = hid; return { hero: hid, isNew: true }; }
   if (h.petals < 6) { h.petals++; return { hero: hid, petal: h.petals }; }
   const dew = { 3: 10, 4: 30, 5: 80 }[get(hid).rarity] || 10;
   add('cur:blossom_dew', dew);
@@ -152,6 +157,93 @@ export function usePills(hid, sel) {
   const costs = [...Object.entries(sel).filter(([, n]) => n > 0).map(([id, n]) => ({ item: id, qty: n })), { cur: 'cur:spirit_stones', qty: plan.stones }];
   if (!pay(costs)) return null;
   return addExp(hid, plan.exp);
+}
+
+// ---------------- growth: technique mastery, meridians, Dao Blossom, bonds ----------------
+const dayKey = (d = new Date()) => `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
+/** Today's bond chores, reset when the date changes. */
+function dayState() { const s = D().day; if (s.key !== dayKey()) Object.assign(s, { key: dayKey(), tea: null, taps: 0 }); return s; }
+const bondPts = () => get('rules:growth')?.bondPoints || {};
+
+/** A technique's next mastery level with its cost and step, or null at the end. locked says what it waits for. */
+export function masteryNext(hid, sid) {
+  const p = prog(hid); if (!p) return null;
+  const lv = (p.mastery || {})[sid] || 0, steps = get(sid)?.mastery || [];
+  const step = (get('sys:mastery')?.levels || []).find(l => l.level === lv + 1);
+  if (!step || lv >= steps.length) return null;
+  return { level: lv + 1, cost: step.cost, text: steps[lv], locked: lv + 1 > masteryCap(hid, sid, p.petals || 0) ? 'a Dao Blossom petal' : null };
+}
+export function masteryUp(hid, sid) {
+  const n = masteryNext(hid, sid); if (!n || n.locked || !pay(n.cost)) return false;
+  const p = prog(hid); p.mastery = { ...(p.mastery || {}), [sid]: n.level }; persist();
+  return true;
+}
+/** Meridian slots: one organ meridian per breakthrough, five at most. */
+export const meridianSlots = hid => Math.min(5, prog(hid)?.bt || 0);
+export const meridiansOpen = hid => Object.entries(prog(hid)?.meridians || {}).filter(([k, n]) => k !== 'ren_du' && n > 0).length;
+/** The next node of an organ meridian with its cost; locked says why it cannot open yet. */
+export function nodeNext(hid, key) {
+  const p = prog(hid), m = meridians().find(x => x.key === key);
+  if (!p || !m || !m.stat) return null;
+  const n = (p.meridians || {})[key] || 0; if (n >= (get('sys:meridians').nodes || 5)) return null;
+  const c = get('sys:meridians').nodeCostParams, k = n + 1;
+  const ess = c.essencePerN * k * (m.phase === get(hid).phase ? c.ownPhaseMultiplier : 1);
+  const locked = !n && meridiansOpen(hid) >= meridianSlots(hid) ? (meridianSlots(hid) >= 5 ? 'Every meridian slot is taken' : 'Her next breakthrough opens another meridian') : null;
+  return { level: k, cost: [{ item: m.cost, qty: ess }, { cur: 'cur:spirit_stones', qty: c.stonesPerN * k }], locked };
+}
+export function openNode(hid, key) {
+  const n = nodeNext(hid, key); if (!n || n.locked || !pay(n.cost)) return false;
+  const p = prog(hid); p.meridians = { ...(p.meridians || {}), [key]: n.level }; persist();
+  return true;
+}
+/** The Ren and Du vessels: they open at Body Integration, then upgrade the technique she chooses. */
+export function renDuState(hid) {
+  const p = prog(hid), m = meridians().find(x => x.key === 'ren_du'); if (!p || !m) return null;
+  const need = all('realm').sort((a, b) => a.order - b.order).findIndex(r => r.id === m.opensAt);
+  return { open: !!(p.meridians || {}).ren_du, can: (p.bt || 0) >= need, realm: m.opensAt, cost: m.cost, text: m.upgrades, choice: p.renDu || null };
+}
+export function openRenDu(hid) {
+  const s = renDuState(hid); if (!s || s.open || !s.can || !pay(s.cost)) return false;
+  const p = prog(hid); p.meridians = { ...(p.meridians || {}), ren_du: 1 }; persist();
+  return true;
+}
+export function chooseRenDu(hid, sid) { const s = renDuState(hid); if (!s?.open) return false; prog(hid).renDu = sid; persist(); return true; }
+/** Blossom Dew for her next petal (null at Full Bloom). */
+export function petalCost(hid) {
+  const p = prog(hid); if (!p || (p.petals || 0) >= 6) return null;
+  return [{ cur: 'cur:blossom_dew', qty: get('sys:dao_blossom').petalDewCost[p.petals || 0] }];
+}
+export function openPetal(hid) { const c = petalCost(hid); if (!c || !pay(c)) return false; prog(hid).petals = (prog(hid).petals || 0) + 1; persist(); return true; }
+/** Bonds: levels 1 to 10 from points earned in battle, with gifts, tea and lobby taps. */
+export const bondOf = hid => bondLevel(prog(hid)?.bond || 0);
+export function addBond(hid, pts) {
+  const p = prog(hid); if (!p || !pts) return null;
+  const before = bondLevel(p.bond || 0); p.bond = (p.bond || 0) + pts; persist();
+  return { hid, pts, before, after: bondLevel(p.bond) };
+}
+/** How she takes a gift: liked, disliked or plain, and its points. */
+export function giftTaste(hid, itemId) {
+  const g = get(hid)?.gifts || {}, bp = bondPts();
+  if ((g.likes || []).includes(itemId)) return { taste: 'liked', pts: bp.likedGift || 40 };
+  if ((g.dislikes || []).includes(itemId)) return { taste: 'disliked', pts: bp.dislikedGift || 5 };
+  return { taste: 'plain', pts: bp.gift || 20 };
+}
+export function giveGift(hid, itemId) {
+  if (!owned(hid) || qty(itemId) < 1) return null;
+  add(itemId, -1);
+  const t = giftTaste(hid, itemId);
+  return { ...addBond(hid, t.pts), taste: t.taste };
+}
+export const teaToday = () => dayState().tea;
+export function takeTea(hid) {
+  const s = dayState(); if (s.tea || !owned(hid)) return null;
+  s.tea = hid; return addBond(hid, bondPts().tea || 30);
+}
+/** A tap on the lobby heroine: a few points a day. */
+export function lobbyTap(hid) {
+  const s = dayState(), bp = bondPts(), n = bp.lobbyTap || 2;
+  if (!owned(hid) || s.taps + n > (bp.lobbyTapDailyCap || 10)) return null;
+  s.taps += n; return addBond(hid, n);
 }
 
 // ---------------- stages ----------------
@@ -192,7 +284,7 @@ export function clearStage(stage, result = {}) {
   const exp = [];
   if (result.heroes && stage.waves) {
     const base = battleExp(stage);
-    for (const h of result.heroes) { if (!owned(h.id)) continue; const gain = h.alive ? base : Math.round(base / 2); exp.push({ id: h.id, exp: gain, ...addExp(h.id, gain) }); }
+    for (const h of result.heroes) { if (!owned(h.id)) continue; const gain = h.alive ? base : Math.round(base / 2); exp.push({ id: h.id, exp: gain, ...addExp(h.id, gain) }); addBond(h.id, bondPts().battle || 1); }
   }
   D().log.wins++;
   persist();
@@ -247,8 +339,8 @@ function remember(p, back) { G().recent.unshift({ piece: { ...p, hero: null, pos
 /** The pieces a heroine wears, by position. */
 export function heroGear(hid) { const eq = D().heroes[hid]?.eq || {}; return POSITIONS.map(pos => (eq[pos] && piece(eq[pos])) || null); }
 export const heroBonus = hid => gearBonus(heroGear(hid));
-/** A heroine's stats with her gear on. */
-export function finalStats(hid, level, bt) { const p = D().heroes[hid] || {}; return withGear(heroStats(hid, level ?? p.level ?? 1, bt ?? p.bt ?? 0), heroBonus(hid)); }
+/** A heroine's stats with her meridians, bond and gear (level and realm can be overridden for previews). */
+export function finalStats(hid, level, bt) { const p = D().heroes[hid] || {}; return withGear(heroBase(hid, { ...p, level: level ?? p.level ?? 1, bt: bt ?? p.bt ?? 0 }), heroBonus(hid)); }
 /** Equip a piece at a position (a ring may go on either ring finger). Takes it off whoever wore it. */
 export function equip(hid, pos, id) {
   const p = piece(id), h = D().heroes[hid];

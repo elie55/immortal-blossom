@@ -363,12 +363,32 @@
     {
      "n": 1,
      "modifies": "skill:tang_mian_s1",
-     "text": "Drowsy Cleave has a 30% chance to Body Shatter for 1 turn"
+     "text": "Drowsy Cleave has a 30% chance to Body Shatter for 1 turn",
+     "patch": [
+      {
+       "add": {
+        "do": "apply",
+        "status": "status:body_shatter",
+        "turns": 1,
+        "chance": 0.3
+       }
+      }
+     ]
     },
     {
      "n": 2,
      "modifies": "skill:tang_mian_s2",
-     "text": "Stone Pillow Smash's Body Shatter lasts 3 turns"
+     "text": "Stone Pillow Smash's Body Shatter lasts 3 turns",
+     "patch": [
+      {
+       "match": {
+        "status": "status:body_shatter"
+       },
+       "set": {
+        "turns": 3
+       }
+      }
+     ]
     },
     {
      "n": 3,
@@ -379,7 +399,18 @@
     {
      "n": 4,
      "modifies": "skill:tang_mian_p30",
-     "text": "Rude Awakening also gives her Iron Body for 1 turn"
+     "text": "Rude Awakening also gives her Iron Body for 1 turn",
+     "patch": [
+      {
+       "add": {
+        "do": "apply",
+        "status": "status:iron_body",
+        "turns": 1,
+        "target": "self",
+        "once": "turn"
+       }
+      }
+     ]
     },
     {
      "n": 5,
@@ -390,7 +421,20 @@
     {
      "n": 6,
      "modifies": "skill:tang_mian_s3",
-     "text": "The Crabapple Wakes puts the healthiest other enemy into Lotus Dream even without Empower, and its cooldown drops to 4"
+     "text": "The Crabapple Wakes puts the healthiest other enemy into Lotus Dream even without Empower, and its cooldown drops to 4",
+     "patch": [
+      {
+       "add": {
+        "do": "apply",
+        "status": "status:lotus_dream",
+        "turns": 1,
+        "target": "healthiest_other_enemy"
+       }
+      },
+      {
+       "cooldown": 4
+      }
+     ]
     }
    ],
    "unique": "unique:tang_mian",
@@ -684,12 +728,31 @@
     {
      "n": 1,
      "modifies": "skill:lin_chaxue_s1",
-     "text": "Tea-Mist Palm's chance of Mist Veil rises from 30% to 50%"
+     "text": "Tea-Mist Palm's chance of Mist Veil rises from 30% to 50%",
+     "patch": [
+      {
+       "match": {
+        "status": "status:mist_veil"
+       },
+       "set": {
+        "chance": 0.5
+       }
+      }
+     ]
     },
     {
      "n": 2,
      "modifies": "skill:lin_chaxue_s2",
-     "text": "Winter Camellia Guard also removes one debuff from her"
+     "text": "Winter Camellia Guard also removes one debuff from her",
+     "patch": [
+      {
+       "add": {
+        "do": "cleanse",
+        "count": 1,
+        "target": "self"
+       }
+      }
+     ]
     },
     {
      "n": 3,
@@ -700,7 +763,18 @@
     {
      "n": 4,
      "modifies": "skill:lin_chaxue_p50",
-     "text": "Falls Whole also gives every ally Clear Heart for 1 turn"
+     "text": "Falls Whole also gives every ally Clear Heart for 1 turn",
+     "patch": [
+      {
+       "add": {
+        "do": "apply",
+        "status": "status:clear_heart",
+        "turns": 1,
+        "target": "all_allies",
+        "once": "battle"
+       }
+      }
+     ]
     },
     {
      "n": 5,
@@ -711,7 +785,20 @@
     {
      "n": 6,
      "modifies": "skill:lin_chaxue_s3",
-     "text": "Whole-Bloom Fall gives Lotus Dew even without Empower, and its cooldown drops to 4"
+     "text": "Whole-Bloom Fall gives Lotus Dew even without Empower, and its cooldown drops to 4",
+     "patch": [
+      {
+       "add": {
+        "do": "apply",
+        "status": "status:lotus_dew",
+        "turns": 2,
+        "target": "all_allies"
+       }
+      },
+      {
+       "cooldown": 4
+      }
+     ]
     }
    ],
    "unique": "unique:lin_chaxue",
@@ -899,12 +986,32 @@
     {
      "n": 1,
      "modifies": "skill:wei_zi_s1",
-     "text": "Imperial Fan Strike's shield rises to 10% of her max Health"
+     "text": "Imperial Fan Strike's shield rises to 10% of her max Health",
+     "patch": [
+      {
+       "match": {
+        "do": "shield"
+       },
+       "set": {
+        "pctOfMaxHp": 0.1
+       }
+      }
+     ]
     },
     {
      "n": 2,
      "modifies": "skill:wei_zi_s2",
-     "text": "Unbowed Before the Empress's Clear Heart lasts 2 turns"
+     "text": "Unbowed Before the Empress's Clear Heart lasts 2 turns",
+     "patch": [
+      {
+       "match": {
+        "status": "status:clear_heart"
+       },
+       "set": {
+        "turns": 2
+       }
+      }
+     ]
     },
     {
      "n": 3,
@@ -915,7 +1022,17 @@
     {
      "n": 4,
      "modifies": "skill:wei_zi_p50",
-     "text": "Wealth and Rank pays 2 Spirit Qi when the hit is a critical hit"
+     "text": "Wealth and Rank pays 2 Spirit Qi when the hit is a critical hit",
+     "patch": [
+      {
+       "match": {
+        "do": "qi"
+       },
+       "set": {
+        "critAmount": 2
+       }
+      }
+     ]
     },
     {
      "n": 5,
@@ -926,7 +1043,25 @@
     {
      "n": 6,
      "modifies": "skill:wei_zi_s3",
-     "text": "Queen of a Hundred Flowers gives 5 Spirit Qi instead of 3 and readies every ally's S1"
+     "text": "Queen of a Hundred Flowers gives 5 Spirit Qi instead of 3 and readies every ally's S1",
+     "patch": [
+      {
+       "match": {
+        "do": "qi"
+       },
+       "set": {
+        "amount": 5
+       }
+      },
+      {
+       "add": {
+        "do": "refresh",
+        "target": "all_allies",
+        "slot": "s1",
+        "ready": true
+       }
+      }
+     ]
     }
    ],
    "unique": "unique:wei_zi",
@@ -1449,12 +1584,30 @@
     {
      "n": 1,
      "modifies": "skill:ning_suxin_s1",
-     "text": "White Jasmine Seal's chance of Karmic Mark rises from 30% to 50%"
+     "text": "White Jasmine Seal's chance of Karmic Mark rises from 30% to 50%",
+     "patch": [
+      {
+       "match": {
+        "status": "status:karmic_mark"
+       },
+       "set": {
+        "chance": 0.5
+       }
+      }
+     ]
     },
     {
      "n": 2,
      "modifies": "skill:ning_suxin_s2",
-     "text": "Scripture of Silence also delays the target's charging techniques by 1 turn"
+     "text": "Scripture of Silence also delays the target's charging techniques by 1 turn",
+     "patch": [
+      {
+       "add": {
+        "do": "delay",
+        "turns": 1
+       }
+      }
+     ]
     },
     {
      "n": 3,
@@ -1465,7 +1618,17 @@
     {
      "n": 4,
      "modifies": "skill:ning_suxin_p50",
-     "text": "Song of the Jasmine also gives her +10% damage for the turn"
+     "text": "Song of the Jasmine also gives her +10% damage for the turn",
+     "patch": [
+      {
+       "add": {
+        "do": "stat",
+        "damageBonus": 0.1,
+        "duration": "turn",
+        "once": "turn"
+       }
+      }
+     ]
     },
     {
      "n": 5,
@@ -1476,7 +1639,19 @@
     {
      "n": 6,
      "modifies": "skill:ning_suxin_s3",
-     "text": "Fragrance Fills the Garden applies Body Shatter even without Empower, and its cooldown drops to 4"
+     "text": "Fragrance Fills the Garden applies Body Shatter even without Empower, and its cooldown drops to 4",
+     "patch": [
+      {
+       "add": {
+        "do": "apply",
+        "status": "status:body_shatter",
+        "turns": 1
+       }
+      },
+      {
+       "cooldown": 4
+      }
+     ]
     }
    ],
    "unique": "unique:ning_suxin",
@@ -2550,12 +2725,32 @@
     {
      "n": 1,
      "modifies": "skill:an_baihe_s1",
-     "text": "Lily Bulb Remedy heals the two most injured allies"
+     "text": "Lily Bulb Remedy heals the two most injured allies",
+     "patch": [
+      {
+       "match": {
+        "do": "heal"
+       },
+       "set": {
+        "target": "lowest_2_allies"
+       }
+      }
+     ]
     },
     {
      "n": 2,
      "modifies": "skill:an_baihe_s2",
-     "text": "Hundred Years in Harmony's Lotus Dew lasts 3 turns"
+     "text": "Hundred Years in Harmony's Lotus Dew lasts 3 turns",
+     "patch": [
+      {
+       "match": {
+        "status": "status:lotus_dew"
+       },
+       "set": {
+        "turns": 3
+       }
+      }
+     ]
     },
     {
      "n": 3,
@@ -2566,7 +2761,17 @@
     {
      "n": 4,
      "modifies": "skill:an_baihe_p30",
-     "text": "Matchmaker's Eye gives +35% healing instead of 20%"
+     "text": "Matchmaker's Eye gives +35% healing instead of 20%",
+     "patch": [
+      {
+       "match": {
+        "do": "stat"
+       },
+       "set": {
+        "value": 0.35
+       }
+      }
+     ]
     },
     {
      "n": 5,
@@ -2577,7 +2782,20 @@
     {
      "n": 6,
      "modifies": "skill:an_baihe_s3",
-     "text": "Red Thread Bloom also readies the S1 of the most injured ally, and its cooldown drops to 4"
+     "text": "Red Thread Bloom also readies the S1 of the most injured ally, and its cooldown drops to 4",
+     "patch": [
+      {
+       "add": {
+        "do": "refresh",
+        "target": "lowest_ally",
+        "slot": "s1",
+        "ready": true
+       }
+      },
+      {
+       "cooldown": 4
+      }
+     ]
     }
    ],
    "unique": "unique:an_baihe",
@@ -2766,12 +2984,32 @@
     {
      "n": 1,
      "modifies": "skill:fang_yanzhi_s1",
-     "text": "Rouge Strike has a 30% chance of Fire Poison for 2 turns"
+     "text": "Rouge Strike has a 30% chance of Fire Poison for 2 turns",
+     "patch": [
+      {
+       "add": {
+        "do": "apply",
+        "status": "status:fire_poison",
+        "turns": 2,
+        "chance": 0.3
+       }
+      }
+     ]
     },
     {
      "n": 2,
      "modifies": "skill:fang_yanzhi_s2",
-     "text": "Quicken the Blood gives Surging Qi to the two allies with the highest Attack"
+     "text": "Quicken the Blood gives Surging Qi to the two allies with the highest Attack",
+     "patch": [
+      {
+       "match": {
+        "status": "status:surging_qi"
+       },
+       "set": {
+        "target": "highest_atk_2_allies"
+       }
+      }
+     ]
     },
     {
      "n": 3,
@@ -2782,7 +3020,17 @@
     {
      "n": 4,
      "modifies": "skill:fang_yanzhi_p50",
-     "text": "A Little Rouge also gives every ally Wind Step for 1 turn"
+     "text": "A Little Rouge also gives every ally Wind Step for 1 turn",
+     "patch": [
+      {
+       "add": {
+        "do": "apply",
+        "status": "status:wind_step",
+        "turns": 1,
+        "target": "all_allies"
+       }
+      }
+     ]
     },
     {
      "n": 5,
@@ -2793,7 +3041,22 @@
     {
      "n": 6,
      "modifies": "skill:fang_yanzhi_s3",
-     "text": "Red Flower Cautery no longer costs health, and it also gives Lotus Dew for 2 turns"
+     "text": "Red Flower Cautery no longer costs health, and it also gives Lotus Dew for 2 turns",
+     "patch": [
+      {
+       "remove": {
+        "do": "cost_health"
+       }
+      },
+      {
+       "add": {
+        "do": "apply",
+        "status": "status:lotus_dew",
+        "turns": 2,
+        "target": "all_allies"
+       }
+      }
+     ]
     }
    ],
    "unique": "unique:fang_yanzhi",

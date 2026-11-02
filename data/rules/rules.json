@@ -148,7 +148,65 @@
     "lobbyTapDailyCap": 10
    },
    "rarityPowerIndex": "mean of hp/HP0, offense/OFF0 and def/DEF0 against the path's standard, where offense = atk * (1 + crit * (critDmg - 1)); it must equal the rarity multiplier within 0.01",
-   "battleExp": "12 * the sum of every enemy level squared over all waves, to each heroine who fought; a heroine who fell gets half"
+   "battleExp": "12 * the sum of every enemy level squared over all waves, to each heroine who fought; a heroine who fell gets half",
+   "bondLevels": [
+    0,
+    40,
+    120,
+    240,
+    400,
+    600,
+    850,
+    1150,
+    1500,
+    2000
+   ],
+   "bondLevelsAbout": "cumulative bond points to reach levels 1 to 10; bondStatBonus[level - 1] adds to her base Health, Attack and Defense",
+   "bondUnlocks": [
+    {
+     "level": 1,
+     "profile": "motto"
+    },
+    {
+     "level": 2,
+     "profile": "specialty",
+     "voice": "intro"
+    },
+    {
+     "level": 3,
+     "profile": "hobby"
+    },
+    {
+     "level": 4,
+     "profile": "likes",
+     "reveals": "likes"
+    },
+    {
+     "level": 5,
+     "profile": "dislikes",
+     "reveals": "dislikes",
+     "voice": "victory"
+    },
+    {
+     "level": 6,
+     "outfit": 1
+    },
+    {
+     "level": 7,
+     "voice": "ultimate"
+    },
+    {
+     "level": 10,
+     "outfit": 2,
+     "illustration": true
+    }
+   ],
+   "teaPerDay": 1,
+   "resonance": {
+    "stat": "stat:atk",
+    "value": 0.05,
+    "text": "Fielding heroines tied by a Karmic Thread: each of them gains +5% Attack (once, however many threads)"
+   }
   },
   {
    "id": "rules:gear",

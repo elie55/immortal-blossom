@@ -27,8 +27,13 @@ ART = {
     'sheet_bosses_3.png': (2, 1, 'boss', ['boss_furnace_guardian', 'boss_yellow_dragon']),
     'sheet_bosses_4.png': (2, 1, 'boss', ['boss_azure_dragon', 'boss_white_tiger']),
     'sheet_bosses_5.png': (2, 1, 'boss', ['boss_vermilion_bird', 'boss_black_tortoise']),
+    'sheet_bosses_6.png': (2, 1, 'boss', ['boss_han_lie', 'boss_ku_ye']),
+    'boss_hu_yinling.png': (1, 1, 'boss', ['boss_hu_yinling']),
+    'sheet_v1_cards_1.png': (2, 2, 'card', ['ash_hound', 'bamboo_spider', 'crane_dancer', 'fox_trickster']),
+    'sheet_v1_cards_2.png': (2, 2, 'card', ['frostpeak_traitor', 'netherflame_shade', 'thunder_spirit', 'heart_demon']),
     **{f'bg_{k}.png': (1, 1, 'bg', [k]) for k in ['howling_gorge', 'bronze_wastes', 'stone_forest', 'formless_marsh', 'nine_head_swamp',
-                                                  'medicine_king_valley', 'five_phases_shrines', 'artifact_forge']},
+                                                  'medicine_king_valley', 'five_phases_shrines', 'artifact_forge',
+                                                  'frostpeak', 'moonshadow_bamboo_sea', 'vermilion_ruins', 'gate_of_the_jade_pool', 'tianji_pavilion']},
 }
 SIZE = {'card': (640, 960), 'boss': (1280, 853), 'bg': (1600, 1067)}
 

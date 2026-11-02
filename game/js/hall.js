@@ -1,7 +1,7 @@
 // The title screen, the Pavilion Hall (lobby) and settings.
 import { App, esc } from './app.js';
 import { get, cardUrl, npcUrl, SLICE_HEROES, hasArt } from './data.js';
-import { data, flags, hasProgress, ownedHeroes, owned, qty, persist, exportCode, importCode, resetSave, SAVE } from './state.js';
+import { data, flags, hasProgress, ownedHeroes, owned, qty, persist, exportCode, importCode, resetSave, SAVE, lobbyTap } from './state.js';
 import { Flow } from './story.js';
 import { modeOpen } from './trials.js';
 
@@ -74,7 +74,7 @@ App.register('hall', {
       rules: () => App.rulesDialog(),
       ring: () => App.go('ring', {}),
       locked: (b) => App.toast(LOCKED[b.dataset.k] || 'Coming soon'),
-      tap: () => { const q = lh.quotes || {}; const lines = [q.intro, q.victory, q.ultimate, lh.profile?.motto].filter(Boolean); say(`<b style="font-family:Cinzel">${esc(lh.name)}</b><br>“${esc(lines[Math.floor(Math.random() * lines.length)])}”`, lobby); },
+      tap: () => { const q = lh.quotes || {}; const lines = [q.intro, q.victory, q.ultimate, lh.profile?.motto].filter(Boolean); const b = lobbyTap(lobby); say(`<b style="font-family:Cinzel">${esc(lh.name)}</b><br>“${esc(lines[Math.floor(Math.random() * lines.length)])}”${b ? `<br><small style="color:#f6b3cc">Bond +${b.pts}${b.after > b.before ? ` · bond ${b.after}!` : ''}</small>` : ''}`, lobby); },
     });
     void npcUrl;
   },
