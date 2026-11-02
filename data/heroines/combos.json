@@ -133,7 +133,7 @@
    ],
    "text": "An ally shielded by Wei Zi also gains Ying Wucai's current colour for 1 turn (Metal Sword Intent, Wood Wind Step, Water Lotus Dew, Fire Surging Qi, Earth Iron Body). When one of Wei Zi's shields breaks, Ying Wucai heals that ally for 50% of the shield's value.",
    "howTo": "Shield first, colour second: Queen of a Hundred Flowers becomes a buff for the whole team.",
-   "draft": true
+   "implemented": true
   },
   {
    "id": "combo:moonlight_takes_colour",
@@ -153,7 +153,7 @@
    ],
    "text": "Gui Chanjuan's techniques take the phase that overcomes the most living enemies, as moonlight takes the hydrangea's colour. The borrowed phase also sets her Phase Qi.",
    "howTo": "Bring them against mixed waves: every area technique strikes with advantage where it counts.",
-   "draft": true
+   "implemented": true
   },
   {
    "id": "combo:queens_thorns",
@@ -181,7 +181,7 @@
    ],
    "text": "An enemy Provoked by Wei Zi gains a Heart Demon stack each time it hits her. Each time Heart Demon turns an enemy against its ally, the team gains 1 Spirit Qi.",
    "howTo": "Unbowed Before the Empress Provokes every enemy, and their blows feed the charm. Fire feeds Earth: Hu Qiangwei, then Wei Zi.",
-   "draft": true
+   "implemented": true
   },
   {
    "id": "combo:crow_and_phoenix",
@@ -233,7 +233,7 @@
    ],
    "text": "Karmic Marks from either of them last 1 turn longer. Wu Gang's Endless Axe grows one extra step (+10%) for each Karmic-Marked enemy it hits.",
    "howTo": "Ning Suxin marks the field with Fragrance Fills the Garden, and Gui Chanjuan's axe grows twice as fast. A 3★ who makes a 5★ shine.",
-   "draft": true
+   "implemented": true
   },
   {
    "id": "combo:snow_on_still_water",
@@ -316,7 +316,7 @@
    ],
    "text": "Mo Yingyue's critical hits add a Heart Demon stack. Hu Qiangwei's techniques add 1 extra Heart Demon stack to Soul Shocked enemies.",
    "howTo": "Heaven's Execution Soul Shocks, then Rose of the Crimson Moon charms in one stroke. Wood feeds Fire: Mo Yingyue, then Hu Qiangwei.",
-   "draft": true
+   "implemented": true
   },
   {
    "id": "combo:poison_into_medicine",
@@ -370,7 +370,7 @@
    ],
    "text": "When Ling Shuang's single-target technique hits, Gu Youlan follows up for 60% ATK (once per turn). Her follow-ups never break Frost Seal, so Ling Shuang's finisher still counts it.",
    "howTo": "Ling Shuang freezes, Gu Youlan rides the wind behind her. Water feeds Wood: Ling Shuang, then Gu Youlan.",
-   "draft": true
+   "implemented": true
   },
   {
    "id": "combo:peach_and_apricot",
@@ -425,7 +425,8 @@
    "text": "When Mo Yingyue hits a Frost Sealed enemy, the seal shatters for +60% damage instead of +30%, and the enemy is Soul Shocked for 1 turn.",
    "howTo": "Freeze with Ling Shuang, then strike with Mo Yingyue. Water feeds Wood, so the pair is also a Harmony link.",
    "verticalSlice": true,
-   "draft": true
+   "draft": true,
+   "implemented": true
   },
   {
    "id": "combo:phoenix_among_peonies",
@@ -453,7 +454,8 @@
    "text": "When a burning enemy hits Wei Zi, its Fire Poison flares and deals all its remaining damage at once. Yan Feihong's Fire Poison lasts 1 turn longer on enemies Wei Zi has Provoked.",
    "howTo": "Scarlet Inferno burns the field and Unbowed Before the Empress Provokes it: every blow against Wei Zi detonates. Fire feeds Earth: Yan Feihong, then Wei Zi.",
    "verticalSlice": true,
-   "draft": true
+   "draft": true,
+   "implemented": true
   },
   {
    "id": "combo:returned_karma",
@@ -480,7 +482,8 @@
    "text": "Each debuff Su Lianhua removes from an ally lands on the enemy with the fewest debuffs, and the team gains 1 Spirit Qi for each (up to 2 a turn).",
    "howTo": "Let the Netherflame Sect land its burns and venom, then Jade Lotus Revival sends them home.",
    "verticalSlice": true,
-   "draft": true
+   "draft": true,
+   "implemented": true
   },
   {
    "id": "combo:sleeping_crabapple",

@@ -604,7 +604,7 @@ const techIcon = (t) => (t.icon || 'g:技').startsWith('g:')
 function createCard(u, parent) {
   const ph = PHASES[u.phase];
   const el = document.createElement('div');
-  el.className = `card ${u.side}${u.wide ? ' wide' : ''}${u.boss ? ' boss' : ''}`;
+  el.className = `card ${u.side}${u.wide ? ' wide' : ''}${u.boss ? ' boss' : ''}${u.d?.demonOf ? ' demon' : ''}`;
   el.dataset.uid = u.uid;
   el.style.setProperty('--ph', ph.color);
   const r = slotRect(u);
@@ -677,7 +677,8 @@ function refreshCard(u, first = false) {
   if (u.boss) {
     const t = u.techs.find(x => x.tele) || u.techs.find(x => x.ult) || u.techs[u.techs.length - 1], tl = el.querySelector('.c-tele');
     const when = t.cur <= 0 ? (geo.side === 'enemy' ? 'NOW' : 'NEXT TURN') : (t.cur === 1 ? 'NEXT TURN' : `in ${t.cur} turns`);
-    tl.innerHTML = `<span class="g">${(t.icon || 'g:冥').slice(2)}</span><span><small>${t.name}</small><b>${when}</b></span>`;
+    const ic = t.icon || 'g:冥';
+    tl.innerHTML = `${ic.startsWith('g:') ? `<span class="g">${ic.slice(2)}</span>` : `<img class="g" src="assets/ui/${ic}.webp" alt="">`}<span><small>${t.name}</small><b>${when}</b></span>`;
     tl.classList.toggle('hot', t.cur <= 1);
   }
   el.classList.toggle('dead', !u.alive);
@@ -1204,6 +1205,7 @@ function effTargets(x, e, techTarget) {
     case 'lowest_ally': case 'healed_ally': return as.sort((a, b) => a.hp / a.maxHp - b.hp / b.maxHp).slice(0, 1);
     case 'lowest_2_allies': return as.sort((a, b) => a.hp / a.maxHp - b.hp / b.maxHp).slice(0, 2);
     case 'highest_atk_2_allies': return as.sort((a, b) => b.atk - a.atk).slice(0, 2);
+    case 'lowest_haste_ally': return as.filter(a => a !== u).sort((a, b) => hasteOf(a) - hasteOf(b)).slice(0, 1);
     case 'lowest_enemy': return fs.sort((a, b) => a.hp / a.maxHp - b.hp / b.maxHp).slice(0, 1);
     case 'lowest_max_hp_ally': return as.sort((a, b) => a.maxHp - b.maxHp).slice(0, 1);
     case 'most_debuffed_ally': return as.sort((a, b) => b.status.filter(s => STATUS[s.id].debuff).length - a.status.filter(s => STATUS[s.id].debuff).length).slice(0, 1);
@@ -1243,26 +1245,33 @@ SKILLS.generic = async function generic(x) {
     const ts = effTargets(x, e, t.target);
     switch (e.do) {
       case 'damage': {
+        if (e.when === 'removed_buff' && !x.lastDispelled) break;   // Gentleman's Verdict (petal 6)
         const hits = e.hits || 1;
+        // Wu Gang's Endless Axe: stronger with each cast this battle (and each Karmic-Marked enemy it hit, with Moonlit Jasmine)
+        const grow = e.growsPerCast ? 1 + Math.min(e.max || 0.5, e.growsPerCast * ((t.casts || 1) - 1 + (t.extraSteps || 0))) : 1;
+        let marked = 0;
         for (let k = 0; k < hits; k++) {
           for (const f of ts) {
             if (!f.alive) continue;
             const c = C(f);
-            let p = e.power || 1;
-            if (e.bonusVs && e.bonusVs.some(s => has(f, s))) p *= 1 + (e.bonus || 0.3);
+            let p = (e.power || 1) * grow;
+            if (k === 0 && e.growsPerCast && has(f, 'mark')) marked++;
+            if (e.bonusVs && e.bonusVs.some(s => (s === 'no_buffs' ? !f.status.some(z => !STATUS[z.id].debuff) : s === 'wounded' ? f.hp / f.maxHp < 0.5 : has(f, s)))) p *= 1 + (e.bonus || 0.3);
+            if (e.bonusPerBuffRemoved) p *= 1 + e.bonusPerBuffRemoved * (x.lastDispelled || 0);
             if (e.missingHealthBonus) p *= 1 + e.missingHealthBonus * (1 - f.hp / f.maxHp);
             if (e.bonusPerDebuff) p *= 1 + Math.min(0.5, e.bonusPerDebuff * f.status.filter(s => STATUS[s.id].debuff).length);
             if (e.rampPerHit) p *= 1 + e.rampPerHit * k;
             V.fx(area ? fx.burst : (melee ? fx.slash : fx.burst), { x: c.x + rand(-14, 14), y: c.y + rand(-14, 14), w: area ? 260 : 320, dur: 460, rot: rand(-0.6, 0.6), flip: k % 2 === 1, s0: 0.75, s1: 1.12, bloom: 0.35, fadeIn: 0.02 });
             V.emitP(fx.part, c.x, c.y, area ? 6 : 10, { color: fx.col, speed: [120, 420] });
             sfx(k ? 'hit' : fx.sfx);
-            const h = x.hit(f, p, { color: fx.col, small: hits > 1 || area, pierce: e.pierce, critBonus: e.critBonus });
+            const h = x.hit(f, p, { color: fx.col, small: hits > 1 || area, pierce: e.pierce, critBonus: e.critBonus, ignoreShields: e.ignoreShields });
             if (h) x.dealt = (x.dealt || 0) + h.dmg;
             if (h && e.detonate && f.alive) await x.flare(f, e.detonate === true ? 'burn' : e.detonate);
           }
           if (area) V.shake(6, 220);
           await wait(hits > 1 ? 120 : 200);
         }
+        if (marked && combo('combo:moonlit_jasmine') && u.id === 'hero:gui_chanjuan') comboFire('combo:moonlit_jasmine', u, () => { t.extraSteps = (t.extraSteps || 0) + marked; });
         break;
       }
       case 'heal': {
@@ -1275,10 +1284,12 @@ SKILLS.generic = async function generic(x) {
         sfx('heal'); await wait(240); break;
       }
       case 'apply': {
-        const id = sid(e.status); if (!id) break;
+        // Changing Soil: the buff of her current phase (a hydrangea takes the colour of its soil)
+        const id = sid(e.byPhase ? e.byPhase[`phase:${u.colour || u.phase}`] : e.status); if (!id) break;
         if (e.when === 'dispelled' && !x.lastDispelled) break;
         const debuff = STATUS[id].debuff;
-        for (const a of ts) {
+        const reps = e.perHit ? (effects.find(z => z.do === 'damage')?.hits || 1) : 1; // Thorned Kiss: a roll for each strike
+        for (const a of ts) for (let r = 0; r < reps; r++) {
           if (!a.alive) continue;
           if (e.chance && Math.random() >= (e.chance + (t.mods?.chance || 0)) * (has(u, 'mist') && debuff ? 0.5 : 1)) continue;
           const ok = id === 'burn' ? x.burn(a, e.turns || 2) : x.status(a, id, e.turns || 1, { stacks: e.stacks, src: u, value: id === 'wound' ? Math.round(atkOf(u) * 0.12) : undefined });
@@ -1440,7 +1451,7 @@ async function startBattle(def) {
     log: { casts: 0, falls: 0, empowers: 0, shatters: 0, encounters: 0, maxKills: 0, kindred: 0, harmony: 0, combos: {}, gear: {}, passives: {} },
   });
   def.heroes.forEach((d, i) => B.units.push(makeUnit(d, 'hero', i)));
-  B.gourdDone = false; B.onceUsed = new Set(); B.phoenix = null;
+  B.gourdDone = false; B.onceUsed = new Set(); B.phoenix = null; B.moonfall = null; B.followUps = []; B.awCount = {};
   for (const u of heroes()) applyStaticPassives(u);
   B.pendingStart = heroes().flatMap(u => pFx(u, 'battle_start', 'apply').map(e => ({ u, e })));
   for (const u of heroes()) {
@@ -1579,11 +1590,15 @@ async function charmedStrike(e) {
   sfx('ghost'); await wait(380);
   if (!mates.length) return;
   const victim = mates.sort((a, b) => a.hp - b.hp)[0];
-  const t = e.techs[0];
+  // with Hu Qiangwei's sixth petal the charmed strike their allies with their strongest ready technique
+  const strong = heroes().some(x => x.id === 'hero:hu_qiangwei' && petal(x, 6));
+  const ready = strong ? e.techs.filter(x => x.cur <= 0 && x.effects?.some(z => z.do === 'damage')).sort((a, b) => techPower(b) - techPower(a))[0] : null;
+  const t = ready || e.techs[0];
+  if (ready) ready.cur = ready.cd;
   B.busy = true;
   await board.lift(e, true);
   const back = await board.lunge(e, victim, 0.3, 170);
-  const h = applyDamage(e, victim, (t.effects?.find(x => x.do === 'damage')?.power) || 1, { noCrit: true });
+  const h = applyDamage(e, victim, ready ? techPower(ready) : ((t.effects?.find(x => x.do === 'damage')?.power) || 1), { noCrit: true });
   if (h) {
     const vc = board.center(victim, 0.45);
     V.fx('ghost_slash', { x: vc.x, y: vc.y, w: 300, dur: 480, bloom: 0.3 });
@@ -1597,7 +1612,17 @@ async function charmedStrike(e) {
   emit('charm', { u: e, victim });
   if (combo('combo:sweet_poison')) { const v = has(e, 'venom'); if (v && victim.alive) addStatus(victim, 'venom', v.turns, { src: v.src }); }
   if (combo('combo:queens_thorns')) comboFire('combo:queens_thorns', e, () => gainQi(1));
+  // Nine-Tailed Allure: once a turn, a charm brings her techniques a turn closer (and with petal 4, 2 Spirit Qi)
+  for (const hu of heroes().filter(x => x.alive)) {
+    for (const ef of pFx(hu, 'always').filter(z => z.when === 'enemy_turned_by_heart_demon')) {
+      if (!useOnce(hu, ef)) continue;
+      if (ef.do === 'refresh') { for (const tt of hu.techs) if (tt.cur > 0) tt.cur = Math.max(0, tt.cur - (ef.turns || 1)); board.refreshCard(hu); passiveCallout(hu, ef.pname); }
+      if (ef.do === 'qi') gainQi(ef.amount || 1);
+    }
+  }
 }
+/** A technique's total damage power (all its strikes), for picking the strongest. */
+const techPower = t => (t.effects || []).filter(z => z.do === 'damage').reduce((a, z) => a + (z.power || 1) * (z.hits || 1), 0);
 
 /** Order units so that consecutive phases follow the generating cycle (longest Harmony chains first). */
 function chainOrder(units) {
@@ -1643,6 +1668,23 @@ async function startOfTurn(side) {
       to.barrier = amt; addStatus(to, 'shield', 2, { src: w });
       const c = board.center(to, 0.45); V.floatText('+' + amt.toLocaleString('en-US'), c.x, c.y + 30, 'shield', { label: 'AUSPICIOUS GUARD' });
       B.log.gear['AUSPICIOUS GUARD'] = (B.log.gear['AUSPICIOUS GUARD'] || 0) + 1;
+    }
+  }
+  // The Cold Palace Descends (Gui Chanjuan, petal 6): the moonlight falls again at the start of the next turn
+  if (side === 'hero' && B.moonfall) {
+    const mu = B.moonfall; B.moonfall = null;
+    const fs = enemies().filter(f => f.alive);
+    if (mu.alive && fs.length) {
+      V.flash('#e8f0ff', 0.3); sfx('ice');
+      for (const f of fs) {
+        const h = applyDamage(mu, f, 0.6, { area: true }); if (!h) continue;
+        const c = board.center(f);
+        V.fx('ice_burst', { x: c.x, y: c.y, w: 300, dur: 560, s0: 0.5, s1: 1.15, bloom: 0.3 });
+        V.floatText(h.dmg.toLocaleString('en-US'), c.x, c.y, h.crit ? 'crit' : 'dmg', { label: 'THE MOON FALLS AGAIN', size: 30 });
+        board.hitCard(f, { power: 0.6, color: '#e8f0ff' });
+        if (h.killed) killUnit(f);
+      }
+      await wait(450);
     }
   }
   // Vermilion Phoenix Covenant (Yan Feihong, petal 6): the phoenix circles back at the start of her next two turns
@@ -1764,8 +1806,10 @@ function addStatus(u, id, turns, extra = {}) {
     }
   }
   const ex = has(u, id);
+  if (id === 'mark' && src && (src.id === 'hero:gui_chanjuan' || src.id === 'hero:ning_suxin') && combo('combo:moonlit_jasmine')) turns += 1;
   if (id === 'demon' || id === 'wound') {
-    const n = extra.stacks || 1;
+    let n = extra.stacks || 1;
+    if (id === 'demon' && src?.id === 'hero:hu_qiangwei' && has(u, 'shock') && combo('combo:thorns_in_the_night')) { n += 1; B.log.combos['combo:thorns_in_the_night'] = (B.log.combos['combo:thorns_in_the_night'] || 0) + 1; }
     if (ex) { ex.stacks = Math.min(id === 'wound' ? 5 : 3, (ex.stacks || 1) + n); ex.turns = Math.max(ex.turns, turns); if (extra.src) ex.src = extra.src; if (extra.value) ex.value = Math.max(ex.value || 0, extra.value); }
     else u.status.push({ id, turns: id === 'demon' ? 99 : turns, stacks: Math.min(3, n), ...extra, stacks: Math.min(id === 'wound' ? 5 : 3, n) });
   } else if (ex) { ex.turns = Math.max(ex.turns, turns); if (extra.value) ex.value = Math.max(ex.value || 0, extra.value); if (extra.src) ex.src = extra.src; }
@@ -1834,6 +1878,8 @@ function computeHit(src, tgt, power, o = {}) {
   for (const w of B.units) if (w.alive && w.side === tgt.side) for (const e of hasWhen(w, 'while_she_stands')) if (e.damageTaken) mul *= 1 + e.damageTaken;
   let pCrit = 0;
   for (const e of pFx(src, 'on_cast', 'stat')) if (e.when === 'first_technique_each_turn' && e.stat === 'stat:crit' && src.castsThisTurn === 1) pCrit += e.value;
+  for (const e of hasWhen(src, 'area_technique')) if (o.area && e.stat === 'stat:crit') pCrit += e.value;          // Moonlit Solitude: area crit
+  for (const e of pFx(src, 'always', 'stat')) if (e.damageBonus && !e.when && !e.duration) mul *= 1 + e.damageBonus; // Moon Palace Solitude
   const critCh = critOf(src) + (adv > 0 ? RULES.advCrit : 0) + (o.critBonus || 0) + pCrit;
   const crit = !o.noCrit && !glance && Math.random() < critCh;
   if (crit) mul *= src.critDmg;
@@ -1847,13 +1893,13 @@ function applyDamage(src, tgt, power, o = {}) {
   if (!tgt.alive) return null;
   const h = computeHit(src, tgt, power, o);
   B.log.hits = (B.log.hits || 0) + 1;
-  if (has(tgt, 'bell')) { h.dmg = 0; h.bell = true; const c = board.center(tgt, 0.4); V.floatText('GOLDEN BELL', c.x, c.y - 30, 'info'); }
+  if (has(tgt, 'bell') && !o.ignoreShields) { h.dmg = 0; h.bell = true; const c = board.center(tgt, 0.4); V.floatText('GOLDEN BELL', c.x, c.y - 30, 'info'); }
   if (h.frost) removeStatus(tgt, 'frost');
   if (has(tgt, 'dream')) { removeStatus(tgt, 'dream'); h.woke = true; }
   let absorbed = 0;
-  if (tgt.barrier > 0 && h.dmg > 0) {
+  if (tgt.barrier > 0 && h.dmg > 0 && !o.ignoreShields) {
     absorbed = Math.min(tgt.barrier, h.dmg); tgt.barrier -= absorbed;
-    if (tgt.barrier <= 0) { removeStatus(tgt, 'shield'); emit('shieldBreak', { u: tgt }); }
+    if (tgt.barrier <= 0) { removeStatus(tgt, 'shield'); emit('shieldBreak', { u: tgt }); shieldBroke(tgt); }
   }
   tgt.hp = Math.max(0, tgt.hp - (h.dmg - absorbed));
   src.stats.dmg += h.dmg; tgt.stats.taken += h.dmg - absorbed;
@@ -1868,11 +1914,17 @@ function applyDamage(src, tgt, power, o = {}) {
       if (!useOnce(tgt, e)) continue;
       if (e.do === 'qi') { gainQi(h.crit && e.critAmount ? e.critAmount : (e.amount || 1)); passiveCallout(tgt, e.pname); }
       if (e.do === 'stat' && e.damageBonus) { tgt.nextTechBonus = e.damageBonus; passiveCallout(tgt, e.pname); }
-      if (e.do === 'apply') addStatus(tgt, e.status, e.turns || 1, { src: tgt });               // Rude Awakening (petal 4): Iron Body
+      if (e.do === 'apply') { const on = e.target === 'attacker' ? src : tgt; if (on.alive) addStatus(on, e.status, e.turns || 1, { src: tgt, stacks: e.stacks }); } // Rude Awakening's Iron Body; the Crimson Thorn's mark on her attacker
     }
   }
   // Twin Blooms that fire on a hit
   if (h.twin === 'combo:frost_and_thunder' && !h.killed) comboFire(h.twin, src, () => addStatus(tgt, 'shock', 1));
+  // The Queen's Thorns: an enemy Provoked by Wei Zi gains a Heart Demon stack each time it hits her
+  if (tgt.id === 'hero:wei_zi' && src.side === 'enemy' && src.alive && h.dmg > 0 && combo('combo:queens_thorns') && has(src, 'provoke')?.src?.id === 'hero:wei_zi') {
+    const hu = heroes().find(x => x.id === 'hero:hu_qiangwei'); comboFire('combo:queens_thorns', src, () => addStatus(src, 'demon', 3, { stacks: 1, src: hu || tgt }));
+  }
+  // Thorns in the Night: Mo Yingyue's critical hits add a Heart Demon stack
+  if (src.id === 'hero:mo_yingyue' && h.crit && !h.killed && combo('combo:thorns_in_the_night')) comboFire('combo:thorns_in_the_night', tgt, () => addStatus(tgt, 'demon', 3, { stacks: 1, src }));
   if (tgt.id === 'hero:wei_zi' && src.side === 'enemy' && combo('combo:phoenix_among_peonies')) {
     const b = has(src, 'burn');
     if (b && b.value) comboFire('combo:phoenix_among_peonies', tgt, () => { B.pendingFlares = (B.pendingFlares || []); B.pendingFlares.push(src); });
@@ -1987,15 +2039,30 @@ function comboFire(id, u, fn) {
 
 // ======================= Phase Qi, Harmony and Kindred Qi =======================
 /** Step the chain for a cast and return its damage multiplier (the better of Harmony and Kindred Qi). */
+/** The phase a cast takes: Ying Wucai's techniques extend the chain (wildcard); with Moonlight Takes Colour, Gui Chanjuan's
+ *  take the phase that overcomes the most living enemies. */
+function castPhaseOf(u) {
+  if (u.side === 'hero' && B.chain.last && pFx(u, 'always', 'harmony').some(e => e.mode === 'wildcard')) return GEN[B.chain.last];
+  if (u.id === 'hero:gui_chanjuan' && combo('combo:moonlight_takes_colour')) {
+    const fs = foes(u); let best = u.phase, n = fs.filter(f => OVER[u.phase] === f.phase).length;
+    for (const p of CYCLE) { const m = fs.filter(f => OVER[p] === f.phase).length; if (m > n) { best = p; n = m; } }
+    if (best !== u.phase) comboFire('combo:moonlight_takes_colour', u);
+    return best;
+  }
+  return u.phase;
+}
+const ignoresHarmony = u => pFx(u, 'always', 'harmony').some(e => e.mode === 'ignore');
 function chainStep(u) {
+  if (ignoresHarmony(u)) return 1;   // Moon Palace Solitude: she neither breaks nor extends a chain
   const c = B.chain, k = B.kin;
-  if (c.last && GEN[c.last] === u.phase && c.last !== u.phase && c.len < 9) { c.len += 1; c.list.push(u.phase); }
-  else if (c.len >= 2 && set4(u, 'set:five_elements')) { c.list.push(u.phase); gearCallout(u, 'UNBROKEN CYCLE'); } // the chain holds
-  else { c.len = 1; c.list = [u.phase]; }
+  const ph = u.castPhase || u.phase;
+  if (c.last && GEN[c.last] === ph && c.last !== ph && c.len < 9) { c.len += 1; c.list.push(ph); }
+  else if (c.len >= 2 && set4(u, 'set:five_elements')) { c.list.push(ph); gearCallout(u, 'UNBROKEN CYCLE'); } // the chain holds
+  else { c.len = 1; c.list = [ph]; }
   // Kindred Qi: the same phase again, from a different card
-  if (k.phase === u.phase && k.uid !== u.uid) k.n += 1; else if (k.phase !== u.phase) k.n = 0;
-  k.phase = u.phase; k.uid = u.uid;
-  c.last = u.phase;
+  if (k.phase === ph && k.uid !== u.uid) k.n += 1; else if (k.phase !== ph) k.n = 0;
+  k.phase = ph; k.uid = u.uid;
+  c.last = ph;
   if (u.side === 'hero') { B.maxChain = Math.max(B.maxChain, c.len); B.log.harmony = Math.max(B.log.harmony, c.len); B.log.kindred = Math.max(B.log.kindred, k.n); }
   ui.showChain();
   const harm = 1 + RULES.harmonyStep * (Math.min(c.len, RULES.harmonyCap) - 1);
@@ -2018,22 +2085,26 @@ async function doCast(u, t, target, emp) {
   board.refreshCard(u);
   u.castsThisTurn = (u.castsThisTurn || 0) + 1;
   const lenBefore = B.chain.len;
+  u.castPhase = castPhaseOf(u); if (u.castPhase !== u.phase || u.colour) u.colour = u.castPhase;
+  t.casts = (t.casts || 0) + 1;
   const hm = chainStep(u);
   u.castExtended = B.chain.len > lenBefore && B.chain.len >= 2;
   const ctx = makeCtx(u, t, target, emp, hm);
   B.log.casts++; B.log[t.id] = (B.log[t.id] || 0) + 1;
-  B.castKills = 0; B.counters = []; B.pendingFlares = [];
+  B.castKills = 0; B.counters = []; B.pendingFlares = []; B.followUps = [];
   ui.castBanner(u, t, emp, hm);
   await board.lift(u, true);
   try {
     const run = SKILLS[t.chor] || SKILLS.generic;
     await run(ctx);
     gearOnCast(u, t);
+    if (t.slot === 's3' && u.id === 'hero:gui_chanjuan' && petal(u, 6)) B.moonfall = u; // the Cold Palace falls again next turn
   } catch (e) { console.error('skill error', t.id, e); }
   await board.lift(u, false);
   if (u.side === 'hero') B.log.maxKills = Math.max(B.log.maxKills, B.castKills || 0);
   u.nextTechBonus = 0; u.castExtended = false;
-  if (u.alive) addPoints(u, GEN[u.phase], t.ult ? 2 : 1);
+  // Phase Qi: the phase her cast feeds (Gui Chanjuan with petal 4: the phase the chain needs next)
+  if (u.alive) addPoints(u, ignoresHarmony(u) && petal(u, 4) && B.chain.last ? GEN[B.chain.last] : GEN[u.castPhase || u.phase], t.ult ? 2 : 1);
   if (B.chain.len >= 2) {
     const c = board.center(u, 0.2);
     V.floatText(`HARMONY ×${B.chain.len}`, c.x, c.y + 6, 'harmony', { label: B.chain.list.map(p => PHASES[p].glyph).join(' → '), size: 34 });
@@ -2046,7 +2117,20 @@ async function doCast(u, t, target, emp) {
   for (const k of B.counters) if (k.u.alive && k.target.alive) {
     const h = applyDamage(k.u, k.target, 0.5 * (1 + (k.u.counterMod || 0)), { noCrit: true });
     if (h) { const c = board.center(k.target, 0.45); V.fx('ghost_slash', { x: c.x, y: c.y, w: 260, dur: 420, flip: true }); V.floatText(h.dmg.toLocaleString('en-US'), c.x, c.y, k.u.side === 'hero' ? 'dmg' : 'enemy', { label: 'THORN LOTUS' }); board.hitCard(k.target, { power: 0.6 }); if (h.killed) killUnit(k.target); }
+    // Fox-Fire Rose (Hu Qiangwei, petal 2): her Thorn Lotus counters add a Heart Demon stack
+    if (h && k.target.alive && k.u.id === 'hero:hu_qiangwei' && petal(k.u, 2)) addStatus(k.target, 'demon', 3, { stacks: 1, src: k.u });
   }
+  // Accompanying Wind (Gu Youlan) and Plum and Orchid: her follow-ups after an ally's single-target technique
+  for (const fu of B.followUps || []) {
+    if (!fu.u.alive || !fu.target.alive) continue;
+    const c = board.center(fu.target, 0.45);
+    V.fx('thunder_x', { x: c.x, y: c.y, w: 280, dur: 380, rot: 0.6, bloom: 0.35 }); V.emitP('spark', c.x, c.y, 10, { color: 'jade', speed: [120, 380] }); sfx('slash');
+    const h = applyDamage(fu.u, fu.target, fu.power || 0.6, { keepFrost: combo('combo:plum_and_orchid') });
+    if (h) { V.floatText(h.dmg.toLocaleString('en-US'), c.x + 30, c.y - 10, h.crit ? 'crit' : 'dmg', { label: fu.combo ? 'PLUM AND ORCHID' : 'ACCOMPANYING WIND', size: 30 }); board.hitCard(fu.target, { power: 0.6 }); if (h.killed) killUnit(fu.target); }
+    if (fu.combo) comboFire('combo:plum_and_orchid', fu.u); else if (fu.name) passiveCallout(fu.u, fu.name);
+    await wait(260);
+  }
+  B.followUps = [];
   for (const f of B.pendingFlares) if (f.alive) await flare(f, 'burn');
   B.counters = []; B.pendingFlares = [];
   await wait(120);
@@ -2056,6 +2140,36 @@ async function doCast(u, t, target, emp) {
   await checkEnd();
 }
 
+/** Queue Gu Youlan's follow-ups after an ally's single-target hit (Accompanying Wind; Plum and Orchid for Ling Shuang). */
+function queueFollowUps(u, tgt) {
+  const gu = heroes().find(x => x.alive && x.id === 'hero:gu_youlan' && x !== u);
+  if (!gu || (B.followUps || []).some(f => f.target === tgt && f.u === gu)) return;
+  B.followUps = B.followUps || [];
+  if (u.id === 'hero:ling_shuang' && combo('combo:plum_and_orchid') && useOnce(gu, { once: 'turn', pid: 'plum_and_orchid', do: 'follow' })) { B.followUps.push({ u: gu, target: tgt, combo: true, power: 0.6 }); return; }
+  for (const e of pFx(gu, 'always', 'damage')) {
+    if (e.when !== 'ally_single_target_hit') continue;
+    const k = `aw:${gu.uid}:${B.round}${B.side}`; B.awCount = B.awCount || {};
+    if ((B.awCount[k] || 0) >= (petal(gu, 4) ? 2 : 1)) continue;
+    B.awCount[k] = (B.awCount[k] || 0) + 1;
+    B.followUps.push({ u: gu, target: tgt, power: e.power || 0.6, name: e.pname });
+  }
+}
+/** Ying Wucai's colour: the buff of the phase she last cast in. */
+const COLOUR_BUFF = { metal: 'intent', wood: 'wind', water: 'dew', fire: 'surge', earth: 'iron' };
+/** The Hundred Flowers Banquet: an ally Wei Zi shields also takes Ying Wucai's current colour for a turn. */
+function hundredFlowers(tgt) {
+  const ying = heroes().find(x => x.alive && x.id === 'hero:ying_wucai');
+  if (!ying || !combo('combo:hundred_flowers_banquet')) return;
+  comboFire('combo:hundred_flowers_banquet', tgt, () => addStatus(tgt, COLOUR_BUFF[ying.colour || ying.phase] || 'dew', 1, { src: ying }));
+}
+/** A shield broke: Ying Wucai heals the ally for half of a shield Wei Zi gave (Hundred Flowers Banquet). */
+function shieldBroke(tgt) {
+  const by = tgt.shieldBy; tgt.shieldBy = null;
+  if (!by || !combo('combo:hundred_flowers_banquet') || !tgt.alive) return;
+  const ying = heroes().find(x => x.alive && x.id === 'hero:ying_wucai'); if (!ying) return;
+  const n = applyHealAmount(ying, tgt, by.value * 0.5);
+  if (n) { const c = board.center(tgt, 0.45); V.floatText('+' + Math.min(n, tgt.maxHp).toLocaleString('en-US'), c.x, c.y + 20, 'heal', { label: 'HUNDRED FLOWERS' }); B.log.combos['combo:hundred_flowers_banquet'] = (B.log.combos['combo:hundred_flowers_banquet'] || 0) + 1; }
+}
 /** A damage-over-time status burns all its remaining damage at once. */
 async function flare(u, id) {
   const s = has(u, id); if (!s || !u.alive) return 0;
@@ -2087,8 +2201,9 @@ function makeCtx(u, t, target, emp, hm) {
         if (g) { gearCallout(g, 'SHELL OF THE NORTH'); tgt = g; power *= 0.75; }
       }
       const sealed = u.id === 'hero:ling_shuang' && petal(u, 4) && !!has(tgt, 'frost');
-      const h = applyDamage(u, tgt, power, { hm, emp, single, mast: 1 + (t.mods?.dmg || 0), ...o });
+      const h = applyDamage(u, tgt, power, { hm, emp, single, mast: 1 + (t.mods?.dmg || 0), phase: u.castPhase || u.phase, area: t.target === 'allEnemies', ...o });
       if (!h) return null;
+      if (u.side === 'hero' && single && !o.splash && tgt.alive) queueFollowUps(u, tgt);
       // Biting Frost (Ling Shuang, petal 4): the first time each turn she hits a Frost Sealed enemy, +1 Spirit Qi
       if (sealed && useOnce(u, { once: 'turn', pid: 'ling_petal4', do: 'qi' })) { gainQi(1); passiveCallout(u, 'Biting Frost'); }
       const c = board.center(tgt, o.fy ?? 0.45);
@@ -2111,8 +2226,11 @@ function makeCtx(u, t, target, emp, hm) {
     heal(tgt, power, o = {}) {
       if (!tgt || !tgt.alive) return 0;
       const base = o.pctMaxHp ? tgt.maxHp * o.pctMaxHp : atkOf(u) * power;
-      const amt = base * phaseMul(u.side, u.phase) * hm * (emp ? RULES.empowerMul : 1) * (1 + (t.mods?.heal || 0)) * rand(0.97, 1.03);
+      const amt = base * phaseMul(u.side, u.castPhase || u.phase) * hm * (emp ? RULES.empowerMul : 1) * (1 + (t.mods?.heal || 0)) * rand(0.97, 1.03);
+      const low = tgt.hp / tgt.maxHp < 0.5;
       const real = applyHealAmount(u, tgt, amt);
+      // Rain-Season Bloom (Ying Wucai): an ally healed below half health also gains Lotus Dew
+      for (const e of pFx(u, 'on_heal', 'apply')) if ((e.when !== 'below_half_health' || low) && tgt.alive) addStatus(tgt, e.status, e.turns || 1, { src: u });
       if (real) { const c = board.center(tgt, 0.45); V.floatText('+' + real.toLocaleString('en-US'), c.x + rand(-20, 20), c.y, 'heal'); }
       for (const e of pFx(u, 'on_heal', 'cleanse')) { let n = 0; for (const st of e.statuses || []) if (has(tgt, st)) { removeStatus(tgt, st); n++; } if (n) passiveCallout(tgt, e.pname); }
       return real;
@@ -2120,8 +2238,9 @@ function makeCtx(u, t, target, emp, hm) {
     shield(tgt, power, o = {}) {
       if (!tgt || !tgt.alive) return 0;
       const base = o.pctOfMaxHp ? u.maxHp * o.pctOfMaxHp : atkOf(u) * power;
-      const amt = Math.round(base * phaseMul(u.side, u.phase) * hm * (emp ? RULES.empowerMul : 1) * (1 + (t.mods?.shield || 0)));
+      const amt = Math.round(base * phaseMul(u.side, u.castPhase || u.phase) * hm * (emp ? RULES.empowerMul : 1) * (1 + (t.mods?.shield || 0)));
       tgt.barrier = Math.max(tgt.barrier, amt);
+      if (u.id === 'hero:wei_zi') { tgt.shieldBy = { u, value: amt }; hundredFlowers(tgt); }
       addStatus(tgt, 'shield', o.turns || 2, { src: u });
       const c = board.center(tgt, 0.45); V.floatText('+' + amt.toLocaleString('en-US'), c.x, c.y + 30, 'shield', { label: 'SPIRIT SHIELD' });
       return amt;

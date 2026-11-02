@@ -1,7 +1,7 @@
 // The player's save: one JSON document kept in IndexedDB (localStorage as a fallback, memory if both fail),
 // with a schema version, a checksum, autosave and export/import as text. Also the rules that change it:
 // rewards and costs, EXP and breakthroughs, stage clears and stars, summons.
-import { get, all, expToNext, levelCap, nextRealm, SLICE_HEROES, battleExp, heroBase, bondLevel, masteryCap, meridians } from './data.js';
+import { get, all, expToNext, levelCap, nextRealm, SLICE_HEROES, battleExp, heroBase, bondLevel, masteryCap, meridians, trialFor } from './data.js';
 import { rollGearEntry, makeArtefact, refineCost, refineOnce, salvageValue, engrave, engraveCost, canReforge, reforgeCost, nextTier, gearBonus, withGear, canWear, POSITIONS, POS_SLOT, rarityOrder, tierOrder, rollScore } from './gear.js';
 
 const SCHEMA = 4;
@@ -149,13 +149,23 @@ export function addExp(hid, exp) {
 }
 export const atCap = hid => { const p = prog(hid); return p && p.level >= levelCap(p.bt); };
 export function breakthroughCost(hid) { const p = prog(hid); const r = p && nextRealm(p.bt); return r ? r.breakthroughCost || [] : null; }
-export function breakthrough(hid) {
-  const p = prog(hid), cost = breakthroughCost(hid);
-  if (!p || !cost || !atCap(hid) || !pay(cost)) return false;
+/** Break through. A major realm (Core Formation and up) needs its tribulation won first: opts.trial. */
+export function breakthrough(hid, opts = {}) {
+  const p = prog(hid), cost = breakthroughCost(hid), to = p && nextRealm(p.bt);
+  if (!p || !cost || !atCap(hid) || (trialFor(to?.id) && !opts.trial) || !pay(cost)) return false;
   p.bt++;
   addExp(hid, 0);
   persist();
   return true;
+}
+/** A won tribulation: the breakthrough, and the trial's reward the first time this heroine passes it. */
+export function passTribulation(hid) {
+  const p = prog(hid), tr = p && trialFor(nextRealm(p.bt)?.id);
+  if (!tr || !breakthrough(hid, { trial: true })) return null;
+  const done = D().flags.trials = D().flags.trials || {}, k = `${hid}|${tr.id}`;
+  const granted = done[k] ? [] : grant((tr.firstClearRewards || []).filter(r => r.cur || r.item));
+  done[k] = true; persist();
+  return { trial: tr, granted };
 }
 /** EXP pills: how much EXP a selection gives and what it costs in Spirit Stones (0.1 per EXP). */
 export function pillPlan(sel) {

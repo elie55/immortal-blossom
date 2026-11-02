@@ -424,7 +424,7 @@ Every heroine starts at Qi Refining, level 1, and can reach level 80, the peak o
 
 Level 80 is the maximum. Two peaks along the way unlock passives: level 30, the peak of Core Formation, and level 50, the peak of Spirit Severing.
 
-**Tribulation trials.** A heroine at a major threshold fights her tribulation with three allies: waves of heavenly lightning, then her Heart Demon, a darkened copy of her own card with her techniques and stats. Winning grants the breakthrough and a one-time reward. Losing costs nothing and can be retried. Since the Heart Demon reuses the heroine's card and data, 30 heroines give 180 distinct boss fights, six each, for little extra work.
+**Tribulation trials.** A heroine at a major threshold fights her tribulation with three allies: waves of heavenly lightning, then her Heart Demon, a darkened copy of her own card with her techniques and stats (at the trial's level, with her gear, 2.6 times her Health and a 3-point Qi shield). Winning grants the breakthrough and a one-time reward. Losing costs nothing and can be retried. Since the Heart Demon reuses the heroine's card and data, 30 heroines give 180 distinct boss fights, six each, for little extra work.
 
 **EXP items.** Spirit pills replace Epic Seven's penguins: Qi Gathering Pill (+5,500 EXP), Spirit Condensing Pill (+16,500), Heaven and Earth Pill (+49,500) and Nine-Revolution Golden Pill (+150,000). Most come from Medicine King Valley (see Game modes), a few from stages and the Alchemy Pavilion. EXP to the next level is 90 × level²: 25,650 EXP to finish Qi Refining and about 15.1 million to reach level 80. EXP past a realm's cap is banked and applied after the next breakthrough.
 

@@ -698,3 +698,5 @@
 .mk-i .rw-i { width: 70px; height: 70px; } .mk-i b { font: 700 17px 'Cormorant Garamond', serif; color: #fff3d6; line-height: 1.1; } .mk-i small { font: 600 13px Oswald, sans-serif; color: var(--mut); }
 .mk-i .btn { padding: 6px 12px; font-size: 16px; } .mk-i .btn img.ic { width: 22px; height: 22px; vertical-align: -5px; margin-right: 4px; }
 .mk-i.sold { opacity: .5; }
+
+.trib-note { padding: 10px 14px; border-radius: 12px; background: rgba(150, 110, 255, .1); border: 1px solid rgba(190, 160, 255, .35); }

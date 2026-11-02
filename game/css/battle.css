@@ -427,3 +427,9 @@ button { font-family: inherit; color: inherit; cursor: pointer; }
 .side-enemy .orb b { min-width: 18px; height: 17px; font-size: 11px; right: -4px; }
 .cyc-ref svg { max-width: 200px; max-height: 150px; }
 
+
+/* A heroine's Heart Demon: her own card, darkened, with a red glare */
+.card.demon .c-art img { filter: grayscale(.55) brightness(.5) contrast(1.25) sepia(.35) hue-rotate(250deg) saturate(1.6); }
+.card.demon .c-art::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 28%, rgba(255, 40, 70, .35), transparent 45%), linear-gradient(180deg, rgba(40, 0, 30, .2), rgba(20, 0, 20, .55)); mix-blend-mode: screen; pointer-events: none; }
+.card.demon .c-frame { border-color: rgba(220, 60, 90, .9); box-shadow: 0 0 22px rgba(220, 40, 80, .45); }
+.c-tele img.g { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; flex: none; }

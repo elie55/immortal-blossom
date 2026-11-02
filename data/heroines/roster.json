@@ -143,12 +143,32 @@
     {
      "n": 1,
      "modifies": "skill:gu_youlan_s1",
-     "text": "Valley Wind Cut's chance to remove a buff rises from 35% to 60%"
+     "text": "Valley Wind Cut's chance to remove a buff rises from 35% to 60%",
+     "patch": [
+      {
+       "match": {
+        "do": "dispel"
+       },
+       "set": {
+        "chance": 0.6
+       }
+      }
+     ]
     },
     {
      "n": 2,
      "modifies": "skill:gu_youlan_s2",
-     "text": "Empty Valley Orchid also gives Wind Step to the ally with the lowest Haste"
+     "text": "Empty Valley Orchid also gives Wind Step to the ally with the lowest Haste",
+     "patch": [
+      {
+       "add": {
+        "do": "apply",
+        "status": "status:wind_step",
+        "turns": 2,
+        "target": "lowest_haste_ally"
+       }
+      }
+     ]
     },
     {
      "n": 3,
@@ -159,7 +179,8 @@
     {
      "n": 4,
      "modifies": "skill:gu_youlan_p50",
-     "text": "Accompanying Wind can follow up twice per turn"
+     "text": "Accompanying Wind can follow up twice per turn",
+     "played": "engine"
     },
     {
      "n": 5,
@@ -170,7 +191,26 @@
     {
      "n": 6,
      "modifies": "skill:gu_youlan_s3",
-     "text": "Gentleman's Verdict ignores Spirit Shields and Golden Bell, and strikes twice more for 40% ATK if it removed a buff"
+     "text": "Gentleman's Verdict ignores Spirit Shields and Golden Bell, and strikes twice more for 40% ATK if it removed a buff",
+     "patch": [
+      {
+       "match": {
+        "do": "damage"
+       },
+       "set": {
+        "ignoreShields": true
+       }
+      },
+      {
+       "add": {
+        "do": "damage",
+        "power": 0.4,
+        "hits": 2,
+        "when": "removed_buff",
+        "ignoreShields": true
+       }
+      }
+     ]
     }
    ],
    "unique": "unique:gu_youlan",
@@ -219,8 +259,7 @@
     "cutin": "gu_youlan_cutin",
     "face": "gu_youlan_face"
    },
-   "recruit": "summon",
-   "draft": true
+   "recruit": "summon"
   },
   {
    "id": "hero:zhu_liuhuo",
@@ -1361,12 +1400,23 @@
     {
      "n": 1,
      "modifies": "skill:hu_qiangwei_s1",
-     "text": "Thorned Kiss's chance of Heart Demon rises from 25% to 40%"
+     "text": "Thorned Kiss's chance of Heart Demon rises from 25% to 40%",
+     "patch": [
+      {
+       "match": {
+        "status": "status:heart_demon"
+       },
+       "set": {
+        "chance": 0.4
+       }
+      }
+     ]
     },
     {
      "n": 2,
      "modifies": "skill:hu_qiangwei_s2",
-     "text": "Fox-Fire Rose's Thorn Lotus counterattacks add a Heart Demon stack"
+     "text": "Fox-Fire Rose's Thorn Lotus counterattacks add a Heart Demon stack",
+     "played": "engine"
     },
     {
      "n": 3,
@@ -1377,7 +1427,17 @@
     {
      "n": 4,
      "modifies": "skill:hu_qiangwei_p50",
-     "text": "Nine-Tailed Allure also gives the team 2 Spirit Qi"
+     "text": "Nine-Tailed Allure also gives the team 2 Spirit Qi",
+     "patch": [
+      {
+       "add": {
+        "do": "qi",
+        "amount": 2,
+        "when": "enemy_turned_by_heart_demon",
+        "once": "turn"
+       }
+      }
+     ]
     },
     {
      "n": 5,
@@ -1388,7 +1448,8 @@
     {
      "n": 6,
      "modifies": "skill:hu_qiangwei_s3",
-     "text": "An enemy charmed after Rose of the Crimson Moon attacks its allies with its strongest ready technique instead of a basic attack"
+     "text": "An enemy charmed after Rose of the Crimson Moon attacks its allies with its strongest ready technique instead of a basic attack",
+     "played": "engine"
     }
    ],
    "unique": "unique:hu_qiangwei",
@@ -1438,8 +1499,7 @@
     "cutin": "hu_qiangwei_cutin",
     "face": "hu_qiangwei_face"
    },
-   "recruit": "summon",
-   "draft": true
+   "recruit": "summon"
   },
   {
    "id": "hero:she_qingzhu",
@@ -2175,12 +2235,32 @@
     {
      "n": 1,
      "modifies": "skill:gui_chanjuan_s1",
-     "text": "Moonsteel Petal ignores 30% of Defense instead of 15%"
+     "text": "Moonsteel Petal ignores 30% of Defense instead of 15%",
+     "patch": [
+      {
+       "match": {
+        "do": "damage"
+       },
+       "set": {
+        "pierce": 0.3
+       }
+      }
+     ]
     },
     {
      "n": 2,
      "modifies": "skill:gui_chanjuan_s2",
-     "text": "Wu Gang's Endless Axe grows up to +80%"
+     "text": "Wu Gang's Endless Axe grows up to +80%",
+     "patch": [
+      {
+       "match": {
+        "do": "damage"
+       },
+       "set": {
+        "max": 0.8
+       }
+      }
+     ]
     },
     {
      "n": 3,
@@ -2191,7 +2271,8 @@
     {
      "n": 4,
      "modifies": "skill:gui_chanjuan_p50",
-     "text": "Her casts still give Phase Qi, to the phase the chain needs next instead of the phase she feeds"
+     "text": "Her casts still give Phase Qi, to the phase the chain needs next instead of the phase she feeds",
+     "played": "engine"
     },
     {
      "n": 5,
@@ -2202,7 +2283,8 @@
     {
      "n": 6,
      "modifies": "skill:gui_chanjuan_s3",
-     "text": "The Cold Palace Descends falls again at the start of your next turn, hitting every enemy for 60% ATK"
+     "text": "The Cold Palace Descends falls again at the start of your next turn, hitting every enemy for 60% ATK",
+     "played": "engine"
     }
    ],
    "unique": "unique:gui_chanjuan",
@@ -2252,8 +2334,7 @@
     "cutin": "gui_chanjuan_cutin",
     "face": "gui_chanjuan_face"
    },
-   "recruit": "summon",
-   "draft": true
+   "recruit": "summon"
   },
   {
    "id": "hero:wen_xingyu",
@@ -2874,12 +2955,32 @@
     {
      "n": 1,
      "modifies": "skill:ying_wucai_s1",
-     "text": "Five-Colour Petals heals the two most injured allies"
+     "text": "Five-Colour Petals heals the two most injured allies",
+     "patch": [
+      {
+       "match": {
+        "do": "heal"
+       },
+       "set": {
+        "target": "lowest_2_allies"
+       }
+      }
+     ]
     },
     {
      "n": 2,
      "modifies": "skill:ying_wucai_s2",
-     "text": "Changing Soil's phase buff lasts 2 turns"
+     "text": "Changing Soil's phase buff lasts 2 turns",
+     "patch": [
+      {
+       "match": {
+        "do": "apply"
+       },
+       "set": {
+        "turns": 2
+       }
+      }
+     ]
     },
     {
      "n": 3,
@@ -2890,7 +2991,17 @@
     {
      "n": 4,
      "modifies": "skill:ying_wucai_p30",
-     "text": "Rain-Season Bloom's Lotus Dew lasts 2 turns"
+     "text": "Rain-Season Bloom's Lotus Dew lasts 2 turns",
+     "patch": [
+      {
+       "match": {
+        "do": "apply"
+       },
+       "set": {
+        "turns": 2
+       }
+      }
+     ]
     },
     {
      "n": 5,
@@ -2901,7 +3012,20 @@
     {
      "n": 6,
      "modifies": "skill:ying_wucai_s3",
-     "text": "Embroidered Ball of Five Colours gives Phoenix Rebirth to the two most injured allies, and its cooldown drops to 4"
+     "text": "Embroidered Ball of Five Colours gives Phoenix Rebirth to the two most injured allies, and its cooldown drops to 4",
+     "patch": [
+      {
+       "match": {
+        "status": "status:phoenix_rebirth"
+       },
+       "set": {
+        "target": "lowest_2_allies"
+       }
+      },
+      {
+       "cooldown": 4
+      }
+     ]
     }
    ],
    "unique": "unique:ying_wucai",
@@ -2949,8 +3073,7 @@
     "cutin": "ying_wucai_cutin",
     "face": "ying_wucai_face"
    },
-   "recruit": "summon",
-   "draft": true
+   "recruit": "summon"
   },
   {
    "id": "hero:fang_yanzhi",

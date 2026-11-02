@@ -31,7 +31,7 @@ cd dist && python3 -m http.server     # then open http://localhost:8000
 | Market | The Myriad Treasures Hall and the Merit Exchange, with weekly limits |
 | Journey | Volume 1's five chapters with enemies, missions, rewards, stars and star chests; each stage again on Heaven-Defying |
 | Formation | Four slots, guests, the Battle Array and its positions, team power, Harmony order, the team's Twin Blooms and Karmic Thread Resonance |
-| Heroines | Roster, overview (stats with meridians, bond and gear), Cultivate with EXP pills, Breakthrough; tabs below |
+| Heroines | Roster, overview (stats with meridians, bond and gear), Cultivate with EXP pills, Breakthrough; from Core Formation on, a breakthrough is a tribulation: lightning waves, then her Heart Demon (a darkened copy of her card with her techniques and stats), with three allies of your choice; tabs below |
 | Techniques tab | Each technique with its mastery steps: Enlightenment Scrolls and Bodhi Leaves take it to +5 (+6 for her S2 and ultimate once petal 3 or 5 is open); passives; the petals that change each one |
 | Meridians tab | The five organ meridians on the generating cycle, five nodes each (essences and Spirit Stones, twice the essence of her own phase); one slot per breakthrough; the Ren and Du vessels at Body Integration halve one technique's Empower cost |
 | Blossom tab | Her six petals around her portrait; Blossom Dew opens the next one, duplicates open them too; Full Bloom drifts petals across her card in battle and here |

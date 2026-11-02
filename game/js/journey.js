@@ -69,7 +69,8 @@ App.register('journey', {
 App.register('formation', {
   cls: 'formation',
   render(el, { st, resolve }) {
-    const guests = (st.guests || []).filter(g => !owned(g));
+    const required = st.required || [];   // a heroine on trial fights her own tribulation
+    const guests = [...required, ...(st.guests || []).filter(g => !owned(g) && !required.includes(g))];
     const roster = ownedHeroes().sort((a, b) => (prog(b).level - prog(a).level) || (get(b).rarity - get(a).rarity));
     let team = [...guests, ...(data().team || []).filter(h => owned(h) && !guests.includes(h))].slice(0, 4);
     for (const h of roster) { if (team.length >= 4) break; if (!team.includes(h)) team.push(h); }
@@ -90,7 +91,7 @@ App.register('formation', {
           <h3 style="margin-top:14px">TWIN BLOOMS 并蒂</h3>${combos.length ? combos.map(c => `<div class="twin"><b>${esc(c.name)} ${esc(c.cn)}</b><small>${esc(c.howTo)}</small></div>`).join('') : '<div class="mut">No combo in this team. Pairs such as Ling Shuang and Mo Yingyue, or Wei Zi and Yan Feihong, have one.</div>'}
           ${threads.length ? `<h3 style="margin-top:14px">RESONANCE 因缘</h3>${threads.map(t => `<div class="twin"><b>${esc(get(t.a).name)} · ${esc(get(t.b).name)}</b><small>${esc((t.kind || '').replace(/_/g, ' '))}: +5% Attack for both</small></div>`).join('')}` : ''}</div>
         <div class="fm-slots">${[0, 1, 2, 3].map(i => { const h = team[i]; const g = h && guests.includes(h);
-          return `<div class="fm-slot${h ? '' : ' empty'}${g ? ' guest' : ''}" data-act="slot" data-i="${i}">${h ? miniCard(h, g ? '<span class="lv">Guest</span>' : '') : ''}<div class="pos">${['Front · 1', '2', '3', 'Rear · 4'][i]}<small>${esc(arrayText(currentArray(), i, arrayLevel(currentArray())))}</small></div></div>`; }).join('')}</div>
+          return `<div class="fm-slot${h ? '' : ' empty'}${g ? ' guest' : ''}" data-act="slot" data-i="${i}">${h ? miniCard(h, g ? `<span class="lv">${required.includes(h) ? 'On trial' : 'Guest'}</span>` : '') : ''}<div class="pos">${['Front · 1', '2', '3', 'Rear · 4'][i]}<small>${esc(arrayText(currentArray(), i, arrayLevel(currentArray())))}</small></div></div>`; }).join('')}</div>
         <div class="fm-chain">${best.length > 1 ? `<span class="mut">Harmony order</span> ${best.map(p => phTag(p)).join('<em>›</em>')} <span class="gold">×${best.length}</span>` : '<span class="mut">No two phases of this team feed each other: try Kindred Qi or mix phases.</span>'}</div>
         <div class="fm-side r panel"><h3>ENEMIES</h3>${st.waves.map((w, i) => `<div class="wave-line"><span class="mut">Wave ${i + 1}</span>${w.map(e => { const r = get(e.enemy); return `${phTag(phaseOf(r.phase))}`; }).join('')}<span class="mut">Lv ${Math.max(...w.map(e => e.level))}</span></div>`).join('')}
           <div class="mut" style="margin-top:8px">Their phases: pick heroines whose phase overcomes them (Water › Fire › Metal › Wood › Earth › Water).</div></div>
@@ -100,7 +101,7 @@ App.register('formation', {
     draw();
     el.addEventListener('click', e => {
       const m = e.target.closest('.fm-roster .mini');
-      if (m) { const h = m.dataset.hid; if (team.includes(h)) team = team.filter(x => x !== h); else if (team.length < 4) team.push(h); else App.toast('The team is full: tap a slot to remove a heroine'); draw(); return; }
+      if (m) { const h = m.dataset.hid; if (guests.includes(h)) { App.toast(`${get(h).name} must fight this battle`); return; } if (team.includes(h)) team = team.filter(x => x !== h); else if (team.length < 4) team.push(h); else App.toast('The team is full: tap a slot to remove a heroine'); draw(); return; }
     });
     App.bind(el, {
       array: () => App.dialog({
@@ -108,7 +109,7 @@ App.register('formation', {
           return `<button class="arr${a.id === currentArray() ? ' on' : ''}${open ? '' : ' locked'}" data-arr="${a.id}"><b>${esc(a.name)}</b><small>${esc(a.theme)}</small><span>${[0, 1, 2, 3].map(i => esc(arrayText(a.id, i, arrayLevel(a.id)))).join(' · ')}</span>${open ? '' : `<em>Clear ${esc(get(a.unlockedBy)?.name)}</em>`}</button>`; }).join('')}</div>`,
         onOpen: (w, close) => w.addEventListener('click', e => { const b = e.target.closest('[data-arr]'); if (!b || b.classList.contains('locked')) return; setArray(b.dataset.arr); close(true); }),
       }).then(() => draw()),
-      slot: (b) => { const h = team[+b.dataset.i]; if (!h) return; if (guests.includes(h)) { App.toast(`${get(h).name} insists on coming`); return; } team = team.filter(x => x !== h); draw(); },
+      slot: (b) => { const h = team[+b.dataset.i]; if (!h) return; if (guests.includes(h)) { App.toast(required.includes(h) ? `This is ${get(h).name}'s own tribulation` : `${get(h).name} insists on coming`); return; } team = team.filter(x => x !== h); draw(); },
       start: () => { if (!team.length) return; data().team = team.filter(h => owned(h)); persist(); resolve(team); },
       back: () => resolve(null),
     });

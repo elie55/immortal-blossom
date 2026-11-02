@@ -241,14 +241,29 @@ export function arrayText(arrayId, pos, level = 1) {
   const name = { hp: 'Health', atk: 'Attack', def: 'Defense', haste: 'Haste', crit_dmg: 'Crit dmg' }[k];
   return (k === 'haste' ? `+${v} ${name}` : `+${Math.round(v * 100)}% ${name}`) + (b.targeted ? ', taunts' : '');
 }
+/** The tribulation a heroine faces to enter a realm (Core Formation and up), or null. */
+export const trialFor = realmId => all('trial').find(t => t.realm === realmId) || null;
+/** A heroine's tribulation as a stage: lightning waves, then her Heart Demon; she must fight it herself. */
+export function trialStage(trial, hid) {
+  return { id: `${trial.id}#${keyOf(hid)}`, name: `${get(hid).name}: ${trial.name}`, trial: trial.id, hero: hid, required: [hid], waves: trial.waves,
+    location: 'loc:jade_pool', firstClearRewards: null, drops: null, missions: null };
+}
+/** Her Heart Demon: a darkened copy of her card with her techniques and stats at the trial's level, a boss with a Qi shield. */
+export function demonUnit(hid, level, prog = {}, gear = null) {
+  const hu = heroUnit(hid, { ...prog, level }, {}, gear);
+  return { ...hu, id: 'enemy:heart_demon', demonOf: hid, name: `${get(hid).name}'s Heart Demon`, cn: '心魔', title: get('enemy:heart_demon').title, family: 'tribulation', profile: 'elite', script: null,
+    hp: Math.round(hu.hp * 2.6), boss: true, wide: false, qiShield: 3, passives: [], sets4: [], artefact: null, gearPhaseQi: 0, resonance: false, lvl: level };
+}
 /** Build the engine's battle definition for a stage and a team (hero ids, with progress). */
 export function stageBattle(stage, team, progress, arrayId = 'array:yellow_dragon', opts = {}) {
   const waves = (stage.waves || []).map((w, i, arr) => {
-    const boss = w.some(e => get(e.enemy)?.boss);
+    const boss = w.some(e => get(e.enemy)?.boss || (e.enemy === 'enemy:heart_demon' && stage.hero));
     return {
       title: boss ? 'Boss wave' : (i === arr.length - 1 && arr.length > 1 ? 'Final wave' : `Wave ${i + 1}`),
-      sub: boss ? get(w.find(e => get(e.enemy)?.boss).enemy).name : stage.name, boss,
-      enemies: w.map(e => enemyUnit(e.enemy, e.level, e.phase || ({ day: opts.dayPhase || todayPhase('mode:valley', 'phase:metal'), shrine: stage.phase || 'phase:earth' }[get(e.enemy).phase]) || null)),
+      sub: boss ? (stage.hero && w.some(e => e.enemy === 'enemy:heart_demon') ? `${get(stage.hero).name}'s Heart Demon` : get(w.find(e => get(e.enemy)?.boss).enemy).name) : stage.name, boss,
+      enemies: w.map(e => (e.enemy === 'enemy:heart_demon' && stage.hero
+        ? demonUnit(stage.hero, e.level, progress[stage.hero] || {}, opts.gear && progress[stage.hero] ? opts.gear(stage.hero) : null)
+        : enemyUnit(e.enemy, e.level, e.phase || ({ day: opts.dayPhase || todayPhase('mode:valley', 'phase:metal'), shrine: stage.phase || 'phase:earth' }[get(e.enemy).phase]) || null))),
     };
   });
   if (stage.hd) for (const w of waves) for (const u of w.enemies) if (!u.qiShield && u.profile !== 'minion') u.qiShield = 4; // Heaven-Defying elites

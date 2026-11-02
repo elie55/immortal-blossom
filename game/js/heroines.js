@@ -1,10 +1,10 @@
 // Heroines: the roster, a heroine's overview (stats, techniques and mastery, gear, meridians, Dao Blossom, bond,
 // Twin Blooms and Karmic Threads), Cultivate and Breakthrough.
 import { App, esc, phTag, starStr, SET_COLOR, PH_COLOR, PH_GLYPH, npcSays, compact } from './app.js';
-import { get, all, cardUrl, faceUrl, heroArt, phaseOf, SLICE_HEROES, expToNext, levelCap, realmOf, nextRealm, iconUrl, num, techOf, masteryCap, meridians, bondLevel, bondNext, bondBonus, growthBonus, keyOf } from './data.js';
+import { get, all, cardUrl, faceUrl, heroArt, phaseOf, SLICE_HEROES, expToNext, levelCap, realmOf, nextRealm, iconUrl, num, techOf, masteryCap, meridians, bondLevel, bondNext, bondBonus, growthBonus, keyOf, trialFor, trialStage, stageBattle } from './data.js';
 import { data, persist, owned, prog, qty, atCap, breakthroughCost, breakthrough, canPay, pillPlan, usePills, finalStats, heroBonus,
   masteryNext, masteryUp, meridianSlots, meridiansOpen, nodeNext, openNode, renDuState, openRenDu, chooseRenDu, petalCost, openPetal,
-  giftTaste, giveGift, teaToday, takeTea } from './state.js';
+  giftTaste, giveGift, teaToday, takeTea, passTribulation, currentArray, arrayLevel } from './state.js';
 import { V, sfx } from './engine.js';
 import { heroGearStrip, twoPieceText } from './ring.js';
 
@@ -214,6 +214,25 @@ App.register('heroine', {
   },
 });
 
+/** Her tribulation: formation (she must fight), lightning waves, her Heart Demon; a win breaks through. */
+async function tribulation(hid) {
+  const h = get(hid), to = nextRealm(prog(hid).bt), tr = trialFor(to.id), st = trialStage(tr, hid);
+  const team = await new Promise(r => App.go('formation', { st, resolve: r }, { replace: true }));
+  if (!team) return;
+  const def = stageBattle(st, team, data().heroes, currentArray(), { arrayLevel: arrayLevel(currentArray()), gear: heroBonus });
+  def.side = 'Heavenly Tribulation'; def.stageName = st.name;
+  data().log.battles++;
+  const res = await App.runBattle(def);
+  if (!res?.win) {
+    await App.dialog({ title: 'The tribulation holds', cn: '劫未渡', body: npcSays(hid, `<p>The lightning fades. <b class="gold">${esc(h.name)}</b> stands at the peak of her realm still: nothing is lost. Grow stronger, choose her allies well, and try again.</p>`), buttons: [{ label: 'Again later', value: true }] });
+    return;
+  }
+  const r = passTribulation(hid);
+  sfx('thunder');
+  await App.dialog({ title: 'Tribulation weathered!', cn: to.cn, body: `<div style="text-align:center"><div style="width:220px;height:330px;margin:0 auto;border-radius:14px;background:url(${cardUrl(hid)}) center 15%/cover;box-shadow:0 0 50px #ffcf5a, inset 0 0 0 2px #ffcf5a;animation:pulse 1.4s infinite"></div>
+    <p><b class="gold">${esc(h.name)}</b> slays her Heart Demon and enters <b>${esc(to.name)} ${esc(to.cn)}</b>. Her level cap rises to ${levelCap(prog(hid).bt)}${prog(hid).bt <= 5 ? ', and a meridian slot opens' : ''}.</p>
+    ${r?.granted?.length ? `<div class="got" style="justify-content:center">${r.granted.map(g => `<div class="rw-i"><img src="${iconUrl(g.cur || g.item)}" alt=""><em>${num(g.qty)}</em></div>`).join('')}</div>` : ''}</div>`, buttons: [{ label: 'Wonderful', value: true }] });
+}
 /** Today's tea with a heroine (one a day, at the Tea House or from her Bond tab). */
 export async function teaDialog(hid) {
   const h = get(hid), t = teaToday();
@@ -287,17 +306,19 @@ function cultivateDialog(hid) {
 
 function breakthroughDialog(hid) {
   const h = get(hid), p = prog(hid), from = realmOf(p.bt), to = nextRealm(p.bt), cost = breakthroughCost(hid);
-  const ok = canPay(cost);
+  const ok = canPay(cost), tr = trialFor(to.id);
   const s0 = finalStats(hid, p.level, p.bt), s1 = finalStats(hid, p.level, p.bt + 1);
   return App.dialog({
     title: 'Breakthrough', cn: '突破',
     body: `<p><b class="gold">${esc(h.name)}</b> stands at the peak of <b>${esc(from.name)} ${esc(from.cn)}</b>. Breaking through to <b>${esc(to.name)} ${esc(to.cn)}</b> raises her level cap to ${levelCap(p.bt + 1)}, every stat by 10%, and opens ${p.bt + 1 <= 5 ? 'a meridian slot' : 'the way to the Ren and Du vessels'}.</p>
-      <div class="got" style="justify-content:flex-start">${cost.map(c => `<div class="rw-i${qty(c.item || c.cur) >= c.qty ? '' : ' done'}"><img src="${iconUrl(c.item || c.cur)}" alt=""><em>${num(qty(c.item || c.cur))}/${num(c.qty)}</em></div>`).join('')}</div>
+      <div class="got" style="justify-content:flex-start">${cost.map(c => `<div class="rw-i${qty(c.item || c.cur) >= c.qty ? '' : ' done'}"><img src="${iconUrl(c.item || c.cur)}" alt=""><em>${compact(qty(c.item || c.cur))}/${compact(c.qty)}</em></div>`).join('')}</div>
       <p class="mut">Health ${num(s0.hp)} → ${num(s1.hp)} · Attack ${num(s0.atk)} → ${num(s1.atk)} · Defense ${num(s0.def)} → ${num(s1.def)}</p>
-      ${ok ? '' : `<p style="color:#ff9a8a">You need ${cost.filter(c => qty(c.item || c.cur) < c.qty).map(c => esc(get(c.item || c.cur).name)).join(' and ')}. The first Foundation Pill comes from the Wraith Captain.</p>`}`,
-    buttons: [{ label: 'Not yet', cls: 'ink', value: false }, { label: 'Break through', cls: ok ? '' : 'off', value: true }],
+      ${tr ? `<p class="trib-note"><b class="gold">Tribulation 天劫.</b> To enter ${esc(to.name)} she must weather waves of heavenly lightning, then face her own Heart Demon, a darkened copy of herself. Three allies may stand with her. Losing costs nothing: the pills are only used when she wins.</p>` : ''}
+      ${ok ? '' : `<p style="color:#ff9a8a">You need ${cost.filter(c => qty(c.item || c.cur) < c.qty).map(c => esc(get(c.item || c.cur).name)).join(' and ')}. ${p.bt === 0 ? 'The first Foundation Pill comes from the Wraith Captain.' : 'The Alchemy Pavilion brews them.'}</p>`}`,
+    buttons: [{ label: 'Not yet', cls: 'ink', value: false }, { label: tr ? 'Face the tribulation' : 'Break through', cls: ok ? '' : 'off', value: true }],
   }).then(async go => {
     if (!go || !ok) return;
+    if (tr) { await tribulation(hid); return; }
     if (!breakthrough(hid)) { App.toast('The breakthrough failed'); return; }
     sfx('thunder');
     await App.dialog({ title: 'Breakthrough!', cn: to.cn, body: `<div style="text-align:center"><div style="width:220px;height:330px;margin:0 auto;border-radius:14px;background:url(${cardUrl(hid)}) center 15%/cover;box-shadow:0 0 50px #ffcf5a, inset 0 0 0 2px #ffcf5a;animation:pulse 1.4s infinite"></div><p><b class="gold">${esc(h.name)}</b> enters <b>${esc(to.name)}</b>. Her level cap rises to ${levelCap(p.bt)}${p.bt <= 5 ? ', and a meridian slot opens' : ''}.</p></div>`, buttons: [{ label: 'Wonderful', value: true }] });

@@ -170,8 +170,7 @@
     "+10% damage",
     "+10% effect chance",
     "+10% damage"
-   ],
-   "draft": true
+   ]
   },
   {
    "id": "skill:gu_youlan_s2",
@@ -216,8 +215,7 @@
     "+10% damage",
     "Cooldown -1",
     "+15% damage (petal 3)"
-   ],
-   "draft": true
+   ]
   },
   {
    "id": "skill:gu_youlan_s3",
@@ -259,8 +257,7 @@
     "+10% damage",
     "Cooldown -1",
     "+15% damage (petal 5)"
-   ],
-   "draft": true
+   ]
   },
   {
    "id": "skill:gu_youlan_p30",
@@ -275,8 +272,7 @@
      "value": 15
     }
    ],
-   "text": "+15 Haste.",
-   "draft": true
+   "text": "+15 Haste."
   },
   {
    "id": "skill:gu_youlan_p50",
@@ -293,8 +289,7 @@
      "once": "turn"
     }
    ],
-   "text": "Once per turn, when an ally's single-target technique hits an enemy, she follows up on it for 60% ATK.",
-   "draft": true
+   "text": "Once per turn, when an ally's single-target technique hits an enemy, she follows up on it for 60% ATK."
   },
   {
    "id": "skill:zhu_liuhuo_s1",
@@ -1718,8 +1713,7 @@
     "+10% damage",
     "+10% effect chance",
     "+10% damage"
-   ],
-   "draft": true
+   ]
   },
   {
    "id": "skill:hu_qiangwei_s2",
@@ -1768,8 +1762,7 @@
     "+10% damage",
     "Cooldown -1",
     "+15% damage (petal 3)"
-   ],
-   "draft": true
+   ]
   },
   {
    "id": "skill:hu_qiangwei_s3",
@@ -1817,8 +1810,7 @@
     "+10% damage",
     "Cooldown -1",
     "+15% damage (petal 5)"
-   ],
-   "draft": true
+   ]
   },
   {
    "id": "skill:hu_qiangwei_p30",
@@ -1835,8 +1827,7 @@
      "target": "attacker"
     }
    ],
-   "text": "An enemy that hits her gains a Heart Demon stack.",
-   "draft": true
+   "text": "An enemy that hits her gains a Heart Demon stack."
   },
   {
    "id": "skill:hu_qiangwei_p50",
@@ -1853,8 +1844,7 @@
      "once": "turn"
     }
    ],
-   "text": "Once per turn, when Heart Demon turns an enemy against its ally, all her techniques come 1 turn closer.",
-   "draft": true
+   "text": "Once per turn, when Heart Demon turns an enemy against its ally, all her techniques come 1 turn closer."
   },
   {
    "id": "skill:she_qingzhu_s1",
@@ -2810,8 +2800,7 @@
     "+10% damage",
     "+10% effect chance",
     "+10% damage"
-   ],
-   "draft": true
+   ]
   },
   {
    "id": "skill:gui_chanjuan_s2",
@@ -2848,8 +2837,7 @@
     "+10% damage",
     "Cooldown -1",
     "+15% damage (petal 3)"
-   ],
-   "draft": true
+   ]
   },
   {
    "id": "skill:gui_chanjuan_s3",
@@ -2890,8 +2878,7 @@
     "+10% damage",
     "Cooldown -1",
     "+15% damage (petal 5)"
-   ],
-   "draft": true
+   ]
   },
   {
    "id": "skill:gui_chanjuan_p30",
@@ -2907,8 +2894,7 @@
      "when": "area_technique"
     }
    ],
-   "text": "Her area techniques gain +15% critical chance.",
-   "draft": true
+   "text": "Her area techniques gain +15% critical chance."
   },
   {
    "id": "skill:gui_chanjuan_p50",
@@ -2926,8 +2912,7 @@
      "damageBonus": 0.2
     }
    ],
-   "text": "She ignores Harmony: her casts neither break nor extend a chain, and she deals 20% more damage.",
-   "draft": true
+   "text": "She ignores Harmony: her casts neither break nor extend a chain, and she deals 20% more damage."
   },
   {
    "id": "skill:wen_xingyu_s1",
@@ -3710,8 +3695,7 @@
     "+10% damage and healing",
     "+10% healing",
     "+10% damage and healing"
-   ],
-   "draft": true
+   ]
   },
   {
    "id": "skill:ying_wucai_s2",
@@ -3756,8 +3740,7 @@
     "+10% healing",
     "Cooldown -1",
     "+15% healing (petal 3)"
-   ],
-   "draft": true
+   ]
   },
   {
    "id": "skill:ying_wucai_s3",
@@ -3806,8 +3789,7 @@
     "+10% healing",
     "Cooldown -1",
     "+15% healing (petal 5)"
-   ],
-   "draft": true
+   ]
   },
   {
    "id": "skill:ying_wucai_p30",
@@ -3824,8 +3806,7 @@
      "when": "below_half_health"
     }
    ],
-   "text": "When she heals an ally below half health, it also gains Lotus Dew for 1 turn.",
-   "draft": true
+   "text": "When she heals an ally below half health, it also gains Lotus Dew for 1 turn."
   },
   {
    "id": "skill:ying_wucai_p50",
@@ -3839,8 +3820,7 @@
      "mode": "wildcard"
     }
    ],
-   "text": "Her techniques take the phase that extends the current chain, as hydrangeas change colour with their soil. The borrowed phase also sets her advantage and Phase Qi.",
-   "draft": true
+   "text": "Her techniques take the phase that extends the current chain, as hydrangeas change colour with their soil. The borrowed phase also sets her advantage and Phase Qi."
   },
   {
    "id": "skill:fang_yanzhi_s1",
