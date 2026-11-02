@@ -2,7 +2,7 @@
 // auto-salvage rules and the last 30 salvaged pieces; a piece's details (roll gauges, set, refining, engraving,
 // reforging, lock, salvage); and a heroine's ten gear slots, which is the same screen opened with a heroine.
 import { App, esc, gearTile, slotGlyph, SET_COLOR, rewardChip } from './app.js';
-import { get, all, faceUrl, num, heroStats } from './data.js';
+import { get, all, faceUrl, num, heroBase } from './data.js';
 import { pieces, piece, equip, unequip, setLock, markSeen, refine, salvage, restore, engravePiece, reforge, setAutoSalvage, heroGear, heroBonus, finalStats, qty, canPay, data, prog, persist } from './state.js';
 import { POSITIONS, POS_SLOT, SUB_KEYS, lineKey, statLabel, fmtStat, mainValue, subValue, rollScore, artefactLines, rarities, rarityOrder, tierOrder, rarityColor, ROMAN, refineCost, salvageValue, engraveCost, canReforge, reforgeCost, nextTier, pieceName, canWear, gearBonus, withGear } from './gear.js';
 import { sfx } from './engine.js';
@@ -48,7 +48,7 @@ function pieceBody(p, hid) {
 /** What a heroine's stats become with a piece in place of what she wears there. */
 function compare(hid, pos, p) {
   const p0 = prog(hid);
-  const base = heroStats(hid, p0.level, p0.bt);
+  const base = heroBase(hid, p0);
   const now = withGear(base, heroBonus(hid));
   const arr = heroGear(hid); arr[POSITIONS.indexOf(pos)] = p;
   const then = withGear(base, gearBonus(arr));
@@ -94,15 +94,18 @@ App.register('ring', {
 
     const drawHero = () => {
       if (!heroEl) return;
-      const p0 = prog(hid), g = heroGear(hid), b = heroBonus(hid), s = finalStats(hid), base = heroStats(hid, p0.level, p0.bt);
-      const plus = (k, pct) => { const d = s[k] - (base[k] || 0); return Math.abs(d) < (pct ? 0.0005 : 0.5) ? '' : `<small>+${pct ? (d * 100).toFixed(1) + '%' : num(d)}</small>`; };
+      const p0 = prog(hid), g = heroGear(hid), b = heroBonus(hid), s = finalStats(hid), base = heroBase(hid, p0);
+      // her own stats (level, realm, meridians, bond), then in green what her gear adds: own + gear = the total on her page
+      const part = (k, pct) => { const own = base[k] || 0, d = s[k] - own, show = v => (pct ? `${Math.round(v * 100)}%` : num(v));
+        return Math.abs(d) < (pct ? 0.0005 : 0.5) ? show(s[k]) : `${show(own)}<small title="Added by her gear">+${pct ? (d * 100).toFixed(1) + '%' : num(d)}</small>`; };
       const sets = Object.entries(b.count).filter(([, n]) => n >= 2).map(([id, n]) => { const x = get(id);
         return `<div class="rh-set" style="--sc:${SET_COLOR[id]}"><b>${esc(x.name)} ${n >= 4 ? '4' : '2'}/4</b><span>${esc(twoPieceText(x))}${n >= 4 ? ` · ${esc(x.fourPiece.name)}` : ''}</span></div>`; }).join('');
       heroEl.innerHTML = `<div class="rh-head">${faceUrl(hid) ? `<img src="${faceUrl(hid)}" alt="">` : ''}<div><b>${esc(hero.name)}</b><small>Level ${p0.level} · ${esc(get(hero.path).name)}</small></div></div>
         <div class="rh-slots">${POSITIONS.map((pos, i) => { const p = g[i];
           return `<div class="rh-slot${st.pos === pos ? ' on' : ''}" data-act="pos" data-pos="${pos}">${p ? gearTile(p) : `<div class="gt empty"><span class="g">${slotGlyph(POS_SLOT[pos])}</span></div>`}<small>${POS_NAME[pos]}</small></div>`; }).join('')}</div>
-        <div class="stats rh-stats"><div>Health <b>${num(s.hp)}${plus('hp')}</b></div><div>Attack <b>${num(s.atk)}${plus('atk')}</b></div><div>Defense <b>${num(s.def)}${plus('def')}</b></div><div>Critical <b>${Math.round(s.crit * 100)}%${plus('crit', 1)}</b></div>
-          <div>Crit damage <b>${Math.round(s.critDmg * 100)}%${plus('critDmg', 1)}</b></div><div>Haste <b>${s.haste}</b></div><div>Accuracy <b>${Math.round(s.acc * 100)}%</b></div><div>Resistance <b>${Math.round(s.res * 100)}%</b></div></div>
+        <div class="stats rh-stats"><div>Health <b>${part('hp')}</b></div><div>Attack <b>${part('atk')}</b></div><div>Defense <b>${part('def')}</b></div><div>Critical <b>${part('crit', 1)}</b></div>
+          <div>Crit damage <b>${part('critDmg', 1)}</b></div><div>Haste <b>${part('haste')}</b></div><div>Accuracy <b>${Math.round(s.acc * 100)}%</b></div><div>Resistance <b>${Math.round(s.res * 100)}%</b></div></div>
+        <p class="mut rh-key">Her own stats, <span class="gr">+ what her gear adds</span></p>
         ${sets ? `<div class="rh-sets">${sets}</div>` : '<p class="mut" style="margin:0">Wear 2 or 4 pieces of one set for its bonus and effect.</p>'}
         <div class="rh-btns"><button class="btn ink" data-act="stripall">Unequip all</button><button class="btn ink" data-act="toring">Storage Ring</button></div>`;
     };

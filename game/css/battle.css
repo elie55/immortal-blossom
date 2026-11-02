@@ -12,7 +12,7 @@ button { font-family: inherit; color: inherit; cursor: pointer; }
 
 /* ---------------- background & board frame ---------------- */
 #bg { position: absolute; inset: 0; z-index: 0; }
-.bg-img { position: absolute; inset: -20px; background: url(assets/bg/arena.webp) center 62% / cover; filter: saturate(.85) blur(1.5px); }
+.bg-img { position: absolute; inset: -20px; background: url(../assets/bg/arena.webp) center 62% / cover; filter: saturate(.85) blur(1.5px); }
 .bg-shade { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 52%, rgba(6, 9, 16, .45), rgba(4, 6, 11, .9) 72%), linear-gradient(rgba(5, 8, 14, .55), rgba(5, 8, 14, .35) 45%, rgba(5, 8, 14, .7)); }
 .bg-table { position: absolute; left: calc(var(--x0) - 22px); width: calc(var(--rowW) + 44px); top: 10px; bottom: 10px; border-radius: 22px;
   background: linear-gradient(rgba(10, 14, 24, .55), rgba(8, 11, 19, .35) 46%, rgba(8, 11, 19, .35) 54%, rgba(10, 14, 24, .55));
@@ -367,7 +367,7 @@ button { font-family: inherit; color: inherit; cursor: pointer; }
 .tut-hole.pass { box-shadow: none; }
 @keyframes holePulse { 50% { box-shadow: 0 0 34px rgba(255, 233, 168, 1); } }
 .tut-tip { position: absolute; width: 470px; display: flex; gap: 0; pointer-events: auto; filter: drop-shadow(0 10px 24px rgba(0, 0, 0, .6)); transition: left .35s cubic-bezier(.2, .9, .3, 1), top .35s cubic-bezier(.2, .9, .3, 1); }
-.tut-face { width: 128px; height: 128px; flex: none; margin-right: -26px; margin-top: -22px; z-index: 2; background: url(assets/ui/taoyao.webp) center 18% / cover; border-radius: 50%; border: 3px solid #ffb7d0; box-shadow: 0 0 0 4px rgba(10, 14, 24, .9), 0 0 18px rgba(255, 160, 200, .6); }
+.tut-face { width: 128px; height: 128px; flex: none; margin-right: -26px; margin-top: -22px; z-index: 2; background: url(../assets/ui/taoyao.webp) center 18% / cover; border-radius: 50%; border: 3px solid #ffb7d0; box-shadow: 0 0 0 4px rgba(10, 14, 24, .9), 0 0 18px rgba(255, 160, 200, .6); }
 .tut-body { flex: 1; padding: 14px 18px 14px 38px; border-radius: 16px; background: linear-gradient(rgba(28, 16, 30, .97), rgba(12, 12, 22, .97)); border: 1px solid #ffb7d0; }
 .tut-name { font: 700 13px Cinzel, serif; color: #ffb7d0; letter-spacing: .12em; text-transform: uppercase; display: flex; justify-content: space-between; }
 .tut-name span { color: var(--mut); letter-spacing: .04em; }

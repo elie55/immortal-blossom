@@ -135,8 +135,14 @@ def bundle():
         html = fh.read()
 
     def inline_css(m):
+        """A stylesheet's url()s are relative to its own folder (game/css/, so ../assets/...); inlined in the page they
+        are relative to the page, next to assets/."""
         with open(os.path.join(GAME, m.group(1)), encoding='utf8') as fh:
-            return '<style>\n' + fh.read() + '\n</style>'
+            css = fh.read()
+        bad = re.findall(r'url\(\s*[\'"]?(?!\.\./|data:|#|https?:)([^)\'"]+)', css)
+        if bad:
+            raise SystemExit(f'{m.group(1)}: url() paths must start with ../ (relative to game/css/): {bad}')
+        return '<style>\n' + re.sub(r'url\(\s*([\'"]?)\.\./', r'url(\1', css) + '\n</style>'
     html = re.sub(r'<link rel="stylesheet" href="(css/[^"]+)">', inline_css, html)
     script = '<script type="module">\n' + js.replace('</script', '<\\/script') + '\n</script>'
     html = html.replace('<script type="module" src="js/main.js"></script>', script)

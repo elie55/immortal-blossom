@@ -367,6 +367,9 @@
 .gt.big { width: 112px; height: 112px; } .gt.big .g { font-size: 52px; }
 .gt.rw-g { width: 58px; height: 58px; border-radius: 10px; } .gt.rw-g .g { font-size: 26px; } .gt.rw-g .tr { font-size: 10px; left: 4px; top: 1px; }
 .gt.rw-g .sg { width: 18px; height: 18px; font-size: 10px; left: 2px; bottom: 2px; } .gt.rw-g .pl { font-size: 13px; }
+/* spoils and dialogs show rewards at 84px: gear at the same size as the items next to it */
+.got .gt.rw-g { width: 84px; height: 84px; border-radius: 12px; } .got .gt.rw-g .g { font-size: 38px; } .got .gt.rw-g .tr { font-size: 13px; left: 6px; top: 3px; }
+.got .gt.rw-g .sg { width: 26px; height: 26px; font-size: 14px; left: 4px; bottom: 4px; } .got .gt.rw-g .pl { font-size: 17px; }
 .gt.salv { opacity: .5; } .gt.salv::after { content: '分解'; position: absolute; left: 0; right: 0; bottom: 0; text-align: center; font: 900 11px 'Noto Serif SC', serif; color: #fff; background: rgba(120, 20, 20, .8); }
 
 .rg { position: absolute; left: 20px; right: 20px; top: 86px; bottom: 16px; z-index: 3; display: flex; gap: 14px; }
@@ -417,7 +420,8 @@
 .rh-slot .gt { width: 70px; height: 70px; } .rh-slot .gt .g { font-size: 30px; } .rh-slot .gt .eqf { display: none; }
 .rh-slot small { font: 600 13px Cinzel, serif; color: var(--mut); }
 .rh-slot.on { background: rgba(232, 199, 125, .18); box-shadow: inset 0 0 0 1px var(--gold); } .rh-slot.on small { color: var(--gold); }
-.rh-stats { font-size: 18px; } .rh-stats b { font-size: 18px; } .rh-stats b small { font: 600 13px Oswald, sans-serif; color: #8fe6a8; margin-left: 4px; }
+.rh-stats { font-size: 18px; } .rh-stats b { font-size: 18px; } .rh-stats b small { font: 600 14px Oswald, sans-serif; color: #8fe6a8; margin-left: 3px; }
+.rh-key { margin: -4px 0 0; font-size: 14px; } .rh-key .gr { color: #8fe6a8; }
 .rh-sets { display: flex; flex-direction: column; gap: 4px; }
 .rh-set { padding: 4px 10px; border-left: 3px solid var(--sc); background: rgba(255, 255, 255, .04); border-radius: 4px; }
 .rh-set b { font: 700 16px Cinzel, serif; color: var(--sc); margin-right: 8px; } .rh-set span { font: 500 16px 'Cormorant Garamond', serif; color: #e9e0cc; }
