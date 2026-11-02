@@ -302,6 +302,7 @@ In the full game, encounters appear in boss stages, the Pagoda, Secret Realms, r
 
 - A boss carries a gold Qi shield of 12 segments. Each hit breaks one, two with advantage, and the shield refills after the boss's turn.
 - Breaking it in one turn Shatters the boss: it takes 30% more damage until its next turn ends, and its ultimate is delayed by 1 turn. Multi-hit techniques shine here.
+- While the shield holds, nothing that skips a turn takes hold: Frost Seal, Soul Shock and Lotus Dream fail against it. Shatter it first, then seal it, and the boss loses its next turn. (The balance pass added this: on auto, the founders froze and stunned bosses for half their turns.) The Qi shields of Heaven-Defying elites and Heart Demons work the same way.
 - The boss card shows its ultimate's countdown, such as Netherflame Cataclysm in 2 turns, so the player races to Shatter it in time. The idea comes from Honkai: Star Rail's weakness break.
 
 ### Enemy targeting and auto battle
@@ -383,7 +384,7 @@ Before a battle the player picks one of five arrays. Arrays unlock through the s
 | Debuff | Mist Veil | −50% accuracy | Decrease Hit Chance |
 | Debuff | Withering | Cannot be healed | Unhealable |
 | Debuff | Karmic Mark | Takes 25% more damage | Target |
-| Debuff | Shattered | Qi shield broken: 30% more damage taken, ultimate delayed | Weakness break (Honkai: Star Rail) |
+| Debuff | Shattered | Qi shield broken: 30% more damage taken, ultimate delayed, and turn-skipping effects can land | Weakness break (Honkai: Star Rail) |
 | Debuff | Heart Demon | Stacks; at 3 stacks the unit attacks an ally once, then the stacks clear | New |
 
 ### Presentation
@@ -713,7 +714,7 @@ The Hundred Blossoms Pavilion is the home base: ten buildings that turn time awa
 
 - **Levels.** Each building opens at level 1 when its chapter stage is cleared. The Main Hall can reach two levels per Journey chapter cleared, and every other building is capped at the Main Hall's level. Upgrades cost spirit stones (from 3,000 to 405,000 a level).
 - **Closed-door Caves:** 600 to 32,000 EXP an hour by level, for up to 12 hours; EXP past a heroine's cap is banked. Each full 4 hours gives a 3% chance of an epiphany, a free mastery level up to +3.
-- **Spirit Herb Garden:** 500 spirit stones and 2 spirit grass an hour at level 1, with blood ginseng from level 3, snow lotus from 6, fire lingzhi from 8 and nine-leaf lingzhi from 10; +15% a level, for up to 12 hours between harvests.
+- **Spirit Herb Garden:** 500 spirit stones and 2 spirit grass an hour at level 1, with blood ginseng from level 3, snow lotus from 6, fire lingzhi from 8 and nine-leaf lingzhi from 10; +15% a level, for up to 12 hours between harvests. The three rare herbs also wait for a realm: snow lotus grows once a heroine reaches Foundation Establishment, fire lingzhi Core Formation and nine-leaf lingzhi Spirit Severing.
 - **Alchemy Pavilion:** 1 furnace (2 from level 5, 3 at 10), batches of up to 10 brews. Quality odds start at Low 50%, Middle 30%, High 15%, Perfect 5%; each level and the alchemist move odds from Low to High and Perfect, a Healer most of all. High gives two pills, Perfect three.
 - **Mission Hall:** 1 to 5 expeditions out at once; 4-hour expeditions open at level 2, 8-hour at 4, 12-hour at 6. A heroine on an expedition cannot be in the caves, and the other way round; both can still fight.
 - **Tea House:** one tea a day, worth 10% more bond per level above 1. **Array Platform:** a Battle Array can be raised to the platform's level.
@@ -770,6 +771,35 @@ A simulation of these rules gives 27 summons per 5★ on average (median 23, 90%
 | Two hours a day | 60 | Week 9 or 10 |
 
 Income is front-loaded: about 90 summons across the first 10 hours (story gifts, first clears, beginner missions), so a new player owns two or three 5★ before Volume 1 ends.
+
+### Difficulty and the pace of play
+
+Content difficulty sets the pace, so the core loop alpha was balanced against a simulated economy (`tools/economy_sim.py`, report in `docs/economy-report.md`). The simulation replays the data's rules with a player who plays two 45-minute sessions a day, and decides each battle with a win model fitted to real battles: the four founders on auto, without gear, against stages of every kind at every level until they win (`tools/calibrate.cjs`, which plays a battle in a second or two on a fast clock).
+
+**What the calibration found.** Enemies grew exactly like heroines, and a heroine's techniques do far more than her stats suggest, so the founders beat story bosses ten levels below them, Heaven-Defying stages twelve levels below, and a simulated player finished Volume 1 in under two hours, every hunt by hour six and level 80 by hour fourteen.
+
+**What changed.**
+
+- Enemies' Health and Attack rise by realm as players' gear does: +0%, +45%, +90%, +135%, then +200%, +280%, +380% and +500% at Mahayana (`rules:growth enemyGearPar`).
+- Each class of stage has its own multiplier (`stageMultiplier`): story battles ×1.44, story bosses ×1.49, Heaven-Defying battles ×1.44 and bosses ×1.70, the Valley ×1.29, the shrines ×1.44, each hunt by its gimmick (Qiongqi ×0.96, Taowu ×1.5, Hundun ×1.46, Xiangliu ×1.4, Taotie ×1.86), tribulations ×2.5. Story bosses, three Heaven-Defying bosses, the last two Heaven-Defying chapters and each tribulation also carry their own `power`, which smooths the curve. The tutorial battle keeps its numbers.
+- An unbroken Qi shield blocks Frost Seal, Soul Shock and Lotus Dream (see Boss Qi shields): on auto, bosses lost half their turns.
+- The herb garden grows Snow Lotus only from Foundation Establishment, Fire Lingzhi from Core Formation and Nine-Leaf Lingzhi from Spirit Severing, so breakthrough herbs cannot be stored up a realm ahead.
+- A breakthrough from Core Formation on needs the tribulation won, and tribulations are the realm's hardest battle.
+
+**What it plays like.** Story battles stay comfortable at level. From chapter 3, a boss wants some gear or a level or two, and the Volume 1 finale is the first real check. Heaven-Defying needs gear of its tier, a hunt level needs the refined gear of the level before, and a tribulation needs the best gear of the realm. Checked again on the engine after the change, eight stages of every kind came within three levels of the model's prediction.
+
+| Median player (20 simulated) | Hours of play |
+| --- | --- |
+| Volume 1 cleared | 3.9 |
+| First heroine in Core Formation | 3.9 |
+| Demon Hunt level 3 | 6.3 |
+| First heroine in Nascent Soul | 11.8 |
+| Demon Hunt level 5 | 12.5 |
+| All 35 Heaven-Defying stages | 15.7 (14.3 to 19.4) |
+| First heroine in Spirit Severing | 18.5 |
+| Demon Hunt level 7 | 19.0 |
+
+The alpha's gate, 15 hours of content, holds: the median player finishes the Heaven-Defying Journey after 15.7 hours, and Spirit Severing and the hunts beyond keep going. About 60% of the time goes to Demon Hunts, the gear loop.
 
 ### Market
 
@@ -901,7 +931,7 @@ One heroine costs about 5 or 6 ChatGPT images (card, cut-in, three expressions, 
 - Combat demo, done: four heroines against two wraiths with 39 AutoSprite animations. Its effects engine carries over.
 - Card battle prototype, done: the four Blossoms against two waves and the Netherflame Matriarch, with Harmony chains, Phase Qi, Spirit Qi, Fortuitous Encounters, the Qi shield, the Heavenly Tribulation and a 23-step tutorial.
 - Vertical slice, playable in the browser: Pavilion Hall, Journey chapter 1 (8 stages and 11 scenes), Formation, card battles with Haste, Kindred Qi and three Twin Blooms, victory flow, heroine overview, Cultivate and Breakthrough, Fate Pond with a guided first summon, saving with save codes; 10 heroines. Everything it shows comes from the data. Left for its gate: the Android build with Capacitor and 30 minutes timed on a phone.
-- Core loop alpha: Volume 1 complete, gear, hunts, Medicine King Valley and the Forge, the Sect's caves, garden, alchemy and missions, meridians, techniques, Dao Blossom and bonds; 14 heroines. Gate: 15 hours of content with a simulated economy.
+- Core loop alpha, built: Volume 1 complete, gear, hunts, Medicine King Valley and the Forge, the Sect's caves, garden, alchemy and missions, meridians, techniques, Dao Blossom and bonds; 14 heroines. Gate: 15 hours of content with a simulated economy, met after the balance pass (see Difficulty and the pace of play). Left: the Android build.
 - Content beta: pagoda, Secret Realms, shrines, Sect Grand Competition, Trial Tower and raid; 30 heroines; a balance pass. Gate: a closed test on Google Play.
 - Launch: polish, audio, localization, store page and price.
 - After launch: Volume 2 and the first Yin and Yang heroines.

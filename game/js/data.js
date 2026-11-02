@@ -159,9 +159,26 @@ export function teamThreads(team) {
   const set = new Set(team.filter(Boolean));
   return all('thread').filter(t => set.has(t.a) && set.has(t.b));
 }
-export function enemyStats(eid, level) {
-  const b = get(eid).base, g = (1 + 0.08 * (level - 1)) * (1 + 0.1 * Math.floor((level - 1) / 10));
-  return { hp: Math.round(b.hp * g), atk: Math.round(b.atk * g), def: Math.round(b.def * g), crit: b.crit, critDmg: b.critDmg };
+/** The balance classes of stages (rules:growth stageMultiplier): story battles and bosses, their Heaven-Defying
+ *  versions, each hunt, the Valley, the shrines and the tribulations; any other mode by its own name. */
+export function stageClass(stage) {
+  if (stage.trial) return 'trial';
+  const m = stage.mode;
+  if (m === 'mode:hunts') return (stage.hunt || 'hunt').replace(':', ' ');
+  if (m === 'mode:valley') return 'valley';
+  if (m === 'mode:shrines') return 'shrine';
+  if (m === 'mode:journey' || stage.hd) return (stage.hd ? 'hd ' : 'story ') + (stage.kind === 'boss' ? 'boss' : 'battle');
+  return keyOf(m || 'mode:other');
+}
+/** Enemy stats at a level: a heroine's growth (+8% a level, +10% a realm), then Health and Attack times
+ *  rules:growth's enemyPowerBase, 1 + enemyGearPar[realm] (the gear players wear by then; a number means that much per
+ *  realm) and `mul`, the stage's own
+ *  multiplier (its class's stageMultiplier times its `power`, or its heavenDefying.power on Heaven-Defying). */
+export function enemyStats(eid, level, mul = 1) {
+  const b = get(eid).base, r = Math.floor((level - 1) / 10), g = (1 + 0.08 * (level - 1)) * (1 + 0.1 * r);
+  const gp = RG().enemyGearPar, par = Array.isArray(gp) ? (gp[Math.min(r, gp.length - 1)] || 0) : (gp || 0) * r;
+  const p = (RG().enemyPowerBase ?? 1) * (1 + par) * mul;
+  return { hp: Math.round(b.hp * g * p), atk: Math.round(b.atk * g * p), def: Math.round(b.def * g), crit: b.crit, critDmg: b.critDmg };
 }
 /** A rough power number for Formation: offense times survivability. */
 export function power(s) { return Math.round((s.atk * (1 + s.crit * (s.critDmg - 1))) * 2.2 + s.hp * 0.32 + s.def * 1.6); }
@@ -212,8 +229,8 @@ export function heroUnit(hid, prog = {}, arrayBonus = {}, gear = null, extra = {
   };
 }
 /** An enemy for the battle engine. phase overrides its own (the Valley's day phase, a shrine's phase). */
-export function enemyUnit(eid, level, phase = null) {
-  const e = get(eid), s = enemyStats(eid, level);
+export function enemyUnit(eid, level, phase = null, mul = 1) {
+  const e = get(eid), s = enemyStats(eid, level, mul);
   return {
     key: keyOf(eid), id: eid, name: e.name, cn: e.cn, title: e.title, phase: phaseOf(phase || e.phase), path: null, family: e.family, profile: e.profile, script: e.script || null,
     art: enemyArt(e), cutin: null, face: null, lvl: level, hp: s.hp, atk: s.atk, def: s.def, crit: s.crit, critDmg: s.critDmg,
@@ -245,7 +262,7 @@ export function arrayText(arrayId, pos, level = 1) {
 export const trialFor = realmId => all('trial').find(t => t.realm === realmId) || null;
 /** A heroine's tribulation as a stage: lightning waves, then her Heart Demon; she must fight it herself. */
 export function trialStage(trial, hid) {
-  return { id: `${trial.id}#${keyOf(hid)}`, name: `${get(hid).name}: ${trial.name}`, trial: trial.id, hero: hid, required: [hid], waves: trial.waves,
+  return { id: `${trial.id}#${keyOf(hid)}`, name: `${get(hid).name}: ${trial.name}`, trial: trial.id, hero: hid, required: [hid], waves: trial.waves, power: trial.power || 1,
     location: 'loc:jade_pool', firstClearRewards: null, drops: null, missions: null };
 }
 /** Her Heart Demon: a darkened copy of her card with her techniques and stats at the trial's level, a boss with a Qi shield. */
@@ -256,6 +273,7 @@ export function demonUnit(hid, level, prog = {}, gear = null) {
 }
 /** Build the engine's battle definition for a stage and a team (hero ids, with progress). */
 export function stageBattle(stage, team, progress, arrayId = 'array:yellow_dragon', opts = {}) {
+  const mul = stage.tutorial ? 1 : ((RG().stageMultiplier || {})[stageClass(stage)] || 1) * (stage.power || 1); // the tutorial keeps its numbers
   const waves = (stage.waves || []).map((w, i, arr) => {
     const boss = w.some(e => get(e.enemy)?.boss || (e.enemy === 'enemy:heart_demon' && stage.hero));
     return {
@@ -263,7 +281,7 @@ export function stageBattle(stage, team, progress, arrayId = 'array:yellow_drago
       sub: boss ? (stage.hero && w.some(e => e.enemy === 'enemy:heart_demon') ? `${get(stage.hero).name}'s Heart Demon` : get(w.find(e => get(e.enemy)?.boss).enemy).name) : stage.name, boss,
       enemies: w.map(e => (e.enemy === 'enemy:heart_demon' && stage.hero
         ? demonUnit(stage.hero, e.level, progress[stage.hero] || {}, opts.gear && progress[stage.hero] ? opts.gear(stage.hero) : null)
-        : enemyUnit(e.enemy, e.level, e.phase || ({ day: opts.dayPhase || todayPhase('mode:valley', 'phase:metal'), shrine: stage.phase || 'phase:earth' }[get(e.enemy).phase]) || null))),
+        : enemyUnit(e.enemy, e.level, e.phase || ({ day: opts.dayPhase || todayPhase('mode:valley', 'phase:metal'), shrine: stage.phase || 'phase:earth' }[get(e.enemy).phase]) || null, mul))),
     };
   });
   if (stage.hd) for (const w of waves) for (const u of w.enemies) if (!u.qiShield && u.profile !== 'minion') u.qiShield = 4; // Heaven-Defying elites
@@ -282,7 +300,7 @@ export function stageBattle(stage, team, progress, arrayId = 'array:yellow_drago
  *  first-clear rewards, no story. prevId chains the unlocks inside a chapter. */
 export function hdStage(st, prevId = null) {
   const hd = st.heavenDefying; if (!hd) return null;
-  return { ...st, id: `${st.id}#hd`, base: st.id, hd: true, tier: hd.tier || st.tier, drops: hd.drops || st.drops, firstClearRewards: hd.firstClearRewards || [], mechanic: hd.mechanic,
+  return { ...st, id: `${st.id}#hd`, base: st.id, hd: true, tier: hd.tier || st.tier, drops: hd.drops || st.drops, firstClearRewards: hd.firstClearRewards || [], mechanic: hd.mechanic, power: hd.power || 1,
     waves: st.waves.map(w => w.map(e => ({ ...e, level: e.level + (hd.levelOffset || 0) }))), scenes: null, guests: null, fixedTeam: null, tutorial: false, shop: null, encounters: st.encounters,
     unlock: prevId ? { clear: prevId } : null };
 }

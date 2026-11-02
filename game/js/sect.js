@@ -65,11 +65,15 @@ function epiphanyFor(hid, maxLv) {
 
 // ---------------- the Spirit Herb Garden ----------------
 const GARDEN = 'bld:spirit_herb_garden';
+/** The best realm among your heroines, by order (1 = Qi Refining). */
+const bestRealmOrder = () => 1 + Math.max(0, ...Object.values(data().heroes).map(h => h.bt || 0));
+/** A herb grows from its garden level, and from its realm (fromRealm) once one of your heroines has reached it. */
+const herbOpen = (p, L = bldLevel(GARDEN)) => L >= (p.fromLevel || 1) && (!p.fromRealm || bestRealmOrder() >= (get(p.fromRealm)?.order || 1));
 export function gardenYield(now = Date.now()) {
   const g = SECT().garden, b = get(GARDEN), L = bldLevel(GARDEN);
   if (!g.since) return { hours: 0, cap: b.capHours || 12, items: [] };
   const hours = Math.max(0, Math.min(b.capHours || 12, (now - g.since) / 3600e3)), mul = 1 + (b.levelBonus || 0) * (L - 1);
-  const items = (b.produces || []).filter(p => L >= (p.fromLevel || 1)).map(p => {
+  const items = (b.produces || []).filter(p => herbOpen(p, L)).map(p => {
     const id = p.cur || p.item, raw = p.perHour * hours * mul + (g.carry[id] || 0);
     return { id, cur: !!p.cur, perHour: p.perHour * mul, raw, qty: Math.floor(raw) };
   });
@@ -317,8 +321,9 @@ function caveBody() {
 }
 function gardenBody() {
   const y = gardenYield(), b = get(GARDEN), L = bldLevel(GARDEN);
-  const all3 = (b.produces || []).map(p => { const id = p.cur || p.item, it = y.items.find(i => i.id === id), open = L >= (p.fromLevel || 1);
-    return `<div class="gd-row${open ? '' : ' locked'}"><div class="rw-i">${iconUrl(id) ? `<img src="${iconUrl(id)}" alt="">` : ''}</div><span><b>${esc(get(id).name)}</b><small>${open ? `${+(it.perHour).toFixed(2)} an hour` : `From level ${p.fromLevel}`}</small></span><em>${open ? num(it.qty) : ''}</em></div>`; }).join('');
+  const all3 = (b.produces || []).map(p => { const id = p.cur || p.item, it = y.items.find(i => i.id === id), open = herbOpen(p, L) && !!it;
+    const why = L < (p.fromLevel || 1) ? `From level ${p.fromLevel}` : !herbOpen(p, L) ? `Grows once a heroine reaches ${esc(get(p.fromRealm)?.name || 'its realm')}` : 'Not planted yet';
+    return `<div class="gd-row${open ? '' : ' locked'}"><div class="rw-i">${iconUrl(id) ? `<img src="${iconUrl(id)}" alt="">` : ''}</div><span><b>${esc(get(id).name)}</b><small>${open ? `${+(it.perHour).toFixed(2)} an hour` : why}</small></span><em>${open ? num(it.qty) : ''}</em></div>`; }).join('');
   return `<div class="sd-h">THE BEDS · ${y.hours.toFixed(1)} / ${y.cap} HOURS</div><div class="expbar"><i style="width:${(y.hours / y.cap * 100).toFixed(1)}%"></i></div>
     <p class="mut">The garden grows for up to ${y.cap} hours between harvests; each level makes it grow ${Math.round((b.levelBonus || 0) * 100)}% faster.</p>
     <div class="gd-list">${all3}</div><div class="sd-btns"><button class="btn jade${y.items.some(i => i.qty > 0) ? '' : ' off'}" data-act="harvest">Harvest</button></div>`;

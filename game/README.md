@@ -1,4 +1,4 @@
-# Core loop alpha (in progress)
+# Core loop alpha
 
 Immortal Blossoms as it grows from the vertical slice to the core loop alpha: Volume 1 of the Journey (five chapters, from the dream at the Jade Pool to the Netherflame Matriarch), gear and the Storage Ring, the Trials (Demon Hunts, Medicine King Valley, Five Phases Shrines, the Artifact Forge), heroine growth (technique mastery, meridians, Dao Blossom, bonds and Karmic Threads), the Pavilion Hall and the Fate Pond. Everything it shows comes from `data/`.
 
@@ -47,9 +47,21 @@ cd dist && python3 -m http.server     # then open http://localhost:8000
 | Five Phases Shrines | Five shrines of eight levels for essences and Enlightenment Scrolls; the day's shrine drops double |
 | Artifact Forge | Craft a piece of a chosen set and slot from a Forging Manual (at your highest cleared tier), Spirit Artefacts from Artefact Essence, natal gear from Mahayana on; one job at a time, in real hours |
 
-Ten heroines have art in the slice: the four founders, Wei Zi (5★), and five 3★ heroines (Ning Suxin, Tang Mian, Lin Chaxue, An Baihe, Fang Yanzhi). The Fate Pond only offers heroines with art.
+Fourteen heroines have art: the four founders, five 5★ (Wei Zi, Hu Qiangwei, Gui Chanjuan, Gu Youlan and Ying Wucai) and five 3★ (Ning Suxin, Tang Mian, Lin Chaxue, An Baihe, Fang Yanzhi). The Fate Pond only offers heroines with art. A heroine's card, round face and cut-in come from one portrait, `card_<key>.png`, through `python3 tools/hero_art.py <Images folder> <key> --face X,Y,SIZE`.
 
 Everyone who speaks in Volume 1 (Tao Yao, the four founders, the Medicine King, villagers, clan elders and foes: 24 figures) has a standing figure with a transparent background in `assets/stand/<key>.webp`, made from `stand_<key>.png` in the Images folder (or its latest `_v2` redo) by `python3 tools/stand_art.py <Images folder>` (trimmed to the figure, 1200 px high, alpha kept). Cards, bosses and backgrounds come from ChatGPT sheets through `python3 tools/cut_art.py <Images folder>`. Scenes and the dialogues where a character talks (Tao Yao at the Fate Pond, Old Qian's cart) use it; a speaker without one falls back to her card or portrait.
+
+## Balance and the economy simulation
+
+How hard each battle is comes from `rules:growth` (enemies' Health and Attack by realm, `stageMultiplier` by class of stage) and from a stage's own `power`; the balance pass set them so the core loop lasts (`docs/economy-report.md`).
+
+```
+python3 -m http.server 8765 --directory dist &                 # the built game, for the calibration
+node tools/calibrate.cjs --bisect stages.json >> tools/calibration.jsonl   # lowest level at which the founders win each stage on auto
+python3 tools/economy_sim.py --hours 30 --runs 20 --quiet --report docs/economy-report.md
+```
+
+`tools/calibrate.cjs` plays real battles on auto in a headless browser, on a fast clock (`window.__ib.turbo`), so a battle takes a second or two. `tools/economy_sim.py` replays the data's rules with a simple player who plays two 45-minute sessions a day, and decides battles with a win model fitted to those calibration battles. `--power-base`, `--gear-par` and `--stage-mul` try other enemy numbers without editing the data.
 
 ## Code
 

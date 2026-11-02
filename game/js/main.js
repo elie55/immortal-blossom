@@ -1,6 +1,6 @@
 // Boot: stage scaling, the frame loop that drives battles, asset preloading, the save, then the title screen.
 import { ui, board, BT, clock, tickClock, timeScale, initVfx, resizeVfx, updateVfx, renderVfx, shakeState, tutorial, configureRules, loadAll, FX_LIST, initAudio } from './engine.js';
-import { get, SLICE_HEROES, heroArt, stageBattle, heroUnit } from './data.js';
+import { get, SLICE_HEROES, heroArt, stageBattle, heroUnit, hdStage, trialStage } from './data.js';
 import { loadSave, SAVE, addPiece, equip, heroBonus, gainHero, finalStats, grant, rollDrops } from './state.js';
 import { makePiece, makeArtefact } from './gear.js';
 import { App } from './app.js';
@@ -88,6 +88,26 @@ window.__ib = {
   fightOwned: (stageId, team) => App.runBattle(stageBattle(get(stageId), team, SAVE.data.heroes, 'array:yellow_dragon', { gear: heroBonus })),
   /** Test hook: fight with growth records ({ hid: { level, bt, petals, mastery, meridians, bond } }), no gear. */
   fightWith: (stageId, team, progress) => App.runBattle(stageBattle(get(stageId), team, progress, 'array:yellow_dragon', {})),
+  /** Test hook: fight a stage (or its Heaven-Defying version) with the save's heroines, their growth and gear. */
+  fightSave: (stageId, team, hd = false) => App.runBattle(stageBattle(hd ? hdStage(get(stageId)) : get(stageId), team, SAVE.data.heroes, 'array:yellow_dragon', { gear: heroBonus })),
+  /** Test hook: a heroine's tribulation (trial id) with the save's heroines, their growth and gear. */
+  fightTrial: (trialId, hid, team) => App.runBattle(stageBattle(trialStage(get(trialId), hid), team, SAVE.data.heroes, 'array:yellow_dragon', { gear: heroBonus })),
   heroUnit,
   flow: Flow, get,
+  /** Test hook: drive the game clock in fixed steps (no frame pacing) until `done` settles, so a battle resolves in
+   *  seconds; clock.t still counts the game time a player would watch at x1. `onInput` runs at the first input phase. */
+  turbo: async (done, { step = 20, cap = 1800e3, onInput } = {}) => {
+    let fin = false, out; done.then(r => { fin = true; out = r; });
+    const ch = new MessageChannel(); let wake = null; ch.port1.onmessage = () => wake && wake();
+    const yieldNow = () => new Promise(r => { wake = r; ch.port2.postMessage(0); });
+    clock.paused = true; const t0 = clock.t; let fired = !onInput;
+    try {
+      while (!fin && clock.t - t0 < cap) {
+        tickClock(step); board.updateBoard(step, BT.B.units); updateVfx(step);
+        await yieldNow();
+        if (!fired && BT.B.phase === 'input') { fired = true; onInput(); }
+      }
+    } finally { clock.paused = false; }
+    return fin ? out : { timeout: true };
+  },
 };

@@ -197,7 +197,7 @@ const STATUS = {
   mist:     { id: 'status:mist_veil', name: 'Mist Veil', glyph: '雾', color: '#b0c4d8', debuff: true, desc: 'Half of its hits glance off for half damage.' },
   wither:   { id: 'status:withering', name: 'Withering', glyph: '枯', color: '#a88bc0', debuff: true, desc: 'Cannot be healed.' },
   mark:     { id: 'status:karmic_mark', name: 'Karmic Mark', glyph: '印', color: '#ff5a7a', debuff: true, desc: 'Takes 25% more damage.' },
-  shatter:  { id: 'status:shattered', name: 'Shattered', glyph: '碎', color: '#ffd27a', debuff: true, desc: 'Qi shield broken: takes 30% more damage until its turn ends, and its ultimate was delayed by 1 turn.' },
+  shatter:  { id: 'status:shattered', name: 'Shattered', glyph: '碎', color: '#ffd27a', debuff: true, desc: 'Qi shield broken: takes 30% more damage until its turn ends, its ultimate was delayed by 1 turn, and Frost Seal, Soul Shock and Lotus Dream can take hold.' },
   demon:    { id: 'status:heart_demon', name: 'Heart Demon', glyph: '魔', color: '#ff3d8b', debuff: true, desc: 'Stacks. At 3 stacks it attacks one of its own allies, then the stacks clear.' },
 };
 /** Data id (status:frost_seal) or short id (frost) -> short id. */
@@ -1557,7 +1557,9 @@ async function enemyTurn() {
   for (const e of order) {
     if (B.over) return;
     if (!e.alive) continue;
+    if (e.boss) B.log.bossTurns = (B.log.bossTurns || 0) + 1;
     if (e.skip) {
+      B.log.skips = (B.log.skips || 0) + 1; if (e.boss) B.log.bossSkips = (B.log.bossSkips || 0) + 1;
       const c = board.center(e, 0.42);
       V.floatText(has(e, 'frost') ? 'FROZEN' : (has(e, 'dream') ? 'DREAMING' : 'STUNNED'), c.x, c.y, 'info');
       board.hitCard(e, { power: 0.3, color: '#9fd6ff' }); await wait(420); continue;
@@ -1788,6 +1790,10 @@ function addStatus(u, id, turns, extra = {}) {
   if (!u.alive || !id) return false;
   const d = STATUS[id];
   if (d.debuff && has(u, 'clear')) { const c = board.center(u, 0.4); V.floatText('IMMUNE', c.x, c.y, 'info'); return false; }
+  // An unbroken Qi shield shrugs off what would skip its turn: Shatter it first, then seal it
+  if (SKIPS_TURN.has(id) && u.qiShield && u.qiShield.cur > 0 && !has(u, 'shatter')) {
+    const c = board.center(u, 0.4); V.floatText('QI SHIELD', c.x, c.y - 40, 'info'); B.log.shieldBlocks = (B.log.shieldBlocks || 0) + 1; return false;
+  }
   const src = extra.src;
   if (d.debuff && src && src.side !== u.side) {
     // Still Water: the first debuff that would land on her each enemy turn goes back to its caster
@@ -2925,7 +2931,7 @@ const ui = {
         ${u.techs.map(t => `<div class="det-t"><span class="tc-ic">${glyphIcon(t)}</span><div><b>${t.name}</b> <small>${t.ult ? 'Ultimate · ' : ''}CD ${t.cd} · ${TARGET_TXT[t.target]}${t.cur > 0 ? ` · ready in ${t.cur}` : ' · ready'}</small><p>${t.desc}</p>${t.emp ? `<p class="emp">✦ Empowered (${t.emp.cost} Spirit Qi): ${t.emp.desc}</p>` : ''}</div></div>`).join('')}
         ${u.status.length ? `<div class="det-st">${u.status.map(s => `<span style="--sc:${STATUS[s.id].color}"><i>${STATUS[s.id].glyph}</i>${STATUS[s.id].name} (${s.turns}): ${STATUS[s.id].desc}</span>`).join('')}</div>` : ''}
         ${u.attached && u.attached.some(Boolean) ? `<div class="det-st">${u.attached.filter(Boolean).map(a => `<span><i>${a.glyph}</i>${a.name}: ${a.desc}</span>`).join('')}</div>` : ''}
-        ${u.qiShield ? `<div class="det-st"><span><i>盾</i>Qi shield ${u.qiShield.cur}/${u.qiShield.max}: every hit breaks a segment, and it refills after its turn. At zero it is Shattered: +30% damage taken until its turn ends, and its ultimate is delayed by 1 turn.</span></div>` : ''}
+        ${u.qiShield ? `<div class="det-st"><span><i>盾</i>Qi shield ${u.qiShield.cur}/${u.qiShield.max}: every hit breaks a segment, and it refills after its turn. While it holds, Frost Seal, Soul Shock and Lotus Dream cannot take hold. At zero it is Shattered: +30% damage taken until its turn ends, its ultimate is delayed by 1 turn, and it can be sealed.</span></div>` : ''}
         <div class="det-close">Tap anywhere to close</div>
       </div></div>`;
     d.classList.add('show');
@@ -3007,7 +3013,7 @@ const STEPS = [
 ];
 const EXTRA = {
   boss: { id: 'boss', target: () => BT.enemies().find(e => e.boss)?.el, place: 'below',
-    text: `A <b>boss</b> carries a gold <b>Qi shield</b>. Every hit breaks one segment (two if your phase overcomes it), and it refills after the boss's turn. Break all 12 in one turn (multi-hit techniques help) to <b>Shatter</b> it: +30% damage, and its ultimate (top right of its card) is delayed.` },
+    text: `A <b>boss</b> carries a gold <b>Qi shield</b>. Every hit breaks one segment (two if your phase overcomes it), and it refills after the boss's turn. Break all 12 in one turn (multi-hit techniques help) to <b>Shatter</b> it: +30% damage, and its ultimate (top right of its card) is delayed. While the shield holds, nothing can freeze, stun or lull it.` },
 };
 
 // ---------------- DOM ----------------

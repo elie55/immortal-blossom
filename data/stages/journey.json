@@ -505,7 +505,8 @@
       "qty": 50
      }
     ],
-    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)",
+    "power": 1.037
    },
    "encounters": true,
    "firstClearRewards": [
@@ -524,7 +525,8 @@
      "cur": "cur:immortal_jade",
      "qty": 300
     }
-   ]
+   ],
+   "power": 0.804
   },
   {
    "id": "stage:v1c2_01",
@@ -1139,7 +1141,8 @@
      "cur": "cur:immortal_jade",
      "qty": 400
     }
-   ]
+   ],
+   "power": 1.13
   },
   {
    "id": "stage:v1c3_01",
@@ -1731,7 +1734,8 @@
       "qty": 50
      }
     ],
-    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)",
+    "power": 1.159
    },
    "encounters": true,
    "firstClearRewards": [
@@ -1749,7 +1753,8 @@
      "cur": "cur:immortal_jade",
      "qty": 500
     }
-   ]
+   ],
+   "power": 1.171
   },
   {
    "id": "stage:v1c4_01",
@@ -1819,7 +1824,8 @@
       "qty": 50
      }
     ],
-    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)",
+    "power": 1.06
    },
    "firstClearRewards": [
     {
@@ -1922,7 +1928,8 @@
       "qty": 50
      }
     ],
-    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)",
+    "power": 1.06
    },
    "firstClearRewards": [
     {
@@ -2006,7 +2013,8 @@
       "qty": 50
      }
     ],
-    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)",
+    "power": 1.06
    },
    "firstClearRewards": [
     {
@@ -2092,7 +2100,8 @@
       "qty": 50
      }
     ],
-    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)",
+    "power": 1.06
    },
    "firstClearRewards": [
     {
@@ -2195,7 +2204,8 @@
       "qty": 50
      }
     ],
-    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)",
+    "power": 1.06
    },
    "firstClearRewards": [
     {
@@ -2276,7 +2286,8 @@
       "qty": 50
      }
     ],
-    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)",
+    "power": 1.06
    },
    "firstClearRewards": [
     {
@@ -2347,7 +2358,8 @@
       "qty": 50
      }
     ],
-    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)",
+    "power": 1.06
    },
    "encounters": true,
    "firstClearRewards": [
@@ -2365,7 +2377,8 @@
      "cur": "cur:immortal_jade",
      "qty": 600
     }
-   ]
+   ],
+   "power": 1.006
   },
   {
    "id": "stage:v1c5_01",
@@ -2436,7 +2449,8 @@
       "qty": 50
      }
     ],
-    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)",
+    "power": 1.12
    },
    "firstClearRewards": [
     {
@@ -2537,7 +2551,8 @@
       "qty": 50
      }
     ],
-    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)",
+    "power": 1.12
    },
    "firstClearRewards": [
     {
@@ -2621,7 +2636,8 @@
       "qty": 50
      }
     ],
-    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)",
+    "power": 1.12
    },
    "firstClearRewards": [
     {
@@ -2706,7 +2722,8 @@
       "qty": 50
      }
     ],
-    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)",
+    "power": 1.12
    },
    "firstClearRewards": [
     {
@@ -2781,7 +2798,8 @@
       "qty": 50
      }
     ],
-    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)",
+    "power": 1.12
    },
    "firstClearRewards": [
     {
@@ -2886,7 +2904,8 @@
       "qty": 50
      }
     ],
-    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)",
+    "power": 1.12
    },
    "firstClearRewards": [
     {
@@ -2968,7 +2987,8 @@
       "qty": 50
      }
     ],
-    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)",
+    "power": 1.12
    },
    "firstClearRewards": [
     {
@@ -3047,7 +3067,8 @@
       "qty": 50
      }
     ],
-    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)"
+    "mechanic": "Enemies gain boss mechanics: Qi shields on elites, sharper targeting (chance 0 to +0.3)",
+    "power": 0.832
    },
    "encounters": true,
    "firstClearRewards": [
@@ -3070,7 +3091,8 @@
     {
      "title": "title:pavilion_restorer"
     }
-   ]
+   ],
+   "power": 0.937
   }
  ]
 }

@@ -50,7 +50,8 @@
      "item": "item:enlightenment_scroll",
      "qty": 2
     }
-   ]
+   ],
+   "power": 0.73
   },
   {
    "id": "trial:nascent_soul",
@@ -101,7 +102,8 @@
      "item": "item:enlightenment_scroll",
      "qty": 3
     }
-   ]
+   ],
+   "power": 0.96
   },
   {
    "id": "trial:spirit_severing",
@@ -156,7 +158,8 @@
      "item": "item:bodhi_leaf",
      "qty": 1
     }
-   ]
+   ],
+   "power": 1.09
   },
   {
    "id": "trial:void_refinement",
@@ -211,7 +214,8 @@
      "item": "item:bodhi_leaf",
      "qty": 2
     }
-   ]
+   ],
+   "power": 1.37
   },
   {
    "id": "trial:body_integration",
@@ -266,7 +270,8 @@
      "item": "item:bodhi_leaf",
      "qty": 3
     }
-   ]
+   ],
+   "power": 1.73
   },
   {
    "id": "trial:mahayana",
@@ -325,7 +330,8 @@
      "fragment": "own",
      "qty": 3
     }
-   ]
+   ],
+   "power": 2.18
   }
  ]
 }

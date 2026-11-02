@@ -257,22 +257,25 @@
     {
      "item": "item:snow_lotus",
      "perHour": 0.5,
-     "fromLevel": 6
+     "fromLevel": 6,
+     "fromRealm": "realm:foundation_establishment"
     },
     {
      "item": "item:fire_lingzhi",
      "perHour": 0.25,
-     "fromLevel": 8
+     "fromLevel": 8,
+     "fromRealm": "realm:core_formation"
     },
     {
      "item": "item:nine_leaf_lingzhi",
      "perHour": 0.1,
-     "fromLevel": 10
+     "fromLevel": 10,
+     "fromRealm": "realm:spirit_severing"
     }
    ],
    "capHours": 12,
    "levelBonus": 0.15,
-   "productionNote": "perHour x (1 + levelBonus x (level - 1)), for up to capHours since the last harvest; fractions carry over"
+   "productionNote": "perHour x (1 + levelBonus x (level - 1)), for up to capHours since the last harvest; fractions carry over; a herb with fromRealm grows only once one of your heroines has reached that realm, so no herb can be stored up before its realm"
   },
   {
    "id": "bld:alchemy_pavilion",

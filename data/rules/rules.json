@@ -117,7 +117,7 @@
    "expToFinishQiRefining": 25650,
    "expToLevel80": 15073200,
    "heroStat": "base * (1 + 0.08 * (level - 1)) * (1 + 0.10 * breakthroughs)",
-   "enemyStat": "base * (1 + 0.08 * (level - 1)) * (1 + 0.10 * floor((level - 1) / 10))",
+   "enemyStat": "base * (1 + 0.08 * (level - 1)) * (1 + 0.10 * floor((level - 1) / 10)); Health and Attack then times enemyPowerBase, 1 + enemyGearPar[realm] (realm 0 for levels 1-10, 1 for 11-20, ...), the stage class's stageMultiplier and the stage's own power",
    "rarityBaseMultiplier": {
     "3": 0.92,
     "4": 1.0,
@@ -206,7 +206,34 @@
     "stat": "stat:atk",
     "value": 0.05,
     "text": "Fielding heroines tied by a Karmic Thread: each of them gains +5% Attack (once, however many threads)"
-   }
+   },
+   "enemyPowerBase": 1,
+   "enemyGearPar": [
+    0,
+    0.45,
+    0.9,
+    1.35,
+    2.0,
+    2.8,
+    3.8,
+    5.0
+   ],
+   "enemyGearParAbout": "By realm (Qi Refining first): the share of Health and Attack every enemy gains there, as the gear players wear by that realm adds to their heroines; it rises faster in the late realms so the best gear never outruns the content",
+   "stageMultiplier": {
+    "hd battle": 1.438,
+    "hd boss": 1.704,
+    "hunt hundun": 1.459,
+    "hunt qiongqi": 0.96,
+    "hunt taotie": 1.856,
+    "hunt taowu": 1.5,
+    "hunt xiangliu": 1.399,
+    "shrine": 1.444,
+    "story battle": 1.44,
+    "story boss": 1.487,
+    "trial": 2.5,
+    "valley": 1.292
+   },
+   "stageMultiplierAbout": "Health and Attack of the enemies of each class of stages (story battle, story boss, hd battle, hd boss, hunt <name>, valley, shrine); set by the balance pass from the economy simulation, docs/economy-report.md"
   },
   {
    "id": "rules:gear",
