@@ -10,7 +10,7 @@ export const PH_GLYPH = { water: '水', wood: '木', fire: '火', earth: '土', 
 export const phTag = p => `<span class="ph-tag" style="--pc:${PH_COLOR[p] || '#ccc'}">${PH_GLYPH[p] || '?'}</span>`;
 /** A character speaking in a dialogue: her standing art (upper body, no background) beside the words. */
 export const npcSays = (id, html) => {
-  const u = standUrl(id) || npcUrl(id);
+  const u = standUrl(id) || npcUrl(id) || (id.startsWith('hero:') ? faceUrl(id) : null);
   return `<div class="npc-say">${u ? `<div class="npc-fig${standUrl(id) ? '' : ' flat'}"><img src="${u}" alt=""></div>` : ''}<div>${html}</div></div>`;
 };
 export const starStr = n => '★'.repeat(n);

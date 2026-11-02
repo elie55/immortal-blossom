@@ -10,6 +10,7 @@ import './hall.js';
 import './heroines.js';
 import './pond.js';
 import './ring.js';
+import './sect.js';
 import './trials.js';
 import './forge.js';
 

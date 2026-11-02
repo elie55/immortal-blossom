@@ -4,6 +4,7 @@ import { get, cardUrl, npcUrl, SLICE_HEROES, hasArt } from './data.js';
 import { data, flags, hasProgress, ownedHeroes, owned, qty, persist, exportCode, importCode, resetSave, SAVE, lobbyTap } from './state.js';
 import { Flow } from './story.js';
 import { modeOpen } from './trials.js';
+import { bldUnlocked, sectAlerts } from './sect.js';
 
 // ---------------- title ----------------
 App.register('title', {
@@ -27,7 +28,7 @@ App.register('title', {
 });
 
 // ---------------- Pavilion Hall ----------------
-const LOCKED = { sect: 'The Sect mountain opens with the core loop alpha', market: 'The Market opens with the core loop alpha', trials: 'Trials open after chapter 2' };
+const LOCKED = { trials: 'The Path of Ascension opens with the content beta' };
 App.register('hall', {
   cls: 'hall',
   render(el) {
@@ -52,8 +53,8 @@ App.register('hall', {
         <button class="hm" data-act="trials"><span class="g">试</span><span><b>Trials</b><small>${modeOpen('mode:hunts') ? 'Hunts, the Valley, Shrines, the Forge' : 'Opens after chapter 1'}</small></span></button>
         <button class="hm" data-act="heroines"><span class="g">芳</span><span><b>Heroines</b><small>${mine.length} of ${SLICE_HEROES.length} gathered</small></span></button>
         <button class="hm" data-act="pond"><span class="g">莲</span><span><b>Fate Pond</b><small>${qty('cur:fate_incense')} Fate Incense</small></span>${qty('cur:fate_incense') >= 1 ? '<i class="dot"></i>' : ''}</button>
-        <button class="hm locked" data-act="locked" data-k="sect"><span class="g">宗</span><span><b>The Sect</b><small>Caves, garden, alchemy</small></span></button>
-        <button class="hm locked" data-act="locked" data-k="market"><span class="g">市</span><span><b>Market</b><small>Myriad Treasures Guild</small></span></button>
+        <button class="hm${bldUnlocked('bld:main_hall') ? '' : ' locked'}" data-act="sect"><span class="g">宗</span><span><b>The Sect</b><small>${bldUnlocked('bld:main_hall') ? 'Caves, garden, alchemy, missions, duties' : 'Opens with Peach Blossom Ford'}</small></span>${sectAlerts() ? '<i class="dot"></i>' : ''}</button>
+        <button class="hm${bldUnlocked('bld:tea_house') ? '' : ' locked'}" data-act="market"><span class="g">市</span><span><b>Market</b><small>Myriad Treasures, Merit Exchange</small></span></button>
       </div>
       ${feat ? `<div class="hall-banner" data-act="pond" style="background-image:url(${cardUrl(feat)})"><div><b>Fate Pond · Featured</b><small>${esc(get(feat).name)} ${esc(get(feat).cn)}, ${esc(get(feat).title)}</small></div></div>` : ''}`;
     const say = (text, who = 'npc:tao_yao') => {
@@ -73,6 +74,8 @@ App.register('hall', {
       settings: () => settingsDialog(),
       rules: () => App.rulesDialog(),
       ring: () => App.go('ring', {}),
+      sect: () => (bldUnlocked('bld:main_hall') ? App.go('sect', {}) : App.toast('The Sect opens as you clear Peach Blossom Ford')),
+      market: () => (bldUnlocked('bld:tea_house') ? App.go('market', {}) : App.toast('The Market opens once chapter 1 is cleared')),
       locked: (b) => App.toast(LOCKED[b.dataset.k] || 'Coming soon'),
       tap: () => { const q = lh.quotes || {}; const lines = [q.intro, q.victory, q.ultimate, lh.profile?.motto].filter(Boolean); const b = lobbyTap(lobby); say(`<b style="font-family:Cinzel">${esc(lh.name)}</b><br>“${esc(lines[Math.floor(Math.random() * lines.length)])}”${b ? `<br><small style="color:#f6b3cc">Bond +${b.pts}${b.after > b.before ? ` · bond ${b.after}!` : ''}</small>` : ''}`, lobby); },
     });

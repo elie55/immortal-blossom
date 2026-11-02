@@ -4,7 +4,7 @@
 import { get, all, expToNext, levelCap, nextRealm, SLICE_HEROES, battleExp, heroBase, bondLevel, masteryCap, meridians } from './data.js';
 import { rollGearEntry, makeArtefact, refineCost, refineOnce, salvageValue, engrave, engraveCost, canReforge, reforgeCost, nextTier, gearBonus, withGear, canWear, POSITIONS, POS_SLOT, rarityOrder, tierOrder, rollScore } from './gear.js';
 
-const SCHEMA = 3;
+const SCHEMA = 4;
 const DB_NAME = 'immortal-blossoms', STORE = 'saves', SLOT = 'slot1', LS_KEY = 'ib_save_slot1';
 
 export function freshSave() {
@@ -23,11 +23,17 @@ export function freshSave() {
     forge: { job: null },
     // today's bond chores: one tea with one heroine, lobby taps up to a cap
     day: { key: '', tea: null, taps: 0 },
+    // the Sect: building levels, heroines in seclusion, the herb garden, alchemy jobs, expeditions
+    sect: freshSect(),
+    // Sect Duties (counts for today and this week, chest tiers claimed) and the shops' weekly purchases
+    duties: { day: '', week: '', daily: {}, weekly: {}, claimed: { daily: [], weekly: [] } },
+    shops: { week: '', bought: {} },
     flags: { seen: {} },
     settings: { muted: false, speed: 1, textSpeed: 1 },
     log: { battles: 0, wins: 0, playMs: 0 },
   };
 }
+export function freshSect() { return { levels: {}, caves: {}, garden: { since: 0, carry: {} }, alchemy: { alchemist: null, jobs: [] }, missions: {} }; }
 /** Auto-salvage rules: off until the player sets them. */
 export function freshAuto() { return { on: false, below: 'rarity:rare', belowTier: false, minScore: 0, allowTop: false, keepAbove: 0.9 }; }
 export const SAVE = { data: freshSave(), storage: 'memory' };
@@ -54,6 +60,10 @@ function migrate(d) {
   // schema 3: technique mastery, meridians and bond points on every heroine; the day's tea and taps
   for (const h of Object.values(d.heroes)) { h.mastery = h.mastery || {}; h.meridians = h.meridians || {}; h.bond = h.bond || 0; h.petals = h.petals || 0; }
   d.day = { ...base.day, ...d.day };
+  // schema 4: the Sect, Sect Duties and the shops
+  d.sect = { ...freshSect(), ...d.sect }; d.sect.garden = { ...freshSect().garden, ...d.sect.garden }; d.sect.alchemy = { ...freshSect().alchemy, ...d.sect.alchemy };
+  d.duties = { ...base.duties, ...d.duties }; d.duties.claimed = { ...base.duties.claimed, ...d.duties.claimed };
+  d.shops = { ...base.shops, ...d.shops };
   d.v = SCHEMA;
   return d;
 }
@@ -159,8 +169,34 @@ export function usePills(hid, sel) {
   return addExp(hid, plan.exp);
 }
 
-// ---------------- growth: technique mastery, meridians, Dao Blossom, bonds ----------------
+// ---------------- Sect Duties ----------------
 const dayKey = (d = new Date()) => `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
+/** The week's key: the date of its Monday. */
+export const weekKey = (d = new Date()) => { const m = new Date(d.getFullYear(), d.getMonth(), d.getDate() - ((d.getDay() + 6) % 7)); return dayKey(m); };
+/** Duty counters for today and this week, reset when the day or week turns. */
+export function dutyState() {
+  const t = D().duties, dk = dayKey(), wk = weekKey();
+  if (t.day !== dk) { t.day = dk; t.daily = {}; t.claimed.daily = []; }
+  if (t.week !== wk) { t.week = wk; t.weekly = {}; t.claimed.weekly = []; }
+  return t;
+}
+/** Today's five daily duties: picked from the date, the same all day. */
+export function dailyDuties(d = new Date()) {
+  const ch = get('chest:daily'); const ids = [...(ch?.duties || [])];
+  let seed = d.getFullYear() * 400 + d.getMonth() * 32 + d.getDate();
+  const rnd = () => { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; };
+  for (let i = ids.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [ids[i], ids[j]] = [ids[j], ids[i]]; }
+  return ids.slice(0, ch?.activePerDay || ids.length).sort((a, b) => (ch.duties.indexOf(a) - ch.duties.indexOf(b)));
+}
+/** Count progress on a duty (today's or this week's, whichever it is). */
+export function duty(id, n = 1) {
+  const r = get(id); if (!r) return;
+  const t = dutyState(), book = r.period === 'weekly' ? t.weekly : t.daily;
+  if (r.period !== 'weekly' && !dailyDuties().includes(id)) return;
+  book[id] = Math.min(r.count || 1, (book[id] || 0) + n);
+}
+
+// ---------------- growth: technique mastery, meridians, Dao Blossom, bonds ----------------
 /** Today's bond chores, reset when the date changes. */
 function dayState() { const s = D().day; if (s.key !== dayKey()) Object.assign(s, { key: dayKey(), tea: null, taps: 0 }); return s; }
 const bondPts = () => get('rules:growth')?.bondPoints || {};
@@ -193,7 +229,7 @@ export function nodeNext(hid, key) {
 }
 export function openNode(hid, key) {
   const n = nodeNext(hid, key); if (!n || n.locked || !pay(n.cost)) return false;
-  const p = prog(hid); p.meridians = { ...(p.meridians || {}), [key]: n.level }; persist();
+  const p = prog(hid); p.meridians = { ...(p.meridians || {}), [key]: n.level }; duty('duty:meridian_nodes'); persist();
   return true;
 }
 /** The Ren and Du vessels: they open at Body Integration, then upgrade the technique she chooses. */
@@ -237,7 +273,9 @@ export function giveGift(hid, itemId) {
 export const teaToday = () => dayState().tea;
 export function takeTea(hid) {
   const s = dayState(); if (s.tea || !owned(hid)) return null;
-  s.tea = hid; return addBond(hid, bondPts().tea || 30);
+  s.tea = hid; duty('duty:take_tea');
+  const tl = D().sect?.levels?.['bld:tea_house'] || 1, k = 1 + (get('bld:tea_house')?.teaBonusPerLevel || 0) * (tl - 1);
+  return addBond(hid, Math.round((bondPts().tea || 30) * k));
 }
 /** A tap on the lobby heroine: a few points a day. */
 export function lobbyTap(hid) {
@@ -287,6 +325,13 @@ export function clearStage(stage, result = {}) {
     for (const h of result.heroes) { if (!owned(h.id)) continue; const gain = h.alive ? base : Math.round(base / 2); exp.push({ id: h.id, exp: gain, ...addExp(h.id, gain) }); addBond(h.id, bondPts().battle || 1); }
   }
   D().log.wins++;
+  if (result.win !== false) {
+    duty('duty:clear_3_stages');
+    const mode = stage.mode || (stage.id.startsWith('stage:hunt_') ? 'mode:hunts' : stage.id.startsWith('stage:valley') ? 'mode:valley' : stage.id.startsWith('stage:shrine') ? 'mode:shrines' : null);
+    if (mode === 'mode:hunts') { duty('duty:hunt_runs'); duty('duty:sweep_hunt'); }
+    if (mode === 'mode:valley') duty('duty:run_valley');
+    if (mode === 'mode:shrines') duty('duty:shrine_runs');
+  }
   persist();
   return { first, granted, exp, missions: st.missions };
 }
@@ -363,7 +408,7 @@ export function markSeen(ids) { for (const id of ids) { const p = piece(id); if 
 export function refine(id) {
   const p = piece(id); if (!p || p.plus >= 15) return null;
   if (!pay(refineCost(p))) return null;
-  const r = refineOnce(p); persist(); return r;
+  const r = refineOnce(p); duty('duty:refine_twice'); persist(); return r;
 }
 /** Salvage pieces (locked and equipped ones are skipped). Returns the total returned. */
 export function salvage(ids) {
@@ -374,6 +419,7 @@ export function salvage(ids) {
     for (const c of back) { add(c.cur || c.item, c.qty); total[c.cur || c.item] = (total[c.cur || c.item] || 0) + c.qty; }
     remember(p, back);
     delete G().pieces[id];
+    duty('duty:salvage_gear');
   }
   persist();
   return Object.entries(total).map(([k, qty]) => (k.startsWith('cur:') ? { cur: k, qty } : { item: k, qty }));
@@ -470,6 +516,7 @@ export function summon(n) {
       res.push(gainHero(h));
     }
   }
+  duty('duty:summon_once');
   persist();
   return res;
 }

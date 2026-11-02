@@ -207,22 +207,25 @@ App.register('heroine', {
         await App.dialog({ title: `Petal ${n} opens`, cn: '花开', body: `<p style="text-align:center"><b class="gold">${esc(h.name)}</b>: ${esc(h.petals[n - 1].text)}.</p>${n === 6 ? '<p style="text-align:center">Full Bloom! Her petals now drift across her card.</p>' : ''}`, buttons: [{ label: 'Wonderful', value: true }] });
         again({ sel: n });
       },
-      tea: async () => {
-        const t = teaToday(); if (t) { App.toast(t === hid ? 'You already shared tea today' : `You took tea with ${esc(get(t).name)} today`); return; }
-        const r = takeTea(hid); if (!r) return;
-        sfx('heal');
-        const lines = [h.profile?.motto, h.quotes?.intro, h.quotes?.victory].filter(Boolean);
-        await App.dialog({ title: 'Tea at the Pavilion', cn: '品茶', body: npcSays(hid, `<p><b class="gold">${esc(h.name)}</b> warms her hands on the cup.</p><p><i>“${esc(lines[Math.floor(Math.random() * lines.length)] || '...')}”</i></p><p>Bond +${r.pts}${r.after > r.before ? ` · <b class="gold">bond ${r.after}!</b>` : ''}</p>`), buttons: [{ label: 'Until tomorrow', value: true }] });
-        again();
-      },
+      tea: async () => { await teaDialog(hid); again(); },
       gift: () => giftDialog(hid).then(() => again()),
     });
     void V; void PH_GLYPH; void keyOf; void bondBonus;
   },
 });
 
+/** Today's tea with a heroine (one a day, at the Tea House or from her Bond tab). */
+export async function teaDialog(hid) {
+  const h = get(hid), t = teaToday();
+  if (t) { App.toast(t === hid ? 'You already shared tea today' : `You took tea with ${esc(get(t).name)} today`); return null; }
+  const r = takeTea(hid); if (!r) return null;
+  sfx('heal');
+  const lines = [h.profile?.motto, h.quotes?.intro, h.quotes?.victory].filter(Boolean);
+  await App.dialog({ title: 'Tea at the Pavilion', cn: '品茶', body: npcSays(hid, `<p><b class="gold">${esc(h.name)}</b> warms her hands on the cup.</p><p><i>“${esc(lines[Math.floor(Math.random() * lines.length)] || '...')}”</i></p><p>Bond +${r.pts}${r.after > r.before ? ` · <b class="gold">bond ${r.after}!</b>` : ''}</p>`), buttons: [{ label: 'Until tomorrow', value: true }] });
+  return r;
+}
 /** Give gifts: liked ones count double; her tastes show once the bond reveals them. */
-function giftDialog(hid) {
+export function giftDialog(hid) {
   const h = get(hid), unl = get('rules:growth').bondUnlocks || [];
   const lvAt = k => (unl.find(u => u.reveals === k) || {}).level || 99;
   const body = () => {

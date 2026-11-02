@@ -709,6 +709,16 @@ The Hundred Blossoms Pavilion is the home base: ten buildings that turn time awa
 | Scripture Pavilion 藏经阁 | Codex of heroines, enemies and lore; story and music replay | Codex |
 | Tea House 茶楼 | Daily tea with one heroine, gifts, choice of the lobby heroine | Friendship |
 
+### How the alpha plays it
+
+- **Levels.** Each building opens at level 1 when its chapter stage is cleared. The Main Hall can reach two levels per Journey chapter cleared, and every other building is capped at the Main Hall's level. Upgrades cost spirit stones (from 3,000 to 405,000 a level).
+- **Closed-door Caves:** 600 to 32,000 EXP an hour by level, for up to 12 hours; EXP past a heroine's cap is banked. Each full 4 hours gives a 3% chance of an epiphany, a free mastery level up to +3.
+- **Spirit Herb Garden:** 500 spirit stones and 2 spirit grass an hour at level 1, with blood ginseng from level 3, snow lotus from 6, fire lingzhi from 8 and nine-leaf lingzhi from 10; +15% a level, for up to 12 hours between harvests.
+- **Alchemy Pavilion:** 1 furnace (2 from level 5, 3 at 10), batches of up to 10 brews. Quality odds start at Low 50%, Middle 30%, High 15%, Perfect 5%; each level and the alchemist move odds from Low to High and Perfect, a Healer most of all. High gives two pills, Perfect three.
+- **Mission Hall:** 1 to 5 expeditions out at once; 4-hour expeditions open at level 2, 8-hour at 4, 12-hour at 6. A heroine on an expedition cannot be in the caves, and the other way round; both can still fight.
+- **Tea House:** one tea a day, worth 10% more bond per level above 1. **Array Platform:** a Battle Array can be raised to the platform's level.
+- **Sect Duties** live in the Main Hall: five daily duties a day (picked from eight by the date) and eight weekly ones (three wait for the content beta's modes).
+
 ### How it feels
 
 - The Sect screen is an illustrated mountain. Each building starts as a ruin and is visibly rebuilt as it levels, so the player sees the Pavilion rise with the story.

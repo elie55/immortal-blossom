@@ -691,98 +691,128 @@
    "name": "Clear 3 stages",
    "period": "daily",
    "points": 20,
-   "chest": "chest:daily"
+   "chest": "chest:daily",
+   "count": 3
   },
   {
    "id": "duty:refine_twice",
    "name": "Refine gear twice",
    "period": "daily",
    "points": 20,
-   "chest": "chest:daily"
+   "chest": "chest:daily",
+   "count": 2
   },
   {
    "id": "duty:collect_garden",
    "name": "Collect the herb garden",
    "period": "daily",
    "points": 20,
-   "chest": "chest:daily"
+   "chest": "chest:daily",
+   "count": 1
   },
   {
    "id": "duty:take_tea",
    "name": "Take tea with a heroine",
    "period": "daily",
    "points": 20,
-   "chest": "chest:daily"
+   "chest": "chest:daily",
+   "count": 1
   },
   {
    "id": "duty:sweep_hunt",
-   "name": "Sweep a Demon Hunt",
+   "name": "Finish a Demon Hunt run",
    "period": "daily",
    "points": 20,
-   "chest": "chest:daily"
+   "chest": "chest:daily",
+   "count": 1
   },
   {
    "id": "duty:run_valley",
    "name": "Run Medicine King Valley",
    "period": "daily",
    "points": 20,
-   "chest": "chest:daily"
+   "chest": "chest:daily",
+   "count": 1
   },
   {
    "id": "duty:summon_once",
    "name": "Summon once",
    "period": "daily",
    "points": 20,
-   "chest": "chest:daily"
+   "chest": "chest:daily",
+   "count": 1
   },
   {
    "id": "duty:salvage_gear",
    "name": "Salvage gear",
    "period": "daily",
    "points": 20,
-   "chest": "chest:daily"
+   "chest": "chest:daily",
+   "count": 1
   },
   {
    "id": "duty:pagoda_floor",
    "name": "Clear a Pagoda floor",
    "period": "weekly",
    "points": 50,
-   "chest": "chest:weekly"
+   "chest": "chest:weekly",
+   "count": 1
   },
   {
    "id": "duty:secret_realm_run",
    "name": "Finish a Secret Realm run",
    "period": "weekly",
    "points": 50,
-   "chest": "chest:weekly"
+   "chest": "chest:weekly",
+   "count": 1
   },
   {
    "id": "duty:competition_wins",
    "name": "Win 5 competition battles",
    "period": "weekly",
    "points": 50,
-   "chest": "chest:weekly"
+   "chest": "chest:weekly",
+   "count": 5
   },
   {
    "id": "duty:hunt_runs",
    "name": "Finish 10 hunt runs",
    "period": "weekly",
    "points": 50,
-   "chest": "chest:weekly"
+   "chest": "chest:weekly",
+   "count": 10
   },
   {
    "id": "duty:brew_pills",
    "name": "Brew 5 pills",
    "period": "weekly",
    "points": 50,
-   "chest": "chest:weekly"
+   "chest": "chest:weekly",
+   "count": 5
   },
   {
    "id": "duty:expeditions",
    "name": "Complete 10 expeditions",
    "period": "weekly",
    "points": 50,
-   "chest": "chest:weekly"
+   "chest": "chest:weekly",
+   "count": 10
+  },
+  {
+   "id": "duty:shrine_runs",
+   "name": "Finish 15 shrine runs",
+   "period": "weekly",
+   "points": 50,
+   "chest": "chest:weekly",
+   "count": 15
+  },
+  {
+   "id": "duty:meridian_nodes",
+   "name": "Open 3 meridian nodes",
+   "period": "weekly",
+   "points": 50,
+   "chest": "chest:weekly",
+   "count": 3
   },
   {
    "id": "chest:daily",
@@ -834,7 +864,8 @@
       }
      ]
     }
-   ]
+   ],
+   "note": "five of the eight daily duties are open each day, picked from the date"
   },
   {
    "id": "chest:weekly",
@@ -845,7 +876,9 @@
     "duty:competition_wins",
     "duty:hunt_runs",
     "duty:brew_pills",
-    "duty:expeditions"
+    "duty:expeditions",
+    "duty:shrine_runs",
+    "duty:meridian_nodes"
    ],
    "tiers": [
     {
@@ -887,7 +920,8 @@
       }
      ]
     }
-   ]
+   ],
+   "note": "eight weekly duties of 50 points; any six fill the chest"
   },
   {
    "id": "ach:clear_v1c1",

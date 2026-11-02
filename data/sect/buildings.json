@@ -67,7 +67,9 @@
      }
     ]
    ],
-   "upgradeNote": "upgradeCost[L-1] takes the building from level L to L+1"
+   "upgradeNote": "upgradeCost[L-1] takes the building from level L to L+1",
+   "capByChapters": 2,
+   "capNote": "The Main Hall can reach 2 levels per Journey chapter cleared (at least 1); every other building is capped at the Main Hall level"
   },
   {
    "id": "bld:closed_door_caves",
@@ -164,7 +166,10 @@
    "epiphany": "small chance of free mastery progress",
    "services": [
     "sys:cultivate"
-   ]
+   ],
+   "epiphanyChancePer4h": 0.03,
+   "epiphanyMaxLevel": 3,
+   "epiphanyNote": "each full 4 hours collected gives a 3% chance of an epiphany: one of her techniques below mastery +3 gains a level for free"
   },
   {
    "id": "bld:spirit_herb_garden",
@@ -264,7 +269,10 @@
      "perHour": 0.1,
      "fromLevel": 10
     }
-   ]
+   ],
+   "capHours": 12,
+   "levelBonus": 0.15,
+   "productionNote": "perHour x (1 + levelBonus x (level - 1)), for up to capHours since the last harvest; fractions carry over"
   },
   {
    "id": "bld:alchemy_pavilion",
@@ -360,7 +368,39 @@
     "High",
     "Perfect"
    ],
-   "perfectPill": "a tiny pill-tribulation animation"
+   "perfectPill": "a tiny pill-tribulation animation",
+   "furnaces": [
+    1,
+    1,
+    1,
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    3
+   ],
+   "maxBatch": 10,
+   "quality": {
+    "odds": {
+     "Low": 0.5,
+     "Middle": 0.3,
+     "High": 0.15,
+     "Perfect": 0.05
+    },
+    "shiftPerLevel": 0.02,
+    "alchemistShift": 0.03,
+    "healerShift": 0.1,
+    "lowFloor": 0.1,
+    "output": {
+     "Low": 1,
+     "Middle": 1,
+     "High": 2,
+     "Perfect": 3
+    },
+    "note": "the shift (building level x shiftPerLevel, plus the alchemist) moves odds from Low: 60% of it to High, 40% to Perfect; each brew rolls once and yields output[quality] times the recipe output"
+   }
   },
   {
    "id": "bld:artifact_forge",
@@ -579,7 +619,14 @@
     4,
     5,
     5
-   ]
+   ],
+   "unlockByHours": {
+    "1": 1,
+    "4": 2,
+    "8": 4,
+    "12": 6
+   },
+   "busyNote": "a heroine on an expedition cannot be in the Closed-door Caves at the same time, and the other way round; both can still fight"
   },
   {
    "id": "bld:spirit_beast_garden",
@@ -722,7 +769,9 @@
    "upgradeNote": "upgradeCost[L-1] takes the building from level L to L+1",
    "services": [
     "sys:array_upgrade"
-   ]
+   ],
+   "capsArrays": true,
+   "capNote": "a Battle Array can be raised to the Array Platform level"
   },
   {
    "id": "bld:scripture_pavilion",
@@ -863,7 +912,8 @@
    "services": [
     "sys:bond"
    ],
-   "host": "npc:tao_yao"
+   "host": "npc:tao_yao",
+   "teaBonusPerLevel": 0.1
   }
  ]
 }

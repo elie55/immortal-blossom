@@ -69,11 +69,12 @@ The checker reads the key a link sits under to know whether the player gains or 
 
 ## The save (game/js/state.js)
 
-The game keeps one JSON save (schema 3) in IndexedDB, with localStorage as a fallback and a checksum; Settings exports and imports it as a code. Older saves are upgraded on load.
+The game keeps one JSON save (schema 4) in IndexedDB, with localStorage as a fallback and a checksum; Settings exports and imports it as a code. Older saves are upgraded on load.
 
 - **Wallet:** `cur{}` and `items{}` by id. **Heroines:** `heroes{hid: {level, exp, bt, petals, bond, mastery{skill id: level}, meridians{lung|liver|kidney|heart|spleen|ren_du: nodes}, renDu, eq{position: piece id}}}`, where `bond` counts bond points (the level comes from `rules:growth.bondLevels`), `renDu` is the technique the Ren and Du vessels upgrade, and the ten positions are `weapon, helmet, body, gloves, pants, boots, ring1, ring2, pendant, artefact`. `day{key, tea, taps}` holds today's tea (one heroine a day) and lobby-tap points.
 - **Storage Ring:** `gear{seq, pieces{id: piece}, recent[], auto{}, view{sort, dir, filter}}`. A piece is `{id, kind: 'gear', slot, rarity, tier, set, main{stat, form, roll}, subs[{stat, form, rolls[]}], plus, engraved, lock, hero, pos, got, new}`; a Spirit Artefact is `{id, kind: 'art', slot: 'slot:artefact', art, rarity, plus, ...}`. Rolls are shares of the best value (0 to 1); values come from `rules:gear` and the tier, so a reforged piece keeps its rolls. `recent` keeps the last 30 salvaged pieces with what they returned.
 - **Progress:** `stages{id: {clear, missions[3], clears}}`, `chapterRewards`, `pond{pulls, pity, fatePoints, guided}`, `flags`, `settings`, `log`.
+- **Sect:** `sect{levels{bld id: level}, caves{hid: since}, garden{since, carry{id: fraction}}, alchemy{alchemist, jobs[{recipe, count, start, end}]}, missions{exped id: {heroes[], start, end}}}`; times are epoch milliseconds, and everything is worked out from them when the game resumes. `duties{day, week, daily{duty id: n}, weekly{}, claimed{daily[], weekly[]}}` and `shops{week, bought{"shop id#row": n}}` reset when the day or the week (from Monday) turns.
 
 ## Adding content
 
