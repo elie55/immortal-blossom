@@ -1,0 +1,544 @@
+{
+ "about": "Twin Blooms 并蒂: named combos between two heroines. A Twin Bloom is active while both are on the team; 'members' lists the pair, 'thread' the Karmic Thread they already share (if any), 'trigger' and 'effects' use the same vocabulary as techniques, and 'howTo' is the hint shown in Formation.",
+ "records": [
+  {
+   "id": "combo:sun_and_moon",
+   "name": "Sun and Moon",
+   "cn": "日月同辉",
+   "members": [
+    "hero:sang_chaoxi",
+    "hero:gui_chanjuan"
+   ],
+   "trigger": "on_ultimate",
+   "condition": "partner_ultimate_this_turn",
+   "effects": [
+    {
+     "do": "stat",
+     "damage": 0.5,
+     "target": "self",
+     "when": "this_cast"
+    },
+    {
+     "do": "apply",
+     "status": "status:soul_shock",
+     "turns": 1,
+     "target": "all_enemies"
+    }
+   ],
+   "text": "When Ten Suns over Fusang and The Cold Palace Descends are cast in the same turn, the second becomes an Eclipse: +50% damage, and every enemy it hits is Soul Shocked for 1 turn.",
+   "howTo": "Line up both ultimates. Gui Chanjuan can go second without costing a chain once Moon Palace Solitude keeps her outside Harmony.",
+   "draft": true
+  },
+  {
+   "id": "combo:reflected_florets",
+   "name": "Reflected Florets",
+   "cn": "镜花剑影",
+   "members": [
+    "hero:bai_lingbo",
+    "hero:shang_jianlan"
+   ],
+   "trigger": "on_reflect",
+   "condition": "reflected_technique_owner_is_partner",
+   "effects": [
+    {
+     "do": "stat",
+     "reflectPower": 1.0
+    },
+    {
+     "do": "extend",
+     "what": "climb",
+     "from": 0.7
+    }
+   ],
+   "text": "When Bai Lingbo's reflection recasts one of Shang Jianlan's techniques, it strikes at full power instead of 60%. A reflected Thousand Florets, One Edge keeps climbing: its seven strikes start at +70%.",
+   "howTo": "Cast Shang Jianlan's ultimate, then Bai Lingbo's straight after. Metal feeds Water, so the pair is also a Harmony link.",
+   "draft": true
+  },
+  {
+   "id": "combo:sweet_poison",
+   "name": "Sweet Poison",
+   "cn": "蔷薇夹竹",
+   "members": [
+    "hero:hu_qiangwei",
+    "hero:she_qingzhu"
+   ],
+   "trigger": "on_charm",
+   "effects": [
+    {
+     "do": "stat",
+     "heartDemonCountsAsDebuff": true
+    },
+    {
+     "do": "move",
+     "status": "status:gu_venom",
+     "to": "charm_victim"
+    }
+   ],
+   "text": "Every Heart Demon stack counts as a separate debuff for She Qingzhu's damage bonuses. When Heart Demon turns an enemy against its ally, the strike also passes all its Gu Venom to that ally.",
+   "howTo": "Stack Heart Demon with Fox-Fire Rose, then poison the field with Sweet Oleander Mist. Fire feeds Earth: Hu Qiangwei, then She Qingzhu.",
+   "draft": true
+  },
+  {
+   "id": "combo:wind_and_thunder",
+   "name": "Wind and Thunder",
+   "cn": "风雷相薄",
+   "members": [
+    "hero:gu_youlan",
+    "hero:wen_xingyu"
+   ],
+   "trigger": "on_cast",
+   "condition": "partner_area_technique",
+   "effects": [
+    {
+     "do": "follow_up",
+     "power": 0.6,
+     "target": "first_enemy_hit"
+    },
+    {
+     "do": "haste",
+     "amount": 3,
+     "target": "partner"
+    },
+    {
+     "do": "stat",
+     "damageVs": "status:entangle",
+     "damage": 0.2
+    }
+   ],
+   "text": "When Wen Xingyu's area technique hits, Gu Youlan follows up on the first enemy hit for 60% ATK, and each follow-up gives Wen Xingyu 3 Haste. Gu Youlan deals 20% more damage to Entangled enemies.",
+   "howTo": "Both are Wood: cast them back to back for Kindred Qi, and let Thunder Wakes the Insects Entangle the field first.",
+   "draft": true
+  },
+  {
+   "id": "combo:hundred_flowers_banquet",
+   "name": "Hundred Flowers Banquet",
+   "cn": "百花宴",
+   "members": [
+    "hero:wei_zi",
+    "hero:ying_wucai"
+   ],
+   "trigger": "on_shield_break",
+   "effects": [
+    {
+     "do": "apply",
+     "status": "colour_buff",
+     "turns": 1,
+     "target": "shielded_ally"
+    },
+    {
+     "do": "heal",
+     "pctOfShield": 0.5,
+     "target": "shielded_ally"
+    }
+   ],
+   "text": "An ally shielded by Wei Zi also gains Ying Wucai's current colour for 1 turn (Metal Sword Intent, Wood Wind Step, Water Lotus Dew, Fire Surging Qi, Earth Iron Body). When one of Wei Zi's shields breaks, Ying Wucai heals that ally for 50% of the shield's value.",
+   "howTo": "Shield first, colour second: Queen of a Hundred Flowers becomes a buff for the whole team.",
+   "draft": true
+  },
+  {
+   "id": "combo:moonlight_takes_colour",
+   "name": "Moonlight Takes Colour",
+   "cn": "月映绣球",
+   "members": [
+    "hero:ying_wucai",
+    "hero:gui_chanjuan"
+   ],
+   "trigger": "on_cast",
+   "condition": "caster_is_gui_chanjuan",
+   "effects": [
+    {
+     "do": "transform",
+     "phase": "best_overcoming"
+    }
+   ],
+   "text": "Gui Chanjuan's techniques take the phase that overcomes the most living enemies, as moonlight takes the hydrangea's colour. The borrowed phase also sets her Phase Qi.",
+   "howTo": "Bring them against mixed waves: every area technique strikes with advantage where it counts.",
+   "draft": true
+  },
+  {
+   "id": "combo:queens_thorns",
+   "name": "The Queen's Thorns",
+   "cn": "国色带刺",
+   "members": [
+    "hero:wei_zi",
+    "hero:hu_qiangwei"
+   ],
+   "thread": "thread:hu_qiangwei__wei_zi",
+   "trigger": "on_hit_taken",
+   "effects": [
+    {
+     "do": "apply",
+     "status": "status:heart_demon",
+     "stacks": 1,
+     "target": "attacker",
+     "when": "attacker_provoked"
+    },
+    {
+     "do": "qi",
+     "amount": 1,
+     "when": "charm"
+    }
+   ],
+   "text": "An enemy Provoked by Wei Zi gains a Heart Demon stack each time it hits her. Each time Heart Demon turns an enemy against its ally, the team gains 1 Spirit Qi.",
+   "howTo": "Unbowed Before the Empress Provokes every enemy, and their blows feed the charm. Fire feeds Earth: Hu Qiangwei, then Wei Zi.",
+   "draft": true
+  },
+  {
+   "id": "combo:crow_and_phoenix",
+   "name": "Golden Crow, Vermilion Phoenix",
+   "cn": "金乌朱雀",
+   "members": [
+    "hero:sang_chaoxi",
+    "hero:yan_feihong"
+   ],
+   "thread": "thread:sang_chaoxi__yan_feihong",
+   "trigger": "on_hit",
+   "condition": "ten_suns_hits_burning_enemy",
+   "effects": [
+    {
+     "do": "detonate",
+     "status": "status:fire_poison"
+    },
+    {
+     "do": "refresh",
+     "turns": 1,
+     "skill": "s3",
+     "target": "partner",
+     "once": "cast"
+    }
+   ],
+   "text": "When Ten Suns over Fusang hits a burning enemy, its Fire Poison burns all its remaining damage at once, and Yan Feihong's ultimate comes 1 turn closer.",
+   "howTo": "Burn first with Scarlet Inferno, then raise the ten suns. Both are Fire: back-to-back casts build Kindred Qi.",
+   "draft": true
+  },
+  {
+   "id": "combo:moonlit_jasmine",
+   "name": "Moonlit Jasmine",
+   "cn": "月下茉莉",
+   "members": [
+    "hero:gui_chanjuan",
+    "hero:ning_suxin"
+   ],
+   "trigger": "on_hit",
+   "effects": [
+    {
+     "do": "extend",
+     "status": "status:karmic_mark",
+     "turns": 1
+    },
+    {
+     "do": "stat",
+     "axeStacksPerMarked": 1
+    }
+   ],
+   "text": "Karmic Marks from either of them last 1 turn longer. Wu Gang's Endless Axe grows one extra step (+10%) for each Karmic-Marked enemy it hits.",
+   "howTo": "Ning Suxin marks the field with Fragrance Fills the Garden, and Gui Chanjuan's axe grows twice as fast. A 3★ who makes a 5★ shine.",
+   "draft": true
+  },
+  {
+   "id": "combo:snow_on_still_water",
+   "name": "Snow on Still Water",
+   "cn": "静水落雪",
+   "members": [
+    "hero:bai_lingbo",
+    "hero:xue_lianxin"
+   ],
+   "trigger": "on_reflect",
+   "condition": "reflected_technique_is_partner_ultimate",
+   "effects": [
+    {
+     "do": "apply",
+     "status": "status:frost_seal",
+     "turns": 1,
+     "target": "all_hit"
+    },
+    {
+     "do": "qi",
+     "amount": 1,
+     "when": "frost_seal_breaks"
+    }
+   ],
+   "text": "When Bai Lingbo reflects Thousand-Year Snow Lotus, the reflection Frost Seals every enemy it hits. While both stand, every Frost Seal that breaks gives the team 1 Spirit Qi, with no limit per turn.",
+   "howTo": "Cast Xue Lianxin's ultimate, then Bai Lingbo's. Both are Water: Kindred Qi.",
+   "draft": true
+  },
+  {
+   "id": "combo:ten_thousand_cuts",
+   "name": "Ten Thousand Cuts",
+   "cn": "万刃破罡",
+   "members": [
+    "hero:shang_jianlan",
+    "hero:li_qianshu"
+   ],
+   "trigger": "on_break",
+   "effects": [
+    {
+     "do": "break",
+     "segments": 1,
+     "per": "strike"
+    },
+    {
+     "do": "refresh",
+     "skill": "s3",
+     "target": "partner",
+     "when": "li_qianshu_shatters"
+    }
+   ],
+   "text": "Every strike of Thousand Florets, One Edge breaks 1 extra Qi shield segment. When Li Qianshu Shatters a boss's Qi shield, Shang Jianlan's ultimate is ready at once.",
+   "howTo": "For bosses: Li Qianshu's needles crack the shield, then Shang Jianlan climbs into the Shattered boss.",
+   "draft": true
+  },
+  {
+   "id": "combo:thorns_in_the_night",
+   "name": "Thorns in the Night",
+   "cn": "夜昙蔷薇",
+   "members": [
+    "hero:hu_qiangwei",
+    "hero:mo_yingyue"
+   ],
+   "thread": "thread:hu_qiangwei__mo_yingyue",
+   "trigger": "on_crit",
+   "effects": [
+    {
+     "do": "apply",
+     "status": "status:heart_demon",
+     "stacks": 1,
+     "target": "hit_enemy",
+     "when": "mo_yingyue_crit"
+    },
+    {
+     "do": "apply",
+     "status": "status:heart_demon",
+     "stacks": 1,
+     "target": "hit_enemy",
+     "when": "hu_qiangwei_hits_soul_shocked"
+    }
+   ],
+   "text": "Mo Yingyue's critical hits add a Heart Demon stack. Hu Qiangwei's techniques add 1 extra Heart Demon stack to Soul Shocked enemies.",
+   "howTo": "Heaven's Execution Soul Shocks, then Rose of the Crimson Moon charms in one stroke. Wood feeds Fire: Mo Yingyue, then Hu Qiangwei.",
+   "draft": true
+  },
+  {
+   "id": "combo:poison_into_medicine",
+   "name": "Poison into Medicine",
+   "cn": "药毒同源",
+   "members": [
+    "hero:she_qingzhu",
+    "hero:ju_yannian"
+   ],
+   "thread": "thread:ju_yannian__she_qingzhu",
+   "trigger": "on_dot",
+   "effects": [
+    {
+     "do": "heal",
+     "pctOfDamage": 0.3,
+     "target": "lowest_ally",
+     "when": "gu_venom_ticks_on_enemy"
+    },
+    {
+     "do": "heal",
+     "pctOfDamage": 0.15,
+     "target": "all_allies",
+     "when": "every_petal_a_poison_detonates"
+    }
+   ],
+   "text": "Each time Gu Venom ticks on an enemy, Ju Yannian turns 30% of the damage into healing for the most injured ally. When Every Petal a Poison makes the venom burst, every ally recovers 15% of the damage.",
+   "howTo": "She Qingzhu poisons, Ju Yannian brews it into medicine: a sustain team without a second healer.",
+   "draft": true
+  },
+  {
+   "id": "combo:plum_and_orchid",
+   "name": "Plum and Orchid",
+   "cn": "梅兰",
+   "members": [
+    "hero:ling_shuang",
+    "hero:gu_youlan"
+   ],
+   "thread": "thread:gu_youlan__ling_shuang",
+   "trigger": "on_hit",
+   "effects": [
+    {
+     "do": "follow_up",
+     "power": 0.6,
+     "target": "hit_enemy",
+     "once": "turn"
+    },
+    {
+     "do": "stat",
+     "keepsFrostSeal": true
+    }
+   ],
+   "text": "When Ling Shuang's single-target technique hits, Gu Youlan follows up for 60% ATK (once per turn). Her follow-ups never break Frost Seal, so Ling Shuang's finisher still counts it.",
+   "howTo": "Ling Shuang freezes, Gu Youlan rides the wind behind her. Water feeds Wood: Ling Shuang, then Gu Youlan.",
+   "draft": true
+  },
+  {
+   "id": "combo:peach_and_apricot",
+   "name": "Peach and Apricot",
+   "cn": "桃李争春",
+   "members": [
+    "hero:wen_xingyu",
+    "hero:yu_lei"
+   ],
+   "thread": "thread:wen_xingyu__yu_lei",
+   "trigger": "on_hit",
+   "effects": [
+    {
+     "do": "extend",
+     "status": "status:entangle",
+     "turns": 1
+    },
+    {
+     "do": "stat",
+     "damageVs": "status:entangle",
+     "damage": 0.5,
+     "what": "spring_thunder"
+    }
+   ],
+   "text": "Entangles from either of them last 1 turn longer. Spring Thunder deals 50% more damage to Entangled enemies.",
+   "howTo": "Door God's Ward Entangles, and Wen Xingyu's thunder does the rest. Both are Wood: Kindred Qi.",
+   "draft": true
+  },
+  {
+   "id": "combo:frost_and_thunder",
+   "name": "Frost and Thunder",
+   "cn": "霜雷",
+   "members": [
+    "hero:ling_shuang",
+    "hero:mo_yingyue"
+   ],
+   "thread": "thread:ling_shuang__mo_yingyue",
+   "trigger": "on_hit",
+   "condition": "mo_yingyue_hits_frost_sealed",
+   "effects": [
+    {
+     "do": "stat",
+     "frostBreakMul": 1.6
+    },
+    {
+     "do": "apply",
+     "status": "status:soul_shock",
+     "turns": 1,
+     "target": "hit_enemy"
+    }
+   ],
+   "text": "When Mo Yingyue hits a Frost Sealed enemy, the seal shatters for +60% damage instead of +30%, and the enemy is Soul Shocked for 1 turn.",
+   "howTo": "Freeze with Ling Shuang, then strike with Mo Yingyue. Water feeds Wood, so the pair is also a Harmony link.",
+   "verticalSlice": true,
+   "draft": true
+  },
+  {
+   "id": "combo:phoenix_among_peonies",
+   "name": "Phoenix Among Peonies",
+   "cn": "凤戏牡丹",
+   "members": [
+    "hero:wei_zi",
+    "hero:yan_feihong"
+   ],
+   "trigger": "on_hit_taken",
+   "condition": "attacker_burning",
+   "effects": [
+    {
+     "do": "detonate",
+     "status": "status:fire_poison",
+     "target": "attacker"
+    },
+    {
+     "do": "extend",
+     "status": "status:fire_poison",
+     "turns": 1,
+     "when": "target_provoked"
+    }
+   ],
+   "text": "When a burning enemy hits Wei Zi, its Fire Poison flares and deals all its remaining damage at once. Yan Feihong's Fire Poison lasts 1 turn longer on enemies Wei Zi has Provoked.",
+   "howTo": "Scarlet Inferno burns the field and Unbowed Before the Empress Provokes it: every blow against Wei Zi detonates. Fire feeds Earth: Yan Feihong, then Wei Zi.",
+   "verticalSlice": true,
+   "draft": true
+  },
+  {
+   "id": "combo:returned_karma",
+   "name": "Returned Karma",
+   "cn": "因果回报",
+   "members": [
+    "hero:su_lianhua",
+    "hero:ning_suxin"
+   ],
+   "trigger": "on_cleanse",
+   "effects": [
+    {
+     "do": "move",
+     "status": "removed_debuff",
+     "to": "enemy_with_fewest_debuffs"
+    },
+    {
+     "do": "qi",
+     "amount": 1,
+     "max": 2,
+     "per": "turn"
+    }
+   ],
+   "text": "Each debuff Su Lianhua removes from an ally lands on the enemy with the fewest debuffs, and the team gains 1 Spirit Qi for each (up to 2 a turn).",
+   "howTo": "Let the Netherflame Sect land its burns and venom, then Jade Lotus Revival sends them home.",
+   "verticalSlice": true,
+   "draft": true
+  },
+  {
+   "id": "combo:sleeping_crabapple",
+   "name": "The Crabapple Sleeps",
+   "cn": "海棠春睡",
+   "members": [
+    "hero:tang_mian",
+    "hero:xuan_wangyou"
+   ],
+   "trigger": "on_hit",
+   "effects": [
+    {
+     "do": "stat",
+     "chance": 0.25,
+     "status": "status:lotus_dream"
+    },
+    {
+     "do": "stat",
+     "damageVs": "status:lotus_dream",
+     "damage": 0.3
+    },
+    {
+     "do": "apply",
+     "status": "status:body_shatter",
+     "turns": 1,
+     "target": "hit_enemy",
+     "when": "wakes_dreamer"
+    }
+   ],
+   "text": "Xuan Wangyou's Lotus Dream chances rise by 25%. Tang Mian deals 30% more damage to dreaming enemies, and the blow that wakes them Body Shatters them for 1 turn.",
+   "howTo": "Send them to sleep, then wake them with a greatsword. A pair of 3★ and 4★ heroines for any team.",
+   "draft": true
+  },
+  {
+   "id": "combo:red_fire_season",
+   "name": "Red Fire Season",
+   "cn": "榴火杜鹃",
+   "members": [
+    "hero:zhu_liuhuo",
+    "hero:du_tihong"
+   ],
+   "trigger": "on_hit_taken",
+   "effects": [
+    {
+     "do": "apply",
+     "status": "status:sword_wound",
+     "stacks": 1,
+     "target": "attacker"
+    },
+    {
+     "do": "detonate",
+     "status": "status:fire_poison",
+     "when": "thousand_seeds_burst"
+    }
+   ],
+   "text": "An enemy that hits Du Tihong gains a Sword Wound stack. Thousand Seeds Burst also makes the target's Fire Poison burn all its remaining damage at once.",
+   "howTo": "Du Tihong draws the blows and plants the wounds; Zhu Liuhuo bursts them. Both are Fire: Kindred Qi.",
+   "draft": true
+  }
+ ]
+}

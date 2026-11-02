@@ -96,10 +96,14 @@
     "ultimate": "Ten thousand swords, one winter."
    },
    "threads": [
-    "thread:gladiolus__ling_shuang",
-    "thread:ling_shuang__orchid",
-    "thread:chrysanthemum__ling_shuang",
+    "thread:ling_shuang__shang_jianlan",
+    "thread:gu_youlan__ling_shuang",
+    "thread:ju_yannian__ling_shuang",
     "thread:ling_shuang__mo_yingyue"
+   ],
+   "combos": [
+    "combo:plum_and_orchid",
+    "combo:frost_and_thunder"
    ],
    "art": {
     "card": "card_ling",
@@ -203,10 +207,14 @@
     "ultimate": "Heaven passes judgement. I carry it out."
    },
    "threads": [
-    "thread:mo_yingyue__pear_blossom",
-    "thread:mo_yingyue__orchid",
-    "thread:mo_yingyue__rose",
+    "thread:li_qianshu__mo_yingyue",
+    "thread:gu_youlan__mo_yingyue",
+    "thread:hu_qiangwei__mo_yingyue",
     "thread:ling_shuang__mo_yingyue"
+   ],
+   "combos": [
+    "combo:thorns_in_the_night",
+    "combo:frost_and_thunder"
    ],
    "art": {
     "card": "card_mo",
@@ -310,10 +318,14 @@
     "ultimate": "Rise, Vermilion Phoenix!"
    },
    "threads": [
-    "thread:hibiscus__yan_feihong",
-    "thread:pomegranate__yan_feihong",
-    "thread:safflower__yan_feihong",
+    "thread:sang_chaoxi__yan_feihong",
+    "thread:yan_feihong__zhu_liuhuo",
+    "thread:fang_yanzhi__yan_feihong",
     "thread:su_lianhua__yan_feihong"
+   ],
+   "combos": [
+    "combo:crow_and_phoenix",
+    "combo:phoenix_among_peonies"
    ],
    "art": {
     "card": "card_yan",
@@ -417,10 +429,13 @@
     "ultimate": "A thousand petals, one sanctuary."
    },
    "threads": [
-    "thread:magnolia__su_lianhua",
-    "thread:snow_lotus__su_lianhua",
-    "thread:daylily__su_lianhua",
+    "thread:jiang_yulan__su_lianhua",
+    "thread:su_lianhua__xue_lianxin",
+    "thread:su_lianhua__xuan_wangyou",
     "thread:su_lianhua__yan_feihong"
+   ],
+   "combos": [
+    "combo:returned_karma"
    ],
    "art": {
     "card": "card_su",

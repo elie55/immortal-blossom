@@ -50,366 +50,366 @@
    "source": "Bond level 10"
   },
   {
-   "id": "outfit:gladiolus_bond6",
+   "id": "outfit:shang_jianlan_bond6",
    "name": "Gladiolus Leisure Robes",
-   "hero": "hero:gladiolus",
+   "hero": "hero:shang_jianlan",
    "source": "Bond level 6",
    "draft": true
   },
   {
-   "id": "outfit:gladiolus_bond10",
+   "id": "outfit:shang_jianlan_bond10",
    "name": "Gladiolus Celestial Raiment",
-   "hero": "hero:gladiolus",
+   "hero": "hero:shang_jianlan",
    "source": "Bond level 10",
    "draft": true
   },
   {
-   "id": "outfit:orchid_bond6",
+   "id": "outfit:gu_youlan_bond6",
    "name": "Orchid Leisure Robes",
-   "hero": "hero:orchid",
+   "hero": "hero:gu_youlan",
    "source": "Bond level 6",
    "draft": true
   },
   {
-   "id": "outfit:orchid_bond10",
+   "id": "outfit:gu_youlan_bond10",
    "name": "Orchid Celestial Raiment",
-   "hero": "hero:orchid",
+   "hero": "hero:gu_youlan",
    "source": "Bond level 10",
    "draft": true
   },
   {
-   "id": "outfit:pomegranate_bond6",
+   "id": "outfit:zhu_liuhuo_bond6",
    "name": "Pomegranate blossom Leisure Robes",
-   "hero": "hero:pomegranate",
+   "hero": "hero:zhu_liuhuo",
    "source": "Bond level 6",
    "draft": true
   },
   {
-   "id": "outfit:pomegranate_bond10",
+   "id": "outfit:zhu_liuhuo_bond10",
    "name": "Pomegranate blossom Celestial Raiment",
-   "hero": "hero:pomegranate",
+   "hero": "hero:zhu_liuhuo",
    "source": "Bond level 10",
    "draft": true
   },
   {
-   "id": "outfit:crabapple_bond6",
+   "id": "outfit:tang_mian_bond6",
    "name": "Crabapple Leisure Robes",
-   "hero": "hero:crabapple",
+   "hero": "hero:tang_mian",
    "source": "Bond level 6",
    "draft": true
   },
   {
-   "id": "outfit:crabapple_bond10",
+   "id": "outfit:tang_mian_bond10",
    "name": "Crabapple Celestial Raiment",
-   "hero": "hero:crabapple",
+   "hero": "hero:tang_mian",
    "source": "Bond level 10",
    "draft": true
   },
   {
-   "id": "outfit:magnolia_bond6",
+   "id": "outfit:jiang_yulan_bond6",
    "name": "Magnolia Leisure Robes",
-   "hero": "hero:magnolia",
+   "hero": "hero:jiang_yulan",
    "source": "Bond level 6",
    "draft": true
   },
   {
-   "id": "outfit:magnolia_bond10",
+   "id": "outfit:jiang_yulan_bond10",
    "name": "Magnolia Celestial Raiment",
-   "hero": "hero:magnolia",
+   "hero": "hero:jiang_yulan",
    "source": "Bond level 10",
    "draft": true
   },
   {
-   "id": "outfit:wisteria_bond6",
+   "id": "outfit:teng_yin_bond6",
    "name": "Wisteria Leisure Robes",
-   "hero": "hero:wisteria",
+   "hero": "hero:teng_yin",
    "source": "Bond level 6",
    "draft": true
   },
   {
-   "id": "outfit:wisteria_bond10",
+   "id": "outfit:teng_yin_bond10",
    "name": "Wisteria Celestial Raiment",
-   "hero": "hero:wisteria",
+   "hero": "hero:teng_yin",
    "source": "Bond level 10",
    "draft": true
   },
   {
-   "id": "outfit:camellia_bond6",
+   "id": "outfit:lin_chaxue_bond6",
    "name": "Camellia Leisure Robes",
-   "hero": "hero:camellia",
+   "hero": "hero:lin_chaxue",
    "source": "Bond level 6",
    "draft": true
   },
   {
-   "id": "outfit:camellia_bond10",
+   "id": "outfit:lin_chaxue_bond10",
    "name": "Camellia Celestial Raiment",
-   "hero": "hero:camellia",
+   "hero": "hero:lin_chaxue",
    "source": "Bond level 10",
    "draft": true
   },
   {
-   "id": "outfit:azalea_bond6",
+   "id": "outfit:du_tihong_bond6",
    "name": "Azalea Leisure Robes",
-   "hero": "hero:azalea",
+   "hero": "hero:du_tihong",
    "source": "Bond level 6",
    "draft": true
   },
   {
-   "id": "outfit:azalea_bond10",
+   "id": "outfit:du_tihong_bond10",
    "name": "Azalea Celestial Raiment",
-   "hero": "hero:azalea",
+   "hero": "hero:du_tihong",
    "source": "Bond level 10",
    "draft": true
   },
   {
-   "id": "outfit:peony_bond6",
+   "id": "outfit:wei_zi_bond6",
    "name": "Peony Leisure Robes",
-   "hero": "hero:peony",
+   "hero": "hero:wei_zi",
    "source": "Bond level 6",
    "draft": true
   },
   {
-   "id": "outfit:peony_bond10",
+   "id": "outfit:wei_zi_bond10",
    "name": "Peony Celestial Raiment",
-   "hero": "hero:peony",
+   "hero": "hero:wei_zi",
    "source": "Bond level 10",
    "draft": true
   },
   {
-   "id": "outfit:pear_blossom_bond6",
+   "id": "outfit:li_qianshu_bond6",
    "name": "Pear blossom Leisure Robes",
-   "hero": "hero:pear_blossom",
+   "hero": "hero:li_qianshu",
    "source": "Bond level 6",
    "draft": true
   },
   {
-   "id": "outfit:pear_blossom_bond10",
+   "id": "outfit:li_qianshu_bond10",
    "name": "Pear blossom Celestial Raiment",
-   "hero": "hero:pear_blossom",
+   "hero": "hero:li_qianshu",
    "source": "Bond level 10",
    "draft": true
   },
   {
-   "id": "outfit:iris_bond6",
+   "id": "outfit:lan_yuan_bond6",
    "name": "Iris Leisure Robes",
-   "hero": "hero:iris",
+   "hero": "hero:lan_yuan",
    "source": "Bond level 6",
    "draft": true
   },
   {
-   "id": "outfit:iris_bond10",
+   "id": "outfit:lan_yuan_bond10",
    "name": "Iris Celestial Raiment",
-   "hero": "hero:iris",
+   "hero": "hero:lan_yuan",
    "source": "Bond level 10",
    "draft": true
   },
   {
-   "id": "outfit:rose_bond6",
+   "id": "outfit:hu_qiangwei_bond6",
    "name": "Rose Leisure Robes",
-   "hero": "hero:rose",
+   "hero": "hero:hu_qiangwei",
    "source": "Bond level 6",
    "draft": true
   },
   {
-   "id": "outfit:rose_bond10",
+   "id": "outfit:hu_qiangwei_bond10",
    "name": "Rose Celestial Raiment",
-   "hero": "hero:rose",
+   "hero": "hero:hu_qiangwei",
    "source": "Bond level 10",
    "draft": true
   },
   {
-   "id": "outfit:oleander_bond6",
+   "id": "outfit:she_qingzhu_bond6",
    "name": "Oleander Leisure Robes",
-   "hero": "hero:oleander",
+   "hero": "hero:she_qingzhu",
    "source": "Bond level 6",
    "draft": true
   },
   {
-   "id": "outfit:oleander_bond10",
+   "id": "outfit:she_qingzhu_bond10",
    "name": "Oleander Celestial Raiment",
-   "hero": "hero:oleander",
+   "hero": "hero:she_qingzhu",
    "source": "Bond level 10",
    "draft": true
   },
   {
-   "id": "outfit:jasmine_bond6",
+   "id": "outfit:ning_suxin_bond6",
    "name": "Jasmine Leisure Robes",
-   "hero": "hero:jasmine",
+   "hero": "hero:ning_suxin",
    "source": "Bond level 6",
    "draft": true
   },
   {
-   "id": "outfit:jasmine_bond10",
+   "id": "outfit:ning_suxin_bond10",
    "name": "Jasmine Celestial Raiment",
-   "hero": "hero:jasmine",
+   "hero": "hero:ning_suxin",
    "source": "Bond level 10",
    "draft": true
   },
   {
-   "id": "outfit:peach_blossom_bond6",
+   "id": "outfit:yu_lei_bond6",
    "name": "Peach blossom Leisure Robes",
-   "hero": "hero:peach_blossom",
+   "hero": "hero:yu_lei",
    "source": "Bond level 6",
    "draft": true
   },
   {
-   "id": "outfit:peach_blossom_bond10",
+   "id": "outfit:yu_lei_bond10",
    "name": "Peach blossom Celestial Raiment",
-   "hero": "hero:peach_blossom",
+   "hero": "hero:yu_lei",
    "source": "Bond level 10",
    "draft": true
   },
   {
-   "id": "outfit:narcissus_bond6",
+   "id": "outfit:bai_lingbo_bond6",
    "name": "Narcissus Leisure Robes",
-   "hero": "hero:narcissus",
+   "hero": "hero:bai_lingbo",
    "source": "Bond level 6",
    "draft": true
   },
   {
-   "id": "outfit:narcissus_bond10",
+   "id": "outfit:bai_lingbo_bond10",
    "name": "Narcissus Celestial Raiment",
-   "hero": "hero:narcissus",
+   "hero": "hero:bai_lingbo",
    "source": "Bond level 10",
    "draft": true
   },
   {
-   "id": "outfit:hibiscus_bond6",
+   "id": "outfit:sang_chaoxi_bond6",
    "name": "Hibiscus Leisure Robes",
-   "hero": "hero:hibiscus",
+   "hero": "hero:sang_chaoxi",
    "source": "Bond level 6",
    "draft": true
   },
   {
-   "id": "outfit:hibiscus_bond10",
+   "id": "outfit:sang_chaoxi_bond10",
    "name": "Hibiscus Celestial Raiment",
-   "hero": "hero:hibiscus",
+   "hero": "hero:sang_chaoxi",
    "source": "Bond level 10",
    "draft": true
   },
   {
-   "id": "outfit:daylily_bond6",
+   "id": "outfit:xuan_wangyou_bond6",
    "name": "Daylily Leisure Robes",
-   "hero": "hero:daylily",
+   "hero": "hero:xuan_wangyou",
    "source": "Bond level 6",
    "draft": true
   },
   {
-   "id": "outfit:daylily_bond10",
+   "id": "outfit:xuan_wangyou_bond10",
    "name": "Daylily Celestial Raiment",
-   "hero": "hero:daylily",
+   "hero": "hero:xuan_wangyou",
    "source": "Bond level 10",
    "draft": true
   },
   {
-   "id": "outfit:osmanthus_bond6",
+   "id": "outfit:gui_chanjuan_bond6",
    "name": "Osmanthus Leisure Robes",
-   "hero": "hero:osmanthus",
+   "hero": "hero:gui_chanjuan",
    "source": "Bond level 6",
    "draft": true
   },
   {
-   "id": "outfit:osmanthus_bond10",
+   "id": "outfit:gui_chanjuan_bond10",
    "name": "Osmanthus Celestial Raiment",
-   "hero": "hero:osmanthus",
+   "hero": "hero:gui_chanjuan",
    "source": "Bond level 10",
    "draft": true
   },
   {
-   "id": "outfit:apricot_blossom_bond6",
+   "id": "outfit:wen_xingyu_bond6",
    "name": "Apricot blossom Leisure Robes",
-   "hero": "hero:apricot_blossom",
+   "hero": "hero:wen_xingyu",
    "source": "Bond level 6",
    "draft": true
   },
   {
-   "id": "outfit:apricot_blossom_bond10",
+   "id": "outfit:wen_xingyu_bond10",
    "name": "Apricot blossom Celestial Raiment",
-   "hero": "hero:apricot_blossom",
+   "hero": "hero:wen_xingyu",
    "source": "Bond level 10",
    "draft": true
   },
   {
-   "id": "outfit:snow_lotus_bond6",
+   "id": "outfit:xue_lianxin_bond6",
    "name": "Snow lotus Leisure Robes",
-   "hero": "hero:snow_lotus",
+   "hero": "hero:xue_lianxin",
    "source": "Bond level 6",
    "draft": true
   },
   {
-   "id": "outfit:snow_lotus_bond10",
+   "id": "outfit:xue_lianxin_bond10",
    "name": "Snow lotus Celestial Raiment",
-   "hero": "hero:snow_lotus",
+   "hero": "hero:xue_lianxin",
    "source": "Bond level 10",
    "draft": true
   },
   {
-   "id": "outfit:trumpet_creeper_bond6",
+   "id": "outfit:qiao_lingxiao_bond6",
    "name": "Trumpet creeper Leisure Robes",
-   "hero": "hero:trumpet_creeper",
+   "hero": "hero:qiao_lingxiao",
    "source": "Bond level 6",
    "draft": true
   },
   {
-   "id": "outfit:trumpet_creeper_bond10",
+   "id": "outfit:qiao_lingxiao_bond10",
    "name": "Trumpet creeper Celestial Raiment",
-   "hero": "hero:trumpet_creeper",
+   "hero": "hero:qiao_lingxiao",
    "source": "Bond level 10",
    "draft": true
   },
   {
-   "id": "outfit:chrysanthemum_bond6",
+   "id": "outfit:ju_yannian_bond6",
    "name": "Chrysanthemum Leisure Robes",
-   "hero": "hero:chrysanthemum",
+   "hero": "hero:ju_yannian",
    "source": "Bond level 6",
    "draft": true
   },
   {
-   "id": "outfit:chrysanthemum_bond10",
+   "id": "outfit:ju_yannian_bond10",
    "name": "Chrysanthemum Celestial Raiment",
-   "hero": "hero:chrysanthemum",
+   "hero": "hero:ju_yannian",
    "source": "Bond level 10",
    "draft": true
   },
   {
-   "id": "outfit:lily_bond6",
+   "id": "outfit:an_baihe_bond6",
    "name": "Lily Leisure Robes",
-   "hero": "hero:lily",
+   "hero": "hero:an_baihe",
    "source": "Bond level 6",
    "draft": true
   },
   {
-   "id": "outfit:lily_bond10",
+   "id": "outfit:an_baihe_bond10",
    "name": "Lily Celestial Raiment",
-   "hero": "hero:lily",
+   "hero": "hero:an_baihe",
    "source": "Bond level 10",
    "draft": true
   },
   {
-   "id": "outfit:hydrangea_bond6",
+   "id": "outfit:ying_wucai_bond6",
    "name": "Hydrangea Leisure Robes",
-   "hero": "hero:hydrangea",
+   "hero": "hero:ying_wucai",
    "source": "Bond level 6",
    "draft": true
   },
   {
-   "id": "outfit:hydrangea_bond10",
+   "id": "outfit:ying_wucai_bond10",
    "name": "Hydrangea Celestial Raiment",
-   "hero": "hero:hydrangea",
+   "hero": "hero:ying_wucai",
    "source": "Bond level 10",
    "draft": true
   },
   {
-   "id": "outfit:safflower_bond6",
+   "id": "outfit:fang_yanzhi_bond6",
    "name": "Safflower Leisure Robes",
-   "hero": "hero:safflower",
+   "hero": "hero:fang_yanzhi",
    "source": "Bond level 6",
    "draft": true
   },
   {
-   "id": "outfit:safflower_bond10",
+   "id": "outfit:fang_yanzhi_bond10",
    "name": "Safflower Celestial Raiment",
-   "hero": "hero:safflower",
+   "hero": "hero:fang_yanzhi",
    "source": "Bond level 10",
    "draft": true
   },

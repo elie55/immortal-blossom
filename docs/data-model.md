@@ -20,7 +20,7 @@ Run the checker after every change. It exits with an error code when anything is
 | --- | --- | --- |
 | `game:` | The game root; every record must be reachable from it | `game.json` |
 | `rules:` `phase:` `path:` `stat:` `realm:` `status:` `sys:` | Combat, growth and gear rules; phases, paths, stats, realms, statuses; game systems with what they spend and produce | `rules/` |
-| `hero:` `thread:` | Heroines and their Karmic Threads | `heroines/` |
+| `hero:` `thread:` `combo:` | Heroines, their Karmic Threads and their Twin Bloom combos | `heroines/` |
 | `skill:` | Techniques and passives of heroines and enemies | `skills/` |
 | `enemy:` | Enemy templates (stats at level 1, techniques, boss data) | `enemies/` |
 | `faction:` `loc:` `npc:` | Factions, places, characters | `world/` |
@@ -49,9 +49,9 @@ The checker reads the key a link sits under to know whether the player gains or 
 2. Every link resolves to a record that exists.
 3. Every record is reachable from `game:immortal_blossoms` by following links (no orphans, no disconnected islands).
 4. Economy: sources and uses as above.
-5. Heroines: three techniques in slots S1, S2, S3 and passives at levels 30 and 50; six petals, petal 3 taking the S2 and petal 5 the ultimate to mastery +6; unique gear that points back to her; liked and disliked gifts are gifts; bond outfits at levels 6 and 10. With the full roster: 10 heroines per rarity and a 5★ on every path.
+5. Heroines: three techniques in slots S1, S2, S3 and passives at levels 30 and 50; six petals, petal 3 taking the S2 and petal 5 the ultimate to mastery +6; unique gear that points back to her; liked and disliked gifts are gifts; bond outfits at levels 6 and 10. With the full roster: 10 heroines per rarity and a 5★ on every path. Rarity steps: a heroine's power index (the mean of HP, offense and Defense against her path's 4★ `standard` in `rules/paths.json`, where offense is ATK × (1 + crit × (critDmg − 1))) must be 0.92 for 3★, 1.00 for 4★ and 1.08 for 5★, within 0.01.
 6. Techniques: every technique's owner lists it (or it is marked `shared` by an enemy family); cooldowns S1 = 1, S2 2 to 4, ultimates 4 to 6; Empower costs 6 or 10; effect verbs and passive triggers come from a fixed vocabulary (top of `tools/validate.mjs`).
-7. Karmic Threads: each pair once, 2 to 4 threads per heroine.
+7. Karmic Threads: each pair once, 2 to 4 threads per heroine. Twin Blooms: two different heroines, both list the combo, a shared thread ties the same pair, and every 5★ heroine has at least two Twin Blooms, one of them with another 5★.
 8. Stages: 1 to 3 waves of at most 4 card slots (a boss takes 2); chapters chain stage after stage, and every unlock chain starts somewhere.
 9. Progression map: a stage's realm and gear tier agree; its enemies' levels sit in that realm's band; the gear it drops is of its tier; Heaven-Defying levels sit in the band of the tier they drop.
 10. Drop chances are between 0 and 1, rarity odds sum to 1, realm caps rise by 10 to 80, Fate Pond rates sum to 1.
@@ -59,7 +59,7 @@ The checker reads the key a link sits under to know whether the player gains or 
 
 ## Main record shapes
 
-- **hero**: `name, cn, title, rarity, phase, path, flower, faction, zodiac, birthday, base{hp, atk, def, crit, critDmg}, skills[S1, S2, S3], passives[p30, p50], petals[6], unique, gifts{likes, dislikes}, bondRewards, profile, quotes, art`. Stats are level 1; `rules:growth` scales them.
+- **hero**: `name, cn, title, rarity, phase, path, flower, faction, zodiac, birthday, base{hp, atk, def, crit, critDmg}, skills[S1, S2, S3], passives[p30, p50], petals[6], unique, gifts{likes, dislikes}, bondRewards, profile, quotes, art`. Stats are level 1; `rules:growth` scales them. Ids and art keys use her Chinese name (`hero:wei_zi`, `card_wei_zi`), never her flower.
 - **skill**: `owner | shared, slot, name, cooldown, start, target, effects[{do, ...}], text, empower{cost, effects, text}, mastery[]`; passives use `trigger` instead of a cooldown.
 - **enemy**: `name, family, faction, phase, profile, base, skills[]`, plus `boss, wide, qiShield, script, character` (the npc a boss is) where relevant. Phase `day` means the Valley's day phase, `shrine` the shrine's phase, `mirror` the heroine on trial.
 - **stage**: `name, mode, kind, location, realm, tier, unlock{clear | realm}, waves[[{enemy, level, phase?}]], missions[3], drops, firstClearRewards`, plus `chapter, scenes{before, after}, beat, guests, giver, shop, heavenDefying{levelOffset, tier, drops}` for Journey stages.
@@ -71,5 +71,5 @@ The checker reads the key a link sits under to know whether the player gains or 
 
 - New stage: give it a realm and tier from the progression map, waves of existing enemies inside the realm's level band, a drop table of the same tier, an unlock, and link it from its mode (or chapter).
 - New item: add it, then give it at least one source (a drop table, reward, shop, recipe output or system) and one use (a cost, recipe input, shop price or system).
-- New heroine: follow `heroines/founders.json`; add her five skills, her unique gear, its fragment and forge recipe, two bond outfits and 2 to 4 Karmic Threads; add her to the Fate Pond pool (and Sect Recruitment if 3★ or 4★).
+- New heroine: follow `heroines/founders.json`; add her five skills, her unique gear, its fragment and forge recipe, two bond outfits, 2 to 4 Karmic Threads and any Twin Blooms (`heroines/combos.json`); add her to the Fate Pond pool (and Sect Recruitment if 3★ or 4★).
 - Then run the checker; it names anything left unconnected.

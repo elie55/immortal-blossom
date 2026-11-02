@@ -115,9 +115,9 @@
    "heroStat": "base * (1 + 0.08 * (level - 1)) * (1 + 0.10 * breakthroughs)",
    "enemyStat": "base * (1 + 0.08 * (level - 1)) * (1 + 0.10 * floor((level - 1) / 10))",
    "rarityBaseMultiplier": {
-    "3": 0.9,
+    "3": 0.92,
     "4": 1.0,
-    "5": 1.1
+    "5": 1.08
    },
    "bankedExp": "EXP past a realm cap is kept and applied after the next breakthrough",
    "spiritStonesPerExp": 0.1,
@@ -142,7 +142,8 @@
     "tea": 30,
     "lobbyTap": 2,
     "lobbyTapDailyCap": 10
-   }
+   },
+   "rarityPowerIndex": "mean of hp/HP0, offense/OFF0 and def/DEF0 against the path's standard, where offense = atk * (1 + crit * (critDmg - 1)); it must equal the rarity multiplier within 0.01"
   },
   {
    "id": "rules:gear",

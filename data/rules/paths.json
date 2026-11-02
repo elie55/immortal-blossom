@@ -10,7 +10,14 @@
    "artefactTypes": [
     "Swords",
     "sword gourds"
-   ]
+   ],
+   "standard": {
+    "hp": 2610,
+    "atk": 331,
+    "def": 131,
+    "crit": 0.2,
+    "critDmg": 1.6
+   }
   },
   {
    "id": "path:guardian",
@@ -22,7 +29,14 @@
     "Shields",
     "bells",
     "armlets"
-   ]
+   ],
+   "standard": {
+    "hp": 3215,
+    "atk": 249,
+    "def": 193,
+    "crit": 0.1,
+    "critDmg": 1.5
+   }
   },
   {
    "id": "path:shadow",
@@ -33,7 +47,14 @@
    "artefactTypes": [
     "Daggers",
     "needles"
-   ]
+   ],
+   "standard": {
+    "hp": 2309,
+    "atk": 351,
+    "def": 113,
+    "crit": 0.3,
+    "critDmg": 1.7
+   }
   },
   {
    "id": "path:talisman",
@@ -44,7 +65,14 @@
    "artefactTypes": [
     "Talismans",
     "array flags"
-   ]
+   ],
+   "standard": {
+    "hp": 2560,
+    "atk": 312,
+    "def": 145,
+    "crit": 0.14,
+    "critDmg": 1.5
+   }
   },
   {
    "id": "path:arcane",
@@ -56,7 +84,14 @@
     "Fans",
     "mirrors",
     "orbs"
-   ]
+   ],
+   "standard": {
+    "hp": 2460,
+    "atk": 364,
+    "def": 118,
+    "crit": 0.2,
+    "critDmg": 1.6
+   }
   },
   {
    "id": "path:healer",
@@ -68,7 +103,14 @@
     "Lotus lamps",
     "whisks",
     "cauldrons"
-   ]
+   ],
+   "standard": {
+    "hp": 2811,
+    "atk": 264,
+    "def": 161,
+    "crit": 0.12,
+    "critDmg": 1.5
+   }
   }
  ]
 }

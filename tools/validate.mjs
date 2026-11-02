@@ -20,7 +20,7 @@ const DATA = join(ROOT, 'data');
 // Every id is "type:key". A string anywhere in the data that has this shape and a known type is a link.
 export const TYPES = {
   game: 'Game root', rules: 'Rule set', phase: 'Phase', path: 'Cultivation path', stat: 'Stat',
-  realm: 'Realm', status: 'Status effect', sys: 'Game system', hero: 'Heroine', thread: 'Karmic Thread',
+  realm: 'Realm', status: 'Status effect', sys: 'Game system', hero: 'Heroine', thread: 'Karmic Thread', combo: 'Twin Bloom',
   skill: 'Technique or passive', enemy: 'Enemy', faction: 'Faction', loc: 'Location', npc: 'Character',
   chapter: 'Story chapter', scene: 'Story scene', stage: 'Stage or battle', mode: 'Game mode',
   hunt: 'Demon Hunt', theme: 'Secret Realm theme', insight: 'Dao Insight', event: 'Secret Realm event',
@@ -37,10 +37,10 @@ const ID_RE = /^([a-z]+):([a-z0-9_]+)$/;
 // Effect verbs a technique, passive, set, artefact or encounter may use, and the moments passives fire.
 const EFFECTS = new Set(['damage', 'heal', 'shield', 'apply', 'cleanse', 'dispel', 'delay', 'refresh', 'qi',
   'phase_qi', 'revive', 'stat', 'redirect', 'reflect', 'splash', 'lifesteal', 'overflow', 'harmony', 'counter',
-  'extend', 'cost_health', 'transform', 'summon', 'break']);
+  'extend', 'cost_health', 'transform', 'summon', 'break', 'detonate', 'move', 'follow_up', 'haste']);
 const TRIGGERS = new Set(['always', 'battle_start', 'turn_start', 'turn_end', 'on_cast', 'on_hit', 'on_crit',
   'on_kill', 'on_hit_taken', 'on_ally_low', 'on_fall', 'on_debuff', 'on_heal', 'on_ultimate', 'on_break',
-  'on_wave', 'on_chain_break']);
+  'on_wave', 'on_chain_break', 'on_reflect', 'on_charm', 'on_shield_break', 'on_cleanse', 'on_dot']);
 
 // Keys that make a link a source (the player gains the target) or a sink (the player spends it).
 // The nearest classified key on the path wins. Keys ending in Reward(s) are sources, Cost(s) sinks.
@@ -198,6 +198,14 @@ for (const h of heroes) {
   need(u && u.hero === h.id, `${h.id}: unique gear ${h.unique} must point back to her`);
   for (const g of [...(h.gifts?.likes || []), ...(h.gifts?.dislikes || [])]) need(get(g)?.category === 'gift', `${h.id}: ${g} is not a gift`);
   need((h.bondRewards || []).some((b) => b.level === 6) && (h.bondRewards || []).some((b) => b.level === 10), `${h.id}: bond outfits at levels 6 and 10`);
+  // Rarity steps: 3★ < 4★ < 5★ by a small, fixed margin, measured against her path's 4★ standard.
+  const std = get(h.path)?.standard, mul = get('rules:growth')?.rarityBaseMultiplier?.[h.rarity];
+  if (need(std && mul, `${h.id}: her path needs a standard and her rarity a multiplier`) !== false && std && mul && h.base) {
+    const off = (x) => x.atk * (1 + x.crit * (x.critDmg - 1));
+    const p = (h.base.hp / std.hp + off(h.base) / off(std) + h.base.def / std.def) / 3;
+    need(Math.abs(p - mul) <= 0.01, `${h.id}: a ${h.rarity}★ heroine's stats should come to ${mul} of the ${h.path} standard (power index ${p.toFixed(3)})`);
+    need(Math.abs(h.base.crit - std.crit) <= 0.08 && Math.abs(h.base.critDmg - std.critDmg) <= 0.15, `${h.id}: critical stats stray too far from the ${h.path} standard`);
+  }
 }
 if (heroes.length === 30) {
   need(rarityCount[3] === 10 && rarityCount[4] === 10 && rarityCount[5] === 10, `launch roster: 10 heroines per rarity (have ${JSON.stringify(rarityCount)})`);
@@ -220,6 +228,30 @@ if (all('thread').length) for (const h of heroes) {
   const mine = all('thread').filter((t) => t.a === h.id || t.b === h.id).map((t) => t.id).sort();
   const listed = [...(h.threads || [])].sort();
   need(JSON.stringify(mine) === JSON.stringify(listed), `${h.id}: threads field should list exactly ${mine.join(', ') || 'none'}`);
+}
+
+// Twin Blooms: pairs of heroines on one team. Both list the combo, a shared thread ties the same pair,
+// and every 5★ heroine has at least two, one of them with another 5★.
+const comboCount = new Map(), fiveFiveCombo = new Set();
+for (const c of all('combo')) {
+  const ms = c.members || [];
+  need(ms.length === 2 && ms.every((m) => get(m) && m.startsWith('hero:')) && ms[0] !== ms[1], `${c.id}: a Twin Bloom joins two different heroines`);
+  if (c.thread) { const t = get(c.thread); need(t && [t.a, t.b].sort().join() === [...ms].sort().join(), `${c.id}: ${c.thread} must tie the same two heroines`); }
+  need(TRIGGERS.has(c.trigger), `${c.id}: unknown trigger "${c.trigger}"`);
+  for (const e of c.effects || []) need(EFFECTS.has(e.do), `${c.id}: unknown effect "${e.do}"`);
+  need((c.effects || []).length > 0 && c.text && c.howTo, `${c.id}: effects, text and howTo are required`);
+  for (const m of ms) {
+    comboCount.set(m, (comboCount.get(m) || 0) + 1);
+    need((get(m)?.combos || []).includes(c.id), `${m}: combos field should list ${c.id}`);
+  }
+  if (ms.every((m) => get(m)?.rarity === 5)) ms.forEach((m) => fiveFiveCombo.add(m));
+}
+for (const h of heroes) {
+  for (const c of h.combos || []) need(get(c)?.members?.includes(h.id), `${h.id}: lists ${c}, which is not hers`);
+  if (h.rarity === 5) {
+    need((comboCount.get(h.id) || 0) >= 2, `${h.id}: a 5★ heroine needs at least two Twin Blooms`);
+    need(fiveFiveCombo.has(h.id), `${h.id}: a 5★ heroine needs a Twin Bloom with another 5★`);
+  }
 }
 
 // Stages

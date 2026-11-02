@@ -951,12 +951,12 @@
    "requiresRealm": "realm:mahayana"
   },
   {
-   "id": "recipe:forge_unique_gladiolus",
+   "id": "recipe:forge_unique_shang_jianlan",
    "name": "Forge natal gear: Gladiolus",
    "station": "bld:artifact_forge",
    "inputs": [
     {
-     "item": "item:frag_gladiolus",
+     "item": "item:frag_shang_jianlan",
      "qty": 10
     },
     {
@@ -969,18 +969,18 @@
     }
    ],
    "output": {
-    "unique": "unique:gladiolus"
+    "unique": "unique:shang_jianlan"
    },
    "hours": 12,
    "requiresRealm": "realm:mahayana"
   },
   {
-   "id": "recipe:forge_unique_orchid",
+   "id": "recipe:forge_unique_gu_youlan",
    "name": "Forge natal gear: Orchid",
    "station": "bld:artifact_forge",
    "inputs": [
     {
-     "item": "item:frag_orchid",
+     "item": "item:frag_gu_youlan",
      "qty": 10
     },
     {
@@ -993,18 +993,18 @@
     }
    ],
    "output": {
-    "unique": "unique:orchid"
+    "unique": "unique:gu_youlan"
    },
    "hours": 12,
    "requiresRealm": "realm:mahayana"
   },
   {
-   "id": "recipe:forge_unique_pomegranate",
+   "id": "recipe:forge_unique_zhu_liuhuo",
    "name": "Forge natal gear: Pomegranate",
    "station": "bld:artifact_forge",
    "inputs": [
     {
-     "item": "item:frag_pomegranate",
+     "item": "item:frag_zhu_liuhuo",
      "qty": 10
     },
     {
@@ -1017,18 +1017,18 @@
     }
    ],
    "output": {
-    "unique": "unique:pomegranate"
+    "unique": "unique:zhu_liuhuo"
    },
    "hours": 12,
    "requiresRealm": "realm:mahayana"
   },
   {
-   "id": "recipe:forge_unique_crabapple",
+   "id": "recipe:forge_unique_tang_mian",
    "name": "Forge natal gear: Crabapple",
    "station": "bld:artifact_forge",
    "inputs": [
     {
-     "item": "item:frag_crabapple",
+     "item": "item:frag_tang_mian",
      "qty": 10
     },
     {
@@ -1041,18 +1041,18 @@
     }
    ],
    "output": {
-    "unique": "unique:crabapple"
+    "unique": "unique:tang_mian"
    },
    "hours": 12,
    "requiresRealm": "realm:mahayana"
   },
   {
-   "id": "recipe:forge_unique_magnolia",
+   "id": "recipe:forge_unique_jiang_yulan",
    "name": "Forge natal gear: Magnolia",
    "station": "bld:artifact_forge",
    "inputs": [
     {
-     "item": "item:frag_magnolia",
+     "item": "item:frag_jiang_yulan",
      "qty": 10
     },
     {
@@ -1065,18 +1065,18 @@
     }
    ],
    "output": {
-    "unique": "unique:magnolia"
+    "unique": "unique:jiang_yulan"
    },
    "hours": 12,
    "requiresRealm": "realm:mahayana"
   },
   {
-   "id": "recipe:forge_unique_wisteria",
+   "id": "recipe:forge_unique_teng_yin",
    "name": "Forge natal gear: Wisteria",
    "station": "bld:artifact_forge",
    "inputs": [
     {
-     "item": "item:frag_wisteria",
+     "item": "item:frag_teng_yin",
      "qty": 10
     },
     {
@@ -1089,18 +1089,18 @@
     }
    ],
    "output": {
-    "unique": "unique:wisteria"
+    "unique": "unique:teng_yin"
    },
    "hours": 12,
    "requiresRealm": "realm:mahayana"
   },
   {
-   "id": "recipe:forge_unique_camellia",
+   "id": "recipe:forge_unique_lin_chaxue",
    "name": "Forge natal gear: Camellia",
    "station": "bld:artifact_forge",
    "inputs": [
     {
-     "item": "item:frag_camellia",
+     "item": "item:frag_lin_chaxue",
      "qty": 10
     },
     {
@@ -1113,18 +1113,18 @@
     }
    ],
    "output": {
-    "unique": "unique:camellia"
+    "unique": "unique:lin_chaxue"
    },
    "hours": 12,
    "requiresRealm": "realm:mahayana"
   },
   {
-   "id": "recipe:forge_unique_azalea",
+   "id": "recipe:forge_unique_du_tihong",
    "name": "Forge natal gear: Azalea",
    "station": "bld:artifact_forge",
    "inputs": [
     {
-     "item": "item:frag_azalea",
+     "item": "item:frag_du_tihong",
      "qty": 10
     },
     {
@@ -1137,18 +1137,18 @@
     }
    ],
    "output": {
-    "unique": "unique:azalea"
+    "unique": "unique:du_tihong"
    },
    "hours": 12,
    "requiresRealm": "realm:mahayana"
   },
   {
-   "id": "recipe:forge_unique_peony",
+   "id": "recipe:forge_unique_wei_zi",
    "name": "Forge natal gear: Peony",
    "station": "bld:artifact_forge",
    "inputs": [
     {
-     "item": "item:frag_peony",
+     "item": "item:frag_wei_zi",
      "qty": 10
     },
     {
@@ -1161,18 +1161,18 @@
     }
    ],
    "output": {
-    "unique": "unique:peony"
+    "unique": "unique:wei_zi"
    },
    "hours": 12,
    "requiresRealm": "realm:mahayana"
   },
   {
-   "id": "recipe:forge_unique_pear_blossom",
+   "id": "recipe:forge_unique_li_qianshu",
    "name": "Forge natal gear: Pear Blossom",
    "station": "bld:artifact_forge",
    "inputs": [
     {
-     "item": "item:frag_pear_blossom",
+     "item": "item:frag_li_qianshu",
      "qty": 10
     },
     {
@@ -1185,18 +1185,18 @@
     }
    ],
    "output": {
-    "unique": "unique:pear_blossom"
+    "unique": "unique:li_qianshu"
    },
    "hours": 12,
    "requiresRealm": "realm:mahayana"
   },
   {
-   "id": "recipe:forge_unique_iris",
+   "id": "recipe:forge_unique_lan_yuan",
    "name": "Forge natal gear: Iris",
    "station": "bld:artifact_forge",
    "inputs": [
     {
-     "item": "item:frag_iris",
+     "item": "item:frag_lan_yuan",
      "qty": 10
     },
     {
@@ -1209,18 +1209,18 @@
     }
    ],
    "output": {
-    "unique": "unique:iris"
+    "unique": "unique:lan_yuan"
    },
    "hours": 12,
    "requiresRealm": "realm:mahayana"
   },
   {
-   "id": "recipe:forge_unique_rose",
+   "id": "recipe:forge_unique_hu_qiangwei",
    "name": "Forge natal gear: Rose",
    "station": "bld:artifact_forge",
    "inputs": [
     {
-     "item": "item:frag_rose",
+     "item": "item:frag_hu_qiangwei",
      "qty": 10
     },
     {
@@ -1233,18 +1233,18 @@
     }
    ],
    "output": {
-    "unique": "unique:rose"
+    "unique": "unique:hu_qiangwei"
    },
    "hours": 12,
    "requiresRealm": "realm:mahayana"
   },
   {
-   "id": "recipe:forge_unique_oleander",
+   "id": "recipe:forge_unique_she_qingzhu",
    "name": "Forge natal gear: Oleander",
    "station": "bld:artifact_forge",
    "inputs": [
     {
-     "item": "item:frag_oleander",
+     "item": "item:frag_she_qingzhu",
      "qty": 10
     },
     {
@@ -1257,18 +1257,18 @@
     }
    ],
    "output": {
-    "unique": "unique:oleander"
+    "unique": "unique:she_qingzhu"
    },
    "hours": 12,
    "requiresRealm": "realm:mahayana"
   },
   {
-   "id": "recipe:forge_unique_jasmine",
+   "id": "recipe:forge_unique_ning_suxin",
    "name": "Forge natal gear: Jasmine",
    "station": "bld:artifact_forge",
    "inputs": [
     {
-     "item": "item:frag_jasmine",
+     "item": "item:frag_ning_suxin",
      "qty": 10
     },
     {
@@ -1281,18 +1281,18 @@
     }
    ],
    "output": {
-    "unique": "unique:jasmine"
+    "unique": "unique:ning_suxin"
    },
    "hours": 12,
    "requiresRealm": "realm:mahayana"
   },
   {
-   "id": "recipe:forge_unique_peach_blossom",
+   "id": "recipe:forge_unique_yu_lei",
    "name": "Forge natal gear: Peach Blossom",
    "station": "bld:artifact_forge",
    "inputs": [
     {
-     "item": "item:frag_peach_blossom",
+     "item": "item:frag_yu_lei",
      "qty": 10
     },
     {
@@ -1305,18 +1305,18 @@
     }
    ],
    "output": {
-    "unique": "unique:peach_blossom"
+    "unique": "unique:yu_lei"
    },
    "hours": 12,
    "requiresRealm": "realm:mahayana"
   },
   {
-   "id": "recipe:forge_unique_narcissus",
+   "id": "recipe:forge_unique_bai_lingbo",
    "name": "Forge natal gear: Narcissus",
    "station": "bld:artifact_forge",
    "inputs": [
     {
-     "item": "item:frag_narcissus",
+     "item": "item:frag_bai_lingbo",
      "qty": 10
     },
     {
@@ -1329,18 +1329,18 @@
     }
    ],
    "output": {
-    "unique": "unique:narcissus"
+    "unique": "unique:bai_lingbo"
    },
    "hours": 12,
    "requiresRealm": "realm:mahayana"
   },
   {
-   "id": "recipe:forge_unique_hibiscus",
+   "id": "recipe:forge_unique_sang_chaoxi",
    "name": "Forge natal gear: Hibiscus",
    "station": "bld:artifact_forge",
    "inputs": [
     {
-     "item": "item:frag_hibiscus",
+     "item": "item:frag_sang_chaoxi",
      "qty": 10
     },
     {
@@ -1353,18 +1353,18 @@
     }
    ],
    "output": {
-    "unique": "unique:hibiscus"
+    "unique": "unique:sang_chaoxi"
    },
    "hours": 12,
    "requiresRealm": "realm:mahayana"
   },
   {
-   "id": "recipe:forge_unique_daylily",
+   "id": "recipe:forge_unique_xuan_wangyou",
    "name": "Forge natal gear: Daylily",
    "station": "bld:artifact_forge",
    "inputs": [
     {
-     "item": "item:frag_daylily",
+     "item": "item:frag_xuan_wangyou",
      "qty": 10
     },
     {
@@ -1377,18 +1377,18 @@
     }
    ],
    "output": {
-    "unique": "unique:daylily"
+    "unique": "unique:xuan_wangyou"
    },
    "hours": 12,
    "requiresRealm": "realm:mahayana"
   },
   {
-   "id": "recipe:forge_unique_osmanthus",
+   "id": "recipe:forge_unique_gui_chanjuan",
    "name": "Forge natal gear: Osmanthus",
    "station": "bld:artifact_forge",
    "inputs": [
     {
-     "item": "item:frag_osmanthus",
+     "item": "item:frag_gui_chanjuan",
      "qty": 10
     },
     {
@@ -1401,18 +1401,18 @@
     }
    ],
    "output": {
-    "unique": "unique:osmanthus"
+    "unique": "unique:gui_chanjuan"
    },
    "hours": 12,
    "requiresRealm": "realm:mahayana"
   },
   {
-   "id": "recipe:forge_unique_apricot_blossom",
+   "id": "recipe:forge_unique_wen_xingyu",
    "name": "Forge natal gear: Apricot Blossom",
    "station": "bld:artifact_forge",
    "inputs": [
     {
-     "item": "item:frag_apricot_blossom",
+     "item": "item:frag_wen_xingyu",
      "qty": 10
     },
     {
@@ -1425,18 +1425,18 @@
     }
    ],
    "output": {
-    "unique": "unique:apricot_blossom"
+    "unique": "unique:wen_xingyu"
    },
    "hours": 12,
    "requiresRealm": "realm:mahayana"
   },
   {
-   "id": "recipe:forge_unique_snow_lotus",
+   "id": "recipe:forge_unique_xue_lianxin",
    "name": "Forge natal gear: Snow Lotus",
    "station": "bld:artifact_forge",
    "inputs": [
     {
-     "item": "item:frag_snow_lotus",
+     "item": "item:frag_xue_lianxin",
      "qty": 10
     },
     {
@@ -1449,18 +1449,18 @@
     }
    ],
    "output": {
-    "unique": "unique:snow_lotus"
+    "unique": "unique:xue_lianxin"
    },
    "hours": 12,
    "requiresRealm": "realm:mahayana"
   },
   {
-   "id": "recipe:forge_unique_trumpet_creeper",
+   "id": "recipe:forge_unique_qiao_lingxiao",
    "name": "Forge natal gear: Trumpet Creeper",
    "station": "bld:artifact_forge",
    "inputs": [
     {
-     "item": "item:frag_trumpet_creeper",
+     "item": "item:frag_qiao_lingxiao",
      "qty": 10
     },
     {
@@ -1473,18 +1473,18 @@
     }
    ],
    "output": {
-    "unique": "unique:trumpet_creeper"
+    "unique": "unique:qiao_lingxiao"
    },
    "hours": 12,
    "requiresRealm": "realm:mahayana"
   },
   {
-   "id": "recipe:forge_unique_chrysanthemum",
+   "id": "recipe:forge_unique_ju_yannian",
    "name": "Forge natal gear: Chrysanthemum",
    "station": "bld:artifact_forge",
    "inputs": [
     {
-     "item": "item:frag_chrysanthemum",
+     "item": "item:frag_ju_yannian",
      "qty": 10
     },
     {
@@ -1497,18 +1497,18 @@
     }
    ],
    "output": {
-    "unique": "unique:chrysanthemum"
+    "unique": "unique:ju_yannian"
    },
    "hours": 12,
    "requiresRealm": "realm:mahayana"
   },
   {
-   "id": "recipe:forge_unique_lily",
+   "id": "recipe:forge_unique_an_baihe",
    "name": "Forge natal gear: Lily",
    "station": "bld:artifact_forge",
    "inputs": [
     {
-     "item": "item:frag_lily",
+     "item": "item:frag_an_baihe",
      "qty": 10
     },
     {
@@ -1521,18 +1521,18 @@
     }
    ],
    "output": {
-    "unique": "unique:lily"
+    "unique": "unique:an_baihe"
    },
    "hours": 12,
    "requiresRealm": "realm:mahayana"
   },
   {
-   "id": "recipe:forge_unique_hydrangea",
+   "id": "recipe:forge_unique_ying_wucai",
    "name": "Forge natal gear: Hydrangea",
    "station": "bld:artifact_forge",
    "inputs": [
     {
-     "item": "item:frag_hydrangea",
+     "item": "item:frag_ying_wucai",
      "qty": 10
     },
     {
@@ -1545,18 +1545,18 @@
     }
    ],
    "output": {
-    "unique": "unique:hydrangea"
+    "unique": "unique:ying_wucai"
    },
    "hours": 12,
    "requiresRealm": "realm:mahayana"
   },
   {
-   "id": "recipe:forge_unique_safflower",
+   "id": "recipe:forge_unique_fang_yanzhi",
    "name": "Forge natal gear: Safflower",
    "station": "bld:artifact_forge",
    "inputs": [
     {
-     "item": "item:frag_safflower",
+     "item": "item:frag_fang_yanzhi",
      "qty": 10
     },
     {
@@ -1569,7 +1569,7 @@
     }
    ],
    "output": {
-    "unique": "unique:safflower"
+    "unique": "unique:fang_yanzhi"
    },
    "hours": 12,
    "requiresRealm": "realm:mahayana"

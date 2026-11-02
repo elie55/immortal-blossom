@@ -2,8 +2,8 @@
  "about": "Techniques and passives of the 26 summonable launch heroines: S1, S2, S3, and the level 30 and level 50 passives.",
  "records": [
   {
-   "id": "skill:gladiolus_s1",
-   "owner": "hero:gladiolus",
+   "id": "skill:shang_jianlan_s1",
+   "owner": "hero:shang_jianlan",
    "slot": "s1",
    "name": "Rising Floret Cut",
    "cooldown": 1,
@@ -28,8 +28,8 @@
    "draft": true
   },
   {
-   "id": "skill:gladiolus_s2",
-   "owner": "hero:gladiolus",
+   "id": "skill:shang_jianlan_s2",
+   "owner": "hero:shang_jianlan",
    "slot": "s2",
    "name": "Sword Orchid Ladder",
    "cooldown": 3,
@@ -71,8 +71,8 @@
    "draft": true
   },
   {
-   "id": "skill:gladiolus_s3",
-   "owner": "hero:gladiolus",
+   "id": "skill:shang_jianlan_s3",
+   "owner": "hero:shang_jianlan",
    "slot": "s3",
    "name": "Thousand Florets, One Edge",
    "cooldown": 5,
@@ -111,8 +111,8 @@
    "draft": true
   },
   {
-   "id": "skill:gladiolus_p30",
-   "owner": "hero:gladiolus",
+   "id": "skill:shang_jianlan_p30",
+   "owner": "hero:shang_jianlan",
    "slot": "p30",
    "name": "Climbing Blooms",
    "trigger": "on_cast",
@@ -128,8 +128,8 @@
    "draft": true
   },
   {
-   "id": "skill:gladiolus_p50",
-   "owner": "hero:gladiolus",
+   "id": "skill:shang_jianlan_p50",
+   "owner": "hero:shang_jianlan",
    "slot": "p50",
    "name": "Metal Carries Water",
    "trigger": "always",
@@ -145,8 +145,8 @@
    "draft": true
   },
   {
-   "id": "skill:orchid_s1",
-   "owner": "hero:orchid",
+   "id": "skill:gu_youlan_s1",
+   "owner": "hero:gu_youlan",
    "slot": "s1",
    "name": "Valley Wind Cut",
    "cooldown": 1,
@@ -174,8 +174,8 @@
    "draft": true
   },
   {
-   "id": "skill:orchid_s2",
-   "owner": "hero:orchid",
+   "id": "skill:gu_youlan_s2",
+   "owner": "hero:gu_youlan",
    "slot": "s2",
    "name": "Empty Valley Orchid",
    "cooldown": 3,
@@ -220,8 +220,8 @@
    "draft": true
   },
   {
-   "id": "skill:orchid_s3",
-   "owner": "hero:orchid",
+   "id": "skill:gu_youlan_s3",
+   "owner": "hero:gu_youlan",
    "slot": "s3",
    "name": "Gentleman's Verdict",
    "cooldown": 5,
@@ -263,8 +263,8 @@
    "draft": true
   },
   {
-   "id": "skill:orchid_p30",
-   "owner": "hero:orchid",
+   "id": "skill:gu_youlan_p30",
+   "owner": "hero:gu_youlan",
    "slot": "p30",
    "name": "Fragrance on the Wind",
    "trigger": "always",
@@ -279,8 +279,8 @@
    "draft": true
   },
   {
-   "id": "skill:orchid_p50",
-   "owner": "hero:orchid",
+   "id": "skill:gu_youlan_p50",
+   "owner": "hero:gu_youlan",
    "slot": "p50",
    "name": "Accompanying Wind",
    "trigger": "always",
@@ -297,8 +297,8 @@
    "draft": true
   },
   {
-   "id": "skill:pomegranate_s1",
-   "owner": "hero:pomegranate",
+   "id": "skill:zhu_liuhuo_s1",
+   "owner": "hero:zhu_liuhuo",
    "slot": "s1",
    "name": "Seed-Scatter Slash",
    "cooldown": 1,
@@ -328,8 +328,8 @@
    "draft": true
   },
   {
-   "id": "skill:pomegranate_s2",
-   "owner": "hero:pomegranate",
+   "id": "skill:zhu_liuhuo_s2",
+   "owner": "hero:zhu_liuhuo",
    "slot": "s2",
    "name": "Pomegranate Skirt Whirl",
    "cooldown": 3,
@@ -371,8 +371,8 @@
    "draft": true
   },
   {
-   "id": "skill:pomegranate_s3",
-   "owner": "hero:pomegranate",
+   "id": "skill:zhu_liuhuo_s3",
+   "owner": "hero:zhu_liuhuo",
    "slot": "s3",
    "name": "Thousand Seeds Burst",
    "cooldown": 5,
@@ -420,8 +420,8 @@
    "draft": true
   },
   {
-   "id": "skill:pomegranate_p30",
-   "owner": "hero:pomegranate",
+   "id": "skill:zhu_liuhuo_p30",
+   "owner": "hero:zhu_liuhuo",
    "slot": "p30",
    "name": "Red as May Fire",
    "trigger": "always",
@@ -437,8 +437,8 @@
    "draft": true
   },
   {
-   "id": "skill:pomegranate_p50",
-   "owner": "hero:pomegranate",
+   "id": "skill:zhu_liuhuo_p50",
+   "owner": "hero:zhu_liuhuo",
    "slot": "p50",
    "name": "Many Seeds",
    "trigger": "on_kill",
@@ -456,8 +456,8 @@
    "draft": true
   },
   {
-   "id": "skill:crabapple_s1",
-   "owner": "hero:crabapple",
+   "id": "skill:tang_mian_s1",
+   "owner": "hero:tang_mian",
    "slot": "s1",
    "name": "Drowsy Cleave",
    "cooldown": 1,
@@ -480,8 +480,8 @@
    "draft": true
   },
   {
-   "id": "skill:crabapple_s2",
-   "owner": "hero:crabapple",
+   "id": "skill:tang_mian_s2",
+   "owner": "hero:tang_mian",
    "slot": "s2",
    "name": "Stone Pillow Smash",
    "cooldown": 3,
@@ -521,8 +521,8 @@
    "draft": true
   },
   {
-   "id": "skill:crabapple_s3",
-   "owner": "hero:crabapple",
+   "id": "skill:tang_mian_s3",
+   "owner": "hero:tang_mian",
    "slot": "s3",
    "name": "The Crabapple Wakes",
    "cooldown": 5,
@@ -563,8 +563,8 @@
    "draft": true
   },
   {
-   "id": "skill:crabapple_p30",
-   "owner": "hero:crabapple",
+   "id": "skill:tang_mian_p30",
+   "owner": "hero:tang_mian",
    "slot": "p30",
    "name": "Rude Awakening",
    "trigger": "on_hit_taken",
@@ -580,8 +580,8 @@
    "draft": true
   },
   {
-   "id": "skill:crabapple_p50",
-   "owner": "hero:crabapple",
+   "id": "skill:tang_mian_p50",
+   "owner": "hero:tang_mian",
    "slot": "p50",
    "name": "Candles for the Sleeping Flower",
    "trigger": "always",
@@ -596,8 +596,8 @@
    "draft": true
   },
   {
-   "id": "skill:magnolia_s1",
-   "owner": "hero:magnolia",
+   "id": "skill:jiang_yulan_s1",
+   "owner": "hero:jiang_yulan",
    "slot": "s1",
    "name": "Magnolia Palm",
    "cooldown": 1,
@@ -626,8 +626,8 @@
    "draft": true
   },
   {
-   "id": "skill:magnolia_s2",
-   "owner": "hero:magnolia",
+   "id": "skill:jiang_yulan_s2",
+   "owner": "hero:jiang_yulan",
    "slot": "s2",
    "name": "Golden Bell Shield",
    "cooldown": 4,
@@ -671,8 +671,8 @@
    "draft": true
   },
   {
-   "id": "skill:magnolia_s3",
-   "owner": "hero:magnolia",
+   "id": "skill:jiang_yulan_s3",
+   "owner": "hero:jiang_yulan",
    "slot": "s3",
    "name": "Bodhi Wall of Jade Magnolia",
    "cooldown": 5,
@@ -716,8 +716,8 @@
    "draft": true
   },
   {
-   "id": "skill:magnolia_p30",
-   "owner": "hero:magnolia",
+   "id": "skill:jiang_yulan_p30",
+   "owner": "hero:jiang_yulan",
    "slot": "p30",
    "name": "Iron Root",
    "trigger": "always",
@@ -732,8 +732,8 @@
    "draft": true
   },
   {
-   "id": "skill:magnolia_p50",
-   "owner": "hero:magnolia",
+   "id": "skill:jiang_yulan_p50",
+   "owner": "hero:jiang_yulan",
    "slot": "p50",
    "name": "Bodhi Bell",
    "trigger": "on_hit_taken",
@@ -748,8 +748,8 @@
    "draft": true
   },
   {
-   "id": "skill:wisteria_s1",
-   "owner": "hero:wisteria",
+   "id": "skill:teng_yin_s1",
+   "owner": "hero:teng_yin",
    "slot": "s1",
    "name": "Coiling Vine",
    "cooldown": 1,
@@ -778,8 +778,8 @@
    "draft": true
   },
   {
-   "id": "skill:wisteria_s2",
-   "owner": "hero:wisteria",
+   "id": "skill:teng_yin_s2",
+   "owner": "hero:teng_yin",
    "slot": "s2",
    "name": "Violet Canopy",
    "cooldown": 3,
@@ -826,8 +826,8 @@
    "draft": true
   },
   {
-   "id": "skill:wisteria_s3",
-   "owner": "hero:wisteria",
+   "id": "skill:teng_yin_s3",
+   "owner": "hero:teng_yin",
    "slot": "s3",
    "name": "Thousand-Year Embrace",
    "cooldown": 5,
@@ -884,8 +884,8 @@
    "draft": true
   },
   {
-   "id": "skill:wisteria_p30",
-   "owner": "hero:wisteria",
+   "id": "skill:teng_yin_p30",
+   "owner": "hero:teng_yin",
    "slot": "p30",
    "name": "Clinging Vine",
    "trigger": "always",
@@ -900,8 +900,8 @@
    "draft": true
   },
   {
-   "id": "skill:wisteria_p50",
-   "owner": "hero:wisteria",
+   "id": "skill:teng_yin_p50",
+   "owner": "hero:teng_yin",
    "slot": "p50",
    "name": "Serpent Coil",
    "trigger": "on_hit_taken",
@@ -918,8 +918,8 @@
    "draft": true
   },
   {
-   "id": "skill:camellia_s1",
-   "owner": "hero:camellia",
+   "id": "skill:lin_chaxue_s1",
+   "owner": "hero:lin_chaxue",
    "slot": "s1",
    "name": "Tea-Mist Palm",
    "cooldown": 1,
@@ -948,8 +948,8 @@
    "draft": true
   },
   {
-   "id": "skill:camellia_s2",
-   "owner": "hero:camellia",
+   "id": "skill:lin_chaxue_s2",
+   "owner": "hero:lin_chaxue",
    "slot": "s2",
    "name": "Winter Camellia Guard",
    "cooldown": 3,
@@ -994,8 +994,8 @@
    "draft": true
   },
   {
-   "id": "skill:camellia_s3",
-   "owner": "hero:camellia",
+   "id": "skill:lin_chaxue_s3",
+   "owner": "hero:lin_chaxue",
    "slot": "s3",
    "name": "Whole-Bloom Fall",
    "cooldown": 5,
@@ -1040,8 +1040,8 @@
    "draft": true
   },
   {
-   "id": "skill:camellia_p30",
-   "owner": "hero:camellia",
+   "id": "skill:lin_chaxue_p30",
+   "owner": "hero:lin_chaxue",
    "slot": "p30",
    "name": "Snowbound Blossom",
    "trigger": "always",
@@ -1057,8 +1057,8 @@
    "draft": true
   },
   {
-   "id": "skill:camellia_p50",
-   "owner": "hero:camellia",
+   "id": "skill:lin_chaxue_p50",
+   "owner": "hero:lin_chaxue",
    "slot": "p50",
    "name": "Falls Whole",
    "trigger": "on_fall",
@@ -1076,8 +1076,8 @@
    "draft": true
   },
   {
-   "id": "skill:azalea_s1",
-   "owner": "hero:azalea",
+   "id": "skill:du_tihong_s1",
+   "owner": "hero:du_tihong",
    "slot": "s1",
    "name": "Cuckoo's Cry",
    "cooldown": 1,
@@ -1106,8 +1106,8 @@
    "draft": true
   },
   {
-   "id": "skill:azalea_s2",
-   "owner": "hero:azalea",
+   "id": "skill:du_tihong_s2",
+   "owner": "hero:du_tihong",
    "slot": "s2",
    "name": "Weeping Blood Bloom",
    "cooldown": 3,
@@ -1151,8 +1151,8 @@
    "draft": true
   },
   {
-   "id": "skill:azalea_s3",
-   "owner": "hero:azalea",
+   "id": "skill:du_tihong_s3",
+   "owner": "hero:du_tihong",
    "slot": "s3",
    "name": "Mountains Ablaze in Red",
    "cooldown": 5,
@@ -1201,8 +1201,8 @@
    "draft": true
   },
   {
-   "id": "skill:azalea_p30",
-   "owner": "hero:azalea",
+   "id": "skill:du_tihong_p30",
+   "owner": "hero:du_tihong",
    "slot": "p30",
    "name": "Tears Like Fire",
    "trigger": "on_hit_taken",
@@ -1219,8 +1219,8 @@
    "draft": true
   },
   {
-   "id": "skill:azalea_p50",
-   "owner": "hero:azalea",
+   "id": "skill:du_tihong_p50",
+   "owner": "hero:du_tihong",
    "slot": "p50",
    "name": "Cry Until It Bleeds",
    "trigger": "always",
@@ -1235,8 +1235,8 @@
    "draft": true
   },
   {
-   "id": "skill:peony_s1",
-   "owner": "hero:peony",
+   "id": "skill:wei_zi_s1",
+   "owner": "hero:wei_zi",
    "slot": "s1",
    "name": "Imperial Fan Strike",
    "cooldown": 1,
@@ -1266,8 +1266,8 @@
    "draft": true
   },
   {
-   "id": "skill:peony_s2",
-   "owner": "hero:peony",
+   "id": "skill:wei_zi_s2",
+   "owner": "hero:wei_zi",
    "slot": "s2",
    "name": "Unbowed Before the Empress",
    "cooldown": 4,
@@ -1317,8 +1317,8 @@
    "draft": true
   },
   {
-   "id": "skill:peony_s3",
-   "owner": "hero:peony",
+   "id": "skill:wei_zi_s3",
+   "owner": "hero:wei_zi",
    "slot": "s3",
    "name": "Queen of a Hundred Flowers",
    "cooldown": 5,
@@ -1361,8 +1361,8 @@
    "draft": true
   },
   {
-   "id": "skill:peony_p30",
-   "owner": "hero:peony",
+   "id": "skill:wei_zi_p30",
+   "owner": "hero:wei_zi",
    "slot": "p30",
    "name": "National Beauty, Heavenly Fragrance",
    "trigger": "always",
@@ -1378,8 +1378,8 @@
    "draft": true
   },
   {
-   "id": "skill:peony_p50",
-   "owner": "hero:peony",
+   "id": "skill:wei_zi_p50",
+   "owner": "hero:wei_zi",
    "slot": "p50",
    "name": "Wealth and Rank",
    "trigger": "on_hit_taken",
@@ -1394,8 +1394,8 @@
    "draft": true
   },
   {
-   "id": "skill:pear_blossom_s1",
-   "owner": "hero:pear_blossom",
+   "id": "skill:li_qianshu_s1",
+   "owner": "hero:li_qianshu",
    "slot": "s1",
    "name": "Pear Petal Needles",
    "cooldown": 1,
@@ -1419,8 +1419,8 @@
    "draft": true
   },
   {
-   "id": "skill:pear_blossom_s2",
-   "owner": "hero:pear_blossom",
+   "id": "skill:li_qianshu_s2",
+   "owner": "hero:li_qianshu",
    "slot": "s2",
    "name": "Rainstorm Pear Blossom Needles",
    "cooldown": 3,
@@ -1458,8 +1458,8 @@
    "draft": true
   },
   {
-   "id": "skill:pear_blossom_s3",
-   "owner": "hero:pear_blossom",
+   "id": "skill:li_qianshu_s3",
+   "owner": "hero:li_qianshu",
    "slot": "s3",
    "name": "A Thousand Trees in One Night",
    "cooldown": 5,
@@ -1507,8 +1507,8 @@
    "draft": true
   },
   {
-   "id": "skill:pear_blossom_p30",
-   "owner": "hero:pear_blossom",
+   "id": "skill:li_qianshu_p30",
+   "owner": "hero:li_qianshu",
    "slot": "p30",
    "name": "Hidden Weapon Case",
    "trigger": "always",
@@ -1523,8 +1523,8 @@
    "draft": true
   },
   {
-   "id": "skill:pear_blossom_p50",
-   "owner": "hero:pear_blossom",
+   "id": "skill:li_qianshu_p50",
+   "owner": "hero:li_qianshu",
    "slot": "p50",
    "name": "Snow on Ten Thousand Branches",
    "trigger": "on_break",
@@ -1539,8 +1539,8 @@
    "draft": true
   },
   {
-   "id": "skill:iris_s1",
-   "owner": "hero:iris",
+   "id": "skill:lan_yuan_s1",
+   "owner": "hero:lan_yuan",
    "slot": "s1",
    "name": "Kite-Tail Darts",
    "cooldown": 1,
@@ -1570,8 +1570,8 @@
    "draft": true
   },
   {
-   "id": "skill:iris_s2",
-   "owner": "hero:iris",
+   "id": "skill:lan_yuan_s2",
+   "owner": "hero:lan_yuan",
    "slot": "s2",
    "name": "Blue Kite Vanishing",
    "cooldown": 3,
@@ -1612,8 +1612,8 @@
    "draft": true
   },
   {
-   "id": "skill:iris_s3",
-   "owner": "hero:iris",
+   "id": "skill:lan_yuan_s3",
+   "owner": "hero:lan_yuan",
    "slot": "s3",
    "name": "Rainbow Messenger",
    "cooldown": 5,
@@ -1656,8 +1656,8 @@
    "draft": true
   },
   {
-   "id": "skill:iris_p30",
-   "owner": "hero:iris",
+   "id": "skill:lan_yuan_p30",
+   "owner": "hero:lan_yuan",
    "slot": "p30",
    "name": "Unseen Courier",
    "trigger": "battle_start",
@@ -1673,8 +1673,8 @@
    "draft": true
   },
   {
-   "id": "skill:iris_p50",
-   "owner": "hero:iris",
+   "id": "skill:lan_yuan_p50",
+   "owner": "hero:lan_yuan",
    "slot": "p50",
    "name": "Letters on the Wind",
    "trigger": "always",
@@ -1689,8 +1689,8 @@
    "draft": true
   },
   {
-   "id": "skill:rose_s1",
-   "owner": "hero:rose",
+   "id": "skill:hu_qiangwei_s1",
+   "owner": "hero:hu_qiangwei",
    "slot": "s1",
    "name": "Thorned Kiss",
    "cooldown": 1,
@@ -1722,8 +1722,8 @@
    "draft": true
   },
   {
-   "id": "skill:rose_s2",
-   "owner": "hero:rose",
+   "id": "skill:hu_qiangwei_s2",
+   "owner": "hero:hu_qiangwei",
    "slot": "s2",
    "name": "Fox-Fire Rose",
    "cooldown": 3,
@@ -1772,8 +1772,8 @@
    "draft": true
   },
   {
-   "id": "skill:rose_s3",
-   "owner": "hero:rose",
+   "id": "skill:hu_qiangwei_s3",
+   "owner": "hero:hu_qiangwei",
    "slot": "s3",
    "name": "Rose of the Crimson Moon",
    "cooldown": 5,
@@ -1821,8 +1821,8 @@
    "draft": true
   },
   {
-   "id": "skill:rose_p30",
-   "owner": "hero:rose",
+   "id": "skill:hu_qiangwei_p30",
+   "owner": "hero:hu_qiangwei",
    "slot": "p30",
    "name": "Every Rose Has Thorns",
    "trigger": "on_hit_taken",
@@ -1839,8 +1839,8 @@
    "draft": true
   },
   {
-   "id": "skill:rose_p50",
-   "owner": "hero:rose",
+   "id": "skill:hu_qiangwei_p50",
+   "owner": "hero:hu_qiangwei",
    "slot": "p50",
    "name": "Nine-Tailed Allure",
    "trigger": "always",
@@ -1857,8 +1857,8 @@
    "draft": true
   },
   {
-   "id": "skill:oleander_s1",
-   "owner": "hero:oleander",
+   "id": "skill:she_qingzhu_s1",
+   "owner": "hero:she_qingzhu",
    "slot": "s1",
    "name": "Bamboo-Leaf Fang",
    "cooldown": 1,
@@ -1888,8 +1888,8 @@
    "draft": true
   },
   {
-   "id": "skill:oleander_s2",
-   "owner": "hero:oleander",
+   "id": "skill:she_qingzhu_s2",
+   "owner": "hero:she_qingzhu",
    "slot": "s2",
    "name": "Sweet Oleander Mist",
    "cooldown": 3,
@@ -1935,8 +1935,8 @@
    "draft": true
   },
   {
-   "id": "skill:oleander_s3",
-   "owner": "hero:oleander",
+   "id": "skill:she_qingzhu_s3",
+   "owner": "hero:she_qingzhu",
    "slot": "s3",
    "name": "Every Petal a Poison",
    "cooldown": 5,
@@ -1978,8 +1978,8 @@
    "draft": true
   },
   {
-   "id": "skill:oleander_p30",
-   "owner": "hero:oleander",
+   "id": "skill:she_qingzhu_p30",
+   "owner": "hero:she_qingzhu",
    "slot": "p30",
    "name": "Viper's Patience",
    "trigger": "always",
@@ -1995,8 +1995,8 @@
    "draft": true
   },
   {
-   "id": "skill:oleander_p50",
-   "owner": "hero:oleander",
+   "id": "skill:she_qingzhu_p50",
+   "owner": "hero:she_qingzhu",
    "slot": "p50",
    "name": "Poison Without Order",
    "trigger": "on_chain_break",
@@ -2012,8 +2012,8 @@
    "draft": true
   },
   {
-   "id": "skill:jasmine_s1",
-   "owner": "hero:jasmine",
+   "id": "skill:ning_suxin_s1",
+   "owner": "hero:ning_suxin",
    "slot": "s1",
    "name": "White Jasmine Seal",
    "cooldown": 1,
@@ -2042,8 +2042,8 @@
    "draft": true
   },
   {
-   "id": "skill:jasmine_s2",
-   "owner": "hero:jasmine",
+   "id": "skill:ning_suxin_s2",
+   "owner": "hero:ning_suxin",
    "slot": "s2",
    "name": "Scripture of Silence",
    "cooldown": 3,
@@ -2083,8 +2083,8 @@
    "draft": true
   },
   {
-   "id": "skill:jasmine_s3",
-   "owner": "hero:jasmine",
+   "id": "skill:ning_suxin_s3",
+   "owner": "hero:ning_suxin",
    "slot": "s3",
    "name": "Fragrance Fills the Garden",
    "cooldown": 5,
@@ -2125,8 +2125,8 @@
    "draft": true
   },
   {
-   "id": "skill:jasmine_p30",
-   "owner": "hero:jasmine",
+   "id": "skill:ning_suxin_p30",
+   "owner": "hero:ning_suxin",
    "slot": "p30",
    "name": "Neat Hand",
    "trigger": "always",
@@ -2141,8 +2141,8 @@
    "draft": true
   },
   {
-   "id": "skill:jasmine_p50",
-   "owner": "hero:jasmine",
+   "id": "skill:ning_suxin_p50",
+   "owner": "hero:ning_suxin",
    "slot": "p50",
    "name": "Song of the Jasmine",
    "trigger": "on_debuff",
@@ -2157,8 +2157,8 @@
    "draft": true
   },
   {
-   "id": "skill:peach_blossom_s1",
-   "owner": "hero:peach_blossom",
+   "id": "skill:yu_lei_s1",
+   "owner": "hero:yu_lei",
    "slot": "s1",
    "name": "Peachwood Charm",
    "cooldown": 1,
@@ -2185,8 +2185,8 @@
    "draft": true
   },
   {
-   "id": "skill:peach_blossom_s2",
-   "owner": "hero:peach_blossom",
+   "id": "skill:yu_lei_s2",
+   "owner": "hero:yu_lei",
    "slot": "s2",
    "name": "Door God's Ward",
    "cooldown": 3,
@@ -2232,8 +2232,8 @@
    "draft": true
   },
   {
-   "id": "skill:peach_blossom_s3",
-   "owner": "hero:peach_blossom",
+   "id": "skill:yu_lei_s3",
+   "owner": "hero:yu_lei",
    "slot": "s3",
    "name": "Peach Grove Exorcism",
    "cooldown": 5,
@@ -2276,8 +2276,8 @@
    "draft": true
   },
   {
-   "id": "skill:peach_blossom_p30",
-   "owner": "hero:peach_blossom",
+   "id": "skill:yu_lei_p30",
+   "owner": "hero:yu_lei",
    "slot": "p30",
    "name": "Ward Against Evil",
    "trigger": "always",
@@ -2293,8 +2293,8 @@
    "draft": true
   },
   {
-   "id": "skill:peach_blossom_p50",
-   "owner": "hero:peach_blossom",
+   "id": "skill:yu_lei_p50",
+   "owner": "hero:yu_lei",
    "slot": "p50",
    "name": "Shentu and Yulei",
    "trigger": "battle_start",
@@ -2311,8 +2311,8 @@
    "draft": true
   },
   {
-   "id": "skill:narcissus_s1",
-   "owner": "hero:narcissus",
+   "id": "skill:bai_lingbo_s1",
+   "owner": "hero:bai_lingbo",
    "slot": "s1",
    "name": "Wave-Treading Talisman",
    "cooldown": 1,
@@ -2341,8 +2341,8 @@
    "draft": true
   },
   {
-   "id": "skill:narcissus_s2",
-   "owner": "hero:narcissus",
+   "id": "skill:bai_lingbo_s2",
+   "owner": "hero:bai_lingbo",
    "slot": "s2",
    "name": "Mirror of Still Water",
    "cooldown": 3,
@@ -2386,8 +2386,8 @@
    "draft": true
   },
   {
-   "id": "skill:narcissus_s3",
-   "owner": "hero:narcissus",
+   "id": "skill:bai_lingbo_s3",
+   "owner": "hero:bai_lingbo",
    "slot": "s3",
    "name": "Reflection of the Water Immortal",
    "cooldown": 6,
@@ -2435,8 +2435,8 @@
    "draft": true
   },
   {
-   "id": "skill:narcissus_p30",
-   "owner": "hero:narcissus",
+   "id": "skill:bai_lingbo_p30",
+   "owner": "hero:bai_lingbo",
    "slot": "p30",
    "name": "White Serpent's Calm",
    "trigger": "always",
@@ -2450,8 +2450,8 @@
    "draft": true
   },
   {
-   "id": "skill:narcissus_p50",
-   "owner": "hero:narcissus",
+   "id": "skill:bai_lingbo_p50",
+   "owner": "hero:bai_lingbo",
    "slot": "p50",
    "name": "Reflection",
    "trigger": "always",
@@ -2467,8 +2467,8 @@
    "draft": true
   },
   {
-   "id": "skill:hibiscus_s1",
-   "owner": "hero:hibiscus",
+   "id": "skill:sang_chaoxi_s1",
+   "owner": "hero:sang_chaoxi",
    "slot": "s1",
    "name": "Morning Sun Talisman",
    "cooldown": 1,
@@ -2497,8 +2497,8 @@
    "draft": true
   },
   {
-   "id": "skill:hibiscus_s2",
-   "owner": "hero:hibiscus",
+   "id": "skill:sang_chaoxi_s2",
+   "owner": "hero:sang_chaoxi",
    "slot": "s2",
    "name": "Golden Crow Seal",
    "cooldown": 3,
@@ -2544,8 +2544,8 @@
    "draft": true
   },
   {
-   "id": "skill:hibiscus_s3",
-   "owner": "hero:hibiscus",
+   "id": "skill:sang_chaoxi_s3",
+   "owner": "hero:sang_chaoxi",
    "slot": "s3",
    "name": "Ten Suns over Fusang",
    "cooldown": 6,
@@ -2591,8 +2591,8 @@
    "draft": true
   },
   {
-   "id": "skill:hibiscus_p30",
-   "owner": "hero:hibiscus",
+   "id": "skill:sang_chaoxi_p30",
+   "owner": "hero:sang_chaoxi",
    "slot": "p30",
    "name": "First Light",
    "trigger": "battle_start",
@@ -2608,8 +2608,8 @@
    "draft": true
   },
   {
-   "id": "skill:hibiscus_p50",
-   "owner": "hero:hibiscus",
+   "id": "skill:sang_chaoxi_p50",
+   "owner": "hero:sang_chaoxi",
    "slot": "p50",
    "name": "Ten Thousand Dawns",
    "trigger": "battle_start",
@@ -2626,8 +2626,8 @@
    "draft": true
   },
   {
-   "id": "skill:daylily_s1",
-   "owner": "hero:daylily",
+   "id": "skill:xuan_wangyou_s1",
+   "owner": "hero:xuan_wangyou",
    "slot": "s1",
    "name": "Sorrowless Charm",
    "cooldown": 1,
@@ -2656,8 +2656,8 @@
    "draft": true
   },
   {
-   "id": "skill:daylily_s2",
-   "owner": "hero:daylily",
+   "id": "skill:xuan_wangyou_s2",
+   "owner": "hero:xuan_wangyou",
    "slot": "s2",
    "name": "Forget-Sorrow Talisman",
    "cooldown": 3,
@@ -2703,8 +2703,8 @@
    "draft": true
   },
   {
-   "id": "skill:daylily_s3",
-   "owner": "hero:daylily",
+   "id": "skill:xuan_wangyou_s3",
+   "owner": "hero:xuan_wangyou",
    "slot": "s3",
    "name": "Mother's Hall",
    "cooldown": 5,
@@ -2750,8 +2750,8 @@
    "draft": true
   },
   {
-   "id": "skill:daylily_p30",
-   "owner": "hero:daylily",
+   "id": "skill:xuan_wangyou_p30",
+   "owner": "hero:xuan_wangyou",
    "slot": "p30",
    "name": "Grass of Forgetting",
    "trigger": "always",
@@ -2766,8 +2766,8 @@
    "draft": true
   },
   {
-   "id": "skill:daylily_p50",
-   "owner": "hero:daylily",
+   "id": "skill:xuan_wangyou_p50",
+   "owner": "hero:xuan_wangyou",
    "slot": "p50",
    "name": "A Mother's Worry",
    "trigger": "on_ally_low",
@@ -2789,8 +2789,8 @@
    "draft": true
   },
   {
-   "id": "skill:osmanthus_s1",
-   "owner": "hero:osmanthus",
+   "id": "skill:gui_chanjuan_s1",
+   "owner": "hero:gui_chanjuan",
    "slot": "s1",
    "name": "Moonsteel Petal",
    "cooldown": 1,
@@ -2814,8 +2814,8 @@
    "draft": true
   },
   {
-   "id": "skill:osmanthus_s2",
-   "owner": "hero:osmanthus",
+   "id": "skill:gui_chanjuan_s2",
+   "owner": "hero:gui_chanjuan",
    "slot": "s2",
    "name": "Wu Gang's Endless Axe",
    "cooldown": 3,
@@ -2852,8 +2852,8 @@
    "draft": true
   },
   {
-   "id": "skill:osmanthus_s3",
-   "owner": "hero:osmanthus",
+   "id": "skill:gui_chanjuan_s3",
+   "owner": "hero:gui_chanjuan",
    "slot": "s3",
    "name": "The Cold Palace Descends",
    "cooldown": 5,
@@ -2894,8 +2894,8 @@
    "draft": true
   },
   {
-   "id": "skill:osmanthus_p30",
-   "owner": "hero:osmanthus",
+   "id": "skill:gui_chanjuan_p30",
+   "owner": "hero:gui_chanjuan",
    "slot": "p30",
    "name": "Fragrance Beyond the Clouds",
    "trigger": "always",
@@ -2911,8 +2911,8 @@
    "draft": true
   },
   {
-   "id": "skill:osmanthus_p50",
-   "owner": "hero:osmanthus",
+   "id": "skill:gui_chanjuan_p50",
+   "owner": "hero:gui_chanjuan",
    "slot": "p50",
    "name": "Moon Palace Solitude",
    "trigger": "always",
@@ -2930,8 +2930,8 @@
    "draft": true
   },
   {
-   "id": "skill:apricot_blossom_s1",
-   "owner": "hero:apricot_blossom",
+   "id": "skill:wen_xingyu_s1",
+   "owner": "hero:wen_xingyu",
    "slot": "s1",
    "name": "Apricot Rain",
    "cooldown": 1,
@@ -2955,8 +2955,8 @@
    "draft": true
   },
   {
-   "id": "skill:apricot_blossom_s2",
-   "owner": "hero:apricot_blossom",
+   "id": "skill:wen_xingyu_s2",
+   "owner": "hero:wen_xingyu",
    "slot": "s2",
    "name": "Thunder Wakes the Insects",
    "cooldown": 3,
@@ -2998,8 +2998,8 @@
    "draft": true
   },
   {
-   "id": "skill:apricot_blossom_s3",
-   "owner": "hero:apricot_blossom",
+   "id": "skill:wen_xingyu_s3",
+   "owner": "hero:wen_xingyu",
    "slot": "s3",
    "name": "Apricot Blossom Village",
    "cooldown": 5,
@@ -3047,8 +3047,8 @@
    "draft": true
   },
   {
-   "id": "skill:apricot_blossom_p30",
-   "owner": "hero:apricot_blossom",
+   "id": "skill:wen_xingyu_p30",
+   "owner": "hero:wen_xingyu",
    "slot": "p30",
    "name": "Spring Bustles on the Branch",
    "trigger": "on_hit",
@@ -3065,8 +3065,8 @@
    "draft": true
   },
   {
-   "id": "skill:apricot_blossom_p50",
-   "owner": "hero:apricot_blossom",
+   "id": "skill:wen_xingyu_p50",
+   "owner": "hero:wen_xingyu",
    "slot": "p50",
    "name": "Spring Thunder",
    "trigger": "on_cast",
@@ -3083,8 +3083,8 @@
    "draft": true
   },
   {
-   "id": "skill:snow_lotus_s1",
-   "owner": "hero:snow_lotus",
+   "id": "skill:xue_lianxin_s1",
+   "owner": "hero:xue_lianxin",
    "slot": "s1",
    "name": "Snowline Petal",
    "cooldown": 1,
@@ -3113,8 +3113,8 @@
    "draft": true
   },
   {
-   "id": "skill:snow_lotus_s2",
-   "owner": "hero:snow_lotus",
+   "id": "skill:xue_lianxin_s2",
+   "owner": "hero:xue_lianxin",
    "slot": "s2",
    "name": "Tianshan Blizzard",
    "cooldown": 3,
@@ -3156,8 +3156,8 @@
    "draft": true
   },
   {
-   "id": "skill:snow_lotus_s3",
-   "owner": "hero:snow_lotus",
+   "id": "skill:xue_lianxin_s3",
+   "owner": "hero:xue_lianxin",
    "slot": "s3",
    "name": "Thousand-Year Snow Lotus",
    "cooldown": 5,
@@ -3203,8 +3203,8 @@
    "draft": true
   },
   {
-   "id": "skill:snow_lotus_p30",
-   "owner": "hero:snow_lotus",
+   "id": "skill:xue_lianxin_p30",
+   "owner": "hero:xue_lianxin",
    "slot": "p30",
    "name": "Cold Purity",
    "trigger": "always",
@@ -3220,8 +3220,8 @@
    "draft": true
   },
   {
-   "id": "skill:snow_lotus_p50",
-   "owner": "hero:snow_lotus",
+   "id": "skill:xue_lianxin_p50",
+   "owner": "hero:xue_lianxin",
    "slot": "p50",
    "name": "Blooms Once in Sixty Years",
    "trigger": "on_fall",
@@ -3243,8 +3243,8 @@
    "draft": true
   },
   {
-   "id": "skill:trumpet_creeper_s1",
-   "owner": "hero:trumpet_creeper",
+   "id": "skill:qiao_lingxiao_s1",
+   "owner": "hero:qiao_lingxiao",
    "slot": "s1",
    "name": "Climbing Stone",
    "cooldown": 1,
@@ -3267,8 +3267,8 @@
    "draft": true
   },
   {
-   "id": "skill:trumpet_creeper_s2",
-   "owner": "hero:trumpet_creeper",
+   "id": "skill:qiao_lingxiao_s2",
+   "owner": "hero:qiao_lingxiao",
    "slot": "s2",
    "name": "Pillar to the Clouds",
    "cooldown": 3,
@@ -3310,8 +3310,8 @@
    "draft": true
   },
   {
-   "id": "skill:trumpet_creeper_s3",
-   "owner": "hero:trumpet_creeper",
+   "id": "skill:qiao_lingxiao_s3",
+   "owner": "hero:qiao_lingxiao",
    "slot": "s3",
    "name": "Soaring Over the Empyrean",
    "cooldown": 5,
@@ -3353,8 +3353,8 @@
    "draft": true
   },
   {
-   "id": "skill:trumpet_creeper_p30",
-   "owner": "hero:trumpet_creeper",
+   "id": "skill:qiao_lingxiao_p30",
+   "owner": "hero:qiao_lingxiao",
    "slot": "p30",
    "name": "Borrowed Height",
    "trigger": "always",
@@ -3369,8 +3369,8 @@
    "draft": true
   },
   {
-   "id": "skill:trumpet_creeper_p50",
-   "owner": "hero:trumpet_creeper",
+   "id": "skill:qiao_lingxiao_p50",
+   "owner": "hero:qiao_lingxiao",
    "slot": "p50",
    "name": "Reach the Clouds",
    "trigger": "on_ultimate",
@@ -3385,8 +3385,8 @@
    "draft": true
   },
   {
-   "id": "skill:chrysanthemum_s1",
-   "owner": "hero:chrysanthemum",
+   "id": "skill:ju_yannian_s1",
+   "owner": "hero:ju_yannian",
    "slot": "s1",
    "name": "Eastern Fence Needle",
    "cooldown": 1,
@@ -3415,8 +3415,8 @@
    "draft": true
   },
   {
-   "id": "skill:chrysanthemum_s2",
-   "owner": "hero:chrysanthemum",
+   "id": "skill:ju_yannian_s2",
+   "owner": "hero:ju_yannian",
    "slot": "s2",
    "name": "Chrysanthemum Tea",
    "cooldown": 3,
@@ -3456,8 +3456,8 @@
    "draft": true
   },
   {
-   "id": "skill:chrysanthemum_s3",
-   "owner": "hero:chrysanthemum",
+   "id": "skill:ju_yannian_s3",
+   "owner": "hero:ju_yannian",
    "slot": "s3",
    "name": "Double Ninth Longevity",
    "cooldown": 5,
@@ -3499,8 +3499,8 @@
    "draft": true
   },
   {
-   "id": "skill:chrysanthemum_p30",
-   "owner": "hero:chrysanthemum",
+   "id": "skill:ju_yannian_p30",
+   "owner": "hero:ju_yannian",
    "slot": "p30",
    "name": "Defying Frost",
    "trigger": "on_heal",
@@ -3517,8 +3517,8 @@
    "draft": true
   },
   {
-   "id": "skill:chrysanthemum_p50",
-   "owner": "hero:chrysanthemum",
+   "id": "skill:ju_yannian_p50",
+   "owner": "hero:ju_yannian",
    "slot": "p50",
    "name": "Prolonging Years",
    "trigger": "on_ally_low",
@@ -3534,8 +3534,8 @@
    "draft": true
   },
   {
-   "id": "skill:lily_s1",
-   "owner": "hero:lily",
+   "id": "skill:an_baihe_s1",
+   "owner": "hero:an_baihe",
    "slot": "s1",
    "name": "Lily Bulb Remedy",
    "cooldown": 1,
@@ -3563,8 +3563,8 @@
    "draft": true
   },
   {
-   "id": "skill:lily_s2",
-   "owner": "hero:lily",
+   "id": "skill:an_baihe_s2",
+   "owner": "hero:an_baihe",
    "slot": "s2",
    "name": "Hundred Years in Harmony",
    "cooldown": 3,
@@ -3605,8 +3605,8 @@
    "draft": true
   },
   {
-   "id": "skill:lily_s3",
-   "owner": "hero:lily",
+   "id": "skill:an_baihe_s3",
+   "owner": "hero:an_baihe",
    "slot": "s3",
    "name": "Red Thread Bloom",
    "cooldown": 5,
@@ -3650,8 +3650,8 @@
    "draft": true
   },
   {
-   "id": "skill:lily_p30",
-   "owner": "hero:lily",
+   "id": "skill:an_baihe_p30",
+   "owner": "hero:an_baihe",
    "slot": "p30",
    "name": "Matchmaker's Eye",
    "trigger": "always",
@@ -3667,8 +3667,8 @@
    "draft": true
   },
   {
-   "id": "skill:lily_p50",
-   "owner": "hero:lily",
+   "id": "skill:an_baihe_p50",
+   "owner": "hero:an_baihe",
    "slot": "p50",
    "name": "A Hundred Years Together",
    "trigger": "battle_start",
@@ -3684,8 +3684,8 @@
    "draft": true
   },
   {
-   "id": "skill:hydrangea_s1",
-   "owner": "hero:hydrangea",
+   "id": "skill:ying_wucai_s1",
+   "owner": "hero:ying_wucai",
    "slot": "s1",
    "name": "Five-Colour Petals",
    "cooldown": 1,
@@ -3714,8 +3714,8 @@
    "draft": true
   },
   {
-   "id": "skill:hydrangea_s2",
-   "owner": "hero:hydrangea",
+   "id": "skill:ying_wucai_s2",
+   "owner": "hero:ying_wucai",
    "slot": "s2",
    "name": "Changing Soil",
    "cooldown": 3,
@@ -3760,8 +3760,8 @@
    "draft": true
   },
   {
-   "id": "skill:hydrangea_s3",
-   "owner": "hero:hydrangea",
+   "id": "skill:ying_wucai_s3",
+   "owner": "hero:ying_wucai",
    "slot": "s3",
    "name": "Embroidered Ball of Five Colours",
    "cooldown": 5,
@@ -3810,8 +3810,8 @@
    "draft": true
   },
   {
-   "id": "skill:hydrangea_p30",
-   "owner": "hero:hydrangea",
+   "id": "skill:ying_wucai_p30",
+   "owner": "hero:ying_wucai",
    "slot": "p30",
    "name": "Rain-Season Bloom",
    "trigger": "on_heal",
@@ -3828,8 +3828,8 @@
    "draft": true
   },
   {
-   "id": "skill:hydrangea_p50",
-   "owner": "hero:hydrangea",
+   "id": "skill:ying_wucai_p50",
+   "owner": "hero:ying_wucai",
    "slot": "p50",
    "name": "Shifting Colours",
    "trigger": "always",
@@ -3843,8 +3843,8 @@
    "draft": true
   },
   {
-   "id": "skill:safflower_s1",
-   "owner": "hero:safflower",
+   "id": "skill:fang_yanzhi_s1",
+   "owner": "hero:fang_yanzhi",
    "slot": "s1",
    "name": "Rouge Strike",
    "cooldown": 1,
@@ -3872,8 +3872,8 @@
    "draft": true
   },
   {
-   "id": "skill:safflower_s2",
-   "owner": "hero:safflower",
+   "id": "skill:fang_yanzhi_s2",
+   "owner": "hero:fang_yanzhi",
    "slot": "s2",
    "name": "Quicken the Blood",
    "cooldown": 3,
@@ -3915,8 +3915,8 @@
    "draft": true
   },
   {
-   "id": "skill:safflower_s3",
-   "owner": "hero:safflower",
+   "id": "skill:fang_yanzhi_s3",
+   "owner": "hero:fang_yanzhi",
    "slot": "s3",
    "name": "Red Flower Cautery",
    "cooldown": 5,
@@ -3961,8 +3961,8 @@
    "draft": true
   },
   {
-   "id": "skill:safflower_p30",
-   "owner": "hero:safflower",
+   "id": "skill:fang_yanzhi_p30",
+   "owner": "hero:fang_yanzhi",
    "slot": "p30",
    "name": "Hot Blood",
    "trigger": "on_heal",
@@ -3980,8 +3980,8 @@
    "draft": true
   },
   {
-   "id": "skill:safflower_p50",
-   "owner": "hero:safflower",
+   "id": "skill:fang_yanzhi_p50",
+   "owner": "hero:fang_yanzhi",
    "slot": "p50",
    "name": "A Little Rouge",
    "trigger": "battle_start",
