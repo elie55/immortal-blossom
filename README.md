@@ -8,17 +8,20 @@ A premium, fully offline, landscape card-battle RPG for Android with a xianxia s
 - [Research notes](docs/research-notes.md): what SPAM, Epic Seven and other hero collectors do, with sources.
 - [Data model](docs/data-model.md): how the game databases in `data/` are organised and linked.
 - [Data report](docs/data-report.md): generated counts, the source and use of every item, and the story order.
+- [Economy report](docs/economy-report.md): when a simulated player reaches each milestone, and the win model calibrated on the real engine behind the game's difficulty.
 
-## Play the vertical slice
+## Play the core loop alpha
 
-`game/` is the first playable slice: chapter 1 of the Journey with story scenes, data-driven card battles, the Pavilion Hall, Formation, heroine growth and the Fate Pond. See [game/README.md](game/README.md).
+`game/` is the core loop alpha: Volume 1 of the Journey (five chapters) with Heaven-Defying, gear and the Storage Ring, Demon Hunts, Medicine King Valley, the Five Phases Shrines and the Forge, the Sect, heroine growth (mastery, meridians, Dao Blossom, bonds, tribulations), the Fate Pond and 14 heroines. See [game/README.md](game/README.md).
 
 ```
 python3 tools/build_game.py            # builds dist/ from game/ and data/
 cd dist && python3 -m http.server       # then open http://localhost:8000
 ```
 
-`prototype/` keeps the original card battle prototype that the slice grew from.
+On Android, install the debug APK from the [android-alpha pre-release](https://github.com/elie55/immortal-blossom/releases/tag/android-alpha); GitHub Actions rebuilds it on every push to `main`.
+
+`prototype/` keeps the original card battle prototype that the game grew from.
 
 ## Game data
 

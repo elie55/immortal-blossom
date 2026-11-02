@@ -1,10 +1,10 @@
-# The Android app: the web game wrapped by Capacitor, built into a debug APK on every push to the alpha branch.
+# The Android app: the web game wrapped by Capacitor, built into a debug APK on every push to main (or core-loop-alpha).
 # The APK is attached to the run and to the "android-alpha" pre-release, whose page a phone can open to install it.
 name: Android APK
 
 on:
   push:
-    branches: [core-loop-alpha]
+    branches: [main, core-loop-alpha]
     paths: ['game/**', 'data/**', 'tools/build_game.py', 'tools/offline_fonts.py', 'tools/android_setup.py', 'tools/android-debug.keystore',
             'android-res/**', 'package.json', 'capacitor.config.json', '.github/workflows/android.yml']
   workflow_dispatch:
@@ -12,8 +12,8 @@ on:
 permissions:
   contents: write
 
-concurrency:
-  group: android-${{ github.ref }}
+concurrency:          # one build at a time: the same commit pushed to both branches builds once
+  group: android-apk
   cancel-in-progress: true
 
 jobs:
@@ -66,7 +66,7 @@ jobs:
         run: |
           if ! gh release view android-alpha >/dev/null 2>&1; then
             gh release create android-alpha --prerelease --target "$GITHUB_SHA" --title "Android alpha (latest build)" \
-              --notes "Debug build of the core loop alpha, for testing on a phone. Download the APK on the phone and open it (allow your browser to install apps). Each push to core-loop-alpha replaces it."
+              --notes "Debug build of the core loop alpha, for testing on a phone. Download the APK on the phone and open it (allow your browser to install apps). Each new build replaces it."
           fi
           gh release upload android-alpha immortal-blossoms-alpha.apk --clobber
-          gh release edit android-alpha --notes "Debug build of the core loop alpha from ${GITHUB_SHA::7} (run ${{ github.run_number }}), for testing on a phone. Download the APK on the phone and open it (allow your browser to install apps). Each push to core-loop-alpha replaces it."
+          gh release edit android-alpha --notes "Debug build of the core loop alpha from ${GITHUB_SHA::7} (run ${{ github.run_number }}), for testing on a phone. Download the APK on the phone and open it (allow your browser to install apps). Each new build replaces it."
