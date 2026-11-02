@@ -33,7 +33,8 @@ ART = {
     'sheet_v1_cards_2.png': (2, 2, 'card', ['frostpeak_traitor', 'netherflame_shade', 'thunder_spirit', 'heart_demon']),
     **{f'bg_{k}.png': (1, 1, 'bg', [k]) for k in ['howling_gorge', 'bronze_wastes', 'stone_forest', 'formless_marsh', 'nine_head_swamp',
                                                   'medicine_king_valley', 'five_phases_shrines', 'artifact_forge',
-                                                  'frostpeak', 'moonshadow_bamboo_sea', 'vermilion_ruins', 'gate_of_the_jade_pool', 'tianji_pavilion']},
+                                                  'frostpeak', 'moonshadow_bamboo_sea', 'vermilion_ruins', 'gate_of_the_jade_pool', 'tianji_pavilion',
+                                                  'sect_mountain']},
 }
 SIZE = {'card': (640, 960), 'boss': (1280, 853), 'bg': (1600, 1067)}
 

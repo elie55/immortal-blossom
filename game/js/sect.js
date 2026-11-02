@@ -213,7 +213,7 @@ const BLD_ICON = { 'bld:main_hall': 'bld_main_hall', 'bld:closed_door_caves': 'b
 const BLD_GLYPH = { 'bld:main_hall': '殿', 'bld:closed_door_caves': '洞', 'bld:spirit_herb_garden': '园', 'bld:alchemy_pavilion': '丹', 'bld:mission_hall': '任', 'bld:spirit_beast_garden': '兽', 'bld:array_platform': '阵', 'bld:scripture_pavilion': '经', 'bld:tea_house': '茶', 'bld:artifact_forge': '器' };
 const bldIcon = id => (hasArt(`icons/${BLD_ICON[id]}.webp`) ? `<img src="assets/icons/${BLD_ICON[id]}.webp" alt="">` : `<span class="g">${BLD_GLYPH[id] || '宗'}</span>`);
 // where each building sits on the mountain (percent of the screen), back to front
-const BLD_POS = { 'bld:main_hall': [50, 21], 'bld:scripture_pavilion': [74, 17], 'bld:closed_door_caves': [25, 19], 'bld:array_platform': [87, 42], 'bld:alchemy_pavilion': [35, 45],
+const BLD_POS = { 'bld:main_hall': [25, 19], 'bld:scripture_pavilion': [74, 17], 'bld:closed_door_caves': [50, 21], 'bld:array_platform': [87, 42], 'bld:alchemy_pavilion': [35, 45],
   'bld:artifact_forge': [63, 45], 'bld:spirit_herb_garden': [12, 47], 'bld:tea_house': [47, 70], 'bld:mission_hall': [74, 70], 'bld:spirit_beast_garden': [21, 74] };
 const SCREEN_OF = { 'bld:artifact_forge': ['forge', {}] };
 const BETA = new Set(['bld:spirit_beast_garden', 'bld:scripture_pavilion']);
