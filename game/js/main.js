@@ -77,6 +77,10 @@ Promise.all([loadSave(), loadAll(assets, p => {
   const unlock = () => { initAudio(); window.removeEventListener('pointerdown', unlock); };
   window.addEventListener('pointerdown', unlock);
 });
+// Android (Capacitor): the hardware back button steps back through the game instead of closing it
+const capApp = window.Capacitor?.Plugins?.App;
+if (capApp?.addListener) capApp.addListener('backButton', () => { if (!App.hardwareBack()) capApp.minimizeApp?.(); });
+
 window.__ib = {
   App, BT, clock, tutorial, save: () => SAVE.data,
   /** Test hook: fight a stage with any team at a given level. */

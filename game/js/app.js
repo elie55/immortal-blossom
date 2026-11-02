@@ -86,6 +86,15 @@ export const App = {
     else this.go('hall', {}, { root: true });
   },
   refresh() { if (this.curName) this.go(this.curName, this.params, { replace: true }); },
+  /** The Android back button: close the open dialog, offer to retreat from a battle, go back a screen, or (on the
+   *  Pavilion Hall and the title) put the game in the background instead of quitting it. */
+  hardwareBack() {
+    const dlg = [...this.stage.querySelectorAll('.dlg-wrap')].pop();
+    if (dlg) { dlg.dispatchEvent(new MouseEvent('click', { bubbles: true })); return true; }
+    if (this.battleEl.classList.contains('on')) { if (!BT.B.over && ui.onRetreat) ui.onRetreat(); return true; }
+    if (this.root.querySelector('[data-act="back"]')) { this.back(); return true; }
+    return false;
+  },
 
   // ---------------- top bar ----------------
   topbar({ title, cn, back = true, chips = ['cur:spirit_stones', 'cur:immortal_jade', 'cur:fate_incense'], extra = '' } = {}) {

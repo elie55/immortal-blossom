@@ -1,0 +1,11 @@
+{
+  "appId": "com.immortalblossoms.game",
+  "appName": "Immortal Blossoms",
+  "webDir": "dist",
+  "backgroundColor": "#07090f",
+  "android": {
+    "backgroundColor": "#07090f",
+    "allowMixedContent": false,
+    "webContentsDebuggingEnabled": true
+  }
+}

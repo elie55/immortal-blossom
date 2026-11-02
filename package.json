@@ -1,0 +1,19 @@
+{
+  "name": "immortal-blossoms",
+  "version": "0.3.0",
+  "private": true,
+  "description": "Immortal Blossoms: a premium, fully offline xianxia card-battle RPG. The web game builds into dist/; Capacitor wraps it as an Android app (see .github/workflows/android.yml).",
+  "scripts": {
+    "build": "python3 tools/build_game.py",
+    "android": "python3 tools/build_game.py && python3 tools/offline_fonts.py && npx cap add android && python3 tools/android_setup.py && npx cap sync android",
+    "apk": "cd android && ./gradlew assembleDebug"
+  },
+  "dependencies": {
+    "@capacitor/android": "^7.0.0",
+    "@capacitor/app": "^7.0.0",
+    "@capacitor/core": "^7.0.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^7.0.0"
+  }
+}
