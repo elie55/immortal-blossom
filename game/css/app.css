@@ -532,6 +532,15 @@
 
 /* ---------- Heroine growth: mastery, meridians, Dao Blossom, bond, ties ---------- */
 .hv-tabs .tabs button { flex: 1 1 auto; }
+/* the heroine screen's tabs are icons: dimmed until chosen, the chosen one lit in gold */
+.hv-tabs .tabs.itabs { gap: 8px; }
+.hv-tabs .tabs.itabs button { flex: 1 1 0; height: 70px; padding: 0; display: grid; place-items: center; border-radius: 14px; border: 1px solid var(--line);
+  background: radial-gradient(circle at 50% 45%, rgba(255, 255, 255, .07), rgba(255, 255, 255, .02) 70%); transition: border-color .2s, box-shadow .2s; }
+.hv-tabs .tabs.itabs button img { width: 60px; height: 60px; object-fit: contain; filter: saturate(.6) brightness(.8); transition: filter .2s, transform .2s; pointer-events: none; }
+.hv-tabs .tabs.itabs button:hover img { filter: saturate(.85) brightness(.95); }
+.hv-tabs .tabs.itabs button.on { background: radial-gradient(circle at 50% 45%, rgba(233, 200, 128, .32), rgba(233, 200, 128, .06) 72%); border-color: var(--gold);
+  box-shadow: 0 0 16px rgba(233, 200, 128, .35), inset 0 0 14px rgba(233, 200, 128, .2); }
+.hv-tabs .tabs.itabs button.on img { filter: drop-shadow(0 0 6px rgba(255, 220, 150, .55)); transform: scale(1.08); }
 .btn.sm { font-size: 17px; padding: 9px 16px; letter-spacing: .03em; }
 .hv-note { margin: 2px 0; font: 500 17px/1.35 'Cormorant Garamond', serif; }
 .hv-grow { font: 600 16px Oswald, sans-serif; color: #9fe0c0; }

@@ -1,7 +1,7 @@
 // Heroines: the roster, a heroine's overview (stats, techniques and mastery, gear, meridians, Dao Blossom, bond,
 // Twin Blooms and Karmic Threads), Cultivate and Breakthrough.
 import { App, esc, phTag, starStr, SET_COLOR, PH_COLOR, PH_GLYPH, npcSays, compact } from './app.js';
-import { get, all, cardUrl, faceUrl, heroArt, phaseOf, SLICE_HEROES, expToNext, levelCap, realmOf, nextRealm, iconUrl, num, techOf, masteryCap, meridians, bondLevel, bondNext, bondBonus, growthBonus, keyOf, trialFor, trialStage, stageBattle } from './data.js';
+import { get, all, cardUrl, faceUrl, heroArt, phaseOf, SLICE_HEROES, expToNext, levelCap, realmOf, nextRealm, iconUrl, num, techOf, masteryCap, meridians, bondLevel, bondNext, bondBonus, growthBonus, keyOf, trialFor, trialStage, stageBattle, hasArt } from './data.js';
 import { data, persist, owned, prog, qty, atCap, breakthroughCost, breakthrough, canPay, pillPlan, usePills, finalStats, heroBonus,
   masteryNext, masteryUp, meridianSlots, meridiansOpen, nodeNext, openNode, renDuState, openRenDu, chooseRenDu, petalCost, openPetal,
   giftTaste, giveGift, teaToday, takeTea, passTribulation, currentArray, arrayLevel } from './state.js';
@@ -169,7 +169,7 @@ App.register('heroine', {
         </div>
       </div>
       <div class="hv-tabs panel">
-        <div class="tabs">${HV_TABS.map(([k, label]) => `<button class="${tab === k ? 'on' : ''}" data-act="tab" data-t="${k}">${label}</button>`).join('')}</div>
+        <div class="tabs itabs">${HV_TABS.map(([k, label]) => `<button class="${tab === k ? 'on' : ''}" data-act="tab" data-t="${k}" title="${label}" aria-label="${label}">${hasArt(`ui/tab_${k}.webp`) ? `<img src="assets/ui/tab_${k}.webp" alt="">` : label}</button>`).join('')}</div>
         ${tab === 'tech' ? techTab(hid, p) : ''}
         ${tab === 'gear' ? `${heroGearStrip(hid)}${gearSets(hid)}<button class="btn" data-act="gear" style="margin-top:6px">Manage gear</button>` : ''}
         ${tab === 'meri' ? meridianTab(hid, p, sel) : ''}
