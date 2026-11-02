@@ -17,7 +17,7 @@
    "id": "stat:def",
    "name": "Defense",
    "form": "flat or %",
-   "about": "Damage taken = damage / (1 + Defense / 900)"
+   "about": "Reduces the damage she takes: at 900 Defense she takes half"
   },
   {
    "id": "stat:crit",

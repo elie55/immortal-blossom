@@ -23,7 +23,7 @@ const HV_TABS = [['tech', 'Techniques'], ['gear', 'Gear'], ['meri', 'Meridians']
 const hvIcon = ic => (ic.startsWith('g:') ? `<span>${ic.slice(2)}</span>` : `<img src="assets/ui/${ic}.webp" alt="">`);
 /** A cost as chips: have / need, dimmed when short. */
 const costChips = cost => `<div class="got hv-cost">${cost.map(c => { const id = c.item || c.cur, have = qty(id);
-  return `<div class="rw-i${have >= c.qty ? '' : ' done'}" title="${esc(get(id)?.name)}">${iconUrl(id) ? `<img src="${iconUrl(id)}" alt="">` : '<span class="g">材</span>'}<em>${compact(have)}/${compact(c.qty)}</em></div>`; }).join('')}</div>`;
+  return `<div class="rw-i${have >= c.qty ? '' : ' done'}" data-tip="${id}">${iconUrl(id) ? `<img src="${iconUrl(id)}" alt="">` : '<span class="g">材</span>'}<em>${compact(have)}/${compact(c.qty)}</em></div>`; }).join('')}</div>`;
 
 App.register('heroines', {
   cls: 'heroines',
@@ -154,12 +154,12 @@ App.register('heroine', {
       <div class="hv-art${p.petals >= 6 ? ' bloom' : ''}" style="background-image:url(${cardUrl(hid)})"><span class="stars">${starStr(h.rarity)}</span><span class="cnm">${esc(h.cn)}</span>${p.petals >= 6 ? `<div class="c-bloom">${'<i></i>'.repeat(8)}</div>` : ''}</div>
       <div class="hv-info panel">
         <h2>${esc(h.name)}</h2><div class="ttl">${esc(h.title)}</div>
-        <div class="tagline">${phTag(phaseOf(h.phase))} ${esc(get(h.phase).name)} · ${esc(get(h.path).name)} · ${esc(get(h.faction)?.name || '')}</div>
-        <div class="realm"><b>${esc(realm.cn)}</b><span>${esc(realm.name)}</span></div>
+        <div class="tagline">${phTag(phaseOf(h.phase))} <span data-tip="${h.phase}">${esc(get(h.phase).name)}</span> · <span data-tip="${h.path}">${esc(get(h.path).name)}</span> · <span data-tip="${h.faction}">${esc(get(h.faction)?.name || '')}</span></div>
+        <div class="realm" data-tip="${realm.id}"><b>${esc(realm.cn)}</b><span>${esc(realm.name)}</span></div>
         <div class="lvl">Level ${p.level} <small>/ ${cap}</small></div>
         <div class="expbar"><i style="width:${capped ? 100 : Math.min(100, p.exp / need * 100).toFixed(1)}%"></i></div>
         <div class="mut" style="font:600 17px Oswald">${capped ? (nr ? `Level cap: break through to ${esc(nr.name)} to go on (${num(p.exp)} EXP banked)` : 'Peak of cultivation') : `${num(p.exp)} / ${num(need)} EXP`}</div>
-        <div class="stats"><div>Health <b>${num(s.hp)}</b></div><div>Attack <b>${num(s.atk)}</b></div><div>Defense <b>${num(s.def)}</b></div><div>Critical <b>${Math.round(s.crit * 100)}%</b></div><div>Crit damage <b>${Math.round(s.critDmg * 100)}%</b></div><div>Haste <b>${s.haste}</b></div></div>
+        <div class="stats"><div data-tip="stat:hp">Health <b>${num(s.hp)}</b></div><div data-tip="stat:atk">Attack <b>${num(s.atk)}</b></div><div data-tip="stat:def">Defense <b>${num(s.def)}</b></div><div data-tip="stat:crit">Critical <b>${Math.round(s.crit * 100)}%</b></div><div data-tip="stat:crit_dmg">Crit damage <b>${Math.round(s.critDmg * 100)}%</b></div><div data-tip="stat:haste">Haste <b>${s.haste}</b></div></div>
         ${extra.length ? `<div class="mut hv-grow">Meridians and bond: +${extra.join(' · +')}</div>` : ''}
         <div class="petal-row" data-act="tab" data-t="bloom">Dao Blossom ${[1, 2, 3, 4, 5, 6].map(n => `<i class="${n <= p.petals ? 'on' : ''}"></i>`).join('')}<span class="bd-chip">Bond ${bondLevel(p.bond || 0)}</span></div>
         <div class="hv-btns">
@@ -231,7 +231,7 @@ async function tribulation(hid) {
   sfx('thunder');
   await App.dialog({ title: 'Tribulation weathered!', cn: to.cn, body: `<div style="text-align:center"><div style="width:220px;height:330px;margin:0 auto;border-radius:14px;background:url(${cardUrl(hid)}) center 15%/cover;box-shadow:0 0 50px #ffcf5a, inset 0 0 0 2px #ffcf5a;animation:pulse 1.4s infinite"></div>
     <p><b class="gold">${esc(h.name)}</b> slays her Heart Demon and enters <b>${esc(to.name)} ${esc(to.cn)}</b>. Her level cap rises to ${levelCap(prog(hid).bt)}${prog(hid).bt <= 5 ? ', and a meridian slot opens' : ''}.</p>
-    ${r?.granted?.length ? `<div class="got" style="justify-content:center">${r.granted.map(g => `<div class="rw-i"><img src="${iconUrl(g.cur || g.item)}" alt=""><em>${num(g.qty)}</em></div>`).join('')}</div>` : ''}</div>`, buttons: [{ label: 'Wonderful', value: true }] });
+    ${r?.granted?.length ? `<div class="got" style="justify-content:center">${r.granted.map(g => `<div class="rw-i" data-tip="${g.cur || g.item}"><img src="${iconUrl(g.cur || g.item)}" alt=""><em>${num(g.qty)}</em></div>`).join('')}</div>` : ''}</div>`, buttons: [{ label: 'Wonderful', value: true }] });
 }
 /** Today's tea with a heroine (one a day, at the Tea House or from her Bond tab). */
 export async function teaDialog(hid) {
@@ -251,7 +251,7 @@ export function giftDialog(hid) {
     const lv = bondLevel(prog(hid).bond || 0);
     const gifts = all('item').filter(i => i.category === 'gift' && qty(i.id) > 0);
     const shown = id => { const t = giftTaste(hid, id).taste; return (t === 'liked' && lv >= lvAt('likes')) ? '♥' : (t === 'disliked' && lv >= lvAt('dislikes')) ? '✕' : ''; };
-    return gifts.length ? `<div class="gift-grid">${gifts.map(i => `<button class="gift" data-g="${i.id}" title="${esc(i.name)}"><img src="${iconUrl(i.id)}" alt=""><em>${qty(i.id)}</em>${shown(i.id) ? `<span class="${shown(i.id) === '♥' ? 'lk' : 'dk'}">${shown(i.id)}</span>` : ''}<small>${esc(i.name)}</small></button>`).join('')}</div>
+    return gifts.length ? `<div class="gift-grid">${gifts.map(i => `<button class="gift" data-g="${i.id}" data-tip="${i.id}"><img src="${iconUrl(i.id)}" alt=""><em>${qty(i.id)}</em>${shown(i.id) ? `<span class="${shown(i.id) === '♥' ? 'lk' : 'dk'}">${shown(i.id)}</span>` : ''}<small>${esc(i.name)}</small></button>`).join('')}</div>
       <p class="mut">Bond ${lv} · ${num(prog(hid).bond || 0)} points. Her likes show at bond ${lvAt('likes')}, her dislikes at bond ${lvAt('dislikes')}.</p>`
       : '<p class="mut">No gifts yet. Old Qian sells some at the Ford, and they drop in the Journey.</p>';
   };
@@ -279,10 +279,10 @@ function cultivateDialog(hid) {
   const body = () => {
     const { plan, lv } = preview();
     const have = PILLS.filter(id => qty(id) > 0);
-    return `${have.length ? have.map(id => `<div class="pill-row"><img src="${iconUrl(id)}" alt=""><b>${esc(get(id).name)}<small>+${num(get(id).exp)} EXP · you have ${qty(id)}</small></b>
+    return `${have.length ? have.map(id => `<div class="pill-row"><img src="${iconUrl(id)}" data-tip="${id}" alt=""><b>${esc(get(id).name)}<small>+${num(get(id).exp)} EXP · you have ${qty(id)}</small></b>
       <div class="stepper"><button data-k="-" data-id="${id}">−</button><span>${sel[id]}</span><button data-k="+" data-id="${id}">+</button></div></div>`).join('')
       : '<p class="mut">No EXP pills yet. They drop in Peach Blossom Ford and come from first clears.</p>'}
-      <p>Level <b class="gold">${p.level} → ${lv}</b> · +${num(plan.exp)} EXP · <img class="ic" src="${iconUrl('cur:spirit_stones')}" style="width:24px;vertical-align:-5px"> ${num(plan.stones)} Spirit Stones (you have ${num(qty('cur:spirit_stones'))})</p>`;
+      <p>Level <b class="gold">${p.level} → ${lv}</b> · +${num(plan.exp)} EXP · <img class="ic" src="${iconUrl('cur:spirit_stones')}" data-tip="cur:spirit_stones" style="width:24px;vertical-align:-5px"> ${num(plan.stones)} Spirit Stones (you have ${num(qty('cur:spirit_stones'))})</p>`;
   };
   return App.dialog({
     title: `Cultivate ${h.name}`, cn: '修炼', body: `<div class="cv">${body()}</div>`,
@@ -311,7 +311,7 @@ function breakthroughDialog(hid) {
   return App.dialog({
     title: 'Breakthrough', cn: '突破',
     body: `<p><b class="gold">${esc(h.name)}</b> stands at the peak of <b>${esc(from.name)} ${esc(from.cn)}</b>. Breaking through to <b>${esc(to.name)} ${esc(to.cn)}</b> raises her level cap to ${levelCap(p.bt + 1)}, every stat by 10%, and opens ${p.bt + 1 <= 5 ? 'a meridian slot' : 'the way to the Ren and Du vessels'}.</p>
-      <div class="got" style="justify-content:flex-start">${cost.map(c => `<div class="rw-i${qty(c.item || c.cur) >= c.qty ? '' : ' done'}"><img src="${iconUrl(c.item || c.cur)}" alt=""><em>${compact(qty(c.item || c.cur))}/${compact(c.qty)}</em></div>`).join('')}</div>
+      <div class="got" style="justify-content:flex-start">${cost.map(c => `<div class="rw-i${qty(c.item || c.cur) >= c.qty ? '' : ' done'}" data-tip="${c.item || c.cur}"><img src="${iconUrl(c.item || c.cur)}" alt=""><em>${compact(qty(c.item || c.cur))}/${compact(c.qty)}</em></div>`).join('')}</div>
       <p class="mut">Health ${num(s0.hp)} → ${num(s1.hp)} · Attack ${num(s0.atk)} → ${num(s1.atk)} · Defense ${num(s0.def)} → ${num(s1.def)}</p>
       ${tr ? `<p class="trib-note"><b class="gold">Tribulation 天劫.</b> To enter ${esc(to.name)} she must weather waves of heavenly lightning, then face her own Heart Demon, a darkened copy of herself. Three allies may stand with her. Losing costs nothing: the pills are only used when she wins.</p>` : ''}
       ${ok ? '' : `<p style="color:#ff9a8a">You need ${cost.filter(c => qty(c.item || c.cur) < c.qty).map(c => esc(get(c.item || c.cur).name)).join(' and ')}. ${p.bt === 0 ? 'The first Foundation Pill comes from the Wraith Captain.' : 'The Alchemy Pavilion brews them.'}</p>`}`,

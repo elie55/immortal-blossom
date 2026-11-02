@@ -25,14 +25,14 @@ export function twoPieceText(set) {
 const gauge = (roll, cls = '') => `<i class="gauge ${cls}"><i style="width:${Math.round(roll * 100)}%"></i></i><em>${Math.round(roll * 100)}%</em>`;
 
 /** A piece's stat lines and set, for the detail panel and the picker. */
-function pieceBody(p, hid) {
+export function pieceBody(p, hid) {
   if (p.kind === 'art') {
     const a = get(p.art), L = artefactLines(p);
     return `<div class="pd-main"><span>Attack</span><b>+${num(L.atk)}</b></div><div class="pd-main"><span>Health</span><b>+${num(L.hp)}</b></div>
       <div class="pd-set"><b>${esc(a.cn)} · Passive at ${Math.round(L.power * 100)}%</b><p>${esc(a.passive.text)}</p><p class="mut">Wielded by the ${a.paths.map(x => x === 'all' ? 'every path' : esc(get(x)?.name)).join(' and ')} path${a.paths.length > 1 ? 's' : ''}. Divine +15 gives the full passive.</p></div>`;
   }
   const subs = p.subs.map(s => { const avg = s.rolls.reduce((x, y) => x + y, 0) / s.rolls.length;
-    return `<div class="pd-sub"><span>${statLabel(s.stat)}${s.rolls.length > 1 ? ` <small>×${s.rolls.length}</small>` : ''}</span><b>${fmtStat(s.stat, s.form, subValue(p, s))}</b>${gauge(avg)}</div>`; }).join('');
+    return `<div class="pd-sub"><span data-tip="${s.stat}">${statLabel(s.stat)}${s.rolls.length > 1 ? ` <small>×${s.rolls.length}</small>` : ''}</span><b>${fmtStat(s.stat, s.form, subValue(p, s))}</b>${gauge(avg)}</div>`; }).join('');
   const nextMs = [3, 6, 9, 12, 15].find(m => m > p.plus);
   const hint = nextMs ? `<p class="mut pd-hint">At +${nextMs}: ${p.subs.length < 4 ? 'a new substat' : 'one substat rolls again'}</p>` : '';
   let setHtml = '';
@@ -41,7 +41,7 @@ function pieceBody(p, hid) {
     setHtml = `<div class="pd-set"><b style="color:${SET_COLOR[p.set]}">${esc(s.name)} ${esc(s.cn)}${hid ? ` <small>${n}/4 worn</small>` : ''}</b>
       <p class="${n >= 2 ? 'on' : ''}">2 pieces: ${esc(twoPieceText(s))}</p><p class="${n >= 4 ? 'on' : ''}">4 pieces · <b>${esc(s.fourPiece.name)}</b>: ${esc(s.fourPiece.text)}</p></div>`;
   } else setHtml = `<p class="mut pd-hint">${p.slot === 'slot:weapon' ? 'Weapons stand outside sets.' : 'No set: sets drop in the Demon Hunts.'}</p>`;
-  return `<div class="pd-main"><span>${statLabel(p.main.stat)}</span><b>${fmtStat(p.main.stat, p.main.form, mainValue(p))}</b>${gauge(p.main.roll, 'main')}</div>
+  return `<div class="pd-main"><span data-tip="${p.main.stat}">${statLabel(p.main.stat)}</span><b>${fmtStat(p.main.stat, p.main.form, mainValue(p))}</b>${gauge(p.main.roll, 'main')}</div>
     <div class="pd-subs">${subs || '<p class="mut">No substats yet.</p>'}</div>${hint}${setHtml}`;
 }
 
@@ -103,8 +103,8 @@ App.register('ring', {
       heroEl.innerHTML = `<div class="rh-head">${faceUrl(hid) ? `<img src="${faceUrl(hid)}" alt="">` : ''}<div><b>${esc(hero.name)}</b><small>Level ${p0.level} · ${esc(get(hero.path).name)}</small></div></div>
         <div class="rh-slots">${POSITIONS.map((pos, i) => { const p = g[i];
           return `<div class="rh-slot${st.pos === pos ? ' on' : ''}" data-act="pos" data-pos="${pos}">${p ? gearTile(p) : `<div class="gt empty"><span class="g">${slotGlyph(POS_SLOT[pos])}</span></div>`}<small>${POS_NAME[pos]}</small></div>`; }).join('')}</div>
-        <div class="stats rh-stats"><div>Health <b>${part('hp')}</b></div><div>Attack <b>${part('atk')}</b></div><div>Defense <b>${part('def')}</b></div><div>Critical <b>${part('crit', 1)}</b></div>
-          <div>Crit damage <b>${part('critDmg', 1)}</b></div><div>Haste <b>${part('haste')}</b></div><div>Accuracy <b>${Math.round(s.acc * 100)}%</b></div><div>Resistance <b>${Math.round(s.res * 100)}%</b></div></div>
+        <div class="stats rh-stats"><div data-tip="stat:hp">Health <b>${part('hp')}</b></div><div data-tip="stat:atk">Attack <b>${part('atk')}</b></div><div data-tip="stat:def">Defense <b>${part('def')}</b></div><div data-tip="stat:crit">Critical <b>${part('crit', 1)}</b></div>
+          <div data-tip="stat:crit_dmg">Crit damage <b>${part('critDmg', 1)}</b></div><div data-tip="stat:haste">Haste <b>${part('haste')}</b></div><div data-tip="stat:acc">Accuracy <b>${Math.round(s.acc * 100)}%</b></div><div data-tip="stat:res">Resistance <b>${Math.round(s.res * 100)}%</b></div></div>
         <p class="mut rh-key">Her own stats, <span class="gr">+ what her gear adds</span></p>
         ${sets ? `<div class="rh-sets">${sets}</div>` : '<p class="mut" style="margin:0">Wear 2 or 4 pieces of one set for its bonus and effect.</p>'}
         <div class="rh-btns"><button class="btn ink" data-act="stripall">Unequip all</button><button class="btn ink" data-act="toring">Storage Ring</button></div>`;

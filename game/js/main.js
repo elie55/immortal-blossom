@@ -13,6 +13,7 @@ import './ring.js';
 import './sect.js';
 import './trials.js';
 import './forge.js';
+import { initTips, hideTip } from './tips.js';
 
 const stage = document.getElementById('stage');
 const battleEl = document.getElementById('battle');
@@ -21,6 +22,7 @@ initVfx(battleEl.querySelector('#fxb'), battleEl.querySelector('#fxf'));
 const world = battleEl.querySelector('#world');
 configureRules(get('rules:combat'));
 App.boot(stage);
+initTips(stage);
 
 /** Space left for the stage: the viewport minus the page's side gutter and the safe-area padding on :root. */
 function insets() {
@@ -79,7 +81,7 @@ Promise.all([loadSave(), loadAll(assets, p => {
 });
 // Android (Capacitor): the hardware back button steps back through the game instead of closing it
 const capApp = window.Capacitor?.Plugins?.App;
-if (capApp?.addListener) capApp.addListener('backButton', () => { if (!App.hardwareBack()) capApp.minimizeApp?.(); });
+if (capApp?.addListener) capApp.addListener('backButton', () => { if (!hideTip() && !App.hardwareBack()) capApp.minimizeApp?.(); });
 
 window.__ib = {
   App, BT, clock, tutorial, save: () => SAVE.data,

@@ -180,7 +180,7 @@ export const Flow = {
     const shop = get(st.shop);
     const stock = (shop?.stock || []).filter(s => (s.item || s.cur) && (s.price || s.cost)).slice(0, 6);
     if (!stock.length) return;
-    const row = s => { const p = s.price || s.cost; const pr = Array.isArray(p) ? p[0] : p; const it = get(s.item || s.cur), ic = iconUrl(s.item || s.cur); return `<div class="pill-row">${ic ? `<img src="${ic}" alt="">` : '<span class="rw-i"><span class="g">礼</span></span>'}<b>${esc(it?.name)} ×${s.qty || 1}<small>${esc(it?.about || '')}</small></b><button class="btn" data-buy="${esc(s.item || s.cur)}">${num(pr.qty)} <img class="ic" src="${iconUrl(pr.cur || pr.item)}" alt=""></button></div>`; };
+    const row = s => { const p = s.price || s.cost; const pr = Array.isArray(p) ? p[0] : p; const it = get(s.item || s.cur), ic = iconUrl(s.item || s.cur); return `<div class="pill-row">${ic ? `<img src="${ic}" data-tip="${esc(s.item || s.cur)}" alt="">` : '<span class="rw-i"><span class="g">礼</span></span>'}<b>${esc(it?.name)} ×${s.qty || 1}<small>${esc(it?.about || '')}</small></b><button class="btn" data-buy="${esc(s.item || s.cur)}">${num(pr.qty)} <img class="ic" src="${iconUrl(pr.cur || pr.item)}" alt=""></button></div>`; };
     await App.dialog({
       title: shop.name, cn: '行商', body: `${npcSays('npc:old_qian', '<p>Old Qian opens his cart: “Everything a cultivator needs, nothing a cultivator can afford. Mostly.”</p>')}${stock.map(row).join('')}`,
       buttons: [{ label: 'Leave', cls: 'ink', value: true }],

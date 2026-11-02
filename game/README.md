@@ -18,6 +18,7 @@ The web version, [elie55.github.io/immortal-blossom](https://elie55.github.io/im
 | Screen | What it does |
 | --- | --- |
 | Title | New game or continue; the save lives in IndexedDB (local storage as a fallback) |
+| Tooltips | Press any item, currency, reward, piece of gear (its stats and set), heroine chip, phase, stat, realm, path or battle status to see what it is. Where a tap already does something (a gear tile in the Storage Ring, a gift, a card in battle), a long press shows it; with a mouse, a short hover does too. A tap anywhere or the back button closes it |
 | Story scenes | Volume 1's scenes: standing figures with no background (speaker lit, others dimmed, a small move per expression), nameplates, typewriter text, tap anywhere, Auto, Log, Skip, title cards |
 | Card battles | The prototype's engine, now fed by stage, heroine and enemy data: Haste, Kindred Qi, all 27 statuses, three Twin Blooms, missions; the dream battle keeps the 23-step tutorial |
 | Victory | Mission seals, MVP, EXP and level ups, first-clear rewards and drops, battle report |
@@ -79,6 +80,7 @@ python3 tools/economy_sim.py --hours 30 --runs 20 --quiet --report docs/economy-
 | `js/data.js` | Records by id, stats by level, growth (mastery steps, petal patches, meridian and bond bonuses), techniques and units for the engine, stage battles, rewards |
 | `js/state.js` | The save, wallet, EXP and breakthroughs, mastery, meridians, petals, bonds and the day's tea, stage clears and stars, summons, gear |
 | `js/app.js` | Screen router, top bar, dialogs, toasts, battle host |
+| `js/tips.js` | Tooltips: what each `data-tip` key says, and when they show (tap, long press, hover) |
 | `js/story.js` | Scene player and the chapter flow |
 | `js/gear.js` | Gear rules: rolling pieces from drop tables, stat values by tier and roll, refining, engraving, reforging, salvage, sets, a heroine's gear bonus |
 | `js/ring.js` | The Storage Ring and heroine gear screens, piece details and the gear dialogs |

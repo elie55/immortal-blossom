@@ -224,7 +224,7 @@ const BETA = new Set(['bld:spirit_beast_garden', 'bld:scripture_pavilion']);
 const LATER = new Set(['duty:pagoda_floor', 'duty:secret_realm_run', 'duty:competition_wins']); // duties of modes the alpha does not have yet
 const hhmm = ms => { const s = Math.max(0, Math.ceil(ms / 1000)), h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), x = s % 60; return h ? `${h}h ${String(m).padStart(2, '0')}m` : `${m}m ${String(x).padStart(2, '0')}s`; };
 const faceOf = hid => (faceUrl(hid) ? `<img src="${faceUrl(hid)}" alt="">` : `<span class="g">${esc(get(hid).cn[0])}</span>`);
-const costRow = cost => `<div class="got sc-cost">${cost.map(c => { const id = c.item || c.cur; return `<div class="rw-i${qty(id) >= c.qty ? '' : ' done'}" title="${esc(get(id)?.name)}">${iconUrl(id) ? `<img src="${iconUrl(id)}" alt="">` : '<span class="g">材</span>'}<em>${compact(qty(id))}/${compact(c.qty)}</em></div>`; }).join('')}</div>`;
+const costRow = cost => `<div class="got sc-cost">${cost.map(c => { const id = c.item || c.cur; return `<div class="rw-i${qty(id) >= c.qty ? '' : ' done'}" data-tip="${id}">${iconUrl(id) ? `<img src="${iconUrl(id)}" alt="">` : '<span class="g">材</span>'}<em>${compact(qty(id))}/${compact(c.qty)}</em></div>`; }).join('')}</div>`;
 
 /** A building's status line on the mountain. */
 function bldStatus(id, now) {
@@ -323,7 +323,7 @@ function gardenBody() {
   const y = gardenYield(), b = get(GARDEN), L = bldLevel(GARDEN);
   const all3 = (b.produces || []).map(p => { const id = p.cur || p.item, it = y.items.find(i => i.id === id), open = herbOpen(p, L) && !!it;
     const why = L < (p.fromLevel || 1) ? `From level ${p.fromLevel}` : !herbOpen(p, L) ? `Grows once a heroine reaches ${esc(get(p.fromRealm)?.name || 'its realm')}` : 'Not planted yet';
-    return `<div class="gd-row${open ? '' : ' locked'}"><div class="rw-i">${iconUrl(id) ? `<img src="${iconUrl(id)}" alt="">` : ''}</div><span><b>${esc(get(id).name)}</b><small>${open ? `${+(it.perHour).toFixed(2)} an hour` : why}</small></span><em>${open ? num(it.qty) : ''}</em></div>`; }).join('');
+    return `<div class="gd-row${open ? '' : ' locked'}"><div class="rw-i" data-tip="${id}">${iconUrl(id) ? `<img src="${iconUrl(id)}" alt="">` : ''}</div><span><b>${esc(get(id).name)}</b><small>${open ? `${+(it.perHour).toFixed(2)} an hour` : why}</small></span><em>${open ? num(it.qty) : ''}</em></div>`; }).join('');
   return `<div class="sd-h">THE BEDS · ${y.hours.toFixed(1)} / ${y.cap} HOURS</div><div class="expbar"><i style="width:${(y.hours / y.cap * 100).toFixed(1)}%"></i></div>
     <p class="mut">The garden grows for up to ${y.cap} hours between harvests; each level makes it grow ${Math.round((b.levelBonus || 0) * 100)}% faster.</p>
     <div class="gd-list">${all3}</div><div class="sd-btns"><button class="btn jade${y.items.some(i => i.qty > 0) ? '' : ' off'}" data-act="harvest">Harvest</button></div>`;
@@ -334,10 +334,10 @@ function alchemyBody({ sel, n = 1 }) {
   const rs = (get(ALCH).recipes || []).map(get).filter(Boolean), cur = get(sel) || rs[0], odds = qualityOdds(), al = SECT().alchemy.alchemist;
   const jobs = brews(), now = Date.now();
   return `<div class="al-top"><div><div class="sd-h">FURNACES · ${jobs.length}/${furnaces()}</div>
-      ${jobs.map((j, i) => `<div class="al-job${now >= j.end ? ' ready' : ''}"><div class="rw-i">${iconUrl(get(j.recipe).output.item) ? `<img src="${iconUrl(get(j.recipe).output.item)}" alt="">` : ''}</div><span><b>${esc(get(get(j.recipe).output.item).name)} ×${j.count}</b><small data-end="${j.end}">${now >= j.end ? 'Ready' : hhmm(j.end - now)}</small></span>${now >= j.end ? `<button class="btn sm jade" data-act="al-collect" data-i="${i}">Collect</button>` : ''}</div>`).join('') || '<p class="mut">The furnaces are cold.</p>'}</div>
+      ${jobs.map((j, i) => `<div class="al-job${now >= j.end ? ' ready' : ''}"><div class="rw-i" data-tip="${get(j.recipe).output.item}">${iconUrl(get(j.recipe).output.item) ? `<img src="${iconUrl(get(j.recipe).output.item)}" alt="">` : ''}</div><span><b>${esc(get(get(j.recipe).output.item).name)} ×${j.count}</b><small data-end="${j.end}">${now >= j.end ? 'Ready' : hhmm(j.end - now)}</small></span>${now >= j.end ? `<button class="btn sm jade" data-act="al-collect" data-i="${i}">Collect</button>` : ''}</div>`).join('') || '<p class="mut">The furnaces are cold.</p>'}</div>
     <div class="al-alch"><div class="sd-h">ALCHEMIST</div><button class="al-pick" data-act="al-who">${al ? `${faceOf(al)}<b>${esc(get(al).name)}</b><small>${esc(get(get(al).path).name)}${get(al).path === 'path:healer' ? ': the best quality' : ''}</small>` : '<span class="g">＋</span><small>Assign a heroine (healers brew best)</small>'}</button>
       <div class="al-odds">${Object.entries(odds).map(([k, v]) => `<span class="q-${k.toLowerCase()}">${k} ${Math.round(v * 100)}%</span>`).join('')}</div></div></div>
-    <div class="al-wrap"><div class="al-list">${RECIPE_GROUPS.map(([g, f]) => `<div class="sd-h">${g.toUpperCase()}</div>${rs.filter(f).map(r => `<button class="al-r${r === cur ? ' on' : ''}" data-act="al-sel" data-r="${r.id}"><div class="rw-i">${iconUrl(r.output.item) ? `<img src="${iconUrl(r.output.item)}" alt="">` : ''}</div><span>${esc(get(r.output.item).name)}<small>${r.hours} h</small></span></button>`).join('')}`).join('')}</div>
+    <div class="al-wrap"><div class="al-list">${RECIPE_GROUPS.map(([g, f]) => `<div class="sd-h">${g.toUpperCase()}</div>${rs.filter(f).map(r => `<button class="al-r${r === cur ? ' on' : ''}" data-act="al-sel" data-r="${r.id}"><div class="rw-i" data-tip="${r.output.item}">${iconUrl(r.output.item) ? `<img src="${iconUrl(r.output.item)}" alt="">` : ''}</div><span>${esc(get(r.output.item).name)}<small>${r.hours} h</small></span></button>`).join('')}`).join('')}</div>
     <div class="al-detail"><h3>${esc(get(cur.output.item).name)}</h3><p class="mut">${esc(get(cur.output.item).about || cur.note || '')}</p>
       <div class="sd-h">PER BREW · ${cur.hours} HOURS${cur.quality ? ' · QUALITY ROLLED' : ''}</div>${costRow(cur.inputs.map(c => ({ ...c, qty: c.qty * n })))}
       <div class="al-n"><button data-act="al-n" data-d="-1">−</button><span>×${n}</span><button data-act="al-n" data-d="1">+</button><small>${cur.hours * n} hours in one furnace</small></div>
@@ -434,7 +434,7 @@ App.register('market', {
       <div class="mk panel"><div class="tabs">${shops.map(s => `<button class="${s === tab ? 'on' : ''}" data-act="tab" data-t="${s}">${esc(get(s).name)}</button>`).join('')}</div>
         <p class="mut">${tab === 'shop:merit_exchange' ? 'Tao Yao trades the Sect\'s stores for Sect Merit, earned from duties and expeditions.' : 'Madam Jin\'s guild sells a little of everything.'} Limits refresh every Monday. Nothing here costs real money.</p>
         <div class="mk-grid">${shop.stock.map((row, i) => { const id = row.item || row.cur, left = stockLeft(tab, i), price = row.price[0];
-          return `<div class="mk-i${left <= 0 ? ' sold' : ''}"><div class="rw-i">${iconUrl(id) ? `<img src="${iconUrl(id)}" alt="">` : '<span class="g">物</span>'}${row.qty > 1 ? `<em>${row.qty}</em>` : ''}</div>
+          return `<div class="mk-i${left <= 0 ? ' sold' : ''}"><div class="rw-i" data-tip="${id}">${iconUrl(id) ? `<img src="${iconUrl(id)}" alt="">` : '<span class="g">物</span>'}${row.qty > 1 ? `<em>${row.qty}</em>` : ''}</div>
             <b>${esc(get(id).name)}</b><small>${row.limit ? `${Math.max(0, left)} of ${row.limit} left` : 'No limit'}</small>
             <button class="btn sm${left > 0 && canPay(row.price) ? '' : ' off'}" data-act="buy" data-i="${i}"><img class="ic" src="${iconUrl(price.cur || price.item)}" alt="">${compact(price.qty)}</button></div>`; }).join('')}</div></div>`;
     App.bind(el, {

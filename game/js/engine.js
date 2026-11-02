@@ -203,6 +203,8 @@ const STATUS = {
 /** Data id (status:frost_seal) or short id (frost) -> short id. */
 const SID = Object.fromEntries(Object.entries(STATUS).map(([k, v]) => [v.id, k]));
 const sid = (x) => (STATUS[x] ? x : SID[x]);
+/** A status's name, glyph, colour and words, by engine id or data id (for tooltips). */
+export const statusInfo = x => STATUS[sid(x)] || null;
 
 // Fortuitous Encounters (奇遇): offered on even rounds, bought with Spirit Qi. rarity 1 common, 2 rare, 3 legendary.
 const ENCOUNTERS = [
@@ -618,7 +620,7 @@ function createCard(u, parent) {
         ${u.side === 'hero' && u.petals >= 6 ? `<div class="c-bloom" title="Full Bloom">${'<i></i>'.repeat(8)}</div>` : ''}
         <div class="c-frame"></div>
         <div class="c-head">
-          <div class="c-phase" title="${ph.name}">${ph.glyph}</div>
+          <div class="c-phase" data-tip="phase:${u.phase}">${ph.glyph}</div>
           <div class="c-name">${u.name}</div>
           <div class="c-lvl">${u.lvl}</div>
         </div>
@@ -669,7 +671,7 @@ function refreshCard(u, first = false) {
   });
   // statuses
   const st = el.querySelector('.c-status');
-  st.innerHTML = u.status.map(s => { const d = STATUS[s.id]; const n = s.stacks > 1 ? '×' + s.stacks : (s.turns > 0 && s.turns < 50 && s.id !== 'shield' ? s.turns : ''); return `<i class="${d.debuff ? 'debuff' : 'buff'}" style="--sc:${d.color}" title="${d.name}">${d.glyph}${n !== '' ? `<em>${n}</em>` : ''}</i>`; }).join('');
+  st.innerHTML = u.status.map(s => { const d = STATUS[s.id]; const n = s.stacks > 1 ? '×' + s.stacks : (s.turns > 0 && s.turns < 50 && s.id !== 'shield' ? s.turns : ''); return `<i class="${d.debuff ? 'debuff' : 'buff'}" style="--sc:${d.color}" data-tip="status:${s.id}">${d.glyph}${n !== '' ? `<em>${n}</em>` : ''}</i>`; }).join('');
   if (u.qiShield) el.querySelectorAll('.c-qi i').forEach((s, i) => s.classList.toggle('on', i < u.qiShield.cur));
   if (u.side === 'hero') el.querySelectorAll('.c-slots i').forEach((s, i) => {
     const a = u.attached[i]; s.className = a ? `r${a.rarity}` : ''; s.textContent = a ? a.glyph : ''; s.title = a ? a.name : 'Empty encounter slot';
@@ -2723,7 +2725,7 @@ const ui = {
     const keys = side === 'hero' ? CYCLE : [...CYCLE, 'yin'];
     el.innerHTML = keys.map(k => {
       const p = PHASES[k], n = B.points[side][k] || 0;
-      return `<div class="orb${n ? ' on' : ''}" data-ph="${k}" style="--pc:${p.color}" title="${p.name}: +${n * 8}% ${p.name} damage and healing"><i>${p.glyph}</i><b>${n}</b>${side === 'hero' ? `<small>+${n * 8}%</small>` : ''}</div>`;
+      return `<div class="orb${n ? ' on' : ''}" data-ph="${k}" style="--pc:${p.color}" data-tip="phase:${k}" data-tip-note="Phase Qi ${n}: +${n * 8}% ${p.name} damage and healing for this side"><i>${p.glyph}</i><b>${n}</b>${side === 'hero' ? `<small>+${n * 8}%</small>` : ''}</div>`;
     }).join('');
   },
   waveInfo(i, n) { $('#wave').textContent = i + 1 === n ? 'Boss wave' : `Wave ${i + 1}/${n}`; },

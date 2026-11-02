@@ -7,7 +7,12 @@ import { qty, persist, settings } from './state.js';
 export const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 export const PH_COLOR = { water: '#7cc6ff', wood: '#86e38f', fire: '#ff8048', earth: '#e4b45a', metal: '#efe6c8', yin: '#b98cff', yang: '#ffd36a' };
 export const PH_GLYPH = { water: '水', wood: '木', fire: '火', earth: '土', metal: '金', yin: '阴', yang: '阳' };
-export const phTag = p => `<span class="ph-tag" style="--pc:${PH_COLOR[p] || '#ccc'}">${PH_GLYPH[p] || '?'}</span>`;
+export const phTag = p => `<span class="ph-tag" data-tip="phase:${p}" style="--pc:${PH_COLOR[p] || '#ccc'}">${PH_GLYPH[p] || '?'}</span>`;
+// What a tooltip shows for things that are not records (a salvaged piece, an artefact reward, a drop's gear odds): kept
+// here under a key that goes in data-tip (tips.js reads it back); the oldest go once there are a few hundred.
+const TIP_OBJ = new Map(); let tipSeq = 0;
+export function tipObject(o) { const k = `obj:${++tipSeq}`; TIP_OBJ.set(k, o); if (TIP_OBJ.size > 400) TIP_OBJ.delete(TIP_OBJ.keys().next().value); return k; }
+export const tipObjectOf = k => TIP_OBJ.get(k);
 /** A character speaking in a dialogue: her standing art (upper body, no background) beside the words. */
 export const npcSays = (id, html) => {
   const u = standUrl(id) || npcUrl(id) || (id.startsWith('hero:') ? faceUrl(id) : null);
@@ -25,7 +30,8 @@ export const pieceIconUrl = p => (hasArt(`icons/${pieceIcon(p)}.webp`) ? `assets
 export function gearTile(p, opts = {}) {
   const icon = pieceIconUrl(p), col = rarityColor(p.rarity);
   const set = p.set ? get(p.set) : null;
-  return `<div class="gt rar-${keyOf(p.rarity)} ${opts.cls || ''}${opts.sel ? ' sel' : ''}${p.lock ? ' locked' : ''}" ${p.id ? `data-pid="${p.id}"` : ''} style="--rc:${col}" title="${esc(get(p.rarity)?.name)} ${esc(pieceName(p))}">
+  const tip = p.id ? `gear:${p.id}` : tipObject({ piece: p, salvaged: opts.salvaged || null });
+  return `<div class="gt rar-${keyOf(p.rarity)} ${opts.cls || ''}${opts.sel ? ' sel' : ''}${p.lock ? ' locked' : ''}" ${p.id ? `data-pid="${p.id}"` : ''} data-tip="${tip}" style="--rc:${col}" aria-label="${esc(get(p.rarity)?.name)} ${esc(pieceName(p))}">
     ${icon ? `<img src="${icon}" alt="">` : `<span class="g">${slotGlyph(p.slot)}</span>`}
     ${p.kind !== 'art' ? `<i class="tr">${ROMAN[tierOrder(p.tier)]}</i>` : ''}${p.plus ? `<b class="pl">+${p.plus}</b>` : ''}
     ${set ? `<span class="sg" style="--sc:${SET_COLOR[p.set] || '#ccc'}">${esc(set.cn[0])}</span>` : ''}
@@ -44,18 +50,17 @@ export function mergeRewards(list) {
 }
 /** A reward chip: icon (or glyph) with its quantity. Gear pieces show as tiles. */
 export function rewardChip(r, cls = '') {
-  if (r.gear) return gearTile(r.gear, { cls: `rw-g ${cls}${r.salvaged ? ' salv' : ''}` });
+  if (r.gear) return gearTile(r.gear, { cls: `rw-g ${cls}${r.salvaged ? ' salv' : ''}`, salvaged: r.salvaged });
   if (r.art) return gearTile({ kind: 'art', slot: 'slot:artefact', art: r.art, rarity: r.rarity || 'rarity:rare', plus: 0 }, { cls: `rw-g ${cls}` });
   if (r.gearOdds) { // a drop table's gear: the best rarity it can roll, its tier, and the odds on hover
     const g = r.gearOdds, best = Object.keys(g.rarityOdds).sort((a, b) => get(b).order - get(a).order)[0];
-    const odds = Object.entries(g.rarityOdds).map(([k, v]) => `${get(k).name} ${Math.round(v * 100)}%`).join(' · ');
-    return `<div class="gt rw-g rar-${keyOf(best)} ${cls}" style="--rc:${rarityColor(best)}" title="Gear, tier ${ROMAN[tierOrder(g.tier)]}${g.sets || g.set ? ' with a set' : ''}: ${odds}${r.chance < 1 ? ` (${Math.round(r.chance * 100)}% a run)` : ''}"><span class="g">器</span><i class="tr">${ROMAN[tierOrder(g.tier)]}</i></div>`;
+    return `<div class="gt rw-g rar-${keyOf(best)} ${cls}" style="--rc:${rarityColor(best)}" data-tip="${tipObject({ odds: g, chance: r.chance })}" aria-label="Gear, tier ${ROMAN[tierOrder(g.tier)]}"><span class="g">器</span><i class="tr">${ROMAN[tierOrder(g.tier)]}</i></div>`;
   }
   const id = r.cur || r.item || r.hero || r.art || r.id, rec = get(id);
   const icon = r.hero ? faceUrl(r.hero) : iconUrl(id);
   const glyph = r.art ? '宝' : (r.hero ? '花' : '物');
   const n = r.hero ? '' : (r.qty > 1 || r.cur ? num(r.qty) : '');
-  return `<div class="rw-i ${cls}" title="${esc(rec?.name || id)}${r.qty > 1 ? ' ×' + r.qty : ''}">${icon ? `<img src="${icon}" alt="">` : `<span class="g">${glyph}</span>`}${n ? `<em>${n}</em>` : ''}</div>`;
+  return `<div class="rw-i ${cls}" data-tip="${esc(id)}" aria-label="${esc(rec?.name || id)}${r.qty > 1 ? ' ×' + r.qty : ''}">${icon ? `<img src="${icon}" alt="">` : `<span class="g">${glyph}</span>`}${n ? `<em>${n}</em>` : ''}</div>`;
 }
 
 const SCREENS = {};
@@ -89,6 +94,7 @@ export const App = {
   /** The Android back button: close the open dialog, offer to retreat from a battle, go back a screen, or (on the
    *  Pavilion Hall and the title) put the game in the background instead of quitting it. */
   hardwareBack() {
+    if (this.closeTip && this.closeTip()) return true;
     const dlg = [...this.stage.querySelectorAll('.dlg-wrap')].pop();
     if (dlg) { dlg.dispatchEvent(new MouseEvent('click', { bubbles: true })); return true; }
     if (this.battleEl.classList.contains('on')) { if (!BT.B.over && ui.onRetreat) ui.onRetreat(); return true; }
@@ -102,7 +108,7 @@ export const App = {
       ${back ? '<button class="tb-back" data-act="back" aria-label="Back">‹</button>' : ''}
       ${title ? `<div class="tb-title"><b>${esc(title)}</b>${cn ? `<small>${esc(cn)}</small>` : ''}</div>` : ''}
       <div class="tb-sp"></div>${extra}
-      ${chips.map(c => `<div class="chip" data-chip="${c}" title="${esc(get(c)?.name)}"><img src="${iconUrl(c)}" alt=""><b>${num(qty(c))}</b></div>`).join('')}
+      ${chips.map(c => `<div class="chip" data-chip="${c}" data-tip="${c}" aria-label="${esc(get(c)?.name)}"><img src="${iconUrl(c)}" alt=""><b>${num(qty(c))}</b></div>`).join('')}
     </div>`;
   },
   bumpChips() {
