@@ -31,4 +31,4 @@ node tools/validate.mjs --report docs/data-report.md
 
 It fails on any broken link, any record the game cannot reach from its root, any item with no source or no use, and the game's own rules (realm bands, gear tiers, heroine kits, wave sizes). It needs only Node.js.
 
-The specification is a snapshot of the working document as of November 1, 2026.
+The specification is a snapshot of the working document as of November 2, 2026.

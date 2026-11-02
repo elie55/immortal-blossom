@@ -1,6 +1,6 @@
 # Immortal Blossoms Game Specification
 
-November 1, 2026 · Elie
+November 2, 2026 · Elie
 
 Immortal Blossoms is a premium, fully offline, landscape card-battle RPG for Android. You rebuild a fallen sect by gathering female cultivators, raising them through the cultivation realms and fighting fast card battles inspired by SPAM, with Epic Seven's hero-building depth, no shop, no stamina wall and no PvP.
 
@@ -123,22 +123,22 @@ The strong-against column is the classic overcoming cycle: Metal cuts Wood, Wood
 
 ### Rarity and identity
 
-- Three rarities: **3★ Bud**, **4★ Bloom** and **5★ Celestial**. Rarity sets a heroine's base stats and growth, never her ceiling: every heroine can reach level 80 and open all six Dao Blossom petals.
-- Each heroine has a flower (her Dao Blossom), a home faction, a zodiac sign from the twelve Earthly Branches (it sets her birthday and gift tastes) and two to four relationships with other heroines.
+- Three rarities: **3★ Bud**, **4★ Bloom** and **5★ Celestial**. Rarity sets a heroine's base stats and growth, never her ceiling: every heroine can reach level 80 and open all six Dao Blossom petals. The steps are small: against her path's 4★ standard, a 3★ heroine has 92% of the stats and a 5★ heroine 108%, and the data checker enforces it.
+- Each heroine has a flower (her Dao Blossom), a home faction, a zodiac sign from the twelve Earthly Branches (it sets her birthday and gift tastes), two to four relationships with other heroines, and often a Twin Bloom combo (below). Her name is always Chinese, such as Wei Zi 魏紫: the flower is her emblem, never her name.
 - Launch split: 10 heroines per rarity, spread so that every path has at least one 5★.
 
 ### Launch roster grid
 
-Each cell is a flower motif, the seed of a heroine's concept, colours and skills. Names come during production.
+Each heroine has a Chinese name; her flower is the seed of her concept, colours and skills. Names and kits beyond the four founders are first drafts for review.
 
 | Path | Metal | Wood | Water | Fire | Earth |
 | --- | --- | --- | --- | --- | --- |
-| Sword | Gladiolus (“sword orchid”) | Orchid | **Ling Shuang**, plum blossom | Pomegranate blossom | Crabapple |
-| Guardian | Magnolia | Wisteria | Camellia | Azalea | Peony |
-| Shadow | Pear blossom (storm-of-needles hidden weapons) | **Mo Yingyue**, night-blooming epiphyllum | Iris | Rose | Oleander (poisons) |
-| Talisman | Jasmine | Peach blossom (peach wood wards off evil) | Narcissus (“water immortal”) | Hibiscus (the Fusang sun tree) | Daylily |
-| Arcane | Osmanthus (the moon palace tree) | Apricot blossom | Snow lotus | **Yan Feihong**, phoenix flower | Trumpet creeper (“soaring to the clouds”) |
-| Healer | Chrysanthemum (a medicinal flower) | Lily | Hydrangea | Safflower (a medicinal herb) | **Su Lianhua**, lotus |
+| Sword | Shang Jianlan 商剑兰 5★, gladiolus (sword orchid) | Gu Youlan 谷幽兰 5★, orchid | **Ling Shuang** 凌霜 4★, plum blossom | Zhu Liuhuo 朱榴火 4★, pomegranate blossom | Tang Mian 棠眠 3★, crabapple |
+| Guardian | Jiang Yulan 江玉兰 4★, magnolia | Teng Yin 藤荫 4★, wisteria | Lin Chaxue 林茶雪 3★, camellia | Du Tihong 杜啼红 3★, azalea | Wei Zi 魏紫 5★, peony |
+| Shadow | Li Qianshu 黎千树 4★, pear blossom | **Mo Yingyue** 墨影月 4★, night-blooming epiphyllum | Lan Yuan 蓝鸢 3★, iris | Hu Qiangwei 胡蔷薇 5★, rose | She Qingzhu 佘青竹 5★, oleander |
+| Talisman | Ning Suxin 宁素馨 3★, jasmine | Yu Lei 郁蕾 3★, peach blossom | Bai Lingbo 白凌波 5★, narcissus (water immortal) | Sang Chaoxi 桑朝曦 5★, hibiscus (the Fusang sun tree) | Xuan Wangyou 萱忘忧 4★, daylily |
+| Arcane | Gui Chanjuan 桂婵娟 5★, osmanthus (the moon palace tree) | Wen Xingyu 温杏雨 5★, apricot blossom | Xue Lianxin 雪莲心 4★, snow lotus | **Yan Feihong** 炎飞虹 4★, phoenix flower | Qiao Lingxiao 乔凌霄 3★, trumpet creeper |
+| Healer | Ju Yannian 鞠延年 3★, chrysanthemum | An Baihe 安百合 3★, lily | Ying Wucai 应五彩 5★, hydrangea | Fang Yanzhi 方胭脂 3★, safflower | **Su Lianhua** 苏莲华 4★, lotus |
 
 First Yin and Yang heroines for updates: red spider lily (the Netherworld flower) and datura for Yin, golden lotus and sunflower for Yang.
 
@@ -152,6 +152,35 @@ First Yin and Yang heroines for updates: red spider lily (the Netherworld flower
 | Yan Feihong, Vermilion Phoenix Arcanist | Fire, Arcane | Phoenix flower (flame tree) | Burns every enemy; S3 summons the Vermilion Phoenix, stronger against burning enemies | Chapter 4 |
 
 They are 4★ Bloom heroines given by the story. Together they form the chain Water → Wood → Fire → Earth, a full four-link Harmony chain (see Combat).
+
+### Twin Blooms 并蒂
+
+A Twin Bloom is a named combo between two heroines, active while both are on the team. Every 5★ heroine has at least two, one of them with another 5★, and several let a 3★ or 4★ heroine power up a 5★. Formation lists a team's Twin Blooms with a hint on how to fire them, and the card shows the combo's name when it fires.
+
+| Twin Bloom | Heroines | What happens |
+| --- | --- | --- |
+| Sun and Moon 日月同辉 | Sang Chaoxi 5★ and Gui Chanjuan 5★ | When Ten Suns over Fusang and The Cold Palace Descends are cast in the same turn, the second becomes an Eclipse: +50% damage, and every enemy it hits is Soul Shocked for 1 turn. |
+| Reflected Florets 镜花剑影 | Bai Lingbo 5★ and Shang Jianlan 5★ | When Bai Lingbo's reflection recasts one of Shang Jianlan's techniques, it strikes at full power instead of 60%. A reflected Thousand Florets, One Edge keeps climbing: its seven strikes start at +70%. |
+| Sweet Poison 蔷薇夹竹 | Hu Qiangwei 5★ and She Qingzhu 5★ | Every Heart Demon stack counts as a separate debuff for She Qingzhu's damage bonuses. When Heart Demon turns an enemy against its ally, the strike also passes all its Gu Venom to that ally. |
+| Wind and Thunder 风雷相薄 | Gu Youlan 5★ and Wen Xingyu 5★ | When Wen Xingyu's area technique hits, Gu Youlan follows up on the first enemy hit for 60% ATK, and each follow-up gives Wen Xingyu 3 Haste. Gu Youlan deals 20% more damage to Entangled enemies. |
+| Hundred Flowers Banquet 百花宴 | Wei Zi 5★ and Ying Wucai 5★ | An ally shielded by Wei Zi also gains Ying Wucai's current colour for 1 turn (Metal Sword Intent, Wood Wind Step, Water Lotus Dew, Fire Surging Qi, Earth Iron Body). When one of Wei Zi's shields breaks, Ying Wucai heals that ally for 50% of the shield's value. |
+| Moonlight Takes Colour 月映绣球 | Ying Wucai 5★ and Gui Chanjuan 5★ | Gui Chanjuan's techniques take the phase that overcomes the most living enemies, as moonlight takes the hydrangea's colour. The borrowed phase also sets her Phase Qi. |
+| The Queen's Thorns 国色带刺 | Wei Zi 5★ and Hu Qiangwei 5★ | An enemy Provoked by Wei Zi gains a Heart Demon stack each time it hits her. Each time Heart Demon turns an enemy against its ally, the team gains 1 Spirit Qi. |
+| Golden Crow, Vermilion Phoenix 金乌朱雀 | Sang Chaoxi 5★ and Yan Feihong 4★ | When Ten Suns over Fusang hits a burning enemy, its Fire Poison burns all its remaining damage at once, and Yan Feihong's ultimate comes 1 turn closer. |
+| Moonlit Jasmine 月下茉莉 | Gui Chanjuan 5★ and Ning Suxin 3★ | Karmic Marks from either of them last 1 turn longer. Wu Gang's Endless Axe grows one extra step (+10%) for each Karmic-Marked enemy it hits. |
+| Snow on Still Water 静水落雪 | Bai Lingbo 5★ and Xue Lianxin 4★ | When Bai Lingbo reflects Thousand-Year Snow Lotus, the reflection Frost Seals every enemy it hits. While both stand, every Frost Seal that breaks gives the team 1 Spirit Qi, with no limit per turn. |
+| Ten Thousand Cuts 万刃破罡 | Shang Jianlan 5★ and Li Qianshu 4★ | Every strike of Thousand Florets, One Edge breaks 1 extra Qi shield segment. When Li Qianshu Shatters a boss's Qi shield, Shang Jianlan's ultimate is ready at once. |
+| Thorns in the Night 夜昙蔷薇 | Hu Qiangwei 5★ and Mo Yingyue 4★ | Mo Yingyue's critical hits add a Heart Demon stack. Hu Qiangwei's techniques add 1 extra Heart Demon stack to Soul Shocked enemies. |
+| Poison into Medicine 药毒同源 | She Qingzhu 5★ and Ju Yannian 3★ | Each time Gu Venom ticks on an enemy, Ju Yannian turns 30% of the damage into healing for the most injured ally. When Every Petal a Poison makes the venom burst, every ally recovers 15% of the damage. |
+| Plum and Orchid 梅兰 | Ling Shuang 4★ and Gu Youlan 5★ | When Ling Shuang's single-target technique hits, Gu Youlan follows up for 60% ATK (once per turn). Her follow-ups never break Frost Seal, so Ling Shuang's finisher still counts it. |
+| Peach and Apricot 桃李争春 | Wen Xingyu 5★ and Yu Lei 3★ | Entangles from either of them last 1 turn longer. Spring Thunder deals 50% more damage to Entangled enemies. |
+| Phoenix Among Peonies 凤戏牡丹 | Wei Zi 5★ and Yan Feihong 4★ | When a burning enemy hits Wei Zi, its Fire Poison flares and deals all its remaining damage at once. Yan Feihong's Fire Poison lasts 1 turn longer on enemies Wei Zi has Provoked. |
+| Frost and Thunder 霜雷 | Ling Shuang 4★ and Mo Yingyue 4★ | When Mo Yingyue hits a Frost Sealed enemy, the seal shatters for +60% damage instead of +30%, and the enemy is Soul Shocked for 1 turn. |
+| Returned Karma 因果回报 | Su Lianhua 4★ and Ning Suxin 3★ | Each debuff Su Lianhua removes from an ally lands on the enemy with the fewest debuffs, and the team gains 1 Spirit Qi for each (up to 2 a turn). |
+| The Crabapple Sleeps 海棠春睡 | Tang Mian 3★ and Xuan Wangyou 4★ | Xuan Wangyou's Lotus Dream chances rise by 25%. Tang Mian deals 30% more damage to dreaming enemies, and the blow that wakes them Body Shatters them for 1 turn. |
+| Red Fire Season 榴火杜鹃 | Zhu Liuhuo 4★ and Du Tihong 3★ | An enemy that hits Du Tihong gains a Sword Wound stack. Thousand Seeds Burst also makes the target's Fire Poison burn all its remaining damage at once. |
+
+Frost and Thunder, Phoenix Among Peonies and Returned Karma come with the vertical slice's six heroines. All Twin Blooms are first drafts in data/heroines/combos.json.
 
 ### What every heroine needs (production checklist)
 
@@ -829,7 +858,7 @@ The game stays a web app: the card prototype's HTML, CSS, Canvas and JavaScript 
 
 ### Data model
 
-All content lives in the repository's data/ folder as JSON. Every record has a typed id, such as hero:ling\_shuang or item:qi\_gathering\_pill, and links to other records by id. tools/validate.mjs fails on any broken link, any record the game cannot reach, and any item with no source or no use; docs/data-model.md explains the format.
+All content lives in the repository's data/ folder as JSON. Every record has a typed id, such as hero:ling\_shuang or item:qi\_gathering\_pill, and links to other records by id. tools/validate.mjs fails on any broken link, any record the game cannot reach, and any item with no source or no use; docs/data-model.md explains the format. tools/build\_game.py turns data/ into the game's data module and bundles the vertical slice in game/ into one page.
 
 | Folder | Holds |
 | --- | --- |
@@ -861,7 +890,7 @@ One heroine costs about 5 or 6 ChatGPT images (card, cut-in, three expressions, 
 
 - Combat demo, done: four heroines against two wraiths with 39 AutoSprite animations. Its effects engine carries over.
 - Card battle prototype, done: the four Blossoms against two waves and the Netherflame Matriarch, with Harmony chains, Phase Qi, Spirit Qi, Fortuitous Encounters, the Qi shield, the Heavenly Tribulation and a 23-step tutorial.
-- Vertical slice: Pavilion Hall, Journey chapter 1 (8 stages), Formation, card battles with Haste, victory flow, heroine overview, Cultivate and Breakthrough, Fate Pond, saving; 6 heroines. Gate: 30 minutes of play from start to finish on a phone.
+- Vertical slice, playable in the browser: Pavilion Hall, Journey chapter 1 (8 stages and 11 scenes), Formation, card battles with Haste, Kindred Qi and three Twin Blooms, victory flow, heroine overview, Cultivate and Breakthrough, Fate Pond with a guided first summon, saving with save codes; 10 heroines. Everything it shows comes from the data. Left for its gate: the Android build with Capacitor and 30 minutes timed on a phone.
 - Core loop alpha: Volume 1 complete, gear, hunts, Medicine King Valley and the Forge, the Sect's caves, garden, alchemy and missions, meridians, techniques, Dao Blossom and bonds; 14 heroines. Gate: 15 hours of content with a simulated economy.
 - Content beta: pagoda, Secret Realms, shrines, Sect Grand Competition, Trial Tower and raid; 30 heroines; a balance pass. Gate: a closed test on Google Play.
 - Launch: polish, audio, localization, store page and price.

@@ -111,7 +111,7 @@ Each row lists the record types a type links to, with the number of links.
 | Shop | Currency 40, Item 36, Character 4, Location 4, Dao Insight 2 |
 | Spirit Artefact | Cultivation path 12, Status effect 3, Stat 2 |
 | Spirit beast | Item 7 |
-| Stage or battle | Enemy 1883, Currency 396, Realm 338, Gear tier 338, Game mode 323, Location 323, Stage or battle 264, Drop table 248, Phase 200, Item 190, Demon Hunt 65, Story scene 57, Story chapter 45, Tower 30, Raid beast 15, Heroine 13, Spirit Artefact 9, Rarity 9, Character 9, Battle Array 4, Shop 2, Summon pool 1, Sect building 1, Title 1 |
+| Stage or battle | Enemy 1883, Currency 396, Realm 338, Gear tier 338, Game mode 323, Location 323, Stage or battle 264, Drop table 248, Phase 200, Item 191, Demon Hunt 65, Story scene 57, Story chapter 45, Tower 30, Raid beast 15, Heroine 13, Spirit Artefact 9, Rarity 9, Character 9, Battle Array 4, Shop 2, Summon pool 1, Sect building 1, Title 1 |
 | Story chapter | Stage or battle 49, Currency 20, Gear tier 10, Location 5, Enemy 5, Item 5, Heroine 4 |
 | Story scene | Heroine 407, Character 394, Location 57 |
 | Summon pool | Heroine 40, Currency 2 |
@@ -178,7 +178,7 @@ Each row lists the record types a type links to, with the number of links.
 | Spirit Condensing Pill | Drop table ×10, Recipe ×1, Stage or battle ×6 | Game system ×1 |
 | Heaven and Earth Pill | Drop table ×10, Recipe ×1 | Game system ×1 |
 | Nine-Revolution Golden Pill | Drop table ×3, Recipe ×1 | Game system ×1 |
-| Foundation Pill | Recipe ×1, Stage or battle ×1 | Realm ×1, Game system ×1 |
+| Foundation Pill | Recipe ×1, Stage or battle ×2 | Realm ×1, Game system ×1 |
 | Golden Core Pill | Recipe ×1, Stage or battle ×1 | Realm ×1, Game system ×1 |
 | Nascent Soul Pill | Recipe ×1 | Realm ×1, Game system ×1 |
 | Severing Pill | Recipe ×1 | Realm ×1, Game system ×1 |
