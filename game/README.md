@@ -28,7 +28,7 @@ cd dist && python3 -m http.server     # then open http://localhost:8000
 
 Ten heroines have art in the slice: the four founders, Wei Zi (5★), and five 3★ heroines (Ning Suxin, Tang Mian, Lin Chaxue, An Baihe, Fang Yanzhi). The Fate Pond only offers heroines with art.
 
-Everyone who speaks in chapter 1 (Tao Yao, the four founders and six villagers and foes) has a standing figure with a transparent background in `assets/stand/<key>.webp`, made from `stand_<key>.png` in the Images folder (trimmed to the figure, 1200 px high). Scenes and the dialogues where a character talks (Tao Yao at the Fate Pond, Old Qian's cart) use it; a speaker without one falls back to her card or portrait.
+Everyone who speaks in chapter 1 (Tao Yao, the four founders and six villagers and foes) has a standing figure with a transparent background in `assets/stand/<key>.webp`, made from `stand_<key>.png` in the Images folder by `python3 tools/stand_art.py <Images folder>` (trimmed to the figure, 1200 px high, alpha kept). Scenes and the dialogues where a character talks (Tao Yao at the Fate Pond, Old Qian's cart) use it; a speaker without one falls back to her card or portrait.
 
 ## Code
 
