@@ -33,7 +33,7 @@ def cut(path, names, size=420):
     objs = []
     for i, sl in enumerate(ndimage.find_objects(lab), 1):
         core = (lab == i)
-        if core.sum() < 6000: continue
+        if core.sum() < 12000: continue
         halo = ndimage.binary_dilation(core, iterations=26) & (lum > 4)
         ys, xs = np.nonzero(halo)
         objs.append((ys.mean(), xs.mean(), (slice(ys.min(), ys.max() + 1), slice(xs.min(), xs.max() + 1)), halo))

@@ -4,6 +4,7 @@
 
 const board = Object.freeze({ get CARD() { return CARD; }, get geo() { return geo; }, get clearTweens() { return clearTweens; }, get layoutBoard() { return layoutBoard; }, get slotRect() { return slotRect; }, get center() { return center; }, get createCard() { return createCard; }, get placeCard() { return placeCard; }, get refreshCard() { return refreshCard; }, get tweenCard() { return tweenCard; }, get hitCard() { return hitCard; }, get lift() { return lift; }, get lunge() { return lunge; }, get updateBoard() { return updateBoard; }, get bindTilt() { return bindTilt; }, get dealIn() { return dealIn; } });
 const V = Object.freeze({ get view() { return view; }, get shakeState() { return shakeState; }, get initVfx() { return initVfx; }, get resizeVfx() { return resizeVfx; }, get shake() { return shake; }, get flash() { return flash; }, get COL() { return COL; }, get fx() { return fx; }, get ring() { return ring; }, get bolt() { return bolt; }, get beam() { return beam; }, get rays() { return rays; }, get orb() { return orb; }, get emitP() { return emitP; }, get floatText() { return floatText; }, get updateVfx() { return updateVfx; }, get renderVfx() { return renderVfx; } });
+import { MOTIF, phaseMotif, MOTIF_FX } from './motifs.js';
 const BT = Object.freeze({ get B() { return B; }, get on() { return on; }, get off() { return off; }, get emit() { return emit; }, get getUnit() { return getUnit; }, get heroes() { return heroes; }, get enemies() { return enemies; }, get foes() { return foes; }, get allies() { return allies; }, get has() { return has; }, get advantage() { return advantage; }, get startBattle() { return startBattle; }, get chainOrder() { return chainOrder; }, get addStatus() { return addStatus; }, get removeStatus() { return removeStatus; }, get cleanse() { return cleanse; }, get dispel() { return dispel; }, get phaseMul() { return phaseMul; }, get computeHit() { return computeHit; }, get applyDamage() { return applyDamage; }, get applyHealAmount() { return applyHealAmount; }, get killUnit() { return killUnit; }, get chainStep() { return chainStep; }, get addPoints() { return addPoints; }, get doCast() { return doCast; }, get canAct() { return canAct; }, get validTargets() { return validTargets; }, get selectTech() { return selectTech; }, get deselect() { return deselect; }, get toggleEmpower() { return toggleEmpower; }, get chooseTarget() { return chooseTarget; }, get endTurn() { return endTurn; }, get setAuto() { return setAuto; }, get rerollEncounter() { return rerollEncounter; }, get buyEncounter() { return buyEncounter; }, get cancelPending() { return cancelPending; }, get encounterTargets() { return encounterTargets; }, get forfeit() { return forfeit; }, get gainQi() { return gainQi; }, get flare() { return flare; }, get comboFire() { return comboFire; }, get atkOf() { return atkOf; }, get defOf() { return defOf; } });
 
 // ===== core =====
@@ -220,11 +221,11 @@ const ENCOUNTERS = [
   { id: 'heaven_pill', name: 'Heaven-Defying Pill', kind: 'Pill', rarity: 3, cost: 10, target: 'ally', glyph: '天', desc: 'Every technique of one heroine is ready at once.' },
 ];
 
-const FX_LIST = [
+const FX_LIST = [...new Set([
   'curse_sigil', 'fire_burst', 'fire_crescent', 'fire_sigil', 'ghost_burst', 'ghost_flame', 'ghost_skull', 'ghost_slash',
   'heal_burst', 'ice_burst', 'ice_crescent', 'ice_sigil', 'ice_sword', 'jade_pillar', 'lotus_bloom', 'lotus_petal',
-  'phoenix', 'thunder_blade', 'thunder_bolt', 'thunder_burst', 'thunder_x',
-];
+  'phoenix', 'thunder_blade', 'thunder_bolt', 'thunder_burst', 'thunder_x', ...MOTIF_FX,
+])];
 
 // ===== vfx =====
 // VFX layer: two transparent canvases (behind and in front of the cards) in stage coordinates.
@@ -1223,6 +1224,24 @@ function effTargets(x, e, techTarget) {
   }
 }
 
+/** A motif piece on a unit: a sprite over its card, sized and coloured by the motif. */
+const spriteAt = (key, c, o = {}) => (images['fx_' + key] ? V.fx(key, { x: c.x, y: c.y, w: o.w ?? 300, dur: o.dur ?? 600, s0: o.s0 ?? 0.7, s1: o.s1 ?? 1.15, bloom: o.bloom ?? 0.35, fadeIn: o.fadeIn ?? 0.03, rot: o.rot || 0, flip: o.flip, spin: o.spin || 0, back: o.back, alpha: o.alpha ?? 1, ay: o.ay }) : null);
+/** A leap: the caster rises and comes down on the target. Resolves with the way back. */
+async function leap(u, target) {
+  const a = board.center(u), b = board.center(target);
+  await board.tweenCard(u, { y: -160, s: 1.12, r: 0 }, 220, ease.outCubic);
+  await board.tweenCard(u, { x: (b.x - a.x) * 0.4, y: (b.y - a.y) * 0.4 - 10, s: 1.14, r: (b.x - a.x) * 0.01 }, 170, ease.inCubic);
+  return async () => { await wait(80); await board.tweenCard(u, { x: 0, y: u.side === 'hero' ? -16 : 16, r: 0, s: 1.07 }, 260, ease.outCubic); };
+}
+async function shadowStep(u, target) {
+  const a = board.center(u), b = board.center(target);
+  V.fx('ghost_slash', { x: a.x, y: a.y, w: 240, dur: 260, alpha: 0.6, fadeOut: 0.6 });
+  await board.tweenCard(u, { o: 0.15, s: 0.9 }, 110, ease.inQuad);
+  u.m.x = (b.x - a.x) * 0.42; u.m.y = (b.y - a.y) * 0.42;
+  await board.tweenCard(u, { o: 1, s: 1.12 }, 120, ease.outQuad);
+  return async () => { await wait(60); await board.tweenCard(u, { o: 0.2 }, 90, ease.inQuad); u.m.x = 0; u.m.y = 0; await board.tweenCard(u, { o: 1, s: 1.07, y: u.side === 'hero' ? -16 : 16 }, 140, ease.outQuad); };
+}
+
 SKILLS.generic = async function generic(x) {
   const { u, t, emp } = x;
   const fx = PHASE_FX[u.phase] || PHASE_FX.yin;
@@ -1234,19 +1253,43 @@ SKILLS.generic = async function generic(x) {
   const cu = C(u, 0.4);
   const dmgEffects = effects.filter(e => e.do === 'damage');
   const area = t.target === 'allEnemies' || dmgEffects.some(e => e.target === 'all_enemies');
+  const m = MOTIF[t.id] || phaseMotif(u.phase, melee, area);   // this technique's own look (motifs.js)
+  x.motif = m;
   let back = null;
-  // wind-up
-  if (dmgEffects.length) {
-    if (area) {
-      sfx('charge');
-      V.fx(fx.sigil, { x: cu.x, y: cu.y, w: 300, dur: 800, back: true, spin: 1.2, s0: 0.4, s1: 1 });
-      await wait(320);
-    } else if (melee && x.target && x.target.side !== u.side) {
-      sfx('dash'); back = await board.lunge(u, x.target, 0.34, 170);
-    } else if (x.target && x.target.side !== u.side) {
-      sfx('whoosh'); await projectile(fx.missile, cu, C(x.target), { w: 170, dur: 360, arc: 40, ax: 0.5, trail: fx.part === 'petal' ? 'petal' : 'glow', color: fx.col, rot: 0 });
-    }
+  // wind-up: the motif's sprite gathers over the caster
+  if (m.windup) {
+    sfx('charge');
+    spriteAt(m.windup[0], cu, { w: 300, dur: 820, back: true, spin: 1.1, s0: 0.35, s1: 1.05, alpha: 0.9 });
+    V.emitP('glow', cu.x, cu.y, 10, { color: m.windup[1] || fx.col, speed: [30, 140], spread: 40, life: [400, 800] });
+    await wait(dmgEffects.length ? 330 : 420);
   }
+  // the approach, or the missile, or the rain from above
+  const foeTarget = x.target && x.target.side !== u.side ? x.target : null;
+  if (dmgEffects.length && foeTarget && m.approach === 'lunge') { sfx('dash'); back = await board.lunge(u, foeTarget, 0.34, 170); }
+  else if (dmgEffects.length && foeTarget && m.approach === 'leap') { sfx('dash'); back = await leap(u, foeTarget); }
+  else if (dmgEffects.length && foeTarget && m.approach === 'step') { sfx('dash'); back = await shadowStep(u, foeTarget); }
+  if (dmgEffects.length && m.rain) {
+    const [key, n, w] = m.rain, ts = area ? foes(u) : (foeTarget ? [foeTarget] : foes(u).slice(0, 1));
+    sfx('whoosh');
+    for (const f of ts) { const c = C(f); for (let k = 0; k < n; k++) { const sx = c.x + (n > 1 ? rand(-60, 60) : 0); V.fx(key, { w, dur: 320, delay: k * 70, ay: 0.9, fadeIn: 0.05, fadeOut: 0.1, bloom: 0.4, rot: 0, path: kk => ({ x: sx, y: lerp(-120, c.y, ease.inQuad(kk)) }) }); } }
+    await wait(300 + (n - 1) * 70);
+  } else if (dmgEffects.length && m.missile && foeTarget && !back) {
+    const [key, trail, w] = m.missile;
+    sfx('whoosh'); await projectile(key, cu, C(foeTarget), { w, dur: 360, arc: 40, ax: 0.5, trail, color: m.part?.[1] || fx.col, rot: 0 });
+  } else if (dmgEffects.length && m.missile && area && !back) {
+    const [key, trail, w] = m.missile;
+    sfx('whoosh'); const ts = foes(u); ts.forEach((f, i) => wait(i * 60).then(() => projectile(key, cu, C(f), { w, dur: 340, arc: 40 + i * 10, ax: 0.5, trail, color: m.part?.[1] || fx.col })));
+    await wait(340 + ts.length * 60);
+  }
+  // the aura: buffs, heals and shields glow on their targets before the numbers
+  if (m.aura && !dmgEffects.length) {
+    const ts = effTargets(x, effects[0] || {}, t.target);
+    for (const a of ts) { const c = C(a); spriteAt(m.aura[0], { x: c.x, y: c.y + 10 }, { w: 300, dur: 900, back: true, s0: 0.5, s1: 1.1, alpha: 0.9 }); V.emitP(m.part?.[0] || 'glow', c.x, c.y, 8, { color: m.aura[1] || fx.col, speed: [30, 140], up: 60 }); }
+    sfx(m.sfx || 'heal'); await wait(300);
+  } else if (m.aura && dmgEffects.length) {
+    const c = C(u); spriteAt(m.aura[0], { x: c.x, y: c.y }, { w: 360, dur: 900, back: true, s0: 0.5, s1: 1.2, alpha: 0.85 });
+  }
+  const cam = m.camera || {};
   for (const e of effects) {
     if (!u.alive) break;
     const ts = effTargets(x, e, t.target);
@@ -1268,14 +1311,17 @@ SKILLS.generic = async function generic(x) {
             if (e.missingHealthBonus) p *= 1 + e.missingHealthBonus * (1 - f.hp / f.maxHp);
             if (e.bonusPerDebuff) p *= 1 + Math.min(0.5, e.bonusPerDebuff * f.status.filter(s => STATUS[s.id].debuff).length);
             if (e.rampPerHit) p *= 1 + e.rampPerHit * k;
-            V.fx(area ? fx.burst : (melee ? fx.slash : fx.burst), { x: c.x + rand(-14, 14), y: c.y + rand(-14, 14), w: area ? 260 : 320, dur: 460, rot: rand(-0.6, 0.6), flip: k % 2 === 1, s0: 0.75, s1: 1.12, bloom: 0.35, fadeIn: 0.02 });
-            V.emitP(fx.part, c.x, c.y, area ? 6 : 10, { color: fx.col, speed: [120, 420] });
-            sfx(k ? 'hit' : fx.sfx);
+            const mk = x.motif?.impact || (area ? fx.burst : (melee ? fx.slash : fx.burst)), mp = x.motif?.part || [fx.part, fx.col];
+            V.fx(mk, { x: c.x + rand(-14, 14), y: c.y + rand(-14, 14), w: area ? 270 : 330, dur: 480, rot: x.motif?.hits === 'spin' ? k * 1.2 : rand(-0.5, 0.5), flip: x.motif?.hits === 'flip' ? k % 2 === 1 : false, s0: 0.75, s1: 1.14, bloom: 0.38, fadeIn: 0.02 });
+            V.emitP(mp[0], c.x, c.y, area ? 7 : 11, { color: mp[1], speed: [120, 420] });
+            sfx(k ? 'hit' : (x.motif?.sfx || fx.sfx));
             const h = x.hit(f, p, { color: fx.col, small: hits > 1 || area, pierce: e.pierce, critBonus: e.critBonus, ignoreShields: e.ignoreShields });
             if (h) x.dealt = (x.dealt || 0) + h.dmg;
             if (h && e.detonate && f.alive) await x.flare(f, e.detonate === true ? 'burn' : e.detonate);
           }
-          if (area) V.shake(6, 220);
+          if (k === 0 && cam.flash) V.flash(cam.flash, 0.3);
+          if (k === 0 && cam.slow) { hitStop(90); slowMo(0.45, 380); }
+          if (area || cam.shake) V.shake(cam.shake || 6, 240);
           await wait(hits > 1 ? 120 : 200);
         }
         if (marked && combo('combo:moonlit_jasmine') && u.id === 'hero:gui_chanjuan') comboFire('combo:moonlit_jasmine', u, () => { t.extraSteps = (t.extraSteps || 0) + marked; });
@@ -1283,11 +1329,13 @@ SKILLS.generic = async function generic(x) {
       }
       case 'heal': {
         sfx('heal');
-        for (const a of ts) { const c = C(a); V.fx('heal_burst', { x: c.x, y: c.y, w: 240, dur: 650 }); V.emitP('petal', c.x, c.y, 8, { color: 'jade', speed: [30, 140], up: 60 }); x.heal(a, e.power || 0.8, { pctMaxHp: e.pctMaxHp }); }
+        const hk = x.motif?.aura?.[0] || 'heal_burst', hc = x.motif?.aura?.[1] || 'jade';
+        for (const a of ts) { const c = C(a); V.fx(hk, { x: c.x, y: c.y, w: 260, dur: 700, s0: 0.6, s1: 1.15, bloom: 0.35 }); V.emitP(x.motif?.part?.[0] || 'petal', c.x, c.y, 8, { color: hc, speed: [30, 140], up: 60 }); x.heal(a, e.power || 0.8, { pctMaxHp: e.pctMaxHp }); }
         await wait(260); break;
       }
       case 'shield': {
-        for (const a of ts) { const c = C(a); V.ring({ x: c.x, y: c.y, r0: 40, r1: 190, color: 'gold', width: 10, dur: 560 }); x.shield(a, e.power || 0.8, { pctOfMaxHp: e.pctOfMaxHp, turns: e.turns }); }
+        const sk = x.motif?.aura?.[0] || 'bell_shield', sc = x.motif?.aura?.[1] || 'gold';
+        for (const a of ts) { const c = C(a); V.fx(sk, { x: c.x, y: c.y, w: 280, dur: 760, s0: 0.5, s1: 1.1, bloom: 0.3 }); V.ring({ x: c.x, y: c.y, r0: 40, r1: 190, color: sc === 'white' ? 'white' : 'gold', width: 8, dur: 560 }); x.shield(a, e.power || 0.8, { pctOfMaxHp: e.pctOfMaxHp, turns: e.turns }); }
         sfx('heal'); await wait(240); break;
       }
       case 'apply': {
@@ -2715,7 +2763,7 @@ const ui = {
       $('#team-name').textContent = def.team || 'Pavilion';
       $('.bg-loc', this.stage).style.backgroundImage = def.bg ? `url(${def.bg})` : '';
       const lead = BT.heroes()[0];
-      $('#pic-hero').style.backgroundImage = lead ? `url(assets/cards/${lead.art}.webp)` : '';
+      $('#pic-hero').style.backgroundImage = lead && lead.art ? `url(assets/cards/${lead.art}.webp)` : '';
     }
     this.refreshAll(); this.showChain();
   },
@@ -2755,7 +2803,7 @@ const ui = {
     $('#wave-n').textContent = `${i + 1}/${n}`;
     // the top bar's portrait: the wave's boss, or its first enemy
     const es = BT.enemies(), face = es.find(u => u.boss) || es[0];
-    $('#pic-enemy').style.backgroundImage = face ? `url(assets/cards/${face.art}.webp)` : '';
+    $('#pic-enemy').style.backgroundImage = face && face.art ? `url(assets/cards/${face.art}.webp)` : '';
   },
   setTurn(side) {
     const s = $('#seal'); s.classList.toggle('enemy', side === 'enemy');
