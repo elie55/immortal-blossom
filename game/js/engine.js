@@ -575,20 +575,19 @@ function drawTexts(ctx) {
 // Board: card DOM, slot layout, and a per-card motion model (offset tweens + shake + knockback + flash)
 // driven by the game clock, so impact frames and the x2 speed toggle apply to cards as well as VFX.
 
-const CARD = { w: 175, h: 250, gap: 36 };
-const geo = { W: 1600, H: 720, x0: 0, cx: 800, enemyY: 94, heroY: 362 };
+const CARD = { w: 160, h: 230, gap: 17 };
+const geo = { W: 1280, H: 720, x0: 199, cx: 546, enemyY: 126, heroY: 367 };
 const tweens = [];
 function clearTweens() { tweens.length = 0; }
 
-/** The whole screen is the battlefield: the enemies across the top, the heroines across the bottom, between the
- *  round buttons on the left and the turn column on the right; a wider screen shares its extra width between both
- *  sides. */
+/** The stage is the painted battle scene (assets/stage/battle.webp, 16:9): the cards sit on its stone board, enemies on
+ *  the top row and the heroines below, between its two carved bars; the right side holds its medallions. */
 function layoutBoard(W, H) {
   geo.W = W; geo.H = H;
   const rowW = 4 * CARD.w + 3 * CARD.gap;
-  geo.x0 = 100 + Math.round((W - 1280) / 2);
+  geo.x0 = 199 + Math.round((W - 1280) / 2);
   geo.cx = geo.x0 + rowW / 2;
-  geo.enemyY = 94; geo.heroY = geo.enemyY + CARD.h + 18;
+  geo.enemyY = 126; geo.heroY = 367;
 }
 /** Rect of a unit's card in stage coordinates. Enemy rows are centred whatever their size. */
 function slotRect(u) {
@@ -2627,39 +2626,37 @@ const ui = {
   stage: null, boardEl: null,
   init(stage) {
     this.stage = stage;
-    // the layout of the mockups: the board between two bars (each side's counters, Phase Qi orbs and portrait),
-    // the jade medallion and the turn controls on the right, round buttons on the left
+    // The painted stage carries the chrome (bars, wells, frames, medallions, round buttons): the DOM only places
+    // numbers, orbs, portraits, text and hit areas on it. Positions are in the stage's 1280x720 pixels (battle.css).
     const bar = (side) => `
       <div id="hud-${side === 'enemy' ? 'top' : 'bot'}" class="hud-bar ${side}">
-        <div class="hb-stats">${side === 'enemy'
-          ? '<div class="hb-stat" id="foes-box"><b id="foes">0</b><img src="assets/ui/emb_demon.webp" alt="" draggable="false"><small>Foes</small></div><div class="hb-stat sm"><b id="wave-n">1/1</b><small>Wave</small></div>'
-          : '<div class="hb-stat qi-box" id="qi-box"><b id="qi">0</b><img src="assets/ui/orb_qi.webp" alt="" draggable="false"><small>Spirit Qi</small><i id="qi-pop"></i></div><div class="hb-stat sm"><b id="qi-rate">+0</b><small>Per turn</small></div>'}</div>
-        <div class="hb-pool"><div class="pool" id="pool-${side}"></div></div>
-        <div class="hb-rolls"><i></i><i></i></div>
-        <div class="hb-port"><b id="${side === 'enemy' ? 'side-name' : 'team-name'}">${side === 'enemy' ? 'Enemies' : 'Pavilion'}</b><div class="hb-pic" id="pic-${side}"></div></div>
+        ${side === 'enemy'
+          ? '<div class="hb-num" id="foes-box"><b id="foes">0</b></div><div class="hb-num lo" id="wave-box"><b id="wave-n">1/1</b></div>'
+          : '<div class="hb-num" id="qi-box"><b id="qi">0</b><i id="qi-pop"></i></div><div class="hb-num lo" id="qi-rate-box"><b id="qi-rate">+0</b></div>'}
+        <div class="pool" id="pool-${side}"></div>
+        <div class="hb-port"><div class="hb-pic" id="pic-${side}"></div><b id="${side === 'enemy' ? 'side-name' : 'team-name'}">${side === 'enemy' ? 'Enemies' : 'Pavilion'}</b></div>
       </div>`;
     stage.insertAdjacentHTML('beforeend', `
-      <div id="bg"><div class="bg-img"></div><div class="bg-shade"></div><div class="bg-medal"></div></div>
+      <div id="bg"><div class="bg-img"></div><div class="bg-loc"></div></div>
       ${bar('enemy')}${bar('hero')}
+      <div id="rp">
+        <div class="scroll-round"><small>Round</small><b id="round">1</b></div>
+        <button id="b-end" class="endturn"><span>End Turn</span></button>
+        <div class="seal" id="seal"><b id="whose">Your turn</b><em id="wave">Wave 1/1</em></div>
+        <div id="mid"><div id="chain"></div></div>
+        <div id="techcard"></div>
+      </div>
       <div id="lp">
-        <button class="rb" id="b-auto" aria-label="Auto battle"><span>Auto</span></button>
-        <button class="rb" id="b-speed" aria-label="Battle speed"><span>×1</span></button>
-        <button class="rb" id="b-menu" aria-label="Menu"><i></i><i></i><i></i></button>
+        <button id="b-enc" class="enc"><i><img src="assets/ui/hall_market.webp" alt="" draggable="false"></i><span>Encounter</span></button>
+        <button class="rb" id="b-menu" aria-label="Menu"></button>
         <div class="menu-pop" id="menu-pop">
           <button id="b-help">How battles work</button>
           <button id="b-sound">Sound <b></b></button>
           <button id="b-restart">Retreat</button>
         </div>
       </div>
-      <div id="rp">
-        <div class="turn-row">
-          <button id="b-end" class="endturn"><span>End Turn</span></button>
-          <div class="seal" id="seal"><em id="wave">Wave 1/1</em><b>Round <span id="round">1</span></b><span id="whose">Your turn</span></div>
-        </div>
-        <div id="mid"><div id="chain"></div></div>
-        <div id="techcard"></div>
-        <button id="b-enc" class="enc"><i><img src="assets/ui/hall_market.webp" alt="" draggable="false"></i><span>Encounter</span></button>
-      </div>
+      <button class="rb" id="b-auto" aria-label="Auto battle"><span>Auto</span></button>
+      <button class="rb" id="b-speed" aria-label="Battle speed"><span>×1</span></button>
       <div id="world"><canvas id="fxb"></canvas><div id="board"></div><canvas id="fxf"></canvas></div>
       <div id="turnban"></div>
       <div id="banner"></div>
@@ -2716,7 +2713,7 @@ const ui = {
     if (def) {
       $('#side-name').textContent = def.side || 'Enemies';
       $('#team-name').textContent = def.team || 'Pavilion';
-      $('.bg-img', this.stage).style.backgroundImage = def.bg ? `url(${def.bg})` : '';
+      $('.bg-loc', this.stage).style.backgroundImage = def.bg ? `url(${def.bg})` : '';
       const lead = BT.heroes()[0];
       $('#pic-hero').style.backgroundImage = lead ? `url(assets/cards/${lead.art}.webp)` : '';
     }
@@ -2746,7 +2743,7 @@ const ui = {
   },
   renderPool(side) {
     const B = BT.B, el = $(`#pool-${side}`);
-    const keys = side === 'hero' ? CYCLE : [...CYCLE, 'yin'];
+    const keys = side === 'hero' ? [...CYCLE, 'yang'] : [...CYCLE, 'yin'];
     el.innerHTML = keys.map(k => {
       const p = PHASES[k], n = B.points[side][k] || 0;
       return `<div class="orb${n ? ' on' : ''}" data-ph="${k}" style="--pc:${p.color}" data-tip="phase:${k}" data-tip-note="Phase Qi ${n}: +${n * 8}% ${p.name} damage and healing for this side"><i><img src="assets/ui/orb_${k}.webp" alt="${p.glyph}" draggable="false"></i><b>${n}</b>${side === 'hero' ? `<small>+${n * 8}%</small>` : ''}</div>`;
@@ -2763,7 +2760,6 @@ const ui = {
   setTurn(side) {
     const s = $('#seal'); s.classList.toggle('enemy', side === 'enemy');
     $('#whose').textContent = side === 'hero' ? 'Your turn' : 'Enemy turn';
-    $('#b-end span').textContent = side === 'hero' ? 'End Turn' : 'Enemy Turn';
     $('#b-end').classList.toggle('theirs', side === 'enemy');
     $('#round').textContent = BT.B.round;
     this.refreshAll();
@@ -3030,7 +3026,7 @@ const STEPS = [
   { id: 'su-t', needSel: ['su', 0], target: () => BT.enemies().filter(e => e.alive).map(cardEl), place: 'below', wait: 'cast', allowEls: () => BT.enemies().map(cardEl),
     text: `Tap any enemy. That makes a <b>Harmony ×4</b>, worth +45% on the last link plus bonus Spirit Qi!` },
   { id: 'points', target: () => $('#pool-hero'), place: 'above', text: `Each technique also adds <b>Phase Qi</b> to the phase it feeds. Every point gives that phase <b>+8%</b> for the rest of the battle, so your chain grows stronger each turn.` },
-  { id: 'qi', target: () => $('#qi-box'), place: 'above', text: `<b>Spirit Qi</b> flows in every turn. Spend it to <b>✦ Empower</b> a technique, or on <b>Fortuitous Encounters</b>.` },
+  { id: 'qi', target: () => $('#qi-box'), place: 'right', text: `<b>Spirit Qi</b> flows in every turn. Spend it to <b>✦ Empower</b> a technique, or on <b>Fortuitous Encounters</b>.` },
   { id: 'mo2', target: () => techBtn('mo', 1), place: 'above', arrow: true, wait: 'selected', allowEls: () => [techBtn('mo', 1)], allow: (a, p) => a !== 'select' || p.t.chor === 'mo_s2',
     text: `Mo's <b>Shadow Lightning Step</b> is ready too, and it refreshes her Thunderfang Cross. It starts a new chain, which is fine. Tap it.` },
   { id: 'emp', target: () => $('#techcard .emp-btn'), place: 'left', wait: 'empower', allowEls: () => [$('#techcard .emp-btn')],
@@ -3041,7 +3037,7 @@ const STEPS = [
     text: `Thunderfang is ready again: use it if you like. Unused techniques keep their charge. When you are done, tap <b>End Turn</b>.` },
   { id: 'enemy', target: () => BT.enemies().filter(e => e.alive).map(u => u.el.querySelector('.c-techs')), place: 'below', onTurn: 'hero',
     text: `The enemy follows the same rules, Harmony included. Watch the numbers on their techniques: a <b>1</b> means that technique fires on their next turn.` },
-  { id: 'enc', target: () => $('#b-enc'), place: 'left', arrow: true, wait: 'shopOpen', allowEls: () => [$('#b-enc')],
+  { id: 'enc', target: () => $('#b-enc'), place: 'right', arrow: true, wait: 'shopOpen', allowEls: () => [$('#b-enc')],
     text: `Even rounds bring a <b>Fortuitous Encounter</b>: talismans, pills and treasures for Spirit Qi. Tap it.` },
   { id: 'shop', target: () => $('#shop .offers'), place: 'below', wait: 'shopClose', free: true,
     text: `Buy one if you can afford it, or leave. Later rounds bring rarer finds.` },

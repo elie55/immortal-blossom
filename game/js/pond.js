@@ -14,17 +14,34 @@ App.register('pond', {
     const f = feat && get(feat);
     const inc = qty('cur:fate_incense');
     if (guided && inc < 10 && !data().pond.guided) grant([{ cur: 'cur:fate_incense', qty: 10 - inc }]);
-    el.innerHTML = `<div class="scr-bg" style="background-image:url(assets/bg/${hasArt('bg/fate_pond.webp') ? 'fate_pond' : 'pavilion'}.webp)"></div><div class="scr-shade"></div>
-      ${App.topbar({ title: 'Fate Pond', cn: '命池', back: !guided, chips: ['cur:immortal_jade', 'cur:fate_incense', 'cur:blossom_dew'] })}
-      ${f ? `<div class="pond-feat" style="background-image:url(${cardUrl(feat)})"><div><i>FEATURED 5★</i><b>${esc(f.name)} <span class="cn" style="font-size:28px">${esc(f.cn)}</span></b><small>${esc(f.title)} · half of every 5★ summon</small></div></div>` : ''}
-      <div class="pond-info panel"><h3>RATES</h3>5★ ${(pond.rates['5'] * 100).toFixed(0)}% · 4★ ${(pond.rates['4'] * 100).toFixed(0)}% · 3★ ${(pond.rates['3'] * 100).toFixed(0)}%<br>
-        Ten summons always bring a 4★ or better. From the ${pond.pity.softFrom}th summon without a 5★ the odds rise, and the ${pond.pity.guaranteedAt}th is certain.
-        <h3 style="margin-top:10px">YOUR FATE</h3>${data().pond.guided ? `A 5★ within <b class="gold">${pityLeft()}</b> summons · ${data().pond.fatePoints} Fate Points` : '<b class="gold">Your first ten summons are guided: a 5★ will answer.</b>'}
-        <h3 style="margin-top:10px">IN THE POND</h3><div style="display:flex;gap:6px;flex-wrap:wrap">${SLICE_HEROES.map(h => `<span title="${esc(get(h).name)}">${phTag(phaseOf(get(h).phase))}</span>`).join('')}</div></div>
+    // after the "Invocation" mockup: the pond's 5★ heroines on the left, the featured one in the light of the lotus
+    // altar with her banner, her card and two more beside it, the rates and the pity counter on the right
+    const first = guided && !data().pond.guided;
+    const fives = [feat, ...by[5].filter(h => h !== feat)].filter(Boolean).slice(0, 4);
+    const side = [feat, ...[...by[5].filter(h => h !== feat), ...by[4]].slice(0, 2)].filter(Boolean);
+    const gap = pond.pity.guaranteedAt, done = gap - pityLeft();
+    const incense = '<img class="ic" src="assets/icons/fate_incense.webp" alt="">';
+    el.innerHTML = `<div class="scr-bg" style="background-image:url(assets/bg/${hasArt('bg/summon_altar.webp') ? 'summon_altar' : (hasArt('bg/home_terrace.webp') ? 'home_terrace' : 'pavilion')}.webp)"></div><div class="scr-shade"></div>
+      <div class="pond-altar"><i></i></div>
+      ${f ? `<div class="pond-hero" style="background-image:url(${cardUrl(feat)})" data-tip="${feat}"></div>` : ''}
+      ${App.topbar({ title: 'Fate Pond', cn: '命池', back: false, chips: ['cur:immortal_jade', 'cur:fate_incense', 'cur:blossom_dew'], icon: 'assets/ui/hall_pond.webp' })}
+      <div class="pond-list">${fives.map((h, i) => `<div class="pl-e${i === 0 ? ' on' : ''}" data-tip="${h}"><div class="pl-art" style="background-image:url(${cardUrl(h)})"></div>
+        <span><b>${i === 0 ? 'Featured' : esc(get(h).name)}</b><small>${i === 0 ? esc(get(h).name) : `${esc(get(h).title)}`}</small><i>${starStr(5)}</i></span></div>`).join('')}</div>
+      ${f ? `<div class="pond-banner"><span class="ribbon">Featured 5★</span>
+        <div class="pb-band"><b>${esc(f.name)}</b><small>Half of every 5★ summon brings ${esc(f.name)}, ${esc(f.title)}.</small></div>
+        <div class="pb-pill">${first ? 'Your first ten summons are guided' : `${phTag(phaseOf(f.phase))} ${esc(get(f.phase)?.name || '')} · ${esc(get(f.path)?.name || '')}`}</div></div>` : ''}
+      <div class="pond-cards">${side.map((h, i) => `<div class="pc-c${i === 0 ? ' big' : ''}" data-tip="${h}" style="background-image:url(${cardUrl(h)})"><img src="assets/ui/orb_${phaseOf(get(h).phase)}.webp" alt=""><i>${starStr(get(h).rarity)}</i></div>`).join('')}</div>
+      <div class="pond-side">
+        <button class="tplate" data-act="rates"><img src="${hasArt('ui/ic_rates.webp') ? 'assets/ui/ic_rates.webp' : 'assets/ui/hall_phases.webp'}" alt=""><b>Rates</b></button>
+        <div class="tplate"><img src="${hasArt('ui/ic_gift.webp') ? 'assets/ui/ic_gift.webp' : 'assets/ui/hall_pond.webp'}" alt=""><b>Fate</b></div>
+        <div class="pity"><b>${first ? '—' : `${done} / ${gap}`}</b><div class="pf-bar"><i style="width:${first ? 0 : Math.round(done / gap * 100)}%"></i></div></div>
+        <div class="pity-note">${f ? `<img src="${cardUrl(feat)}" alt="">` : ''}<span>${first ? 'A 5★ answers your first ten summons!' : `A 5★ within <b>${pityLeft()}</b> summons · ${data().pond.fatePoints} Fate Points`}</span></div>
+      </div>
       <div class="pond-act">
-        <button class="btn ink" data-act="one"${guided && !data().pond.guided ? ' disabled' : ''}>Summon ×1<small><img class="ic" src="assets/icons/fate_incense.webp" style="width:22px;height:22px;vertical-align:-5px"> 1</small></button>
-        <button class="btn" data-act="ten">Summon ×10<small><img class="ic" src="assets/icons/fate_incense.webp" style="width:22px;height:22px;vertical-align:-5px"> 10</small></button>
-      </div>`;
+        <button class="pbtn" data-act="one"${first ? ' disabled' : ''}><b>Summon ×1</b><small>${incense} ×1</small></button>
+        <button class="pbtn red" data-act="ten"><b>Summon ×10</b><small>${incense} ×10</small></button>
+      </div>
+      ${first ? '' : App.nav('pond')}`;
     if (guided && !data().pond.guided) setTimeout(() => App.dialog({ title: 'Tao Yao', cn: '桃夭', body: npcSays('npc:tao_yao', '<p>Light ten sticks of Fate Incense at once and follow the threads. Whoever answers will walk down to Peach Blossom Ford with you. I have a very good feeling about this one!</p>'), buttons: [{ label: 'Light the incense', value: true }] }), 400);
     const run = async (n) => {
       if (qty('cur:fate_incense') < n) { App.toast(`You need ${n} Fate Incense. Clear stages and open star chests for more.`); return; }
@@ -34,7 +51,12 @@ App.register('pond', {
       if (guided) { App.go('hall', {}, { root: true }); return; }
       App.go('pond', {}, { replace: true });
     };
-    App.bind(el, { one: () => run(1), ten: () => run(10) });
+    App.bind(el, {
+      one: () => run(1), ten: () => run(10),
+      rates: () => App.dialog({ title: 'Rates', cn: '概率', body: `<p>5★ <b class="gold">${(pond.rates['5'] * 100).toFixed(0)}%</b> · 4★ <b class="gold">${(pond.rates['4'] * 100).toFixed(0)}%</b> · 3★ <b class="gold">${(pond.rates['3'] * 100).toFixed(0)}%</b></p>
+        <p>Half of every 5★ summon brings the featured heroine. Ten summons always bring a 4★ or better. From the ${pond.pity.softFrom}th summon without a 5★ the odds rise, and the ${pond.pity.guaranteedAt}th is certain.</p>
+        <p class="mut">In the pond: ${SLICE_HEROES.map(h => `${esc(get(h).name)} ${starStr(get(h).rarity)}`).join(', ')}.</p>` }),
+    });
     void num;
   },
 });

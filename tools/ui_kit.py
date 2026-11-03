@@ -91,6 +91,16 @@ def cut(path, names, rows, size=160, haze=None, box=None, fill=False, **kw):
         print(f'{name:16s} from {w}x{h} at ({x0},{y0}) -> {os.path.relpath(out, ROOT)} {img.size[0]}x{img.size[1]}')
 
 
+def plain(name, x0, x1, src):
+    """A stretchable copy of a button or plate (<name>_s.webp): the jewels at its top and bottom centre (columns
+    x0..x1) are painted over with a plain column of its rim, so a border-image can stretch the middle evenly."""
+    path = os.path.join(OUT, f'{name}.webp')
+    im = np.array(Image.open(path).convert('RGBA'))
+    im[:, x0:x1 + 1] = im[:, src:src + 1]
+    Image.fromarray(im).save(os.path.join(OUT, f'{name}_s.webp'), quality=92, method=6)
+    print(f'{name}_s         jewels at {x0}..{x1} painted over with column {src}')
+
+
 def main(folder):
     p = lambda n: os.path.join(folder, n)
     cut(p('ui_panels.png'), ['ring_avatar~@320', 'glow_arch~@520', 'plate_teal~@640', 'panel_parch~@600'], 2)
@@ -99,6 +109,9 @@ def main(folder):
     cut(p('ui_plaques.png'), ['plaque~@600', 'plaque_on~@600'], 1, haze=250, box=(0, 0, 1536, 310), fill=True)
     cut(p('ui_plaques.png'), ['frame_arch~@560'], 1, haze=236, box=(40, 300, 620, 1010))
     cut(p('ui_plaques.png'), ['btn_round~@200', 'ribbon_red~@400'], 1, haze=250, box=(620, 440, 1536, 840), fill=True)
+    plain('btn_teal', 258, 340, 250); plain('btn_red', 258, 340, 250)
+    plain('btn_teal_dragon', 300, 378, 292); plain('btn_red_dragon', 305, 385, 297)
+    plain('plate_teal', 300, 342, 292)
     if os.path.exists(p('ui_icons.png')):
         cut(p('ui_icons.png'), ['ic_home', 'ic_summon', 'ic_team', 'ic_book', 'ic_rates', 'ic_gift', 'ic_hourglass', 'ic_back',
                                 'ic_brush', 'ic_trophy', 'ic_forge', 'ic_banner'], 3, 128)

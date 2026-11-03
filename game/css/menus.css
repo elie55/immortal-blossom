@@ -1,0 +1,238 @@
+/* Immortal Blossoms: the bright gold-and-jade menus, after the mockups (Accueil, Invocation, Modes de Jeu, Équipe).
+   Loaded after app.css and overriding it: the top bar (profile plate or back button and title plate, resource chips,
+   settings), the bottom bar, ornate panels, glossy buttons, cream menu plaques with jade sockets, teal plaques, then
+   the screens built after the mockups (the Pavilion Hall, the Fate Pond, Trials, the team). The art is from
+   tools/ui_kit.py; sizes are in stage pixels (the stage is 720px high). */
+
+:root { --gold: #e8c77d; --teal: #0f4b4f; --teal2: #0a3034; --cream: #f7eed6; --brown: #4a2c0c; --rim: #d9b25a; }
+
+/* screens: the scenery stays bright; panels carry their own backing */
+.scr-shade { background: none; }
+
+/* ---------------- top bar ---------------- */
+.topbar { position: absolute; left: 0; right: 0; top: 0; height: auto; z-index: 6; display: flex; align-items: flex-start; gap: 12px; padding: 8px 14px 0 12px; background: none; pointer-events: none; }
+.topbar > *, .tb-under { pointer-events: auto; }
+.tb-left { display: flex; align-items: center; gap: 6px; flex: none; }
+.tb-sp { flex: 1; }
+.tb-back { width: 60px; height: 61px; flex: none; border: 0; border-radius: 0; padding: 0 0 7px; display: grid; place-items: center; background: url(../assets/ui/btn_round.webp) center / 100% 100% no-repeat;
+  box-shadow: none; filter: drop-shadow(0 3px 6px rgba(0, 0, 0, .4)); }
+.tb-back i { width: 15px; height: 15px; margin-left: 6px; border-left: 4px solid #fbe6b0; border-bottom: 4px solid #fbe6b0; transform: rotate(45deg); filter: drop-shadow(0 1px 1px #000); }
+/* the title plate: teal, a gold dragon at its left end (a stretchable copy of the art) */
+.tb-title { display: flex; align-items: center; gap: 8px; height: 62px; min-width: 230px; padding: 0 22px 0 4px; flex-direction: row; line-height: 1;
+  border-style: solid; border-width: 19px 26px 9px 60px; border-image: url(../assets/ui/btn_teal_dragon_s.webp) 66 90 30 210 fill / 19px 26px 9px 60px;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, .35)); }
+.tb-title img { width: 34px; height: 34px; object-fit: contain; margin: -4px 0; filter: drop-shadow(0 0 5px rgba(255, 214, 120, .5)); }
+.tb-title b { font: 700 25px Cinzel, serif; letter-spacing: .03em; color: #fbe9b8; text-shadow: 0 2px 3px rgba(0, 0, 0, .7); white-space: nowrap; }
+.tb-under { position: absolute; left: 14px; top: 104px; z-index: 6; }
+/* resource chips: a teal pill with a gold rim, its icon overlapping the left end */
+.tb-res { display: flex; gap: 18px; margin-top: 8px; flex: none; }
+.chip { position: relative; display: flex; align-items: center; height: 36px; padding: 0 16px 0 40px; border-radius: 18px; background: linear-gradient(#18535a, #0b2c31); border: 2px solid var(--rim);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 0 0 1.5px rgba(90, 60, 16, .7), 0 3px 8px rgba(0, 0, 0, .35); gap: 0; }
+.chip img { position: absolute; left: -10px; top: 50%; width: 46px; height: 46px; margin-top: -23px; border-radius: 50%; object-fit: cover; filter: drop-shadow(0 2px 3px rgba(0, 0, 0, .5)); }
+.chip b { font: 600 19px Oswald, sans-serif; color: #fff7e2; min-width: 30px; text-align: right; text-shadow: 0 1px 2px #000; }
+.tb-round { width: 52px; height: 52px; flex: none; border-radius: 50%; padding: 0; display: grid; place-items: center; margin-top: 2px;
+  background: radial-gradient(circle at 50% 35%, #236a6c, #0b2c30 75%); border: 2px solid var(--rim); box-shadow: 0 0 0 1.5px rgba(90, 60, 16, .8), 0 4px 10px rgba(0, 0, 0, .4); }
+.tb-round img { width: 38px; height: 38px; object-fit: contain; }
+
+/* the profile plate: the lobby heroine in the jade ring, the chapter in its socket, the Pavilion Master's plate */
+.pf { position: relative; display: flex; align-items: center; height: 96px; margin: -6px 0 0 -4px; cursor: pointer; }
+.pf-av { position: relative; width: 102px; height: 96px; flex: none; z-index: 2; }
+.pf-img { position: absolute; left: 21%; top: 21%; width: 63%; height: 64%; border-radius: 50%; background: #0b2a2f center 14% / cover no-repeat; box-shadow: inset 0 0 8px rgba(0, 0, 0, .5); }
+.pf-av::after { content: ''; position: absolute; inset: 0; background: url(../assets/ui/ring_avatar.webp) center / 100% 100% no-repeat; filter: drop-shadow(0 3px 5px rgba(0, 0, 0, .4)); }
+.pf-lv { position: absolute; left: 15.3%; top: 72.7%; width: 18.8%; height: 20%; z-index: 3; display: grid; place-items: center; font: 700 15px Oswald, sans-serif; color: var(--brown); }
+.pf-plate { min-width: 236px; margin-left: -30px; padding: 6px 18px 6px 36px; border-radius: 0 16px 16px 0; background: linear-gradient(#134246, #0a2a2e); border: 2px solid var(--rim);
+  box-shadow: 0 0 0 1.5px rgba(90, 60, 16, .8), inset 0 1px 0 rgba(255, 255, 255, .12), 0 4px 10px rgba(0, 0, 0, .35); }
+.pf-plate b { display: block; font: 700 19px Cinzel, serif; color: #fbe9b8; text-shadow: 0 1px 2px #000; white-space: nowrap; }
+.pf-bar { height: 10px; margin: 5px 0 3px; border-radius: 5px; background: rgba(0, 0, 0, .55); border: 1px solid rgba(232, 199, 125, .65); overflow: hidden; }
+.pf-bar i { display: block; height: 100%; background: linear-gradient(#fff1b8, #e9b448 55%, #b8812a); box-shadow: 0 0 6px rgba(255, 210, 110, .7); }
+.pf-plate small { display: block; text-align: center; font: 600 13px Oswald, sans-serif; color: #eadfc4; letter-spacing: .03em; }
+
+/* ---------------- the bottom bar of the main screens ---------------- */
+.bnav { position: absolute; left: 0; right: 0; bottom: 0; height: 72px; z-index: 6; display: flex; justify-content: center; padding: 0 60px;
+  background: linear-gradient(#155156, #0b3236 55%, #082528); border-top: 3px solid var(--rim);
+  box-shadow: 0 -2px 0 rgba(107, 74, 20, .9), 0 -8px 20px rgba(0, 0, 0, .3), inset 0 2px 0 rgba(255, 240, 200, .22); }
+.bnav::before, .bnav::after { content: ''; position: absolute; bottom: 0; width: 120px; height: 84px; background: url(../assets/ui/corner_bl.webp) left bottom / contain no-repeat; pointer-events: none; }
+.bnav::before { left: 0; } .bnav::after { right: 0; background-image: url(../assets/ui/corner_br.webp); background-position: right bottom; }
+.bn { position: relative; flex: 1; max-width: 200px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding: 0 0 8px; border: 0; background: none;
+  color: #fbe9c0; font: 700 18px Cinzel, serif; letter-spacing: .02em; text-shadow: 0 2px 3px rgba(0, 0, 0, .75); isolation: isolate; }
+.bn + .bn::before { content: ''; position: absolute; left: 0; top: 12px; bottom: 12px; width: 1px; background: linear-gradient(transparent, rgba(232, 199, 125, .65), transparent); }
+.bn img { width: 50px; height: 50px; object-fit: contain; margin: -20px 0 1px; filter: drop-shadow(0 3px 4px rgba(0, 0, 0, .55)); transition: transform .15s; }
+.bn:hover img { transform: translateY(-2px) scale(1.05); }
+.bn span { white-space: nowrap; }
+.bn.on { color: #3a2208; text-shadow: 0 1px 0 rgba(255, 255, 255, .5); }
+.bn.on::after { content: ''; position: absolute; z-index: -1; left: 6px; right: 6px; top: -10px; bottom: 4px; border-radius: 16px 16px 10px 10px;
+  background: linear-gradient(#fff6d2, #f3d281 55%, #cf9a40); border: 2px solid #fff2c0; box-shadow: 0 0 0 2px #8a5e1a, 0 0 22px rgba(255, 214, 120, .75); }
+.bn.locked { opacity: .55; } .bn.locked img { filter: grayscale(.7) drop-shadow(0 3px 4px rgba(0, 0, 0, .55)); }
+.bn .dot, .plq .dot, .tplq .dot { position: absolute; right: 22%; top: -10px; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; font: 900 14px Oswald, sans-serif; font-style: normal; color: #fff;
+  background: radial-gradient(circle at 40% 35%, #ff6a5a, #c01c16); border: 2px solid #fff0d0; box-shadow: 0 2px 4px rgba(0, 0, 0, .5); }
+
+/* ---------------- panels: teal behind an ornate gold frame (the frame is drawn just outside the box) ---------------- */
+.panel { position: relative; isolation: isolate; background: none; border: 0; border-radius: 0; box-shadow: none; }
+.panel::before { content: ''; position: absolute; inset: -7px; z-index: -1; pointer-events: none; width: auto; height: auto; opacity: 1;
+  border: 0 solid transparent; border-width: 22px; border-radius: 0; border-image: url(../assets/ui/frame_panel.webp) 121 fill / 46px; }
+.panel::after { display: none; }
+.panel.parch::before { border-image: url(../assets/ui/panel_parch.webp) 110 150 110 150 fill / 40px 54px; inset: -6px; }
+.panel.parch { color: var(--brown); }
+
+/* ---------------- buttons: glossy teal (default) and red pills with gold rims and clouds, cream plaques ---------------- */
+.btn { position: relative; display: inline-flex; flex-direction: column; align-items: center; justify-content: center; min-height: 56px; padding: 0 14px; border-radius: 0;
+  border-style: solid; border-width: 9px 46px; border-image: url(../assets/ui/btn_teal_s.webp) 28 140 28 140 fill / 9px 46px;
+  background: none; box-shadow: none; color: #fff6dc; font: 700 20px/1.1 Cinzel, serif; letter-spacing: .05em; text-shadow: 0 2px 3px rgba(0, 0, 0, .65);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, .35)); transition: filter .2s, transform .12s; }
+.btn:hover { filter: drop-shadow(0 0 10px rgba(255, 226, 150, .65)) drop-shadow(0 4px 8px rgba(0, 0, 0, .35)); }
+.btn:active { transform: translateY(1px) scale(.99); }
+.btn.red { border-image-source: url(../assets/ui/btn_red_s.webp); background: none; color: #fff6dc; }
+.btn.jade { border-image-source: url(../assets/ui/btn_teal_s.webp); background: none; color: #fff6dc; box-shadow: none; }
+.btn.ink { border: 2px solid #c9a24a; border-image: none; border-radius: 28px; padding: 0 24px; min-height: 50px; background: linear-gradient(#fffaea, #ecdcb2); color: var(--brown); text-shadow: none;
+  box-shadow: inset 0 1px 0 #fff, 0 0 0 1.5px #6b4a14, 0 3px 8px rgba(0, 0, 0, .3); }
+.btn.off, .btn:disabled { filter: grayscale(.85) brightness(.75); pointer-events: none; }
+.btn small { display: block; font: 600 15px Oswald, sans-serif; letter-spacing: .03em; opacity: .9; margin-top: 1px; }
+.btn img.ic { width: 24px; height: 24px; vertical-align: -6px; margin-right: 4px; border-radius: 50%; }
+/* smaller buttons keep their art's proportions */
+.btn.sm, .pd-btns .btn, .rh-btns .btn, .mk-i .btn, .cv-b .btn, .th-b .btn, .al-n + .btn, .dlg .pill-row .btn { min-height: 38px; border-width: 6px 30px; border-image-width: 6px 30px; padding: 0 4px; font-size: 15px; }
+.btn.ink.sm, .pd-btns .btn.ink, .rh-btns .btn.ink, .mk-i .btn.ink, .cv-b .btn.ink, .th-b .btn.ink, .dlg .pill-row .btn.ink { border-width: 2px; padding: 0 14px; min-height: 36px; }
+.hv-btns .btn, .va-detail .sd-btns .btn, .hu-detail .sd-btns .btn, .bl-side .btn, .fg-detail .sd-btns .btn { min-height: 48px; border-width: 8px 38px; border-image-width: 8px 38px; padding: 0 6px; font-size: 18px; }
+.hv-btns .btn.ink, .va-detail .sd-btns .btn.ink, .hu-detail .sd-btns .btn.ink, .bl-side .btn.ink { border-width: 2px; padding: 0 14px; }
+
+/* tabs: teal plaques, the chosen one lit in gold */
+.tabs button { border-radius: 22px; border: 2px solid var(--rim); background: linear-gradient(#18535a, #0b2c31); color: #fbe9c0; font: 700 17px Cinzel, serif; text-shadow: 0 1px 2px #000;
+  box-shadow: 0 0 0 1.5px rgba(90, 60, 16, .7), inset 0 1px 0 rgba(255, 255, 255, .14); }
+.tabs button.on { background: linear-gradient(#fff6d2, #f0cf7e 55%, #c99a3e); color: #3a2208; text-shadow: none; box-shadow: 0 0 0 1.5px #8a5e1a, 0 0 16px rgba(255, 214, 120, .6); }
+.tl { border: 2px solid var(--rim); background: linear-gradient(#18535a, #0b2c31); color: #fbe9c0; }
+.tl.on { background: linear-gradient(#ff8a6a, #b8302a); color: #fff; border-color: #ffd0b0; }
+
+/* dialogs, toasts, bubbles */
+.dlg-wrap { background: rgba(6, 18, 22, .58); }
+.dlg { padding: 30px 36px; color: #f3ead6; }
+.dlg h2 { font: 700 30px Cinzel, serif; color: #fbe9b8; text-shadow: 0 2px 3px rgba(0, 0, 0, .6); }
+.toast { background: linear-gradient(#18535a, #0b2c31); border: 2px solid var(--rim); box-shadow: 0 0 0 1.5px rgba(90, 60, 16, .7), 0 6px 18px rgba(0, 0, 0, .4); }
+.bubble { border: 2px solid var(--rim); background: rgba(255, 250, 236, .97); }
+
+/* cream menu plaques with a jade socket for their icon (the hall's left column, the trials' left column, the team's menu) */
+.plq { position: relative; display: flex; align-items: center; width: 214px; height: 69px; padding: 4px 16px 0 72px; border: 0; text-align: left; cursor: pointer;
+  background: url(../assets/ui/plaque.webp) center / 100% 100% no-repeat; filter: drop-shadow(0 4px 8px rgba(0, 0, 0, .35)); transition: transform .15s, filter .2s; }
+.plq:hover { transform: translateX(3px); }
+.plq.on { background-image: url(../assets/ui/plaque_on.webp); filter: drop-shadow(0 0 14px rgba(255, 214, 120, .8)) drop-shadow(0 4px 8px rgba(0, 0, 0, .35)); }
+.plq img { position: absolute; left: 6.5%; top: 31%; width: 17%; height: 52%; object-fit: contain; filter: drop-shadow(0 0 4px rgba(255, 214, 120, .45)); }
+.plq b { font: 700 19px Cinzel, serif; color: var(--brown); line-height: 1.05; }
+.plq small { display: block; font: 600 12px Oswald, sans-serif; color: #7a5a2a; }
+.plq.locked { filter: grayscale(.65) brightness(.85) drop-shadow(0 4px 8px rgba(0, 0, 0, .35)); }
+.plq .dot { right: 4px; top: 6px; }
+/* teal plaques with their icon above the name (the hall's right column) */
+.tplq { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; width: 156px; height: 84px; padding: 0 0 2px; cursor: pointer;
+  border-style: solid; border-width: 13px 38px 11px; border-image: url(../assets/ui/plate_teal_s.webp) 30 112 22 112 fill / 13px 38px 11px; background: none;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, .35)); transition: transform .15s; }
+.tplq:hover { transform: translateY(-2px); }
+.tplq img { width: 52px; height: 52px; object-fit: contain; margin: -40px -20px 0; filter: drop-shadow(0 3px 4px rgba(0, 0, 0, .5)); }
+.tplq b { font: 700 18px Cinzel, serif; color: #fbe9c0; text-shadow: 0 2px 3px #000; white-space: nowrap; }
+.tplq.locked { filter: grayscale(.7) brightness(.8); }
+.tplq .dot { right: -30px; top: -18px; }
+
+/* ---------------- the Pavilion Hall ---------------- */
+.hall .scr-bg { filter: saturate(1.08) brightness(1.04); }
+.hall .scr-shade { background: linear-gradient(rgba(8, 24, 28, .25), transparent 18%, transparent 78%, rgba(8, 24, 28, .3)); }
+.hall-medal { position: absolute; right: -36px; top: 26px; width: 236px; height: 288px; z-index: 2; background: url(../assets/ui/medal_jade.webp) center top / contain no-repeat;
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, .3)); animation: medalSway 9s ease-in-out infinite alternate; transform-origin: 50% 0; pointer-events: none; }
+.hall .lobby-girl { left: 230px; bottom: 60px; width: 600px; height: 690px; z-index: 2;
+  -webkit-mask-image: radial-gradient(ellipse 58% 64% at 50% 40%, #000 60%, transparent 82%); mask-image: radial-gradient(ellipse 58% 64% at 50% 40%, #000 60%, transparent 82%); }
+.hall-left { position: absolute; left: 16px; top: 132px; z-index: 4; display: flex; flex-direction: column; gap: 12px; }
+.hall-event { position: absolute; left: 22px; bottom: 92px; width: 310px; height: 124px; z-index: 4; cursor: pointer; padding: 26px 18px 0 120px; text-align: center; overflow: visible;
+  border-radius: 10px; background: linear-gradient(100deg, rgba(48, 16, 70, .2), rgba(70, 24, 96, .92) 42%, rgba(40, 12, 60, .95)); border: 3px solid var(--rim);
+  box-shadow: 0 0 0 2px rgba(90, 60, 16, .8), 0 8px 18px rgba(0, 0, 0, .35); }
+.hall-event .he-art { position: absolute; left: 0; top: 0; bottom: 0; width: 46%; border-radius: 8px 0 0 8px; background: center 16% / cover no-repeat;
+  -webkit-mask-image: linear-gradient(90deg, #000 60%, transparent); mask-image: linear-gradient(90deg, #000 60%, transparent); }
+.hall-event .ribbon { position: absolute; left: 50%; top: -15px; transform: translateX(-28%); padding: 5px 26px 7px; white-space: nowrap; background: url(../assets/ui/ribbon_red.webp) center / 100% 100% no-repeat;
+  font: 700 13px Cinzel, serif; letter-spacing: .08em; color: #fff4dc; text-shadow: 0 1px 2px #400; }
+.hall-event b { position: relative; display: block; font: italic 700 23px/1.05 'Cormorant Garamond', serif; color: #fff2c8; text-shadow: 0 0 10px rgba(255, 200, 120, .6), 0 2px 3px #000; }
+.hall-event small { position: relative; display: block; margin-top: 3px; font: 600 14px 'Cormorant Garamond', serif; color: #f2dcff; }
+.hall-event em { position: relative; display: inline-block; margin-top: 6px; font: 600 12px Oswald, sans-serif; font-style: normal; color: #ffe9b0; letter-spacing: .06em; }
+.hall-team { position: absolute; left: 352px; bottom: 92px; width: 352px; height: 152px; z-index: 4; padding: 26px 16px 10px;
+  background: linear-gradient(rgba(10, 36, 40, .9), rgba(6, 24, 28, .94)); border: 3px solid var(--rim); border-radius: 12px; box-shadow: 0 0 0 2px rgba(90, 60, 16, .8), 0 8px 18px rgba(0, 0, 0, .35); }
+.ht-label { position: absolute; left: 50%; top: -17px; transform: translateX(-50%); padding: 3px 28px; white-space: nowrap; border-radius: 14px; background: linear-gradient(#18535a, #0b2c31); border: 2px solid var(--rim);
+  font: 700 15px Cinzel, serif; color: #fbe9c0; letter-spacing: .04em; }
+.ht-edit { position: absolute; right: -10px; top: -14px; width: 34px; height: 34px; border-radius: 50%; padding: 0; background: radial-gradient(circle at 50% 35%, #236a6c, #0b2c30 75%); border: 2px solid var(--rim); }
+.ht-edit::before { content: ''; position: absolute; left: 50%; top: 50%; width: 14px; height: 4px; margin: -2px 0 0 -7px; background: #fbe6b0; transform: rotate(-45deg); border-radius: 1px; box-shadow: 4px 0 0 -0.5px #e8b84a; }
+.ht-cards { display: flex; gap: 10px; justify-content: center; height: 100%; }
+.ht-c { position: relative; width: 72px; height: 100%; border-radius: 8px; background: #0b1a20 center 15% / cover no-repeat; border: 2px solid #f0cf7e; box-shadow: 0 0 0 1.5px #6b4a14, 0 0 10px color-mix(in srgb, var(--pc) 45%, transparent); }
+.ht-c .ht-ph { position: absolute; left: -7px; top: -7px; width: 26px; height: 26px; }
+.ht-c i { position: absolute; left: 0; right: 0; bottom: 0; padding: 8px 0 2px; text-align: center; font-size: 11px; font-style: normal; color: #ffd75a; letter-spacing: -1px; background: linear-gradient(transparent, rgba(0, 0, 0, .8)); border-radius: 0 0 6px 6px; text-shadow: 0 1px 2px #000; }
+.hall-camp { position: absolute; right: 196px; top: 146px; width: 262px; height: 286px; z-index: 4; cursor: pointer; }
+.hc-frame { position: absolute; left: 0; right: 0; top: 0; bottom: 30px; border-style: solid; border-width: 38px 24px 34px; border-image: url(../assets/ui/frame_arch.webp) 120 60 110 60 / 38px 24px 34px;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, .35)); }
+.hc-art { position: absolute; inset: -24px -12px -22px; border-radius: 40px 40px 8px 8px; background: center / cover no-repeat; z-index: -1; }
+.hc-plate { position: absolute; left: -16px; right: -16px; bottom: 0; height: 74px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 0 0 2px 70px;
+  border-style: solid; border-width: 12px 34px 10px; border-image: url(../assets/ui/plate_teal_s.webp) 30 112 22 112 fill / 12px 34px 10px; filter: drop-shadow(0 4px 8px rgba(0, 0, 0, .4)); }
+.hc-plate img { position: absolute; left: 0; top: 50%; width: 58px; height: 58px; margin-top: -32px; object-fit: contain; filter: drop-shadow(0 2px 3px rgba(0, 0, 0, .5)); }
+.hc-plate b { font: 700 28px/1 Cinzel, serif; color: #fbe9c0; text-shadow: 0 2px 4px #000; }
+.hc-plate small { font: 600 14px 'Cormorant Garamond', serif; color: #d9efe8; max-width: 200px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hall-go { position: absolute; right: 178px; bottom: 90px; width: 300px; height: 112px; z-index: 4; border: 0; padding: 0 0 4px 64px; cursor: pointer;
+  background: url(../assets/ui/btn_red_dragon.webp) center / contain no-repeat; filter: drop-shadow(0 0 14px rgba(255, 200, 110, .55)) drop-shadow(0 6px 10px rgba(0, 0, 0, .4)); transition: transform .15s; }
+.hall-go:hover { transform: scale(1.03); }
+.hall-go span { font: 700 32px Cinzel, serif; color: #fff1cc; letter-spacing: .04em; text-shadow: 0 2px 4px rgba(60, 0, 0, .8); }
+.hall-go span::after { content: ' ›'; color: #ffd36a; }
+.hall-right { position: absolute; right: 22px; top: 318px; z-index: 4; display: flex; flex-direction: column; gap: 22px; align-items: center; }
+
+/* ---------------- the Fate Pond (after the "Invocation" mockup) ---------------- */
+.pond .scr-bg { filter: saturate(1.1) brightness(1.02); }
+.pond .scr-shade { background: radial-gradient(ellipse 40% 34% at 50% 80%, rgba(255, 236, 170, .35), transparent 70%), linear-gradient(rgba(8, 24, 28, .2), transparent 20%, transparent 80%, rgba(8, 24, 28, .25)); }
+.pond-altar { position: absolute; left: calc(50% - 300px); bottom: 64px; width: 600px; height: 190px; z-index: 1; pointer-events: none; }
+.pond-altar::before { content: ''; position: absolute; inset: 40px 0 0; border-radius: 50%; border: 3px solid rgba(255, 228, 150, .75);
+  background: radial-gradient(ellipse at 50% 50%, rgba(255, 250, 220, .85), rgba(140, 230, 210, .45) 38%, rgba(40, 140, 130, .25) 62%, transparent 72%);
+  box-shadow: 0 0 40px rgba(255, 220, 140, .7), inset 0 0 0 16px rgba(30, 120, 110, .25), inset 0 0 0 19px rgba(255, 228, 150, .55); }
+.pond-altar i { position: absolute; left: 50%; bottom: 60px; width: 160px; height: 520px; margin-left: -80px;
+  background: radial-gradient(ellipse 50% 50% at 50% 100%, rgba(255, 246, 210, .9), transparent 70%), linear-gradient(transparent, rgba(255, 238, 180, .35) 60%, rgba(255, 246, 210, .75));
+  filter: blur(8px); opacity: .75; animation: altarBeam 3.2s ease-in-out infinite alternate; }
+@keyframes altarBeam { to { opacity: 1; transform: scaleX(1.15); } }
+.pond-hero { position: absolute; left: calc(50% - 330px); top: 34px; width: 620px; height: 640px; z-index: 2; background: center 10% / cover no-repeat;
+  -webkit-mask-image: radial-gradient(ellipse 54% 60% at 50% 42%, #000 58%, transparent 80%); mask-image: radial-gradient(ellipse 54% 60% at 50% 42%, #000 58%, transparent 80%);
+  animation: breathe2 6s ease-in-out infinite; transform-origin: 50% 100%; }
+@keyframes breathe2 { 50% { transform: translateY(-5px) scale(1.006); } }
+.pond-list { position: absolute; left: 16px; top: 184px; z-index: 4; width: 266px; display: flex; flex-direction: column; gap: 10px; }
+.pl-e { position: relative; height: 92px; display: flex; align-items: center; padding: 0 12px 0 112px; border-radius: 12px; overflow: hidden; cursor: default;
+  background: linear-gradient(90deg, #f3e7c6, #fbf3dc 60%); border: 3px solid var(--rim); box-shadow: 0 0 0 1.5px #6b4a14, 0 4px 10px rgba(0, 0, 0, .3); }
+.pl-e .pl-art { position: absolute; left: 0; top: 0; bottom: 0; width: 120px; background: center 14% / cover no-repeat;
+  -webkit-mask-image: linear-gradient(90deg, #000 62%, transparent); mask-image: linear-gradient(90deg, #000 62%, transparent); }
+.pl-e span { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; flex: 1; }
+.pl-e b { font: 700 18px/1.05 Cinzel, serif; color: var(--brown); }
+.pl-e small { font: 600 14px/1.1 'Cormorant Garamond', serif; color: #6a4a20; }
+.pl-e i { font-size: 12px; font-style: normal; color: #d9a21e; letter-spacing: -1px; }
+.pl-e.on { background: linear-gradient(90deg, #3a1660, #6a2a9a 55%, #8a3cbd); border-color: #ffe08a; box-shadow: 0 0 0 1.5px #6b4a14, 0 0 22px rgba(255, 214, 120, .8), 0 4px 10px rgba(0, 0, 0, .3); }
+.pl-e.on b { font: italic 700 22px 'Cormorant Garamond', serif; color: #fff1c8; text-shadow: 0 0 10px rgba(255, 210, 140, .6); }
+.pl-e.on small { color: #f2dcff; } .pl-e.on i { color: #ffd75a; }
+.pond-banner { position: absolute; left: calc(50% - 330px); top: 372px; width: 480px; z-index: 4; display: flex; flex-direction: column; align-items: flex-start; }
+.pond-banner .ribbon { margin-left: 34px; padding: 6px 30px 8px; background: url(../assets/ui/ribbon_red.webp) center / 100% 100% no-repeat; font: 700 15px Cinzel, serif; letter-spacing: .06em; color: #fff4dc; text-shadow: 0 1px 2px #400; }
+.pb-band { align-self: stretch; margin-top: -4px; padding: 8px 18px 10px; border-radius: 8px; text-align: center;
+  background: linear-gradient(90deg, rgba(80, 30, 120, .2), rgba(90, 36, 140, .88) 18%, rgba(90, 36, 140, .88) 82%, rgba(80, 30, 120, .2)); border-top: 1.5px solid rgba(255, 220, 150, .7); border-bottom: 1.5px solid rgba(255, 220, 150, .7); }
+.pb-band b { display: block; font: italic 700 38px/1.05 'Cormorant Garamond', serif; color: #fff0c4; text-shadow: 0 0 14px rgba(255, 200, 120, .7), 0 2px 4px rgba(40, 0, 60, .8); }
+.pb-band small { font: 600 16px 'Cormorant Garamond', serif; color: #f6e8ff; }
+.pb-pill { margin: 10px 0 0 40px; padding: 5px 16px; border-radius: 16px; display: flex; align-items: center; gap: 8px; background: linear-gradient(#18535a, #0b2c31); border: 2px solid var(--rim);
+  font: 600 15px Oswald, sans-serif; color: #fff6dc; letter-spacing: .02em; }
+.pb-pill .ph-tag { width: 24px; height: 24px; font-size: 13px; }
+.pond-cards { position: absolute; left: calc(50% + 104px); top: 300px; z-index: 4; display: flex; align-items: flex-end; gap: 10px; }
+.pc-c { position: relative; width: 80px; height: 116px; border-radius: 8px; background: #0b1a20 center 15% / cover no-repeat; border: 3px solid #f0cf7e; box-shadow: 0 0 0 1.5px #6b4a14, 0 6px 14px rgba(0, 0, 0, .4); }
+.pc-c.big { width: 112px; height: 158px; box-shadow: 0 0 0 1.5px #6b4a14, 0 0 24px rgba(255, 214, 120, .85), 0 6px 14px rgba(0, 0, 0, .4); }
+.pc-c img { position: absolute; left: -9px; top: -9px; width: 30px; height: 30px; }
+.pc-c i { position: absolute; left: 0; right: 0; bottom: 0; padding: 10px 0 3px; text-align: center; font-size: 12px; font-style: normal; color: #ffd75a; letter-spacing: -1px; background: linear-gradient(transparent, rgba(0, 0, 0, .8)); border-radius: 0 0 5px 5px; }
+.pond-side { position: absolute; right: 16px; top: 200px; z-index: 4; width: 224px; display: flex; flex-direction: column; gap: 10px; align-items: stretch; }
+.tplate { position: relative; display: flex; align-items: center; justify-content: center; gap: 10px; height: 60px; padding: 0 6px; cursor: pointer;
+  border-style: solid; border-width: 12px 36px 10px; border-image: url(../assets/ui/plate_teal_s.webp) 30 112 22 112 fill / 12px 36px 10px; background: none; filter: drop-shadow(0 4px 8px rgba(0, 0, 0, .35)); }
+div.tplate { cursor: default; }
+.tplate img { width: 40px; height: 40px; object-fit: contain; margin: -8px 0; }
+.tplate b { font: 700 20px Cinzel, serif; color: #fbe9c0; text-shadow: 0 2px 3px #000; }
+.pity { margin-top: -6px; padding: 6px 16px 10px; text-align: center; border-radius: 0 0 12px 12px; background: rgba(8, 30, 36, .82); border: 2px solid rgba(217, 178, 90, .7); border-top: 0; }
+.pity b { font: 700 22px Oswald, sans-serif; color: #fff6dc; }
+.pity .pf-bar { height: 12px; margin: 4px 0 0; }
+.pity-note { display: flex; align-items: center; gap: 10px; padding: 6px 12px 6px 6px; border-radius: 30px; background: linear-gradient(#fffaea, #ecdcb2); border: 2px solid var(--rim);
+  box-shadow: 0 0 0 1.5px #6b4a14, 0 4px 10px rgba(0, 0, 0, .3); font: 600 15px/1.15 'Cormorant Garamond', serif; color: var(--brown); }
+.pity-note img { width: 48px; height: 48px; flex: none; border-radius: 50%; object-fit: cover; object-position: 50% 12%; border: 2px solid var(--rim); }
+.pity-note b { color: #b0281e; font-size: 18px; }
+.pond-act { position: absolute; left: 0; right: 0; bottom: 92px; z-index: 5; display: flex; justify-content: center; gap: 70px; }
+.pbtn { width: 300px; height: 82px; border: 0; padding: 0 30px 2px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0; cursor: pointer;
+  background: url(../assets/ui/btn_teal.webp) center / 100% 100% no-repeat; filter: drop-shadow(0 0 12px rgba(255, 220, 140, .45)) drop-shadow(0 6px 10px rgba(0, 0, 0, .35)); transition: transform .15s, filter .2s; }
+.pbtn.red { background-image: url(../assets/ui/btn_red.webp); }
+.pbtn:hover { transform: scale(1.03); filter: drop-shadow(0 0 18px rgba(255, 220, 140, .8)) drop-shadow(0 6px 10px rgba(0, 0, 0, .35)); }
+.pbtn:disabled { filter: grayscale(.8) brightness(.75); pointer-events: none; }
+.pbtn b { font: 700 24px/1 Cinzel, serif; color: #fff1cc; text-shadow: 0 2px 3px rgba(0, 0, 0, .7); }
+.pbtn small { display: flex; align-items: center; gap: 4px; margin-top: 2px; padding: 0 12px; border-radius: 10px; background: rgba(0, 0, 0, .3); font: 600 15px Oswald, sans-serif; color: #fff6dc; }
+.pbtn small img.ic { width: 22px; height: 22px; margin: 0; }
+.pond .pond-feat, .pond .pond-info { display: none; }

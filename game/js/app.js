@@ -69,6 +69,12 @@ export const App = {
   register(name, screen) { SCREENS[name] = screen; },
   boot(stage) {
     this.stage = stage; this.root = stage.querySelector('#app'); this.battleEl = stage.querySelector('#battle');
+    // the chrome's own buttons (settings, the bottom bar, the profile plate) work on every screen
+    this.root.addEventListener('click', e => {
+      const g = e.target.closest('[data-gact]'); if (!g) return;
+      if (g.dataset.gact === 'settings') this.openSettings();
+      if (g.dataset.gact === 'nav') this.navGo(g.dataset.to);
+    });
     ui.onRetreat = () => this.confirm('Retreat?', 'Leave the battle now. It counts as a defeat and costs nothing.', 'Retreat').then(ok => ok && BT.forfeit());
     ui.onHelp = () => this.rulesDialog();
   },
@@ -102,14 +108,49 @@ export const App = {
     return false;
   },
 
-  // ---------------- top bar ----------------
-  topbar({ title, cn, back = true, chips = ['cur:spirit_stones', 'cur:immortal_jade', 'cur:fate_incense'], extra = '' } = {}) {
-    return `<div class="topbar">
-      ${back ? '<button class="tb-back" data-act="back" aria-label="Back">‹</button>' : ''}
-      ${title ? `<div class="tb-title"><b>${esc(title)}</b>${cn ? `<small>${esc(cn)}</small>` : ''}</div>` : ''}
+  // ---------------- top bar, title plates, bottom navigation ----------------
+  // Hooks the screens fill in (hall.js): the profile plate's data, the bottom bar's locks and alerts, the settings.
+  profile: () => ({ face: '', name: 'Pavilion Master', lv: 1, pct: 0, line: '' }),
+  navState: () => ({ locked: {}, dots: {} }),
+  openSettings: () => {},
+  /** The top of a screen. A root screen (reached from the bottom bar, back: false) shows the profile plate and its title
+   *  plate below it; any other screen shows a round back button and its title plate. Resource chips and the settings
+   *  button sit on the right. */
+  topbar({ title, cn, back = true, chips = ['cur:spirit_stones', 'cur:immortal_jade', 'cur:fate_incense'], extra = '', icon = '' } = {}) {
+    const plate = title ? this.titlePlate(title, icon, cn) : '';
+    return `<div class="topbar${back ? '' : ' root'}">
+      <div class="tb-left">${back ? `<button class="tb-back" data-act="back" aria-label="Back"><i></i></button>${plate}` : this.profilePlate()}</div>
       <div class="tb-sp"></div>${extra}
-      ${chips.map(c => `<div class="chip" data-chip="${c}" data-tip="${c}" aria-label="${esc(get(c)?.name)}"><img src="${iconUrl(c)}" alt=""><b>${num(qty(c))}</b></div>`).join('')}
+      <div class="tb-res">${chips.map(c => `<div class="chip" data-chip="${c}" data-tip="${c}" aria-label="${esc(get(c)?.name)}"><img src="${iconUrl(c)}" alt=""><b>${num(qty(c))}</b></div>`).join('')}</div>
+      <button class="tb-round" data-gact="settings" aria-label="Settings"><img src="assets/ui/hall_settings.webp" alt=""></button>
+    </div>${!back && plate ? `<div class="tb-under">${plate}</div>` : ''}`;
+  },
+  /** A teal title plate with a gold dragon at its left end (after the mockups' screen titles). */
+  titlePlate(title, icon = '', cn = '') {
+    return `<div class="tb-title" title="${esc(cn)}">${icon ? `<img src="${icon}" alt="">` : ''}<b>${esc(title)}</b></div>`;
+  },
+  profilePlate() {
+    const p = this.profile();
+    return `<div class="pf" data-gact="nav" data-to="heroines" aria-label="${esc(p.name)}">
+      <div class="pf-av"><div class="pf-img" style="background-image:url(${p.face})"></div><b class="pf-lv">${p.lv}</b></div>
+      <div class="pf-plate"><b>${esc(p.name)}</b><div class="pf-bar"><i style="width:${Math.round(p.pct * 100)}%"></i></div><small>${esc(p.line)}</small></div>
     </div>`;
+  },
+  /** The bottom bar of the main screens; `active` is the screen it marks. */
+  nav(active) {
+    const st = this.navState(), ic = (k, fb) => `assets/ui/${hasArt(`ui/${k}.webp`) ? k : fb}.webp`;
+    const items = [['hall', 'Pavilion', ic('ic_home', 'hall_journey')], ['pond', 'Fate Pond', ic('ic_summon', 'hall_pond')], ['heroines', 'Heroines', 'assets/ui/hall_heroines.webp'],
+      ['team', 'Team', ic('ic_team', 'tab_gear')], ['sect', 'The Sect', 'assets/ui/hall_sect.webp'], ['market', 'Market', 'assets/ui/hall_market.webp']];
+    return `<nav class="bnav">${items.map(([k, label, src]) => `<button class="bn${k === active ? ' on' : ''}${st.locked[k] ? ' locked' : ''}" data-gact="nav" data-to="${k}">
+      <img src="${src}" alt=""><span>${label}</span>${st.dots[k] ? '<i class="dot">!</i>' : ''}</button>`).join('')}</nav>`;
+  },
+  /** Where the bottom bar's buttons lead (screens may refuse with a toast while locked). */
+  navGo(to) {
+    const st = this.navState();
+    if (st.locked[to]) { this.toast(st.locked[to]); return; }
+    if (to === this.curName && !(to === 'formation')) return;
+    if (to === 'team') { this.go('formation', { team: true }, { root: true }); return; }
+    this.go(to, {}, { root: true });
   },
   bumpChips() {
     this.root.querySelectorAll('[data-chip]').forEach(ch => { const b = ch.querySelector('b'); const v = num(qty(ch.dataset.chip)); if (b.textContent !== v) { b.textContent = v; ch.classList.remove('bump'); void ch.offsetWidth; ch.classList.add('bump'); } });
