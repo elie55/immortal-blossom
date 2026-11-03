@@ -2,7 +2,7 @@
 // auto-salvage rules and the last 30 salvaged pieces; a piece's details (roll gauges, set, refining, engraving,
 // reforging, lock, salvage); and a heroine's ten gear slots, which is the same screen opened with a heroine.
 import { App, esc, gearTile, slotGlyph, SET_COLOR, rewardChip } from './app.js';
-import { get, all, faceUrl, num, heroBase } from './data.js';
+import { get, all, faceUrl, num, heroBase, hasArt } from './data.js';
 import { pieces, piece, equip, unequip, setLock, markSeen, refine, salvage, restore, engravePiece, reforge, setAutoSalvage, heroGear, heroBonus, finalStats, qty, canPay, data, prog, persist } from './state.js';
 import { POSITIONS, POS_SLOT, SUB_KEYS, lineKey, statLabel, fmtStat, mainValue, subValue, rollScore, artefactLines, rarities, rarityOrder, tierOrder, rarityColor, ROMAN, refineCost, salvageValue, engraveCost, canReforge, reforgeCost, nextTier, pieceName, canWear, gearBonus, withGear } from './gear.js';
 import { sfx } from './engine.js';
@@ -60,14 +60,15 @@ function compare(hid, pos, p) {
 
 // ---------------- the screen ----------------
 App.register('ring', {
-  cls: 'ring',
+  cls: 'stg stg-panel ring',
   render(el, params = {}) {
     const hid = params.hid || null, hero = hid ? get(hid) : null;
     const st = { pos: params.pos || (hid ? 'weapon' : null), pid: params.pid || null, page: 0, select: false, picked: new Set() };
     const view = data().gear.view;
-    el.innerHTML = `<div class="scr-bg" style="background-image:url(assets/bg/pavilion.webp);filter:blur(6px) brightness(.38)"></div><div class="scr-shade"></div>
-      ${App.topbar({ title: hero ? `${hero.name} · Gear` : 'Storage Ring', cn: hero ? '装备' : '储物戒', chips: ['cur:spirit_stones', 'item:forging_dust'] })}
-      <div class="rg${hero ? ' with-hero' : ''}">${hero ? '<div class="rg-hero panel"></div>' : ''}<div class="rg-list panel"></div><div class="rg-detail panel"></div></div>`;
+    el.innerHTML = `<div class="scr-bg"></div>
+      ${App.topbar({ title: hero ? `${hero.name} · Gear` : 'Storage Ring', cn: hero ? '装备' : '储物戒', chips: ['cur:spirit_stones', 'item:forging_dust', 'item:black_iron', 'cur:immortal_jade'], plaques: hero ? [{ act: 'heroine', icon: faceUrl(hid), label: hero.name }] : [{ act: 'forge', icon: hasArt('ui/ic_forge.webp') ? 'assets/ui/ic_forge.webp' : 'assets/ui/hall_market.webp', label: 'Artifact Forge' }] })}
+      <div class="pan-head">${hero ? `${esc(hero.name)}'s gear` : 'Storage Ring'} <span class="cn">${hero ? '装备' : '储物戒'}</span></div>
+      <div class="pan rg${hero ? ' with-hero' : ''}">${hero ? '<div class="rg-hero panel"></div>' : ''}<div class="rg-list panel"></div><div class="rg-detail panel"></div></div>`;
     const heroEl = el.querySelector('.rg-hero'), listEl = el.querySelector('.rg-list'), detEl = el.querySelector('.rg-detail');
 
     const visible = () => {
@@ -172,6 +173,7 @@ App.register('ring', {
     });
     const cur = () => piece(st.pid);
     App.bind(el, {
+      heroine: () => App.go('heroine', { hid }), forge: () => App.go('forge', {}),
       dir: () => { view.dir = -(view.dir || -1); persist(); drawList(); },
       page: (b) => { st.page = +b.dataset.i; drawList(); },
       pos: (b) => { st.pos = b.dataset.pos; const id = prog(hid).eq?.[st.pos]; st.pid = id || null; draw(); },

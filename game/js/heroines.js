@@ -26,15 +26,18 @@ const costChips = cost => `<div class="got hv-cost">${cost.map(c => { const id =
   return `<div class="rw-i${have >= c.qty ? '' : ' done'}" data-tip="${id}">${iconUrl(id) ? `<img src="${iconUrl(id)}" alt="">` : '<span class="g">材</span>'}<em>${compact(have)}/${compact(c.qty)}</em></div>`; }).join('')}</div>`;
 
 App.register('heroines', {
-  cls: 'heroines',
+  cls: 'stg stg-panel heroines',
   render(el) {
     const list = [...SLICE_HEROES].sort((a, b) => (owned(b) - owned(a)) || (get(b).rarity - get(a).rarity) || ((prog(b)?.level || 0) - (prog(a)?.level || 0)));
-    el.innerHTML = `<div class="scr-bg" style="background-image:url(assets/bg/pavilion.webp);filter:blur(6px) brightness(.45)"></div><div class="scr-shade"></div>
-      ${App.topbar({ title: 'Heroines', cn: '群芳' })}
-      <div class="roster-grid">${list.map(h => { const r = get(h), p = prog(h);
+    const ic = (k, fb) => (hasArt(`ui/${k}.webp`) ? `assets/ui/${k}.webp` : `assets/ui/${fb}.webp`);
+    el.innerHTML = `<div class="scr-bg"></div>
+      ${App.topbar({ title: 'Heroines', cn: '群芳', back: false, plaques: [{ act: 'team', icon: ic('ic_team', 'tab_gear'), label: 'Team' }, { act: 'ring', icon: ic('ic_ring', 'hall_ring'), label: 'Storage Ring' }] })}
+      <div class="pan-head">The Hundred Blossoms <span class="cn">群芳</span><small>${list.filter(h => owned(h)).length} of ${list.length} gathered</small></div>
+      <div class="pan"><div class="roster-grid">${list.map(h => { const r = get(h), p = prog(h);
         return `<div class="mini${p ? '' : ' unknown'}" data-act="open" data-hid="${h}" style="background-image:url(${cardUrl(h)})">${phTag(phaseOf(r.phase))}<span class="rar">${starStr(r.rarity)}</span>
-          <div class="nm">${p ? esc(r.name) : '???'}</div><div class="lv">${p ? `Lv ${p.level}` : 'Not met'}</div>${p && p.petals ? `<span class="petals">✿${p.petals}</span>` : ''}</div>`; }).join('')}</div>`;
-    App.bind(el, { open: (b) => { if (!owned(b.dataset.hid)) { App.toast('Meet her through the Fate Pond or the story'); return; } App.go('heroine', { hid: b.dataset.hid }); } });
+          <div class="nm">${p ? esc(r.name) : '???'}</div><div class="lv">${p ? `Lv ${p.level}` : 'Not met'}</div>${p && p.petals ? `<span class="petals">✿${p.petals}</span>` : ''}</div>`; }).join('')}</div></div>
+      ${App.nav('heroines')}`;
+    App.bind(el, { open: (b) => { if (!owned(b.dataset.hid)) { App.toast('Meet her through the Fate Pond or the story'); return; } App.go('heroine', { hid: b.dataset.hid }); }, team: () => App.navGo('team'), ring: () => App.go('ring', {}) });
   },
 });
 
@@ -143,14 +146,16 @@ function tiesTab(hid) {
 }
 
 App.register('heroine', {
-  cls: 'heroine',
+  cls: 'stg stg-panel heroine',
   render(el, { hid, tab = 'tech', sel = null }) {
     const h = get(hid), p = prog(hid), s = finalStats(hid), realm = realmOf(p.bt);
     const cap = levelCap(p.bt), need = expToNext(p.level), capped = p.level >= cap;
     const nr = nextRealm(p.bt), g = growthBonus(p);
     const extra = [g.atk && `${Math.round(g.atk * 100)}% ATK`, g.hp && `${Math.round(g.hp * 100)}% HP`, g.def && `${Math.round(g.def * 100)}% DEF`].filter(Boolean);
-    el.innerHTML = `<div class="scr-bg" style="background-image:url(assets/bg/pavilion.webp);filter:blur(6px) brightness(.4)"></div><div class="scr-shade"></div>
-      ${App.topbar({ title: h.name, cn: h.cn, chips: ['cur:spirit_stones', 'item:enlightenment_scroll', 'cur:blossom_dew'] })}
+    el.innerHTML = `<div class="scr-bg"></div>
+      ${App.topbar({ title: h.name, cn: h.cn, chips: ['cur:spirit_stones', 'item:enlightenment_scroll', 'cur:blossom_dew', 'cur:immortal_jade'], plaques: [{ act: 'gear', icon: hasArt('ui/ic_ring.webp') ? 'assets/ui/ic_ring.webp' : 'assets/ui/hall_ring.webp', label: 'Her gear' }] })}
+      <div class="pan-head">${esc(h.name)} <span class="cn">${esc(h.cn)}</span><small>${esc(h.title)}</small></div>
+      <div class="pan">
       <div class="hv-art${p.petals >= 6 ? ' bloom' : ''}" style="background-image:url(${cardUrl(hid)})"><span class="stars">${starStr(h.rarity)}</span><span class="cnm">${esc(h.cn)}</span>${p.petals >= 6 ? `<div class="c-bloom">${'<i></i>'.repeat(8)}</div>` : ''}</div>
       <div class="hv-info panel">
         <h2>${esc(h.name)}</h2><div class="ttl">${esc(h.title)}</div>
@@ -176,7 +181,7 @@ App.register('heroine', {
         ${tab === 'bloom' ? blossomTab(hid, p, sel) : ''}
         ${tab === 'bond' ? bondTab(hid, p) : ''}
         ${tab === 'ties' ? tiesTab(hid) : ''}
-      </div>`;
+      </div></div>`;
     const again = (o = {}) => App.go('heroine', { hid, tab, sel, ...o }, { replace: true });
     App.bind(el, {
       tab: (b) => App.go('heroine', { hid, tab: b.dataset.t }, { replace: true }),

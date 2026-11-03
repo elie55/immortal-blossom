@@ -124,17 +124,17 @@ export const App = {
   navState: () => ({ locked: {}, dots: {} }),
   openSettings: () => {},
   openNews: () => {},
-  /** The top of a screen. A root screen (reached from the bottom bar, back: false) shows the profile plate and its title
-   *  plate below it; any other screen shows a round back button and its title plate. Resource chips and the settings
-   *  button sit on the right. */
-  topbar({ title, cn, back = true, chips = ['cur:spirit_stones', 'cur:immortal_jade', 'cur:fate_incense'], extra = '', icon = '' } = {}) {
-    const plate = title ? this.titlePlate(title, icon, cn) : '';
-    return `<div class="topbar${back ? '' : ' root'}">
-      <div class="tb-left">${back ? `<button class="tb-back" data-act="back" aria-label="Back"><i></i></button>${plate}` : this.profilePlate()}</div>
-      <div class="tb-sp"></div>${extra}
-      <div class="tb-res">${chips.map(c => `<div class="chip" data-chip="${c}" data-tip="${c}" aria-label="${esc(get(c)?.name)}"><img src="${iconUrl(c)}" alt=""><b>${num(qty(c))}</b></div>`).join('')}</div>
-      <button class="tb-round" data-gact="settings" aria-label="Settings"><img src="assets/ui/hall_settings.webp" alt=""></button>
-    </div>${!back && plate ? `<div class="tb-under">${plate}</div>` : ''}`;
+  /** The top of a screen on the shared "panel" stage (the clouds terrace with a big framed panel; stage.css .stg-panel):
+   *  the dragon title plate at the top left, the four resource chips, the three round buttons, a Back plaque and up
+   *  to two more plaques in the left column (`extra` = [{ act, icon, label }]). The screen's own content goes inside
+   *  .pan (the painted panel's interior). */
+  topbar({ title, cn, back = true, chips = ['cur:spirit_stones', 'cur:immortal_jade', 'cur:fate_incense', 'cur:blossom_dew'], extra = '', icon = '', plaques = [] } = {}) {
+    const plq = (i, act, ic, label, locked = false) => `<button class="plq ml-plq p${i}${locked ? ' locked' : ''}" data-act="${act}">${ic ? `<img src="${ic}" alt="">` : ''}<b>${esc(label)}</b></button>`;
+    return `${this.chrome('modes', { chips, profile: false })}
+      <div class="plq title-plq p1" title="${esc(cn || '')}"><b>${esc(title || '')}</b></div>
+      ${back ? plq(1, 'back', '', 'Back') : ''}
+      ${plaques.slice(0, 2).map((q, i) => plq(i + 2, q.act, q.icon || '', q.label, q.locked)).join('')}
+      ${typeof extra === 'string' ? extra : ''}`;
   },
   /** A teal title plate with a gold dragon at its left end (after the mockups' screen titles). */
   titlePlate(title, icon = '', cn = '') {
@@ -153,11 +153,11 @@ export const App = {
   chrome(stage, { chips = ['cur:spirit_stones', 'cur:immortal_jade', 'cur:fate_incense', 'cur:blossom_dew'], profile = true, cn = '' } = {}) {
     const S = STAGE[stage], p = this.profile();
     const chip = (c, i) => { const [x0, x1] = S.chips[i]; return `<div class="chip" style="left:${x0}px;width:${x1 - x0}px" data-chip="${c}" data-tip="${c}" aria-label="${esc(get(c)?.name)}"><img src="${iconUrl(c)}" alt=""><b>${num(qty(c))}</b></div>`; };
-    const rb = ([x, y], act, label, dot = '') => `<button class="rbtn" style="left:${x - 23}px;top:${y - 23}px" data-gact="${act}" aria-label="${label}">${dot ? '<i class="dot">!</i>' : ''}</button>`;
+    const rb = ([x, y], act, label, dot = '', i = 0) => `<button class="rbtn r${i}" style="left:${x - 23}px;top:${y - 23}px" data-gact="${act}" aria-label="${label}">${dot ? '<i class="dot">!</i>' : ''}</button>`;
     return `${profile && S.profile ? `<div class="pf-img" style="background-image:url(${p.face})" data-gact="nav" data-to="heroines" aria-label="${esc(p.name)}"></div><b class="pf-lv">${p.lv}</b>
       <b class="pf-name">${esc(p.name)}</b><div class="pf-bar"><i style="width:${Math.round(p.pct * 100)}%"></i><span>${esc(p.line)}</span></div>` : ''}
       ${chips.slice(0, S.chips.length).map(chip).join('')}
-      ${S.circles ? rb(S.circles[0], 'rules', 'How battles work') + rb(S.circles[1], 'news', 'News', this.navState().dots.sect ? '!' : '') + rb(S.circles[2], 'settings', 'Settings') : ''}
+      ${S.circles ? rb(S.circles[0], 'rules', 'How battles work', '', 1) + rb(S.circles[1], 'news', 'News', this.navState().dots.sect ? '!' : '', 2) + rb(S.circles[2], 'settings', 'Settings', '', 3) : ''}
       ${cn ? `<div class="scroll-cn">${esc(cn)}</div>` : ''}`;
   },
   /** The bottom bar of the main screens; `active` is the screen it marks. */
@@ -195,7 +195,7 @@ export const App = {
   dialog({ title, cn, body = '', buttons = [{ label: 'Close', cls: 'ink', value: null }], dismiss = true, onOpen } = {}) {
     return new Promise(res => {
       const w = document.createElement('div'); w.className = 'dlg-wrap';
-      w.innerHTML = `<div class="dlg panel">${title ? `<h2>${esc(title)}</h2>` : ''}${cn ? `<div class="cnh">${esc(cn)}</div>` : ''}<div class="dlg-body">${body}</div>
+      w.innerHTML = `<div class="dlg"><div class="dlg-head">${title ? `<h2>${esc(title)}</h2>` : ''}${cn ? `<div class="cnh">${esc(cn)}</div>` : ''}</div><div class="dlg-body">${body}</div>
         <div class="dlg-btns">${buttons.map((b, i) => `<button class="btn ${b.cls || ''}" data-i="${i}">${b.label}</button>`).join('')}</div></div>`;
       const close = v => { w.remove(); res(v); };
       w.addEventListener('click', e => {

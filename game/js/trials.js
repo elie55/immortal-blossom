@@ -122,14 +122,15 @@ App.register('trials', {
 
 // ---------------- Demon Hunts ----------------
 App.register('hunts', {
-  cls: 'hunts',
+  cls: 'stg stg-panel hunts',
   render(el, { hunt = 'hunt:qiongqi', sel = null }) {
     const hunts = get('mode:hunts').hunts.map(get), h = get(hunt), lv = h.levels.map(get);
     const cur = get(sel) || lv.filter(s => levelOpen(s, h.levels)).pop() || lv[0];
     const bossArt = hh => enemyArt(get(hh.creature));
-    el.innerHTML = `<div class="scr-bg" style="background-image:url(${locBg(h.location)});filter:brightness(.55)"></div><div class="scr-shade"></div>
-      ${App.topbar({ title: 'Demon Hunts', cn: '猎妖', chips: ['cur:spirit_stones', 'item:forging_dust', 'item:black_iron'] })}
-      <div class="hu-list">${hunts.map(x => `<div class="hu-b${x.id === hunt ? ' on' : ''}" data-act="hunt" data-h="${x.id}" style="background-image:url(assets/cards/${bossArt(x)}.webp)"><b>${esc(x.name)} <span class="cn">${esc(x.cn)}</span></b><small>${x.sets.map(s => `<i style="--sc:${SET_COLOR[s]}">${esc(get(s).cn[0])}</i>`).join('')}</small></div>`).join('')}</div>
+    el.innerHTML = `<div class="scr-bg"></div>
+      ${App.topbar({ title: 'Demon Hunts', cn: '猎妖', chips: ['cur:spirit_stones', 'item:forging_dust', 'item:black_iron', 'cur:immortal_jade'] })}
+      <div class="pan-head">${esc(h.name)} <span class="cn">${esc(h.cn)}</span><small>${esc(get(h.location).name)}</small></div>
+      <div class="pan"><div class="hu-list">${hunts.map(x => `<div class="hu-b${x.id === hunt ? ' on' : ''}" data-act="hunt" data-h="${x.id}" style="background-image:url(assets/cards/${bossArt(x)}.webp)"><b>${esc(x.name)} <span class="cn">${esc(x.cn)}</span></b><small>${x.sets.map(s => `<i style="--sc:${SET_COLOR[s]}">${esc(get(s).cn[0])}</i>`).join('')}</small></div>`).join('')}</div>
       <div class="hu-detail panel">
         <div class="hu-head"><div><h2>${esc(h.name)} <span class="cn gold">${esc(h.cn)}</span></h2><p class="mut">${esc(get(h.creature).title || '')} · ${esc(get(h.location).name)}</p></div></div>
         <p class="hu-gim">${esc(h.gimmick)}</p>
@@ -139,7 +140,7 @@ App.register('hunts', {
         <div class="hu-cur"><b>${esc(cur.name)}</b> <span class="mut">Tier ${ROMAN[tierOrder(cur.tier)]} · ${esc(get(cur.realm).name)} · enemies ${enemyLv(cur)}</span></div>
         <div class="rw">${dropChips(cur)}</div>
         <div class="sd-btns">${levelOpen(cur, h.levels) ? `<button class="btn" data-act="go">Battle</button>${isCleared(cur.id) ? '<button class="btn ink" data-act="rep" data-n="5">Repeat ×5</button><button class="btn ink" data-act="rep" data-n="10">×10</button>' : ''}` : `<button class="btn off">Clear ${esc(get(h.levels[Math.max(0, h.levels.indexOf(cur.id) - 1)]).name)} first</button>`}</div>
-      </div>`;
+      </div></div>`;
     const back = () => App.go('hunts', { hunt, sel: cur.id }, { replace: true });
     App.bind(el, {
       hunt: (b) => App.go('hunts', { hunt: b.dataset.h }, { replace: true }),
@@ -152,14 +153,15 @@ App.register('hunts', {
 
 // ---------------- Medicine King Valley ----------------
 App.register('valley', {
-  cls: 'valley',
+  cls: 'stg stg-panel valley',
   render(el, { sel = null } = {}) {
     const m = get('mode:valley'), lv = m.stages.map(get);
     const ph = valleyPhase(), weekend = !todayPhase('mode:valley', null);
     const cur = get(sel) || lv.filter(s => levelOpen(s, m.stages)).pop() || lv[0];
-    el.innerHTML = `<div class="scr-bg" style="background-image:url(${locBg(m.location)});filter:brightness(.55)"></div><div class="scr-shade"></div>
-      ${App.topbar({ title: 'Medicine King Valley', cn: '药王谷', chips: ['cur:spirit_stones', 'item:qi_gathering_pill', 'item:spirit_condensing_pill'] })}
-      <div class="va-left panel">${npcSays('npc:medicine_king', `<p>My furnaces got away from me, I admit it. Today they burn with <b style="color:${PH_COLOR[phaseOf(ph)]}">${esc(get(ph).name)}</b> ${PH_GLYPH[phaseOf(ph)]}: bring heroines whose phase overcomes it. Every pill they drop is yours.</p>`)}
+    el.innerHTML = `<div class="scr-bg"></div>
+      ${App.topbar({ title: 'Medicine King Valley', cn: '药王谷', chips: ['cur:spirit_stones', 'item:qi_gathering_pill', 'item:spirit_condensing_pill', 'cur:immortal_jade'] })}
+      <div class="pan-head">Medicine King Valley <span class="cn">药王谷</span><small>Today: ${esc(get(ph).name)}</small></div>
+      <div class="pan"><div class="va-left panel">${npcSays('npc:medicine_king', `<p>My furnaces got away from me, I admit it. Today they burn with <b style="color:${PH_COLOR[phaseOf(ph)]}">${esc(get(ph).name)}</b> ${PH_GLYPH[phaseOf(ph)]}: bring heroines whose phase overcomes it. Every pill they drop is yours.</p>`)}
         ${weekend ? `<div class="va-pick"><span class="mut">Weekend: choose the furnaces' phase</span><div>${PHASES5.map(p => `<button class="ph-pick${p === ph ? ' on' : ''}" data-act="pick" data-p="${p}" style="--pc:${PH_COLOR[phaseOf(p)]}">${PH_GLYPH[phaseOf(p)]}</button>`).join('')}</div></div>` : ''}
         <p class="mut va-gate">A level opens when one of your heroines reaches its realm. Three stars unlock the sweep.</p></div>
       <div class="va-levels panel">${lv.map(s => { const open = levelOpen(s, m.stages);
@@ -168,7 +170,7 @@ App.register('valley', {
         <div class="missions">${(cur.missions || []).map((mm, i) => `<span class="${(data().stages[cur.id]?.missions || [])[i] ? 'ok' : ''}">${esc(missionText(mm))}</span>`).join('')}</div>
         <div class="sd-h">PER RUN · about ${num(cur.expPerRun || 0)} EXP in pills</div><div class="rw">${dropChips(cur)}</div>
         <div class="sd-btns">${levelOpen(cur, m.stages) ? `${stars(cur.id) === 3 ? '<button class="btn jade" data-act="sweep" data-n="1">Sweep</button><button class="btn jade" data-act="sweep" data-n="10">Sweep ×10</button>' : ''}<button class="btn" data-act="go">Battle</button>${isCleared(cur.id) && stars(cur.id) < 3 ? '<button class="btn ink" data-act="rep" data-n="5">Repeat ×5</button>' : ''}` : '<button class="btn off">Locked</button>'}</div>
-      </div>`;
+      </div></div>`;
     const back = () => App.go('valley', { sel: cur.id }, { replace: true });
     App.bind(el, {
       pick: (b) => { data().flags.valleyPick = b.dataset.p; persist(); back(); },
@@ -182,7 +184,7 @@ App.register('valley', {
 
 // ---------------- Five Phases Shrines ----------------
 App.register('shrines', {
-  cls: 'shrines',
+  cls: 'stg stg-panel shrines',
   render(el, { phase = null, sel = null } = {}) {
     const m = get('mode:shrines'), dp = doubledShrine();
     const ph = phase || dp || 'phase:metal';
@@ -191,16 +193,17 @@ App.register('shrines', {
     const cur = get(sel) || lv.filter(s => levelOpen(s, list)).pop() || lv[0];
     const doubled = ph === dp;
     const boss = get((cur.waves || []).flat().find(e => get(e.enemy).boss)?.enemy);
-    el.innerHTML = `<div class="scr-bg" style="background-image:url(${locBg(m.location)});filter:brightness(.55)"></div><div class="scr-shade"></div>
-      ${App.topbar({ title: 'Five Phases Shrines', cn: '五行祠', chips: ['cur:spirit_stones', `item:${SHRINE_OF[ph]}_essence`, 'item:enlightenment_scroll'] })}
-      <div class="sh-tabs">${PHASES5.map(p => `<button class="sh-tab${p === ph ? ' on' : ''}" data-act="ph" data-p="${p}" style="--pc:${PH_COLOR[phaseOf(p)]}"><i>${PH_GLYPH[phaseOf(p)]}</i>${esc(get(p).name)}${p === dp ? '<em>×2</em>' : ''}</button>`).join('')}</div>
+    el.innerHTML = `<div class="scr-bg"></div>
+      ${App.topbar({ title: 'Five Phases Shrines', cn: '五行祠', chips: ['cur:spirit_stones', `item:${SHRINE_OF[ph]}_essence`, 'item:enlightenment_scroll', 'cur:immortal_jade'] })}
+      <div class="pan-head">${esc(get(ph).name)} Shrine <span class="cn">五行祠</span>${doubled ? '<small>×2 today</small>' : ''}</div>
+      <div class="pan"><div class="sh-tabs">${PHASES5.map(p => `<button class="sh-tab${p === ph ? ' on' : ''}" data-act="ph" data-p="${p}" style="--pc:${PH_COLOR[phaseOf(p)]}"><i>${PH_GLYPH[phaseOf(p)]}</i>${esc(get(p).name)}${p === dp ? '<em>×2</em>' : ''}</button>`).join('')}</div>
       <div class="va-levels panel sh-levels">${lv.map(s => { const open = levelOpen(s, list);
         return `<div class="va-lv${s.id === cur.id ? ' on' : ''}${open ? '' : ' locked'}${isCleared(s.id) ? ' done' : ''}" data-act="lv" data-s="${s.id}"><span class="k" style="background:${PH_COLOR[phaseOf(ph)]}">${ROMAN13[s.level]}</span><span><b>${esc(s.name)}</b><small>${esc(get(s.realm).name)} · enemies ${enemyLv(s)}</small></span></div>`; }).join('')}</div>
       <div class="va-detail panel"><h2>${esc(cur.name)}${doubled ? ' <span class="tr-x2">×2 today</span>' : ''}</h2>
         ${boss ? `<p class="mut">Guarded by <b class="gold">${esc(boss.name)}</b> ${esc(boss.cn || '')}</p>` : ''}
         <div class="sd-h">PER RUN${doubled ? ' · DOUBLED' : ''}</div><div class="rw">${dropChips(cur, doubled ? 2 : 1)}</div>
         <div class="sd-btns">${levelOpen(cur, list) ? `<button class="btn" data-act="go">Battle</button>${isCleared(cur.id) ? '<button class="btn ink" data-act="rep" data-n="5">Repeat ×5</button>' : ''}` : '<button class="btn off">Clear the level before it</button>'}</div>
-      </div>`;
+      </div></div>`;
     const back = () => App.go('shrines', { phase: ph, sel: cur.id }, { replace: true });
     App.bind(el, {
       ph: (b) => App.go('shrines', { phase: b.dataset.p }, { replace: true }),

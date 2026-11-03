@@ -14,7 +14,7 @@ const left = ms => { const s = Math.max(0, Math.ceil(ms / 1000)), h = Math.floor
 const odds = o => Object.entries(o).map(([k, v]) => `<span style="color:${rarityColor(k)}">${esc(get(k).name)} ${Math.round(v * 100)}%</span>`).join(' · ');
 
 App.register('forge', {
-  cls: 'forge',
+  cls: 'stg stg-panel forge',
   render(el, { tab = 'set', sel = null, slot = 'slot:helmet' } = {}) {
     const list = recipes().filter(r => kindOf(r) === tab);
     const cur = get(sel) || list[0];
@@ -34,9 +34,10 @@ App.register('forge', {
     const setRec = out.gear ? get(out.gear.set) : null;
     const missing = cur ? cur.inputs.filter(c => qty(c.item || c.cur) < c.qty) : [];
     const realmOk = !cur?.requiresRealm;
-    el.innerHTML = `<div class="scr-bg" style="background-image:url(${hasArt('bg/artifact_forge.webp') ? 'assets/bg/artifact_forge.webp' : 'assets/bg/pavilion.webp'});filter:brightness(.5)"></div><div class="scr-shade"></div>
-      ${App.topbar({ title: 'Artifact Forge', cn: '炼器阁', chips: ['cur:spirit_stones', 'item:forging_dust', 'item:black_iron', 'item:artefact_essence'] })}
-      <div class="fg-work panel"></div>
+    el.innerHTML = `<div class="scr-bg"></div>
+      ${App.topbar({ title: 'Artifact Forge', cn: '炼器阁', chips: ['cur:spirit_stones', 'item:forging_dust', 'item:black_iron', 'item:artefact_essence'], plaques: [{ act: 'ring', icon: hasArt('ui/ic_ring.webp') ? 'assets/ui/ic_ring.webp' : 'assets/ui/hall_ring.webp', label: 'Storage Ring' }] })}
+      <div class="pan-head">Artifact Forge <span class="cn">炼器阁</span></div>
+      <div class="pan"><div class="fg-work panel"></div>
       <div class="fg-list panel">
         <div class="tabs"><button class="${tab === 'set' ? 'on' : ''}" data-act="tab" data-t="set">Set pieces</button><button class="${tab === 'art' ? 'on' : ''}" data-act="tab" data-t="art">Artefacts</button><button class="${tab === 'unique' ? 'on' : ''}" data-act="tab" data-t="unique">Natal gear</button></div>
         <div class="fg-recipes">${list.map(r => { const o = r.output; const ic = o.gear ? `<span class="g" style="color:${SET_COLOR[o.gear.set]}">${esc(get(o.gear.set).cn[0])}</span>` : (o.art && iconUrl(o.art.replace('art:', 'art_')) ? '' : '');
@@ -53,11 +54,12 @@ App.register('forge', {
         <div class="sd-h">NEEDS · ${cur.hours || 1} HOURS</div>
         <div class="got" style="justify-content:flex-start">${cur.inputs.map(c => `<div class="rw-i${qty(c.item || c.cur) >= c.qty ? '' : ' done'}" data-tip="${c.item || c.cur}">${iconUrl(c.item || c.cur) ? `<img src="${iconUrl(c.item || c.cur)}" alt="">` : '<span class="g">材</span>'}<em>${compact(qty(c.item || c.cur))}/${compact(c.qty)}</em></div>`).join('')}</div>
         ${missing.length ? `<p class="mut">${missing.map(c => esc(get(c.item || c.cur)?.name)).join(', ')}: ${missing.some(c => (c.item || '').startsWith('item:manual_')) ? 'manuals drop in the Demon Hunts.' : 'not enough yet.'}</p>` : ''}
-        <div class="sd-btns"><button class="btn${!job && !missing.length && realmOk ? '' : ' off'}" data-act="forge">${job ? 'The furnace is busy' : (realmOk ? 'Forge' : `Needs ${esc(get(cur.requiresRealm).name)}`)}</button></div>` : ''}</div>`;
+        <div class="sd-btns"><button class="btn${!job && !missing.length && realmOk ? '' : ' off'}" data-act="forge">${job ? 'The furnace is busy' : (realmOk ? 'Forge' : `Needs ${esc(get(cur.requiresRealm).name)}`)}</button></div>` : ''}</div></div>`;
     draw();
     const timer = setInterval(() => { if (!el.isConnected) { clearInterval(timer); return; } if (forgeJob()) draw(); }, 1000);
     const again = (o = {}) => App.go('forge', { tab, sel: cur?.id, slot, ...o }, { replace: true });
     App.bind(el, {
+      ring: () => App.go('ring', {}),
       tab: (b) => App.go('forge', { tab: b.dataset.t }, { replace: true }),
       sel: (b) => again({ sel: b.dataset.r }),
       slot: (b) => again({ slot: b.dataset.s }),

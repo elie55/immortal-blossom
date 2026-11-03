@@ -15,7 +15,7 @@ export { miniCard };
 
 // ---------------- Journey ----------------
 App.register('journey', {
-  cls: 'journey',
+  cls: 'stg stg-panel journey',
   render(el, params) {
     const chs = Flow.chapters().filter(c => Flow.chapterOpen(c));
     const ch = get(params.ch) && Flow.chapterOpen(get(params.ch)) ? get(params.ch) : Flow.chapter();
@@ -25,21 +25,25 @@ App.register('journey', {
     const byId = id => stages.find(x => x.id === id);
     let sel = byId(params.sel) || (hd ? stages.find(x => !isCleared(x.id)) : (Flow.nextStage()?.chapter === ch.id ? Flow.nextStage() : null)) || stages[stages.length - 1];
     const ci = chs.indexOf(ch);
+    const ic = (k, fb) => (hasArt(`ui/${k}.webp`) ? `assets/ui/${k}.webp` : `assets/ui/${fb}.webp`);
     const draw = () => {
       const { have, max } = chapterStars(ch);
       const rs = starRewardState(ch);
-      el.innerHTML = `<div class="scr-bg" style="background-image:url(${locBg(ch.location)})${hd ? ';filter:saturate(.6) hue-rotate(-20deg) brightness(.8)' : ''}"></div><div class="scr-shade"></div>
-        ${App.topbar({ title: 'Journey', cn: '历程', extra: `<div class="ch-nav">${ci > 0 ? `<button class="tl" data-act="chap" data-c="${chs[ci - 1].id}">‹ Chapter ${chs[ci - 1].number}</button>` : ''}${ci < chs.length - 1 ? `<button class="tl" data-act="chap" data-c="${chs[ci + 1].id}">Chapter ${chs[ci + 1].number} ›</button>` : ''}${Flow.chapterDone(ch) ? `<button class="tl hdb${hd ? ' on' : ''}" data-act="hd">${hd ? 'Normal' : 'Heaven-Defying 逆天'}</button>` : ''}</div>` })}
-        <div class="ch-head"><small>VOLUME 1 · CHAPTER ${ch.number}${hd ? ' · <span class="hd-tag">HEAVEN-DEFYING</span>' : ''}</small><b>${esc(ch.name)}</b><span>${esc(ch.cn)}</span></div>
-        <div class="st-list">${stages.map((s, i) => {
-          const [g, label, c] = KIND[s.kind] || KIND.battle, un = isUnlocked(s), n = stars(s.id);
-          return `<button class="st${s === sel ? ' sel' : ''}${un ? '' : ' locked'}" data-act="pick" data-sid="${s.id}"><span class="k ${c}">${g}</span>
-            <span><b>${i + 1}. ${esc(s.name)}</b><small>${label.toUpperCase()}${isCleared(s.id) ? ' · CLEARED' : ''}</small></span>
-            ${s.waves ? `<span class="stars">${[0, 1, 2].map(k => `<i class="${k < n ? 'on' : ''}">★</i>`).join('')}</span>` : ''}</button>`;
-        }).join('')}</div>
-        <div class="st-detail panel">${detail(sel)}</div>
-        ${hd ? '' : `<div class="star-bar panel"><span class="cnt">★ ${have} / ${max}</span><div class="track"><i style="width:${(have / max * 100).toFixed(1)}%"></i></div>
-          ${rs.map((r, i) => `<button class="chest${r.claimed ? ' claimed' : (r.ready ? ' ready' : '')}" data-act="chest" data-i="${i}" title="${r.need} stars">${r.claimed ? '✓' : '宝'}</button>`).join('')}</div>`}`;
+      el.innerHTML = `<div class="scr-bg"></div>
+        ${App.topbar({ title: 'Journey', cn: '历程', plaques: [{ act: 'trials', icon: ic('ic_trophy', 'hall_trials'), label: 'Trials' }, { act: 'team', icon: ic('ic_team', 'tab_gear'), label: 'Team' }] })}
+        <div class="pan-head">Volume 1 · Chapter ${ch.number} <span class="cn">${esc(ch.cn)}</span><small>${esc(ch.name)}${hd ? ' · HEAVEN-DEFYING' : ''}</small></div>
+        <div class="pan">
+          <div class="jn-left"><div class="st-list">${stages.map((s, i) => {
+            const [g, label, c] = KIND[s.kind] || KIND.battle, un = isUnlocked(s), n = stars(s.id);
+            return `<button class="st${s === sel ? ' sel' : ''}${un ? '' : ' locked'}" data-act="pick" data-sid="${s.id}"><span class="k ${c}">${g}</span>
+              <span><b>${i + 1}. ${esc(s.name)}</b><small>${label.toUpperCase()}${isCleared(s.id) ? ' · CLEARED' : ''}</small></span>
+              ${s.waves ? `<span class="stars">${[0, 1, 2].map(k => `<i class="${k < n ? 'on' : ''}">★</i>`).join('')}</span>` : ''}</button>`;
+          }).join('')}</div>
+          ${hd ? '' : `<div class="star-bar"><span class="cnt">★ ${have} / ${max}</span><div class="track"><i style="width:${(have / max * 100).toFixed(1)}%"></i></div>
+            ${rs.map((r, i) => `<button class="chest${r.claimed ? ' claimed' : (r.ready ? ' ready' : '')}" data-act="chest" data-i="${i}" title="${r.need} stars">${r.claimed ? '✓' : '宝'}</button>`).join('')}</div>`}</div>
+          <div class="st-detail panel"><div class="sd-pic" style="background-image:url(${locBg(sel.location) || locBg(ch.location)})"></div>${detail(sel)}</div>
+        </div>
+        <div class="pan-tabs">${ci > 0 ? `<button class="btn ink sm" data-act="chap" data-c="${chs[ci - 1].id}">‹ Chapter ${chs[ci - 1].number}</button>` : ''}${ci < chs.length - 1 ? `<button class="btn ink sm" data-act="chap" data-c="${chs[ci + 1].id}">Chapter ${chs[ci + 1].number} ›</button>` : ''}${Flow.chapterDone(ch) ? `<button class="btn sm${hd ? ' red' : ' ink'}" data-act="hd">${hd ? 'Normal' : 'Heaven-Defying 逆天'}</button>` : ''}</div>`;
     };
     const detail = (s) => {
       const [, label] = KIND[s.kind] || KIND.battle, un = isUnlocked(s), cleared = isCleared(s.id), ss = stageState(s.id);
@@ -50,8 +54,8 @@ App.register('journey', {
         ${foes.length ? `<div class="sd-h">ENEMIES</div><div class="foes">${foes.map(f => { const e = get(f.enemy); return `<span class="foe"><img src="assets/cards/${enemyArt(e)}.webp" alt="">${phTag(phaseOf(e.phase))}${esc(e.name)} <span class="mut">Lv ${f.level}</span></span>`; }).join('')}</div>` : ''}
         ${s.missions ? `<div class="sd-h">MISSIONS</div><div class="missions">${s.missions.map((m, i) => `<span class="${ss?.missions?.[i] ? 'ok' : ''}">${esc(missionText(m))}</span>`).join('')}</div>` : ''}
         <div class="sd-h">REWARDS${exp ? ` · <span class="mut">${num(exp)} EXP each</span>` : ''}</div><div class="rw">${(s.firstClearRewards || []).map(r => rewardChip(r, 'first' + (cleared ? ' done' : ''))).join('')}${drops.map(d => (d.gear ? rewardChip({ gearOdds: d.gear, chance: d.chance }) : rewardChip({ cur: d.cur, item: d.item, qty: Array.isArray(d.qty) ? d.qty[1] : d.qty }))).join('')}</div>
-        </div><div class="sd-btns">${cleared && (s.scenes?.before || s.scenes?.after) ? '<button class="btn ink" data-act="story">Story</button>' : ''}
-          <button class="btn${un ? '' : ' off'}" data-act="go">${s.waves ? (cleared ? 'Fight again' : 'Formation') : (cleared ? 'Replay' : 'Begin')}</button></div>`;
+        </div><div class="sd-btns">${cleared && (s.scenes?.before || s.scenes?.after) ? '<button class="btn ink sm" data-act="story">Story</button>' : ''}
+          <button class="btn red${un ? '' : ' off'}" data-act="go">${s.waves ? (cleared ? 'Fight again' : 'Formation') : (cleared ? 'Replay' : 'Begin')}</button></div>`;
     };
     draw();
     App.bind(el, {
@@ -59,6 +63,7 @@ App.register('journey', {
       go: () => { if (!isUnlocked(sel)) return; if (hd) runTrial(sel, () => App.go('journey', { ch: ch.id, hd: true, sel: sel.id }, { root: true }), 0); else Flow.playStage(sel.id); },
       chap: (b) => App.go('journey', { ch: b.dataset.c }, { replace: true }),
       hd: () => App.go('journey', { ch: ch.id, hd: !hd }, { replace: true }),
+      trials: () => App.go('trials', {}), team: () => App.navGo('team'),
       story: async () => { if (sel.scenes.before) await Scene.play(sel.scenes.before); if (sel.scenes.after) await Scene.play(sel.scenes.after, { title: false }); App.go('journey', { ch: ch.id, sel: sel.id }, { root: true }); },
       chest: async (b) => { const i = +b.dataset.i, r = starRewardState(ch)[i]; if (r.claimed) return; if (!r.ready) { App.toast(`Collect ${r.need} stars to open this chest`); return; } const g = claimStarReward(ch, i); await App.rewardsDialog(g, 'Star reward'); draw(); },
     });
@@ -153,22 +158,24 @@ function pickTeamHeroine(team, i) {
 
 // ---------------- Victory ----------------
 App.register('results', {
-  cls: 'results',
+  cls: 'stg stg-panel results',
   render(el, { st, res, out, resolve, actions = null }) {
     const hs = res.heroes;
     const mvp = [...hs].sort((a, b) => (b.dmg + b.heal * 1.2) - (a.dmg + a.heal * 1.2))[0];
     const mh = get(mvp.id);
     const missions = st.missions || [];
-    el.innerHTML = `<div class="scr-bg" style="background-image:url(${locBg(st.location)});filter:blur(3px) brightness(.5)"></div><div class="scr-shade"></div>
-      <div class="mvp" style="background-image:url(${cardUrl(mvp.id)})"></div>
-      <div class="mvp-tag"><i>MVP</i><b>${esc(mh.name)}</b><span class="cn gold" style="font-size:28px;letter-spacing:.3em">${esc(mh.cn || '')}</span></div>
+    el.innerHTML = `<div class="scr-bg"></div>
+      ${App.chrome('modes', { profile: false })}
+      <div class="plq title-plq p1"><b>Victory</b></div>
+      <div class="pan-head">${esc(st.name)} <span class="cn">胜</span><small>${res.rounds} rounds</small></div>
+      <div class="pan">
+      <div class="mvp" style="background-image:url(${cardUrl(mvp.id)})"><div class="mvp-tag"><i>MVP</i><b>${esc(mh.name)}</b><span class="cn gold" style="font-size:22px;letter-spacing:.3em">${esc(mh.cn || '')}</span></div></div>
       <div class="res-right">
-        <div class="res-title">Victory</div>
         <div class="seals">${missions.map((m, i) => `<div class="seal-m${out.missions[i] ? ' ok' : ''}" style="--d:${0.3 + i * 0.35}s">${esc(missionText(m))}</div>`).join('')}</div>
         <div class="res-sec panel"><h3>CULTIVATION</h3><div class="exp-row">${out.exp.map(x => `<span class="exp-h"><img src="${faceUrl(x.id)}" alt=""><span>${esc(get(x.id).name)}<br><b>+${num(x.exp)} EXP</b> ${x.after > x.before ? `<span class="up">Lv ${x.after}!</span>` : `<span class="mut">Lv ${x.after}</span>`}${x.atCap ? ' <span class="mut">(cap)</span>' : ''}</span></span>`).join('') || '<span class="mut">A dream: no EXP.</span>'}</div></div>
         <div class="res-sec panel"><h3>SPOILS${out.runs > 1 ? ` · ${out.runs} BATTLES` : ''}${out.first ? ' · FIRST CLEAR' : ''}</h3><div class="got" style="justify-content:flex-start">${out.granted.map(g => g.hero ? rewardChip({ hero: g.hero }, 'first') : rewardChip(g)).join('') || '<span class="mut">Nothing this time.</span>'}</div></div>
-        <div class="res-btns"><button class="btn ink" data-act="report">Battle report</button>${actions ? actions.map(a => `<button class="btn ${a.cls || ''}" data-act="choose" data-v="${esc(a.value)}">${esc(a.label)}</button>`).join('') : '<button class="btn" data-act="go">Continue</button>'}</div>
-      </div>`;
+        <div class="res-btns"><button class="btn ink" data-act="report">Battle report</button>${actions ? actions.map(a => `<button class="btn ${a.cls || ''}" data-act="choose" data-v="${esc(a.value)}">${esc(a.label)}</button>`).join('') : '<button class="btn red" data-act="go">Continue</button>'}</div>
+      </div></div>`;
     App.bind(el, {
       go: () => resolve(),
       choose: (b) => resolve(b.dataset.v),

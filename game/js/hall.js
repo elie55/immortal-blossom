@@ -8,12 +8,12 @@ import { bldUnlocked, sectAlerts } from './sect.js';
 
 // ---------------- title ----------------
 App.register('title', {
-  cls: 'title-scr',
+  cls: 'stg stg-title title-scr',
   render(el) {
     const cont = hasProgress();
-    el.innerHTML = `<div class="scr-bg" style="background-image:url(assets/bg/${hasArt('bg/jade_pool.webp') ? 'jade_pool' : 'pavilion'}.webp)"></div><div class="scr-shade"></div>
+    el.innerHTML = `<div class="scr-bg"></div>
       <div class="logo"><div class="cn">百花仙阁</div><h1>IMMORTAL BLOSSOMS</h1><p>Rebuild the fallen Pavilion. Gather the reborn Blossoms.</p></div>
-      <div class="title-btns">${cont ? '<button class="btn" data-act="cont">Continue</button>' : '<button class="btn" data-act="new">Begin</button>'}${cont ? '<button class="btn ink" data-act="settings">Settings</button>' : ''}</div>
+      <div class="title-btns">${cont ? '<button class="tbig red" data-act="cont"><span>Continue</span></button>' : '<button class="tbig red" data-act="new"><span>Begin</span></button>'}${cont ? '<button class="tbig" data-act="settings"><span>Settings</span></button>' : ''}</div>
       <div class="title-foot">CORE LOOP ALPHA · VOLUME 1 · SAVED ON THIS DEVICE</div>`;
     App.bind(el, {
       new: () => Flow.newGame(),

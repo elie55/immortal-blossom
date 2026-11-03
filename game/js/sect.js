@@ -240,7 +240,7 @@ function bldStatus(id, now) {
 }
 
 App.register('sect', {
-  cls: 'sect',
+  cls: 'stg stg-scene sect',
   render(el) {
     plantGarden();
     const bg = hasArt('bg/sect_mountain.webp') ? 'assets/bg/sect_mountain.webp' : 'assets/bg/pavilion.webp';
@@ -255,8 +255,9 @@ App.register('sect', {
       }).join('');
     };
     el.innerHTML = `<div class="scr-bg" style="background-image:url(${bg})"></div><div class="scr-shade sm-shade"></div>
-      ${App.topbar({ title: 'The Sect', cn: '百花阁', chips: ['cur:spirit_stones', 'cur:immortal_jade', 'cur:sect_merit'] })}
-      <div class="sm-blds"></div>
+      ${App.chrome('modes', { chips: ['cur:spirit_stones', 'cur:immortal_jade', 'cur:sect_merit', 'cur:blossom_dew'], profile: false })}
+      <div class="plq title-plq p1"><b>The Sect</b></div>
+      <div class="sm-blds"></div>${App.nav('sect')}
       <div class="sm-note mut">Main Hall level ${bldLevel('bld:main_hall')} of ${bldCap('bld:main_hall')}: each chapter of the Journey lets the Pavilion rise two more levels.</div>`;
     draw();
     const timer = setInterval(() => { if (!el.isConnected) { clearInterval(timer); return; } draw(); }, 1000);
@@ -274,20 +275,21 @@ App.register('sect', {
 
 // ---------------- one building ----------------
 App.register('bld', {
-  cls: 'bld',
+  cls: 'stg stg-panel bld',
   render(el, params) {
     const { id } = params, b = get(id);
     const lv = bldLevel(id), cap = bldCap(id), cost = upgradeCostOf(id);
     const again = (o = {}) => App.go('bld', { ...params, ...o }, { replace: true });
     const body = { [CAVES]: caveBody, [GARDEN]: gardenBody, [ALCH]: alchemyBody, [MH]: missionBody, 'bld:tea_house': teaBody, [AP]: arrayBody, 'bld:main_hall': hallBody }[id];
-    el.innerHTML = `<div class="scr-bg" style="background-image:url(${hasArt('bg/sect_mountain.webp') ? 'assets/bg/sect_mountain.webp' : 'assets/bg/pavilion.webp'});filter:blur(5px) brightness(.45)"></div><div class="scr-shade"></div>
-      ${App.topbar({ title: b.name, cn: b.cn, chips: CHIPS[id] || ['cur:spirit_stones', 'cur:immortal_jade', 'cur:sect_merit'] })}
-      <div class="bl-side panel"><div class="bl-ic">${bldIcon(id)}</div><h2>${esc(b.name)}</h2><div class="cnh">${esc(b.cn)}</div>
+    el.innerHTML = `<div class="scr-bg"></div>
+      ${App.topbar({ title: b.name, cn: b.cn, chips: [...(CHIPS[id] || ['cur:spirit_stones', 'cur:immortal_jade', 'cur:sect_merit']), 'cur:blossom_dew'].slice(0, 4) })}
+      <div class="pan-head">${esc(b.name)} <span class="cn">${esc(b.cn)}</span><small>Level ${lv} / ${b.maxLevel || 10}</small></div>
+      <div class="pan"><div class="bl-side panel"><div class="bl-ic">${bldIcon(id)}</div><h2>${esc(b.name)}</h2><div class="cnh">${esc(b.cn)}</div>
         <div class="bl-lvl">Level <b>${lv}</b> / ${b.maxLevel || 10}</div><p class="mut">${esc(b.does)}.</p>
         ${lv < (b.maxLevel || 10) && cost ? `<div class="sd-h">LEVEL ${lv + 1}</div>${costRow(cost)}
           <button class="btn${lv < cap && canPay(cost) ? '' : ' off'}" data-act="up">${lv < cap ? 'Raise' : (id === 'bld:main_hall' ? 'Clear another chapter' : 'Raise the Main Hall first')}</button>` : '<div class="tm-max">Highest level</div>'}
       </div>
-      <div class="bl-main panel">${body ? body(params) : ''}</div>`;
+      <div class="bl-main panel">${body ? body(params) : ''}</div></div>`;
     const timer = setInterval(() => { if (!el.isConnected) { clearInterval(timer); return; } el.querySelectorAll('[data-end]').forEach(x => { const left = +x.dataset.end - Date.now(); x.textContent = left > 0 ? hhmm(left) : 'Ready'; if (left <= 0 && !x.dataset.done) { x.dataset.done = 1; again(); } }); el.querySelectorAll('[data-cave]').forEach(x => { x.textContent = `${num(caveExp(x.dataset.cave))} EXP · ${caveHours(x.dataset.cave).toFixed(1)}h`; }); }, 1000);
     App.bind(el, {
       up: () => { if (!upgradeBld(id)) { App.toast('Not enough Spirit Stones'); return; } sfx('charge'); App.toast(`${esc(b.name)} rises to level ${bldLevel(id)}`); again(); },
@@ -426,19 +428,21 @@ async function caveResult(rs) {
 
 // ---------------- the Market ----------------
 App.register('market', {
-  cls: 'market',
+  cls: 'stg stg-panel market',
   render(el, { tab = 'shop:myriad_treasures' } = {}) {
     const shop = get(tab), shops = ['shop:myriad_treasures', 'shop:merit_exchange'];
-    el.innerHTML = `<div class="scr-bg" style="background-image:url(assets/bg/pavilion.webp);filter:blur(5px) brightness(.45)"></div><div class="scr-shade"></div>
-      ${App.topbar({ title: 'Market', cn: '市集', chips: tab === 'shop:merit_exchange' ? ['cur:sect_merit', 'cur:spirit_stones', 'cur:immortal_jade'] : ['cur:spirit_stones', 'cur:immortal_jade', 'cur:fate_incense'] })}
-      <div class="mk panel"><div class="tabs">${shops.map(s => `<button class="${s === tab ? 'on' : ''}" data-act="tab" data-t="${s}">${esc(get(s).name)}</button>`).join('')}</div>
+    el.innerHTML = `<div class="scr-bg"></div>
+      ${App.topbar({ title: 'Market', cn: '市集', back: false, chips: tab === 'shop:merit_exchange' ? ['cur:sect_merit', 'cur:spirit_stones', 'cur:immortal_jade', 'cur:fate_incense'] : ['cur:spirit_stones', 'cur:immortal_jade', 'cur:fate_incense', 'cur:blossom_dew'], plaques: shops.map(sh => ({ act: 'tab', icon: hasArt(sh === 'shop:merit_exchange' ? 'ui/ic_gift.webp' : 'ui/ic_shop.webp') ? `assets/ui/${sh === 'shop:merit_exchange' ? 'ic_gift' : 'ic_shop'}.webp` : '', label: get(sh).name })) })}
+      <div class="pan-head">${esc(shop.name)} <span class="cn">市集</span></div>
+      <div class="pan"><div class="mk panel">
         <p class="mut">${tab === 'shop:merit_exchange' ? 'Tao Yao trades the Sect\'s stores for Sect Merit, earned from duties and expeditions.' : 'Madam Jin\'s guild sells a little of everything.'} Limits refresh every Monday. Nothing here costs real money.</p>
         <div class="mk-grid">${shop.stock.map((row, i) => { const id = row.item || row.cur, left = stockLeft(tab, i), price = row.price[0];
           return `<div class="mk-i${left <= 0 ? ' sold' : ''}"><div class="rw-i" data-tip="${id}">${iconUrl(id) ? `<img src="${iconUrl(id)}" alt="">` : '<span class="g">物</span>'}${row.qty > 1 ? `<em>${row.qty}</em>` : ''}</div>
             <b>${esc(get(id).name)}</b><small>${row.limit ? `${Math.max(0, left)} of ${row.limit} left` : 'No limit'}</small>
-            <button class="btn sm${left > 0 && canPay(row.price) ? '' : ' off'}" data-act="buy" data-i="${i}"><img class="ic" src="${iconUrl(price.cur || price.item)}" alt="">${compact(price.qty)}</button></div>`; }).join('')}</div></div>`;
+            <button class="btn sm${left > 0 && canPay(row.price) ? '' : ' off'}" data-act="buy" data-i="${i}"><img class="ic" src="${iconUrl(price.cur || price.item)}" alt="">${compact(price.qty)}</button></div>`; }).join('')}</div></div></div>
+      ${App.nav('market')}`;
     App.bind(el, {
-      tab: (b) => App.go('market', { tab: b.dataset.t }, { replace: true }),
+      tab: (b) => App.go('market', { tab: b.dataset.t || shops.find(sh => get(sh).name === b.textContent.trim()) || tab }, { replace: true }),
       buy: (b) => { const got = buy(tab, +b.dataset.i); if (!got) { App.toast('You cannot afford that'); return; } sfx('heal'); App.toast(`Bought ${esc(get(got[0].item || got[0].cur).name)} ×${got[0].qty}`); App.go('market', { tab }, { replace: true }); },
     });
   },
