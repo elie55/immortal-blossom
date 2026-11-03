@@ -4,6 +4,8 @@ A premium, fully offline, landscape card-battle RPG for Android with a xianxia s
 
 **Play it in the browser: [elie55.github.io/immortal-blossom](https://elie55.github.io/immortal-blossom/)** (landscape; on a phone, turn it sideways). The save stays in that browser.
 
+The interface is the mockups themselves: each main screen is a painted stage (`game/assets/stage/`) and the game places its numbers, names and buttons on the painted plates; every technique has its own effect (`game/js/motifs.js`). See `game/README.md`.
+
 ## Documents
 
 - [Game specification](docs/game-specification.md): world, heroines, card combat, cultivation, equipment, game modes, the Sect, summoning, screens, tech and milestones.
