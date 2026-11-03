@@ -19,6 +19,14 @@ export const npcSays = (id, html) => {
   return `<div class="npc-say">${u ? `<div class="npc-fig${standUrl(id) ? '' : ' flat'}"><img src="${u}" alt=""></div>` : ''}<div>${html}</div></div>`;
 };
 export const starStr = n => '★'.repeat(n);
+/** Where the painted stages' pills and circles are (stage.css has the rest): the chips' number boxes [x0, x1] at the
+ *  top, the three round buttons' centres, whether the stage paints a profile plate. */
+const STAGE = {
+  home: { chips: [[495, 561], [648, 716], [800, 857], [937, 1010]], circles: [[1103, 28], [1166, 28], [1236, 28]], profile: true },
+  pond: { chips: [[470, 595], [625, 751], [779, 894], [926, 1053]], circles: [[1117, 27], [1180, 27], [1237, 27]], profile: true },
+  modes: { chips: [[476, 543], [630, 702], [787, 849], [935, 1018]], circles: [[1114, 27], [1179, 27], [1240, 27]], profile: false },
+  team: { chips: [[528, 621], [669, 762], [808, 893], [935, 1038]], circles: [[1095, 25], [1152, 25], [1202, 25]], profile: true },
+};
 /** 1,234 · 12.3k · 320k · 1.2M: short numbers for small chips. */
 export const compact = n => (n >= 1e6 ? `${+(n / 1e6).toFixed(1)}M` : n >= 1e4 ? `${Math.round(n / 1e3)}k` : n >= 1e3 ? `${+(n / 1e3).toFixed(1)}k` : String(Math.round(n)));
 // ---------------- gear tiles ----------------
@@ -73,6 +81,8 @@ export const App = {
     this.root.addEventListener('click', e => {
       const g = e.target.closest('[data-gact]'); if (!g) return;
       if (g.dataset.gact === 'settings') this.openSettings();
+      if (g.dataset.gact === 'rules') this.rulesDialog();
+      if (g.dataset.gact === 'news') this.openNews();
       if (g.dataset.gact === 'nav') this.navGo(g.dataset.to);
     });
     ui.onRetreat = () => this.confirm('Retreat?', 'Leave the battle now. It counts as a defeat and costs nothing.', 'Retreat').then(ok => ok && BT.forfeit());
@@ -113,6 +123,7 @@ export const App = {
   profile: () => ({ face: '', name: 'Pavilion Master', lv: 1, pct: 0, line: '' }),
   navState: () => ({ locked: {}, dots: {} }),
   openSettings: () => {},
+  openNews: () => {},
   /** The top of a screen. A root screen (reached from the bottom bar, back: false) shows the profile plate and its title
    *  plate below it; any other screen shows a round back button and its title plate. Resource chips and the settings
    *  button sit on the right. */
@@ -136,11 +147,24 @@ export const App = {
       <div class="pf-plate"><b>${esc(p.name)}</b><div class="pf-bar"><i style="width:${Math.round(p.pct * 100)}%"></i></div><small>${esc(p.line)}</small></div>
     </div>`;
   },
+  /** The painted stages' chrome (stage.css): the profile plate, the four resource chips on the painted pills, the
+   *  three round buttons (rules, news, settings) and the medallion's scroll, each at its measured place on `stage`.
+   *  The stages: home (the Pavilion Hall), pond (the Fate Pond), modes (Trials), team (Formation). */
+  chrome(stage, { chips = ['cur:spirit_stones', 'cur:immortal_jade', 'cur:fate_incense', 'cur:blossom_dew'], profile = true, cn = '' } = {}) {
+    const S = STAGE[stage], p = this.profile();
+    const chip = (c, i) => { const [x0, x1] = S.chips[i]; return `<div class="chip" style="left:${x0}px;width:${x1 - x0}px" data-chip="${c}" data-tip="${c}" aria-label="${esc(get(c)?.name)}"><img src="${iconUrl(c)}" alt=""><b>${num(qty(c))}</b></div>`; };
+    const rb = ([x, y], act, label, dot = '') => `<button class="rbtn" style="left:${x - 23}px;top:${y - 23}px" data-gact="${act}" aria-label="${label}">${dot ? '<i class="dot">!</i>' : ''}</button>`;
+    return `${profile && S.profile ? `<div class="pf-img" style="background-image:url(${p.face})" data-gact="nav" data-to="heroines" aria-label="${esc(p.name)}"></div><b class="pf-lv">${p.lv}</b>
+      <b class="pf-name">${esc(p.name)}</b><div class="pf-bar"><i style="width:${Math.round(p.pct * 100)}%"></i><span>${esc(p.line)}</span></div>` : ''}
+      ${chips.slice(0, S.chips.length).map(chip).join('')}
+      ${S.circles ? rb(S.circles[0], 'rules', 'How battles work') + rb(S.circles[1], 'news', 'News', this.navState().dots.sect ? '!' : '') + rb(S.circles[2], 'settings', 'Settings') : ''}
+      ${cn ? `<div class="scroll-cn">${esc(cn)}</div>` : ''}`;
+  },
   /** The bottom bar of the main screens; `active` is the screen it marks. */
   nav(active) {
     const st = this.navState(), ic = (k, fb) => `assets/ui/${hasArt(`ui/${k}.webp`) ? k : fb}.webp`;
-    const items = [['hall', 'Pavilion', ic('ic_home', 'hall_journey')], ['pond', 'Fate Pond', ic('ic_summon', 'hall_pond')], ['heroines', 'Heroines', 'assets/ui/hall_heroines.webp'],
-      ['team', 'Team', ic('ic_team', 'tab_gear')], ['sect', 'The Sect', 'assets/ui/hall_sect.webp'], ['market', 'Market', 'assets/ui/hall_market.webp']];
+    const items = [['hall', 'Pavilion', ic('ic_home', 'hall_journey')], ['pond', 'Fate Pond', ic('ic_summon', 'hall_pond')], ['heroines', 'Heroines', ic('ic_book', 'hall_heroines')],
+      ['team', 'Team', ic('ic_team', 'tab_gear')], ['sect', 'The Sect', ic('ic_home', 'hall_sect')], ['market', 'Market', ic('ic_gift', 'hall_market')]];
     return `<nav class="bnav">${items.map(([k, label, src]) => `<button class="bn${k === active ? ' on' : ''}${st.locked[k] ? ' locked' : ''}" data-gact="nav" data-to="${k}">
       <img src="${src}" alt=""><span>${label}</span>${st.dots[k] ? '<i class="dot">!</i>' : ''}</button>`).join('')}</nav>`;
   },

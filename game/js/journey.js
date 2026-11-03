@@ -8,7 +8,7 @@ import { runTrial } from './trials.js';
 const KIND = { battle: ['战', 'Battle', ''], story: ['卷', 'Story', 'story'], commission: ['委', 'Commission', ''], encounter: ['遇', 'Encounter', 'story'], boss: ['首', 'Boss', 'boss'] };
 const miniCard = (hid, extra = '', cls = '') => {
   const h = get(hid), p = prog(hid);
-  return `<div class="mini ${cls}" data-hid="${hid}" style="background-image:url(${cardUrl(hid)})">${phTag(phaseOf(h.phase))}<span class="rar">${starStr(h.rarity)}</span>
+  return `<div class="mini ${cls}" data-hid="${hid}" style="background-image:url(${cardUrl(hid)})"><img class="ph-orb" src="assets/ui/orb_${phaseOf(h.phase)}.webp" alt="" data-tip="phase:${phaseOf(h.phase)}"><span class="rar">${starStr(h.rarity)}</span>
     <div class="nm">${esc(h.name)}</div><div class="lv">${p ? `Lv ${p.level}` : (extra || '')}</div>${extra && p ? extra : ''}</div>`;
 };
 export { miniCard };
@@ -65,58 +65,91 @@ App.register('journey', {
   },
 });
 
-// ---------------- Formation ----------------
+// ---------------- Formation (the "Équipe" stage) ----------------
+// The team on the platform (the leader in front, two beside her, one behind), the parchment on the right (power,
+// phases, attributes; the arrays, Twin Blooms and the enemies under the tabs), the four buttons below. Without a
+// stage (`team: true`, from the bottom bar) it only edits the saved team.
 App.register('formation', {
-  cls: 'formation',
-  render(el, { st, resolve }) {
-    const required = st.required || [];   // a heroine on trial fights her own tribulation
-    const guests = [...required, ...(st.guests || []).filter(g => !owned(g) && !required.includes(g))];
+  cls: 'stg stg-team formation',
+  render(el, { st = null, resolve = null, team: teamOnly = false } = {}) {
+    const required = st?.required || [];   // a heroine on trial fights her own tribulation
+    const guests = [...required, ...(st?.guests || []).filter(g => !owned(g) && !required.includes(g))];
     const roster = ownedHeroes().sort((a, b) => (prog(b).level - prog(a).level) || (get(b).rarity - get(a).rarity));
     let team = [...guests, ...(data().team || []).filter(h => owned(h) && !guests.includes(h))].slice(0, 4);
     for (const h of roster) { if (team.length >= 4) break; if (!team.includes(h)) team.push(h); }
+    let tab = 'team';
+    const ic = (k, fb) => (hasArt(`ui/${k}.webp`) ? `assets/ui/${k}.webp` : `assets/ui/${fb}.webp`);
+    const lvOf = h => (prog(h) ? finalStats(h) : heroStats(h, st ? Math.max(...st.waves.flat().map(e => e.level)) : 1, 0));
     const draw = () => {
-      const stats = team.map(h => (prog(h) ? finalStats(h) : heroStats(h, Math.max(...st.waves.flat().map(e => e.level)), 0)));
+      const stats = team.map(lvOf);
       const pw = stats.reduce((a, s) => a + power(s), 0);
+      const sum = k => stats.reduce((a, s) => a + (s[k] || 0), 0);
       const combos = teamCombos(team), threads = teamThreads(team);
-      // chain preview: the team in feeding order
       const phases = team.map(h => phaseOf(get(h).phase));
       const order = ['water', 'wood', 'fire', 'earth', 'metal'];
       let best = [];
       for (const start of order) { const run = []; let p = start; while (phases.includes(p) && !run.includes(p)) { run.push(p); p = order[(order.indexOf(p) + 1) % 5]; } if (run.length > best.length) best = run; }
-      el.innerHTML = `<div class="scr-bg" style="background-image:url(${locBg(st.location)})"></div><div class="scr-shade"></div>
-        ${App.topbar({ title: 'Formation', cn: '布阵' })}
-        <div class="fm-side l panel"><h3>ARRAY</h3><button class="fm-array" data-act="array"><b class="gold">${esc(get(currentArray()).name)} 阵</b><small>${esc(get(currentArray()).theme)}</small><span>Change ›</span></button>
-          <div class="mut">${arraysOpen().length > 1 ? `${arraysOpen().length} of 5 arrays open` : 'More arrays unlock with the chapter bosses.'}</div>
-          <h3 style="margin-top:14px">POWER</h3><div class="power">${num(pw)}</div>
-          <h3 style="margin-top:14px">TWIN BLOOMS 并蒂</h3>${combos.length ? combos.map(c => `<div class="twin"><b>${esc(c.name)} ${esc(c.cn)}</b><small>${esc(c.howTo)}</small></div>`).join('') : '<div class="mut">No combo in this team. Pairs such as Ling Shuang and Mo Yingyue, or Wei Zi and Yan Feihong, have one.</div>'}
-          ${threads.length ? `<h3 style="margin-top:14px">RESONANCE 因缘</h3>${threads.map(t => `<div class="twin"><b>${esc(get(t.a).name)} · ${esc(get(t.b).name)}</b><small>${esc((t.kind || '').replace(/_/g, ' '))}: +5% Attack for both</small></div>`).join('')}` : ''}</div>
-        <div class="fm-slots">${[0, 1, 2, 3].map(i => { const h = team[i]; const g = h && guests.includes(h);
-          return `<div class="fm-slot${h ? '' : ' empty'}${g ? ' guest' : ''}" data-act="slot" data-i="${i}">${h ? miniCard(h, g ? `<span class="lv">${required.includes(h) ? 'On trial' : 'Guest'}</span>` : '') : ''}<div class="pos">${['Front · 1', '2', '3', 'Rear · 4'][i]}<small>${esc(arrayText(currentArray(), i, arrayLevel(currentArray())))}</small></div></div>`; }).join('')}</div>
-        <div class="fm-chain">${best.length > 1 ? `<span class="mut">Harmony order</span> ${best.map(p => phTag(p)).join('<em>›</em>')} <span class="gold">×${best.length}</span>` : '<span class="mut">No two phases of this team feed each other: try Kindred Qi or mix phases.</span>'}</div>
-        <div class="fm-side r panel"><h3>ENEMIES</h3>${st.waves.map((w, i) => `<div class="wave-line"><span class="mut">Wave ${i + 1}</span>${w.map(e => { const r = get(e.enemy); return `${phTag(phaseOf(r.phase))}`; }).join('')}<span class="mut">Lv ${Math.max(...w.map(e => e.level))}</span></div>`).join('')}
-          <div class="mut" style="margin-top:8px">Their phases: pick heroines whose phase overcomes them (Water › Fire › Metal › Wood › Earth › Water).</div></div>
-        <div class="fm-go"><button class="btn red" data-act="start"${team.length ? '' : ' disabled'}>Begin battle</button></div>
-        <div class="fm-roster panel">${roster.map(h => miniCard(h, '', team.includes(h) ? 'inteam' : '')).join('') || '<div class="mut">Summon heroines at the Fate Pond.</div>'}</div>`;
+      const slot = (i, cls) => { const h = team[i], g = h && guests.includes(h);
+        return `<div class="tm-slot p${i + 1}${h ? '' : ' empty'}${g ? ' guest' : ''}${i === 0 && h ? ' lead' : ''}" data-act="slot" data-i="${i}">${h ? miniCard(h, g ? `<span class="lv">${required.includes(h) ? 'On trial' : 'Guest'}</span>` : '') : 'Tap to<br>choose'}
+          <span class="pos">${['Front', '2nd', '3rd', 'Rear'][i]}${cls ? ` · ${cls}` : ''}</span></div>`; };
+      const arr = get(currentArray());
+      const body = tab === 'team' ? `<div class="parch-h">Phase affinities</div><div class="parch-aff">${['water', 'wood', 'fire', 'earth', 'metal'].map(p => `<span><img src="assets/ui/orb_${p}.webp" alt="">${Math.round(phases.filter(x => x === p).length / Math.max(1, team.length) * 100)}%</span>`).join('')}</div>
+          <div class="parch-h">Team attributes</div>
+          ${[['Health', num(sum('hp')), 'tab_meri'], ['Attack', num(sum('atk')), 'tab_tech'], ['Defense', num(sum('def')), 'tab_gear'], ['Crit rate', `${Math.round(stats.reduce((a, s) => a + s.crit, 0) / Math.max(1, stats.length) * 100)}%`, 'tab_bloom'], ['Crit damage', `${Math.round(stats.reduce((a, s) => a + s.critDmg, 0) / Math.max(1, stats.length) * 100)}%`, 'tab_bond'], ['Array', esc(arr.name), 'tab_ties']].map(([k, v, i]) => `<div class="parch-row"><img src="assets/ui/${i}.webp" alt=""><span>${k}</span><b>${v}</b></div>`).join('')}`
+        : tab === 'array' ? `<div class="parch-h">Battle Array</div>${all('array').map(a => { const open = arraysOpen().some(x => x.id === a.id);
+          return `<div class="parch-row${a.id === currentArray() ? ' sel' : ''}${open ? '' : ' locked'}" data-act="arr" data-arr="${a.id}"><span>${esc(a.name)}</span><b>${open ? (a.id === currentArray() ? '✓' : '') : '🔒'}</b></div>`; }).join('')}
+          <div class="parch-note">${esc(arr.theme)}. ${[0, 1, 2, 3].map(i => esc(arrayText(currentArray(), i, arrayLevel(currentArray())))).join(' · ')}</div>`
+        : tab === 'twin' ? `<div class="parch-h">Twin Blooms 并蒂</div>${combos.length ? combos.map(c => `<div class="parch-note"><b>${esc(c.name)}</b> ${esc(c.cn)}: ${esc(c.howTo)}</div>`).join('') : '<div class="parch-note">No combo in this team. Pairs such as Ling Shuang and Mo Yingyue, or Wei Zi and Yan Feihong, have one.</div>'}
+          ${threads.length ? `<div class="parch-h">Resonance 因缘</div>${threads.map(t => `<div class="parch-note"><b>${esc(get(t.a).name)} · ${esc(get(t.b).name)}</b>: +5% Attack for both</div>`).join('')}` : ''}`
+        : `<div class="parch-h">Enemies</div>${st ? st.waves.map((w, i) => `<div class="parch-row wave"><span>Wave ${i + 1}</span>${w.map(e => phTag(phaseOf(get(e.enemy).phase))).join('')}<b>Lv ${Math.max(...w.map(e => e.level))}</b></div>`).join('') + '<div class="parch-note">Pick heroines whose phase overcomes theirs (Water › Fire › Metal › Wood › Earth › Water).</div>' : '<div class="parch-note">Choose a stage on the Journey to see its enemies here.</div>'}`;
+      el.innerHTML = `<div class="scr-bg"></div>
+        ${App.chrome('team', { cn: '百花阁' })}
+        <div class="plq title-plq p1"><img src="${ic('ic_team', 'tab_gear')}" alt=""><b>${st ? 'Formation' : 'Team'}</b></div>
+        <button class="plq tl-plq gold p1" data-act="back"><b>${st ? 'Back' : 'Pavilion'}</b></button>
+        <button class="plq tl-plq p2" data-act="heroines"><img src="${ic('ic_book', 'hall_heroines')}" alt=""><b>Heroines</b></button>
+        <button class="plq tl-plq p3" data-act="ring"><img src="${ic('ic_ring', 'hall_ring')}" alt=""><b>Storage Ring</b></button>
+        <button class="plq tl-plq p4" data-act="rules"><img src="${ic('ic_yinyang', 'hall_phases')}" alt=""><b>Five Phases</b></button>
+        ${[['team', 'Team', 'ic_team'], ['array', 'Array', 'ic_yinyang'], ['twin', 'Twin Blooms', 'ic_lotus'], ['foes', 'Enemies', 'ic_fist']].map(([k, label, i], n) => `<button class="ttab p${n + 1}${tab === k ? ' on' : ''}" data-act="tab" data-tab="${k}"><img src="${ic(i, 'hall_trials')}" alt="">${label}</button>`).join('')}
+        ${[0, 1, 2, 3].map(i => slot(i, arrayText(currentArray(), i, arrayLevel(currentArray())))).join('')}
+        <div class="tm-chain">${best.length > 1 ? `Harmony order ${best.map(p => phTag(p)).join('<em>›</em>')} <em>×${best.length}</em>` : 'No two phases of this team feed each other: try Kindred Qi or mix phases.'}</div>
+        <div class="parch"><div class="parch-head"><small><img src="${ic('ic_fist', 'hall_trials')}" alt="">Power</small><b>${num(pw)}</b></div><div class="parch-body">${body}</div></div>
+        <button class="tbtn p1" data-act="auto"><img src="${ic('ic_crown', 'hall_heroines')}" alt="">Auto</button>
+        <button class="tbtn p2" data-act="details"><img src="${ic('ic_search', 'hall_phases')}" alt="">Details</button>
+        <button class="tbtn teal p3" data-act="save">Save team</button>
+        <button class="tbtn red p4" data-act="start"${team.length ? '' : ' disabled'}>${st ? 'Begin battle' : 'Confirm'}</button>`;
     };
     draw();
-    el.addEventListener('click', e => {
-      const m = e.target.closest('.fm-roster .mini');
-      if (m) { const h = m.dataset.hid; if (guests.includes(h)) { App.toast(`${get(h).name} must fight this battle`); return; } if (team.includes(h)) team = team.filter(x => x !== h); else if (team.length < 4) team.push(h); else App.toast('The team is full: tap a slot to remove a heroine'); draw(); return; }
-    });
+    const finish = (t) => { if (resolve) resolve(t); else App.back(); };
     App.bind(el, {
-      array: () => App.dialog({
-        title: 'Battle Array', cn: '阵法', body: `<div class="arr-list">${all('array').map(a => { const open = arraysOpen().some(x => x.id === a.id);
-          return `<button class="arr${a.id === currentArray() ? ' on' : ''}${open ? '' : ' locked'}" data-arr="${a.id}"><b>${esc(a.name)}</b><small>${esc(a.theme)}</small><span>${[0, 1, 2, 3].map(i => esc(arrayText(a.id, i, arrayLevel(a.id)))).join(' · ')}</span>${open ? '' : `<em>Clear ${esc(get(a.unlockedBy)?.name)}</em>`}</button>`; }).join('')}</div>`,
-        onOpen: (w, close) => w.addEventListener('click', e => { const b = e.target.closest('[data-arr]'); if (!b || b.classList.contains('locked')) return; setArray(b.dataset.arr); close(true); }),
-      }).then(() => draw()),
-      slot: (b) => { const h = team[+b.dataset.i]; if (!h) return; if (guests.includes(h)) { App.toast(required.includes(h) ? `This is ${get(h).name}'s own tribulation` : `${get(h).name} insists on coming`); return; } team = team.filter(x => x !== h); draw(); },
-      start: () => { if (!team.length) return; data().team = team.filter(h => owned(h)); persist(); resolve(team); },
-      back: () => resolve(null),
+      tab: (b) => { tab = b.dataset.tab; draw(); },
+      arr: (b) => { if (!arraysOpen().some(x => x.id === b.dataset.arr)) { App.toast(`Clear ${get(get(b.dataset.arr).unlockedBy)?.name} to open this array`); return; } setArray(b.dataset.arr); draw(); },
+      slot: async (b) => {
+        const i = +b.dataset.i, h = team[i];
+        if (h && guests.includes(h)) { App.toast(required.includes(h) ? `This is ${get(h).name}'s own tribulation` : `${get(h).name} insists on coming`); return; }
+        const pick = await pickTeamHeroine(team, i);
+        if (pick === 'remove') team = team.filter(x => x !== h);
+        else if (pick) { if (team.includes(pick)) team = team.filter(x => x !== pick); if (h) team[i] = pick; else team.push(pick); }
+        draw();
+      },
+      auto: () => { team = [...guests]; for (const h of roster) { if (team.length >= 4) break; if (!team.includes(h)) team.push(h); } draw(); App.toast('The strongest heroines take the field'); },
+      details: () => App.dialog({ title: st ? st.name : 'The team', cn: '详', body: st ? `<p>${esc(st.beat || '')}</p>${st.missions ? `<div class="missions">${st.missions.map(m => `<span>${esc(missionText(m))}</span>`).join('')}</div>` : ''}` : `<p>${team.map(h => `${esc(get(h).name)} Lv ${prog(h)?.level || 1}`).join(' · ')}</p>` }),
+      save: () => { data().team = team.filter(h => owned(h)); persist(); App.toast('Team saved'); },
+      start: () => { if (!team.length) return; data().team = team.filter(h => owned(h)); persist(); finish(team); },
+      heroines: () => App.go('heroines', {}), ring: () => App.go('ring', {}), rules: () => App.rulesDialog(),
+      back: () => finish(null),
     });
-    // the built-in back handler goes to the previous screen; a cancelled formation ends the stage instead
-    el.querySelector('[data-act="back"]').addEventListener('click', e => { e.stopPropagation(); resolve(null); }, true);
+    void teamOnly; void PH_COLOR;
   },
 });
+/** Choose a heroine for a team slot: the roster in a grid (those in the team marked); 'remove' empties the slot. */
+function pickTeamHeroine(team, i) {
+  const list = ownedHeroes().sort((a, b) => (prog(b).level - prog(a).level) || (get(b).rarity - get(a).rarity));
+  return App.dialog({
+    title: `Slot ${i + 1}`, cn: '择人', body: `<div class="pk-grid">${list.map(h => `<button class="pk${team.includes(h) ? ' busy' : ''}" data-h="${h}"><img src="${faceUrl(h)}" alt=""><b>${esc(get(h).name)}</b><small>Lv ${prog(h).level} · ${starStr(get(h).rarity)}${team.includes(h) ? ' · in the team' : ''}</small></button>`).join('') || '<p class="mut">Summon heroines at the Fate Pond.</p>'}</div>`,
+    buttons: [{ label: 'Cancel', cls: 'ink', value: null }, ...(team[i] ? [{ label: 'Remove', cls: 'red', value: 'remove' }] : [])],
+    onOpen: (w, close) => w.addEventListener('click', e => { const b = e.target.closest('.pk'); if (b) close(b.dataset.h); }),
+  });
+}
 
 // ---------------- Victory ----------------
 App.register('results', {

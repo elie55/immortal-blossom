@@ -199,6 +199,7 @@
 .mini .nm { position: absolute; left: 8px; right: 8px; bottom: 28px; z-index: 2; font: 700 20px 'Cormorant Garamond', serif; color: #fff3d6; line-height: 1; text-shadow: 0 2px 4px #000; }
 .mini .lv { position: absolute; left: 8px; bottom: 8px; z-index: 2; font: 600 16px Oswald, sans-serif; color: #fff; }
 .mini .ph-tag { position: absolute; left: 6px; top: 6px; width: 30px; height: 30px; font-size: 17px; z-index: 2; }
+.mini .ph-orb { position: absolute; left: -8px; top: -8px; width: 36px; height: 36px; z-index: 2; filter: drop-shadow(0 2px 3px rgba(0, 0, 0, .55)); }
 .mini .rar { position: absolute; right: 6px; top: 4px; z-index: 2; color: #ffcf5a; font-size: 15px; text-shadow: 0 1px 3px #000; letter-spacing: -1px; }
 .fm-chain { position: absolute; left: 50%; top: 362px; transform: translateX(-50%); z-index: 3; display: flex; align-items: center; gap: 10px; font: 600 20px 'Cormorant Garamond', serif; white-space: nowrap; }
 .fm-chain .ph-tag { width: 38px; height: 38px; }

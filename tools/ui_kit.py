@@ -10,6 +10,8 @@ ui_plaques.png  the cream menu plaque with a jade socket (and its lit twin), the
                 a round jade button and a red ribbon
 ui_icons.png    twelve menu icons: pavilion, summon cards, team, book / rates seal, gift, hourglass, back arrow /
                 brush, trophy, forge, war banner
+ui_icons2.png   twelve more: ring, gear, lotus, mail / bell, shop bag, yin-yang, speaker / retreat flag, magnifier,
+                crown, fist
 bg_home_terrace.png  the Pavilion Hall's terrace (assets/bg/home_terrace.webp)
 Everything lands in game/assets/ui/. The pieces are found as connected shapes (the rows of a sheet can overlap)
 and named in reading order. Some sheets keep ChatGPT's white "transparent" smoke around the art, nearly opaque
@@ -114,7 +116,10 @@ def main(folder):
     plain('plate_teal', 300, 342, 292)
     if os.path.exists(p('ui_icons.png')):
         cut(p('ui_icons.png'), ['ic_home', 'ic_summon', 'ic_team', 'ic_book', 'ic_rates', 'ic_gift', 'ic_hourglass', 'ic_back',
-                                'ic_brush', 'ic_trophy', 'ic_forge', 'ic_banner'], 3, 128)
+                                'ic_brush', 'ic_trophy', 'ic_forge', 'ic_banner'], 3, 128, haze=240, fill=True, join=14)
+    if os.path.exists(p('ui_icons2.png')):
+        cut(p('ui_icons2.png'), ['ic_ring', 'ic_gear', 'ic_lotus', 'ic_mail', 'ic_bell', 'ic_shop', 'ic_yinyang', 'ic_sound',
+                                 'ic_retreat', 'ic_search', 'ic_crown', 'ic_fist'], 3, 128, haze=240, fill=True, join=14)
     if os.path.exists(p('bg_home_terrace.png')):
         bg = Image.open(p('bg_home_terrace.png')).convert('RGB')
         bg.resize((1600, round(bg.height * 1600 / bg.width)), Image.LANCZOS).save(os.path.join(ROOT, 'game', 'assets', 'bg', 'home_terrace.webp'), quality=84, method=6)

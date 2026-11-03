@@ -88,27 +88,35 @@ const starRow = st => (st.missions ? `<span class="tr-stars">${[0, 1, 2].map(i =
 
 // ---------------- the hub ----------------
 App.register('trials', {
-  cls: 'trials',
+  cls: 'stg stg-modes trials',
   render(el) {
     const vp = valleyPhase(), dp = doubledShrine();
-    const card = (mode, title, cn, sub, bg, act, extra = '') => { const open = modeOpen(mode);
-      return `<div class="tr-card${open ? '' : ' locked'}" data-act="${open ? act : 'lockedmode'}" data-mode="${mode}" style="background-image:url(${bg})"><div class="tr-shade"></div>
-        <div class="tr-txt"><span class="cn">${esc(cn)}</span><b>${esc(title)}</b><small>${esc(sub)}</small>${extra}${open ? '' : `<em>${esc(unlockText(mode))}</em>`}</div></div>`; };
-    const small = (mode, title) => `<div class="tr-mini${modeOpen(mode) ? '' : ' locked'}" data-act="soon" data-mode="${mode}"><span class="cn">${esc(MODE_CN[mode] || '')}</span><b>${esc(title)}</b><small>${modeOpen(mode) ? 'Coming with the content beta' : esc(unlockText(mode))}</small></div>`;
-    el.innerHTML = `<div class="scr-bg" style="background-image:url(${locBg('loc:howling_gorge') || 'assets/bg/arena.webp'});filter:blur(4px) brightness(.4)"></div><div class="scr-shade"></div>
-      ${App.topbar({ title: 'Trials', cn: '试炼', chips: ['cur:spirit_stones', 'cur:immortal_jade', 'item:forging_dust'] })}
-      <div class="tr-hub">
-        ${card('mode:hunts', 'Demon Hunts', '猎妖', 'Gear sets and Forging Manuals', locBg('loc:howling_gorge'), 'hunts')}
-        ${card('mode:valley', 'Medicine King Valley', '药王谷', 'EXP pills and Spirit Stones', locBg('loc:medicine_king_valley'), 'valley', vp ? `<span class="tr-today">${phTag(phaseOf(vp))} Today: ${esc(get(vp).name)}</span>` : '<span class="tr-today">Weekend: pick the phase</span>')}
-        ${card('mode:shrines', 'Five Phases Shrines', '五行祠', 'Essences and Enlightenment Scrolls', locBg('loc:five_phases_shrines'), 'shrines', dp ? `<span class="tr-today">${phTag(phaseOf(dp))} ×2 today: ${esc(get(dp).name)}</span>` : '<span class="tr-today">Weekend: every shrine at ×1</span>')}
-        ${card('mode:hunts', 'Artifact Forge', '炼器阁', 'Forge set pieces from manuals', hasArt('bg/artifact_forge.webp') ? 'assets/bg/artifact_forge.webp' : 'assets/bg/pavilion.webp', 'forge')}
-      </div>
-      <div class="tr-more">${small('mode:secret_realms', 'Secret Realms')}${small('mode:pagoda', 'Demon-Sealing Pagoda')}${small('mode:tower', 'Heavenly Trial Tower')}${small('mode:raids', 'Tribulation Raids')}</div>`;
+    const ic = (k, fb) => (hasArt(`ui/${k}.webp`) ? `assets/ui/${k}.webp` : `assets/ui/${fb}.webp`);
+    // six framed mode cards over the clouds (the "Modes de Jeu" stage): the four open modes and two of the coming ones
+    const card = (i, mode, title, bg, act, icon, sub = '') => { const open = modeOpen(mode), soon = act === 'soon';
+      return `<button class="mode-card p${i}${open ? '' : ' locked'}${soon ? ' soon' : ''}" data-act="${open ? act : 'lockedmode'}" data-mode="${mode}" aria-label="${esc(title)}">
+        <div class="mc-art" style="background-image:url(${bg})"></div><div class="mc-frame"></div>
+        ${sub ? `<div class="mc-sub">${sub}</div>` : ''}
+        <div class="mc-plate"><img src="${icon}" alt=""><b>${esc(title)}</b></div></button>`; };
+    el.innerHTML = `<div class="scr-bg"></div>
+      ${App.chrome('modes', { chips: ['cur:spirit_stones', 'cur:immortal_jade', 'item:forging_dust', 'cur:blossom_dew'], profile: false })}
+      <div class="plq title-plq p1"><b>Trials</b></div>
+      <button class="plq ml-plq p1" data-act="back"><b>Back</b></button>
+      <button class="plq ml-plq p2" data-act="journey"><img src="${ic('ic_banner', 'hall_journey')}" alt=""><b>Journey</b></button>
+      <button class="plq ml-plq p3" data-act="ring"><img src="${ic('ic_ring', 'hall_ring')}" alt=""><b>Storage Ring</b></button>
+      ${card(1, 'mode:hunts', 'Demon Hunts', locBg('loc:howling_gorge'), 'hunts', ic('ic_fist', 'hall_trials'), 'Gear sets and Forging Manuals')}
+      ${card(2, 'mode:valley', 'Medicine King Valley', locBg('loc:medicine_king_valley'), 'valley', ic('ic_lotus', 'hall_pond'), vp ? `${phTag(phaseOf(vp))} Today: ${esc(get(vp).name)}` : 'Weekend: pick the phase')}
+      ${card(3, 'mode:shrines', 'Five Phases Shrines', locBg('loc:five_phases_shrines'), 'shrines', ic('ic_yinyang', 'hall_phases'), dp ? `${phTag(phaseOf(dp))} ×2 today: ${esc(get(dp).name)}` : 'Weekend: every shrine at ×1')}
+      ${card(4, 'mode:hunts', 'Artifact Forge', hasArt('bg/artifact_forge.webp') ? 'assets/bg/artifact_forge.webp' : 'assets/bg/pavilion.webp', 'forge', ic('ic_forge', 'hall_market'), 'Forge set pieces from manuals')}
+      ${card(5, 'mode:pagoda', 'Demon-Sealing Pagoda', locBg('loc:stone_forest') || 'assets/bg/arena.webp', 'soon', ic('ic_home', 'hall_sect'), 'Coming with the content beta')}
+      ${card(6, 'mode:tower', 'Heavenly Trial Tower', locBg('loc:frostpeak') || 'assets/bg/arena.webp', 'soon', ic('ic_trophy', 'hall_trials'), 'Coming with the content beta')}`;
     App.bind(el, {
       hunts: () => App.go('hunts', {}), valley: () => App.go('valley', {}), shrines: () => App.go('shrines', {}), forge: () => App.go('forge', {}),
+      journey: () => App.go('journey', {}), ring: () => App.go('ring', {}),
       lockedmode: (b) => App.toast(`${unlockText(b.dataset.mode)} to open it`),
       soon: (b) => App.toast(modeOpen(b.dataset.mode) ? 'This mode arrives with the content beta' : `${unlockText(b.dataset.mode)} to open it`),
     });
+    void MODE_CN;
   },
 });
 

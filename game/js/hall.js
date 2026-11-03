@@ -45,7 +45,7 @@ App.openSettings = () => settingsDialog();
 const menuArt = (key, fb = '') => (hasArt(`ui/${key}.webp`) ? `assets/ui/${key}.webp` : (fb ? `assets/ui/${fb}.webp` : ''));
 
 App.register('hall', {
-  cls: 'hall',
+  cls: 'stg stg-home hall',
   render(el) {
     const mine = ownedHeroes();
     const lobby = lobbyHero();
@@ -55,39 +55,34 @@ App.register('hall', {
     const team = (data().team || []).filter(h => owned(h)).slice(0, 4);
     for (const h of mine) { if (team.length >= 4) break; if (!team.includes(h)) team.push(h); }
     const trialsOpen = modeOpen('mode:hunts');
-    const plq = (act, icon, label, opts = {}) => `<button class="plq${opts.locked ? ' locked' : ''}" data-act="${act}"><img src="${icon}" alt=""><b>${label}</b>${opts.dot ? '<i class="dot">!</i>' : ''}</button>`;
-    const tplq = (act, icon, label, opts = {}) => `<button class="tplq${opts.locked ? ' locked' : ''}" data-act="${act}"><img src="${icon}" alt=""><b>${label}</b>${opts.dot ? '<i class="dot">!</i>' : ''}</button>`;
-    el.innerHTML = `<div class="scr-bg" style="background-image:url(assets/bg/${hasArt('bg/home_terrace.webp') ? 'home_terrace' : 'pavilion'}.webp)"></div><div class="scr-shade"></div>
-      <div class="hall-medal"></div>
-      ${lh ? `<div class="lobby-girl" data-act="tap" style="background-image:url(${cardUrl(lobby)})" aria-label="${esc(lh.name)}"></div>` : ''}
-      ${App.topbar({ back: false, chips: ['cur:spirit_stones', 'cur:immortal_jade', 'cur:fate_incense', 'cur:blossom_dew'] })}
-      <div class="hall-left">
-        ${plq('trials', menuArt('hall_trials'), 'Trials', { locked: !trialsOpen })}
-        ${plq('ring', menuArt('hall_ring'), 'Storage Ring')}
-        ${plq('rules', menuArt('hall_phases'), 'Five Phases')}
-      </div>
-      ${feat ? `<div class="hall-event" data-act="pond"><div class="he-art" style="background-image:url(${cardUrl(feat)})"></div>
-        <span class="ribbon">Featured</span><b>${esc(get(feat).name)}</b><small>${esc(get(feat).title)}</small><em>Fate Pond · 5★</em></div>` : ''}
-      ${team.length ? `<div class="hall-team"><div class="ht-label">My Team</div><button class="ht-edit" data-gact="nav" data-to="team" aria-label="Edit the team"></button>
-        <div class="ht-cards">${team.map(h => `<div class="ht-c" data-tip="${h}" style="--pc:${PH_COLOR[phaseOf(get(h).phase)] || '#ccc'};background-image:url(${cardUrl(h)})"><img class="ht-ph" src="assets/ui/orb_${phaseOf(get(h).phase)}.webp" alt=""><i>${'★'.repeat(get(h).rarity)}</i></div>`).join('')}</div></div>` : ''}
+    const plq = (cls, act, icon, label, opts = {}) => `<button class="plq ${cls}${opts.locked ? ' locked' : ''}${opts.on ? ' on' : ''}" data-act="${act}" aria-label="${esc(label)}"><img src="${icon}" alt=""><b>${label}</b>${opts.dot ? '<i class="dot">!</i>' : ''}</button>`;
+    el.innerHTML = `<div class="scr-bg"></div>
+      ${App.chrome('home', { cn: '百花阁' })}
+      ${lh ? `<button class="lobby-tap" data-act="tap" aria-label="${esc(lh.name)}"></button>` : ''}
+      ${plq('hl-plq p1', 'trials', menuArt('ic_trophy', 'hall_trials'), 'Trials', { locked: !trialsOpen })}
+      ${plq('hl-plq p2', 'ring', menuArt('ic_ring', 'hall_ring'), 'Storage Ring')}
+      ${plq('hl-plq p3', 'sect', menuArt('ic_home', 'hall_sect'), 'The Sect', { locked: !bldUnlocked('bld:main_hall'), dot: bldUnlocked('bld:main_hall') && !!sectAlerts() })}
+      ${feat ? `<button class="hall-event" data-act="pond"><div class="he-art" style="background-image:url(${cardUrl(feat)})"></div>
+        <span class="ribbon">Featured 5★</span><b>${esc(get(feat).name)}</b><small>${esc(get(feat).title)}</small><em>Fate Pond · half of every 5★</em></button>` : ''}
+      <div class="hall-team"><div class="ht-label">My Team</div><button class="ht-edit hit round" data-gact="nav" data-to="team" aria-label="Edit the team"></button>
+        ${[0, 1, 2, 3, 4].map(i => { const h = team[i]; return h ? `<div class="ht-c p${i + 1}" data-tip="${h}" style="background-image:url(${cardUrl(h)})"><img class="ht-ph" src="assets/ui/orb_${phaseOf(get(h).phase)}.webp" alt=""><i>${'★'.repeat(get(h).rarity)}</i></div>` : `<div class="ht-c empty p${i + 1}"></div>`; }).join('')}</div>
       <div class="hall-camp" data-act="journey">
-        <div class="hc-frame"><div class="hc-art" style="background-image:url(${ch ? locBg(ch.location) : 'assets/bg/peach_ford.webp'})"></div></div>
-        <div class="hc-plate"><img src="${menuArt('hall_journey')}" alt=""><b>Journey</b><small>${next ? esc(next.name) : 'Volume 1 complete'}</small></div>
+        <div class="hc-art" style="background-image:url(${ch ? locBg(ch.location) : 'assets/bg/peach_ford.webp'})"></div>
+        <div class="hc-plate"><img src="${menuArt('ic_banner', 'hall_journey')}" alt=""><b>Journey</b><small>${next ? esc(next.name) : 'Volume 1 complete'}</small></div>
       </div>
       <button class="hall-go" data-act="go"><span>${next ? 'Begin' : 'Journey'}</span></button>
-      <div class="hall-right">
-        ${tplq('pond', menuArt('ic_summon', 'hall_pond'), 'Fate Pond', { dot: qty('cur:fate_incense') >= 1 })}
-        ${tplq('heroines', menuArt('hall_heroines'), 'Heroines')}
-        ${tplq('team', menuArt('ic_team', 'tab_gear'), 'Team')}
-      </div>
+      ${plq('hr-plq tplq p1', 'pond', menuArt('ic_summon', 'hall_pond'), 'Fate Pond', { dot: qty('cur:fate_incense') >= 1 })}
+      ${plq('hr-plq tplq p2', 'heroines', menuArt('ic_book', 'hall_heroines'), 'Heroines')}
+      ${plq('hr-plq tplq p3', 'team', menuArt('ic_team', 'tab_gear'), 'Team')}
       ${App.nav('hall')}`;
     const say = (text, who = 'npc:tao_yao') => {
       el.querySelector('.bubble')?.remove();
       const b = document.createElement('div'); b.className = 'bubble';
-      b.style.left = '30%'; b.style.top = '150px';
+      b.style.left = '300px'; b.style.top = '130px';
       b.innerHTML = `${who === 'npc:tao_yao' ? '<b style="font-family:Cinzel">Tao Yao</b><br>' : ''}${text}`;
       el.appendChild(b); clearTimeout(this._bt); this._bt = setTimeout(() => b.remove(), 5200);
     };
+    App.openNews = () => say(next ? `Next on the road: <b>${esc(next.name)}</b>.${sectAlerts() ? ' The Sect has news for you.' : ''}` : 'Volume 1 is complete. More chapters come with the content beta.');
     if (!flags().seen.hall) { flags().seen.hall = true; persist(); setTimeout(() => say(`Welcome home, Pavilion Master! Smoke still rises over <b>Peach Blossom Ford</b>: press <b>Begin</b> when your team is ready.`), 600); }
     else if (next && Math.random() < 0.5) setTimeout(() => say(`Next on the road: <b>${esc(next.name)}</b>.`), 700);
     App.bind(el, {
@@ -97,11 +92,11 @@ App.register('hall', {
       heroines: () => App.navGo('heroines'),
       pond: () => App.navGo('pond'),
       team: () => App.navGo('team'),
-      rules: () => App.rulesDialog(),
+      sect: () => App.navGo('sect'),
       ring: () => App.go('ring', {}),
       tap: () => { const q = lh.quotes || {}; const lines = [q.intro, q.victory, q.ultimate, lh.profile?.motto].filter(Boolean); const b = lobbyTap(lobby); say(`<b style="font-family:Cinzel">${esc(lh.name)}</b><br>“${esc(lines[Math.floor(Math.random() * lines.length)])}”${b ? `<br><small style="color:#f6b3cc">Bond +${b.pts}${b.after > b.before ? ` · bond ${b.after}!` : ''}</small>` : ''}`, lobby); },
     });
-    void npcUrl;
+    void npcUrl; void PH_COLOR;
   },
 });
 
